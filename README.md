@@ -31,3 +31,12 @@ GIT_USER=<Your GitHub username> USE_SSH=true yarn deploy
 ```
 
 If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
+
+## Versioning
+
+To generate API docs and coin a new release, do the following.
+```
+npx vydoc -i ../yearn-vaults/contracts/ -o docs/smart-contracts -t ./templates/contract.ejs -c ~/.vvm/vyper-0.2.11
+npx solidity-docgen --templates=templates -i ../yearn-vaults/contracts/ -o docs/smart-contracts
+npm run docusaurus docs:version 1.0.0
+```
