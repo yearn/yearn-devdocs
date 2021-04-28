@@ -22,6 +22,14 @@ module.exports = {
           docId: 'smart-contracts/vault',
           label: "Smart Contracts"
         },
+        {
+          type: 'docsVersionDropdown',
+          dropdownItemsBefore: [],
+          dropdownItemsAfter: [{to: '/versions', label: 'All versions'}],
+          // Do not add the link active class when browsing docs.
+          dropdownActiveClassDisabled: true,
+          docsPluginId: 'default',
+        },
       ],
     },
     footer: {
