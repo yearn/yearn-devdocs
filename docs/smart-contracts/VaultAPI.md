@@ -3,33 +3,6 @@
 
 
 ## Functions
-### name
-```solidity
-  function name(
-  ) external returns (string)
-```
-
-
-
-
-### symbol
-```solidity
-  function symbol(
-  ) external returns (string)
-```
-
-
-
-
-### decimals
-```solidity
-  function decimals(
-  ) external returns (uint256)
-```
-
-
-
-
 ### apiVersion
 ```solidity
   function apiVersion(
@@ -39,64 +12,10 @@
 
 
 
-### permit
-```solidity
-  function permit(
-  ) external returns (bool)
-```
-
-
-
-
-### deposit
-```solidity
-  function deposit(
-  ) external returns (uint256)
-```
-
-
-
-
-### deposit
-```solidity
-  function deposit(
-  ) external returns (uint256)
-```
-
-
-
-
-### deposit
-```solidity
-  function deposit(
-  ) external returns (uint256)
-```
-
-
-
-
 ### withdraw
 ```solidity
   function withdraw(
-  ) external returns (uint256)
-```
-
-
-
-
-### withdraw
-```solidity
-  function withdraw(
-  ) external returns (uint256)
-```
-
-
-
-
-### withdraw
-```solidity
-  function withdraw(
-  ) external returns (uint256)
+  ) external
 ```
 
 
@@ -115,42 +34,6 @@
 ```solidity
   function strategies(
   ) external returns (struct StrategyParams)
-```
-
-
-
-
-### pricePerShare
-```solidity
-  function pricePerShare(
-  ) external returns (uint256)
-```
-
-
-
-
-### totalAssets
-```solidity
-  function totalAssets(
-  ) external returns (uint256)
-```
-
-
-
-
-### depositLimit
-```solidity
-  function depositLimit(
-  ) external returns (uint256)
-```
-
-
-
-
-### maxAvailableShares
-```solidity
-  function maxAvailableShares(
-  ) external returns (uint256)
 ```
 
 
@@ -225,28 +108,6 @@ external dependency.
 View the governance address of the Vault to assert privileged functions
 can only be called by governance. The Strategy serves the Vault, so it
 is subject to governance defined by the Vault.
-
-
-
-### management
-```solidity
-  function management(
-  ) external returns (address)
-```
-View the management address of the Vault to assert privileged functions
-can only be called by management. The Strategy serves the Vault, so it
-is subject to management defined by the Vault.
-
-
-
-### guardian
-```solidity
-  function guardian(
-  ) external returns (address)
-```
-View the guardian address of the Vault to assert privileged functions
-can only be called by guardian. The Strategy serves the Vault, so it
-is subject to guardian defined by the Vault.
 
 
 

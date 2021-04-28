@@ -3,46 +3,10 @@ This interface is here for the keeper bot to use.
 
 
 ## Functions
-### name
-```solidity
-  function name(
-  ) external returns (string)
-```
-
-
-
-
-### vault
-```solidity
-  function vault(
-  ) external returns (address)
-```
-
-
-
-
-### want
-```solidity
-  function want(
-  ) external returns (address)
-```
-
-
-
-
 ### apiVersion
 ```solidity
   function apiVersion(
   ) external returns (string)
-```
-
-
-
-
-### keeper
-```solidity
-  function keeper(
-  ) external returns (address)
 ```
 
 
@@ -66,10 +30,28 @@ This interface is here for the keeper bot to use.
 
 
 
-### estimatedTotalAssets
+### name
 ```solidity
-  function estimatedTotalAssets(
-  ) external returns (uint256)
+  function name(
+  ) external returns (string)
+```
+
+
+
+
+### vault
+```solidity
+  function vault(
+  ) external returns (address)
+```
+
+
+
+
+### keeper
+```solidity
+  function keeper(
+  ) external returns (address)
 ```
 
 

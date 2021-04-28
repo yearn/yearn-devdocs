@@ -49,8 +49,6 @@ This Strategy's name.
  Strategy is somehow delegated inside another part of of Yearn's ecosystem e.g. another Vault.
  Note that this value must be strictly less than or equal to the amount provided by
  `estimatedTotalAssets()` below, as the TVL calc will be total assets minus delegated assets.
- Also note that this value is used to determine the total assets under management by this
- strategy, for the purposes of computing the management fee in `Vault`
 @return
  The amount of assets this strategy manages that should not be included in Yearn's Total Value
  Locked (TVL) calculation across it's ecosystem.
@@ -60,20 +58,8 @@ This Strategy's name.
 ### constructor
 ```solidity
   function constructor(
+    address _vault
   ) public
-```
-
-
-
-
-### _initialize
-```solidity
-  function _initialize(
-    address _vault,
-    address _strategist,
-    address _rewards,
-    address _keeper
-  ) internal
 ```
 @notice
  Initializes the Strategy, this is called only once, when the
@@ -85,11 +71,6 @@ This Strategy's name.
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
 |`_vault` | address | The address of the Vault responsible for this Strategy.
-|`_strategist` | address | The address to assign as `strategist`.
-The strategist is able to change the reward address
-|`_rewards` | address |  The address to use for pulling rewards.
-|`_keeper` | address | The adddress of the _keeper. _keeper
-can harvest and tend a strategy.
 
 ### setStrategist
 ```solidity
@@ -138,8 +119,9 @@ can harvest and tend a strategy.
   ) external
 ```
 @notice
- Used to change `rewards`. EOA or smart contract which has the permission
- to pull rewards from the vault.
+ Used to change `rewards`. Any distributed rewards will cease flowing
+ to the old address and begin flowing to this address once the change
+ is in effect.
 
  This may only be called by the strategist.
 
@@ -147,29 +129,7 @@ can harvest and tend a strategy.
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`_rewards` | address | The address to use for pulling rewards.
-
-### setMinReportDelay
-```solidity
-  function setMinReportDelay(
-    uint256 _delay
-  ) external
-```
-@notice
- Used to change `minReportDelay`. `minReportDelay` is the minimum number
- of blocks that should pass for `harvest()` to be called.
-
- For external keepers (such as the Keep3r network), this is the minimum
- time between jobs to wait. (see `harvestTrigger()`
- for more details.)
-
- This may only be called by governance or the strategist.
-
-
-#### Parameters:
-| Name | Type | Description                                                          |
-| :--- | :--- | :------------------------------------------------------------------- |
-|`_delay` | uint256 | The minimum number of seconds to wait between harvests.
+|`_rewards` | address | The address to use for collecting rewards.
 
 ### setMaxReportDelay
 ```solidity
@@ -236,24 +196,6 @@ can harvest and tend a strategy.
 |`_debtThreshold` | uint256 | How big of a loss this Strategy may carry without
 being required to report to the Vault.
 
-### setMetadataURI
-```solidity
-  function setMetadataURI(
-    string _metadataURI
-  ) external
-```
-@notice
- Used to change `metadataURI`. `metadataURI` is used to store the URI
-of the file describing the strategy.
-
- This may only be called by governance or the strategist.
-
-
-#### Parameters:
-| Name | Type | Description                                                          |
-| :--- | :--- | :------------------------------------------------------------------- |
-|`_metadataURI` | string | The URI that describe the strategy.
-
 ### governance
 ```solidity
   function governance(
@@ -263,34 +205,6 @@ Resolve governance address from Vault contract, used to make assertions
 on protected functions in the Strategy.
 
 
-
-### ethToWant
-```solidity
-  function ethToWant(
-    uint256 _amtInWei
-  ) public returns (uint256)
-```
-@notice
- Provide an accurate conversion from `_amtInWei` (denominated in wei)
- to `want` (using the native decimal characteristics of `want`).
-@dev
- Care must be taken when working with decimals to assure that the conversion
- is compatible. As an example:
-
-     given 1e17 wei (0.1 ETH) as input, and want is USDC (6 decimals),
-     with USDC/ETH = 1800, this should give back 1800000000 (180 USDC)
-
-
-
-#### Parameters:
-| Name | Type | Description                                                          |
-| :--- | :--- | :------------------------------------------------------------------- |
-|`_amtInWei` | uint256 | The amount (in wei/1e-18 ETH) to convert to `want`
-
-#### Return Values:
-| Name                           | Type          | Description                                                                  |
-| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`The`| uint256 | amount in `want` of `_amtInEth` converted to `want`
 
 ### estimatedTotalAssets
 ```solidity
@@ -389,18 +303,30 @@ irregardless of slippage. Any excess will be re-invested with `adjustPosition()`
 This function should return the amount of `want` tokens made available by the
 liquidation. If there is a difference between them, `_loss` indicates whether the
 difference is due to a realized loss, or if there is some other sitution at play
-(e.g. locked funds) where the amount made available is less than what is needed.
-This function is used during emergency exit instead of `prepareReturn()` to
-liquidate all of the Strategy's positions back to the Vault.
+(e.g. locked funds). This function is used during emergency exit instead of
+`prepareReturn()` to liquidate all of the Strategy's positions back to the Vault.
 
-NOTE: The invariant `_liquidatedAmount + _loss <= _amountNeeded` should always be maintained
+NOTE: The invariant `_amountFreed + _loss <= _amountNeeded` should always be maintained
+
+
+
+### distributeRewards
+```solidity
+  function distributeRewards(
+  ) internal
+```
+ `Harvest()` calls this function after shares are created during
+ `vault.report()`. You can customize this function to any share
+ distribution mechanism you want.
+
+  See `vault.report()` for further details.
 
 
 
 ### tendTrigger
 ```solidity
   function tendTrigger(
-    uint256 callCostInWei
+    uint256 callCost
   ) public returns (bool)
 ```
 @notice
@@ -413,7 +339,7 @@ NOTE: The invariant `_liquidatedAmount + _loss <= _amountNeeded` should always b
  shortly, then this can return `true` even if the keeper might be
  "at a loss" (keepers are always reimbursed by Yearn).
 @dev
- `callCostInWei` must be priced in terms of `wei` (1e-18 ETH).
+ `callCost` must be priced in terms of `want`.
 
  This call and `harvestTrigger()` should never return `true` at the same
  time.
@@ -422,7 +348,7 @@ NOTE: The invariant `_liquidatedAmount + _loss <= _amountNeeded` should always b
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`callCostInWei` | uint256 | The keeper's estimated gas cost to call `tend()` (in wei).
+|`callCost` | uint256 | The keeper's estimated cast cost to call `tend()`.
 
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
@@ -446,7 +372,7 @@ NOTE: The invariant `_liquidatedAmount + _loss <= _amountNeeded` should always b
 ### harvestTrigger
 ```solidity
   function harvestTrigger(
-    uint256 callCostInWei
+    uint256 callCost
   ) public returns (bool)
 ```
 @notice
@@ -459,12 +385,12 @@ NOTE: The invariant `_liquidatedAmount + _loss <= _amountNeeded` should always b
  shortly, then this can return `true` even if the keeper might be "at a
  loss" (keepers are always reimbursed by Yearn).
 @dev
- `callCostInWei` must be priced in terms of `wei` (1e-18 ETH).
+ `callCost` must be priced in terms of `want`.
 
  This call and `tendTrigger` should never return `true` at the
  same time.
 
- See `min/maxReportDelay`, `profitFactor`, `debtThreshold` to adjust the
+ See `maxReportDelay`, `profitFactor`, `debtThreshold` to adjust the
  strategist-controlled parameters that will influence whether this call
  returns `true` or not. These parameters will be used in conjunction
  with the parameters reported to the Vault (see `params`) to determine
@@ -480,7 +406,7 @@ NOTE: The invariant `_liquidatedAmount + _loss <= _amountNeeded` should always b
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`callCostInWei` | uint256 | The keeper's estimated gas cost to call `harvest()` (in wei).
+|`callCost` | uint256 | The keeper's estimated cast cost to call `harvest()`.
 
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
@@ -589,7 +515,6 @@ NOTE: Do *not* include `want`, already included in `sweep` below.
 
 Example:
 
-```
    function protectedTokens() internal override view returns (address[] memory) {
      address[] memory protected = new address[](3);
      protected[0] = tokenA;
@@ -597,7 +522,7 @@ Example:
      protected[2] = tokenC;
      return protected;
    }
-```
+
 
 
 ### sweep
@@ -660,17 +585,9 @@ Example:
 
 
 
-### UpdatedMinReportDelay
+### UpdatedReportDelay
 ```solidity
-  event UpdatedMinReportDelay(
-  )
-```
-
-
-
-### UpdatedMaxReportDelay
-```solidity
-  event UpdatedMaxReportDelay(
+  event UpdatedReportDelay(
   )
 ```
 
@@ -695,14 +612,6 @@ Example:
 ### EmergencyExitEnabled
 ```solidity
   event EmergencyExitEnabled(
-  )
-```
-
-
-
-### UpdatedMetadataURI
-```solidity
-  event UpdatedMetadataURI(
   )
 ```
 

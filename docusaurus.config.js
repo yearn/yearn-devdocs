@@ -19,19 +19,9 @@ module.exports = {
       items: [
         {
           type: 'doc',
-          docId: 'getting-started/introduction',
-          label: "Getting started"
+          docId: 'smart-contracts/vault',
+          label: "Smart Contracts"
         },
-        {
-          type: 'doc',
-          docId: 'partnership/introduction',
-          label: "Partnership"
-        }, 
-        {
-          type: 'doc',
-          docId: 'developers/introduction',
-          label: "Developers"
-        }, 
       ],
     },
     footer: {
