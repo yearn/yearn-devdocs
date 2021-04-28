@@ -12,19 +12,19 @@
 
 
 
-### _setBlocked
+### transfer
 ```solidity
-  function _setBlocked(
-  ) public
+  function transfer(
+  ) public returns (bool)
 ```
 
 
 
 
-### _beforeTokenTransfer
+### transferFrom
 ```solidity
-  function _beforeTokenTransfer(
-  ) internal
+  function transferFrom(
+  ) public returns (bool)
 ```
 
 
