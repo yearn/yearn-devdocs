@@ -550,7 +550,7 @@ want ephemerally).
 NOTE: Do *not* include `want`, already included in `sweep` below.
 
 Example:
-
+```solidity
    function protectedTokens() internal override view returns (address[] memory) {
      address[] memory protected = new address[](3);
      protected[0] = tokenA;
@@ -558,7 +558,7 @@ Example:
      protected[2] = tokenC;
      return protected;
    }
-
+```
 
 
 ### sweep

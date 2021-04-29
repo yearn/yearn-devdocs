@@ -30,7 +30,6 @@ module.exports = {
           type: 'docsVersionDropdown',
           dropdownItemsBefore: [],
           position: 'right',
-          dropdownItemsAfter: [{to: '/versions', label: 'All versions'}],
           // Do not add the link active class when browsing docs.
           dropdownActiveClassDisabled: true,
           docsPluginId: 'default',
@@ -75,9 +74,9 @@ module.exports = {
       '@docusaurus/preset-classic',
       {
         docs: {
-          path: "dev",
-          routeBasePath: "dev",
-          sidebarPath: require.resolve('./sidebars.js'),
+          path: "docs/v2",
+          routeBasePath: "v2",
+          sidebarPath: require.resolve('./sidebars/sidebars.js'),
           // Please change this to your repo.
           editUrl:
             'https://github.com/yearn/yearn-devdocs/edit/master/website/',
@@ -92,11 +91,23 @@ module.exports = {
     [
       '@docusaurus/plugin-content-docs',
       {
+        id: 'v_one',
+        path: 'docs/v1',
+        editCurrentVersion: true,
+        routeBasePath: 'v1',
+        sidebarPath: require.resolve('./sidebars/sidebarsV1.js'),
+        showLastUpdateAuthor: true,
+        showLastUpdateTime: true,
+      },
+    ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
         id: 'getting-started',
-        path: 'getting-started',
+        path: 'docs/getting-started',
         editCurrentVersion: true,
         routeBasePath: 'getting-started',
-        sidebarPath: require.resolve('./sidebarsGettingStarted.js'),
+        sidebarPath: require.resolve('./sidebars/sidebarsGettingStarted.js'),
         showLastUpdateAuthor: true,
         showLastUpdateTime: true,
       },
@@ -105,10 +116,10 @@ module.exports = {
       '@docusaurus/plugin-content-docs',
       {
         id: 'partners',
-        path: 'partners',
+        path: 'docs/partners',
         editCurrentVersion: true,
         routeBasePath: 'partners',
-        sidebarPath: require.resolve('./sidebarsPartners.js'),
+        sidebarPath: require.resolve('./sidebars/sidebarsPartners.js'),
         showLastUpdateAuthor: true,
         showLastUpdateTime: true,
       },

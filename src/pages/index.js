@@ -16,12 +16,12 @@ function HomepageHeader() {
         <div className={styles.buttons}>
           <Link
             className="button button--secondary button--lg"
-            to="/docs/v1/introduction">
+            to="/v1/introduction">
             Yearn v1 Docs
           </Link>
           <Link
           className="button button--secondary button--lg"
-          to="/docs/smart-contracts/vault">
+          to="/v2/smart-contracts/vault">
           Yearn v2 API
           </Link>
           <Link
