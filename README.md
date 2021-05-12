@@ -22,7 +22,7 @@ This command starts a local development server and opens up a browser window. Mo
 yarn build
 ```
 
-This command generates static content into the `build` directory and can be served using any static contents hosting service.
+This command generates static content into the `build` directory and can be served using any static content hosting service.
 
 ## Deployment
 
@@ -30,9 +30,31 @@ This command generates static content into the `build` directory and can be serv
 GIT_USER=<Your GitHub username> USE_SSH=true yarn deploy
 ```
 
-If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
+If you are using GitHub pages for hosting, this command is a convenient way to build the website and push it to the `gh-pages` branch.
 
-## Versioning
+
+## Contribute
+
+## Doc structure
+
+Doc is split in two, the versioned doc and the non-versioned doc.
+Doc is generated from markdown or HTML files.
+
+### Not versioned doc
+
+In the `docs` folder:
+
+- getting-started
+- partners
+- v1
+
+### Versioned doc
+
+In `versioned_docs` you will find several versions of the vault doc that corresponds to a tagged release. In `docs/v2` you can find the latest version that corresponds to the changes on year-vault master is the documentation for the next/unreleased version.
+
+Versioned doc should not be edited but generated directly from the vault codebase.
+
+#### Generating Versioned doc
 
 To generate API docs and coin a new release, do the following.
 ```
