@@ -6,9 +6,9 @@ title: Developers guide
 
 This document gives a _generalized and high level overview_ of how the protocol and its actors, smart contracts, and other services interact with each other. The aim is to build intuition about how Yearn products work.
 
-{% hint style="info" %}
+:::info
 All vaults are different. This is not a formal specification. Contracts and components are subject to change without notice.
-{% endhint %}
+:::
 
 ![yearn-protocol](https://raw.githubusercontent.com/lehnberg/yearn-diagrams/master/yearn-protocol/yearn-protocol-v0.06.svg)
 
