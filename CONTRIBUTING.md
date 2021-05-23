@@ -68,7 +68,7 @@ Now make all those great additions and edits to your copy of Yearn's Dev Docs.
 
 ### Submitting a Pull Request
 
-Before submitting your pull request, check to see if there have been any new commits to the upstream `master` branch. If so, you should rebase your development branch so that merging will be a simple fast-forward.
+Before submitting your pull request, check to see if there have been any new commits to the upstream `master` branch. If there have been new commits, you should rebase your development branch so that merging will be a simple fast-forward.
 
 Fetch upstream `master` and merge with your repo's `master` branch:
 
@@ -85,7 +85,7 @@ $ git checkout newdocedit
 $ git rebase master
 ```
 
-If you have made many smaller commits to your development branch, it may be desirable to squash the into a smaller set of larger commits. This can be achieved with an interactive rebase.
+If you have made many smaller commits to your development branch, it may be desirable to squash them into a smaller set of larger commits. This can be achieved with an interactive rebase.
 
 Rebase all commits on your development branch:
 
