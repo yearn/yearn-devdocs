@@ -69,7 +69,10 @@ This Strategy's name.
 ### _initialize
 ```solidity
   function _initialize(
-    address _vault
+    address _vault,
+    address _strategist,
+    address _rewards,
+    address _keeper
   ) internal
 ```
 @notice
@@ -82,6 +85,11 @@ This Strategy's name.
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
 |`_vault` | address | The address of the Vault responsible for this Strategy.
+|`_strategist` | address | The address to assign as `strategist`.
+The strategist is able to change the reward address
+|`_rewards` | address |  The address to use for pulling rewards.
+|`_keeper` | address | The adddress of the _keeper. _keeper
+can harvest and tend a strategy.
 
 ### setStrategist
 ```solidity
@@ -256,6 +264,34 @@ on protected functions in the Strategy.
 
 
 
+### ethToWant
+```solidity
+  function ethToWant(
+    uint256 _amtInWei
+  ) public returns (uint256)
+```
+@notice
+ Provide an accurate conversion from `_amtInWei` (denominated in wei)
+ to `want` (using the native decimal characteristics of `want`).
+@dev
+ Care must be taken when working with decimals to assure that the conversion
+ is compatible. As an example:
+
+     given 1e17 wei (0.1 ETH) as input, and want is USDC (6 decimals),
+     with USDC/ETH = 1800, this should give back 1800000000 (180 USDC)
+
+
+
+#### Parameters:
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+|`_amtInWei` | uint256 | The amount (in wei/1e-18 ETH) to convert to `want`
+
+#### Return Values:
+| Name                           | Type          | Description                                                                  |
+| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
+|`The`| uint256 | amount in `want` of `_amtInEth` converted to `want`
+
 ### estimatedTotalAssets
 ```solidity
   function estimatedTotalAssets(
@@ -312,7 +348,7 @@ should be optimized to minimize losses as much as possible.
 This method returns any realized profits and/or realized losses
 incurred, and should return the total amounts of profits/losses/debt
 payments (in `want` tokens) for the Vault's accounting (e.g.
-`want.balanceOf(this) >= _debtPayment + _profit - _loss`).
+`want.balanceOf(this) >= _debtPayment + _profit`).
 
 `_debtOutstanding` will be 0 if the Strategy is not past the configured
 debt limit, otherwise its value will be how far past the debt limit
@@ -354,17 +390,26 @@ This function should return the amount of `want` tokens made available by the
 liquidation. If there is a difference between them, `_loss` indicates whether the
 difference is due to a realized loss, or if there is some other sitution at play
 (e.g. locked funds) where the amount made available is less than what is needed.
-This function is used during emergency exit instead of `prepareReturn()` to
-liquidate all of the Strategy's positions back to the Vault.
 
 NOTE: The invariant `_liquidatedAmount + _loss <= _amountNeeded` should always be maintained
+
+
+
+### liquidateAllPositions
+```solidity
+  function liquidateAllPositions(
+  ) internal returns (uint256 _amountFreed)
+```
+Liquidate everything and returns the amount that got freed.
+This function is used during emergency exit instead of `prepareReturn()` to
+liquidate all of the Strategy's positions back to the Vault.
 
 
 
 ### tendTrigger
 ```solidity
   function tendTrigger(
-    uint256 callCost
+    uint256 callCostInWei
   ) public returns (bool)
 ```
 @notice
@@ -377,7 +422,7 @@ NOTE: The invariant `_liquidatedAmount + _loss <= _amountNeeded` should always b
  shortly, then this can return `true` even if the keeper might be
  "at a loss" (keepers are always reimbursed by Yearn).
 @dev
- `callCost` must be priced in terms of `want`.
+ `callCostInWei` must be priced in terms of `wei` (1e-18 ETH).
 
  This call and `harvestTrigger()` should never return `true` at the same
  time.
@@ -386,7 +431,7 @@ NOTE: The invariant `_liquidatedAmount + _loss <= _amountNeeded` should always b
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`callCost` | uint256 | The keeper's estimated cast cost to call `tend()`.
+|`callCostInWei` | uint256 | The keeper's estimated gas cost to call `tend()` (in wei).
 
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
@@ -410,7 +455,7 @@ NOTE: The invariant `_liquidatedAmount + _loss <= _amountNeeded` should always b
 ### harvestTrigger
 ```solidity
   function harvestTrigger(
-    uint256 callCost
+    uint256 callCostInWei
   ) public returns (bool)
 ```
 @notice
@@ -423,7 +468,7 @@ NOTE: The invariant `_liquidatedAmount + _loss <= _amountNeeded` should always b
  shortly, then this can return `true` even if the keeper might be "at a
  loss" (keepers are always reimbursed by Yearn).
 @dev
- `callCost` must be priced in terms of `want`.
+ `callCostInWei` must be priced in terms of `wei` (1e-18 ETH).
 
  This call and `tendTrigger` should never return `true` at the
  same time.
@@ -444,7 +489,7 @@ NOTE: The invariant `_liquidatedAmount + _loss <= _amountNeeded` should always b
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`callCost` | uint256 | The keeper's estimated cast cost to call `harvest()`.
+|`callCostInWei` | uint256 | The keeper's estimated gas cost to call `harvest()` (in wei).
 
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
@@ -514,9 +559,12 @@ value.
 @notice
  Transfers all `want` from this Strategy to `_newStrategy`.
 
- This may only be called by governance or the Vault.
+ This may only be called by the Vault.
 @dev
- The new Strategy's Vault must be the same as this Strategy's Vault.
+The new Strategy's Vault must be the same as this Strategy's Vault.
+ The migration process should be carefully performed to make sure all
+the assets are migrated to the new address, which should have never
+interacted with the vault before.
 
 
 #### Parameters:
@@ -552,7 +600,7 @@ want ephemerally).
 NOTE: Do *not* include `want`, already included in `sweep` below.
 
 Example:
-```solidity
+```
    function protectedTokens() internal override view returns (address[] memory) {
      address[] memory protected = new address[](3);
      protected[0] = tokenA;
@@ -561,6 +609,7 @@ Example:
      return protected;
    }
 ```
+
 
 
 ### sweep

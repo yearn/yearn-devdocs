@@ -66,6 +66,15 @@
 
 
 
+### ethToWant
+```solidity
+  function ethToWant(
+  ) public returns (uint256)
+```
+
+
+
+
 ### estimatedTotalAssets
 ```solidity
   function estimatedTotalAssets(
@@ -115,6 +124,15 @@
 ```solidity
   function protectedTokens(
   ) internal returns (address[])
+```
+
+
+
+
+### liquidateAllPositions
+```solidity
+  function liquidateAllPositions(
+  ) internal returns (uint256 amountFreed)
 ```
 
 

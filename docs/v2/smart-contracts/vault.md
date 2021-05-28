@@ -16,14 +16,14 @@
 
 ### initialize
 ```solidity
-function initialize(address,address,address,string,string)
+function initialize(address,address,address,address,string,string)
 ```
 
 
 @notice Initializes the Vault, this is called only once, when the contract is deployed. The performance fee is set to 10% of yield, per Strategy. The management fee is set to 2%, per year. The initial deposit limit is set to 0 (deposits disabled); it must be updated after initialization.    
 
 
-*If `nameOverride` is not specified, the name will be &#39;yearn&#39; combined with the name of `token`. If `symbolOverride` is not specified, the symbol will be &#39;y&#39; combined with the symbol of `token`.*
+*If `nameOverride` is not specified, the name will be &#39;yearn&#39; combined with the name of `token`. If `symbolOverride` is not specified, the symbol will be &#39;yv&#39; combined with the symbol of `token`. The token used by the vault should not change balances outside transfers and it must transfer the exact amount requested. Fee on transfer and rebasing are not supported.*
 
 
 #### Parameters:
@@ -32,6 +32,7 @@ function initialize(address,address,address,string,string)
 |  * token * |  *  * |  * The token that may be deposited into this Vault. * |
 |  * governance * |  *  * |  * The address authorized for governance interactions. * |
 |  * rewards * |  *  * |  * The address to distribute rewards to. * |
+|  * management * |  *  * |  * The address of the vault manager. * |
 |  * nameOverride * |  *  * |  * Specify a custom Vault name. Leave empty for default choice. * |
 |  * symbolOverride * |  *  * |  * Specify a custom Vault symbol name. Leave empty for default choice. * |
 |  * guardian * |  *  * |  * The address authorized for guardian interactions. Defaults to caller. * |
@@ -44,12 +45,12 @@ function initialize(address,address,address,string,string)
 
 ### initialize
 ```solidity
-function initialize(address,address,address,string,string,address)
+function initialize(address,address,address,address,string,string,address)
 ```
 
 
 
-*If `nameOverride` is not specified, the name will be &#39;yearn&#39; combined with the name of `token`. If `symbolOverride` is not specified, the symbol will be &#39;y&#39; combined with the symbol of `token`.*
+*If `nameOverride` is not specified, the name will be &#39;yearn&#39; combined with the name of `token`. If `symbolOverride` is not specified, the symbol will be &#39;yv&#39; combined with the symbol of `token`. The token used by the vault should not change balances outside transfers and it must transfer the exact amount requested. Fee on transfer and rebasing are not supported.*
 
 
 #### Parameters:
@@ -58,6 +59,7 @@ function initialize(address,address,address,string,string,address)
 |  * token * |  *  * |  * The token that may be deposited into this Vault. * |
 |  * governance * |  *  * |  * The address authorized for governance interactions. * |
 |  * rewards * |  *  * |  * The address to distribute rewards to. * |
+|  * management * |  *  * |  * The address of the vault manager. * |
 |  * nameOverride * |  *  * |  * Specify a custom Vault name. Leave empty for default choice. * |
 |  * symbolOverride * |  *  * |  * Specify a custom Vault symbol name. Leave empty for default choice. * |
 |  * guardian * |  *  * |  * The address authorized for guardian interactions. Defaults to caller. * |
@@ -192,27 +194,6 @@ function setManagement(address)
 
 
 
-### setGuestList
-```solidity
-function setGuestList(address)
-```
-
-
-@notice Used to set or change `guestList`. A guest list is another contract that dictates who is allowed to participate in a Vault (and transfer shares). This may only be called by governance.    
-
-
-
-#### Parameters:
-| Name                           | Type          | Description                                    |
-| :----------------------------- | :------------ | :--------------------------------------------- |
-|  * guestList * |  *  * |  * The address of the `GuestList` contract to use. * |
-
-
-
-
-
-
-
 ### setRewards
 ```solidity
 function setRewards(address)
@@ -234,20 +215,20 @@ function setRewards(address)
 
 
 
-### setLockedProfitDegration
+### setLockedProfitDegradation
 ```solidity
-function setLockedProfitDegration(uint256)
+function setLockedProfitDegradation(uint256)
 ```
 
 
-@notice Changes the locked profit degration.    
+@notice Changes the locked profit degradation.    
 
 
 
 #### Parameters:
 | Name                           | Type          | Description                                    |
 | :----------------------------- | :------------ | :--------------------------------------------- |
-|  * degration * |  *  * |  * The rate of degration in percent per second scaled to 1e18. * |
+|  * degradation * |  *  * |  * The rate of degradation in percent per second scaled to 1e18. * |
 
 
 
@@ -676,7 +657,7 @@ function withdraw()
 @notice Withdraws the calling account&#39;s tokens from this Vault, redeeming amount `_shares` for an appropriate amount of tokens. See note on `setWithdrawalQueue` for further details of withdrawal ordering and behavior.    
 
 
-*Measuring the value of shares is based on the total outstanding debt that this contract has (&#34;expected value&#34;) instead of the total balance sheet it has (&#34;estimated value&#34;) has important security considerations, and is done intentionally. If this value were measured against external systems, it could be purposely manipulated by an attacker to withdraw more assets than they otherwise should be able to claim by redeeming their shares. On withdrawal, this means that shares are redeemed against the total amount that the deposited capital had &#34;realized&#34; since the point it was deposited, up until the point it was withdrawn. If that number were to be higher than the &#34;expected value&#34; at some future point, withdrawing shares via this method could entitle the depositor to *more* than the expected value once the &#34;realized value&#34; is updated from further reports by the Strategies to the Vaults. Under exceptional scenarios, this could cause earlier withdrawals to earn &#34;more&#34; of the underlying assets than Users might otherwise be entitled to, if the Vault&#39;s estimated value were otherwise measured through external means, accounting for whatever exceptional scenarios exist for the Vault (that aren&#39;t covered by the Vault&#39;s own design.)*
+*Measuring the value of shares is based on the total outstanding debt that this contract has (&#34;expected value&#34;) instead of the total balance sheet it has (&#34;estimated value&#34;) has important security considerations, and is done intentionally. If this value were measured against external systems, it could be purposely manipulated by an attacker to withdraw more assets than they otherwise should be able to claim by redeeming their shares. On withdrawal, this means that shares are redeemed against the total amount that the deposited capital had &#34;realized&#34; since the point it was deposited, up until the point it was withdrawn. If that number were to be higher than the &#34;expected value&#34; at some future point, withdrawing shares via this method could entitle the depositor to *more* than the expected value once the &#34;realized value&#34; is updated from further reports by the Strategies to the Vaults. Under exceptional scenarios, this could cause earlier withdrawals to earn &#34;more&#34; of the underlying assets than Users might otherwise be entitled to, if the Vault&#39;s estimated value were otherwise measured through external means, accounting for whatever exceptional scenarios exist for the Vault (that aren&#39;t covered by the Vault&#39;s own design.) In the situation where a large withdrawal happens, it can empty the vault balance and the strategies in the withdrawal queue. Strategies not in the withdrawal queue will have to be harvested to rebalance the funds and make the funds available again to withdraw.*
 
 
 #### Parameters:
@@ -705,7 +686,7 @@ function withdraw(uint256)
 
 
 
-*Measuring the value of shares is based on the total outstanding debt that this contract has (&#34;expected value&#34;) instead of the total balance sheet it has (&#34;estimated value&#34;) has important security considerations, and is done intentionally. If this value were measured against external systems, it could be purposely manipulated by an attacker to withdraw more assets than they otherwise should be able to claim by redeeming their shares. On withdrawal, this means that shares are redeemed against the total amount that the deposited capital had &#34;realized&#34; since the point it was deposited, up until the point it was withdrawn. If that number were to be higher than the &#34;expected value&#34; at some future point, withdrawing shares via this method could entitle the depositor to *more* than the expected value once the &#34;realized value&#34; is updated from further reports by the Strategies to the Vaults. Under exceptional scenarios, this could cause earlier withdrawals to earn &#34;more&#34; of the underlying assets than Users might otherwise be entitled to, if the Vault&#39;s estimated value were otherwise measured through external means, accounting for whatever exceptional scenarios exist for the Vault (that aren&#39;t covered by the Vault&#39;s own design.)*
+*Measuring the value of shares is based on the total outstanding debt that this contract has (&#34;expected value&#34;) instead of the total balance sheet it has (&#34;estimated value&#34;) has important security considerations, and is done intentionally. If this value were measured against external systems, it could be purposely manipulated by an attacker to withdraw more assets than they otherwise should be able to claim by redeeming their shares. On withdrawal, this means that shares are redeemed against the total amount that the deposited capital had &#34;realized&#34; since the point it was deposited, up until the point it was withdrawn. If that number were to be higher than the &#34;expected value&#34; at some future point, withdrawing shares via this method could entitle the depositor to *more* than the expected value once the &#34;realized value&#34; is updated from further reports by the Strategies to the Vaults. Under exceptional scenarios, this could cause earlier withdrawals to earn &#34;more&#34; of the underlying assets than Users might otherwise be entitled to, if the Vault&#39;s estimated value were otherwise measured through external means, accounting for whatever exceptional scenarios exist for the Vault (that aren&#39;t covered by the Vault&#39;s own design.) In the situation where a large withdrawal happens, it can empty the vault balance and the strategies in the withdrawal queue. Strategies not in the withdrawal queue will have to be harvested to rebalance the funds and make the funds available again to withdraw.*
 
 
 #### Parameters:
@@ -734,7 +715,7 @@ function withdraw(uint256,address)
 
 
 
-*Measuring the value of shares is based on the total outstanding debt that this contract has (&#34;expected value&#34;) instead of the total balance sheet it has (&#34;estimated value&#34;) has important security considerations, and is done intentionally. If this value were measured against external systems, it could be purposely manipulated by an attacker to withdraw more assets than they otherwise should be able to claim by redeeming their shares. On withdrawal, this means that shares are redeemed against the total amount that the deposited capital had &#34;realized&#34; since the point it was deposited, up until the point it was withdrawn. If that number were to be higher than the &#34;expected value&#34; at some future point, withdrawing shares via this method could entitle the depositor to *more* than the expected value once the &#34;realized value&#34; is updated from further reports by the Strategies to the Vaults. Under exceptional scenarios, this could cause earlier withdrawals to earn &#34;more&#34; of the underlying assets than Users might otherwise be entitled to, if the Vault&#39;s estimated value were otherwise measured through external means, accounting for whatever exceptional scenarios exist for the Vault (that aren&#39;t covered by the Vault&#39;s own design.)*
+*Measuring the value of shares is based on the total outstanding debt that this contract has (&#34;expected value&#34;) instead of the total balance sheet it has (&#34;estimated value&#34;) has important security considerations, and is done intentionally. If this value were measured against external systems, it could be purposely manipulated by an attacker to withdraw more assets than they otherwise should be able to claim by redeeming their shares. On withdrawal, this means that shares are redeemed against the total amount that the deposited capital had &#34;realized&#34; since the point it was deposited, up until the point it was withdrawn. If that number were to be higher than the &#34;expected value&#34; at some future point, withdrawing shares via this method could entitle the depositor to *more* than the expected value once the &#34;realized value&#34; is updated from further reports by the Strategies to the Vaults. Under exceptional scenarios, this could cause earlier withdrawals to earn &#34;more&#34; of the underlying assets than Users might otherwise be entitled to, if the Vault&#39;s estimated value were otherwise measured through external means, accounting for whatever exceptional scenarios exist for the Vault (that aren&#39;t covered by the Vault&#39;s own design.) In the situation where a large withdrawal happens, it can empty the vault balance and the strategies in the withdrawal queue. Strategies not in the withdrawal queue will have to be harvested to rebalance the funds and make the funds available again to withdraw.*
 
 
 #### Parameters:
@@ -763,7 +744,7 @@ function withdraw(uint256,address,uint256)
 
 
 
-*Measuring the value of shares is based on the total outstanding debt that this contract has (&#34;expected value&#34;) instead of the total balance sheet it has (&#34;estimated value&#34;) has important security considerations, and is done intentionally. If this value were measured against external systems, it could be purposely manipulated by an attacker to withdraw more assets than they otherwise should be able to claim by redeeming their shares. On withdrawal, this means that shares are redeemed against the total amount that the deposited capital had &#34;realized&#34; since the point it was deposited, up until the point it was withdrawn. If that number were to be higher than the &#34;expected value&#34; at some future point, withdrawing shares via this method could entitle the depositor to *more* than the expected value once the &#34;realized value&#34; is updated from further reports by the Strategies to the Vaults. Under exceptional scenarios, this could cause earlier withdrawals to earn &#34;more&#34; of the underlying assets than Users might otherwise be entitled to, if the Vault&#39;s estimated value were otherwise measured through external means, accounting for whatever exceptional scenarios exist for the Vault (that aren&#39;t covered by the Vault&#39;s own design.)*
+*Measuring the value of shares is based on the total outstanding debt that this contract has (&#34;expected value&#34;) instead of the total balance sheet it has (&#34;estimated value&#34;) has important security considerations, and is done intentionally. If this value were measured against external systems, it could be purposely manipulated by an attacker to withdraw more assets than they otherwise should be able to claim by redeeming their shares. On withdrawal, this means that shares are redeemed against the total amount that the deposited capital had &#34;realized&#34; since the point it was deposited, up until the point it was withdrawn. If that number were to be higher than the &#34;expected value&#34; at some future point, withdrawing shares via this method could entitle the depositor to *more* than the expected value once the &#34;realized value&#34; is updated from further reports by the Strategies to the Vaults. Under exceptional scenarios, this could cause earlier withdrawals to earn &#34;more&#34; of the underlying assets than Users might otherwise be entitled to, if the Vault&#39;s estimated value were otherwise measured through external means, accounting for whatever exceptional scenarios exist for the Vault (that aren&#39;t covered by the Vault&#39;s own design.) In the situation where a large withdrawal happens, it can empty the vault balance and the strategies in the withdrawal queue. Strategies not in the withdrawal queue will have to be harvested to rebalance the funds and make the funds available again to withdraw.*
 
 
 #### Parameters:
@@ -1205,7 +1186,7 @@ function report(uint256,uint256,uint256)
 | Name                           | Type          | Description                                    |
 | :----------------------------- | :------------ | :--------------------------------------------- |
 |  * gain * |  *  * |  * Amount Strategy has realized as a gain on it's investment since its last report, and is free to be given back to Vault as earnings * |
-|  * loss * |  *  * |  * Amount Strategy has realized as a loss on it's investment since its last report, and should be accounted for on the Vault's balance sheet * |
+|  * loss * |  *  * |  * Amount Strategy has realized as a loss on it's investment since its last report, and should be accounted for on the Vault's balance sheet. The loss will reduce the debtRatio. The next time the strategy will harvest, it will pay back the debt in an attempt to adjust to the new debt limit. * |
 |  * _debtPayment * |  *  * |  * Amount Strategy has made available to cover outstanding debt * |
 
 
@@ -1306,10 +1287,6 @@ function sweep(address,uint256)
 **UpdateManagement**
 
 * `management` : address, *notIndexed*
-
-**UpdateGuestList**
-
-* `guestList` : address, *notIndexed*
 
 **UpdateRewards**
 
