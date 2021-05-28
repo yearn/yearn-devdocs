@@ -96,7 +96,7 @@
 ### withdraw
 ```solidity
   function withdraw(
-  ) public returns (uint256)
+  ) public returns (uint256 withdrawn)
 ```
 
 
