@@ -40,6 +40,8 @@ If you are using GitHub pages for hosting, this command is a convenient way to b
 Doc is split in two, the versioned doc and the non-versioned doc.
 Doc is generated from markdown or HTML files.
 
+For detailed information on the contributing workflow, please see the [Contributing doc](CONTRIBUTING.md).
+
 ### Not versioned doc
 
 In the `docs` folder:
