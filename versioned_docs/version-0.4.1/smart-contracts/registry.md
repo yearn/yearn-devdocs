@@ -16,7 +16,7 @@ function setGovernance(address)
 ```
 
 
-@notice Starts the 1st phase of the governance transfer.    
+Starts the 1st phase of the governance transfer.    
 
 
 *Throws if the caller is not current governance.*
@@ -39,7 +39,7 @@ function acceptGovernance()
 ```
 
 
-@notice Completes the 2nd phase of the governance transfer.    
+Completes the 2nd phase of the governance transfer.    
 
 
 *Throws if the caller is not the pending caller. Emits a `NewGovernance` event.*
@@ -56,7 +56,7 @@ function latestRelease()
 ```
 
 
-@notice Returns the api version of the latest release.    
+Returns the api version of the latest release.    
 
 
 *Throws if no releases are registered yet.*
@@ -79,7 +79,7 @@ function latestVault(address)
 ```
 
 
-@notice Returns the latest deployed vault for the given token.    
+Returns the latest deployed vault for the given token.    
 
 
 *Throws if no vaults are endorsed yet for the given token.*
@@ -108,7 +108,7 @@ function newRelease(address)
 ```
 
 
-@notice Add a previously deployed Vault as the template contract for the latest release, to be used by further &#34;forwarder-style&#34; delegatecall proxy contracts that can be deployed from the registry throw other methods (to save gas).    
+Add a previously deployed Vault as the template contract for the latest release, to be used by further &#34;forwarder-style&#34; delegatecall proxy contracts that can be deployed from the registry throw other methods (to save gas).    
 
 
 *Throws if caller isn&#39;t `self.governance`. Throws if `vault`&#39;s governance isn&#39;t `self.governance`. Throws if the api version is the same as the previous release. Emits a `NewVault` event.*
@@ -131,7 +131,7 @@ function newVault(address,address,address,address,string,string)
 ```
 
 
-@notice Create a new vault for the given token using the latest release in the registry, as a simple &#34;forwarder-style&#34; delegatecall proxy to the latest release. Also adds the new vault to the list of &#34;endorsed&#34; vaults for that token.    
+Create a new vault for the given token using the latest release in the registry, as a simple &#34;forwarder-style&#34; delegatecall proxy to the latest release. Also adds the new vault to the list of &#34;endorsed&#34; vaults for that token.    
 
 
 *`governance` is set in the new vault as `self.governance`, with no ability to override. Throws if caller isn&#39;t `self.governance`. Throws if no releases are registered yet. Throws if there already is a registered vault for the given token with the latest api version. Emits a `NewVault` event.*
@@ -197,7 +197,7 @@ function newExperimentalVault(address,address,address,address,address,string,str
 ```
 
 
-@notice Create a new vault for the given token using the latest release in the registry, as a simple &#34;forwarder-style&#34; delegatecall proxy to the latest release. Does not add the new vault to the list of &#34;endorsed&#34; vaults for that token.    
+Create a new vault for the given token using the latest release in the registry, as a simple &#34;forwarder-style&#34; delegatecall proxy to the latest release. Does not add the new vault to the list of &#34;endorsed&#34; vaults for that token.    
 
 
 *Throws if no releases are registered yet. Emits a `NewExperimentalVault` event.*
@@ -265,7 +265,7 @@ function endorseVault(address)
 ```
 
 
-@notice Adds an existing vault to the list of &#34;endorsed&#34; vaults for that token.    
+Adds an existing vault to the list of &#34;endorsed&#34; vaults for that token.    
 
 
 *`governance` is set in the new vault as `self.governance`, with no ability to override. Throws if caller isn&#39;t `self.governance`. Throws if `vault`&#39;s governance isn&#39;t `self.governance`. Throws if no releases are registered yet. Throws if `vault`&#39;s api version does not match latest release. Throws if there already is a deployment for the vault&#39;s token with the latest api version. Emits a `NewVault` event.*
@@ -311,7 +311,7 @@ function setBanksy(address)
 ```
 
 
-@notice Set the ability of a particular tagger to tag current vaults.    
+Set the ability of a particular tagger to tag current vaults.    
 
 
 *Throws if caller is not `self.governance`.*
@@ -357,7 +357,7 @@ function tagVault(address,string)
 ```
 
 
-@notice Tag a Vault with a message.    
+Tag a Vault with a message.    
 
 
 *Throws if caller is not `self.governance` or an approved tagger. Emits a `VaultTagged` event.*

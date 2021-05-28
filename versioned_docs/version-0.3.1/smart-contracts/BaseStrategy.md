@@ -8,7 +8,7 @@
   function apiVersion(
   ) public returns (string)
 ```
-@notice
+
  Used to track which version of `StrategyAPI` this Strategy
  implements.
 
@@ -41,7 +41,7 @@ This Strategy's name.
   function delegatedAssets(
   ) external returns (uint256)
 ```
-@notice
+
  The amount (priced in want) of the total assets managed by this strategy should not count
  towards Yearn's TVL calculations.
 @dev
@@ -61,7 +61,7 @@ This Strategy's name.
     address _vault
   ) public
 ```
-@notice
+
  Initializes the Strategy, this is called only once, when the
  contract is deployed.
 
@@ -78,7 +78,7 @@ This Strategy's name.
     address _strategist
   ) external
 ```
-@notice
+
  Used to change `strategist`.
 
  This may only be called by governance or the existing strategist.
@@ -95,7 +95,7 @@ This Strategy's name.
     address _keeper
   ) external
 ```
-@notice
+
  Used to change `keeper`.
 
  `keeper` is the only address that may call `tend()` or `harvest()`,
@@ -118,7 +118,7 @@ This Strategy's name.
     address _rewards
   ) external
 ```
-@notice
+
  Used to change `rewards`. EOA or smart contract which has the permission
  to pull rewards from the vault.
 
@@ -136,7 +136,7 @@ This Strategy's name.
     uint256 _delay
   ) external
 ```
-@notice
+
  Used to change `maxReportDelay`. `maxReportDelay` is the maximum number
  of blocks that should pass for `harvest()` to be called.
 
@@ -158,7 +158,7 @@ This Strategy's name.
     uint256 _profitFactor
   ) external
 ```
-@notice
+
  Used to change `profitFactor`. `profitFactor` is used to determine
  if it's worthwhile to harvest, given gas costs. (See `harvestTrigger()`
  for more details.)
@@ -178,7 +178,7 @@ This Strategy's name.
     uint256 _debtThreshold
   ) external
 ```
-@notice
+
  Sets how far the Strategy can go into loss without a harvest and report
  being required.
 
@@ -201,7 +201,7 @@ being required to report to the Vault.
     string _metadataURI
   ) external
 ```
-@notice
+
  Used to change `metadataURI`. `metadataURI` is used to store the URI
 of the file describing the strategy.
 
@@ -228,7 +228,7 @@ on protected functions in the Strategy.
   function estimatedTotalAssets(
   ) public returns (uint256)
 ```
-@notice
+
  Provide an accurate estimate for the total amount of assets
  (principle + return) that this Strategy is currently managing,
  denominated in terms of `want` tokens.
@@ -334,7 +334,7 @@ NOTE: The invariant `_liquidatedAmount + _loss <= _amountNeeded` should always b
     uint256 callCost
   ) public returns (bool)
 ```
-@notice
+
  Provide a signal to the keeper that `tend()` should be called. The
  keeper will provide the estimated gas cost that they would pay to call
  `tend()`, and this function should use that estimate to make a
@@ -364,7 +364,7 @@ NOTE: The invariant `_liquidatedAmount + _loss <= _amountNeeded` should always b
   function tend(
   ) external
 ```
-@notice
+
  Adjust the Strategy's position. The purpose of tending isn't to
  realize gains, but to maximize yield by reinvesting any returns.
 
@@ -380,7 +380,7 @@ NOTE: The invariant `_liquidatedAmount + _loss <= _amountNeeded` should always b
     uint256 callCost
   ) public returns (bool)
 ```
-@notice
+
  Provide a signal to the keeper that `harvest()` should be called. The
  keeper will provide the estimated gas cost that they would pay to call
  `harvest()`, and this function should use that estimate to make a
@@ -422,7 +422,7 @@ NOTE: The invariant `_liquidatedAmount + _loss <= _amountNeeded` should always b
   function harvest(
   ) external
 ```
-@notice
+
  Harvests the Strategy, recognizing any profits or losses and adjusting
  the Strategy's position.
 
@@ -446,7 +446,7 @@ NOTE: The invariant `_liquidatedAmount + _loss <= _amountNeeded` should always b
     uint256 _amountNeeded
   ) external returns (uint256 _loss)
 ```
-@notice
+
  Withdraws `_amountNeeded` to `vault`.
 
  This may only be called by the Vault.
@@ -478,7 +478,7 @@ value.
     address _newStrategy
   ) external
 ```
-@notice
+
  Transfers all `want` from this Strategy to `_newStrategy`.
 
  This may only be called by governance or the Vault.
@@ -496,7 +496,7 @@ value.
   function setEmergencyExit(
   ) external
 ```
-@notice
+
  Activates emergency exit. Once activated, the Strategy will exit its
  position upon the next harvest, depositing all funds into the Vault as
  quickly as is reasonable given on-chain conditions.
@@ -536,7 +536,7 @@ Example:
     address _token
   ) external
 ```
-@notice
+
  Removes tokens from this Strategy that are not the type of tokens
  managed by this Strategy. This may be used in case of accidentally
  sending the wrong kind of token to this Strategy.

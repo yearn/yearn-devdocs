@@ -20,7 +20,7 @@ function initialize(address,address,address,address,string,string)
 ```
 
 
-@notice Initializes the Vault, this is called only once, when the contract is deployed. The performance fee is set to 10% of yield, per Strategy. The management fee is set to 2%, per year. The initial deposit limit is set to 0 (deposits disabled); it must be updated after initialization.    
+Initializes the Vault, this is called only once, when the contract is deployed. The performance fee is set to 10% of yield, per Strategy. The management fee is set to 2%, per year. The initial deposit limit is set to 0 (deposits disabled); it must be updated after initialization.    
 
 
 *If `nameOverride` is not specified, the name will be &#39;yearn&#39; combined with the name of `token`. If `symbolOverride` is not specified, the symbol will be &#39;yv&#39; combined with the symbol of `token`. The token used by the vault should not change balances outside transfers and it must transfer the exact amount requested. Fee on transfer and rebasing are not supported.*
@@ -76,7 +76,7 @@ function apiVersion()
 ```
 
 
-@notice Used to track the deployed version of this contract. In practice you can use this version number to compare with Yearn&#39;s GitHub and determine which version of the source matches this deployed contract.    
+Used to track the deployed version of this contract. In practice you can use this version number to compare with Yearn&#39;s GitHub and determine which version of the source matches this deployed contract.    
 
 
 *All strategies must have an `apiVersion()` that matches the Vault&#39;s `API_VERSION`.*
@@ -99,7 +99,7 @@ function setName(string)
 ```
 
 
-@notice Used to change the value of `name`. This may only be called by governance.    
+Used to change the value of `name`. This may only be called by governance.    
 
 
 
@@ -120,7 +120,7 @@ function setSymbol(string)
 ```
 
 
-@notice Used to change the value of `symbol`. This may only be called by governance.    
+Used to change the value of `symbol`. This may only be called by governance.    
 
 
 
@@ -141,7 +141,7 @@ function setGovernance(address)
 ```
 
 
-@notice Nominate a new address to use as governance. The change does not go into effect immediately. This function sets a pending change, and the governance address is not updated until the proposed governance address has accepted the responsibility. This may only be called by the current governance address.    
+Nominate a new address to use as governance. The change does not go into effect immediately. This function sets a pending change, and the governance address is not updated until the proposed governance address has accepted the responsibility. This may only be called by the current governance address.    
 
 
 
@@ -162,7 +162,7 @@ function acceptGovernance()
 ```
 
 
-@notice Once a new governance address has been proposed using setGovernance(), this function may be called by the proposed address to accept the responsibility of taking over governance for this contract. This may only be called by the proposed governance address.    
+Once a new governance address has been proposed using setGovernance(), this function may be called by the proposed address to accept the responsibility of taking over governance for this contract. This may only be called by the proposed governance address.    
 
 
 *setGovernance() should be called by the existing governance address, prior to calling this function.*
@@ -179,7 +179,7 @@ function setManagement(address)
 ```
 
 
-@notice Changes the management address. Management is able to make some investment decisions adjusting parameters. This may only be called by governance.    
+Changes the management address. Management is able to make some investment decisions adjusting parameters. This may only be called by governance.    
 
 
 
@@ -200,7 +200,7 @@ function setRewards(address)
 ```
 
 
-@notice Changes the rewards address. Any distributed rewards will cease flowing to the old address and begin flowing to this address once the change is in effect. This will not change any Strategy reports in progress, only new reports made after this change goes into effect. This may only be called by governance.    
+Changes the rewards address. Any distributed rewards will cease flowing to the old address and begin flowing to this address once the change is in effect. This will not change any Strategy reports in progress, only new reports made after this change goes into effect. This may only be called by governance.    
 
 
 
@@ -221,7 +221,7 @@ function setLockedProfitDegradation(uint256)
 ```
 
 
-@notice Changes the locked profit degradation.    
+Changes the locked profit degradation.    
 
 
 
@@ -242,7 +242,7 @@ function setDepositLimit(uint256)
 ```
 
 
-@notice Changes the maximum amount of tokens that can be deposited in this Vault. Note, this is not how much may be deposited by a single depositor, but the maximum amount that may be deposited across all depositors. This may only be called by governance.    
+Changes the maximum amount of tokens that can be deposited in this Vault. Note, this is not how much may be deposited by a single depositor, but the maximum amount that may be deposited across all depositors. This may only be called by governance.    
 
 
 
@@ -263,7 +263,7 @@ function setPerformanceFee(uint256)
 ```
 
 
-@notice Used to change the value of `performanceFee`. Should set this value below the maximum strategist performance fee. This may only be called by governance.    
+Used to change the value of `performanceFee`. Should set this value below the maximum strategist performance fee. This may only be called by governance.    
 
 
 
@@ -284,7 +284,7 @@ function setManagementFee(uint256)
 ```
 
 
-@notice Used to change the value of `managementFee`. This may only be called by governance.    
+Used to change the value of `managementFee`. This may only be called by governance.    
 
 
 
@@ -305,7 +305,7 @@ function setGuardian(address)
 ```
 
 
-@notice Used to change the address of `guardian`. This may only be called by governance or the existing guardian.    
+Used to change the address of `guardian`. This may only be called by governance or the existing guardian.    
 
 
 
@@ -326,7 +326,7 @@ function setEmergencyShutdown(bool)
 ```
 
 
-@notice Activates or deactivates Vault mode where all Strategies go into full withdrawal. During Emergency Shutdown: 1. No Users may deposit into the Vault (but may withdraw as usual.) 2. Governance may not add new Strategies. 3. Each Strategy must pay back their debt as quickly as reasonable to minimally affect their position. 4. Only Governance may undo Emergency Shutdown. See contract level note for further details. This may only be called by governance or the guardian.    
+Activates or deactivates Vault mode where all Strategies go into full withdrawal. During Emergency Shutdown: 1. No Users may deposit into the Vault (but may withdraw as usual.) 2. Governance may not add new Strategies. 3. Each Strategy must pay back their debt as quickly as reasonable to minimally affect their position. 4. Only Governance may undo Emergency Shutdown. See contract level note for further details. This may only be called by governance or the guardian.    
 
 
 
@@ -347,7 +347,7 @@ function setWithdrawalQueue(address[20])
 ```
 
 
-@notice Updates the withdrawalQueue to match the addresses and order specified by `queue`. There can be fewer strategies than the maximum, as well as fewer than the total number of strategies active in the vault. `withdrawalQueue` will be updated in a gas-efficient manner, assuming the input is well- ordered with 0x0 only at the end. This may only be called by governance or management.    
+Updates the withdrawalQueue to match the addresses and order specified by `queue`. There can be fewer strategies than the maximum, as well as fewer than the total number of strategies active in the vault. `withdrawalQueue` will be updated in a gas-efficient manner, assuming the input is well- ordered with 0x0 only at the end. This may only be called by governance or management.    
 
 
 *This is order sensitive, specify the addresses in the order in which funds should be withdrawn (so `queue`[0] is the first Strategy withdrawn from, `queue`[1] is the second, etc.) This means that the least impactful Strategy (the Strategy that will have its core positions impacted the least by having funds removed) should be at `queue`[0], then the next least impactful at `queue`[1], and so on.*
@@ -370,7 +370,7 @@ function transfer(address,uint256)
 ```
 
 
-@notice Transfers shares from the caller&#39;s address to `receiver`. This function will always return true, unless the user is attempting to transfer shares to this contract&#39;s address, or to 0x0.    
+Transfers shares from the caller&#39;s address to `receiver`. This function will always return true, unless the user is attempting to transfer shares to this contract&#39;s address, or to 0x0.    
 
 
 
@@ -398,7 +398,7 @@ function transferFrom(address,address,uint256)
 ```
 
 
-@notice Transfers `amount` shares from `sender` to `receiver`. This operation will always return true, unless the user is attempting to transfer shares to this contract&#39;s address, or to 0x0. Unless the caller has given this contract unlimited approval, transfering shares will decrement the caller&#39;s `allowance` by `amount`.    
+Transfers `amount` shares from `sender` to `receiver`. This operation will always return true, unless the user is attempting to transfer shares to this contract&#39;s address, or to 0x0. Unless the caller has given this contract unlimited approval, transfering shares will decrement the caller&#39;s `allowance` by `amount`.    
 
 
 
@@ -493,7 +493,7 @@ function permit(address,address,uint256,uint256,bytes)
 ```
 
 
-@notice Approves spender by owner&#39;s signature to expend owner&#39;s tokens. See https://eips.ethereum.org/EIPS/eip-2612.    
+Approves spender by owner&#39;s signature to expend owner&#39;s tokens. See https://eips.ethereum.org/EIPS/eip-2612.    
 
 
 
@@ -524,7 +524,7 @@ function totalAssets()
 ```
 
 
-@notice Returns the total quantity of all assets under control of this Vault, whether they&#39;re loaned out to a Strategy, or currently held in the Vault.    
+Returns the total quantity of all assets under control of this Vault, whether they&#39;re loaned out to a Strategy, or currently held in the Vault.    
 
 
 
@@ -545,7 +545,7 @@ function deposit()
 ```
 
 
-@notice Deposits `_amount` `token`, issuing shares to `recipient`. If the Vault is in Emergency Shutdown, deposits will not be accepted and this call will fail.    
+Deposits `_amount` `token`, issuing shares to `recipient`. If the Vault is in Emergency Shutdown, deposits will not be accepted and this call will fail.    
 
 
 *Measuring quantity of shares to issues is based on the total outstanding debt that this contract has (&#34;expected value&#34;) instead of the total balance sheet it has (&#34;estimated value&#34;) has important security considerations, and is done intentionally. If this value were measured against external systems, it could be purposely manipulated by an attacker to withdraw more assets than they otherwise should be able to claim by redeeming their shares. On deposit, this means that shares are issued against the total amount that the deposited capital can be given in service of the debt that Strategies assume. If that number were to be lower than the &#34;expected value&#34; at some future point, depositing shares via this method could entitle the depositor to *less* than the deposited value once the &#34;realized value&#34; is updated from further reports by the Strategies to the Vaults. Care should be taken by integrators to account for this discrepancy, by using the view-only methods of this contract (both off-chain and on-chain) to determine if depositing into the Vault is a &#34;good idea&#34;.*
@@ -631,7 +631,7 @@ function maxAvailableShares()
 ```
 
 
-@notice Determines the maximum quantity of shares this Vault can facilitate a withdrawal for, factoring in assets currently residing in the Vault, as well as those deployed to strategies on the Vault&#39;s balance sheet.    
+Determines the maximum quantity of shares this Vault can facilitate a withdrawal for, factoring in assets currently residing in the Vault, as well as those deployed to strategies on the Vault&#39;s balance sheet.    
 
 
 *Regarding how shares are calculated, see dev note on `deposit`. If you want to calculated the maximum a user could withdraw up to, you want to use this function. Note that the amount provided by this function is the theoretical maximum possible from withdrawing, the real amount depends on the realized losses incurred during withdrawal.*
@@ -654,7 +654,7 @@ function withdraw()
 ```
 
 
-@notice Withdraws the calling account&#39;s tokens from this Vault, redeeming amount `_shares` for an appropriate amount of tokens. See note on `setWithdrawalQueue` for further details of withdrawal ordering and behavior.    
+Withdraws the calling account&#39;s tokens from this Vault, redeeming amount `_shares` for an appropriate amount of tokens. See note on `setWithdrawalQueue` for further details of withdrawal ordering and behavior.    
 
 
 *Measuring the value of shares is based on the total outstanding debt that this contract has (&#34;expected value&#34;) instead of the total balance sheet it has (&#34;estimated value&#34;) has important security considerations, and is done intentionally. If this value were measured against external systems, it could be purposely manipulated by an attacker to withdraw more assets than they otherwise should be able to claim by redeeming their shares. On withdrawal, this means that shares are redeemed against the total amount that the deposited capital had &#34;realized&#34; since the point it was deposited, up until the point it was withdrawn. If that number were to be higher than the &#34;expected value&#34; at some future point, withdrawing shares via this method could entitle the depositor to *more* than the expected value once the &#34;realized value&#34; is updated from further reports by the Strategies to the Vaults. Under exceptional scenarios, this could cause earlier withdrawals to earn &#34;more&#34; of the underlying assets than Users might otherwise be entitled to, if the Vault&#39;s estimated value were otherwise measured through external means, accounting for whatever exceptional scenarios exist for the Vault (that aren&#39;t covered by the Vault&#39;s own design.) In the situation where a large withdrawal happens, it can empty the vault balance and the strategies in the withdrawal queue. Strategies not in the withdrawal queue will have to be harvested to rebalance the funds and make the funds available again to withdraw.*
@@ -772,7 +772,7 @@ function pricePerShare()
 ```
 
 
-@notice Gives the price for a single Vault share.    
+Gives the price for a single Vault share.    
 
 
 *See dev note on `withdraw`.*
@@ -795,7 +795,7 @@ function addStrategy(address,uint256,uint256,uint256,uint256)
 ```
 
 
-@notice Add a Strategy to the Vault. This may only be called by governance.    
+Add a Strategy to the Vault. This may only be called by governance.    
 
 
 *The Strategy will be appended to `withdrawalQueue`, call `setWithdrawalQueue` to change the order.*
@@ -822,7 +822,7 @@ function updateStrategyDebtRatio(address,uint256)
 ```
 
 
-@notice Change the quantity of assets `strategy` may manage. This may be called by governance or management.    
+Change the quantity of assets `strategy` may manage. This may be called by governance or management.    
 
 
 
@@ -844,7 +844,7 @@ function updateStrategyMinDebtPerHarvest(address,uint256)
 ```
 
 
-@notice Change the quantity assets per block this Vault may deposit to or withdraw from `strategy`. This may only be called by governance or management.    
+Change the quantity assets per block this Vault may deposit to or withdraw from `strategy`. This may only be called by governance or management.    
 
 
 
@@ -866,7 +866,7 @@ function updateStrategyMaxDebtPerHarvest(address,uint256)
 ```
 
 
-@notice Change the quantity assets per block this Vault may deposit to or withdraw from `strategy`. This may only be called by governance or management.    
+Change the quantity assets per block this Vault may deposit to or withdraw from `strategy`. This may only be called by governance or management.    
 
 
 
@@ -888,7 +888,7 @@ function updateStrategyPerformanceFee(address,uint256)
 ```
 
 
-@notice Change the fee the strategist will receive based on this Vault&#39;s performance. This may only be called by governance.    
+Change the fee the strategist will receive based on this Vault&#39;s performance. This may only be called by governance.    
 
 
 
@@ -910,7 +910,7 @@ function migrateStrategy(address,address)
 ```
 
 
-@notice Migrates a Strategy, including all assets from `oldVersion` to `newVersion`. This may only be called by governance.    
+Migrates a Strategy, including all assets from `oldVersion` to `newVersion`. This may only be called by governance.    
 
 
 *Strategy must successfully migrate all capital and positions to new Strategy, or else this will upset the balance of the Vault. The new Strategy should be &#34;empty&#34; e.g. have no prior commitments to this Vault, otherwise it could have issues.*
@@ -934,7 +934,7 @@ function revokeStrategy()
 ```
 
 
-@notice Revoke a Strategy, setting its debt limit to 0 and preventing any future deposits. This function should only be used in the scenario where the Strategy is being retired but no migration of the positions are possible, or in the extreme scenario that the Strategy needs to be put into &#34;Emergency Exit&#34; mode in order for it to exit as quickly as possible. The latter scenario could be for any reason that is considered &#34;critical&#34; that the Strategy exits its position as fast as possible, such as a sudden change in market conditions leading to losses, or an imminent failure in an external dependency. This may only be called by governance, the guardian, or the Strategy itself. Note that a Strategy will only revoke itself during emergency shutdown.    
+Revoke a Strategy, setting its debt limit to 0 and preventing any future deposits. This function should only be used in the scenario where the Strategy is being retired but no migration of the positions are possible, or in the extreme scenario that the Strategy needs to be put into &#34;Emergency Exit&#34; mode in order for it to exit as quickly as possible. The latter scenario could be for any reason that is considered &#34;critical&#34; that the Strategy exits its position as fast as possible, such as a sudden change in market conditions leading to losses, or an imminent failure in an external dependency. This may only be called by governance, the guardian, or the Strategy itself. Note that a Strategy will only revoke itself during emergency shutdown.    
 
 
 
@@ -974,7 +974,7 @@ function addStrategyToQueue(address)
 ```
 
 
-@notice Adds `strategy` to `withdrawalQueue`. This may only be called by governance or management.    
+Adds `strategy` to `withdrawalQueue`. This may only be called by governance or management.    
 
 
 *The Strategy will be appended to `withdrawalQueue`, call `setWithdrawalQueue` to change the order.*
@@ -997,7 +997,7 @@ function removeStrategyFromQueue(address)
 ```
 
 
-@notice Remove `strategy` from `withdrawalQueue`. This may only be called by governance or management.    
+Remove `strategy` from `withdrawalQueue`. This may only be called by governance or management.    
 
 
 *We don&#39;t do this with revokeStrategy because it should still be possible to withdraw from the Strategy if it&#39;s unwinding.*
@@ -1020,7 +1020,7 @@ function debtOutstanding()
 ```
 
 
-@notice Determines if `strategy` is past its debt limit and if any tokens should be withdrawn to the Vault.    
+Determines if `strategy` is past its debt limit and if any tokens should be withdrawn to the Vault.    
 
 
 
@@ -1072,7 +1072,7 @@ function creditAvailable()
 ```
 
 
-@notice Amount of tokens in Vault a Strategy has access to as a credit line. This will check the Strategy&#39;s debt limit, as well as the tokens available in the Vault, and determine the maximum amount of tokens (if any) the Strategy may draw on. In the rare case the Vault is in emergency shutdown this will return 0.    
+Amount of tokens in Vault a Strategy has access to as a credit line. This will check the Strategy&#39;s debt limit, as well as the tokens available in the Vault, and determine the maximum amount of tokens (if any) the Strategy may draw on. In the rare case the Vault is in emergency shutdown this will return 0.    
 
 
 
@@ -1124,7 +1124,7 @@ function expectedReturn()
 ```
 
 
-@notice Provide an accurate expected value for the return this `strategy` would provide to the Vault the next time `report()` is called (since the last time it was called).    
+Provide an accurate expected value for the return this `strategy` would provide to the Vault the next time `report()` is called (since the last time it was called).    
 
 
 
@@ -1176,7 +1176,7 @@ function report(uint256,uint256,uint256)
 ```
 
 
-@notice Reports the amount of assets the calling Strategy has free (usually in terms of ROI). The performance fee is determined here, off of the strategy&#39;s profits (if any), and sent to governance. The strategist&#39;s fee is also determined here (off of profits), to be handled according to the strategist on the next harvest. This may only be called by a Strategy managed by this Vault.    
+Reports the amount of assets the calling Strategy has free (usually in terms of ROI). The performance fee is determined here, off of the strategy&#39;s profits (if any), and sent to governance. The strategist&#39;s fee is also determined here (off of profits), to be handled according to the strategist on the next harvest. This may only be called by a Strategy managed by this Vault.    
 
 
 *For approved strategies, this is the most efficient behavior. The Strategy reports back what it has free, then Vault &#34;decides&#34; whether to take some back or give it more. Note that the most it can take is `gain + _debtPayment`, and the most it can give is all of the remaining reserves. Anything outside of those bounds is abnormal behavior. All approved strategies must have increased diligence around calling this function, as abnormal behavior could become catastrophic.*
@@ -1207,7 +1207,7 @@ function sweep(address)
 ```
 
 
-@notice Removes tokens from this Vault that are not the type of token managed by this Vault. This may be used in case of accidentally sending the wrong kind of token to this Vault. Tokens will be sent to `governance`. This will fail if an attempt is made to sweep the tokens that this Vault manages. This may only be called by governance.    
+Removes tokens from this Vault that are not the type of token managed by this Vault. This may be used in case of accidentally sending the wrong kind of token to this Vault. Tokens will be sent to `governance`. This will fail if an attempt is made to sweep the tokens that this Vault manages. This may only be called by governance.    
 
 
 
