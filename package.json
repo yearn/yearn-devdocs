@@ -45,8 +45,8 @@
     "glob": "^7.1.6",
     "glob-promise": "^4.1.0",
     "solidity-docgen": "^0.5.11",
-    "vydoc": "https://github.com/steffenix/vydoc",
     "ts-node": "^9.1.1",
-    "typescript": "^4.2.4"
+    "typescript": "^4.2.4",
+    "vydoc": "https://github.com/steffenix/vydoc"
   }
 }
