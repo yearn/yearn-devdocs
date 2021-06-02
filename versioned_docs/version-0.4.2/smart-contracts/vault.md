@@ -16,7 +16,7 @@
 
 ### initialize
 ```solidity
-function initialize(address,address,address,address,string,string)
+function initialize(address,address,address,string,string)
 ```
 
 
@@ -45,7 +45,34 @@ Initializes the Vault, this is called only once, when the contract is deployed. 
 
 ### initialize
 ```solidity
-function initialize(address,address,address,address,string,string,address)
+function initialize(address,address,address,string,string,address)
+```
+
+
+
+*If `nameOverride` is not specified, the name will be &#39;yearn&#39; combined with the name of `token`. If `symbolOverride` is not specified, the symbol will be &#39;yv&#39; combined with the symbol of `token`. The token used by the vault should not change balances outside transfers and it must transfer the exact amount requested. Fee on transfer and rebasing are not supported.*
+
+
+#### Parameters:
+| Name                           | Type          | Description                                    |
+| :----------------------------- | :------------ | :--------------------------------------------- |
+|  * token * |  *  * |  * The token that may be deposited into this Vault. * |
+|  * governance * |  *  * |  * The address authorized for governance interactions. * |
+|  * rewards * |  *  * |  * The address to distribute rewards to. * |
+|  * management * |  *  * |  * The address of the vault manager. * |
+|  * nameOverride * |  *  * |  * Specify a custom Vault name. Leave empty for default choice. * |
+|  * symbolOverride * |  *  * |  * Specify a custom Vault symbol name. Leave empty for default choice. * |
+|  * guardian * |  *  * |  * The address authorized for guardian interactions. Defaults to caller. * |
+
+
+
+
+
+
+
+### initialize
+```solidity
+function initialize(address,address,address,string,string,address,address)
 ```
 
 

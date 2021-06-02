@@ -127,7 +127,7 @@ Add a previously deployed Vault as the template contract for the latest release,
 
 ### newVault
 ```solidity
-function newVault(address,address,address,address,string,string)
+function newVault(address,address,address,string,string)
 ```
 
 
@@ -161,7 +161,7 @@ Create a new vault for the given token using the latest release in the registry,
 
 ### newVault
 ```solidity
-function newVault(address,address,address,address,string,string,uint256)
+function newVault(address,address,address,string,string,uint256)
 ```
 
 
@@ -193,7 +193,7 @@ function newVault(address,address,address,address,string,string,uint256)
 
 ### newExperimentalVault
 ```solidity
-function newExperimentalVault(address,address,address,address,address,string,string)
+function newExperimentalVault(address,address,address,address,string,string)
 ```
 
 
@@ -228,7 +228,7 @@ Create a new vault for the given token using the latest release in the registry,
 
 ### newExperimentalVault
 ```solidity
-function newExperimentalVault(address,address,address,address,address,string,string,uint256)
+function newExperimentalVault(address,address,address,address,string,string,uint256)
 ```
 
 
