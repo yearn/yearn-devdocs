@@ -127,7 +127,7 @@ function newRelease(address)
 
 ### newVault
 ```solidity
-function newVault(address,address,address,address,string,string)
+function newVault(address,address,address,string,string)
 ```
 
 
@@ -161,7 +161,7 @@ function newVault(address,address,address,address,string,string)
 
 ### newVault
 ```solidity
-function newVault(address,address,address,address,string,string,uint256)
+function newVault(address,address,address,string,string,uint256)
 ```
 
 
@@ -193,7 +193,7 @@ function newVault(address,address,address,address,string,string,uint256)
 
 ### newExperimentalVault
 ```solidity
-function newExperimentalVault(address,address,address,address,address,string,string)
+function newExperimentalVault(address,address,address,address,string,string)
 ```
 
 
@@ -228,7 +228,7 @@ function newExperimentalVault(address,address,address,address,address,string,str
 
 ### newExperimentalVault
 ```solidity
-function newExperimentalVault(address,address,address,address,address,string,string,uint256)
+function newExperimentalVault(address,address,address,address,string,string,uint256)
 ```
 
 
