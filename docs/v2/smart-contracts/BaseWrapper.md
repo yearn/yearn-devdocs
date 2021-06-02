@@ -18,7 +18,7 @@
     address _registry
   ) external
 ```
-@notice
+
  Used to update the yearn registry.
 
 
@@ -32,7 +32,7 @@
   function bestVault(
   ) public returns (contract VaultAPI)
 ```
-@notice
+
  Used to get the most revent vault for the token using the registry.
 
 
@@ -46,7 +46,7 @@
   function allVaults(
   ) public returns (contract VaultAPI[])
 ```
-@notice
+
  Used to get all vaults from the registery for the token
 
 
@@ -69,7 +69,7 @@
   function totalVaultBalance(
   ) public returns (uint256 balance)
 ```
-@notice
+
  Used to get the balance of an account accross all the vaults for a token.
  @dev will be used to get the wrapper balance using totalVaultBalance(address(this)).
  @param account The address of the account.
@@ -82,7 +82,7 @@
   function totalAssets(
   ) public returns (uint256 assets)
 ```
-@notice
+
  Used to get the TVL on the underlying vaults.
  @return assets the sum of all the assets managed by the underlying vaults.
 
