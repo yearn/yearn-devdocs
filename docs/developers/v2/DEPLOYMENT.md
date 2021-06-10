@@ -4,26 +4,25 @@
 
 ## Requirements
 
-Make sure you have the brownie environment setup before trying to deploy a vault. Check out the [Readme MD](https://github.com/yearn/yearn-vaults/blob/master/README.md) for instructions.
+Make sure you have the brownie environment setup before trying to deploy a vault. Check out the [Readme MD in Yearn Vaults Repo](https://github.com/yearn/yearn-vaults/blob/master/README.md) for instructions.
 
 The below instructions show some python commands that assume you are using the brownie console or a brownie script setup is in place.
 
 ## Deploying a new Experimental Vault
 
-1. Clone this repo and run `brownie run scripts/deploy.py --network <network-to-deploy-vault>`
+1. Clone the [Yearn Vaults Repo](https://github.com/yearn/yearn-vaults/) and run `brownie run scripts/deploy.py --network <network-to-deploy-vault>`
 1. Choose the brownie account for deploying your vault. This account needs to have balance to pay for the deploy transaction.
 1. Confirm the script is using the latest version of registry `v2.registry.ychad.eth` against the planned new release vault to be sure its an updated version. (Can validate on Etherscan for latest address)
 1. Select the version of vault to deploy or press enter to use latest release.
 1. Enter `Y` when prompt to deploy Proxy Vault
-1. Enter the checksummed address of the ERC20 token the vault will use. 
+1. Enter the checksummed address of the ERC20 token the vault will use.
 1. Enter the vault Parameters (Below are some suggested values):
    - Set your address or an address you control as governance.
    - Set Treasury (`treasury.ychad.eth`) as the rewards address.
    - Set Core Dev multisig (`dev.ychad.eth`) as guardian.
    - Set Strategist multisig (`brain.ychad.eth`) as management.
    - Set description and symbol for vault or use suggested as default (can be changed on chain later)
-1. Confirm the Parameters are set correctly and press `y`and ENTER to deploy vault. 
-   
+1. Confirm the Parameters are set correctly and press `y`and ENTER to deploy vault.
 1. Check new vault has ABI setup on Etherscan (Some vault versions from older releases may have verification issues with Vyper and proxy detection on Etherscan, consider using latest releases >0.3.5 to ensure verification works).
 
 1. Set up the vault with correct deposit limit:
@@ -31,6 +30,7 @@ The below instructions show some python commands that assume you are using the b
    ```python
    vault.setDepositLimit(limit)
    ```
+
 1. Set management fee to 0:
 
    ```python
@@ -38,18 +38,18 @@ The below instructions show some python commands that assume you are using the b
    ```
 
 1. (Optional) Set governance to ychad.eth (`0xFEB4acf3df3cDEA7399794D0869ef76A6EfAff52`) if vault is planned to be endorsed soon:
-  - Note you can still make changes to the vault after setting governance up until governance is accepted
 
-   ```python
-   vault.setGovernance(ychad.eth)
-   ```
+- Note you can still make changes to the vault after setting governance up until governance is accepted
 
+```python
+vault.setGovernance(ychad.eth)
+```
 
 ## Deploying a new Strategy
 
 1. Create a new issue in the strategies' [repo](https://github.com/iearn-finance/yearn-strategies/issues) using the template `Strategy Review`. **Complete all the fields**.
 1. If the strategy is targeting a new protocol/new chain, not currently approved by yearn (used in production), a due diligence and path to production plan documents may also be required for the strategy to be considered for endorsing. [PATH TO PROD](PATH_TO_PROD.md)
-Examples [SNX](https://hackmd.io/0w1RZh7DSc27A9EyzlHbJQ?view), [VESPER](https://hackmd.io/@Ap_76vwNTg-vxJxbiaLMMQ/SkXEzic7O) 
+   Examples [SNX](https://hackmd.io/0w1RZh7DSc27A9EyzlHbJQ?view), [VESPER](https://hackmd.io/@Ap_76vwNTg-vxJxbiaLMMQ/SkXEzic7O)
 1. Coordinate with Core Dev strategist for getting a review on [board](https://github.com/orgs/iearn-finance/projects/5).
 1. Complete peer review by at least 2 strategists.
 1. Check if `want` token has a deployed vault already (>=v0.3.0) and coordinate to use that first if possible.
@@ -69,8 +69,8 @@ Examples [SNX](https://hackmd.io/0w1RZh7DSc27A9EyzlHbJQ?view), [VESPER](https://
    performance_fee = 1000            # Strategist perf fee: 10%
 
    vault.addStrategy(
-     strategy, 
-     debt_ratio, 
+     strategy,
+     debt_ratio,
      minDebtPerHarvest,
      maxDebtPerHarvest,
      performance_fee
@@ -87,6 +87,16 @@ Examples [SNX](https://hackmd.io/0w1RZh7DSc27A9EyzlHbJQ?view), [VESPER](https://
    ```
 
    - `keep3r_manager` = `0x736D7e3c5a6CB2CE3B764300140ABF476F6CFCCF`
+
+1. Set health check:
+
+   ```python
+   strategy.setHealthCheck(health_check)
+   ```
+
+   - `health_check` = `0xddcea799ff1699e98edf118e0629a974df7df012`
+
+**NOTE**: see section on [ health check ](#health-checks) for more details.
 
 1. Set rewards:
 
@@ -132,7 +142,8 @@ In addition to the 2 strategists, a Core Developer has to review the strategy be
    ```
 
 1. Set parameters for vault correctly before endorse:
-   - Set Governance to (`ychad.eth`) 
+
+   - Set Governance to (`ychad.eth`)
    - Set Treasury (`treasury.ychad.eth`) as the rewards address.
    - Set Core Dev multisig (`dev.ychad.eth`) as guardian.
    - Set Strategist multisig (`brain.ychad.eth`) as management.
@@ -162,7 +173,9 @@ registry.endorseVault(vault)
    ```
 
 ## Publishing Your Strategy Description
-These steps are required for all strategies. These descriptions will be pulled into the new v3 website and used to generate strategy diagrams. 
+
+These steps are required for all strategies. These descriptions will be pulled into the new v3 website and used to generate strategy diagrams.
+
 1. Create a pull request [at this link](https://github.com/yearn/yearn-meta/tree/master/data/strategies) to add a new `.json` file with your strategy description and details.
 2. Using other strategy files as a reference, create a 1-2 sentence description for your strategy.
 3. The author field is optional.
@@ -205,12 +218,77 @@ These are the standard deposit limits per stage. They can be adjusted on a case 
 - Be sure to reward people who helped you.
 - You can find the sharer here: [0x2c641e14afecb16b4aa6601a40ee60c3cc792f7d](https://etherscan.io/address/0x2c641e14afecb16b4aa6601a40ee60c3cc792f7d)
 
+### Health Checks
+
+Since the v0.4.3 release we introduce the concept of Health Checks contracts which are helper contracts that can validate the end state of a harvest or critical transaction during vaults and strategies normal operations to ensure the vault accounting stays within established safe parameters.
+
+You can think of these contracts as on-chain unit tests or "self asserts" that ensure that the end state of a critical transaction matches an expected condition. The design allows for health check to be configure per individual vault/strategy. In case the "assert" doesn't match expectations the entire transaction will revert and will require manual intervention by strategist/core devs.
+
+Vaults from release v0.4.3 and onward support attaching an on-chain health check contract to be called after every harvest report.
+
+## Note on Health Checks Backward Compatibility
+
+The health checks are design to be backward compatible. To target already deployed vaults we releases patch versions of all existing tagged release updating `BaseStrategy`. e.g:
+
+v0.3.5 -> [v0.3.5-1](https://github.com/yearn/yearn-vaults/tree/v0.3.5-1) (compatible version)
+
+## Adding Health Checks to your strategy
+
+1. Before deploying a strategy with [brownie-mix](https://github.com/yearn/brownie-strategy-mix) make sure your `brownie-config.yml` points to the correct patched vault version to get the Health Check enabled `BaseStrategy` imported to your Strategy.
+
+1. No change should be necessary on your extended Strategy logic to interact with the health check contract.
+   (Check your contract size to see if refactoring is needed for compilation)
+
+1. Update your unit tests to set to the common Health Check contract [health.ychad.eth](https://etherscan.io/address/0xddcea799ff1699e98edf118e0629a974df7df012)
+
+1. Test your normal harvest operations in unit tests to validate integrations work correctly in ganache-fork.
+
+## Health Check Operations
+
+Health checks are meant to run as part of normal harvest/report interaction in strategy and vaults.
+
+A global setting is used to check against for deviations on reported profit and losses that are within a safe interval. Any report/harvest that falls outside this global safe interval will report.
+
+In case there is a harvest/report revert transaction detected on chain manual intervention is required to debug and accept the transaction into the vaults accounting, this should be done after proper validation by strategist multi-sig and core group that in fact the deviation is expected.
+
+Disabling health checks is meant to be a one time special event using the following steps:
+
+```
+# disables next health check on harvest
+strategy.setDoHealthCheck(false, { account: brain.ychad.eth });
+# do harvest with profit/loss deviation
+strategy.harvest();
+```
+
+After this manual harvest the health check will be automatically enabled back for further harvests.
+
+**NOT RECOMMENDED**: Health check can be disabled permanently by setting the health check contract to address 0x0 in the Strategy Contract. This should be done only on extreme circumstances and if you know what you are doing.
+
+## Customizing Health Checks
+
+The Common Health Check Contract `health.ychad.eth` supports a Global default health check setting for profit/loss.
+
+It also supports specific profit/loss limit checks per strategy via the following operation:
+
+```
+healthcheck.setStrategyLimits(strategy, profitLimit, lossLimit)
+```
+
+Finally a custom check contract can be deployed and attached to the Common Health Check contract to work as a registry for all vaults/strategies using the following operation:
+
+```
+healthcheck.setCheck(strategy, customHealthCheck)
+```
+
+Custom Health Check should follow the interface for [custom health checks](https://github.com/yearn/yearn-vaults/blob/3bea2d8c070efeb05bc02d7d0136120bc516af4b/contracts/CommonHealthCheck.sol#L5)
+
 ### Addresses
 
 | Identity               | ENS                   | Address                                    |
-| ---------------------- | --------------------- |------------------------------------------- |
+| ---------------------- | --------------------- | ------------------------------------------ |
 | V2 Registry            | v2.registry.ychad.eth | 0x50c1a2eA0a861A967D9d0FFE2AE4012c2E053804 |
 | Yearn multisig (daddy) | ychad.eth             | 0xFEB4acf3df3cDEA7399794D0869ef76A6EfAff52 |
 | Strategist multisig    | brain.ychad.eth       | 0x16388463d60FFE0661Cf7F1f31a7D658aC790ff7 |
 | Core Dev multisig      | dev.ychad.eth         | 0x846e211e8ba920B353FB717631C015cf04061Cc9 |
 | Treasury               | treasury.ychad.eth    | 0x93A62dA5a14C80f265DAbC077fCEE437B1a0Efde |
+| Health Check           | health.ychad.eth      | 0xDDCea799fF1699e98EDF118e0629A974Df7DF012 |
