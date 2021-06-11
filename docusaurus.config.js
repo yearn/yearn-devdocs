@@ -27,6 +27,18 @@ module.exports = {
           label: "Partners"
         },
         {
+          to: 'contributing/index',
+          label: "Contributing"
+        },
+        {
+          to: 'resources/index',
+          label: "Resources"
+        },
+        {
+          to: 'securityResearchers/index',
+          label: "Security researchers"
+        }, 
+        {
           type: 'docsVersionDropdown',
           dropdownItemsBefore: [],
           position: 'right',
@@ -74,7 +86,7 @@ module.exports = {
       '@docusaurus/preset-classic',
       {
         docs: {
-          path: "docs/v2",
+          path: "docs/developers/v2",
           routeBasePath: "v2",
           sidebarPath: require.resolve('./sidebars/sidebars.js'),
           // Please change this to your repo.
@@ -92,7 +104,7 @@ module.exports = {
       '@docusaurus/plugin-content-docs',
       {
         id: 'v_one',
-        path: 'docs/v1',
+        path: 'docs/developers/v1',
         editCurrentVersion: true,
         routeBasePath: 'v1',
         sidebarPath: require.resolve('./sidebars/sidebarsV1.js'),
@@ -120,6 +132,42 @@ module.exports = {
         editCurrentVersion: true,
         routeBasePath: 'partners',
         sidebarPath: require.resolve('./sidebars/sidebarsPartners.js'),
+        showLastUpdateAuthor: true,
+        showLastUpdateTime: true,
+      },
+    ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'contributing',
+        path: 'docs/contributing',
+        editCurrentVersion: true,
+        routeBasePath: 'contributing',
+        sidebarPath: require.resolve('./sidebars/sidebarsContributing.js'),
+        showLastUpdateAuthor: true,
+        showLastUpdateTime: true,
+      },
+    ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'resources',
+        path: 'docs/resources',
+        editCurrentVersion: true,
+        routeBasePath: 'resources',
+        sidebarPath: require.resolve('./sidebars/sidebarsResources.js'),
+        showLastUpdateAuthor: true,
+        showLastUpdateTime: true,
+      },
+    ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'securityResearchers',
+        path: 'docs/securityResearchers',
+        editCurrentVersion: true,
+        routeBasePath: 'securityResearchers',
+        sidebarPath: require.resolve('./sidebars/sidebarsSecurityResearchers.js'),
         showLastUpdateAuthor: true,
         showLastUpdateTime: true,
       },
