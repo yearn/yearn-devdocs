@@ -1,1 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[12],{74:function(e){e.exports=JSON.parse('{"pluginId":"partners","version":"current","label":"Next","isLast":true,"docsSidebars":{"mySidebar":[{"type":"link","label":"Partnership","href":"/yearn-devdocs/partners/introduction"}]},"permalinkToSidebar":{"/yearn-devdocs/partners/introduction":"mySidebar"}}')}}]);
