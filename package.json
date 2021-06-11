@@ -10,9 +10,10 @@
     "deploy": "docusaurus deploy",
     "clear": "docusaurus clear",
     "serve": "docusaurus serve",
+    "test": "npx ava",
     "write-translations": "docusaurus write-translations",
     "write-heading-ids": "docusaurus write-heading-ids",
-    "make-sol-doc": "solidity-docgen --templates=templates -i ../yearn-vaults/contracts/ -o docs/v2/smart-contracts",
+    "make-sol-doc": "solidity-docgen --templates=templates --helpers=helpers/solidityHelpers.js -i ../yearn-vaults/contracts/ -o docs/v2/smart-contracts",
     "make-vyper-doc": "vydoc -i ../yearn-vaults/contracts/ -o docs/v2/smart-contracts -t ./templates/contract.ejs"
   },
   "dependencies": {
@@ -42,6 +43,7 @@
     "@types/react": "^17.0.3",
     "@types/react-helmet": "^6.1.1",
     "@types/react-router-dom": "^5.1.7",
+    "ava": "^3.15.0",
     "glob": "^7.1.6",
     "glob-promise": "^4.1.0",
     "solidity-docgen": "^0.5.11",
