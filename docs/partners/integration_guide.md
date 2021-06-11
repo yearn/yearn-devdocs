@@ -2,9 +2,9 @@
 title: Integration Methods
 ---
 
-We propose two options:
+We propose two different integration methods for different use cases. You can use the one that fits you better.
 
-## 1/ WRAPPER
+## Wrapper
 
 User makes a deposit into your Wrapper,
 Wrapper deposits into Yearn Vault,
@@ -20,7 +20,7 @@ Implications:
 - each vault requires its own wrapper.
 - solution and testing is comparatively complex.
 
-## DELEGATED DEPOSIT
+## Delegated Deposit
 
 User makes a deposit via your routing contract,
 Routing contract routes the deposit into the Yearn Vault,
