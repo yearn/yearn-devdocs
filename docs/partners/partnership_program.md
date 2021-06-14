@@ -1,5 +1,5 @@
 ---
-title: Introduction
+title: Partnership Program
 ---
 
 If you want to integrate DeFi for your users to let them earn yields on their accounts you can do this now with our partnership program.
