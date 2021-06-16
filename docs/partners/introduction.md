@@ -4,7 +4,7 @@ title: Partnership Program
 
 Yearn's partnership program allows developers to easily integrate yield into their own services. 
 
-In an effort to make Yearn vaults accessible from virtually anywhere, any protocol that integrates Yearn vaults can earn up to a 50% profit share from their contributed TVL. The Partnership program is being tested, audited, and we’ll commence a gradual release with selected Partners over the coming months.
+In an effort to make yVaults accessible from virtually anywhere, any protocol that integrates yVaults can earn up to a 50% profit share from their contributed TVL. The Partnership program is being tested, audited, and we’ll commence a gradual release with selected Partners over the coming months.
 
 If you are interested in partnering with us, we’d love to hear from you! Please reach out to us through [this form](https://yearnfinance.typeform.com/to/uP7xOJUN)
 
