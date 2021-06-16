@@ -2,7 +2,7 @@
 title: Integration Methods
 ---
 
-There are two methods of integration, each used for different purposes. 
+We propose two methods of integration, each used for different purposes. If you think of an integration method that is more ideal, we are open to accepting it.
 
 ## Wrapper
 
