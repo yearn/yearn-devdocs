@@ -2,17 +2,17 @@
 title: Partnership Program
 ---
 
-If you want to integrate DeFi for your users to let them earn yields on their accounts you can do this now with our partnership program.
+Yearn's partnership program allows developers to easily integrate yield into their own services. 
 
-Yearn Partners aims to make Yearn vaults accessible from virtually anywhere. Any protocol that integrates Yearn vaults can earn up to a 50% profit share from their contributed TVL. The Partnership program is being tested, audited, and we’ll commence a gradual release with selected Partners over the coming months.
+In an effort to make Yearn vaults accessible from virtually anywhere, any protocol that integrates Yearn vaults can earn up to a 50% profit share from their contributed TVL. The Partnership program is being tested, audited, and we’ll commence a gradual release with selected Partners over the coming months.
 
-If you are interested in partnering with us, we’d love to hear from you! Please reach out to us [here](https://yearnfinance.typeform.com/to/uP7xOJUN)
+If you are interested in partnering with us, we’d love to hear from you! Please reach out to us through [this form](https://yearnfinance.typeform.com/to/uP7xOJUN)
 
 ## Profit Share
 
 We offer profit share based on Total TVL contributed across all vaults. This is our total fees generated, deducted by overhead costs to maintain and operate the vaults. For now, we are paying out profit shares manually, retroactively, but we want to move it on-chain as the program matures.
 
-The profit-sharing is paid out in the vault tokens that you have TVL in.
+Profit-sharing is paid out in the native token of the vaults that partners are utilizing. 
 
 This is the payout table we have set:  
 
@@ -37,9 +37,4 @@ Tiers are what determine the percentage of profit shared with the partner. They 
 
 *) _Calculated by deducting 35% from Gross Revenue to cover operational costs._
 
-So for example, let's assume:
-
-1. The partner contributes on average with $400m TVL for a full year;
-2. Average performance of your TVL in the vaults is 10.5%;
-
-You can copy this [document](https://docs.google.com/spreadsheets/d/1hzgtBkuyLsX0R7t4AwCcDhw3x77UgGrVCXNfQ0CVTbE/edit?usp=sharing) to play with the numbers.
+Estimate how your protocol's earnings with the [Profit Sharing Scenario Simulator](https://docs.google.com/spreadsheets/d/1hzgtBkuyLsX0R7t4AwCcDhw3x77UgGrVCXNfQ0CVTbE/edit?usp=sharing)
