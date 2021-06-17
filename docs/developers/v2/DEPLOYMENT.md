@@ -220,67 +220,71 @@ These are the standard deposit limits per stage. They can be adjusted on a case 
 
 ### Health Checks
 
-Since the v0.4.3 release we introduce the concept of Health Checks contracts which are helper contracts that can validate the end state of a harvest or critical transaction during vaults and strategies normal operations to ensure the vault accounting stays within established safe parameters.
+Since the v0.4.3 release, we introduce the concept of Health Checks contracts to vaults and strategies. These are helper contracts that can validate the end state of a harvest, or critical transaction, to ensure the accounting stays within established safe parameters.
 
-You can think of these contracts as on-chain unit tests or "self asserts" that ensure that the end state of a critical transaction matches an expected condition. The design allows for health check to be configure per individual vault/strategy. In case the "assert" doesn't match expectations the entire transaction will revert and will require manual intervention by strategist/core devs.
+You can think of these contracts as on-chain unit tests, or "self asserts" that ensure that the end state of a critical transaction matches an expected condition. The design allows for health checks to be configured per individual vault or strategy. In case the "assert" doesn't match expectations the entire transaction will revert and will require manual intervention by strategists, or core devs.
 
-Vaults from release v0.4.3 and onward support attaching an on-chain health check contract to be called after every harvest report.
+Vaults from release v0.4.3 and onward, support attaching an on-chain health check contract to be called after every harvest report.
 
 ## Note on Health Checks Backward Compatibility
 
-The health checks are design to be backward compatible. To target already deployed vaults we releases patch versions of all existing tagged release updating `BaseStrategy`. e.g:
+The health checks are designed to be backward compatible. To target already deployed vaults, we released a patch for each tagged release of `BaseStrategy`. e.g:
 
 v0.3.5 -> [v0.3.5-1](https://github.com/yearn/yearn-vaults/tree/v0.3.5-1) (compatible version)
 
 ## Adding Health Checks to your strategy
 
-1. Before deploying a strategy with [brownie-mix](https://github.com/yearn/brownie-strategy-mix) make sure your `brownie-config.yml` points to the correct patched vault version to get the Health Check enabled `BaseStrategy` imported to your Strategy.
+1. Before deploying a strategy with [brownie-strategy-mix](https://github.com/yearn/brownie-strategy-mix) make sure your `brownie-config.yml` points to the correct patched vault version, to get a Health Check enabled `BaseStrategy` imported to your strategy.
 
-1. No change should be necessary on your extended Strategy logic to interact with the health check contract.
-   (Check your contract size to see if refactoring is needed for compilation)
+1. No change should be necessary on your extended `Strategy` logic to interact with the health check contract. **IMPORTANT**: Check your contract size to see if refactoring is needed for compilation.
 
 1. Update your unit tests to set to the common Health Check contract [health.ychad.eth](https://etherscan.io/address/0xddcea799ff1699e98edf118e0629a974df7df012)
 
-1. Test your normal harvest operations in unit tests to validate integrations work correctly in ganache-fork.
+1. Test your normal harvest operations using mainnet-fork and unit tests to validate that the integration is working correctly.
 
 ## Health Check Operations
 
-Health checks are meant to run as part of normal harvest/report interaction in strategy and vaults.
+A global setting is used to check against deviations in reported profit and losses that are within a safe interval. Any report/harvest that falls outside this global safe interval will report.
 
-A global setting is used to check against for deviations on reported profit and losses that are within a safe interval. Any report/harvest that falls outside this global safe interval will report.
+In case there is a harvest/report revert transaction detected on-chain manual intervention is required to debug and accept the transaction into the vaults accounting. This should be done after proper validation by the strategist's multi-sig and Core Devs group.
 
-In case there is a harvest/report revert transaction detected on chain manual intervention is required to debug and accept the transaction into the vaults accounting, this should be done after proper validation by strategist multi-sig and core group that in fact the deviation is expected.
+Disabling health checks is meant to be a one-time special event using the following steps:
 
-Disabling health checks is meant to be a one time special event using the following steps:
-
-```
+```python
 # disables next health check on harvest
-strategy.setDoHealthCheck(false, { account: brain.ychad.eth });
+strategy.setDoHealthCheck(false, { account: brain.ychad.eth })
+
 # do harvest with profit/loss deviation
-strategy.harvest();
+strategy.harvest()
 ```
 
-After this manual harvest the health check will be automatically enabled back for further harvests.
+After this manual harvest, the health check will be automatically enabled back for further harvests.
 
-**NOT RECOMMENDED**: Health check can be disabled permanently by setting the health check contract to address 0x0 in the Strategy Contract. This should be done only on extreme circumstances and if you know what you are doing.
+**NOT RECOMMENDED**: Health checks can be disabled permanently by setting the health check contract to address `0x0` in the Strategy Contract. This should be done only in extreme circumstances and if you know what you are doing.
 
 ## Customizing Health Checks
 
-The Common Health Check Contract `health.ychad.eth` supports a Global default health check setting for profit/loss.
+The Common Health Check Contract `health.ychad.eth` uses a global default setting for profit and loss.
 
-It also supports specific profit/loss limit checks per strategy via the following operation:
+It also supports setting specific profit/loss limit checks per strategy via the following operation:
 
-```
+```python
+strategy = ''; # strategy address
+profitLimit = 100 # in bps
+lossLimit = 100 # in bps
 healthcheck.setStrategyLimits(strategy, profitLimit, lossLimit)
 ```
 
-Finally a custom check contract can be deployed and attached to the Common Health Check contract to work as a registry for all vaults/strategies using the following operation:
+Finally, if needed, a custom Health Check contract can be deployed and attached to the common Health Check contract, which works as a registry. You can attach a custom Health Check to a strategy using the following operation:
 
-```
+```python
+strategy = ''; # strategy address
+customHealthCheck = '' # custom health check address
+
 healthcheck.setCheck(strategy, customHealthCheck)
 ```
 
-Custom Health Check should follow the interface for [custom health checks](https://github.com/yearn/yearn-vaults/blob/3bea2d8c070efeb05bc02d7d0136120bc516af4b/contracts/CommonHealthCheck.sol#L5)
+Custom Health Check **must** follow the interface for [custom health checks](https://github.com/yearn/yearn-vaults/blob/3bea2d8c070efeb05bc02d7d0136120bc516af4b/contracts/CommonHealthCheck.sol#L5)
 
 ### Addresses
 
