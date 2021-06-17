@@ -240,6 +240,11 @@ v0.3.5 -> [v0.3.5-1](https://github.com/yearn/yearn-vaults/tree/v0.3.5-1) (compa
 
 1. Update your unit tests to set to the common Health Check contract [health.ychad.eth](https://etherscan.io/address/0xddcea799ff1699e98edf118e0629a974df7df012)
 
+```python
+commonHealthCheck = Contract(web3.ens.resolve(“health.ychad.eth”))
+strategy.setHealthCheck(commonHealthCheck)
+```
+
 1. Test your normal harvest operations using mainnet-fork and unit tests to validate that the integration is working correctly.
 
 ## Health Check Operations
