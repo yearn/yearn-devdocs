@@ -1,43 +1,40 @@
 ---
-title: Partnership
+title: Partnership Program
 ---
 
-We propose two options:
+Yearn's partnership program allows developers to easily integrate yield into their own services. 
 
-## 1/ WRAPPER
+In an effort to make yVaults accessible from virtually anywhere, any protocol that integrates yVaults can earn up to a 50% profit share from their contributed TVL. The Partnership program is being tested, audited, and we’ll commence a gradual release with selected Partners over the coming months.
 
-User makes a deposit into your Wrapper,
-Wrapper deposits into Yearn Vault,
-Vault issues vault tokens to Wrapper,
-Wrapper issues wrapper tokens to User.
+If you are interested in partnering with us, we’d love to hear from you! Please reach out to us through [this form](https://yearnfinance.typeform.com/to/uP7xOJUN)
 
-See the templeate available on Github with tests[0]
+## Profit Share
 
-Implications:
-- your contributed TVLs are easily tracked with precision.
-- your vault tokens are not fungible with other partner tokens or with yearn's vanilla vault tokens.
-- each vault requires its own wrapper.
-- solution and testing is comparatively complex.
+We offer profit share based on Total TVL contributed across all vaults. This is our total fees generated, deducted by overhead costs to maintain and operate the vaults. For now, we are paying out profit shares manually, retroactively, but we want to move it on-chain as the program matures.
 
-## 2/ DELEGATED DEPOSIT
+Profit-sharing is paid out in the native token of the vaults that partners are utilizing. 
 
-User makes a deposit via your routing contract,
-Routing contract routes the deposit into the Yearn Vault,
-Vault issues vault tokens to User.
+This is the payout table we have set:  
 
-The v2 vault's deposit() function has a recipient parameter which defaults to msg.sender, but can also take any other address, effectively allowing a contract or EOA to delegate a deposit on behalf of another intended recipient.[1]
+- Yearn’s total fees to the end-users are 2% mgmt fee and 20% performance fee.
+- 50% of the performance fee goes to the strategist writing the investment strategy used.
+- What remains is yearn’s revenues. From there ~35% is deducted for our overheads, which includes security, operations, headcount, etc.
+- What’s left is shared with you based on the Tier you end up in, based on the combined TVL you contribute with during the period.
 
-If you deposit funds using this delegated method, from an address already known to Yearn, we can attribute the TVL to you and pay you profit share based on this.
+Tiers are what determine the percentage of profit shared with the partner. They are calculated based on the total TVL provided across all vaults. You can see them in the table below.
 
-You deploy a simple routing contract which deposits your user's funds into the yearn vault in question via this address, which acts as your unique identifier. One single contract could handle all routing for you, or you could do one routing contract per vault. You can tailor the design to your needs, as long as Yearn can use a defined set of addresses that source the deposits, which you provide to us to keep track of your contributed share of TVL.
+| Tier | TVL contributed | Profit Share* |
+|---|---|---|
+1 | $1m-5m | 10%
+2 | $5m-$10m | 15%
+3 | $10-50m | 20%
+4 | $50-$100m | 25%
+5 | $100-$200m | 30%
+6 | $200-400m | 35%
+7 | $400-700m | 40%
+8 | $700-1bn | 45%
+9 | >$1bn | 50%
 
-There is one catch: If your user transfers the vault token away from the original recipient address, we won't track it anymore and TVL will no longer be attributed to you. We believe that a strong majortity of users will not be moving vault tokens around, tokens tend to stay in the end user's wallet until funds are withdrawn from the vault.
+*) _Calculated by deducting 35% from Gross Revenue to cover operational costs._
 
-Implications:
-- user gets credited regular vanilla yearn vault tokens for a better user expereince
-- loss of TVL attributed if users transfers the vault tokens  
-- simpler implementation and testing
-
-[0] https://github.com/yearn/brownie-wrapper-mix
-
-[1] See live example for yDAI, #24: https://etherscan.io/address/0x19D3364A399d251E894aC732651be8B0E4e85001#writeContract
+Estimate how your protocol's earnings with the [Profit Sharing Scenario Simulator](https://docs.google.com/spreadsheets/d/1hzgtBkuyLsX0R7t4AwCcDhw3x77UgGrVCXNfQ0CVTbE/edit?usp=sharing)
