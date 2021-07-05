@@ -31,7 +31,7 @@ module.exports = {
           label: "Contributing"
         },
         {
-          to: 'resources/index',
+          to: 'resources/faq',
           label: "Resources"
         },
         {
