@@ -1,47 +1,45 @@
 # Yearn Stack + FE Features
 
+Yearn SDK integrates several components, both on-chain and off-chain.
+
 ## Backend stack
 
-![](https://i.imgur.com/RATYyIM.png)
+![Backend Chart](https://i.imgur.com/RATYyIM.png)
 
 ### On Chain
 
 - 🔍 Yearn Lens
-    - Oracle
-    - Helpers
-    - Adapters
-        - Vaults V1
-        - Vaults V2
-        - Iron Bank
+  - Oracle
+  - Helpers
+  - Adapters
+    - Vaults V1
+    - Vaults V2
+    - Iron Bank
 
 ### On IPFS
 
-- 📄 Yearn Metadata
-    - lightweight storage for all the stuff that would have been hardcoded in v2 frontend, including but not limited to:
-        - custom messages for deposits / withdrawals
-        - custom copywriting for special assets
-        - strategy descriptions / diagrams
-        - disabling asset interactions
-- 🌐 Yearn Frontend
+- Yearn Metadata is a lightweight storage for all the stuff that would have been hardcoded in v2 frontend, including but not limited to:
+  - custom messages for deposits / withdrawals
+  - custom copywriting for special assets
+  - strategy descriptions / diagrams
+  - disabling asset interactions
+- Yearn Frontend
 
 ### Off Chain
 
-- 📊 Yearn Exporter
-    - stores (and displays) stats about yearn assets, exposing:
-        - historical TVL
-        - historical APY
-- 📀 Yearn Subgraph
-    - stores all historical data for users
-- ⚡ Zapper Integration
-    - ⚠ to be deprecated in favour of an in-house solution
+- Yearn Exporter: stores (and displays) stats about yearn assets, exposing:
+  - historical TVL
+  - historical APY
+- Yearn Subgraph: stores all historical data for users
+- Zapper Integration
 
 ## Backend features
 
 ### Resilience powered by on-chain data and IPFS storage
 
 - Critical data (assets, positions, vault deprecations) will be fetched exclusively from the chain / IPFS
-    - maximizing uptime
-    - reducing reliance on other services
+  - maximizing uptime
+  - reducing reliance on other services
 - Historical TVL, historical APY and other non critical data will be stored off chain and fetched dinamically.
 
 #### On-chain assets and positions
@@ -50,7 +48,7 @@
 
 #### IPFS CI/CD for frontend and metadata
 
-- Frontend and hardcoded values will be stored in IPFS utilizing a similar system to the one [introduced](https://uniswap.org/blog/ipfs-uniswap-interface/) by uniswap.
+- Frontend and hardcoded values will be stored in IPFS utilizing a similar system to the one [introduced](https://uniswap.org/blog/ipfs-uniswap-interface/) by Uniswap.
 
 ### Historical APY and TVL
 
@@ -76,7 +74,7 @@
 
 We can store Strategy information directly on IPFS so they can be then be queried and rendered the frontend.
 
-https://meta.yearn.network/strategies/IBLevComp
+Example: [IBLevComp](https://meta.yearn.network/strategies/IBLevComp)
 
 ```json
 {
@@ -93,7 +91,7 @@ https://meta.yearn.network/strategies/IBLevComp
 
 We can store Asset informations so in critical situations we can toggle interactions and add custom messages.
 
-https://meta.yearn.network/vaults/0x25212Df29073FfFA7A67399AcEfC2dd75a831A1A
+Example: [aLINK](https://meta.yearn.network/vaults/0x25212Df29073FfFA7A67399AcEfC2dd75a831A1A)
 
 ```json
 {
