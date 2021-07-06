@@ -4,7 +4,7 @@ Information about Yearn's security processes, team members, disclosures, PGP key
 
 ## Vulnerability disclosure process
 
-Potential vulnerabilities are welcomed to be disclosed following the guidelines established in [/yearn-security/SECURITY.md](https://github.com/yearn/yearn-security/blob/master/SECURITY.md). Valid vulnerabilities may be eligble for bounty rewards.
+Potential vulnerabilities are welcomed to be disclosed following the guidelines established in [/yearn-security/SECURITY.md](https://github.com/yearn/yearn-security/blob/master/SECURITY.md). Valid vulnerabilities may be eligible for bounty rewards.
 
 ## Audits
 
