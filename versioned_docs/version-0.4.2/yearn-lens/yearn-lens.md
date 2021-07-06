@@ -1,13 +1,15 @@
-
 # Yearn Lens
+
 Yearn Lens is a series of smart contracts that aggregate and format Yearn family protocol data into standardized interfaces.
 
-
 ## Architecture
+
 ### Block Diagram
-![](https://i.imgur.com/1Y5kcxY.png)
+
+![Chart](https://i.imgur.com/1Y5kcxY.png)
 
 ### Key Concepts
+
 - Lens
   - The lens contract acts as the primary data aggregator
   - Registry adapters can be added or removed from the lens contract
@@ -18,7 +20,7 @@ Yearn Lens is a series of smart contracts that aggregate and format Yearn family
     - v1 Vaults
     - v2 Vaults
     - Earn
-    - Iron Bank 
+    - Iron Bank
     - veCrv
   - All registry adapters must implement a standardized set of methods (details below)
   - Registry adapters have the ability to return metadata specific to an asset type (for example for vaults: `pricePerShare`, `controller`, etc.)
@@ -42,6 +44,7 @@ Yearn Lens is a series of smart contracts that aggregate and format Yearn family
       - This also means the oracle contract gets direct access to all underlying calculation contract helper methods
 
 ### Key Features
+
 - Obtain all Yearn family asset data in a standardized interface
 - Obtain all user asset and token balances/allowances
   - Ability to return USDC normalized balances as well as base asset balances
@@ -56,12 +59,17 @@ Yearn Lens is a series of smart contracts that aggregate and format Yearn family
   - VeCrv (base contract and pJar)
 
 ## Contracts
+
 ### Registry Adapters
+
 #### Schema
+
 ##### Standardized Interfaces
+
 All registry adapters are required to implement the following interfaces.
 
 ###### AdapterMetadata
+
 ```solidity
 struct AdapterMetadata {
     string typeId;
@@ -71,6 +79,7 @@ struct AdapterMetadata {
 ```
 
 ###### Asset
+
 ```solidity
 struct Asset {
     address id;
@@ -85,6 +94,7 @@ struct Asset {
 ```
 
 ###### AssetStatic (static) (not connected)
+
 ```solidity
 struct AssetStatic {
     address id;
@@ -96,6 +106,7 @@ struct AssetStatic {
 ```
 
 ###### Token (static) (not connected)
+
 ```solidity
 struct Token {
     address id;
@@ -124,6 +135,7 @@ assetsStatic():
 ```
 
 ###### AssetDynamic (dynamic) (not connected)
+
 ```solidity
 struct AssetDynamic {
     address assetId;
@@ -134,6 +146,7 @@ struct AssetDynamic {
 ```
 
 ###### TokenAmount (dynamic)
+
 ```solidity
 struct TokenAmount {
     uint256 amount;
@@ -158,6 +171,7 @@ assetsDynamic():
 ```
 
 ###### Position (dynamic) (connected)
+
 ```solidity
 struct Position {
     address assetId;
@@ -170,7 +184,6 @@ struct Position {
     Allowance[] assetAllowances;
 }
 ```
-
 
 ```json
 positionsOf(account):
@@ -200,8 +213,8 @@ positionsOf(account):
 }]
 ```
 
-
 ###### Position
+
 ```solidity
 struct Position {
     address assetId;
@@ -213,6 +226,7 @@ struct Position {
 ```
 
 ###### Token
+
 ```solidity
 struct Token {
     address id;
@@ -224,6 +238,7 @@ struct Token {
 ```
 
 ###### TokenPosition
+
 ```solidity
 struct TokenPosition {
     address tokenId;
@@ -240,10 +255,13 @@ struct Allowance {
     uint256 allowance;
 }
 ```
+
 ##### Adapter-specific Interfaces
+
 Each registry adapter can export asset metadata that is specific to the asset type.
 
 ###### Vault
+
 ```solidity
 struct AssetMetadata {
     string symbol;
@@ -256,54 +274,64 @@ struct AssetMetadata {
 ```
 
 ###### Earn
+
 ```TBD```
 
 ###### Iron Bank
+
 ```TBD```
 
-###### VeCrv
+###### veCrv
+
 ```TBD```
 
 #### Methods
+
 All registry adapters are required to implement the following methods.
 
 ##### registryAddress
+
 Get the registry address associated with the adapter. The adapter pulls most information from the registry. `registryAddress` is defined in the adapter consturctor.
+
 ```solidity
 address public registryAddress;
 ```
 
-<a id="assets-length"></a>
 ##### assetsLength
+
 Get the number of assets the registry adapter is capable of returning.
+
 ```javascript
 function assetsLength() public view returns (uint256);
 ```
+
 `RETURN` Number of registry adapter assets
 
 ###### Solidity
+
 ```solidity
 RegistryAdapter registryAdapter = RegistryAdapter(0xABCD...);
 uint256 assetsLength = registryAdapter.assetsLength();
 ```
 
 ###### Example Response
-```
+
+```solidity
 32
 ```
 
 ##### positionSpenderAddresses
-```
+
+```solidity
 address[] public positionSpenderAddresses;
 ```
 
 ##### setPositionSpenderAddresses
-```
+
+```solidity
 function setPositionSpenderAddresses(address addresses)
 ```
 
-
-<a id="assets-addresses"></a>
 ##### assetsAddresses
 
 Get a list of asset addresses from the asset adapter's associated registry.
@@ -311,15 +339,18 @@ Get a list of asset addresses from the asset adapter's associated registry.
 ```javascript
 function assetsAddresses() public view returns (address[] memory);
 ```
+
 `RETURN` Array of asset addresses
 
 ###### Solidity
+
 ```solidity
 RegistryAdapter registryAdapter = RegistryAdapter(0xABCD...);
 address[] assetAddresses = registryAdapter.assetsAddresses();
 ```
 
 ###### Example Response
+
 ```solidity
 ['0xE14d13d8B3b85aF791b2AADD661cDBd5E6097Db1',
  '0xdCD90C7f6324cfa40d7169ef80b12031770B4325',
@@ -328,12 +359,15 @@ address[] assetAddresses = registryAdapter.assetsAddresses();
 ```
 
 ##### assetTvl
+
 Get TVL for a specific asset (in USDC).
+
 ```javascript
 function assetTvl(address assetAddress) public view returns (uint256);
 ```
 
 ###### Solidity
+
 ```solidity
 RegistryAdapter registryAdapter = RegistryAdapter(0xABCD...);
 address assetAddress = 0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2;
@@ -341,33 +375,43 @@ uint256 assetTvl = registryAdapter.assetTvl(assetAddress);
 ```
 
 ###### Example Response
+
 ```1637032292```
 
 ##### assetsTvl
+
 Get aggregated TVL for all assets in the adapter's registry.
+
 ```javascript
 function assetsTvl() external view returns (uint256);
 ```
+
 `RETURN` Aggregated TVL scoped to the adapter's assets in USDC
 
 ###### Solidity
+
 ```solidity
 RegistryAdapter registryAdapter = RegistryAdapter(0xABCD...);
 uint256 assetTvl = registryAdapter.assetsTvl();
 ```
 
 ###### Example Response
+
 ```443923433354832```
 
 ##### asset
+
 Get a specific asset including metadata specific to the asset type. The response extends the standardized `Asset` interface.
+
 ```javascript
 function asset(address assetAddress) public view returns (Asset memory);
 ```
+
 `assetAddress` The address of the asset to fetch
 `RETURN` An asset struct containing information about the asset
 
 ###### Solidity
+
 ```solidity
 RegistryAdapter registryAdapter = RegistryAdapter(0xABCD...);
 address assetAddress = 0xe2F6b9773BF3A015E2aA70741Bde1498bdB9425b;
@@ -375,6 +419,7 @@ registryAdapter.asset(assetAddress);
 ```
 
 ###### Example Response
+
 ```json
 {
   name: 'WTFTM Vault',
@@ -390,21 +435,25 @@ registryAdapter.asset(assetAddress);
 }
 ```
 
-<a id="assets"></a>
 ##### assets
+
 Get all assets for a registry adapter
+
 ```javascript
 function assets() external view returns (Asset[] memory);
 ```
+
 `RETURN` An array of asset structs containing information about the assets
 
 ###### Solidity
+
 ```solidity
 RegistryAdapter registryAdapter = RegistryAdapter(0xABCD...);
 registryAdapter.assets();
 ```
 
 ###### Example Response
+
 ```json
 [
   {
@@ -434,9 +483,10 @@ registryAdapter.assets();
 ]
 ```
 
-<a id="positions-of"></a>
 ##### positionOf
+
 Get the position of an account for a specific asset address.
+
 ```javascript
 function positionOf(address accountAddress, address assetAddress)
     public
@@ -445,13 +495,16 @@ function positionOf(address accountAddress, address assetAddress)
 ```
 
 ###### Solidity
+
 ```solidity
 RegistryAdapter registryAdapter = RegistryAdapter(0xABCD...);
 address accountAddress = 0x481140F916a4e64559694DB4d56D692CadC0326c;
 address assetAddress = 0xe2F6b9773BF3A015E2aA70741Bde1498bdB9425b;
 registryAdapter.positionForAsset(accountAddress, assetAddress);
 ```
+
 ###### Example Response
+
 ```json
 {
   assetId: 0xe2F6b9773BF3A015E2aA70741Bde1498bdB9425b, // vault address
@@ -464,7 +517,9 @@ registryAdapter.positionForAsset(accountAddress, assetAddress);
 ```
 
 ##### positionsOf
+
 Get all positions for an account for every adapter asset.
+
 ```javascript
 function positionsOf(address accountAddress)
         external
@@ -473,12 +528,15 @@ function positionsOf(address accountAddress)
 ```
 
 ###### Solidity
+
 ```solidity
 RegistryAdapter registryAdapter = RegistryAdapter(0xABCD...);
 address accountAddress = 0x481140F916a4e64559694DB4d56D692CadC0326c;
 registryAdapter.positionsOf(accountAddress);
 ```
+
 ###### Example Response
+
 ```json
 [
   {
@@ -501,7 +559,9 @@ registryAdapter.positionsOf(accountAddress);
 ```
 
 ##### tokens
+
 Get unique tokens for the adapter.
+
 ```javascript
 function tokens()
         external
@@ -510,11 +570,14 @@ function tokens()
 ```
 
 ###### Solidity
+
 ```solidity
 RegistryAdapter registryAdapter = RegistryAdapter(0xABCD...);
 registryAdapter.tokens();
 ```
+
 ###### Example Response
+
 ```json
 [
   {
@@ -529,8 +592,11 @@ registryAdapter.tokens();
 ```
 
 ### Oracle
+
 #### Methods
+
 ##### setCalculations
+
 Set oracle calculation contract addresses. Each calculation contract must implement getPriceUsdc(). The order of calculation contracts matters as it determines the order preference in the cascading fallback mechanism.
 
 ```javascript
@@ -538,17 +604,21 @@ function setCalculations(address[] memory calculationAddresses)
         public
         onlyManagers;
 ```
+
 `calculationAddresses` An array of addresses for underlying calculation contracts
 
 ##### calculations
+
 View the calculation contract addresses currently associated with the oracle.
 
 ```javascript
 function calculations() external view returns (address[] memory);
 ```
+
 `RETURN` An array of calculation contract addresses associated with the oracle
 
 ###### Example Response
+
 ```json
 [
    '0xfC714174E5c8bd056a45a5337E7b402CC4af7BF3',
@@ -557,86 +627,111 @@ function calculations() external view returns (address[] memory);
 ]
 ```
 
-
 ##### getPriceUsdcRecommended
+
 Get the currently recommended price given a token address.
+
 ```javascript
 function getPriceUsdcRecommended(address tokenAddress)
         public
         view
         returns (uint256);
 ```
+
 `tokenAddress` The token address for which to obtain a price recommendation
 `RETURN` Recommended price in USDC (6 decimals)
 
 ###### Example Response
+
 ```103000```
 
 ##### getNormalizedValueUsdc
+
 Calculate normalized USDC value given a token address and an amount.
+
 ```javascript
 function getNormalizedValueUsdc(address tokenAddress, uint256 amount)
         external
         view
         returns (uint256);
 ```
+
 `tokenAddress` The token address
 `amount` The amount of value to convert (in token decimals)
 `RETURN` Recommended price in USDC (6 decimals)
 
 ###### Example Response
+
 ```3442238822```
 
 ##### tokenAliases
+
 Given a token address fetch a token alias address. This is necessary for certain wrapped or special case tokens that do not have a token price available in the oracle.
+
 ```solidity
 mapping(address => address) public tokenAliases;
 ```
 
 ##### addTokenAlias
+
 Add a new token alias mapping.
+
 ```solidity
 function addTokenAlias(address tokenAddress, address tokenAliasAddress)
         public
         onlyManagers;
 ```
+
 `tokenAddress` The token address that will receive an alias
 `tokenAliasAddress` The new token alias address
 
 ##### addTokenAliases
+
 Batch add new token alias mappingings.
+
 ```solidity
     function addTokenAliases(TokenAlias[] memory tokenAliases)
         public
         onlyManagers
 ```
+
 `tokenAliases` An array of `TokenAlias` structs (`[[tokenAddress, tokenAliasAddress]]`)
 
-
 ##### removeTokenAlias
+
 Remove a token alias mapping.
+
 ```solidity
 function addTokenAlias(address tokenAddress, address tokenAliasAddress)
         public
         onlyManagers;
 ```
+
 `tokenAddress` The token address whose alias will be removed
 
 ### Calculation
+
 #### Standardized methods
+
 All calculation contracts must implement the following methods.
 ##### getPriceUsdc
+
 Fetch the recommended price given a token address. Reverts if no relevant price is found.
+
 ```javascript
 function getPriceUsdc(address tokenAddress) public view returns (uint256)
 ```
+
 ###### Example Response
+
 ```103000```
 
 #### Calculation specific methods
+
 Helper utilities for various calculations. These methods are indirectly exposed to the oracle via the oracle's cascading fallback mechanism. All of these methods can be called via the oracle contract by generating a custom ABI with the desired methods. Since these helper methods do not represent the primary use case of the oracle contract (the primary use case is fetching price) determining the details of each method implementation is left to the user.
 
 ##### Sushiswap
+
 ```javascript
 function getPriceFromRouter(address token0Address, address token1Address)
         public
@@ -668,6 +763,7 @@ function getLpTokenPriceUsdc(address tokenAddress)
 
 
 ##### Curve
+
 ```javascript
 function getBasePrice(address curveLpTokenAddress)
         public
@@ -692,7 +788,8 @@ function getCurvePriceUsdc(address curveLpTokenAddress)
 ```
 
 ##### IronBank
-```javascript        
+
+```javascript
 function isIronBankMarket(address tokenAddress) public view returns (bool);
 
 function getIronBankMarkets() public view returns (address[] memory);
@@ -704,16 +801,21 @@ function getIronBankMarketPriceUsdc(address tokenAddress)
 ```
 
 ### Lens
+
 #### Methods
 
 ##### addAdapter
+
 Add a registry adapter. The registry adapter must conform to the standardized registry adapter interface.
+
 ```javascript
 function addAdapter(address adapterAddress) public onlyManager;
 ```
+
 `adapterAddress` Address of the adapter to add
 
 ###### Solidity
+
 ```solidity
 Lens lens = Lens(0x9b8b9F6146B29CC32208f42b995E70F0Eb2807F3);
 address adapterAddress = 0xe11ba472F74869176652C35D30dB89854b5ae84D;
@@ -721,13 +823,17 @@ lens.addAdapter(adapterAddress);
 ```
 
 ##### removeAdapter
+
 Remove a registry adapter.
+
 ```javascript
 function removeAdapter(address adapterAddress) public onlyManager;
 ```
+
 `adapterAddress` Address of the adapter to remove
 
 ###### Solidity
+
 ```solidity
 Lens lens = Lens(0x9b8b9F6146B29CC32208f42b995E70F0Eb2807F3);
 address adapterAddress = 0xe11ba472F74869176652C35D30dB89854b5ae84D;
@@ -735,17 +841,22 @@ lens.removeAdapter(adapterAddress);
 ```
 
 ##### adapters
+
 Fetch a list of registry adapter addresses.
+
 ```javascript
 function adapters() external view returns (address[] memory);
 ```
+
 ###### Solidity
+
 ```javascript
 Lens lens = Lens(0x9b8b9F6146B29CC32208f42b995E70F0Eb2807F3);
 address[] memory = lens.adapters();
 ```
 
 ###### Example Response
+
 ```solidity
 ['0xE14d13d8B3b85aF791b2AADD661cDBd5E6097Db1',
  '0xdCD90C7f6324cfa40d7169ef80b12031770B4325',
@@ -754,16 +865,20 @@ address[] memory = lens.adapters();
 ```
 
 ##### assetsFromAdapter
+
 ```javascript
 function assetsFromAdapter(RegistryAdapter registryAdapterAddress)
         external
         view
         returns (RegistryAdapter.Asset[] memory)
 ```
+
 See: [registryAdapter.assets](#assets)
 
 ##### assets
+
 Fetch all assets for all supported protocols.
+
 ```javascript
 function assets()
         external
@@ -774,7 +889,9 @@ function assets()
 See: [registryAdapter.assets](#assets)
 
 ##### positionsFromAdapter
+
 Fetch positions for an account for a specific adapter.
+
 ```javascript
 function positionsFromAdapter(
         address account,
@@ -785,32 +902,40 @@ function positionsFromAdapter(
 See: [registryAdapter.positionsOf](#positions-of)
 
 ##### positionsOf
+
 Fetch all positions for an account within the ecosystem.
+
 ```javascript
 function positionsOf(address account)
         external
         view
         returns (RegistryAdapter.Position[] memory)
 ```
+
 See: [registryAdapter.positionsOf](#positions-of)
 
 ##### assetsLength
+
 ```javascript
 function assetsLength() public view returns (uint256);
 ```
+
 Get the total number of assets for all Yearn family protocols
 See: [registryAdapter.assetsLength](#assets-length)
 
 ##### assetsAddresses
+
 ```javascript
 function assetsAddresses() public view returns (address[] memory);
 ```
+
 Get all addresses for all Yearn family assets
 See: [registryAdapter.assetsAddresses](#assets-addresses)
 
-
 ##### allowances
+
 Batch fetch allowances given an owner, tokens and spender. This is a helper utility for fetching large amounts of token allowances for a specific set of contracts (zapper contract, for example)
+
 ```solidity
     function allowances(
         address owner,
