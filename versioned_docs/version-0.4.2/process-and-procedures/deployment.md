@@ -1,6 +1,6 @@
 # Deploying a Vault and Strategy V2
 
-**Note**: This [repo](https://github.com/iearn-finance/chief-multisig-officer) is encouraged to create multiple scripts for governance and dev multisig execution of complex transactions.
+**Note**: This [repo](https://github.com/yearn/chief-multisig-officer) is encouraged to create multiple scripts for governance and dev multisig execution of complex transactions.
 
 ## Requirements
 
@@ -187,8 +187,8 @@ These are the standard deposit limits per stage. They can be adjusted on a case 
 
 | Stage        | Limit  |
 | ------------ | ------ |
-| Experimental | \$500K |
-| Production   | \$10M  |
+| Experimental | $500K |
+| Production   | $10M  |
 
 ### Sharer contract
 
