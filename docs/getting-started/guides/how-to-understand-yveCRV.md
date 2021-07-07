@@ -56,7 +56,6 @@ They continue to accrue so don’t worry if you forget or don’t want to pay ga
 
 * You have to determine the risks for yourself.
 * You are exposed to smart contract risk from Yearn vaults and Curve Finance.
-* Any losses that occur due to the Curve Finance protocol can be mitigated by [purchasing Cover](https://yearn.finance/cover).
 * yveCRV earns trading fees from trading that occurs on Curve Finance. If trading fees are lower than expected then your returns will be lower than expected. Trading volume data on Curve Finance is available from [Coingecko](https://www.coingecko.com/en/exchanges/curve#statistics).
 
 ## Is it true that I can earn even more rewards from Sushi and Pickle?
