@@ -1,6 +1,6 @@
 # Deploying a Vault and Strategy V2
 
-**Note**: This [repo](https://github.com/yearn/chief-multisig-officer) is encouraged to create multiple scripts for governance and dev multisig execution of complex transactions.
+**Note**: The Chief Multisig Officer repo is encouraged to create multiple scripts for governance and dev multisig execution of complex transactions.
 
 ## Requirements
 
@@ -47,15 +47,16 @@ The below instructions show some python commands that assume you are using the b
 
 ## Deploying a new Strategy
 
-1. Create a new issue in the strategies' [repo](https://github.com/iearn-finance/yearn-strategies/issues) using the template `Strategy Review`. **Complete all the fields**.
+1. Discuss your strategy in Discord or Telegram to gain access to the yearn/yearn-strategies repository.
+1. Create a new issue in the strategies' [repo](https://github.com/yearn/yearn-strategies/issues) using the template `Strategy Review`. **Complete all the fields**.
 1. If the strategy is targeting a new protocol/new chain, not currently approved by yearn (used in production), a due diligence and path to production plan documents may also be required for the strategy to be considered for endorsing. [PATH TO PROD](https://hackmd.io/@ucVuhc2gShSGsOJwjaDvqg/HJ1ZplgTO)
 Examples [SNX](https://hackmd.io/0w1RZh7DSc27A9EyzlHbJQ?view), [VESPER](https://hackmd.io/@Ap_76vwNTg-vxJxbiaLMMQ/SkXEzic7O) 
-1. Coordinate with Core Dev strategist for getting a review on [board](https://github.com/orgs/iearn-finance/projects/5).
+1. Coordinate with Core Dev strategist for getting a review on [board](https://github.com/orgs/yearn/projects/5).
 1. Complete peer review by at least 2 strategists.
 1. Check if `want` token has a deployed vault already (>=v0.3.0) and coordinate to use that first if possible.
 1. Coordinate with core developer to set proper deposit limit and other settings for new vault. See the table below: [Limits per Stage](#limits-per-stage).
 1. Deploy strategy and upload code to Etherscan for verification.
-1. Tag GitHub review issue with deployed version and add mainnet address(es) to the [board](https://github.com/orgs/iearn-finance/projects/5).
+1. Tag GitHub review issue with deployed version and add mainnet address(es) to the [board](https://github.com/orgs/yearn/projects/5).
 
 ## Make the Vault and Strategy work together
 
