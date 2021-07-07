@@ -74,16 +74,16 @@ Yearn SDK integrates several components, both on-chain and off-chain.
 
 We can store Strategy information directly on IPFS so they can be then be queried and rendered the frontend.
 
-Example: [IBLevComp](https://meta.yearn.network/strategies/IBLevComp)
+Example: [1inch Staking Reinvest](https://meta.yearn.network/strategies/1InchStaking)
 
 ```json
 {
-  "$schema": "strategy",
-  "name": "IBLevComp",
-  "description": "Supplies DAI on Compound and opens a long-term debt for an additional amount of DAI from Ironbank without the need for collateral, to maximize COMP farming. Earned COMP is harvested and sold for more DAI and re-deposited into the vault.",
-  "authors": [
-    { "name": "Sam Priestley", "uri": "https://twitter.com/arbingsam" }
-  ]
+    "$schema": "strategy",
+    "name": "1inch Staking Reinvest",
+    "description": "Stakes {{token}} on [1inch DAO](https://app.1inch.io/#/1/dao/governance) to collect governance rewards. Rewards are harvested and deposited back into the strategy.",
+    "addresses": ["0xB12F6A5776EDd2e923fD1Ce93041B2000A22dDc7"],
+    "protocols": ["1inch"],
+    "authors": []
 }
 ```
 
