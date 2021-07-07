@@ -49,7 +49,7 @@ Main responsibilities:
   Reference:
   - [emergency-toolbox](https://github.com/yearn/emergency-toolbox)
   - [CMO](https://github.com/yearn/chief-multisig-officer)
-  - [strategists-ms](https://github.com/poolpitako/strategists-ms)
+  - [strategists-ms](https://github.com/yearn/strategist-ms)
 
 ### Strategist Lead
 
