@@ -178,7 +178,7 @@ registry.endorseVault(vault)
    strategy.setKeeper(0x736D7e3c5a6CB2CE3B764300140ABF476F6CFCCF)
    ```
 
-1. Create an add-strategy PR in Keep3r [repo](https://github.com/iearn-finance/yearn-keeper) (TBD)
+1. Create an add-strategy PR in Keep3r [repo](https://github.com/yearn/yearn-keeper) (TBD)
 
 ## References
 
