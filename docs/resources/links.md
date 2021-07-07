@@ -53,7 +53,6 @@
 - [Feel the Yearn](https://feel-the-yearn.app/vaults)
 - [yVault ROI Calc](https://yvault-roi.netlify.app/)
 - [Yearn ROI Calc](https://yearn-roi.xyz/)
-- [Yearn Party](https://yearn.party/)
 - [Yieldfarming](https://yieldfarming.info/)
 - [Track a Vault](https://trackavault.com/)
 
