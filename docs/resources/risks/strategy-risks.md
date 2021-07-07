@@ -56,8 +56,7 @@ Trading fees are earned in Automated Market Makers (AMMs) by providing liquidity
 ||Risk that income is lower than the cost of the flash loan|
 |Oracle|Incorrect price feed|
 ||liquidation penalties|
-|Operational Risk|Operational risk of managing debt positions
-|
+|Operational Risk|Operational risk of managing debt positions|
 
 
 ## Strategy Scoring System
