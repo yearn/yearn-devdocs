@@ -11,7 +11,7 @@ module.exports = {
   projectName: 'yearn-devdocs', // Usually your repo name.
   themeConfig: {
     navbar: {
-      title: 'Yearn.finance',
+      title: 'Yearn Finance',
       logo: {
         alt: 'YFI Logo',
         src: 'img/logo.svg',
