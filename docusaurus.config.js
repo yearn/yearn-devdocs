@@ -35,8 +35,8 @@ module.exports = {
           label: "Resources"
         },
         {
-          to: 'securityResearchers/index',
-          label: "Security researchers"
+          to: 'security/index',
+          label: "Security"
         }, 
         {
           type: 'docsVersionDropdown',
@@ -163,11 +163,11 @@ module.exports = {
     [
       '@docusaurus/plugin-content-docs',
       {
-        id: 'securityResearchers',
-        path: 'docs/securityResearchers',
+        id: 'security',
+        path: 'docs/security',
         editCurrentVersion: true,
-        routeBasePath: 'securityResearchers',
-        sidebarPath: require.resolve('./sidebars/sidebarsSecurityResearchers.js'),
+        routeBasePath: 'security',
+        sidebarPath: require.resolve('./sidebars/sidebarsSecurity.js'),
         showLastUpdateAuthor: true,
         showLastUpdateTime: true,
       },
