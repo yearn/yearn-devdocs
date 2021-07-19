@@ -17,7 +17,7 @@
       {
         type: 'category',
         label: 'Guides',
-        items: ['guides/how-to-add-a-custom-token-to-metamask', 'guides/how-to-understand-crv-vote-locking', 'guides/how-to-understand-yvault-roi','guides/how-to-understand-yvecrv']
+        items: ['guides/how-to-add-a-custom-token-to-metamask', 'guides/how-to-understand-crv-vote-locking', 'guides/how-to-understand-yvault-roi','guides/how-to-understand-yveCRV']
       }
     ],
   };

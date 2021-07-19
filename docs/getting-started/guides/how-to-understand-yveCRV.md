@@ -82,4 +82,4 @@ Subscribe to Yearn’s weekly [state of the vaults](https://medium.com/yearn-sta
 
 ## Still have questions?
 
-Please visit [Telegram or discord](../#communication_channels) and ask away!
+Please visit Telegram or discord and ask away!
