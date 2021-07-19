@@ -1,5 +1,7 @@
 # Operations procedures
 
+These operations might be needed at any point in time.
+
 ## Revoking a strategy with normal migration
 
 Let's say we found a problem in one of the strategies and we want to return all funds. There are two ways of doing it.

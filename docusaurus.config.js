@@ -19,8 +19,8 @@ module.exports = {
       items: [
         {
           type: 'doc',
-          docId: 'smart-contracts/vault',
-          label: "Smart Contracts"
+          docId: 'getting-started',
+          label: "Developers"
         },
         {
           to: 'partners/introduction',
