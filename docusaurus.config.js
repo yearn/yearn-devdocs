@@ -18,6 +18,10 @@ module.exports = {
       },
       items: [
         {
+          to: 'getting-started/intro',
+          label: 'Getting Started'
+        },
+        {
           type: 'doc',
           docId: 'getting-started',
           label: "Developers"
