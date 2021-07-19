@@ -10459,9 +10459,9 @@ vm-browserify@^1.0.1:
   resolved "https://registry.yarnpkg.com/vm-browserify/-/vm-browserify-1.1.2.tgz#78641c488b8e6ca91a75f511e7a3b32a86e5dda0"
   integrity sha512-2ham8XPWTONajOR0ohOKOHXkm3+gaBmGut3SRuu75xLd/RRaY6vqgh8NBYYk7+RW3u5AtzPQZG8F10LHkl0lAQ==
 
-"vydoc@https://github.com/steffenix/vydoc":
+"vydoc@https://github.com/yearn/vydoc":
   version "0.1.0"
-  resolved "https://github.com/steffenix/vydoc#877b09823b1b30e1e42514be1e1204796cba36a7"
+  resolved "https://github.com/yearn/vydoc#05302b5a4141a6323be8d7ee852aa599bb3d7620"
   dependencies:
     chalk "^4.1.0"
     cli-progress "^3.9.0"
