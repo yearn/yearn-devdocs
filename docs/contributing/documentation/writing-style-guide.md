@@ -57,7 +57,7 @@ As such, Writers should focus on communicating concepts as clearly and succinctl
 - Exclamation points.
 - Footnotes.
 - References to deprecated names for Yearn Components.
-  - **Examples:** yyCRV or yUSD instead of yvCurve-Y (see: [Yearn Naming Conventions](../developers/naming-convention.md)).
+  - **Examples:** yyCRV or yUSD instead of yvCurve-Y (see: [Yearn Naming Conventions](https://docs.yearn.finance/developers/naming-convention).
 - Parentheses for stating additional information.
   - **Incorrect:** Development Grants are larger sized ($5,000 to $50,000) grants aimed at individuals or teams building projects around vaults and the broader Yearn ecosystem.
   - **Correct:** Development Grants are generally larger sized grants, ranging from $5,000 to $50,000, aimed at individuals or teams building projects around vaults and the broader Yearn ecosystem.
@@ -261,7 +261,7 @@ Review the respective Contribute.md for each repository where pertinent before s
 
 ### Express Interest
 
-- Check out the [Getting Started guide]() for contributing to Documentation.
+- Check out the Getting Started guide for contributing to Documentation.
 - Join the [#documentation](https://discord.com/channels/734804446353031319/748476302121762866) channel on Yearn's Discord, read the pinned messages, and reach out to a channel admin.
 - Yearn community team members and senior contributors help onboard new contributors via Discord or Telegram chats where applicable.
 - Feel free to discuss personal interests and relevant skills to help determine a well-suited project/issue and jump right in.
