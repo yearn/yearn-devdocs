@@ -1,5 +1,5 @@
 # Writing Style Guide
-
+---
 The Yearn Community Writing Style Guide summarizes the standards and best practices **writers** should follow when contributing to Yearn Documentation resources.
 
 ## Writing Intent and Tone

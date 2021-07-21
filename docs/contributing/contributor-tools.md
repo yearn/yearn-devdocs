@@ -1,5 +1,5 @@
 # Contributor Tools
-
+---
 This Guide introduces the tools used by the Yearn Community team and its contributors.
 
 Yearn contributors work with tools geared towards promoting open-source feedback, communication, transparency, and clarity. While there is no sophisticated software stack, contributors should be comfortable with the more heavily used tools and how they function within Yearn contribution workflows.
