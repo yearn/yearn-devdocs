@@ -1,4 +1,4 @@
-# Yearn API Documentation
+# Yearn API
 
 ### Production Endpoint
 https://api.yearn.finance/v1/chains/1/vaults/all
