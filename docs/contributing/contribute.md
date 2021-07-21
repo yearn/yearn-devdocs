@@ -1,5 +1,5 @@
 # Contribute
-
+---
 ## Yearn Contributors
 
 Help build the future of finance, shape your skills, and grow the Yearn ecosystem. Before joining our community, take some time to understand the philosophy behind Yearn through the [Yearn Manifesto](https://gov.yearn.finance/t/how-we-think-about-yearn/7137).
