@@ -3,6 +3,11 @@ module.exports = {
         'contribute',
         'contributor-tools',
         {
+            type:'category',
+            label: 'Operations',
+            items: ['operations/osc-levels','operations/decision-making']
+        },
+        {
             type: 'category',
             label: 'Governance',
             items: ['governance/governance-and-operations', 'governance/proposal-process', 'governance/proposal-repository', 'governance/yfi']
