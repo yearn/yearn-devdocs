@@ -56,7 +56,7 @@ If you are looking to integrate with Yearn, please visit our [Integration Guide]
 
 #### Designers
 
-We invite designers, animators, artists, and more to share your skills with the Yearn ecosystem! If you're interested in creating graphics that describe Yearn's systems, creating video explainers, fixing Yearn's UI/UX, or any other combination of things — hop into the #ui-ux channel or #media-resources channels in [Discord](https://docs.yearn.finance/developers/yvaults-documentation/vault-interfaces).
+We invite designers, animators, artists, and more to share your skills with the Yearn ecosystem! If you're interested in creating graphics that describe Yearn's systems, creating video explainers, fixing Yearn's UI/UX, or any other combination of things — hop into the #ui-ux channel or #media-resources channels in [Discord](https://discord.gg/nNK9BVy6).
 
 ## Yearn Contributors
 
@@ -85,7 +85,7 @@ When you decide to start, this reading material is going to come handy:
 Once you have the strategy ready. This will guide you further down the road.
 
 - [Vault naming standard](https://github.com/iearn-finance/yearn-assets/blob/master/naming-standard.md)
-- [Release process](https://github.com/yearn/yearn-vaults/blob/master/docs/OPERATIONS.md)
+- [Release process](../v2/process-and-procedures/operations)
 - [Security check](https://docs.google.com/document/d/1hBKB73kJPQM71enrG8xoSFj7wxYmczUlgigyq2KkcTE/edit#heading=h.4ieoeyetfrxm)
 
 ##### Other reading material
@@ -111,14 +111,12 @@ This is complement to the others but it's not directly related to creating strat
 #### List of Yearn Tools
 
 - Yearn Discord FAQ Bot, [Github](https://github.com/dgornjakovic/yfi-faq-bot)
-- [Yearn Party](https://yearn.party/), [Github](https://github.com/x48-crypto/yearn-party)
 - [Yearn Tools (Based off Yearn API)](https://yearn.tools/), [Github](https://github.com/yearn-integrations/api)
 
 #### Contributors Websites
 
 - [yCosystem (Yearn Community Aggregator)](https://ycosystem.info/) - Repository Of Yearn Links
 - [Vaults Finance](https://vaults.finance/) - One click deposit into vaults
-- [LearnYearn](https://learnyearn.finance/) Additional explainers and content
 - [Feel the Yearn](https://feel-the-yearn.app/vaults) - Vault Statistics
 - [YFI Address Stats](https://www.yfistats.com/) - TVL and vault pricing information built by @Bob_The_Buidler
 - [Yieldfarming](https://yieldfarming.info/), [Github](https://github.com/yieldfarming/yieldfarming)

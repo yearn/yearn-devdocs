@@ -108,7 +108,7 @@ Klim explains why he decided against side modeling to close the loop. All is wel
 
 1) Write a Proposal
 
-Daniel writes up his plan for [yearnimals.com](http://yearnimals.com/). Although anyone can make a new site, he wants this to be yearn-official and there isn't a process or gate for doing that with new sites, so he uses the advice process.
+Daniel writes up his plan for yearnimals.com. Although anyone can make a new site, he wants this to be yearn-official and there isn't a process or gate for doing that with new sites, so he uses the advice process.
 
 2) Get Advice
 
