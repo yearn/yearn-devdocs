@@ -3,14 +3,20 @@ module.exports = {
   title: 'Yearn.finance',
   tagline: 'DeFi made simple',
   url: 'https://your-docusaurus-test-site.com',
-  baseUrl: '/yearn-devdocs/',
+  baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
   organizationName: 'yearn', // Usually your GitHub org/user name.
   projectName: 'yearn-devdocs', // Usually your repo name.
   themeConfig: {
+    algolia: {
+      apiKey: 'dddf45f99d4d9c8b153e51038c8ebfca1',
+      indexName: 'yearn_docs',
+      appId: 'MUGPB5SQLX',
+    },
     navbar: {
+      hideOnScroll: true,
       title: 'Yearn Finance',
       logo: {
         alt: 'YFI Logo',
@@ -43,6 +49,10 @@ module.exports = {
           label: "Security"
         }, 
         {
+          type: 'search',
+          position: 'right'
+        },
+        {
           type: 'docsVersionDropdown',
           dropdownItemsBefore: [],
           position: 'right',
@@ -53,7 +63,7 @@ module.exports = {
       ],
     },
     footer: {
-      style: 'dark',
+      style: 'light',
       links: [
         {
           title: 'Community',
