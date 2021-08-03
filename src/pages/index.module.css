@@ -5,24 +5,148 @@
  * and scoped locally.
  */
 
-.heroBanner {
-  padding: 4rem 0;
+ .heroBanner {
+  padding: 2rem 0;
+  display:flex; 
+  height:fit-content; 
   text-align: center;
   position: relative;
   overflow: hidden;
+  height: flex;
+  background: radial-gradient(110.03% 139.64% at 0% 100%, #01E29F 0%, #046973 33.72%, #114668 53.74%, #133D67 73.81%, #1D2860 100%);
+
 }
 
-@media screen and (max-width: 966px) {
-  .heroBanner {
-    padding: 2rem;
-  }
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  height: 100%;
+  padding: 5px;
 }
 
-.buttons {
+.card {
   display: flex;
-  align-items: center;
+  min-width: 300px;
+  height: 75px;
+  padding: 1rem;
+  flex-direction: column;
   justify-content: center;
+  cursor: pointer;
+  border: 1px solid;
+  border-color: rgba(194, 194, 194, 0.363);
+  border-radius: 20px;
+  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.05);
+  background-color: #00000060;
 }
-.buttons > a {
-  margin-right: 10px;
+
+.textBox {
+  display: flex;
+  padding: 1rem;
+  min-width: 475px;
+  flex-direction: column;
+  justify-content: center;
+  border: 1px solid;
+  border-color: rgba(194, 194, 194, 0.363);
+  border-radius: 20px;
+  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.05);
+  background-color: #00000060;
+
+  }
+
+
+.card:hover {
+  border-color: #FFFFFF;
+}
+
+ .row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 16px;
+  justify-content: center;
+  margin: 0 auto;
+  padding: 1rem 0;
+  max-width: 960px;
+}
+
+.title {
+  position: relative;
+  font-size: 60px;
+  color: white;
+}
+
+.header {
+  font-size: 36px;
+  color:white;
+}
+
+.header3 {
+  align-items: center;
+}
+
+.paragraph {
+  color: white;
+  list-style-type: none;
+  font-size: 18px;
+  text-align:left;
+}
+
+.paragraph:hover {
+  text-decoration: underline;
+}
+
+html[data-theme="light"] .card {
+  background-color:#3d3d3d4f;
+  border-style: solid;
+  border-color: rgba(128, 128, 128, 0.521);
+}
+
+html[data-theme="light"] .card:hover {
+  border-style: solid;
+  border-color: rgb(255, 255, 255);
+}
+
+html[data-theme="light"] .textBox {
+  background-color:#3d3d3d4f;
+  border-style: solid;
+  border-color: rgba(128, 128, 128, 0.521);
+}
+
+a:link {
+  color:inherit;
+}
+
+a:visited {
+  color:inherit;
+}
+
+.learn {
+  background-image: url("/static/img/learn.png");
+  background-size:cover;
+  display: flex;
+  padding: 1rem;
+  min-width: 475px;
+  flex-direction: column;
+  justify-content: center;
+  border: 1px solid;
+  border-color: rgba(194, 194, 194, 0.363);
+  border-radius: 20px;
+  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.05);
+}
+
+
+@media screen and (max-width: 1082px) {
+  .row {
+    grid-template-columns: 1fr;
+  }
+  .textBox {
+    min-width: 100%;
+  }
+  .card {
+    min-width: 100%;
+  }
+  .learn {
+    min-width: 100%;
+    min-height: 100%;
+  }
 }
