@@ -8,7 +8,7 @@
     {
       "type": "category",
       "label": "Processes and Procedures",
-      "items": ["version-0.4.2/process-and-procedures/deployment","version-0.4.2/process-and-procedures/operations","version-0.4.2/process-and-procedures/emergency"]       
+      "items": ["version-0.4.2/process-and-procedures/deployment","version-0.4.2/process-and-procedures/operations","version-0.4.2/process-and-procedures/emergency","version-0.4.2/process-and-procedures/naming-convention"]       
     },
     {
       "type": "category",
