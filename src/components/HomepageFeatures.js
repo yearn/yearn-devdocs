@@ -1,6 +1,8 @@
 import React from 'react';
 import clsx from 'clsx';
 import styles from './HomepageFeatures.module.css';
+import Link from '@docusaurus/Link';
+
 
 const FeatureList = [
   
@@ -24,10 +26,26 @@ export default function HomepageFeatures() {
   return (
     <section className={styles.features}>
       <div className="container">
-        <div className="row">
-          {FeatureList.map((props, idx) => (
-            <Feature key={idx} {...props} />
-          ))}
+        <h1 className={styles.title}>Build</h1>
+        <div className={styles.row}>
+          <Link style={{ textDecoration: "none", color: "inherit" }} to="./v2/next/smart-contracts/BaseStrategy">
+            <div className={styles.card}>
+                <h2>Smart Contracts</h2>
+                <p>Find our core contracts, and resources to locate all current contracts. Strategies are sometimes written up within a day, so we make it easy to pull live data.</p>
+            </div>
+          </Link>
+          <Link style={{ textDecoration: "none", color: "inherit" }} to="./getting-started/intro">
+            <div className={styles.card}>
+                <h2>Yearn SDK</h2>
+                <p>Yearn SDK integrates several components, both on-chain and off-chain. Access Yearn Lens, Yearn Metadata, Yearn Frontend, Yearn Exporter, Yearn Subgraph and Zapper Integration</p>
+            </div>
+          </Link>
+          <Link style={{ textDecoration: "none", color: "inherit" }} to="./getting-started/intro">
+            <div className={styles.card}>
+                <h2>Yearn API</h2>
+                <p>Easily connect to our Production Endpoint and access data via the API Schema </p>
+            </div>
+          </Link>
         </div>
       </div>
     </section>
