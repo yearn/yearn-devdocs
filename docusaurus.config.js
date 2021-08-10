@@ -37,7 +37,7 @@ module.exports = {
           label: "Partners"
         },
         {
-          to: 'contributing/index',
+          to: 'contributing/contribute',
           label: "Contributing"
         },
         {
