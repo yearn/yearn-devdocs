@@ -48,4 +48,4 @@ Yearn Improvement Proposals (YIPs), Yearn Delegation Proposals (YDPs) and Yearn 
 |[30](https://yips.yearn.finance/YIPS/yip-30)|YFI Inflation Schedule|[Substreight](https://github.com/substreight), [DeltaTiger](https://github.com/deltatigernz), [Hannes Graah](https://github.com/Graadient), [Daryl lau](https://github.com/Daryllautk), yfi_whale|
 |[31](https://yips.yearn.finance/YIPS/yip-31)|YFI Inflation Distribution|[Substreight](https://github.com/substreight), [DeltaTiger](https://github.com/deltatigernz), [Hannes Graah](https://github.com/Graadient), [Daryl lau](https://github.com/Daryllautk)|
 |[42](https://yips.yearn.finance/YIPS/yip-42)|Add RenBTC to yVaults|[Azeem](https://github.com/zu-ctrl)|
-|[43](https://yips.yearn.finance/YIPS/yip-43)|Improve YIP categories|<a href="sam@freighttrust.com">Sam Bacha</a>|
+|[43](https://yips.yearn.finance/YIPS/yip-43)|Improve YIP categories|<a href="mailto:sam@freighttrust.com">Sam Bacha</a>|
