@@ -26,7 +26,7 @@ Yearn Improvement Proposals (YIPs), Yearn Delegation Proposals (YDPs) and Yearn 
 |[39](https://yips.yearn.finance/YIPS/yip-39)|Add Curve sBTC Pool LP-Tokens yVault|[uhmpeps](https://github.com/az)|
 |[40](https://yips.yearn.finance/YIPS/yip-40)|Replace inactive multisig signers|[cp287](https://github.com/illlefr4u), [Artem K](https://github.com/banteg)|
 |[41](https://yips.yearn.finance/YIPS/yip-41)|Temporarily Empower Multisig|[tracheopteryx](https://github.com/tracheopteryx), [Joe Mahon](https://github.com/Substreight), [franklin501](https://github.com/franklin501), Michael Anderson, Vance Spencer|
-|[44](https://yips.yearn.finance/YIPS/yip-44)|Improve YIP categories|[sam bacha](sam@freighttrust.com)|
+|[44](https://yips.yearn.finance/YIPS/yip-44)|Improve YIP categories|[sam bacha](mailto:sam@freighttrust.com)|
 |[45](https://yips.yearn.finance/YIPS/yip-45)|Add a bounty for proposing YIPs that are implemented|[Sunil Srivatsa](https://github.com/alphastorm)|
 |[51](https://yips.yearn.finance/YIPS/yip-51)|Set Vault v2 Fee Structure|[banteg](https://github.com/banteg), [lehnberg](https://github.com/lehnberg), [milkyklim](https://github.com/milkyklim), [tracheoptery](https://github.com/tracheopteryx)|
 |[54](https://yips.yearn.finance/YIPS/yip-54)|Formalize Operations Funding|[banteg](https://github.com/banteg), [lehnberg](https://github.com/lehnberg), [lex_node](https://github.com/lex-node)|[milkyklim](https://github.com/milkyklim), [tracheopteryx](https://github.com/tracheopteryx)|
