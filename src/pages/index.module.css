@@ -112,10 +112,6 @@ html[data-theme="light"] .textBox {
   border-color: rgba(128, 128, 128, 0.521);
 }
 
-a:link {
-  color:inherit;
-}
-
 a:visited {
   color:inherit;
 }
