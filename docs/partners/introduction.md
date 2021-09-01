@@ -38,3 +38,7 @@ Tiers are what determine the percentage of profit shared with the partner. They 
 *) _Calculated by deducting 35% from Gross Revenue to cover operational costs._
 
 Estimate how your protocol's earnings with the [Profit Sharing Scenario Simulator](https://docs.google.com/spreadsheets/d/1hzgtBkuyLsX0R7t4AwCcDhw3x77UgGrVCXNfQ0CVTbE/edit?usp=sharing)
+
+## Eligibility
+
+Yearn's Partnership Program is focused on protocols which want to build on top of Yearn's products. We firmly believe that the value a protocol brings to the community, and our ecosystem, is more than just funds parked in a vault. To this end, we work closely with our partners to integrate and form a mutually beneficial relationship to add value to both protocols.
