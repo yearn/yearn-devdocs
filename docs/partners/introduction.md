@@ -6,7 +6,7 @@ Yearn's partnership program allows developers to easily integrate yield into the
 
 In an effort to make yVaults accessible from virtually anywhere, any protocol that integrates yVaults can earn up to a 50% profit share from their contributed TVL. The Partnership program is being tested, audited, and we’ll commence a gradual release with selected Partners over the coming months.
 
-If you are interested in partnering with us, we’d love to hear from you! Please reach out to us through [this form](https://yearnfinance.typeform.com/to/uP7xOJUN)
+If you are interested in partnering with us, we’d love to hear from you! Please reach out to us through [this form](https://yearnfinance.typeform.com/to/uP7xOJUN).
 
 ## Profit Share
 
@@ -38,3 +38,7 @@ Tiers are what determine the percentage of profit shared with the partner. They 
 *) _Calculated by deducting 35% from Gross Revenue to cover operational costs._
 
 Estimate how your protocol's earnings with the [Profit Sharing Scenario Simulator](https://docs.google.com/spreadsheets/d/1hzgtBkuyLsX0R7t4AwCcDhw3x77UgGrVCXNfQ0CVTbE/edit?usp=sharing)
+
+## Eligibility
+
+Yearn's Partnership Program is focused on protocols which want to build on top of Yearn's products. We firmly believe that the value a protocol brings to the community, and our ecosystem, is more than just funds parked in a vault. To this end, we work closely with our partners to integrate and form a mutually beneficial relationship to add value to both protocols.
