@@ -6,7 +6,8 @@ This is a collection of resources that aime to be an introduction to how yVaults
 
 The best introduction to V2 is the workshop did by [Storming0x](https://github.com/storming0x/). It's security focused but nevertheless a great introduction to yVaults V2.
 
-- [Video](https://www.youtube.com/watch?v=C0fsYiCI54g)
+- [Video - Part 1](https://www.youtube.com/watch?v=C0fsYiCI54g)
+- [Video - Part 2](https://www.youtube.com/watch?v=Y8y8ALmuLu4)
 - [Slides](https://docs.google.com/presentation/d/1NsePa_hXV1vsbMixTSRsPKYBHYvmVQf7IvpI_8k4p_k/edit#slide=id.p)
 - [Repository](https://github.com/storming0x/yearn-vaults-v2-intro/tree/feat/kernel-session)
 
