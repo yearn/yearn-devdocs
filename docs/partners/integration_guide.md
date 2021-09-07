@@ -36,7 +36,7 @@ If funds are deposit using this delegated method from an address already known t
 
 A single routing contract can handle multiple vaults, but can also be deployed on a per vault basis. The design is very flexible as long as a defined set of addresses are provided to keep track of the partner's contributed TVL.
 
-Users will need ot keep the issued vault token in the recipient address in order for TVL to be tracked. Tokens tend to stay in the end user's wallet, but this is an obvious tradeoff vs using the partner Wrapper. 
+Users will need to keep the issued vault token in the recipient address in order for TVL to be tracked. Tokens tend to stay in the end user's wallet, but this is an obvious tradeoff vs using the partner Wrapper. 
 
 Implications:
 
