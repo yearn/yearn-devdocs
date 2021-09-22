@@ -21,11 +21,11 @@ The below instructions show some python commands that assume you are using the b
    - Set Treasury (`treasury.ychad.eth`) as the rewards address.
    - Set Core Dev multisig (`dev.ychad.eth`) as guardian.
    - Set Strategist multisig (`brain.ychad.eth`) as management.
-   - Set description and symbol for vault or use suggested as default (can be changed on chain later)
+   - Set name and symbol for vault or use suggested as default (can be changed on chain later, but please check out our [naming conventions](https://docs.yearn.finance/developers/naming-convention)). 
 1. Confirm the Parameters are set correctly and press `y`and ENTER to deploy vault.
 1. Check new vault has ABI setup on Etherscan (Some vault versions from older releases may have verification issues with Vyper and proxy detection on Etherscan, consider using latest releases >0.3.5 to ensure verification works).
 
-1. Set up the vault with correct deposit limit:
+1. Set deposit limit according to the table [below](#Limits-per-Stage)
 
    ```python
    vault.setDepositLimit(limit)
@@ -129,13 +129,15 @@ If you need a UI to test, you can coordinate with the strategists.
    ```
 
 1. Monitor `harvest` and `tend` triggers for first few days. Call `harvest`/`tend` manually.
+1. If this is a new vault deployment, test deposit, withdraw, and transfer to ensure functionality is as expected.
 
 ## Scaling up / Moving to Endorse
 
 In addition to the 2 strategists, a Core Developer has to review the strategy before going into production.
 
-1. Increase deposit limit according to the table [below](#Limits-per-Stage)
-1. Set management fee to production level:
+1. Consult with Yearn's web team to ensure that the new vault won't create any issues with the API and that all necessary token/vault metadata is ready. Additionally, if this vault needs to go in the "labs" category, then it needs to be manually added to the website.
+2. Increase deposit limit according to the table [below](#Limits-per-Stage)
+3. Set management fee to production level:
 
    ```python
    vault.setManagementFee(200)
@@ -154,6 +156,12 @@ In addition to the 2 strategists, a Core Developer has to review the strategy be
 ```python
 strategy.acceptGovernance()
 registry.endorseVault(vault)
+```
+
+1. If using a curve voter stategy, make sure to approve the new strategy on yearn's voterProxy:
+
+```python
+proxy.approveStrategy(gauge, strategy)
 ```
 
 ### Endorsing a vault from a previous release
