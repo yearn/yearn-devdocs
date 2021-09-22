@@ -21,23 +21,23 @@ The below instructions show some python commands that assume you are using the b
    - Set Treasury (`treasury.ychad.eth`) as the rewards address.
    - Set Core Dev multisig (`dev.ychad.eth`) as guardian.
    - Set Strategist multisig (`brain.ychad.eth`) as management.
-   - Set description and symbol for vault or use suggested as default (can be changed on-chain later)
-1. Confirm the Parameters are correct and press `y` and ENTER to deploy the vault.
-1. Check new vault has ABI setup on Etherscan (Some vault versions from older releases may have verification issues with Vyper and proxy detection on Etherscan, consider using the latest releases >0.3.5 to ensure verification works).
+   - Set name and symbol for vault or use suggested as default (can be changed on-chain later, but please check out our [naming conventions](https://docs.yearn.finance/developers/naming-convention)). 
+2. Confirm the Parameters are correct and press `y` and ENTER to deploy the vault.
+3. Check new vault has ABI setup on Etherscan (Some vault versions from older releases may have verification issues with Vyper and proxy detection on Etherscan, consider using latest releases >0.3.5 to ensure verification works).
 
-1. Set up the vault with correct deposit limit:
+4. Set deposit limit according to the table [below](#Limits-per-Stage)
 
    ```python
    vault.setDepositLimit(limit)
    ```
 
-1. Set management fee to 0:
+5. Set management fee to 0:
 
    ```python
    vault.setManagementFee(0)
    ```
 
-1. (Optional) Set governance to ychad.eth (`0xFEB4acf3df3cDEA7399794D0869ef76A6EfAff52`) if vault is planned to be endorsed soon:
+6. (Optional) Set governance to ychad.eth (`0xFEB4acf3df3cDEA7399794D0869ef76A6EfAff52`) if vault is planned to be endorsed soon:
 
 - Note you can still make changes to the vault after setting governance up until governance is accepted
 
@@ -129,19 +129,21 @@ vault.setGovernance(ychad.eth)
    ```
 
 1. Monitor `harvest` and `tend` triggers for first few days. Call `harvest`/`tend` manually.
+1. If this is a new vault deployment, test deposit, withdraw, and transfer to ensure functionality is as expected.
 
 ## Scaling up / Moving to Endorse
 
 In addition to the two strategist reviews, a Core Developer has to review the strategy before going into production.
 
-1. Increase deposit limit according to the table [below](#limits-per-stage)
-1. Set management fee to production level:
+1. Consult with Yearn's web team to ensure that the new vault won't create any issues with the API and that all necessary token/vault metadata is ready. Additionally, if this vault needs to go in the "labs" category, then it needs to be manually added to the website.
+2. Increase deposit limit according to the table [below](#Limits-per-Stage)
+3. Set management fee to production level:
 
    ```python
    vault.setManagementFee(200)
    ```
 
-1. Set parameters for vault correctly before endorsement:
+4. Set parameters for vault correctly before endorsement:
 
    - Set Governance to (`ychad.eth`)
    - Set Treasury (`treasury.ychad.eth`) as the rewards address.
@@ -149,14 +151,18 @@ In addition to the two strategist reviews, a Core Developer has to review the st
    - Set Strategist multisig (`brain.ychad.eth`) as management.
    - Set description and symbol for vault or use suggested as default (can be changed on-chain later)
 
-2. Yearn's governance now must accept this vault's governance and endorse it:
+5. Yearn's governance now must accept this vault's governance and endorse it:
 
 ```python
 strategy.acceptGovernance()
 registry.endorseVault(vault)
 ```
 
-5. Update the Ledger Plugin for users to be able to use the vault from Ledger Live. [See more](https://docs.yearn.finance/developers/v2/ledger-plugin).
+6. If using a curve voter stategy, make sure to approve the new strategy on yearn's voterProxy:
+
+```python
+proxy.approveStrategy(gauge, strategy)
+```
 
 ### Endorsing a vault from a previous release
 
