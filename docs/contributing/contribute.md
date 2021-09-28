@@ -1,5 +1,7 @@
 # Contribute
+
 ---
+
 ## Yearn Contributors
 
 Help build the future of finance, shape your skills, and grow the Yearn ecosystem. Before joining our community, take some time to understand the philosophy behind Yearn through the [Yearn Manifesto](https://gov.yearn.finance/t/how-we-think-about-yearn/7137).
@@ -12,7 +14,7 @@ We are always open to new suggestions or better ways of doing things. If you hav
 
 ### File a Bug
 
-If a Yearn product isn't working, please visit the appropriate Github repository listed under [General Resources](#general-resources) — or search in the [Yearn Github Repo](https://github.com/yearn/yearn-protocol) — to see if the issue already exists.
+If a Yearn product isn't working, please visit the appropriate Github repository listed under [General Resources](#general-resources) — or search in the [Yearn Github Repositories](https://github.com/yearn/) — to see if the issue already exists.
 
 If it does not exist, please create a new issue following the template present in the repository.
 
@@ -50,7 +52,7 @@ If you are interested in working on a specific project, check out the list of Ye
 
 If you want an overview on how our services interact with one another in Vaults, please see the schema and accompanying descriptions in the [Vaults Overview](https://docs.yearn.finance/yearn-finance/yvaults/overview).
 
-If you're wondering how **strategies** work, please check out [ETHOnline 🛠️ Yearn Strats 101](https://www.youtube.com/watch?v=4gwZk-IaMRs) — hosted by our Yearn Devs. To start writing a Strategy of your own, please visit the [Yearn Starter Pack Repo](https://github.com/yearn/yearn-starter-pack).
+If you're wondering how **strategies** work, please check out [Yearn Vaults v2 intro](https://www.youtube.com/watch?v=C0fsYiCI54g) — hosted by our Yearn Devs. To start writing a Strategy of your own, please visit the [Yearn Brownie Mix](https://github.com/yearn/brownie-strategy-mix).
 
 If you are looking to integrate with Yearn, please visit our [Integration Guide](https://docs.yearn.finance/developers/integration-guide) and check out our [Interface Documentation](https://docs.yearn.finance/developers/misc-resources/smart-contract-integration).
 
@@ -66,11 +68,11 @@ See our wonderful list of contributors along with individual contribution stats 
 
 ##### Workshop
 
-The best introduction to V2 is the workshop did by Doug (https://github.com/dougstorm/). Even its focused on security, it's a great introduction to Vaults V2.
+The best introduction to V2 is the workshop done for Gitcoin Kernel Sessions. Even its focused on security, it's a great introduction to Vaults V2.
 
 - [Video](https://www.youtube.com/watch?v=C0fsYiCI54g)
 - [Slides](https://docs.google.com/presentation/d/1NsePa_hXV1vsbMixTSRsPKYBHYvmVQf7IvpI_8k4p_k/edit#slide=id.p)
-- [Repository](https://github.com/dougstorm/yearn-vaults-v2-intro/tree/feat/kernel-session)
+- [Repository](https://github.com/storming0x/yearn-vaults-v2-intro/tree/feat/kernel-session)
 
 ##### Start coding
 
@@ -110,6 +112,7 @@ This is complement to the others but it's not directly related to creating strat
 
 #### List of Yearn Tools
 
+- [Yearn Watch](https://yearn.watch/), [Github](https://github.com/yearn/yearn-watch)
 - Yearn Discord FAQ Bot, [Github](https://github.com/dgornjakovic/yfi-faq-bot)
 - [Yearn Tools (Based off Yearn API)](https://yearn.tools/), [Github](https://github.com/yearn-integrations/api)
 
