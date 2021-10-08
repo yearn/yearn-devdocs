@@ -135,13 +135,16 @@ html[data-theme="light"] .textBox {
     grid-template-columns: 1fr;
   }
   .textBox {
-    min-width: 100%;
+    min-width: 92%;
+    margin: 0.5rem;
   }
   .card {
-    min-width: 100%;
+    min-width: 88%;
+    margin: 0.8rem;
   }
   .learn {
-    min-width: 100%;
-    min-height: 100%;
+    margin:0.5rem;
+    min-width: 92%;
+    min-height: 50vh;
   }
 }
