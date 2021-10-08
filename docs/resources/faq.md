@@ -111,4 +111,4 @@
 
 #### Media Resources
 
-- Can be found in the Discord under [\#media-resources](https://discord.com/channels/734804446353031319/736132884443955242/740325105904779326)
+- Can be found in the Discord under [\#media-resources](https://discord.gg/pp3JKTVwtF)
