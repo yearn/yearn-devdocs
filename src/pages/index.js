@@ -22,7 +22,7 @@ function HomepageHeader() {
           </Link>
           <Link style={{ textDecoration: "none", color: "white" }} to="./getting-started/products/yvaults/overview">
             <div className={styles.card}>
-              <h2>Vaults and Strategies</h2>
+              <h2>Vaults & Strategies</h2>
             </div>
           </Link>
           <Link style={{ textDecoration: "none", color: "white" }} to="./getting-started/intro">
