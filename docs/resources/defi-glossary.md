@@ -1,5 +1,5 @@
 # DeFi Glossary
-
+---
 ### Aave
 
 [Aave](https://aave.com/) is an open-source and non-custodial lending protocol enabling the creation of money markets.
@@ -492,3 +492,7 @@ An example of a complex strategy that can be accomplished by a yVault using a Tu
 [Zapper.fi](https://www.zapper.fi/) is a DeFi tool that allows users to simplify their entry and exit into DeFi products and offerings by batching or "zapping" transactions in a batch. It is designed to simplify and speed up this process. In some cases, this method of transaction can reduce gas fees for investors.
 
 This tool is also used to provide granular insight and tracking of a user's DeFi investments and assets. Zapper . fi is natively supported by many DeFi protocols and products.
+
+---
+
+For other terms not found in this list, check out [BlockSpot's Cryto Dictionary](https://blockspot.io/crypto-dictionary/).
