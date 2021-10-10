@@ -1,5 +1,7 @@
 # Contributor Tools
+
 ---
+
 This Guide introduces the tools used by the Yearn Community team and its contributors.
 
 Yearn contributors work with tools geared towards promoting open-source feedback, communication, transparency, and clarity. While there is no sophisticated software stack, contributors should be comfortable with the more heavily used tools and how they function within Yearn contribution workflows.
@@ -8,7 +10,7 @@ Yearn contributors work with tools geared towards promoting open-source feedback
 
 ### Discord
 
-Various Yearn teams (documentation, development etc) host AMAs, ideation, discussions, and follows-ups on Yearn's Discord Channel, an open-source platform geared towards improving team communication. The [Yearn Discord](http://discord.yearn.finance/) lists all channels and users.
+Various Yearn teams (documentation, development etc) host AMAs, ideation, discussions, and follows-ups on Yearn's Discord Channel, an open-source platform geared towards improving team communication. The [Yearn Discord](https://discord.yearn.finance/) lists all channels and users.
 
 Start participating in public discussions by joining the recommended channels below.
 
@@ -31,7 +33,7 @@ Start participating in public discussions by joining the recommended channels be
 
 Yearn contributors host meetings when necessary on Google Hangouts. These are not centrally organized and arise organically within discussions between contributors or teams, as such, invitations are up to the individuals organizing these discussions. Invitations are sent to contributors by Discord or Telegram and Google Calendar automatically schedules the event and sends reminders.
 
-- [Jitsi Meet](http://meet.jit.si)
+- [Jitsi Meet](https://meet.jit.si)
 - [Google Meet](https://meet.google.com/_meet)
 
 ## Writing Platforms
