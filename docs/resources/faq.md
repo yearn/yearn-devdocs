@@ -141,7 +141,7 @@
 
 - This website is one of many front-ends maintained by separate groups of developers. Consider getting in touch with the yearn.fi development team via their website or through social media channels.
 
-#### If you have any other questions about using the protocol, it's best to ask in either [Discord](https://discord.yearn.finance) or [Telegram](https://t.me/yearnfinance)
+#### If you have any other questions about using the protocol, it's best to ask in either [Discord](https://discord.gg/yearn) or [Telegram](https://t.me/yearnfinance)
 
 ## Careers and contributors
 

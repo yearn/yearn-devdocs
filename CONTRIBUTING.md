@@ -4,17 +4,15 @@ Thanks for taking the time to contribute to the Yearn Dev Docs!
 
 The following is a set of guidelines for contributing to Yearn's Dev Docs, which are hosted on [GitHub](https://github.com/yearn/yearn-devdocs).
 
-
 ## Links
 
 - [Yearn Dev Docs Website](https://yearn.github.io/yearn-devdocs/)
 - [Yearn Finance on GitHub](https://github.com/yearn/)
 - [Twitter](https://twitter.com/iearnfinance)
-- [Discord](https://discord.yearn.finance/)
+- [Discord](https://discord.gg/yearn/)
 - [Discourse](https://gov.yearn.finance/)
 
-
-## High Level Contributing Workflow 
+## High Level Contributing Workflow
 
 _Adapted and condensed from [GitHub-Forking by Chaser324](https://gist.github.com/Chaser324/ce0505fbed06b947d962)._
 
@@ -47,8 +45,7 @@ $ git checkout master
 $ git merge upstream/master
 ```
 
-To ensure that upstream merges are simple fast-forwards, it is best not to commit directly to your fork's `master` branch. 
-
+To ensure that upstream merges are simple fast-forwards, it is best not to commit directly to your fork's `master` branch.
 
 ### Doing Your Work
 
@@ -64,7 +61,6 @@ $ git checkout -b newdocedit
 ```
 
 Now make all those great additions and edits to your copy of Yearn's Dev Docs.
-
 
 ### Submitting a Pull Request
 
@@ -90,12 +86,11 @@ If you have made many smaller commits to your development branch, it may be desi
 Rebase all commits on your development branch:
 
 ```shell
-$ git checkout 
+$ git checkout
 $ git rebase -i master
 ```
 
 This will open up a text editor where you can specify which commits to squash.
-
 
 #### Submitting
 

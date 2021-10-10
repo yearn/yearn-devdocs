@@ -1,8 +1,10 @@
 # Links
+
 ---
+
 ### Community
 
-- [Discord](https://discord.yearn.finance)
+- [Discord](https://discord.gg/yearn)
 - [Telegram](https://t.me/yearnfinance)
 - [Reddit](https://www.reddit.com/r/yearn_finance/)
 - [Github](https://github.com/yearn)
@@ -11,11 +13,11 @@
 
 ### Updates
 
-- [Twitter](https://twitter.com/iearnfinance) 
+- [Twitter](https://twitter.com/iearnfinance)
 - [Medium](https://medium.com/iearn)
 - [Yearn Newsletter](https://yearn.substack.com/)
 - [Weekly Governance Newsletter](https://medium.com/yearn-governance-roundup)
-- [Weekly Vault Updates Newsletter](https://medium.com/yearn-state-of-the-vaults) 
+- [Weekly Vault Updates Newsletter](https://medium.com/yearn-state-of-the-vaults)
 
 ### Collaborate
 
@@ -45,12 +47,14 @@
 - [Yearn API](https://vaults.finance/all)
 
 ### General Websites
+
 - [yCosystem](https://yfi.fyi/)
 - [Dune Analytics](https://duneanalytics.com/projects/yearn)
 - [CoinGecko](https://www.coingecko.com/en/coins/yearn-finance)
 - [Defi Market Cap](https://defimarketcap.io/protocol/yearn-vault)
 
 ### Community Calculators
+
 - [Feel the Yearn](https://feel-the-yearn.app/vaults)
 - [yVault ROI Calc](https://yvault-roi.netlify.app/)
 - [Yearn ROI Calc](https://yearn-roi.xyz/)
