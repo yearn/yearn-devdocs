@@ -1,6 +1,8 @@
 # Proposal Process
+
 ---
-The Yearn ecosystem is controlled by YFI token holders who submit and vote on off-chain proposals that govern the ecosystem. Proposals that generate a majority support (>50% of the vote) are implemented by a 9 member multi-signature wallet. 
+
+The Yearn ecosystem is controlled by YFI token holders who submit and vote on off-chain proposals that govern the ecosystem. Proposals that generate a majority support (>50% of the vote) are implemented by a 9 member multi-signature wallet.
 
 Changes must be signed by 6 out of the 9 wallet signers in order to be implemented. The [members of the multi-signature wallet](https://docs.yearn.finance/resources/faq#who-is-on-the-multisig) were voted in by YFI holders and are subject to change from future governance votes.
 
@@ -8,9 +10,9 @@ Changes must be signed by 6 out of the 9 wallet signers in order to be implement
 
 Discussion regarding changes in the protocol happen on a variety of platforms such as:
 
- - [Governance Forum](https://gov.yearn.finance/)
- - [Discord](https://discord.yearn.finance)
- - [Telegram](https://t.me/yearnfinance)
+- [Governance Forum](https://gov.yearn.finance/)
+- [Discord](https://discord.gg/yearn)
+- [Telegram](https://t.me/yearnfinance)
 
 It is recommended to get as much feedback as possible from the various channels of communication before introducing a formal proposal. The governance forum and Discord server have dedicated channels for specific topics.
 
@@ -23,10 +25,12 @@ It is recommended to get as much feedback as possible from the various channels 
 ![](https://i.imgur.com/ZRNp2Zq.png)
 
 #### Previous and current proposals
+
 - Previous: [Proposal Repository](https://docs.yearn.finance/governance/proposal-repository)
-- Current: [Snapshot](https://snapshot.page/#/yearn) 
+- Current: [Snapshot](https://snapshot.page/#/yearn)
 
 #### Requirements to pass proposals
+
 - 3 day discussion on the [forum](https://gov.yearn.finance/)
   - At least 25% vote 'for' the change
 - 1 YFI in possession to submit to snapshot
@@ -39,6 +43,7 @@ Anyone can post a proposal on the forum for discussion within the community. If 
 The default template for proposals can be found on [Github](https://github.com/yearn/YIPS/blob/master/yip-X.md) + on the [forum](https://gov.yearn.finance) if you make a post under proposals or discussion it will auto-fill in the template as well.
 
 **Resources**:
+
 - [Proposal How-To](https://gov.yearn.finance/t/proposal-how-to/106)
 - [YIP 0: YIP Purpose and Guidelines](https://yips.yearn.finance/YIPS/yip-0)
 - [YIP 44: Improve YIP Categories](https://yips.yearn.finance/YIPS/yip-44)
@@ -49,14 +54,14 @@ The default template for proposals can be found on [Github](https://github.com/y
 #### How do I vote?
 
 - Holding or staking YFI in the following places will enable you to vote on Yearn's [Snapshot](https://snapshot.page/#/yearn) page:
-	- Your wallet
-	- YFI yVault V2 (equivalent to holding the yvYFI token)
-	- Balancer YFI/WETH LP token
-	- Uniswap YFI/WETH LP token
-	- Sushiswap YFI/WETH LP token staked in MasterChef
-	- MakerDAO YFI collateral
-	- Unit Protocol YFI collateral
-	- Bancor
+  - Your wallet
+  - YFI yVault V2 (equivalent to holding the yvYFI token)
+  - Balancer YFI/WETH LP token
+  - Uniswap YFI/WETH LP token
+  - Sushiswap YFI/WETH LP token staked in MasterChef
+  - MakerDAO YFI collateral
+  - Unit Protocol YFI collateral
+  - Bancor
 
 #### What’s the difference between voting for a poll on the forum and an off-chain vote?
 

@@ -74,7 +74,7 @@ module.exports = {
             },
             {
               label: 'Discord',
-              href: 'https://discord.yearn.finance/',
+              href: 'https://discord.gg/yearn/',
             },
             {
               label: 'Twitter',

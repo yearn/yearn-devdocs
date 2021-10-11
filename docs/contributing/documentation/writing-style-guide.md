@@ -253,7 +253,7 @@ Review the respective Contribute.md for each repository where pertinent before s
 - Check for an associated maintenance guide before starting work on a given document if applicable.
 - A document maintenance guide outlines standards to help Reviewers and contributors when maintaining a given resource.
   - The rules described within a document-specific maintenance guide supersede other guides.
-  - If a discrepancy is glaring or unreasonable, bring the issue to an admin in the [#documentation](https://discord.com/channels/734804446353031319/748476302121762866) channel on Yearn's discord.
+  - If a discrepancy is glaring or unreasonable, bring the issue to an admin in the [#documentation](https://discord.gg/freT6YRNSX) channel on Yearn's discord.
 
 #### Contributor Tools
 
@@ -262,7 +262,7 @@ Review the respective Contribute.md for each repository where pertinent before s
 ### Express Interest
 
 - Check out the Getting Started guide for contributing to Documentation.
-- Join the [#documentation](https://discord.com/channels/734804446353031319/748476302121762866) channel on Yearn's Discord, read the pinned messages, and reach out to a channel admin.
+- Join the [#documentation](https://discord.gg/freT6YRNSX) channel on Yearn's Discord, read the pinned messages, and reach out to a channel admin.
 - Yearn community team members and senior contributors help onboard new contributors via Discord or Telegram chats where applicable.
 - Feel free to discuss personal interests and relevant skills to help determine a well-suited project/issue and jump right in.
 - To understand strengths you can also provide relevant examples of past projects, work, and experience.
@@ -272,7 +272,7 @@ Review the respective Contribute.md for each repository where pertinent before s
 ### Collaborate
 
 - When accepting an assignment, be sure to collaborate early and often.
-- Visit [#documentation](https://discord.com/channels/734804446353031319/748476302121762866) or corresponding Telegram chat regularly.
+- Visit [#documentation](https://discord.gg/freT6YRNSX) or corresponding Telegram chat regularly.
 - Coordinate with other members.
   - Ask as many questions as necessary
   - Ask for feedback when stuck.

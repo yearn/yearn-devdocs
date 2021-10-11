@@ -1,5 +1,7 @@
 # Contributor Tools
+
 ---
+
 This Guide introduces the tools used by the Yearn Community team and its contributors.
 
 Yearn contributors work with tools geared towards promoting open-source feedback, communication, transparency, and clarity. While there is no sophisticated software stack, contributors should be comfortable with the more heavily used tools and how they function within Yearn contribution workflows.
@@ -8,19 +10,19 @@ Yearn contributors work with tools geared towards promoting open-source feedback
 
 ### Discord
 
-Various Yearn teams (documentation, development etc) host AMAs, ideation, discussions, and follows-ups on Yearn's Discord Channel, an open-source platform geared towards improving team communication. The [Yearn Discord](http://discord.yearn.finance/) lists all channels and users.
+Various Yearn teams (documentation, development etc) host AMAs, ideation, discussions, and follows-ups on Yearn's Discord Channel, an open-source platform geared towards improving team communication. The [Yearn Discord](https://discord.gg/yearn/) lists all channels and users.
 
 Start participating in public discussions by joining the recommended channels below.
 
-- [#general](https://discord.com/channels/734804446353031319/734862139386232902)
-- [#governance](https://discord.com/channels/734804446353031319/734805853768777738)
-- [#support](https://discord.com/channels/734804446353031319/734811808401063966)
-- [#dev](https://discord.com/channels/734804446353031319/735311380646723684)
-- [#documentation](https://discord.com/channels/734804446353031319/748476302121762866)
+- [#general](https://discord.gg/Xvku8TrjyA)
+- [#governance](https://discord.gg/sPxb4duuhv)
+- [#support](https://discord.gg/QeFdQSPuPX)
+- [#dev](https://discord.gg/w89vVxeV9h)
+- [#documentation](https://discord.gg/freT6YRNSX)
 
 **Pro Tips:**
 
-- Visit [#documentation](https://discord.com/channels/734804446353031319/748476302121762866) regularly.
+- Visit [#documentation](https://discord.gg/freT6YRNSX) regularly.
   - It's an excellent channel for collaboration.
 - Coordinate with other members.
 - Share early and share often.
@@ -31,7 +33,7 @@ Start participating in public discussions by joining the recommended channels be
 
 Yearn contributors host meetings when necessary on Google Hangouts. These are not centrally organized and arise organically within discussions between contributors or teams, as such, invitations are up to the individuals organizing these discussions. Invitations are sent to contributors by Discord or Telegram and Google Calendar automatically schedules the event and sends reminders.
 
-- [Jitsi Meet](http://meet.jit.si)
+- [Jitsi Meet](https://meet.jit.si)
 - [Google Meet](https://meet.google.com/_meet)
 
 ## Writing Platforms
