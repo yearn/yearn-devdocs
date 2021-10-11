@@ -2,7 +2,11 @@ module.exports = {
     mySidebar: [
         'faq',
         'links',
-        'financials',
+        {
+            type: 'link',
+            href: 'https://github.com/yearn/yearn-pm/tree/master/financials/reports',
+            label: 'Financials'
+        },
         'defi-glossary',
         {
             type: 'category',
