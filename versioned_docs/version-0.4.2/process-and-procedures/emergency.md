@@ -1,6 +1,6 @@
 # Emergency Procedures for Yearn Finance
 
-## TLDR: [Emergency Checklist](#emergency-checklist)
+## TL;DR: [Emergency Checklist](#emergency-checklist)
 
 ## Introduction
 
@@ -48,8 +48,8 @@ Main responsibilities:
 - Prepare or help with transactions in different multi-sigs
   Reference:
   - [emergency-toolbox](https://github.com/yearn/emergency-toolbox)
-  - [CMO](https://github.com/yearn/chief-multisig-officer)
-  - [strategists-ms](https://github.com/yearn/strategist-ms)
+  - [CMO](https://github.com/yearn/chief-multisig-officer) - private
+  - [strategists-ms](https://github.com/yearn/strategist-ms) - private
 
 ### Strategist Lead
 
@@ -135,6 +135,8 @@ This checklist should be complemented with the [steps](#emergency-steps)
 - [ ] Assign Key Roles to War Room members
 - [ ] Add Strategist or other Expert (or their backup) to the War Room
 - [ ] Clear related Multi-sig queues
+- [ ] Disable deposits and/or withdrawals as needed in the web UI
+- [ ] If share price has been artificially lowered, then call `vault.setDepositLimit(0)` from governance
 - [ ] Confirm and identify Issue
 - [ ] Take immediate corrective/preventive actions in order to prevent (further) loss of funds
 - [ ] Communicate the current situation internally and externally (as appropriate)
@@ -157,12 +159,11 @@ List of tools and alternatives in case primary tools are not available during an
 | Description         | Primary                                        |                               Secondary                                |
 | ------------------- | ---------------------------------------------- | :--------------------------------------------------------------------: |
 | Code Sharing        | Github                                         | [HackMd](https://hackmd.io/), [CodeShare](https://codeshare.io/5Og7mj) |
-| Communications*      | Telegram                                       |                                Discord                                 |
+| Communications\*    | Telegram                                       |                                Discord                                 |
 | Transaction Details | [Etherscan](https://etherscan.io/)             |                    [EthTxInfo](https://ethtx.info/)                    |
 | Debugging           | Brownie                                        |                    [Tenderly](https://tenderly.co/)                    |
-| Transaction Builder | [ape-safe](https://github.com/banteg/ape-safe) |               _Backup if gnosis safe Api is not working?_               |
-| Screen Sharing*      | [jitsi](https://jitsi.org/)                    |                            Google Hangouts                             |
-
+| Transaction Builder | [ape-safe](https://github.com/banteg/ape-safe) |              _Backup if gnosis safe Api is not working?_               |
+| Screen Sharing\*    | [jitsi](https://jitsi.org/)                    |                            Google Hangouts                             |
 
 **Facilitator is responsible to ensure no unauthorized persons enter the War Room or join these tools via invite links that leak.**
 
@@ -170,7 +171,7 @@ List of tools and alternatives in case primary tools are not available during an
 
 A Post Mortem should be conducted after an incident to gather data and feedback from War Room participants in order to produce actionable improvements for Yearn processes such as this one.
 
-Following the dissolution of a War Room, the Facilitator should ideally conduct an immediate informal debrief to gather initial notes before they are forgotten by participants. 
+Following the dissolution of a War Room, the Facilitator should ideally conduct an immediate informal debrief to gather initial notes before they are forgotten by participants.
 
 This can then be complemented by a more extensive Post Mortem as outlined below.
 
