@@ -30,15 +30,15 @@ module.exports = {
         {
           type: 'doc',
           docId: 'getting-started',
-          label: "Developers"
+          label: "Develop"
         },
         {
           to: 'partners/introduction',
-          label: "Partners"
+          label: "Partner"
         },
         {
           to: 'contributing/contribute',
-          label: "Contributing"
+          label: "Contribute"
         },
         {
           to: 'resources/faq',
