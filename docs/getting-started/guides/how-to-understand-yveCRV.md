@@ -16,7 +16,7 @@ yveCRV stands for veCRV-DAO yVault and is [listed on CoinGecko](https://www.coin
 
 Deposit CRV into the yveCRV vault: [https://yearn.finance/vaults](https://yearn.finance/vaults)
 
-As with all vaults, if you are depositing for the first time two transactions are required. First you need to approve the transaction. This allows CRV to be deposited into Yearn vaults. And then you decide how much CRV you would like to deposit. Pleas refer to the [general guide](../using-yearn) for more information.
+As with all vaults, if you are depositing for the first time two transactions are required. First you need to approve the transaction. This allows CRV to be deposited into Yearn vaults. And then you decide how much CRV you would like to deposit. Please refer to the [general guide](/getting-started/using-yearn) for more information.
 
 Alternatively, you can buy yveCRV directly on [Sushiswap](https://app.sushi.com/swap?inputCurrency=ETH&outputCurrency=0xc5bDdf9843308380375a611c18B50Fb9341f502A). The contract address is [0xc5bddf9843308380375a611c18b50fb9341f502a](https://etherscan.io/address/0xc5bddf9843308380375a611c18b50fb9341f502a).
 

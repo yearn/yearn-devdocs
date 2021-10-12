@@ -54,7 +54,7 @@ You can see our progress on our [Github Project Board](https://github.com/orgs/y
 
 If you are interested in working on a specific project, check out the list of Yearn products in the [General Resources](#general-resources) section below or check out our list of repos [here](https://docs.yearn.finance/developers/code-repositories).
 
-If you want an overview on how our services interact with one another in Vaults, please see the schema and accompanying descriptions in the [Vaults Overview](../getting-started/products/yvaults/overview).
+If you want an overview on how our services interact with one another in Vaults, please see the schema and accompanying descriptions in the [Vaults Overview](/getting-started/products/yvaults/overview).
 
 If you're wondering how **strategies** work, please check out [Yearn Vaults v2 intro](https://www.youtube.com/watch?v=C0fsYiCI54g) — hosted by our Yearn Devs. To start writing a Strategy of your own, please visit the [Yearn Brownie Mix](https://github.com/yearn/brownie-strategy-mix).
 

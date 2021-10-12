@@ -78,7 +78,7 @@ Each yTeam is assigned specific decision-making powers, defined by YIP-61:
 
 ### Multisig
 
-Decisions issued by yTeams will be executed on-chain by the Multisig until a more decentralized system is approved for implimentation. In the mean time, the [Multisig](../../resources/faq#who-is-on-the-multisig) controls the following:
+Decisions issued by yTeams will be executed on-chain by the Multisig until a more decentralized system is approved for implimentation. In the mean time, the [Multisig](/resources/faq#who-is-on-the-multisig) controls the following:
 
 | Power               | Description                                                                                                                                           |
 | ------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- |

@@ -4,7 +4,7 @@
 
 The Yearn ecosystem is controlled by YFI token holders who submit and vote on off-chain proposals that govern the ecosystem. Proposals that generate a majority support (>50% of the vote) are implemented by a 9 member multi-signature wallet.
 
-Changes must be signed by 6 out of the 9 wallet signers in order to be implemented. The [members of the multi-signature wallet](../../resources/faq#who-is-on-the-multisig) were voted in by YFI holders and are subject to change from future governance votes.
+Changes must be signed by 6 out of the 9 wallet signers in order to be implemented. The [members of the multi-signature wallet](/resources/faq#who-is-on-the-multisig) were voted in by YFI holders and are subject to change from future governance votes.
 
 ## Discussion
 
