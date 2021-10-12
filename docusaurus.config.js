@@ -2,7 +2,7 @@
 module.exports = {
   title: 'Yearn.finance',
   tagline: 'DeFi made simple',
-  url: 'https://your-docusaurus-test-site.com',
+  url: 'https://yearn.github.io',
   baseUrl: '/yearn-devdocs/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
