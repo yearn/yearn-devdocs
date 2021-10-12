@@ -91,7 +91,7 @@ When you decide to start, this reading material is going to come handy:
 Once you have the strategy ready. This will guide you further down the road.
 
 - [Vault naming standard](https://github.com/iearn-finance/yearn-assets/blob/master/naming-standard.md)
-- [Release process](../v2/process-and-procedures/operations)
+- [Release process](/v2/process-and-procedures/operations)
 - [Security check](https://docs.google.com/document/d/1hBKB73kJPQM71enrG8xoSFj7wxYmczUlgigyq2KkcTE/edit#heading=h.4ieoeyetfrxm)
 
 ##### Other reading material
