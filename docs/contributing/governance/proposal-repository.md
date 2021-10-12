@@ -52,4 +52,4 @@ Yearn Improvement Proposals (YIPs), Yearn Delegation Proposals (YDPs) and Yearn 
 
 ---
 
-For current proposals, please visit [Snapshot](https://snapshot.page/#/yearn)
+For current proposals, please visit [Snapshot](https://snapshot.org/#/ybaby.eth)
