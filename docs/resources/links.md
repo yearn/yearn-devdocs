@@ -25,11 +25,6 @@
 - [Governance Forum](https://gov.yearn.finance)
 - [Yearn Contribute](https://contribute.yearn.rocks/)
 
-### Learn
-
-- [yCosystem](https://ycosystem.info/)
-- [Yearn FAQ](https://docs.yearn.finance/resources/faq)
-
 ### Vaults Detail Reference
 
 - [Vaults at Yearn](https://medium.com/yearn-state-of-the-vaults/the-vaults-at-yearn-9237905ffed3)
