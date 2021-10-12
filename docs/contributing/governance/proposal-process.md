@@ -26,7 +26,7 @@ It is recommended to get as much feedback as possible from the various channels 
 
 #### Previous and current proposals
 
-- Previous: [Proposal Repository](https://docs.yearn.finance/governance/proposal-repository)
+- Previous: [Proposal Repository](proposal-repository.md)
 - Current: [Snapshot](https://snapshot.page/#/yearn)
 
 #### Requirements to pass proposals
