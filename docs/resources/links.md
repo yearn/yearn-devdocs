@@ -41,7 +41,6 @@
 - [Yearn API](https://api.yearn.finance/v1/chains/1/vaults/all)
 
 ### General Websites
-
 - [Dune Analytics](https://duneanalytics.com/projects/yearn)
 - [CoinGecko](https://www.coingecko.com/en/coins/yearn-finance)
 - [Defi Market Cap](https://defimarketcap.io/protocol/yearn-vault)
