@@ -10,7 +10,11 @@ Help build the future of finance, shape your skills, and grow the Yearn ecosyste
 
 ### Have an idea?
 
-We are always open to new suggestions or better ways of doing things. If you have an idea feel free to use the appropriate channel on [Discord](https://discord.gg/yearn), [Reddit](https://www.reddit.com/r/yearn_finance/), or make a post on the governance [forum](https://gov.yearn.finance/c/general-chat/7). If the idea is thorough enough, make a post in the [Proposals](https://gov.yearn.finance/c/proposals/5) section on the governance forum and be sure to follow the Proposal [Guidelines](https://gov.yearn.finance/t/proposal-how-to/106). Check previous [YIPs](https://yips.yearn.finance/all-yip) for guidance.
+We are always open to new suggestions or better ways of doing things. If you have an idea feel free to use the appropriate channel on [Discord](https://discord.gg/yearn), [Reddit](https://www.reddit.com/r/yearn_finance/), make a post on the governance [forum](https://gov.yearn.finance/c/general-chat/7), or consider adding to the [Pool of Ideas](https://yearnfinance.notion.site/Pool-of-Ideas-d75383ade9154d8bb6163388c6c2b39b). If the idea is thorough enough, make a post in the [Proposals](https://gov.yearn.finance/c/proposals/5) section on the governance forum. Be sure to follow the Proposal [Guidelines](https://gov.yearn.finance/t/proposal-how-to/106) and check previous [YIPs](https://yips.yearn.finance/all-yip) for guidance.
+
+### Ready to contribute?
+
+Check out our [list of open tasks here](https://contribute.yearn.rocks/).
 
 ### File a Bug
 
@@ -50,7 +54,7 @@ You can see our progress on our [Github Project Board](https://github.com/orgs/y
 
 If you are interested in working on a specific project, check out the list of Yearn products in the [General Resources](#general-resources) section below or check out our list of repos [here](https://docs.yearn.finance/developers/code-repositories).
 
-If you want an overview on how our services interact with one another in Vaults, please see the schema and accompanying descriptions in the [Vaults Overview](https://docs.yearn.finance/yearn-finance/yvaults/overview).
+If you want an overview on how our services interact with one another in Vaults, please see the schema and accompanying descriptions in the [Vaults Overview](/getting-started/products/yvaults/overview).
 
 If you're wondering how **strategies** work, please check out [Yearn Vaults v2 intro](https://www.youtube.com/watch?v=C0fsYiCI54g) — hosted by our Yearn Devs. To start writing a Strategy of your own, please visit the [Yearn Brownie Mix](https://github.com/yearn/brownie-strategy-mix).
 
@@ -87,7 +91,7 @@ When you decide to start, this reading material is going to come handy:
 Once you have the strategy ready. This will guide you further down the road.
 
 - [Vault naming standard](https://github.com/iearn-finance/yearn-assets/blob/master/naming-standard.md)
-- [Release process](../v2/process-and-procedures/operations)
+- [Release process](/v2/process-and-procedures/operations)
 - [Security check](https://docs.google.com/document/d/1hBKB73kJPQM71enrG8xoSFj7wxYmczUlgigyq2KkcTE/edit#heading=h.4ieoeyetfrxm)
 
 ##### Other reading material
@@ -104,9 +108,7 @@ This is complement to the others but it's not directly related to creating strat
 
 - [Yearn.Finance](https://yearn.finance/), [Github](https://github.com/yearn/iearn-finance)
 - [Yearn Governance](https://ygov.finance/), [Github](https://github.com/yearn/ygov-finance)
-- [Yearn Insurance](https://yinsure.finance/), [Github](https://github.com/yearn/yinsure-finance)
 - [Yearn Borrow](https://yborrow.finance/), [Github](https://github.com/yearn/iborrow-finance)
-- [Yearn Swap](https://yswap.exchange/), [Github](https://github.com/yearn/yswap-finance)
 - [Yearn Documentation](https://docs.yearn.finance/), [Github](https://github.com/yearn/yearn-docs)
 - [Yearn Forum](https://gov.yearn.finance/)
 
@@ -119,11 +121,10 @@ This is complement to the others but it's not directly related to creating strat
 #### Contributors Websites
 
 - [yCosystem (Yearn Community Aggregator)](https://ycosystem.info/) - Repository Of Yearn Links
-- [Vaults Finance](https://vaults.finance/) - One click deposit into vaults
 - [Feel the Yearn](https://feel-the-yearn.app/vaults) - Vault Statistics
-- [YFI Address Stats](https://www.yfistats.com/) - TVL and vault pricing information built by @Bob_The_Buidler
+- [YFI Address Stats](https://www.yfistats.com/) - Yearn Financial Information
 - [Yieldfarming](https://yieldfarming.info/), [Github](https://github.com/yieldfarming/yieldfarming)
 - [Feel-the-yearn](https://feel-the-yearn.app) - Table of current active strategies
 - [yVault ROI Calculator](https://yvault-roi.netlify.app/)
 - [Yearn Snapshot](https://yearn.snapshot.page/)
-- [Yearn Newsletter](https://yearn.substack.com/) - Weekly YFI newsletter run by [@yfi_nomad](https://twitter.com/yfi_nomad)
+- [Yearn Newsletter](https://yearn.substack.com/) - Weekly YFI newsletter

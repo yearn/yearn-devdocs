@@ -91,6 +91,5 @@ Community resources to monitor your returns:
 
 - [Zapper](https://zapper.fi/)
 - [Zerion](https://app.zerion.io/)
-- [Yearn Vault ROI Calculator](https://yearn-roi.xyz/#/)
 - [yVault ROI](https://yvault-roi.netlify.app/)
-- [https://trackavault.com/](https://trackavault.com/)
+- [Trackavault](https://trackavault.com/)

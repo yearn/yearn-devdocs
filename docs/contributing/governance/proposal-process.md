@@ -4,7 +4,7 @@
 
 The Yearn ecosystem is controlled by YFI token holders who submit and vote on off-chain proposals that govern the ecosystem. Proposals that generate a majority support (>50% of the vote) are implemented by a 9 member multi-signature wallet.
 
-Changes must be signed by 6 out of the 9 wallet signers in order to be implemented. The [members of the multi-signature wallet](https://docs.yearn.finance/resources/faq#who-is-on-the-multisig) were voted in by YFI holders and are subject to change from future governance votes.
+Changes must be signed by 6 out of the 9 wallet signers in order to be implemented. The [members of the multi-signature wallet](/resources/faq#who-is-on-the-multisig) were voted in by YFI holders and are subject to change from future governance votes.
 
 ## Discussion
 
@@ -26,8 +26,8 @@ It is recommended to get as much feedback as possible from the various channels 
 
 #### Previous and current proposals
 
-- Previous: [Proposal Repository](https://docs.yearn.finance/governance/proposal-repository)
-- Current: [Snapshot](https://snapshot.page/#/yearn)
+- Previous: [Proposal Repository](proposal-repository.md)
+- Current: [Snapshot](https://snapshot.org/#/ybaby.eth)
 
 #### Requirements to pass proposals
 
@@ -38,7 +38,7 @@ It is recommended to get as much feedback as possible from the various channels 
 
 ### Making a proposal
 
-Anyone can post a proposal on the forum for discussion within the community. If it's promoted to off-chain votation (via [Snapshot](https://snapshot.page/#/yearn)), only someone holding 1 YFI can submit it to Snapshot. In case your proposal made it to off-chain votation and you don't have enough YFI, mods will help you.
+Anyone can post a proposal on the forum for discussion within the community. If it's promoted to off-chain votation (via [Snapshot](https://snapshot.org/#/ybaby.eth)), only someone holding 1 YFI can submit it to Snapshot. In case your proposal made it to off-chain votation and you don't have enough YFI, mods will help you.
 
 The default template for proposals can be found on [Github](https://github.com/yearn/YIPS/blob/master/yip-X.md) + on the [forum](https://gov.yearn.finance) if you make a post under proposals or discussion it will auto-fill in the template as well.
 
@@ -53,7 +53,7 @@ The default template for proposals can be found on [Github](https://github.com/y
 
 #### How do I vote?
 
-- Holding or staking YFI in the following places will enable you to vote on Yearn's [Snapshot](https://snapshot.page/#/yearn) page:
+- Holding or staking YFI in the following places will enable you to vote on Yearn's [Snapshot](https://snapshot.org/#/ybaby.eth) page:
   - Your wallet
   - YFI yVault V2 (equivalent to holding the yvYFI token)
   - Balancer YFI/WETH LP token
@@ -65,7 +65,7 @@ The default template for proposals can be found on [Github](https://github.com/y
 
 #### What’s the difference between voting for a poll on the forum and an off-chain vote?
 
-- A poll just gauges the sentiment of what the community is feeling on the proposal while an off-chain vote (via [Snapshot](https://snapshot.page/#/yearn)) will be binding and will take effect if it passes.
+- A poll just gauges the sentiment of what the community is feeling on the proposal while an off-chain vote (via [Snapshot](https://snapshot.org/#/ybaby.eth)) will be binding and will take effect if it passes.
 
 ## Implementation
 

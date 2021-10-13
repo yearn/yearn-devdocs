@@ -1,8 +1,10 @@
 # How To Understand yVault ROI
+
 ---
+
 ### ROI
 
-Are you an advanced user trying to understand how ROI is calculated? Skip directly to "[_Why we can't use compound or linear interest formulas to estimate yVaults returns_](https://docs.yearn.finance/resources/guides/how-to-understand-yvault-roi#why-cant-we-use-compound-or-linear-interest-formulas-to-estimate-yvaults-returns)"
+Are you an advanced user trying to understand how ROI is calculated? Skip directly to "[_Why we can't use compound or linear interest formulas to estimate yVaults returns_](how-to-understand-yvault-roi#why-cant-we-use-compound-or-linear-interest-formulas-to-estimate-yvaults-returns)"
 
 If you are a beginner in DeFi or new to Yearn keep on reading.
 
@@ -15,7 +17,7 @@ If you are a beginner in DeFi or new to Yearn keep on reading.
 - ROI presented in Yearn is a **yearly ROI**. You deposit X and 1 year later you receive X + \(X \* ROI\).
 - The ROI presented is a _current estimation_ based on data since the yVault's inception. If performance remains constant, after 1 year you will receive the displayed ROI. Rates are unstable currently, and fluctuate based on market/strategy.
 
-yVaults have different yield farming [strategies](https://docs.yearn.finance/resources/faq#where-can-i-find-current-strategies), which determine how assets are moved between liquidity pools. Strategies are created by the `Controller` who manages the yVault.
+yVaults have different yield farming [strategies](/resources/faq#where-can-i-find-strategy-descriptions), which determine how assets are moved between liquidity pools. Strategies are created by the `Controller` who manages the yVault.
 
 New strategies are also voted by the community through [governance proposals](https://gov.yearn.finance). A new strategy creates a new challenge in terms of ROI calculation.
 
@@ -145,7 +147,7 @@ At this point, she could withdraw and receive her initial yCRV deposit and an ad
 
 1. The short-term ROI data is a suitable estimation for the short-term \(i.e. if we compare the % from the last two days, it's likely that the following two days are going go be similar\).
 2. Short-term ROI data is _**absolutely not accurate**_ when extrapolated in the long-term.
-3. Long-term data \(say today and [inception of vault](https://docs.yearn.finance/resources/faq#where-can-i-find-current-strategies)\) is a good overall estimation of the vaults performance and should be used when comparing different investment opportunities.
+3. Long-term data \(say today and [inception of vault](/resources/faq#where-can-i-find-strategy-descriptions)\) is a good overall estimation of the vaults performance and should be used when comparing different investment opportunities.
 
 In other words, if your goal is to approximate returns in the short-term, you should use datasets that are recent \(daily/weekly\).
 
@@ -155,5 +157,5 @@ If you would like to make a crude estimation on how returns may look like in a y
 
 The community has been actively creating tools and guides on this topic.
 
-- [https://github.com/thegismar/yearn_roi/blob/master/yearn_vaults_ROI_calc.ipynb](https://github.com/thegismar/yearn_roi/blob/master/yearn_vaults_ROI_calc.ipynb) provides a mathemathical explanation on how ROI is calculated with some caveats. \(This repository is no longer being maintained\).
-- [Statistics FAQ](https://docs.yearn.finance/resources/faq#where-can-i-find-current-strategies)
+- [https://github.com/Zer0dot/yearn_roi/blob/master/yearn_vaults_ROI_calc.ipynb](https://github.com/Zer0dot/yearn_roi/blob/master/yearn_vaults_ROI_calc.ipynb) provides a mathemathical explanation on how ROI is calculated with some caveats. \(This repository is no longer being maintained\).
+- [Statistics FAQ](/resources/faq#where-can-i-find-strategy-descriptions)

@@ -1,5 +1,7 @@
 # Naming Conventions
 
+&nbsp;
+
 ## yVaults
 
 ### Dev Cheat Sheet (Examples)
