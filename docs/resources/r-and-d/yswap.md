@@ -15,7 +15,7 @@ description: Not recommended for retail use
 
 ## Mechanics
 
-aUSD is immediately minted when a user deposits into one of the ySwap AMM pools. aUSD is a synthetic stablecoin that is pegged to the price of \$1. The amount of aUSD minted depends on the market value of the asset deposited. Market prices are provided by [Chainlink](https://chain.link/)'s decentralized oracles, therefore only coins with [Chainlink price feeds](https://feeds.chain.link/) are eligible to be traded. A list of the current price feeds supported by Chainlink oracles can be found [here](https://feeds.chain.link/).
+aUSD is immediately minted when a user deposits into one of the ySwap AMM pools. aUSD is a synthetic stablecoin that is pegged to the price of $1. The amount of aUSD minted depends on the market value of the asset deposited. Market prices are provided by [Chainlink](https://chain.link/)'s decentralized oracles, therefore only coins with [Chainlink price feeds](https://feeds.chain.link/) are eligible to be traded. A list of the current price feeds supported by Chainlink oracles can be found [here](https://feeds.chain.link/).
 
 Immediately after deposit, the deposited token and aUSD are added to the ySwap pool, and the depositor receives a LP token in return, representing his or her share of the pool. Traders make trades using the [ySwap interface](https://yswap.exchange/).
 

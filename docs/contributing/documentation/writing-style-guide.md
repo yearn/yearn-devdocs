@@ -1,5 +1,7 @@
 # Writing Style Guide
+
 ---
+
 The Yearn Community Writing Style Guide summarizes the standards and best practices **writers** should follow when contributing to Yearn Documentation resources.
 
 ## Writing Intent and Tone
@@ -101,14 +103,14 @@ Do not use apostrophes to pluralize acronyms or indicate decades. Add an "s" at 
 The examples below use dollars, but the same rules apply to all global currencies.
 
 - Use lowercase except when writing "US Dollar.”
-- Use figures and the "\$" sign in all except casual references, or amounts without a figure.
-  - **Standard:** "The book costs \$4."
+- Use figures and the "$" sign in all except casual references, or amounts without a figure.
+  - **Standard:** "The book costs $4."
   - **Casual:** "Please give me a dollar."
-- For amounts under \$1 million, follow this format:
-  - **Correct:** $4, $25, $500, $1,000, \$650,000.
-- For amounts over \$1 million, use the word, not numerals.
-  - **Correct:** "He is worth \$4 million."
-  - **Incorrect:** "He is worth \$4,000,000."
+- For amounts under $1 million, follow this format:
+  - **Correct:** $4, $25, $500, $1,000, $650,000.
+- For amounts over $1 million, use the word, not numerals.
+  - **Correct:** "He is worth $4 million."
+  - **Incorrect:** "He is worth $4,000,000."
 
 ### Naming Conventions
 

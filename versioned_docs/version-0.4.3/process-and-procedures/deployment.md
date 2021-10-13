@@ -204,10 +204,10 @@ These steps are required for all strategies. These descriptions will be pulled i
 
 These are the standard deposit limits per stage. They can be adjusted on a case by case basis.
 
-| Stage        | Limit  |
-| ------------ | ------ |
-| Experimental | \$500K |
-| Production   | \$10M  |
+| Stage        | Limit |
+| ------------ | ----- |
+| Experimental | $500K |
+| Production   | $10M  |
 
 ### Sharer contract
 
