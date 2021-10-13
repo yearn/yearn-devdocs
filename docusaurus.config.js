@@ -1,4 +1,7 @@
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
+const math = require('remark-math');
+const katex = require('rehype-katex');
+
 module.exports = {
   title: 'Yearn.finance',
   tagline: 'DeFi made simple',
@@ -47,7 +50,7 @@ module.exports = {
         {
           to: 'security/index',
           label: "Security"
-        }, 
+        },
         {
           type: 'search',
           position: 'right'
@@ -101,6 +104,8 @@ module.exports = {
       {
         docs: {
           path: "docs/developers/v2",
+          remarkPlugins: [math],
+          rehypePlugins: [katex],
           routeBasePath: "v2",
           sidebarPath: require.resolve('./sidebars/sidebars.js'),
           // Please change this to your repo.
@@ -113,7 +118,13 @@ module.exports = {
       },
     ],
   ],
-  plugins: [
+  stylesheets: [
+    { href: 'https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/katex.min.css', 
+      integrity: 'sha384-Um5gpz1odJg5Z4HAmzPtgZKdTBHZdw8S29IecapCSB31ligYPhHQZMIlWLYQGVoc', 
+      crossorigin: 'anonymous'
+    },
+   ],
+    plugins: [
     [
       '@docusaurus/plugin-content-docs',
       {
