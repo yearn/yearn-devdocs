@@ -152,7 +152,7 @@ module.exports = {
             },
             {
               label: 'Governance Forum',
-              href: 'https://gov.yearn.finance/',
+              href: 'https://gov.yearn.finance',
             },
             {
               label: 'Partnership Program',
