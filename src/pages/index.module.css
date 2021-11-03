@@ -41,7 +41,6 @@
   border-radius: 0px;
   box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.05);
   background-color: #00000060;
-  color:black;
 }
 .card:hover {
   color: white;
@@ -106,6 +105,7 @@ html[data-theme="light"] .card {
   background-color:#3d3d3d4f;
   border-style: solid;
   border-color: rgba(128, 128, 128, 0.521);
+  color:black;
 }
 
 html[data-theme="light"] .card:hover {
@@ -119,6 +119,15 @@ html[data-theme="light"] .textBox {
   background-color:#3d3d3d4f;
   border-style: solid;
   border-color: rgba(128, 128, 128, 0.521);
+}
+html[data-theme="dark"] .card {
+  background-color:#3d3d3d4f;
+  border-style: solid;
+  border-color: rgba(128, 128, 128, 0.521);
+  color:white;
+}
+html[data-theme="dark"] .title {
+  color:white;
 }
 
 .learn {
