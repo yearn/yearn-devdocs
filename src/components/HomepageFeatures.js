@@ -24,10 +24,9 @@ function Feature({ Svg, title, description }) {
 
 export default function HomepageFeatures() {
   return (
-    <section className={styles.features}>
-      <div className="container">
+      <>
         <h1 className={styles.title}>Build</h1>
-        <div className={styles.row}>
+        <div className={styles.col}>
           <Link style={{ textDecoration: "none", color: "inherit" }} to="./v2/next/smart-contracts/BaseStrategy">
             <div className={styles.card}>
               <h2>Smart Contracts</h2>
@@ -47,7 +46,6 @@ export default function HomepageFeatures() {
             </div>
           </Link>
         </div>
-      </div>
-    </section>
+      </>
   );
 }

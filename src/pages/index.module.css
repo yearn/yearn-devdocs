@@ -30,17 +30,22 @@
 
 .card {
   display: flex;
-  min-width: 300px;
-  min-height: 75px;
-  padding: 1.9rem 1.3rem 1rem 1.3rem;
+  min-width: 420px;
+  min-height: 180px;
+  padding: 1.3rem;
+  margin: 1rem;
   flex-direction: column;
-  justify-content: center;
+  justify-content: top;
   cursor: pointer;
-  border: 1px solid;
-  border-color: rgba(194, 194, 194, 0.363);
-  border-radius: 20px;
+  border: 0px solid;
+  border-radius: 0px;
   box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.05);
   background-color: #00000060;
+  color:black;
+}
+.card:hover {
+  color: white;
+  background-color: #0077FC;
 }
 
 .textBox {
@@ -58,13 +63,10 @@
   }
 
 
-.card:hover {
-  border-color: #FFFFFF;
-}
 
  .row {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   grid-gap: 16px;
   justify-content: center;
   margin: 0 auto;
@@ -74,8 +76,10 @@
 
 .title {
   position: relative;
+  text-align:left;
+  padding-left:1rem;
   font-size: 60px;
-  color: white;
+  color: black;
 }
 
 .header {
@@ -107,6 +111,8 @@ html[data-theme="light"] .card {
 html[data-theme="light"] .card:hover {
   border-style: solid;
   border-color: rgb(255, 255, 255);
+  color: white;
+  background-color: #0077FC;
 }
 
 html[data-theme="light"] .textBox {
