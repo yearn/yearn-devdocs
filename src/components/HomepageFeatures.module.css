@@ -23,7 +23,7 @@
 .card {
   display: flex;
   min-width: 420px;
-  min-height: 180px;
+  min-height: 210px;
   padding: 1.3rem;
   margin: 1rem;
   flex-direction: column;
@@ -33,7 +33,6 @@
   border: 0px solid var(--ifm-color-emphasis-200);
   box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.05);
   background-color: #ffffff10;
-  min-height: 200px;
 }
 .card:hover {
   color: white;
