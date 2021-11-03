@@ -77,6 +77,8 @@
   position: relative;
   text-align:left;
   padding-left:1rem;
+  /* font-family: 'Roboto Slab', serif; */
+  /* font-weight: 900; */
   font-size: 60px;
   color: black;
 }

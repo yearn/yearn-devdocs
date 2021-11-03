@@ -190,6 +190,11 @@ module.exports = {
       integrity: 'sha384-Um5gpz1odJg5Z4HAmzPtgZKdTBHZdw8S29IecapCSB31ligYPhHQZMIlWLYQGVoc', 
       crossorigin: 'anonymous'
     },
+    {
+      href: 'https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&display=swap', 
+      type: 'stylesheet',
+      crossorigin: 'anonymous'
+    },
    ],
     plugins: [
     [
