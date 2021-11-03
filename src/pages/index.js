@@ -84,7 +84,6 @@ export default function Home() {
           </div>
         </div>
       </main>
-      <HomepageFooter />
     </Layout>
   );
 }
