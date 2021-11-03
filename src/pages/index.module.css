@@ -44,7 +44,7 @@
 }
 .card:hover {
   color: white;
-  background-color: #0077FC;
+  background-color: #0657F9;
 }
 
 .textBox {
@@ -112,7 +112,13 @@ html[data-theme="light"] .card:hover {
   border-style: solid;
   border-color: rgb(255, 255, 255);
   color: white;
-  background-color: #0077FC;
+  background-color: #0657F9;
+}
+html[data-theme="dark"] .card:hover {
+  border-style: solid;
+  border-color: rgb(255, 255, 255);
+  color: white;
+  background-color: #0657F9;
 }
 
 html[data-theme="light"] .textBox {

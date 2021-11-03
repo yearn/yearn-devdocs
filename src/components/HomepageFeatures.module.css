@@ -36,7 +36,7 @@
 }
 .card:hover {
   color: white;
-  background-color: #095EB5;
+  background-color: #0657F9;
 }
 
 h1 {
@@ -55,7 +55,7 @@ html[data-theme="light"] .card:hover {
   border-style: solid;
   border-color: black;
   color: white;
-  background-color: #095EB5;
+  background-color: #0657F9;
 }
 
 .row {
