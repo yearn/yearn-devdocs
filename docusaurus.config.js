@@ -69,12 +69,71 @@ module.exports = {
       style: 'light',
       links: [
         {
-          title: 'Community',
+          title: 'Developers',
           items: [
             {
-              label: 'Discourse',
-              href: 'https://gov.yearn.finance/',
+              label: 'Bug Bounty',
+              href: 'https://github.com/yearn/yearn-security/blob/master/SECURITY.md#bug-bounty-program',
             },
+            {
+              label: '#dev-chat',
+              href: 'https://discord.gg/w89vVxeV9h',
+            },
+            {
+              label: 'Whitepaper',
+              href: '/yearn-devdocs/getting-started/products/yvaults/overview',
+            },
+          ],
+        },
+        {
+          title: 'Github',
+          items: [
+            {
+              label: 'yearn-core',
+              href: 'https://github.com/yearn/yearn-vaults',
+            },
+            {
+              label: 'yearn-sdk',
+              href: 'https://github.com/yearn/yearn-sdk',
+            },
+            {
+              label: 'brownie-strategy-mix',
+              href: 'https://github.com/yearn/brownie-strategy-mix',
+            },
+            {
+              label: 'Deployment Addresses',
+              href: 'https://github.com/yearn/yearn-finance/tree/master/app/containers/Vaults',
+            },
+          ],
+        },
+        {
+          title: 'Ecosystem',
+          items: [
+            {
+              label: 'Home',
+              href: 'https://galaxy.eco/yearn/',
+            },
+            {
+              label: 'App',
+              href: 'https://yearn.finance/',
+            },
+            {
+              label: 'Analytics',
+              href: 'https://duneanalytics.com/projects/yearn',
+            },
+            {
+              label: 'Token Lists',
+              href: 'https://tokenlists.org/token-list?url=https://yearn.science/static/tokenlist.json',
+            },
+            {
+              label: 'Brand Assets',
+              href: 'https://github.com/yearn/yearn-assets',
+            },
+          ],
+        },
+        {
+          title: 'Community',
+          items: [
             {
               label: 'Discord',
               href: 'https://discord.gg/yearn/',
@@ -83,14 +142,21 @@ module.exports = {
               label: 'Twitter',
               href: 'https://twitter.com/iearnfinance',
             },
-          ],
-        },
-        {
-          title: 'More',
-          items: [
             {
-              label: 'GitHub',
-              href: 'https://github.com/yearn/',
+              label: 'Telegram',
+              href: 'https://t.me/yearnfinance/',
+            },
+            {
+              label: 'Discourse',
+              href: 'https://gov.yearn.finance/',
+            },
+            {
+              label: 'Governance Forum',
+              href: 'https://gov.yearn.finance',
+            },
+            {
+              label: 'Partnership Program',
+              href: '/yearn-devdocs/partners/introduction',
             },
           ],
         },
@@ -122,6 +188,11 @@ module.exports = {
     {
       href: 'https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/katex.min.css', 
       integrity: 'sha384-Um5gpz1odJg5Z4HAmzPtgZKdTBHZdw8S29IecapCSB31ligYPhHQZMIlWLYQGVoc', 
+      crossorigin: 'anonymous'
+    },
+    {
+      href: 'https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&display=swap', 
+      type: 'stylesheet',
       crossorigin: 'anonymous'
     },
    ],

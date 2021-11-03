@@ -22,27 +22,27 @@
 
 .card {
   display: flex;
-  height: 250px;
-  min-width: 350px;
+  min-width: 420px;
+  min-height: 210px;
   padding: 1.3rem;
+  margin: 1rem;
   flex-direction: column;
   justify-content: top;
   cursor: pointer;
-  border: 1px solid transparent;
-  border-radius: 20px;
-  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 0px;
+  border: 0px solid var(--ifm-color-emphasis-200);
   box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.05);
   background-color: #ffffff10;
-  min-height: 200px;
+}
+.card:hover {
+  color: white;
+  background-color: #0657F9;
 }
 
 h1 {
   text-align: center;
 }
 
-.card:hover {
- border-color: #FFFFFF;
-}
 
 
 html[data-theme="light"] .card {
@@ -54,6 +54,8 @@ html[data-theme="light"] .card {
 html[data-theme="light"] .card:hover {
   border-style: solid;
   border-color: black;
+  color: white;
+  background-color: #0657F9;
 }
 
 .row {
@@ -68,6 +70,8 @@ html[data-theme="light"] .card:hover {
 
 .title {
   position: relative;
+  text-align:left;
+  padding-left:1rem;
   font-size: 60px;
   color: white;
 }
