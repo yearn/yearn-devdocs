@@ -29,6 +29,7 @@
 }
 
 .card {
+  font-family: 'Roboto Slab', 'Roboto', serif;
   display: flex;
   min-width: 420px;
   min-height: 210px;
@@ -41,6 +42,10 @@
   border-radius: 0px;
   box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.05);
   background-color: #00000060;
+}
+.card h2 {
+  font-family: 'Roboto Slab', 'Roboto', serif;
+  font-weight: 500;
 }
 .card:hover {
   color: white;
@@ -74,11 +79,11 @@
 }
 
 .title {
+  font-family: 'Roboto Slab', 'Roboto', serif;
+  font-weight: 900;
   position: relative;
   text-align:left;
   padding-left:1rem;
-  /* font-family: 'Roboto Slab', serif; */
-  /* font-weight: 900; */
   font-size: 60px;
   color: black;
 }
