@@ -28,7 +28,7 @@ function HomepageHeader() {
           <Link style={{ textDecoration: "none", color: "white" }} to="./getting-started/intro">
             <div className={styles.card}>
               <h2>Partnership Program</h2>
-              <p>Learn more on how to integrate Yearn and earn yield on your service!</p>
+              <p>In an effort to make yVaults accessible from virtually anywhere, any protocol that integrates yVaults can earn up to a 50% profit share from their contributed TVL.</p>
             </div>
           </Link>
         </div>
