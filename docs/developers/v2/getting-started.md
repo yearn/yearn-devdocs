@@ -11,6 +11,11 @@ The best introduction to V2 is the workshop did by [Storming0x](https://github.c
 - [Slides](https://docs.google.com/presentation/d/1NsePa_hXV1vsbMixTSRsPKYBHYvmVQf7IvpI_8k4p_k/edit#slide=id.p)
 - [Repository](https://github.com/storming0x/yearn-vaults-v2-intro/tree/feat/kernel-session)
 
+## How To Videos
+
+- [How to become a strategist](https://www.youtube.com/watch?v=NVR3teJw0Y0)
+- [How to buidl on top of Yearn Vaults](https://www.youtube.com/watch?v=a1TsO62402c)
+
 ## Start coding
 
 When you decide to start, this reading material is going to come handy:
