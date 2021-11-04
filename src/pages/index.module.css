@@ -31,7 +31,7 @@
 .card {
   font-family: 'Roboto Slab', 'Roboto', serif;
   display: flex;
-  min-width: 420px;
+  min-width: 480px;
   min-height: 210px;
   padding: 1.3rem;
   margin: 1rem;
@@ -84,7 +84,7 @@
   position: relative;
   text-align:left;
   padding-left:1rem;
-  font-size: 60px;
+  font-size: 50px;
   color: black;
 }
 
