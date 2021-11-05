@@ -40,8 +40,7 @@
   cursor: pointer;
   border: 0px solid;
   border-radius: 0px;
-  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.05);
-  background-color: #00000060;
+  background-color: #121213;
 }
 .card h2 {
   font-family: 'Roboto Slab', 'Roboto', serif;
@@ -85,7 +84,7 @@
   text-align:left;
   padding-left:1rem;
   font-size: 50px;
-  color: black;
+  color: white;
 }
 
 .header {
@@ -109,7 +108,7 @@
 }
 
 html[data-theme="light"] .card {
-  background-color:#3d3d3d4f;
+  background-color:#888888;
   border-style: solid;
   border-color: rgba(128, 128, 128, 0.521);
   color:black;
@@ -133,15 +132,10 @@ html[data-theme="light"] .textBox {
   border-style: solid;
   border-color: rgba(128, 128, 128, 0.521);
 }
-html[data-theme="dark"] .card {
-  background-color:#3d3d3d4f;
-  border-style: solid;
-  border-color: rgba(128, 128, 128, 0.521);
-  color:white;
+html[data-theme="light"] .title {
+  color:inherit;
 }
-html[data-theme="dark"] .title {
-  color:white;
-}
+
 
 .learn {
   background-image: url("/static/img/learn.png");
