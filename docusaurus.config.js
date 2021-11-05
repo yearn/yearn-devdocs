@@ -161,7 +161,6 @@ module.exports = {
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} yearn.finance. Built with Docusaurus.`,
     },
   },
   presets: [
