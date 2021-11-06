@@ -50,6 +50,20 @@
   color: white;
   background-color: #0657F9;
 }
+.card:before {
+  content: "\27F6";
+  opacity:0;
+  height:0;
+  width:0;
+  position: relative;
+  display: block;
+  left:82%;
+}
+.card:hover:before {
+  opacity:1;
+  left:94%;
+  transition: 0.5s ease;
+}
 
 .textBox {
   display: flex;
