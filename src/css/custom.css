@@ -55,6 +55,9 @@ html[data-theme="light"] .DocSearch:hover {
 .navbar {
   box-shadow: none;
 }
+.navbar__title {
+  font-weight: 400;
+}
 .navbar__item {
   margin-right: 0.43em;
   font-weight: 400;
