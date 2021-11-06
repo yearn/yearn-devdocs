@@ -16,6 +16,9 @@
   --ifm-color-primary-lightest: rgb(52, 142, 245);
   --ifm-code-font-size: 95%;
 }
+.body {
+  font-family: 'Roboto', serif;
+}
 
 .DocSearch {
   width: 240px;
