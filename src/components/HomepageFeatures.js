@@ -1,6 +1,6 @@
 import React from 'react';
 import clsx from 'clsx';
-import styles from './HomepageFeatures.module.css';
+import styles from '../pages/index.module.css';
 import Link from '@docusaurus/Link';
 
 
@@ -22,7 +22,7 @@ function Feature({ Svg, title, description }) {
   );
 }
 
-export default function HomepageFeatures() {
+export default function HomepageBuild() {
   return (
       <>
         <h1 className={styles.title}>Build</h1>
