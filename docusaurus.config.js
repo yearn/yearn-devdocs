@@ -69,16 +69,16 @@ module.exports = {
           label: "Security"
         },
         {
-          type: 'search',
-          position: 'right'
-        },
-        {
           type: 'docsVersionDropdown',
           dropdownItemsBefore: [],
           position: 'right',
           // Do not add the link active class when browsing docs.
           dropdownActiveClassDisabled: true,
           docsPluginId: 'default',
+        },
+        {
+          type: 'search',
+          position: 'right'
         },
       ],
     },
