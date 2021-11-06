@@ -45,7 +45,8 @@
 }
 .card h2 {
   font-family: 'Roboto Slab', 'Roboto', serif;
-  font-weight: 500;
+  font-weight: 400;
+  font-size: 2rem;
   color: white;
 }
 .card:hover {
