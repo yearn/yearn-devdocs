@@ -62,6 +62,9 @@ html[data-theme="light"] .DocSearch:hover {
 html[data-theme="dark"] .navbar {
   background-color: var(--ifm-background-color);
 }
+html[data-theme="dark"] .react-toggle-thumb {
+  background-color: var(--ifm-background-color);
+}
 
 .main-wrapper {
   margin-bottom: 5rem;

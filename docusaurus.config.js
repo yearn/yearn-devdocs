@@ -18,6 +18,23 @@ module.exports = {
       indexName: 'yearn_docs',
       appId: 'MUGPB5SQLX',
     },
+    colorMode: {
+      defaultMode: 'light',
+      disableSwitch: false,
+      respectPrefersColorScheme: true,
+      switchConfig: {
+        darkIcon: '\u0020',
+        darkIconStyle: {
+          marginLeft: '0px',
+          backgroundColor: 'transparent',
+        },
+        lightIcon: '\u{00A0}',
+        lightIconStyle: {
+          marginLeft: '0px',
+          backgroundColor: 'transparent',
+        },
+      }
+    },
     navbar: {
       hideOnScroll: true,
       title: 'Yearn Finance',
