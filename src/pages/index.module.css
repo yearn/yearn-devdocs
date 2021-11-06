@@ -58,6 +58,8 @@
 }
 .card:before {
   content: "\27F6";
+  font-size: 1.45rem;
+  color: white;
   opacity:0;
   height:0;
   width:0;
