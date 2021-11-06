@@ -4,10 +4,10 @@ import Layout from '@theme/Layout';
 import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import styles from './index.module.css';
-import HomepageFeatures from '../components/HomepageFeatures';
+import HomepageBuild from '../components/HomepageFeatures';
 import SearchBar from "@theme-original/SearchBar"
 
-function HomepageHeader() {
+function HomepageLearn() {
   const { siteConfig } = useDocusaurusContext();
   return (
       <>
@@ -76,10 +76,10 @@ export default function Home() {
         <div className={styles.container}>
           <div className={styles.row}>
             <div className={styles.col}>
-              <HomepageHeader />
+              <HomepageLearn />
             </div>
             <div className={styles.col}>
-              <HomepageFeatures />
+              <HomepageBuild />
             </div>
           </div>
         </div>
