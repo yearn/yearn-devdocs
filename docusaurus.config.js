@@ -89,16 +89,12 @@ module.exports = {
           title: 'Developers',
           items: [
             {
-              label: 'Bug Bounty',
-              href: 'https://github.com/yearn/yearn-security/blob/master/SECURITY.md#bug-bounty-program',
+              label: 'Open Issues',
+              href: 'https://contribute.yearn.rocks/',
             },
             {
-              label: '#dev-chat',
-              href: 'https://discord.gg/w89vVxeV9h',
-            },
-            {
-              label: 'Whitepaper',
-              href: '/yearn-devdocs/getting-started/products/yvaults/overview',
+              label: '#strategies',
+              href: 'https://discord.gg/ABh9zXGq',
             },
           ],
         },
@@ -106,20 +102,28 @@ module.exports = {
           title: 'Github',
           items: [
             {
-              label: 'yearn-core',
+              label: 'yearn-vaults',
               href: 'https://github.com/yearn/yearn-vaults',
-            },
-            {
-              label: 'yearn-sdk',
-              href: 'https://github.com/yearn/yearn-sdk',
             },
             {
               label: 'brownie-strategy-mix',
               href: 'https://github.com/yearn/brownie-strategy-mix',
             },
             {
-              label: 'Deployment Addresses',
-              href: 'https://github.com/yearn/yearn-finance/tree/master/app/containers/Vaults',
+              label: 'brownie-wrapper-mix',
+              href: 'https://github.com/yearn/brownie-wrapper-mix',
+            },
+            {
+              label: 'yearn-watch',
+              href: 'https://github.com/yearn/yearn-watch',
+            },
+            {
+              label: 'yearn-finance-v3',
+              href: 'https://github.com/yearn/yearn-finance-v3',
+            },
+            {
+              label: 'yearn-security',
+              href: 'https://github.com/yearn/yearn-security',
             },
           ],
         },
@@ -127,24 +131,16 @@ module.exports = {
           title: 'Ecosystem',
           items: [
             {
-              label: 'Home',
-              href: 'https://galaxy.eco/yearn/',
+              label: 'Vaults',
+              href: 'https://yearn.finance/vaults',
             },
             {
-              label: 'App',
-              href: 'https://yearn.finance/',
+              label: 'YFI Stats',
+              href: 'https://www.yfistats.com/',
             },
             {
-              label: 'Analytics',
-              href: 'https://duneanalytics.com/projects/yearn',
-            },
-            {
-              label: 'Token Lists',
-              href: 'https://tokenlists.org/token-list?url=https://yearn.science/static/tokenlist.json',
-            },
-            {
-              label: 'Brand Assets',
-              href: 'https://github.com/yearn/yearn-assets',
+              label: 'Bowswap',
+              href: 'https://bowswap.finance/',
             },
           ],
         },
@@ -164,16 +160,16 @@ module.exports = {
               href: 'https://t.me/yearnfinance/',
             },
             {
-              label: 'Discourse',
-              href: 'https://gov.yearn.finance/',
+              label: 'Medium',
+              href: 'https://medium.com/iearn',
             },
             {
-              label: 'Governance Forum',
+              label: 'Forum',
               href: 'https://gov.yearn.finance',
             },
             {
-              label: 'Partnership Program',
-              href: '/yearn-devdocs/partners/introduction',
+              label: 'Snapshot voting',
+              href: 'https://snapshot.org/#/ybaby.eth',
             },
           ],
         },
