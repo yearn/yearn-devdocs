@@ -20,44 +20,6 @@
   border-radius: 5px;
 }
 
-.card {
-  display: flex;
-  min-width: 420px;
-  min-height: 210px;
-  padding: 1.3rem;
-  margin: 1rem;
-  flex-direction: column;
-  justify-content: top;
-  cursor: pointer;
-  border-radius: 0px;
-  border: 0px solid var(--ifm-color-emphasis-200);
-  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.05);
-  background-color: #ffffff10;
-}
-.card:hover {
-  color: white;
-  background-color: #0657F9;
-}
-
-h1 {
-  text-align: center;
-}
-
-
-
-html[data-theme="light"] .card {
-  background-color:#0000001a;
-  border-style: solid;
-  border-color: rgba(128, 128, 128, 0.521);
-}
-
-html[data-theme="light"] .card:hover {
-  border-style: solid;
-  border-color: black;
-  color: white;
-  background-color: #0657F9;
-}
-
 .row {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -69,10 +31,12 @@ html[data-theme="light"] .card:hover {
 }
 
 .title {
+  font-family: 'Roboto Slab', 'Roboto', serif;
+  font-weight: 900;
   position: relative;
   text-align:left;
   padding-left:1rem;
-  font-size: 60px;
+  font-size: 50px;
   color: white;
 }
 

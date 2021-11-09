@@ -29,8 +29,9 @@
 }
 
 .card {
+  font-family: 'Roboto Slab', 'Roboto', serif;
   display: flex;
-  min-width: 420px;
+  min-width: 500px;
   min-height: 210px;
   padding: 1.3rem;
   margin: 1rem;
@@ -39,12 +40,37 @@
   cursor: pointer;
   border: 0px solid;
   border-radius: 0px;
-  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.05);
-  background-color: #00000060;
+  background-color: #121213;
+  color: #888;
+}
+.card h2 {
+  font-family: 'Roboto Slab', 'Roboto', serif;
+  font-weight: 400;
+  font-size: 2rem;
+  color: white;
 }
 .card:hover {
-  color: white;
+  color: #9BBCFD;
   background-color: #0657F9;
+}
+.card:hover h2 {
+  color: white;
+}
+.card:before {
+  content: "\27F6";
+  font-size: 1.45rem;
+  color: white;
+  opacity:0;
+  height:0;
+  width:0;
+  position: relative;
+  display: block;
+  left:82%;
+}
+.card:hover:before {
+  opacity:1;
+  left:94%;
+  transition: 0.5s ease;
 }
 
 .textBox {
@@ -74,13 +100,13 @@
 }
 
 .title {
+  font-family: 'Roboto Slab', 'Roboto', serif;
+  font-weight: 900;
   position: relative;
   text-align:left;
   padding-left:1rem;
-  /* font-family: 'Roboto Slab', serif; */
-  /* font-weight: 900; */
-  font-size: 60px;
-  color: black;
+  font-size: 50px;
+  color: white;
 }
 
 .header {
@@ -104,23 +130,18 @@
 }
 
 html[data-theme="light"] .card {
-  background-color:#3d3d3d4f;
-  border-style: solid;
-  border-color: rgba(128, 128, 128, 0.521);
-  color:black;
+  background-color:#ececec;
+  color:#888;
 }
-
+html[data-theme="light"] .card h2 {
+  color:#000;
+}
 html[data-theme="light"] .card:hover {
-  border-style: solid;
-  border-color: rgb(255, 255, 255);
-  color: white;
+  color: #9BBCFD;
   background-color: #0657F9;
 }
-html[data-theme="dark"] .card:hover {
-  border-style: solid;
-  border-color: rgb(255, 255, 255);
+html[data-theme="light"] .card:hover h2 {
   color: white;
-  background-color: #0657F9;
 }
 
 html[data-theme="light"] .textBox {
@@ -128,15 +149,10 @@ html[data-theme="light"] .textBox {
   border-style: solid;
   border-color: rgba(128, 128, 128, 0.521);
 }
-html[data-theme="dark"] .card {
-  background-color:#3d3d3d4f;
-  border-style: solid;
-  border-color: rgba(128, 128, 128, 0.521);
-  color:white;
+html[data-theme="light"] .title {
+  color:inherit;
 }
-html[data-theme="dark"] .title {
-  color:white;
-}
+
 
 .learn {
   background-image: url("/static/img/learn.png");

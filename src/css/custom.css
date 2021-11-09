@@ -4,7 +4,7 @@
  * bundles Infima by default. Infima is a CSS framework designed to
  * work well for content-centric websites.
  */
-
+ @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&display=swap');
 /* You can override the default Infima variables here. */
 :root {
   --ifm-color-primary: #007bff;
@@ -16,29 +16,65 @@
   --ifm-color-primary-lightest: rgb(52, 142, 245);
   --ifm-code-font-size: 95%;
 }
+.body {
+  font-family: 'Roboto', serif;
+}
 
 .DocSearch {
   width: 240px;
 }
 
 html[data-theme="dark"] .DocSearch {
-  background: #00000060;
-  border: solid 1px rgba(194, 194, 194, 0.363);
+  background-color: var(--ifm-background-color);
+  border: solid 2px var(--ifm-color-emphasis-300);
+  color: var(--ifm-color-emphasis-300);
+}
+html[data-theme="dark"] .DocSearch-Search-Icon {
+  color: var(--ifm-color-emphasis-300);
 }
 
 html[data-theme="dark"] .DocSearch:hover {
-  background: #00000060;
   border: solid 1px rgba(194, 194, 194, 0.363);
 }
 
 html[data-theme="light"] .DocSearch {
-  background: #3d3d3d4f;
-  border: solid 1px rgba(128, 128, 128, 0.521);
+  background-color: var(--ifm-background-color);
+  border: solid 2px var(--ifm-color-emphasis-500);
+  color: var(--ifm-color-emphasis-500);
+}
+html[data-theme="light"] .DocSearch-Search-Icon {
+  color: var(--ifm-color-emphasis-500);
 }
 
 html[data-theme="light"] .DocSearch:hover {
-  background: #3d3d3d4f;
   border: solid 1px rgba(128, 128, 128, 0.521);
+}
+.navbar {
+  box-shadow: none;
+}
+.navbar__title {
+  font-weight: 400;
+  margin-right:auto;
+}
+.navbar__items .navbar__brand {
+  margin-right: auto;
+  min-width: 137px;
+}
+.navbar__items .navbar__item:last-child {
+  margin-right: auto;
+}
+.navbar__item {
+  margin-right: 0.43em;
+  font-weight: 400;
+}
+.navbar__item .dropdown__menu li:first-child {
+  display: none;
+}
+html[data-theme="dark"] .navbar {
+  background-color: var(--ifm-background-color);
+}
+html[data-theme="dark"] .react-toggle-thumb {
+  background-color: var(--ifm-background-color);
 }
 
 .docusaurus-highlight-code-line {
@@ -48,11 +84,25 @@ html[data-theme="light"] .DocSearch:hover {
   padding: 0 var(--ifm-pre-padding);
 }
 
+
+.main-wrapper {
+  margin-bottom: 5rem;
+}
+.footer__title, .footer__item {
+  font-family: 'Roboto Slab', 'Roboto', serif;
+}
 @media screen and (max-width: 1082px) {
   .DocSearch {
     width: inherit;
   }
 }
-.navbar__item {
-  margin-right: 0.43em;
+
+.footer {
+  padding-top: 4rem;
+}
+.footer__title {
+  font-size: 1.28rem;
+}
+.footer__item {
+  margin-bottom:1rem;
 }

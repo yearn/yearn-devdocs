@@ -61,7 +61,7 @@ Versioned doc should not be edited but generated directly from the vault codebas
 
 To generate API docs and coin a new release, do the following.
 ```
-npx vydoc -i ../yearn-vaults/contracts/ -o docs/smart-contracts -t ./templates/contract.ejs -c ~/.vvm/vyper-0.2.11
-npx solidity-docgen --templates=templates --helpers=helpers/solidityHelpers.js -i ../yearn-vaults/contracts/ -o docs/smart-contracts
+npx vydoc -i ../yearn-vaults/contracts/ -o docs/v2/smart-contracts -t ./templates/contract.ejs -c ~/.vvm/vyper-0.2.11
+npx solidity-docgen --templates=templates --helpers=helpers/solidityHelpers.js -i ../yearn-vaults/contracts/ -o docs/v2/smart-contracts
 npm run docusaurus docs:version 1.0.0
 ```

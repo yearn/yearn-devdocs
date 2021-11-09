@@ -4,10 +4,10 @@ import Layout from '@theme/Layout';
 import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import styles from './index.module.css';
-import HomepageFeatures from '../components/HomepageFeatures';
+import HomepageBuild from '../components/HomepageFeatures';
 import SearchBar from "@theme-original/SearchBar"
 
-function HomepageHeader() {
+function HomepageLearn() {
   const { siteConfig } = useDocusaurusContext();
   return (
       <>
@@ -16,19 +16,19 @@ function HomepageHeader() {
           <Link style={{ textDecoration: "none", color: "white" }} to="./getting-started/using-yearn">
             <div className={styles.card}>
               <h2>Using Yearn</h2>
-              <p>General guide to our service in an easy way</p>
+              <p>Learn how to use Yearn user interface step by step</p>
             </div>
           </Link>
           <Link style={{ textDecoration: "none", color: "white" }} to="./getting-started/products/yvaults/overview">
             <div className={styles.card}>
               <h2>Vaults & Strategies</h2>
-              <p>How do Vaults work? Figure it out here</p>
+              <p>An overview on how Yearn Vaults and its strategies work</p>
             </div>
           </Link>
-          <Link style={{ textDecoration: "none", color: "white" }} to="./getting-started/intro">
+          <Link style={{ textDecoration: "none", color: "white" }} to="./partners/introduction">
             <div className={styles.card}>
               <h2>Partnership Program</h2>
-              <p>Learn more on how to integrate Yearn and earn yield on your service!</p>
+              <p>Yearn's partnership program incentivize builders to easily integrate yield into their products and services</p>
             </div>
           </Link>
         </div>
@@ -76,10 +76,10 @@ export default function Home() {
         <div className={styles.container}>
           <div className={styles.row}>
             <div className={styles.col}>
-              <HomepageHeader />
+              <HomepageLearn />
             </div>
             <div className={styles.col}>
-              <HomepageFeatures />
+              <HomepageBuild />
             </div>
           </div>
         </div>
