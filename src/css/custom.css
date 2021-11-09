@@ -59,6 +59,9 @@ html[data-theme="light"] .DocSearch:hover {
   margin-right: 0.43em;
   font-weight: 400;
 }
+.navbar__item .dropdown__menu li:first-child {
+  display: none;
+}
 html[data-theme="dark"] .navbar {
   background-color: var(--ifm-background-color);
 }
