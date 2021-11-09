@@ -54,6 +54,14 @@ html[data-theme="light"] .DocSearch:hover {
 }
 .navbar__title {
   font-weight: 400;
+  margin-right:auto;
+}
+.navbar__items .navbar__brand {
+  margin-right: auto;
+  min-width: 137px;
+}
+.navbar__items .navbar__item:last-child {
+  margin-right: auto;
 }
 .navbar__item {
   margin-right: 0.43em;

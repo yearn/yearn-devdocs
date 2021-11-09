@@ -42,7 +42,7 @@ export default function HomepageBuild() {
           <Link style={{ textDecoration: "none", color: "inherit" }} to="./v2/yearn-api">
             <div className={styles.card}>
               <h2>Yearn API</h2>
-              <p>Use our API to show live data from Yearn Vault</p>
+              <p>Use our API to show live data from Yearn Vaults</p>
             </div>
           </Link>
         </div>
