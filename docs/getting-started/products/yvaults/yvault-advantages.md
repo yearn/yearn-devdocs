@@ -2,7 +2,7 @@
 
 Almost everything that yVaults interact with is available to the public. So how is Yearn able to offer users better yield than they'd be able to achieve on their own?
 
-![](https://i.imgur.com/Ys4G8v4.png)
+![](https://i.imgur.com/6lmhESr.png)
 ## Curve Finance Synergy
 
 Many of Yearn's strategies utilize Curve Finance's liquidity mining program. [Curve Finance](https://curve.fi/) has a 300 year token distribution program for those who provide liquidity for their low slippage decentralized exchange.
@@ -39,7 +39,7 @@ Because yVaults batch your transaction with many other depositors, it is cumulat
 
 Yearn utilizes the Iron Bank (C.R.E.A.M. Finance) to access credit that is used to enhance yVault yields. Only white-listed addresses have this feature available to them, meaning that typically, individuals are not able to do this on their own.
 
-![](https://i.imgur.com/MuDu0P6.png)
+![](https://i.imgur.com/WJIjOKv.png)
 
 Some strategies also implement [flash loans](/resources/defi-glossary#flash-loan), which is typically a back-end service that requires development experience to take advantage of.
 
