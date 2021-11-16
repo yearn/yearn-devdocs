@@ -1,6 +1,6 @@
 # Getting Started with Vaults
 
-This is a collection of resources that aime to be an introduction to how yVaults V2 work.
+This is a collection of resources that aim to be an introduction to how yVaults V2 work.
 
 ## Introduction
 
