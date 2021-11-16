@@ -1,6 +1,10 @@
 {
   "version-0.4.3/mySidebar": [
-    "version-0.4.3/getting-started",
+    {
+      "type": "category",
+      "label": "Introduction",
+      "items": ["version-0.4.3/getting-started","version-0.4.3/how-boost-works"]       
+    },
     {
       "type": "category",
       "label": "Processes and Procedures",

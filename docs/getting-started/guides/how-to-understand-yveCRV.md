@@ -9,7 +9,7 @@ yveCRV stands for veCRV-DAO yVault and is [listed on CoinGecko](https://www.coin
 ### List of tokens
 
 - **CRV** - Curve DAO Token
-- **veCRV** - voting escrow CRV tokens \(the longer it’s locked up for, the greater the rewards\), you can read more about CRV vote locking [here](how-to-understand-crv-vote-locking).
+- **veCRV** - voting escrow CRV tokens \(the longer it’s locked up for, the greater the rewards\), you can read more about CRV vote locking [here](../../v2/how-boost-works).
 - **yveCRV** - the “y” prefix is used for all of Yearn’s vaults
 
 ## How do I participate?
@@ -44,7 +44,7 @@ The other key difference is that **deposited CRV is locked forever**. It **canno
 
 yveCRV earns rewards from trading fees, CRV rewards and “boosties”. Holding CRV in your wallet gives you exposure to the price of CRV. You want the price of Crv to increase. Depositing CRV on Curve Finance means that you receive a share of the trading fees on Curve Finance.
 
-Curve Finance introduced extra rewards, called “boosties”, if the CRV is locked in Curve Finance for a minimum of 1 week and a maximum of 4 years. Please refer to the [CRV vote locking guide](how-to-understand-crv-vote-locking.md) for more information.
+Curve Finance introduced extra rewards, called “boosties”, if the CRV is locked in Curve Finance for a minimum of 1 week and a maximum of 4 years. Please refer to the [CRV vote locking guide](../../v2/how-boost-works) for more information.
 
 Rewards are paid weekly.
 
