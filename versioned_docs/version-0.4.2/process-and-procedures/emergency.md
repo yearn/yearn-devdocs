@@ -1,6 +1,6 @@
 # Emergency Procedures for Yearn Finance
 
-## TL;DR: [Emergency Checklist](#emergency-checklist)
+TL;DR: [Emergency Checklist](#emergency-checklist)
 
 ## Introduction
 
