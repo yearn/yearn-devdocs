@@ -24,7 +24,7 @@ This is the short version of the vetting process for a new strategy.
 
 1. Code the strategy using [brownie-strategy-mix](https://github.com/yearn/brownie-strategy-mix) repository
 2. Complete peer review by, at least, 2 other startegists
-3. Test in prod on [ape.tax](ape.tax) with real funds
+3. Test in prod on [ape.tax](https://ape.tax) with real funds
 4. Create a Due Diligence document for the protocol. Follow the examples:
    - [SNX](https://hackmd.io/0w1RZh7DSc27A9EyzlHbJQ?view)
    - [VESPER](https://hackmd.io/@Ap_76vwNTg-vxJxbiaLMMQ/SkXEzic7O)
