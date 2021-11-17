@@ -9,7 +9,7 @@ yveCRV stands for veCRV-DAO yVault and is [listed on CoinGecko](https://www.coin
 ### List of tokens
 
 - **CRV** - Curve DAO Token
-- **veCRV** - voting escrow CRV tokens \(the longer it’s locked up for, the greater the rewards\), you can read more about CRV vote locking [here](../../v2/how-boost-works).
+- **veCRV** - voting escrow CRV tokens \(the longer it’s locked up for, the greater the rewards\), you can read more about CRV vote locking [here](how-boost-works).
 - **yveCRV** - the “y” prefix is used for all of Yearn’s vaults
 
 ## How do I participate?
