@@ -27,19 +27,19 @@ export default function HomepageBuild() {
       <>
         <h1 className={styles.title}>Build</h1>
         <div className={styles.col}>
-          <Link style={{ textDecoration: "none", color: "inherit" }} to="./v2/smart-contracts/BaseStrategy">
+          <Link style={{ textDecoration: "none", color: "inherit" }} to="./vaults/smart-contracts/BaseStrategy">
             <div className={styles.card}>
               <h2>Smart Contracts</h2>
               <p>Find our smart contracts and several utilities that are part of Yearn architecture</p>
             </div>
           </Link>
-          <Link style={{ textDecoration: "none", color: "inherit" }} to="./v2/yearn-sdk/yearn-stack">
+          <Link style={{ textDecoration: "none", color: "inherit" }} to="./vaults/yearn-sdk/yearn-stack">
             <div className={styles.card}>
               <h2>Yearn SDK</h2>
               <p>Learn about the Yearn stack and how to use the SDK as an aggregator of many data sources.</p>
             </div>
           </Link>
-          <Link style={{ textDecoration: "none", color: "inherit" }} to="./v2/yearn-api">
+          <Link style={{ textDecoration: "none", color: "inherit" }} to="./vaults/yearn-api">
             <div className={styles.card}>
               <h2>Yearn API</h2>
               <p>Use our API to show live data from Yearn Vaults</p>

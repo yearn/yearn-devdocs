@@ -41,4 +41,4 @@ When it's passed 100M in TVL
 1. Audit by one reputable external audit company
 1. Recurring internal reviews
 
-For more details, check the complete deployment [process](deployment.md).
+For more details, check the complete deployment [process](./DEPLOYMENT.md).
