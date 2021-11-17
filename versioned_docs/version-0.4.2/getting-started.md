@@ -1,6 +1,6 @@
 # Getting Started with Vaults
 
-This is a collection of resources that aime to be an introduction to how yVaults V2 work.
+This is a collection of resources that aim to be an introduction to how yVaults V2 work.
 
 ## Introduction
 
@@ -9,6 +9,7 @@ The best introduction to V2 is the workshop did by [Storming0x](https://github.c
 - [Video](https://www.youtube.com/watch?v=C0fsYiCI54g)
 - [Slides](https://docs.google.com/presentation/d/1NsePa_hXV1vsbMixTSRsPKYBHYvmVQf7IvpI_8k4p_k/edit#slide=id.p)
 - [Repository](https://github.com/storming0x/yearn-vaults-v2-intro/tree/feat/kernel-session)
+- [Yearn State of the Vaults](https://medium.com/yearn-state-of-the-vaults/the-vaults-at-yearn-9237905ffed3)
 
 ## Start coding
 

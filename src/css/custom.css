@@ -97,6 +97,16 @@ html[data-theme="dark"] .react-toggle-thumb {
   }
 }
 
+.topRightImg {
+  object-fit: cover;
+  object-position: 100% 0%;
+  background-size: 20%;
+}
+.bottomLeftImg {
+  object-fit: cover;
+  object-position: 0% 100%;
+}
+
 .footer {
   padding-top: 4rem;
 }

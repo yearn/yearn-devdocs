@@ -97,23 +97,23 @@ where $y$ is the price, $x$ is the block height and $m$, $c$ are what we are loo
 
 First, let's get $c$.
 
-When $x = 0$ \(so at inception of the yVault\), we know that the price is 1, hence: $y = m\*0+c$ \(x = 0\) $y = c$ $y = 1$ \(price is 1 when x = 0\) $c = 1$
+When $x = 0$ \(so at inception of the yVault\), we know that the price is 1, hence: $y = m*0+c$ \(x = 0\) $y = c$ $y = 1$ \(price is 1 when x = 0\) $c = 1$
 
 Now m \(here we have to apply derivatives\):
 
 Using the product formula and the constants formula:
 
-$y'\(x\) = m$
+$y'(x) = m$
 
 Approximating the derivative of a linear function can be done by:
 
-$y'\(x\) = \(y2-y1\)/\(x2-x1\) = m$
+$y'(x) = (y2-y1)/(x2-x1) = m$
 
 $y2$ being the price at block $x2$ and $y1$ the price at block $x1$.
 
 Finally we have the complete formula and can estimate the price at any date in the future.
 
-However, since $y\(x\)$ is **not** linear, we get different lines for different points \(shown below\).
+However, since $y(x)$ is **not** linear, we get different lines for different points \(shown below\).
 
 As a result, our estimation for price in future and the return varies greatly depending on which points we choose.
 

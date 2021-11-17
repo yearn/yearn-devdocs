@@ -252,6 +252,8 @@ module.exports = {
         sidebarPath: require.resolve('./sidebars/sidebarsContributing.js'),
         showLastUpdateAuthor: true,
         showLastUpdateTime: true,
+        remarkPlugins: [math],
+        rehypePlugins: [katex],
       },
     ],
     [

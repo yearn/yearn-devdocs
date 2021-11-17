@@ -16,7 +16,7 @@ Profit-sharing is paid out in the native token of the vaults that partners are u
 
 This is the payout table we have set:  
 
-- Yearn’s total fees to the end-users are 2% mgmt fee and 20% performance fee.
+- Yearn’s total fees to the end-users are 2% management fee and 20% performance fee.
 - 50% of the performance fee goes to the strategist writing the investment strategy used.
 - What remains is yearn’s revenues. From there ~35% is deducted for our overheads, which includes security, operations, headcount, etc.
 - What’s left is shared with you based on the Tier you end up in, based on the combined TVL you contribute with during the period.
