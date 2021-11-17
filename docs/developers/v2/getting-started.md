@@ -1,40 +1,44 @@
-# Getting Started with Vaults
+# Getting Started with Vaults and Strategies
 
-This is a collection of resources that aim to be an introduction to how yVaults V2 work.
+## Requirements
 
-## Introduction
+Before you start, you will need to download and install the following requirements.
 
-The best introduction to V2 is the workshop did by [Storming0x](https://github.com/storming0x/). It's security focused but nevertheless a great introduction to yVaults V2.
+- git
+- [eth-brownie](https://eth-brownie.readthedocs.io/en/stable/)
+- [ganache](https://trufflesuite.com/ganache)
+- Text editor (VS Code, Sublime Text, vim, others)
 
-- [Video - Part 1](https://www.youtube.com/watch?v=C0fsYiCI54g)
-- [Video - Part 2](https://www.youtube.com/watch?v=Y8y8ALmuLu4)
-- [Slides](https://docs.google.com/presentation/d/1NsePa_hXV1vsbMixTSRsPKYBHYvmVQf7IvpI_8k4p_k/edit#slide=id.p)
-- [Repository](https://github.com/storming0x/yearn-vaults-v2-intro/tree/feat/kernel-session)
+If you are focusing on a strategy:
 
-## How To Videos
+- [brownie-strategy-mix](https://github.com/yearn/brownie-strategy-mix) repository. For vault integrations
 
-- [How to become a strategist](https://www.youtube.com/watch?v=NVR3teJw0Y0)
-- [How to buidl on top of Yearn Vaults](https://www.youtube.com/watch?v=a1TsO62402c)
+If you want to integrate with our vaults:
 
-## Start coding
+- [BaseRouter](https://github.com/yearn/yearn-vaults/blob/main/contracts/BaseRouter.sol)
+- [BaseWrapper](https://github.com/yearn/yearn-vaults/blob/main/contracts/BaseWrapper.sol)
 
-When you decide to start, this reading material is going to come handy:
+## Overview of our vetting process
 
-- [Template for Strategies](https://github.com/yearn/brownie-strategy-mix)
-- [Vaults V2 Repository](https://github.com/yearn/yearn-vaults)
-- [How to set up coding environment for Yearn Strategies](https://sambacha.github.io/yearn-vaults/index.html)
-- [Mint your own DAI](https://medium.com/ethereum-grid/forking-ethereum-mainnet-mint-your-own-dai-d8b62a82b3f7)
+This is the short version of the vetting process for a new strategy.
 
-Once you have the strategy ready. This will guide you further down the road.
+1. Code the strategy using [brownie-strategy-mix](https://github.com/yearn/brownie-strategy-mix) repository
+2. Complete peer review by, at least, 2 other startegists
+3. Test in prod on [ape.tax](ape.tax) with real funds
+4. Create a Due Diligence document for the protocol. Follow the examples:
+   - [SNX](https://hackmd.io/0w1RZh7DSc27A9EyzlHbJQ?view)
+   - [VESPER](https://hackmd.io/@Ap_76vwNTg-vxJxbiaLMMQ/SkXEzic7O)
+5. Get the strategy approved by the Safe Farming Committee
+6. Complete review by one internal auditor
+7. The strategy goes to prod
 
-- [Vault naming standard](https://github.com/yearn/yearn-assets/blob/master/naming-standard.md)
-- [Release process](https://github.com/yearn/yearn-devdocs/blob/master/docs/developers/v2/OPERATIONS.md)
-- [Security check](https://docs.google.com/document/d/1hBKB73kJPQM71enrG8xoSFj7wxYmczUlgigyq2KkcTE/edit#heading=h.4ieoeyetfrxm)
+When the strategy has more than 10M in TVL, it should
 
-## Other reading material
+1. Create a a committee of 3 people with deep knowledge monitoring the strategy 24/7
 
-This is complement to the others but it's not directly related to creating strategies.
+When it's passed 100M in TVL
 
-- [The Keep3r Network](https://macarse.medium.com/the-keep3r-network-experiment-bb1c5182bda3)
-- [Andre intro to Yearn Vaults](https://medium.com/iearn/yearn-finance-v2-af2c6a6a3613)
-- [Delegated vaults explanation](https://medium.com/iearn/delegated-vaults-explained-fa81f1c3fce2)
+1. Audit by one reputable external audit company
+1. Recurring internal reviews
+
+For more details, check the complete deployment [process](deployment.md).

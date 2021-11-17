@@ -1,4 +1,4 @@
-# Getting Started with Vaults
+# Additional Resources
 
 This is a collection of resources that aim to be an introduction to how yVaults V2 work.
 
@@ -11,6 +11,11 @@ The best introduction to V2 is the workshop did by [Storming0x](https://github.c
 - [Slides](https://docs.google.com/presentation/d/1NsePa_hXV1vsbMixTSRsPKYBHYvmVQf7IvpI_8k4p_k/edit#slide=id.p)
 - [Repository](https://github.com/storming0x/yearn-vaults-v2-intro/tree/feat/kernel-session)
 - [Yearn State of the Vaults](https://medium.com/yearn-state-of-the-vaults/the-vaults-at-yearn-9237905ffed3)
+
+## How To Videos
+
+- [How to become a strategist](https://www.youtube.com/watch?v=NVR3teJw0Y0)
+- [How to buidl on top of Yearn Vaults](https://www.youtube.com/watch?v=a1TsO62402c)
 
 ## Start coding
 
@@ -26,18 +31,6 @@ Once you have the strategy ready. This will guide you further down the road.
 - [Vault naming standard](https://github.com/yearn/yearn-assets/blob/master/naming-standard.md)
 - [Release process](https://github.com/yearn/yearn-devdocs/blob/master/docs/developers/v2/OPERATIONS.md)
 - [Security check](https://docs.google.com/document/d/1hBKB73kJPQM71enrG8xoSFj7wxYmczUlgigyq2KkcTE/edit#heading=h.4ieoeyetfrxm)
-
-
-### TL;DR: Vetting Process of Vault Strategies
-
-By the time it gets to >100m, a strategy must have:
-- Been peer-reviewed by 2 other strategists
-- Been tested in prod on ape tax with live funds
-- Been voted safe by the safe farming committee
-- Been reviewed by 2 different internal yearn auditors
-- Been audited by at least one reputable external audit company
-- Have a committee of at least 3 people with deep knowledge monitoring the strategy 24/7
-
 
 ## Other reading material
 
