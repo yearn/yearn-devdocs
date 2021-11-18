@@ -90,8 +90,8 @@ When you decide to start, this reading material is going to come handy:
 
 Once you have the strategy ready. This will guide you further down the road.
 
-- [Vault naming standard](https://github.com/iearn-finance/yearn-assets/blob/master/naming-standard.md)
-- [Release process](/v2/process-and-procedures/operations)
+- [Vault naming standard](/developers/v2/naming-convention)
+- [Release process](/developers/v2/DEPLOYMENT)
 - [Security check](https://docs.google.com/document/d/1hBKB73kJPQM71enrG8xoSFj7wxYmczUlgigyq2KkcTE/edit#heading=h.4ieoeyetfrxm)
 
 ##### Other reading material

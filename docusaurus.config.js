@@ -48,8 +48,7 @@ module.exports = {
           label: 'Getting Started'
         },
         {
-          type: 'doc',
-          docId: 'getting-started',
+          to: 'developers/v2/getting-started',
           label: "Develop"
         },
         {
@@ -181,14 +180,13 @@ module.exports = {
       '@docusaurus/preset-classic',
       {
         docs: {
-          path: "docs/developers/v2",
+          path: "vaults",
           remarkPlugins: [math],
           rehypePlugins: [katex],
-          routeBasePath: "v2",
+          routeBasePath: "vaults",
           sidebarPath: require.resolve('./sidebars/sidebars.js'),
-          // Please change this to your repo.
-          editUrl:
-            'https://github.com/yearn/yearn-devdocs/edit/master/website/',
+          editUrl: 'https://github.com/yearn/yearn-devdocs/edit/master/website/',
+          includeCurrentVersion: false,
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
@@ -207,11 +205,10 @@ module.exports = {
     [
       '@docusaurus/plugin-content-docs',
       {
-        id: 'v_one',
-        path: 'docs/developers/v1',
-        editCurrentVersion: true,
-        routeBasePath: 'v1',
-        sidebarPath: require.resolve('./sidebars/sidebarsV1.js'),
+        id: 'developers',
+        path: 'docs/developers',
+        routeBasePath: 'developers',
+        sidebarPath: require.resolve('./sidebars/sidebarsDevelopers.js'),
         showLastUpdateAuthor: true,
         showLastUpdateTime: true,
       },
@@ -221,7 +218,6 @@ module.exports = {
       {
         id: 'getting-started',
         path: 'docs/getting-started',
-        editCurrentVersion: true,
         routeBasePath: 'getting-started',
         sidebarPath: require.resolve('./sidebars/sidebarsGettingStarted.js'),
         showLastUpdateAuthor: true,
@@ -235,7 +231,6 @@ module.exports = {
       {
         id: 'partners',
         path: 'docs/partners',
-        editCurrentVersion: true,
         routeBasePath: 'partners',
         sidebarPath: require.resolve('./sidebars/sidebarsPartners.js'),
         showLastUpdateAuthor: true,
@@ -247,7 +242,6 @@ module.exports = {
       {
         id: 'contributing',
         path: 'docs/contributing',
-        editCurrentVersion: true,
         routeBasePath: 'contributing',
         sidebarPath: require.resolve('./sidebars/sidebarsContributing.js'),
         showLastUpdateAuthor: true,
@@ -261,7 +255,6 @@ module.exports = {
       {
         id: 'resources',
         path: 'docs/resources',
-        editCurrentVersion: true,
         routeBasePath: 'resources',
         sidebarPath: require.resolve('./sidebars/sidebarsResources.js'),
         showLastUpdateAuthor: true,
@@ -273,7 +266,6 @@ module.exports = {
       {
         id: 'security',
         path: 'docs/security',
-        editCurrentVersion: true,
         routeBasePath: 'security',
         sidebarPath: require.resolve('./sidebars/sidebarsSecurity.js'),
         showLastUpdateAuthor: true,
