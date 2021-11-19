@@ -125,7 +125,7 @@ If you need a UI to test, you can coordinate with the strategists.
 
 In addition to the 2 strategists, a Core Developer has to review the strategy before going into production.
 
-1. Increase deposit limit according to the table [below](#Limits-per-Stage)
+1. Increase deposit limit according to the table [below](#limits-per-stage)
 1. Set management fee to production level:
 
    ```python
