@@ -95,7 +95,7 @@ Examples [SNX](https://hackmd.io/0w1RZh7DSc27A9EyzlHbJQ?view), [VESPER](https://
    strategy.setRewards(address)
    ```
 
-   - Read [below](<#Sharer-contract-(optional)>) if you want to use the sharer contract.
+   - Read [below](<#sharer-contract>) if you want to use the sharer contract.
 
 1. Run tests against "live" vault and strategy in mainnet-fork:
 
