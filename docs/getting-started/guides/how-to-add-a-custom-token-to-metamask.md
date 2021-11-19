@@ -4,6 +4,18 @@ Here's how you add a custom token to MetaMask.
 
 ## Visual Walkthrough
 
+### Method One
+1\) Click on the `Fox` icon to bring up the Metamask prompt.
+
+![](https://i.imgur.com/R4K0STZ.png)
+
+2\) Click on the etherscan icon (besides the `Fox` icon) to view token contract details. 
+
+3\) Confirm the token and click `Add Token`.
+
+![](https://i.imgur.com/W0MsHOP.png)
+
+### Method Two
 1\) Open MetaMask and click `Assets` to see the tokens in your wallet.
 
 ![](https://i.imgur.com/N34iMar.png)

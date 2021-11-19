@@ -104,7 +104,7 @@ vault.setGovernance(ychad.eth)
    strategy.setRewards(address)
    ```
 
-   - Read [below](<#Sharer-contract-(optional)>) if you want to use the sharer contract.
+   - Read [below](<#sharer-contract>) if you want to use the sharer contract.
 
 1. Run tests against "live" vault and strategy in mainnet-fork:
 
@@ -134,7 +134,7 @@ If you need a UI to test, you can coordinate with the strategists.
 
 In addition to the 2 strategists, a Core Developer has to review the strategy before going into production.
 
-1. Increase deposit limit according to the table [below](#Limits-per-Stage)
+1. Increase deposit limit according to the table [below](#limits-per-stage)
 1. Set management fee to production level:
 
    ```python
@@ -206,8 +206,8 @@ These are the standard deposit limits per stage. They can be adjusted on a case 
 
 | Stage        | Limit  |
 | ------------ | ------ |
-| Experimental | \$500K |
-| Production   | \$10M  |
+| Experimental | $500K |
+| Production   | $10M  |
 
 ### Sharer contract
 
