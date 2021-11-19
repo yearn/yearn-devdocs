@@ -206,8 +206,8 @@ These are the standard deposit limits per stage. They can be adjusted on a case 
 
 | Stage        | Limit  |
 | ------------ | ------ |
-| Experimental | \$500K |
-| Production   | \$10M  |
+| Experimental | $500K |
+| Production   | $10M  |
 
 ### Sharer contract
 

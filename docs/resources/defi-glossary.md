@@ -22,7 +22,7 @@ Audits may be either informal or formal audits and are meant to be a tool to fin
 
 ### APY
 
-Annual Percentage Yield, a time-based measurement of the Return On Investment \(ROI\) on an asset. For example, $100 invested at 2% APY would yield $102 after one year, if there is no compounding of any interest earned on that \$100 through the year. Assuming a static APY rate, the Monthly ROI would be 0.16%, in this case.
+Annual Percentage Yield, a time-based measurement of the Return On Investment \(ROI\) on an asset. For example, $100 invested at 2% APY would yield $102 after one year, if there is no compounding of any interest earned on that $100 through the year. Assuming a static APY rate, the Monthly ROI would be 0.16%, in this case.
 
 ### Arbitrage
 
@@ -295,7 +295,7 @@ Implemented via Smart Contracts, a liquidity token is given to a depositor in ex
 
 ### Maker
 
-[Maker](https://makerdao.com/en/) is a decentralized governed financial ecosystem based on a Stablecoin called DAI. DAI is algorithmically pegged to \$1 USD, with no volatility. A digital asset with no volatility at all, is sometimes seen as a hedge or safety measure in times of high volatility or during Bear markets.
+[Maker](https://makerdao.com/en/) is a decentralized governed financial ecosystem based on a Stablecoin called DAI. DAI is algorithmically pegged to $1 USD, with no volatility. A digital asset with no volatility at all, is sometimes seen as a hedge or safety measure in times of high volatility or during Bear markets.
 
 ### MakerDAO CDP
 
@@ -437,7 +437,7 @@ A suite of DeFi tools and products in an interconnected financial ecosystem runn
 
 ### YFI
 
-The governance token for the yEarn Finance ecosystem and suite of tools. YFI holders can submit, discuss, and vote upon various YIPs to make operational or governance changes to the ecosystem and its products. YFI was the first Fair Launch token, meaning that there was no Founder, Venture Capitalist, or early investor pre-mining program to privately claim a portion of a coin's supply. YFI was Fair Launched on July 20, 2020, with an initial limited supply of only 30,000 tokens and an initial price of \$34.53, according to Coingecko.
+The governance token for the yEarn Finance ecosystem and suite of tools. YFI holders can submit, discuss, and vote upon various YIPs to make operational or governance changes to the ecosystem and its products. YFI was the first Fair Launch token, meaning that there was no Founder, Venture Capitalist, or early investor pre-mining program to privately claim a portion of a coin's supply. YFI was Fair Launched on July 20, 2020, with an initial limited supply of only 30,000 tokens and an initial price of $34.53, according to Coingecko.
 
 ### Yield Farming
 
