@@ -20,6 +20,10 @@ Yearn SDK integrates several components, both on-chain and off-chain.
 
 ### On IPFS
 
+<p align="center">
+  <img src="https://i.imgur.com/mAHmykp.png" className="wireImg" alt="IPFS Metadata"/>
+</p>
+
 - Yearn Metadata is a lightweight storage for all the stuff that would have been hardcoded in v2 frontend, including but not limited to:
   - custom messages for deposits / withdrawals
   - custom copywriting for special assets
