@@ -54,9 +54,6 @@ Many Yearn Doc contributors prepare their long-form documentation in [HackMD](ht
 **Pro Tip:**
 Install the HackMD Google Chrome [extension](https://chrome.google.com/webstore/detail/hackmd-it/cnephjboabhkldgfpdokefccdofncdjh?hl=en) to make searching easier.
 
-### Gitbook
-
-Yearn Documentation contributors use Gitbook as a graphical user interface (GUI) to edit content and update personal Github repositories. It is an in-browser editor and as a result improves efficiency compared to using special programs which may be more difficult for non-technical users to navigate.
 
 ### Google Docs
 
@@ -90,6 +87,8 @@ Yearn documents hosted on GitHub are written in Markdown, a plaintext formatting
   - [Daring Fireball](https://daringfireball.net/projects/markdown/)
   - [Markdown Syntax Guide](https://guides.github.com/features/mastering-markdown/)
   - [Practice Communicating Using Markdown](https://lab.github.com/githubtraining/communicating-using-markdown)
+
+The markdown files are compiled with [Docusaurus](https://docusaurus.io) to bring you the styled documentation UI you see here. 
 
 ### VSCode
 
@@ -152,7 +151,7 @@ If you are using Google Docs to write, consider using Visual Studio Code and ins
   - **Incorrect:** `Meeting Transcript Episode 01.md`
 - Use descriptive names for Markdown files and versions.
   - Filenames should contain information specific to the contents of the file.
-    - Context is provided from the directory or through the presentation layer (e.g., GitBooks).
+    - Context is provided from the directory or through the presentation layer (e.g., Docusaurus).
   - **Correct:** `meeting-summary-ep-01.md`
   - **Incorrect:** `scientific-governance-and-risk-meeting-summary-ep-01.md`
 
