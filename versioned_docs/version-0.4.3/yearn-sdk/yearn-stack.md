@@ -4,7 +4,9 @@ Yearn SDK integrates several components, both on-chain and off-chain.
 
 ## Backend stack
 
-![Backend Chart](https://i.imgur.com/2koeiK5.jpg)
+<p align="center">
+  <img src="https://i.imgur.com/X440pat.png" className="wireImg" alt="Backend Chart"/>
+</p>
 
 ### On Chain
 
@@ -17,6 +19,10 @@ Yearn SDK integrates several components, both on-chain and off-chain.
     - Iron Bank
 
 ### On IPFS
+
+<p align="center">
+  <img src="https://i.imgur.com/mAHmykp.png" className="wireImg" alt="IPFS Metadata"/>
+</p>
 
 - Yearn Metadata is a lightweight storage for all the stuff that would have been hardcoded in v2 frontend, including but not limited to:
   - custom messages for deposits / withdrawals
