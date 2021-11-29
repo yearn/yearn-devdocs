@@ -119,6 +119,10 @@ html[data-theme="dark"] .react-toggle-thumb {
 
 
 html[data-theme="dark"] .wireImg {
-background: radial-gradient(ellipse at right, #AAA, transparent),
-  radial-gradient(ellipse at left, #AAA, transparent);
+  background: radial-gradient(ellipse at right, #AAA, transparent),
+    radial-gradient(ellipse at left, #AAA, transparent);
+  }
+html[data-theme="dark"] .wireImg2 {
+background: radial-gradient(ellipse at right, #333, transparent),
+  radial-gradient(ellipse at left, #333, transparent);
 }
