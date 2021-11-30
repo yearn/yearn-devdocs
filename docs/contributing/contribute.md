@@ -38,7 +38,7 @@ Whether its writing _How To_ guides on using vaults or creating diagrams on how 
 
 You can see our progress on the [Github Project Board](https://github.com/orgs/yearn/projects/2) where you can look through any issue that interests you. Before contributing: Please see our [How to Use Github](https://hackmd.io/4U35op0ORoGT24lzPhbGNQ) guide and ensure that your PRs adhere to our [Writing Style Guide](https://hackmd.io/dXQecpkJQX6XRy4y7k7j3g).
 
-We use a combination of HackMD, Gitbook, and Github for our [Documentation](https://docs.yearn.finance/) and we use [DrawIO](https://draw.io) with Google Drive for our diagrams & schemas. If you are a grammar stickler, you can see our [Reviewer Guide](https://hackmd.io/juTKNn3xTpKJgFDo2AglLw).
+We use a combination of HackMD, Docusaurus, and Github for our [Documentation](https://docs.yearn.finance/) and we use [DrawIO](https://draw.io) with Google Drive for our diagrams & schemas. If you are a grammar stickler, you can see our [Reviewer Guide](https://hackmd.io/juTKNn3xTpKJgFDo2AglLw).
 
 Last, but not least, join the #documentation channel in [Discord](https://discord.gg/freT6YRNSX) and introduce yourself.
 

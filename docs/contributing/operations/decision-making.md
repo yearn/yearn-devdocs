@@ -37,7 +37,7 @@ Currently gated off-chain decision-making powers are held by various members of 
 -   various yearn frontend admin
 -   url ownership
 -   github admin
--   gitbook admin
+-   docs admin
 -   telegram group admin
 -   discord admin
 -   forum admin

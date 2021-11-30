@@ -4,7 +4,7 @@ module.exports = {
     {
       type: 'category',
       label: 'Procedures',
-      items: ['v2/DEPLOYMENT', 'v2/OPERATIONS', 'v2/EMERGENCY', 'v2/naming-convention']
+      items: ['v2/SPECIFICATION', 'v2/DEPLOYMENT', 'v2/OPERATIONS', 'v2/EMERGENCY', 'v2/naming-convention']
     },
     {
       type: 'link',

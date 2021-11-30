@@ -89,6 +89,18 @@ When you're ready to withdraw:
 5. Confirm the approval if needed, and then approve the withdrawal transaction.
 6. When your transaction succeeds, the tokens will show up in your wallet again
 
+## Customization
+
+Personalize your Yearn experience with customizations, in [Settings](https://yearn.finance/#/settings).
+<p align="center">
+  <img width="900" src="https://i.imgur.com/Ujduvty.png"/>
+</p>
+
+### Slippage Tolerance
+Change your slippage preferences to one of three preset options listed. Learn more about slippage [here](/resources/defi-glossary#slippage)
+### Themes
+View Yearn.Finance with community-created themes or [create a custom theme](https://github.com/yearn/yearn-finance-v3/tree/develop/src/client/themes) to suit your style.
+
 ## Tools to track your funds
 
 If you would like to see how your USD balance changes while your assets are in a vault, connect your wallet to [zapper.fi](https://zapper.fi) or a similar portfolio tracking product. This is also the easiest way to tell how much profit the vault has made for you.

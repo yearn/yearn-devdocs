@@ -77,7 +77,7 @@ Cloning a repository is ideal if you are working on more than one page.
    ![](https://i.imgur.com/Q0jWQic.jpg)
 
 8. Create a new branch and give it a title that has to do with your current task. Keeping different tasks in different branches is important for organizational purposes
-9. Find the page you are looking to edit in VSCode's sidebar. They follow the same structure as the GitBook UI. README.md will always be
+9. Find the page you are looking to edit in VSCode's sidebar. They follow the same structure as the Docs UI. README.md will always be
 
    ![](https://i.imgur.com/dIfrmfU.png)
 
