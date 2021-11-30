@@ -5,7 +5,7 @@ Yearn SDK integrates several components, both on-chain and off-chain.
 ## Backend stack
 
 <p align="center">
-  <img src="https://i.imgur.com/X440pat.png" className="wireImg" alt="Backend Chart"/>
+  <img src="https://i.imgur.com/BTuanfX.png" alt="Backend Chart"/>
 </p>
 
 ### On Chain
