@@ -113,7 +113,16 @@ Example: [aLINK](https://meta.yearn.network/vaults/0x25212Df29073FfFA7A67399AcEf
 ```
 
 
+### Front End stack
 
 <p align="center">
   <img src="https://i.imgur.com/H5XqpZI.png" alt="Backend Chart"/>
+</p>
+
+
+### Front End Features
+
+
+<p align="center">
+  <img src="https://i.imgur.com/LfJmzkK.png" alt="Frontend Chart"/>
 </p>
