@@ -35,6 +35,7 @@ module.exports = {
         },
       }
     },
+    image: 'img/YFILogoGradient.png',
     navbar: {
       hideOnScroll: true,
       title: 'Yearn Finance',
