@@ -29,7 +29,7 @@ module.exports = {
     {
       type: 'category',
       label: 'Guides',
-      items: ['guides/how-boost-works', 'guides/how-to-add-a-custom-token-to-metamask', 'guides/how-to-understand-yvault-roi', 'guides/how-to-understand-yveCRV', 'guides/how-to-make-a-yip']
+      items: ['guides/how-boost-works', 'guides/how-to-add-a-custom-token-to-metamask', 'guides/how-to-understand-yvault-roi', 'guides/how-to-understand-yveCRV']
     }
   ],
 };
