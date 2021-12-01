@@ -6,7 +6,7 @@ Yearn Lens is a series of smart contracts that aggregate and format Yearn family
 
 ### Block Diagram
 
-![Chart](https://i.imgur.com/1Y5kcxY.png)
+![Chart](https://i.imgur.com/IWSIiJi.png)
 
 ### Key Concepts
 

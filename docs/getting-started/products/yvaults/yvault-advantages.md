@@ -37,7 +37,7 @@ Because yVaults batch your transaction with many other depositors, it is cumulat
 
 ## Leverage
 
-Yearn utilizes the Iron Bank (C.R.E.A.M. Finance) to access credit that is used to enhance yVault yields. Only white-listed addresses have this feature available to them, meaning that typically, individuals are not able to do this on their own.
+Yearn utilizes the [Iron Bank (C.R.E.A.M. Finance)](/getting-started/products/iron-bank/collateral-and-reserve-factor) to access credit that is used to enhance yVault yields. Only white-listed addresses have this feature available to them, meaning that typically, individuals are not able to do this on their own.
 
 ![](https://i.imgur.com/WJIjOKv.png)
 
