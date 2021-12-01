@@ -2,23 +2,35 @@
 
 ## APY function
 
+> BlocksPerYear = 2,102,400 (15 sec per block)
+
 ### Borrow APY
 
-$$[1 + Base + Multiplier * min(UtilizationRate, Kink1) + max(JumpMultiplier * UtilizationRate - Kink2, 0)] ^{2102400} - 1$$
+$$\Bigg[1 + Base + Multiplier * min(UtilizationRate, Kink1)\\
+
++\\
+
+max(JumpMultiplier * UtilizationRate - Kink2, 0)\Bigg]^{BlocksPerYear} - 1$$
 
 ### Supply APY
 
-Distribute $$(Interest Paid by Borrowers Per Block - Reserve)$$ to all suppliers, and convert it into APY
+$${Interest Paid by Borrowers Per Block - Reserve}\\[5pt]
 
-Distribute $$[(1 + Borrow APY) ^ {(1 / BlocksPerYear)} - 1] * Total Borrow * (1 - Reserve Factor)$$ to all suppliers, and convert it into APY
+{\Darr}\\[5pt]
 
-$${[(1 + Borrow APY) ^ {(1 / BlocksPerYear)} - 1] * Total Borrow * (1 - Reserve Factor) / Total Supply}$$, and convert it into APY
+{[(1 + Borrow APY) ^ {(\frac{1}{BlocksPerYear})} - 1] *Total Borrow* (1 - Reserve Factor)}\\[5pt]
 
-$${1 + [(1 + Borrow APY) ^ {(1 / BlocksPerYear)} - 1] * Total Borrow * (1 - Reserve Factor) / Total Supply} ^ {BlocksPerYear} - 1$$
+{\Darr}\\[5pt]
 
-**$$\large\bold{{1+[(1+Borrow APY)^{(1/BlocksPerYear)}-1]*(1-Reserve Factor)*Utilization Rate}^{BlocksPerYear}-1}$$**
+{[(1 + Borrow APY) ^ {(\frac{1}{BlocksPerYear})} - 1]*Total Borrow*(1 - Reserve Factor) / Total Supply}\\[5pt]
 
-> BlocksPerYear = 2,102,400 (15 sec per block)
+{\Darr}\\[5pt]
+
+{{1 + [(1 + Borrow APY) ^ {(\frac{1}{BlocksPerYear})} - 1]*Total Borrow*(1 - Reserve Factor) / Total Supply} ^ {BlocksPerYear} - 1}\\[5pt]
+
+{\Darr}\\[5pt]
+
+\large\bold{{{1+[(1+Borrow APY) ^ {(\frac{1}{BlocksPerYear})}-1]*(1-Reserve Factor)*Utilization Rate}^{BlocksPerYear}-1}}\\$$
 
 ### Major
 
@@ -68,7 +80,7 @@ $${1 + [(1 + Borrow APY) ^ {(1 / BlocksPerYear)} - 1] * Total Borrow * (1 - Rese
 
 | Parameter        | Value                                                                                                                 |
 | ---------------- | --------------------------------------------------------------------------------------------------------------------- |
-| Tokens           | LINK, YFI, SNX, DPI, UNI, SUSHI, CRV, CREAM, AAVE                                                                     |
+| Tokens           | LINK, YFI, SNX, DPI, UNI, SUSHI, CRV, YFI, AAVE                                                                     |
 | Base             | 0%                                                                                                                    |
 | Multiplier       | 27%                                                                                                                   |
 | JumpMultiplier   | 900%                                                                                                                  |

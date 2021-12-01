@@ -29,7 +29,6 @@
 | cyGBP       | [0xecaB2C76f1A8359A06fAB5fA0CEea51280A97eCF](https://etherscan.io/address/0xecaB2C76f1A8359A06fAB5fA0CEea51280A97eCF)                     | No          |
 | cyCHF       | [0x1b3E95E8ECF7A7caB6c4De1b344F94865aBD12d5](https://etherscan.io/address/0x1b3E95E8ECF7A7caB6c4De1b344F94865aBD12d5)                     | No          |
 | cyCRV       | [0xB8c5af54bbDCc61453144CF472A9276aE36109F9](https://etherscan.io/address/0xB8c5af54bbDCc61453144CF472A9276aE36109F9)                     | Yes         |
-| cyCREAM     | [0x9D029CD7CEdcB194E2C361948f279f1788135BB2](https://etherscan.io/address/0x9D029CD7CEdcB194E2C361948f279f1788135BB2)                     | No          |
 | cyAAVE      | [0x30190a3B52b5AB1daF70D46D72536F5171f22340](https://etherscan.io/address/0x30190a3B52b5AB1daF70D46D72536F5171f22340)                     | Yes         |
 | cyMIM       | [0x9e8E207083ffd5BDc3D99A1F32D1e6250869C1A9](https://etherscan.io/address/0x9e8E207083ffd5BDc3D99A1F32D1e6250869C1A9)                     | Yes         |
 | cyZAR       | [0x672473908587b10e65DAB177Dbaeadcbb30BF40B](https://etherscan.io/address/0x672473908587b10e65DAB177Dbaeadcbb30BF40B)                     | No          |

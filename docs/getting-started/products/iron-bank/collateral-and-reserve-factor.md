@@ -8,7 +8,7 @@ The Iron Bank provides a lending service both to users and protocols. For protoc
 
 ## Collateral & Reserve Factor
 
-The reserve factor is the percentage of fee paid to CREAM protocol. If the reserve factor is 10, then that would imply that 10% of the interest paid on the asset is for CREAM.
+The reserve factor is the percentage of fee paid to the Iron Bank. If the reserve factor is 10, then that would imply that 10% of the interest paid on the asset is for the Iron Bank.
 
 In the other hand, the collateral factor is the maximum you can borrow on a particular asset.
 
@@ -40,6 +40,5 @@ Example: The collateral factor for ETH is 85%, if the price of ETH is considered
 | GBP       | 0%                | 10%            |
 | CHF       | 0%                | 10%            |
 | CRV       | 70%               | 20%            |
-| CREAM     | 60%               | 20%            |
 | AAVE      | 60%               | 20%            |
 | MIM       | 90%               | 10%            |
