@@ -36,6 +36,7 @@ module.exports = {
       }
     },
     image: 'img/YFILogoGradient.png',
+    metadatas: [{name:'twitter:card', content:'Yearn Finance is a suite of products in Decentralized Finance (DeFi) that provides lending aggregation, yield generation, and insurance on the Ethereum blockchain.'}],
     navbar: {
       hideOnScroll: true,
       title: 'Yearn Finance',
