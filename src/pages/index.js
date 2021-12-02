@@ -71,7 +71,7 @@ export default function Home() {
   return (
     <Layout
       title={`${siteConfig.title} Docs`}
-      description="Description will go into a meta tag in <head />">
+      description="Yearn Finance is a suite of products in Decentralized Finance (DeFi) that provides lending aggregation, yield generation, and insurance on the Ethereum blockchain.">
       <main>
         <div className={styles.container}>
           <div className={styles.row}>
