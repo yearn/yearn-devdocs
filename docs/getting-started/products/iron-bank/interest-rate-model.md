@@ -26,11 +26,11 @@ $${Interest Paid by Borrowers Per Block - Reserve}\\[5pt]
 
 {\Darr}\\[5pt]
 
-{{1 + [(1 + Borrow APY) ^ {(\frac{1}{BlocksPerYear})} - 1]*Total Borrow*(1 - Reserve Factor) / Total Supply} ^ {BlocksPerYear} - 1}\\[5pt]
+{{[1 + [(1 + Borrow APY) ^ {(\frac{1}{BlocksPerYear})} - 1]*Total Borrow*(1 - Reserve Factor) / Total Supply}] ^ {BlocksPerYear} - 1}\\[5pt]
 
 {\Darr}\\[5pt]
 
-\large\bold{{{1+[(1+Borrow APY) ^ {(\frac{1}{BlocksPerYear})}-1]*(1-Reserve Factor)*Utilization Rate}^{BlocksPerYear}-1}}\\$$
+\large\bold{{{[1+[(1+Borrow APY) ^ {(\frac{1}{BlocksPerYear})}-1]*(1-Reserve Factor)*Utilization Rate}]^{BlocksPerYear}-1}}\\$$
 
 ### Major
 
