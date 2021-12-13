@@ -40,6 +40,8 @@
 - [Vaults Stats Dashboard](https://thegraph.com/explorer/subgraph?id=0xf50b705e4eaba269dfe954f10c65bd34e6351e0c-0&view=Overview)
 - [Yearn Vaults V2 Subgraph](https://api.yearn.finance/v1/chains/1/vaults/all)
 - [Yearn API](https://api.yearn.finance/v1/chains/1/vaults/all)
+- [Yearn on TokenTerminal](https://www.tokenterminal.com/terminal/projects/yearn-finance)
+
 
 ### General Websites
 - [Dune Analytics](https://duneanalytics.com/projects/yearn)
