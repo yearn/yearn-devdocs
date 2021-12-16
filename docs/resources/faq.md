@@ -74,7 +74,7 @@
 
 #### What is the process for getting my strategy onto Yearn?
 
-- [Protocol Contributors](https://docs.yearn.finance/contributors/contributors/#build)
+- [Protocol Contributors](https://docs.yearn.finance/developers/v2/getting-started#overview-of-our-vetting-process)
 
 #### My strategy hasn't been harvested in a while. Is that normal?
 
@@ -147,7 +147,7 @@
 
 #### Does yearn hire or pay contributors?
 
-- [Contributors](https://docs.yearn.finance/contributors/contributors#how-to-contribute)
+- [Contributors](http://docs.yearn.finance/contributing/operations/decision-making#a-personal-opportunity)
 
 ## Related Projects
 
@@ -166,7 +166,7 @@
 
 #### Lists of Smart Contracts
 
-- [Deployed Contracts Registry](https://docs.yearn.finance/developers/deployed-contracts-registry)
+- [Deployed Contracts Registry](https://medium.com/yearn-state-of-the-vaults/the-vaults-at-yearn-9237905ffed3)
 
 #### Statistics
 
@@ -174,7 +174,7 @@
 
 #### Latest Yearn News and Blog Posts
 
-- [Yearn News Links](https://docs.yearn.finance/resources/links/#news)
+- [Yearn News Links](https://docs.yearn.finance/resources/links/#updates)
 
 #### Media Resources
 

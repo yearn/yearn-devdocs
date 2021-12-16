@@ -110,7 +110,7 @@
 
 ## yEarn
 
-- These are Yearn's original yield-aware tokens, whose v2 and v3 contracts can be found [here](https://docs.yearn.finance/developers/deployed-contracts-registry#v2-yield-tokens).
+- These are Yearn's original yield-aware tokens, whose v2 and v3 contracts can be found [here](https://medium.com/yearn-state-of-the-vaults/the-vaults-at-yearn-9237905ffed3).
 - These products should be referred to as yEarn Tokens, `underlying token name + Earn`, or `y{token.symbol()}v${self.version()}`
   - **Examples:** `yDAIv2`, `yDAI Earn`, `yBUSDv3`, `yBUSD Earn`
 
