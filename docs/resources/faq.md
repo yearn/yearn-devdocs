@@ -8,7 +8,7 @@
 
 #### What is a Vault?
 
-- [yVaults](https://docs.yearn.finance/yearn-finance/yvaults/overview#what-are-yvaults)
+- [yVaults](https://docs.yearn.finance/getting-started/products/yvaults/overview#what-are-yvaults)
 
 #### How is vault growth calculated?
 
@@ -24,7 +24,7 @@
 
 #### Can I deposit any token into any vault?
 
-- [Zap](https://docs.yearn.finance/yearn-finance/yvaults/overview#zap-in-with-any-asset)
+- [Zap](https://docs.yearn.finance/getting-started/products/yvaults/overview#zap-in-with-any-asset)
 
 #### Where can I go to see how my deposit is performing?
 
@@ -44,7 +44,7 @@
 
 #### What is the fee structure?
 
-- [Detailed description of fees](https://docs.yearn.finance/yearn-finance/yvaults/overview#yvault-fee-structure)
+- [Detailed description of fees](docs.yearn.finance/getting-started/products/yvaults/overview#yvault-fee-structure)
 
 #### Why is gas so expensive?
 
@@ -58,7 +58,7 @@
 
 #### What is a Vault Strategy?
 
-- [Strategies](https://docs.yearn.finance/yearn-finance/yvaults/vaults-and-strategies)
+- [Strategies](https://docs.yearn.finance/getting-started/products/yvaults/vaults-and-strategies)
 
 #### Where can I find strategy descriptions?
 
@@ -70,7 +70,7 @@
 
 #### Does anyone monitor strategy performance?
 
-- [Strategists and Guardians](https://docs.yearn.finance/yearn-finance/yvaults/vaults-and-strategies)
+- [Strategists and Guardians](https://docs.yearn.finance/getting-started/products/yvaults/vaults-and-strategies)
 
 #### What is the process for getting my strategy onto Yearn?
 
@@ -88,7 +88,7 @@
 
 #### What's the difference between depositing in Earn and yVaults?
 
-- [Earn](https://docs.yearn.finance/yearn-finance/earn)
+- [Earn](https://docs.yearn.finance/getting-started/products/earn)
 
 ## Governance
 
