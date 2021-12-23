@@ -14,7 +14,9 @@ We are always open to new suggestions or better ways of doing things. If you hav
 
 ### Ready to contribute?
 
-Check out our [list of open tasks here](https://contribute.yearn.rocks/).
+[Contributor onboarding](https://yearnfinance.notion.site/yearnfinance)
+
+For developers, check out our [list of open Github issues here](https://contribute.yearn.rocks/).
 
 ### File a Bug
 
@@ -105,25 +107,31 @@ This is complement to the others but it's not directly related to creating strat
 
 ### Yearn Products
 
-- [Yearn.Finance](https://yearn.finance/), [Github](https://github.com/yearn/iearn-finance)
-- [Yearn Governance](https://ygov.finance/), [Github](https://github.com/yearn/ygov-finance)
-- [Yearn Borrow](https://yborrow.finance/), [Github](https://github.com/yearn/iborrow-finance)
+- [Yearn.Finance](https://yearn.finance/), [Github](https://github.com/yearn/yearn-finance-v3)
 - [Yearn Documentation](https://docs.yearn.finance/), [Github](https://github.com/yearn/yearn-docs)
-- [Yearn Forum](https://gov.yearn.finance/)
+- [Yearn Governance Forum](https://gov.yearn.finance/)
+- [Yearn Snapshot Governance Voting](https://yearn.snapshot.page/)
 
 #### List of Yearn Tools
 
 - [Yearn Watch](https://yearn.watch/), [Github](https://github.com/yearn/yearn-watch)
+- Yearn Subgraphs, [Ethereum](https://thegraph.com/explorer/subgraph?id=0xf50b705e4eaba269dfe954f10c65bd34e6351e0c-0&version=0xf50b705e4eaba269dfe954f10c65bd34e6351e0c-0-0&view=Overview), [Fantom](https://thegraph.com/hosted-service/subgraph/yearn/yearn-vaults-v2-fantom), [Github](https://github.com/yearn/yearn-vaults-v2-subgraph)
+- Yearn SDK, [Github](https://github.com/yearn/yearn-sdk)
+- [Yearn API](https://api.yearn.finance/v1/chains/1/vaults/all), [Github](https://github.com/yearn/yearn-api)
+- [Yearn Vision](https://yearn.vision/)
+- [Yearn Science (TVL graph)](https://yearn.science/)
 - Yearn Discord FAQ Bot, [Github](https://github.com/dgornjakovic/yfi-faq-bot)
-- [Github](https://github.com/yearn-integrations/api)
 
 #### Contributors Websites
 
 - [yCosystem (Yearn Community Aggregator)](https://ycosystem.info/) - Repository Of Yearn Links
 - [Feel the Yearn](https://feel-the-yearn.app/vaults) - Vault Statistics
 - [YFI Address Stats](https://www.yfistats.com/) - Yearn Financial Information
-- [Yieldfarming](https://yieldfarming.info/), [Github](https://github.com/yieldfarming/yieldfarming)
-- [Feel-the-yearn](https://feel-the-yearn.app) - Table of current active strategies
-- [yVault ROI Calculator](https://yvault-roi.netlify.app/)
-- [Yearn Snapshot](https://yearn.snapshot.page/)
 - [Yearn Newsletter](https://yearn.substack.com/) - Weekly YFI newsletter
+- [Trackavault](https://trackavault.com/) - Track V2 Vaults
+
+### Legacy Products and Websites
+- [v1 Yearn.Finance](https://v1.yearn.finance), [Github](https://github.com/yearn/iearn-finance)
+- [v2 Yearn.Finance](https://v2.yearn.finance), [Github](https://github.com/yearn/yearn-finance)
+- [Yearn Borrow](https://yborrow.finance/), [Github](https://github.com/yearn/iborrow-finance)
+- [Yearn Governance](https://ygov.finance/), [Github](https://github.com/yearn/ygov-finance) - V1 Governance
