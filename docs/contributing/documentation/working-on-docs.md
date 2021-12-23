@@ -63,8 +63,6 @@ Cloning a repository is ideal if you are working on more than one page.
 3. Install [Visual Code Studio](https://code.visualstudio.com) (VSCode)
 4. Fork the [yearn/yearn-devdocs](https://github.com/yearn/yearn-devdocs) repository
 
-   - If you are translating, fork the branch that has the name of the language you are translating to. For example, Portuguese is the [portuguese](https://github.com/yearn/yearn-devdocs/tree/portuguese) docs are contained branch. You will need the same file structure as this branch to merge changes into it.
-
    ![](https://i.imgur.com/vVpFt7a.jpeg)
 
 5. Login to GitHub Desktop, find your forked repository and clone it
@@ -93,4 +91,4 @@ Cloning a repository is ideal if you are working on more than one page.
     ![](https://i.imgur.com/r8JuC84.jpg)
 
 15. Make sure the base repository is 'yearn/yearn-devdocs' and the base is 'master'. (unless you are contributing to translated versions, in which case, the base should be the name of the language you are translating) The head repository should be 'your-username/yearn-devdocs' and the compare should be 'your-branch-name'
-16. Make sure that your PR has all of the information needed to contextualize the change and that your changes comply with the [Writing Style Guide](https://docs.yearn.finance/contributors/documentation/writing-style-guide). Once you create a pull request, it will be sent to the repo admins who can approve it to be merged into the live site.
+16. Make sure that your PR has all of the information needed to contextualize the change and that your changes comply with the [Writing Style Guide](https://docs.yearn.finance/contributing/documentation/writing-style-guide). Once you create a pull request, it will be sent to the repo admins who can approve it to be merged into the live site.
