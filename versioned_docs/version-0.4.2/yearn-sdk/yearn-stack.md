@@ -74,16 +74,14 @@ Yearn SDK integrates several components, both on-chain and off-chain.
 
 We can store Strategy information directly on IPFS so they can be then be queried and rendered the frontend.
 
-Example: [1inch Staking Reinvest](https://meta.yearn.network/strategies/1InchStaking)
+Example: [Idle Finance Reinvest](https://meta.yearn.network/strategies/1/0x01b54c320d6B3057377cbc71d953d1BBa84df44e)
 
 ```json
 {
-    "$schema": "strategy",
-    "name": "1inch Staking Reinvest",
-    "description": "Stakes {{token}} on [1inch DAO](https://app.1inch.io/#/1/dao/governance) to collect governance rewards. Rewards are harvested and deposited back into the strategy.",
-    "addresses": ["0xB12F6A5776EDd2e923fD1Ce93041B2000A22dDc7"],
-    "protocols": ["1inch"],
-    "authors": []
+  "$schema":"strategy",
+  "name":"Idle Finance Reinvest",
+  "description":"Supplies {{token}} to [Idle Finance](https://idle.finance) to earn IDLE and COMP. Earned tokens are harvested, sold for more {{token}} which is deposited back into the strategy.",
+  "protocols":["IdleFinance"]
 }
 ```
 
@@ -91,17 +89,20 @@ Example: [1inch Staking Reinvest](https://meta.yearn.network/strategies/1InchSta
 
 We can store Asset informations so in critical situations we can toggle interactions and add custom messages.
 
-Example: [aLINK](https://meta.yearn.network/vaults/0x25212Df29073FfFA7A67399AcEfC2dd75a831A1A)
+Example: [Curve EURS](https://meta.yearn.network/vaults/1/0x25212Df29073FfFA7A67399AcEfC2dd75a831A1A)
 
 ```json
 {
-  "name": "aLINK",
-  "promoted": true,
-  "retired": true,
-  "migrated": false,
-  "deposit": {
-    "disabled": true, // we can disable interaction directly by editing this file on the repo
-    "message": "This vault is no longer active and its strategy is unwinding. Withdrawals will incur a 1% withdrawal fee during this process."
-  },
+  "$schema": "vault",
+  "comment": "Curve EURS",
+  "hideAlways": false,
+  "depositsDisabled": false,
+  "withdrawalsDisabled": false,
+  "order": 18,
+  "migrationAvailable": false,
+  "allowZapIn": true,
+  "allowZapOut": true,
+  "retired": false,
+  "displayName": "Curve EURS"
 }
 ```

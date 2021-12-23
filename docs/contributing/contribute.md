@@ -52,13 +52,13 @@ If you're a developer we need your help! Before you begin: Familiarize yourself 
 
 You can see our progress on our [Github Project Board](https://github.com/orgs/yearn/projects/1) and you can immediately begin contributing where you see fit. We recommend checking out issues tagged as `help wanted` and recommend sticking to the respective repository's coding guidelines (linting, formatting, PRs, etc). It's that simple 🙂. You can also join us on the #dev channel in [Discord](https://discord.gg/w89vVxeV9h).
 
-If you are interested in working on a specific project, check out the list of Yearn products in the [General Resources](#general-resources) section below or check out our list of repos [here](https://docs.yearn.finance/developers/code-repositories).
+If you are interested in working on a specific project, check out the list of Yearn products in the [General Resources](#general-resources) section below or check out our list of repos [here](https://github.com/orgs/yearn/repositories).
 
-If you want an overview on how our services interact with one another in Vaults, please see the schema and accompanying descriptions in the [Vaults Overview](/getting-started/products/yvaults/overview).
+If you want an overview on how our services interact with one another in Vaults, please see the schema and accompanying descriptions in the [Vaults Overview](https://docs.yearn.finance/getting-started/products/yvaults/overview).
 
 If you're wondering how **strategies** work, please check out [Yearn Vaults v2 intro](https://www.youtube.com/watch?v=C0fsYiCI54g) — hosted by our Yearn Devs. To start writing a Strategy of your own, please visit the [Yearn Brownie Mix](https://github.com/yearn/brownie-strategy-mix).
 
-If you are looking to integrate with Yearn, please visit our [Integration Guide](https://docs.yearn.finance/developers/integration-guide) and check out our [Interface Documentation](https://docs.yearn.finance/developers/misc-resources/smart-contract-integration).
+If you are looking to integrate with Yearn, please visit our [Integration Guide](https://docs.yearn.finance/partners/integration_guide) and check out our [Vault API Documentation](https://docs.yearn.finance/vaults/smart-contracts/VaultAPI).
 
 #### Designers
 
@@ -76,7 +76,6 @@ The best introduction to V2 is the workshop done for Gitcoin Kernel Sessions. Ev
 
 - [Video](https://www.youtube.com/watch?v=C0fsYiCI54g)
 - [Slides](https://docs.google.com/presentation/d/1NsePa_hXV1vsbMixTSRsPKYBHYvmVQf7IvpI_8k4p_k/edit#slide=id.p)
-- [Repository](https://github.com/storming0x/yearn-vaults-v2-intro/tree/feat/kernel-session)
 
 ##### Start coding
 
@@ -86,12 +85,12 @@ When you decide to start, this reading material is going to come handy:
 - [Vaults V2 Repository](https://github.com/yearn/yearn-vaults)
 - [How to set up coding environment for Yearn Strategies](https://sambacha.github.io/yearn-vaults/index.html)
 - [Mint your own DAI](https://medium.com/ethereum-grid/forking-ethereum-mainnet-mint-your-own-dai-d8b62a82b3f7)
-- [Dev Docs](https://docs.yearn.finance/developers/deployed-contracts-registry)
+- [Dev Docs](https://docs.yearn.finance/developers/v2/getting-started)
 
 Once you have the strategy ready. This will guide you further down the road.
 
-- [Vault naming standard](/developers/v2/naming-convention)
-- [Release process](/developers/v2/DEPLOYMENT)
+- [Vault naming standard](https://docs.yearn.finance/developers/v2/naming-convention)
+- [Release process](https://docs.yearn.finance/developers/v2/DEPLOYMENT)
 - [Security check](https://docs.google.com/document/d/1hBKB73kJPQM71enrG8xoSFj7wxYmczUlgigyq2KkcTE/edit#heading=h.4ieoeyetfrxm)
 
 ##### Other reading material
@@ -116,7 +115,7 @@ This is complement to the others but it's not directly related to creating strat
 
 - [Yearn Watch](https://yearn.watch/), [Github](https://github.com/yearn/yearn-watch)
 - Yearn Discord FAQ Bot, [Github](https://github.com/dgornjakovic/yfi-faq-bot)
-- [Yearn Tools (Based off Yearn API)](https://yearn.tools/), [Github](https://github.com/yearn-integrations/api)
+- [Github](https://github.com/yearn-integrations/api)
 
 #### Contributors Websites
 
