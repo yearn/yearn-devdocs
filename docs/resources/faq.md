@@ -8,7 +8,7 @@
 
 #### What is a Vault?
 
-- [yVaults](https://docs.yearn.finance/yearn-finance/yvaults/overview#what-are-yvaults)
+- [yVaults](/getting-started/products/yvaults/overview#what-are-yvaults)
 
 #### How is vault growth calculated?
 
@@ -24,7 +24,7 @@
 
 #### Can I deposit any token into any vault?
 
-- [Zap](https://docs.yearn.finance/yearn-finance/yvaults/overview#zap-in-with-any-asset)
+- [Zap](/getting-started/products/yvaults/overview#zap-in-with-any-asset)
 
 #### Where can I go to see how my deposit is performing?
 
@@ -44,11 +44,11 @@
 
 #### What is the fee structure?
 
-- [Detailed description of fees](https://docs.yearn.finance/yearn-finance/yvaults/overview#yvault-fee-structure)
+- [Detailed description of fees](/getting-started/products/yvaults/overview#yvault-fee-structure)
 
 #### Why is gas so expensive?
 
-- Gas prices fluctuate and can be monitored with tools like [Etherscan](https://ethereumprice.org/gas/), [ETH Gas Station](https://ethgas.dev/#/), [Blocknative's Gas Estimator](https://www.blocknative.com/gas-estimator), or [Tx Price](https://https://txprice.com/).
+- Gas prices fluctuate and can be monitored with tools like [Etherscan](https://ethereumprice.org/gas/), [Blocknative's Gas Estimator](https://www.blocknative.com/gas-estimator), or [Tx Price](https://txprice.com/).
 
 #### What is yveCRV?
 
@@ -58,7 +58,7 @@
 
 #### What is a Vault Strategy?
 
-- [Strategies](https://docs.yearn.finance/yearn-finance/yvaults/vaults-and-strategies)
+- [Strategies](/getting-started/products/yvaults/vaults-and-strategies)
 
 #### Where can I find strategy descriptions?
 
@@ -70,11 +70,11 @@
 
 #### Does anyone monitor strategy performance?
 
-- [Strategists and Guardians](https://docs.yearn.finance/yearn-finance/yvaults/vaults-and-strategies)
+- [Strategists and Guardians](/getting-started/products/yvaults/vaults-and-strategies)
 
 #### What is the process for getting my strategy onto Yearn?
 
-- [Protocol Contributors](https://docs.yearn.finance/contributors/contributors/#build)
+- [Protocol Contributors](/contributing/contribute)
 
 #### My strategy hasn't been harvested in a while. Is that normal?
 
@@ -88,7 +88,7 @@
 
 #### What's the difference between depositing in Earn and yVaults?
 
-- [Earn](https://docs.yearn.finance/yearn-finance/earn)
+- [Earn](/getting-started/products/earn)
 
 ## Governance
 
@@ -98,11 +98,11 @@
 
 #### What is a YIP?
 
-- [Yearn Improvement Proposals](https://docs.yearn.finance/governance/proposal-process#proposal)
+- [Yearn Improvement Proposals](/contributing/governance/proposal-process)
 
 #### How do I vote?
 
-- [Voting Details](https://docs.yearn.finance/governance/proposal-process#voting)
+- [Voting Details](/contributing/governance/proposal-process#voting)
 
 ## Security
 
@@ -112,11 +112,11 @@
 
 #### Is Yearn audited?
 
-- [Security Audit Repository](https://docs.yearn.finance/resources/audits)
+- [Security Audit Repository](https://github.com/yearn/yearn-security/tree/master/audits)
 
 #### Where should I report a bug?
 
-- [File a bug](https://docs.yearn.finance/contributors/contributors/#file-a-bug) — create a new issue in the relevant repository.
+- [File a bug](contributing/contribute#file-a-bug) — create a new issue in the relevant repository.
 
 ## Support
 
@@ -131,7 +131,7 @@
 
 #### I'm getting an error that says "ALERT: Transaction Error. Exception thrown in contract code." What does that mean?
 
-- There may be a bug in the contract that you are interacting with. bring this up with the team of [Discord](https://discord.gg/baBJSHFH).
+- There may be a bug in the contract that you are interacting with. bring this up with the team of [Discord](https://discord.gg/yearn).
 
 #### I paid gas for a deposit, but it didn't go through, why is that?
 
@@ -141,13 +141,13 @@
 
 - This website is one of many front-ends maintained by separate groups of developers. Consider getting in touch with the yearn.fi development team via their website or through social media channels.
 
-#### If you have any other questions about using the protocol, it's best to ask in either [Discord](https://discord.gg/yearn) or [Telegram](https://t.me/yearnfinance)
+**If you have any other questions about using the protocol, it's best to ask in either [Discord](https://discord.gg/yearn) or [Telegram](https://t.me/yearnfinance)**
 
 ## Careers and contributors
 
 #### Does yearn hire or pay contributors?
 
-- [Contributors](https://docs.yearn.finance/contributors/contributors#how-to-contribute)
+- [Contributors](/contributing/contribute#how-to-contribute)
 
 ## Related Projects
 
@@ -155,26 +155,26 @@
 - [CREAM Finance](https://cream.finance)
 - [SushiSwap](https://www.sushi.com)
 - [Akropolis](https://www.akropolis.io)
-- [Pickle Finance](https://pickle.fyi)
-- [Keep3r](https://keep3r.network)
+- [Pickle Finance](https://www.pickle.finance)
+- [Keep3r](https://thekeep3r.network/)
 
 ## Resources
 
 #### Where can I learn more about Yearn?
 
-- [Informational Resources](https://docs.yearn.finance/resources/links/#learn)
+- [Informational Resources](/resources/links/#learn)
 
-#### Lists of Smart Contracts
+#### Lists of yVaults deployed
 
-- [Deployed Contracts Registry](https://docs.yearn.finance/developers/deployed-contracts-registry)
+- Use the [Registry](/vaults/smart-contracts/registry)
 
 #### Statistics
 
-- [Yearn Statistics Links](https://docs.yearn.finance/resources/links/#statistics)
+- [Yearn Statistics Links](/resources/links/#statistics)
 
 #### Latest Yearn News and Blog Posts
 
-- [Yearn News Links](https://docs.yearn.finance/resources/links/#news)
+- [Yearn News Links](/resources/links/#updates)
 
 #### Media Resources
 
