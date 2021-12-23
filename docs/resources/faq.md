@@ -8,35 +8,35 @@
 
 #### What is a Vault?
 
-- [yVaults](/getting-started/products/yvaults/overview#what-are-yvaults)
+- [yVaults](https://docs.yearn.finance/getting-started/products/yvaults/overview#what-are-yvaults)
 
 #### How is vault growth calculated?
 
-- [Vault Returns](/getting-started/guides/how-to-understand-yvault-roi#roi-calculation)
+- [Vault Returns](https://docs.yearn.finance/getting-started/guides/how-to-understand-yvault-roi#roi-calculation)
 
 #### How can I deposit?
 
-- [yVaults](/getting-started/using-yearn)
+- [yVaults](https://docs.yearn.finance/getting-started/using-yearn)
 
 #### What are the implications of depositing or withdrawing with an asset that isn't native to the vault?
 
-- You can potentially [lose value](/getting-started/using-yearn#if-you-dont-have-the-required-token-for-the-vault-that-you-would-like-to-deposit-in) to slippage.
+- You can potentially [lose value](https://docs.yearn.finance/getting-started/using-yearn#if-you-dont-have-the-required-token-for-the-vault-that-you-would-like-to-deposit-in) to slippage.
 
 #### Can I deposit any token into any vault?
 
-- [Zap](/getting-started/products/yvaults/overview#zap-in-with-any-asset)
+- [Zap](https://docs.yearn.finance/getting-started/products/yvaults/overview#zap-in-with-any-asset)
 
 #### Where can I go to see how my deposit is performing?
 
-- [Tools to track your funds](/getting-started/using-yearn#tools-to-track-your-funds)
+- [Tools to track your funds](https://docs.yearn.finance/getting-started/using-yearn#tools-to-track-your-funds)
 
 #### When do I realize profits from a vault?
 
-- Your profits [are compounded](/getting-started/using-yearn#tools-to-track-your-funds) into the vault token overtime, which can be withdrawn for your principal plus profit.
+- Your profits [are compounded](https://docs.yearn.finance/getting-started/using-yearn#tools-to-track-your-funds) into the vault token overtime, which can be withdrawn for your principal plus profit.
 
 #### How is vault growth calculated?
 
-- [Vault Returns](/getting-started/guides/how-to-understand-yvault-roi#roi-calculation)
+- [Vault Returns](https://docs.yearn.finance/getting-started/guides/how-to-understand-yvault-roi#roi-calculation)
 
 #### How can I migrate vaults?
 
@@ -44,7 +44,7 @@
 
 #### What is the fee structure?
 
-- [Detailed description of fees](/getting-started/products/yvaults/overview#yvault-fee-structure)
+- [Detailed description of fees](https://docs.yearn.finance/getting-started/products/yvaults/overview#yvault-fee-structure)
 
 #### Why is gas so expensive?
 
@@ -52,13 +52,13 @@
 
 #### What is yveCRV?
 
-- [How to understand yveCRV](/getting-started/guides/how-to-understand-yvecrv)
+- [How to understand yveCRV](https://docs.yearn.finance/getting-started/guides/how-to-understand-yvecrv)
 
 ### Vault Strategies
 
 #### What is a Vault Strategy?
 
-- [Strategies](/getting-started/products/yvaults/vaults-and-strategies)
+- [Strategies](https://docs.yearn.finance/getting-started/products/yvaults/vaults-and-strategies)
 
 #### Where can I find strategy descriptions?
 
@@ -70,11 +70,11 @@
 
 #### Does anyone monitor strategy performance?
 
-- [Strategists and Guardians](/getting-started/products/yvaults/vaults-and-strategies)
+- [Strategists and Guardians](https://docs.yearn.finance/getting-started/products/yvaults/vaults-and-strategies)
 
 #### What is the process for getting my strategy onto Yearn?
 
-- [Protocol Contributors](/contributing/contribute)
+- [Protocol Contributors](https://docs.yearn.finance/contributing/contribute)
 
 #### My strategy hasn't been harvested in a while. Is that normal?
 
@@ -88,7 +88,7 @@
 
 #### What's the difference between depositing in Earn and yVaults?
 
-- [Earn](/getting-started/products/earn)
+- [Earn](https://docs.yearn.finance/getting-started/products/earn)
 
 ## Governance
 
@@ -98,11 +98,11 @@
 
 #### What is a YIP?
 
-- [Yearn Improvement Proposals](/contributing/governance/proposal-process)
+- [Yearn Improvement Proposals](https://docs.yearn.finance/contributing/governance/proposal-process)
 
 #### How do I vote?
 
-- [Voting Details](/contributing/governance/proposal-process#voting)
+- [Voting Details](https://docs.yearn.finance/contributing/governance/proposal-process#voting)
 
 ## Security
 
@@ -116,7 +116,7 @@
 
 #### Where should I report a bug?
 
-- [File a bug](contributing/contribute#file-a-bug) — create a new issue in the relevant repository.
+- [File a bug](https://docs.yearn.finance/contributing/contribute#file-a-bug) — create a new issue in the relevant repository.
 
 ## Support
 
@@ -147,7 +147,7 @@
 
 #### Does yearn hire or pay contributors?
 
-- [Contributors](/contributing/contribute#how-to-contribute)
+- [Contributors](https://docs.yearn.finance/contributing/contribute#how-to-contribute)
 
 ## Related Projects
 
@@ -162,19 +162,19 @@
 
 #### Where can I learn more about Yearn?
 
-- [Informational Resources](/resources/links/#learn)
+- [Informational Resources](https://docs.yearn.finance/resources/links/#learn)
 
 #### Lists of yVaults deployed
 
-- Use the [Registry](/vaults/smart-contracts/registry)
+- Use the [Registry](https://docs.yearn.finance/vaults/smart-contracts/registry)
 
 #### Statistics
 
-- [Yearn Statistics Links](/resources/links/#statistics)
+- [Yearn Statistics Links](https://docs.yearn.finance/resources/links/#statistics)
 
 #### Latest Yearn News and Blog Posts
 
-- [Yearn News Links](/resources/links/#updates)
+- [Yearn News Links](https://docs.yearn.finance/resources/links/#updates)
 
 #### Media Resources
 
