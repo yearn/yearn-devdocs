@@ -44,7 +44,7 @@ The other key difference is that **deposited CRV is locked forever**. It **canno
 
 yveCRV earns rewards from trading fees, CRV rewards and “boosties”. Holding CRV in your wallet gives you exposure to the price of CRV. You want the price of Crv to increase. Depositing CRV on Curve Finance means that you receive a share of the trading fees on Curve Finance.
 
-Curve Finance introduced extra rewards, called “boosties”, if the CRV is locked in Curve Finance for a minimum of 1 week and a maximum of 4 years. Please refer to the [CRV vote locking guide](how-boost-works) for more information.
+Curve Finance introduced extra rewards, called “boosties”, if the CRV is locked in Curve Finance for a minimum of 1 week and a maximum of 4 years. Please refer to the [CRV vote locking guide](https://docs.yearn.finance/getting-started/guides/how-boost-works) for more information.
 
 Rewards are paid weekly.
 

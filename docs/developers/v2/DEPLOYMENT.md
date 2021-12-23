@@ -156,7 +156,7 @@ strategy.acceptGovernance()
 registry.endorseVault(vault)
 ```
 
-5. Update the Ledger Plugin for users to be able to use the vault from Ledger Live. [See more](/developers/v2/ledger-plugin).
+5. Update the Ledger Plugin for users to be able to use the vault from Ledger Live. [See more](https://docs.yearn.finance/developers/v2/ledger-plugin).
 
 ### Endorsing a vault from a previous release
 

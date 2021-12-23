@@ -44,7 +44,7 @@ Another simple way to contribute is through the built in 'Edit on GitHub' button
 
    ![](https://i.imgur.com/oESKgwx.jpg)
 
-4. After you 'Propose changes' GitHub will create a branch of the yearn-devdocs repository for you and show a summary of the changes you made. If everything looks right and complies with the [Writing Style Guide](https://docs.yearn.finance/contributors/documentation/writing-style-guide), click 'Create pull request'
+4. After you 'Propose changes' GitHub will create a branch of the yearn-devdocs repository for you and show a summary of the changes you made. If everything looks right and complies with the [Writing Style Guide](https://docs.yearn.finance/contributing/documentation/writing-style-guide), click 'Create pull request'
 
 5. In your pull request (PR), give enough context about your changes for the repo admin to understand why they should be accepted. Afterwards, click 'Create pull request' and the admins will either merge, deny or make a comment.
 
