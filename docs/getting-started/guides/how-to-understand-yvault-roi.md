@@ -4,7 +4,7 @@
 
 ### ROI
 
-Are you an advanced user trying to understand how ROI is calculated? Skip directly to "[_Why we can't use compound or linear interest formulas to estimate yVaults returns_](how-to-understand-yvault-roi#why-cant-we-use-compound-or-linear-interest-formulas-to-estimate-yvaults-returns)"
+Are you an advanced user trying to understand how ROI is calculated? Skip directly to "[_Why we can't use compound or linear interest formulas to estimate yVaults returns_](https://https://docs.yearn.finance/getting-started/guides/how-to-understand-yvault-roi#why-cant-we-use-compound-or-linear-interest-formulas-to-estimate-yvaults-returns)"
 
 If you are a beginner in DeFi or new to Yearn keep on reading.
 
@@ -17,7 +17,7 @@ If you are a beginner in DeFi or new to Yearn keep on reading.
 - ROI presented in Yearn is a **yearly ROI**. You deposit X and 1 year later you receive X + \(X \* ROI\).
 - The ROI presented is a _current estimation_ based on data since the yVault's inception. If performance remains constant, after 1 year you will receive the displayed ROI. Rates are unstable currently, and fluctuate based on market/strategy.
 
-yVaults have different yield farming [strategies](/resources/faq#where-can-i-find-strategy-descriptions), which determine how assets are moved between liquidity pools. Strategies are created by the `Controller` who manages the yVault.
+yVaults have different yield farming [strategies](https://https://docs.yearn.finance/resources/faq#where-can-i-find-strategy-descriptions), which determine how assets are moved between liquidity pools. Strategies are created by the `Controller` who manages the yVault.
 
 New strategies are also voted by the community through [governance proposals](https://gov.yearn.finance). A new strategy creates a new challenge in terms of ROI calculation.
 
