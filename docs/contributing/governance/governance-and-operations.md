@@ -25,7 +25,7 @@ A simplified flow of governance would look like this:
 
 ### Token Holders
 
-it is the [YFI token](https://docs.yearn.finance/governance/yfi) holder's duty to create and vote for proposals that improve the protocol.
+it is the [YFI token](https://docs.yearn.finance/contributing/governance/yfi) holder's duty to create and vote for proposals that improve the protocol.
 
 | Proposals                        | Descriptions                                                                                          |
 | -------------------------------- | ----------------------------------------------------------------------------------------------------- |
