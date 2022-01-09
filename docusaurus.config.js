@@ -97,6 +97,10 @@ module.exports = {
               label: '#strategies',
               href: 'https://discord.gg/ABh9zXGq',
             },
+            {
+              label: 'Get Involved - Survey',
+              href: 'https://forms.gle/Jkbu81sjAfL6NzH17',
+            },
           ],
         },
         {
@@ -198,8 +202,8 @@ module.exports = {
   ],
   stylesheets: [
     {
-      href: 'https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/katex.min.css', 
-      integrity: 'sha384-Um5gpz1odJg5Z4HAmzPtgZKdTBHZdw8S29IecapCSB31ligYPhHQZMIlWLYQGVoc', 
+      href: 'https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/katex.min.css',
+      integrity: 'sha384-Um5gpz1odJg5Z4HAmzPtgZKdTBHZdw8S29IecapCSB31ligYPhHQZMIlWLYQGVoc',
       crossorigin: 'anonymous'
     },
    ],
