@@ -177,7 +177,7 @@ When bulleted and numbered lists contain complete sentences, capitalize the firs
 
 - Use [absolute links](https://docs.microsoft.com/en-us/contribute/how-to-write-links) and standard web URLs when referencing external resources.
 - Create descriptive hyperlinks and avoid generic language.
-  - **Correct - Descriptive:** (Learn more at [Yearn Documentation](https://docs.yearn.finance/)
+  - **Correct - Descriptive:** Learn more at [Yearn Documentation](https://docs.yearn.finance/)
   - **Incorrect - Generic:** Learn more [here](https://docs.yearn.finance/).
 - Include a `.`outside the link for sentences that end with a link.
 - When creating links for parallel translated documents, make sure to update relative links to reflect the correct heading.
