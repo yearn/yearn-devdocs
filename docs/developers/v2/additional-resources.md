@@ -9,7 +9,7 @@ The best introduction to V2 is the workshop did by [Storming0x](https://github.c
 - [Video - Part 1](https://www.youtube.com/watch?v=C0fsYiCI54g)
 - [Video - Part 2](https://www.youtube.com/watch?v=Y8y8ALmuLu4)
 - [Slides](https://docs.google.com/presentation/d/1NsePa_hXV1vsbMixTSRsPKYBHYvmVQf7IvpI_8k4p_k/edit#slide=id.p)
-- [Yearn State of the Vaults](https://medium.com/yearn-state-of-the-vaults/the-vaults-at-yearn-9237905ffed3)
+- [Yearn State of the Vaults](https://vaults.yearn.finance/)
 
 ## How To Videos
 

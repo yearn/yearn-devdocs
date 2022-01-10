@@ -62,7 +62,7 @@
 
 #### Where can I find strategy descriptions?
 
-- [Yearn State of the Vaults](https://medium.com/yearn-state-of-the-vaults/the-vaults-at-yearn-9237905ffed3)
+- [Yearn State of the Vaults](https://vaults.yearn.finance/)
 
 #### Where can I find current strategy contracts?
 

@@ -27,7 +27,7 @@
 
 ### Vaults Detail Reference
 
-- [Vaults at Yearn](https://medium.com/yearn-state-of-the-vaults/the-vaults-at-yearn-9237905ffed3)
+- [Vaults at Yearn](https://vaults.yearn.finance/)
 - [yVaults v2 Strategies](https://yearn.watch/)
 - [Risk Dashboard](https://yearn.fi/system)
 
