@@ -1152,6 +1152,13 @@
   dependencies:
     arrify "^1.0.1"
 
+"@crowdin/cli@^3.7.6":
+  version "3.7.6"
+  resolved "https://registry.yarnpkg.com/@crowdin/cli/-/cli-3.7.6.tgz#272a5417c964c28c4ceb4ab0adb31d482b1f6cf1"
+  integrity sha512-iXKPexzaave7mNadVA0nAhhdi3DsSmU/hbrt1LhpYNW6Lngp74PXQ1hShxCgflPeqpExF/ZJaptWW8qAgNpwQg==
+  dependencies:
+    shelljs "^0.8.4"
+
 "@docsearch/css@3.0.0-alpha.40":
   version "3.0.0-alpha.40"
   resolved "https://registry.yarnpkg.com/@docsearch/css/-/css-3.0.0-alpha.40.tgz#c37bd7b03f4c30a6ea7a19b87fe71880d2e8b22a"

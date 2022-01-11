@@ -9,6 +9,10 @@ module.exports = {
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
+  i18n: {
+    defaultLocale: 'en',
+    locales: ['pt'],
+  },
   favicon: 'img/favicon.ico',
   organizationName: 'yearn', // Usually your GitHub org/user name.
   projectName: 'yearn-devdocs', // Usually your repo name.
@@ -80,6 +84,10 @@ module.exports = {
         {
           type: 'search',
           position: 'right'
+        },
+        {
+          type: 'localeDropdown',
+          position: 'right',
         },
       ],
     },

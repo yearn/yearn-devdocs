@@ -14,9 +14,12 @@
     "write-translations": "docusaurus write-translations",
     "write-heading-ids": "docusaurus write-heading-ids",
     "make-sol-doc": "solidity-docgen --templates=templates --helpers=helpers/solidityHelpers.js -i ../yearn-vaults/contracts/ -o docs/v2/smart-contracts",
-    "make-vyper-doc": "vydoc -i ../yearn-vaults/contracts/ -o docs/v2/smart-contracts -t ./templates/contract.ejs"
+    "make-vyper-doc": "vydoc -i ../yearn-vaults/contracts/ -o docs/v2/smart-contracts -t ./templates/contract.ejs",
+    "upload-translations": "crowdin upload sources --config crowdin.yml",
+    "download-translations": "crowdin download"
   },
   "dependencies": {
+    "@crowdin/cli": "^3.7.6",
     "@docusaurus/core": "2.0.0-beta.6",
     "@docusaurus/preset-classic": "2.0.0-beta.6",
     "@mdx-js/react": "^1.6.21",
