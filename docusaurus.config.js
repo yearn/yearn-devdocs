@@ -14,9 +14,9 @@ module.exports = {
   projectName: 'yearn-devdocs', // Usually your repo name.
   themeConfig: {
     algolia: {
-      apiKey: 'dddf45f99d4d9c8b153e51038c8ebfca1',
-      indexName: 'yearn_docs',
-      appId: 'MUGPB5SQLX',
+      apiKey: process.env.ALGOLIA_API_KEY || 'UNKNOWN',
+      indexName: process.env.ALGOLIA_INDEX_NAME || 'UNKNOWN',
+      appId: process.env.ALGOLIA_APP_ID || 'UNKNOWN',
     },
     colorMode: {
       defaultMode: 'light',
