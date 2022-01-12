@@ -1,9 +1,6 @@
 
 A basic guest list contract for testing.
 
-For a Vyper implementation of this contract containing additional
-functionality, see https://github.com/banteg/guest-list/blob/master/contracts/GuestList.vy
-
 ## Functions
 ### constructor
 ```solidity
