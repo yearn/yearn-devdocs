@@ -6,13 +6,20 @@ Information about Yearn's security processes, team members, disclosures, PGP key
 
 Potential vulnerabilities are welcomed to be disclosed following the guidelines established in [/yearn-security/SECURITY.md](https://github.com/yearn/yearn-security/blob/master/SECURITY.md). Valid vulnerabilities may be eligible for bounty rewards.
 
-## Audits
+## Third-party audits
 
-Reports from audits on Yearn's vaults, strategies, and other protocol components can be found under [yearn-security/audits](https://github.com/yearn/yearn-security/tree/master/audits).
+The core contracts found in [yearn-vaults](https://github.com/yearn/yearn-vaults/) repository have been audited by multiple independent third-party firms:
+- [MixBytes](https://mixbytes.io/) has audited v0.2.1, public report [available here](https://github.com/yearn/yearn-security/tree/master/audits/202012_MixBytes_yearn-vaults)
+- [ChainSecurity](https://chainsecurity.com/) has audited v0.3.5, public report unavailable
+- [Trail of Bits](https://www.trailofbits.com/) has audited v0.4.2, public report [available here](https://github.com/yearn/yearn-security/tree/master/audits/20210719_ToB_yearn_vaultsv2)
+
+Yearn is much bigger than its core, the DAO has a rigorous review process for its contracts, and retains independent auditors which review Strategies and other protocol components.
+
+Other public reports can be found under [yearn-security/audits](https://github.com/yearn/yearn-security/tree/master/audits).
 
 ## Security assumption
 
-Yearn as a protocol hinges on the critical assumption that the `Governance` role is honest. This role is currently controlled by a [6 of 9 Gnosis Safe mu-sig](https://gov.yearn.finance/t/yip-62-change-two-multisig-signers/10758).
+Yearn as a protocol hinges on the critical assumption that the `Governance` role is honest. This role is currently controlled by a [6 of 9 Gnosis Safe multisig](https://gov.yearn.finance/t/yip-62-change-two-multisig-signers/10758).
 
 A compromised or malicious Governance can cause catastrophic damage across the entire protocol.
 
