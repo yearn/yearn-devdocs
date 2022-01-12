@@ -119,7 +119,7 @@ As a result, our estimation for price in future and the return varies greatly de
 
 Here we take two points of the performance chart for the yUSD vault \(numbered colored points\) and apply the above. Notice that the different lines are relatively good indications for the short term, but when we try to use them to predict long term they're totally inaccurate!
 
-![](https://i.imgur.com/g2I40pQ.png)
+![](https://i.imgur.com/CJnIJub.png)
 
 ### Example
 
