@@ -48,8 +48,6 @@ Main responsibilities:
 - Prepare or help with transactions in different multi-sigs
   Reference:
   - [emergency-toolbox](https://github.com/yearn/emergency-toolbox)
-  - [CMO](https://github.com/yearn/chief-multisig-officer) - private
-  - [strategists-ms](https://github.com/yearn/strategist-ms) - private
 
 ### Strategist Lead
 

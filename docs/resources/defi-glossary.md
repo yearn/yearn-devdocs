@@ -495,4 +495,4 @@ This tool is also used to provide granular insight and tracking of a user's DeFi
 
 ---
 
-For other terms not found in this list, check out [BlockSpot's Cryto Dictionary](https://blockspot.io/crypto-dictionary/).
+For other terms not found in this list, check out [CoinMarketCap Glossary](https://coinmarketcap.com/alexandria/glossary).
