@@ -78,7 +78,7 @@ Deposit your Sushiswap LP into the [Pickle jar](https://app.pickle.finance/jars)
 
 ## How can I stay up-to-date with vaults?
 
-Subscribe to Yearn’s weekly [state of the vaults](https://medium.com/yearn-state-of-the-vaults) newsletter.
+Visit [The Vaults at Yearn](https://vaults.yearn.finance/) newsletter.
 
 ## Still have questions?
 
