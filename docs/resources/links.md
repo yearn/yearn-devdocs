@@ -17,7 +17,7 @@
 - [Medium](https://medium.com/iearn)
 - [Yearn Newsletter](https://yearn.substack.com/)
 - [Weekly Governance Newsletter](https://medium.com/yearn-governance-roundup)
-- [Weekly Vault Updates Newsletter](https://medium.com/yearn-state-of-the-vaults)
+- [The Vault at Yearn](https://vaults.yearn.finance/)
 
 ### Collaborate
 
@@ -42,8 +42,8 @@
 - [Yearn API](https://api.yearn.finance/v1/chains/1/vaults/all)
 - [Yearn on TokenTerminal](https://www.tokenterminal.com/terminal/projects/yearn-finance)
 
-
 ### General Websites
+
 - [Dune Analytics](https://duneanalytics.com/projects/yearn)
 - [CoinGecko](https://www.coingecko.com/en/coins/yearn-finance)
 - [Defi Market Cap](https://defimarketcap.io/protocol/yearn-vault)
