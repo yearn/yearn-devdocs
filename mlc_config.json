@@ -2,6 +2,9 @@
     "ignorePatterns": [
         {
             "pattern": "&quot;$"
+        },
+        {
+            "pattern": "etherscan.io"
         }
     ],
     "timeout": "20s",
