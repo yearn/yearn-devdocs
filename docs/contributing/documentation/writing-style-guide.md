@@ -110,8 +110,6 @@ The examples below use dollars, but the same rules apply to all global currencie
   - **Correct:** "He is worth \$4 million."
   - **Incorrect:** "He is worth \$4,000,000."
 
-### Naming Conventions
-
 #### Cryptocurrencies
 
 - When directly referring to the creation, destruction, or manipulation of a token (particularly as it relates to tooling) or when referencing the token as a currency, in an instructional or conversational setting, or as a conceptual product of the Foundation or its systems:
@@ -132,6 +130,7 @@ Please see [Yearn Naming Conventions](/developers/v2/naming-convention).
   - **Example:** "Yearn passed a vote to decrease the yCRV vault performance fee."
   - **Example:** "The Yearn Community passed a vote to add an additional vault."
 - Use "Yearn" for casual references to Yearn and the Yearn Protocol as a whole.
+- When referring to an audit assessment report follow the [Audit Citation Guidelines](https://github.com/trailofbits/publications/blob/master/citation_guidelines.pdf)
 
 ### Numbers
 
