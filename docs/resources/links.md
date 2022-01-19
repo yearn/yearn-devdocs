@@ -17,7 +17,7 @@
 - [Medium](https://medium.com/iearn)
 - [Yearn Newsletter](https://yearn.substack.com/)
 - [Weekly Governance Newsletter](https://medium.com/yearn-governance-roundup)
-- [The Vault at Yearn](https://vaults.yearn.finance/)
+- [The Vaults at Yearn](https://vaults.yearn.finance/)
 
 ### Collaborate
 
