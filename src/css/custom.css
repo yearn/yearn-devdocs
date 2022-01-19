@@ -34,7 +34,6 @@ html[data-theme="dark"] .DocSearch-Search-Icon {
 
 html[data-theme="light"] .DocSearch {
   background-color: var(--ifm-background-color);
-  border: solid 2px var(--ifm-color-emphasis-500);
   color: var(--ifm-color-emphasis-500);
 }
 html[data-theme="light"] .DocSearch-Search-Icon {
