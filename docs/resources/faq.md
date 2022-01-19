@@ -166,7 +166,7 @@
 
 #### Lists of yVaults deployed
 
-- [Deployed Contracts Registry](https://vaults.yearn.finance)
+- Use the [Registry](https://docs.yearn.finance/vaults/smart-contracts/registry)
 
 #### Statistics
 
