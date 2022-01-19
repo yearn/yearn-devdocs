@@ -147,7 +147,7 @@
 
 #### Does yearn hire or pay contributors?
 
-- [Contributors](http://docs.yearn.finance/contributing/operations/decision-making#a-personal-opportunity)
+- [Contributors](https://yearnfinance.notion.site/Join-Us-3e9c95b9bd7846a18c0f1cbe6ab05eda)
 
 ## Related Projects
 
