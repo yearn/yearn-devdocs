@@ -26,14 +26,20 @@
 
 html[data-theme="dark"] .DocSearch {
   background-color: var(--ifm-background-color);
+  border: solid 2px var(--ifm-color-emphasis-300);
   color: var(--ifm-color-emphasis-300);
 }
 html[data-theme="dark"] .DocSearch-Search-Icon {
   color: var(--ifm-color-emphasis-300);
 }
 
+html[data-theme="dark"] .DocSearch:hover {
+  border: solid 1px rgba(194, 194, 194, 0.363);
+}
+
 html[data-theme="light"] .DocSearch {
   background-color: var(--ifm-background-color);
+  border: solid 2px var(--ifm-color-emphasis-500);
   color: var(--ifm-color-emphasis-500);
 }
 html[data-theme="light"] .DocSearch-Search-Icon {
