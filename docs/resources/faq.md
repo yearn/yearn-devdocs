@@ -74,7 +74,7 @@
 
 #### What is the process for getting my strategy onto Yearn?
 
-- [Protocol Contributors](https://docs.yearn.finance/contributing/contribute)
+- [Protocol Contributors](https://docs.yearn.finance/developers/v2/getting-started#overview-of-our-vetting-process)
 
 #### My strategy hasn't been harvested in a while. Is that normal?
 
@@ -147,7 +147,7 @@
 
 #### Does yearn hire or pay contributors?
 
-- [Contributors](https://docs.yearn.finance/contributing/contribute#how-to-contribute)
+- [Contributors](https://yearnfinance.notion.site/Join-Us-3e9c95b9bd7846a18c0f1cbe6ab05eda)
 
 ## Related Projects
 
