@@ -4,7 +4,7 @@
  * bundles Infima by default. Infima is a CSS framework designed to
  * work well for content-centric websites.
  */
- @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&display=swap");
 /* You can override the default Infima variables here. */
 :root {
   --ifm-color-primary: #007bff;
@@ -17,7 +17,7 @@
   --ifm-code-font-size: 95%;
 }
 .body {
-  font-family: 'Roboto', serif;
+  font-family: "Roboto", serif;
 }
 
 .DocSearch {
@@ -54,7 +54,7 @@ html[data-theme="light"] .DocSearch:hover {
 }
 .navbar__title {
   font-weight: 400;
-  margin-right:auto;
+  margin-right: auto;
 }
 .navbar__items .navbar__brand {
   margin-right: auto;
@@ -84,12 +84,12 @@ html[data-theme="dark"] .react-toggle-thumb {
   padding: 0 var(--ifm-pre-padding);
 }
 
-
 .main-wrapper {
   margin-bottom: 5rem;
 }
-.footer__title, .footer__item {
-  font-family: 'Roboto Slab', 'Roboto', serif;
+.footer__title,
+.footer__item {
+  font-family: "Roboto Slab", "Roboto", serif;
 }
 @media screen and (max-width: 1082px) {
   .DocSearch {
@@ -114,15 +114,29 @@ html[data-theme="dark"] .react-toggle-thumb {
   font-size: 1.28rem;
 }
 .footer__item {
-  margin-bottom:1rem;
+  margin-bottom: 1rem;
 }
 
-
 html[data-theme="dark"] .wireImg {
-  background: radial-gradient(ellipse at right, #AAA, transparent),
-    radial-gradient(ellipse at left, #AAA, transparent);
-  }
+  background: radial-gradient(ellipse at right, #aaa, transparent),
+    radial-gradient(ellipse at left, #aaa, transparent);
+}
 html[data-theme="dark"] .wireImg2 {
-background: radial-gradient(ellipse at right, #333, transparent),
-  radial-gradient(ellipse at left, #333, transparent);
+  background: radial-gradient(ellipse at right, #333, transparent),
+    radial-gradient(ellipse at left, #333, transparent);
+}
+
+@media screen and (min-width: 751px) and (max-width: 1082px) {
+  html[data-theme="dark"] .DocSearch {
+    border: none;
+  }
+  html[data-theme="dark"] .DocSearch:hover {
+    border: none;
+  }
+  html[data-theme="light"] .DocSearch {
+    border: none;
+  }
+  html[data-theme="light"] .DocSearch:hover {
+    border: none;
+  }
 }
