@@ -28,7 +28,7 @@ For example, a vault takes about .0055% of deposits per day on average (2 (perce
 - It would dilute vault tokens by 7 \* .0055% on the next harvest if it had not happened for 7 days
 - Vaults will only harvest if it is profitable after fees so that users won't withdraw less than their deposit
 
-On the [yearn.finance](https://yearn.finance/) user interface, yield is displayed as net APY. This means that both fees and compounding returns are taken into consideration in the rates presented. Since harvests don't occur on a set basis, yield is estimated based off of historical data. For more information, see [How to Understand yVault ROI](/getting-started/guides/how-to-understand-yvault-roi)
+On the [yearn.finance](https://yearn.finance/) user interface, yield is displayed as net APY. This means that both fees and compounding returns are taken into consideration in the rates presented. Since harvests don't occur on a set basis, yield is estimated based off of historical data. For more information, see [How to Understand yVault ROI](https://docs.yearn.finance/getting-started/guides/how-to-understand-yvault-roi)
 
 ## v2 yVault Improvements
 

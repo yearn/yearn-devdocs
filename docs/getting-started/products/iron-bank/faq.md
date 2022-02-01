@@ -22,7 +22,7 @@ You can find all information on current supply, borrow, and APYs for assets in t
 
 ## What are the collateral factors and reserve factors for Iron Bank assets?
 
-The Iron Bank collateral and reserve factors are listed [here](interest-rate-model.md).
+The Iron Bank collateral and reserve factors are listed [here](https://docs.yearn.finance/getting-started/products/iron-bank/interest-rate-model).
 
 ## I thought the Iron Bank was undercollateralized protocol to protocol lending — why are there collateral factors?
 

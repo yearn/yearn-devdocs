@@ -120,7 +120,7 @@ The examples below use dollars, but the same rules apply to all global currencie
 
 #### Yearn Products
 
-Please see [Yearn Naming Conventions](/developers/v2/naming-convention).
+Please see [Yearn Naming Conventions](https://docs.yearn.finance/developers/v2/naming-convention).
 
 #### Yearn
 
