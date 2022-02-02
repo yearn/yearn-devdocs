@@ -4,7 +4,7 @@
 
 ## What are yVaults?
 
-[yVaults](https://yearn.finance/vaults) are like savings accounts for your crypto assets. They accept your deposit, then route it through a strategies which seek out the highest yield available in DeFi.
+[yVaults](https://yearn.finance/vaults) takes deposits then route it through strategies which seek out the highest yield available in DeFi. [yVaults and Strategies](https://medium.com/iearn/yearn-finance-explained-what-are-vaults-and-strategies-96970560432) compose our core product which is served like a "crypto savings account": Yearn users can deposit/withdraw funds in yVaults at any time they want, and while deposited funds will generate yield using the same crypto that was deposited. yVaults are the lowest-risk investing type our protocol offers, and it's a great choice for users that want to generate steady "uponly" yield using DeFi tokens.
 
 ![](https://i.imgur.com/1dOo2w7.png)
 

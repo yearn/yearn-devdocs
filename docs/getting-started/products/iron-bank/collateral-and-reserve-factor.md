@@ -4,7 +4,7 @@
 
 ## Introduction
 
-The Iron Bank provides a lending service both to users and protocols. For protocols that are whitelisted this can be zero-collateral loans. For users, this will be an overcollateralised loan.
+The Iron Bank provides a lending service both to users and protocols. For protocols that are whitelisted this can be zero-collateral loans. For users, this will be an overcollateralised loan. Unlike [Yearn Vaults](https://docs.yearn.finance/getting-started/products/yvaults/overview), Iron Bank doesn't have automatic investment strategies and is a product that involves risk management from the user side in order to avoid losses or liquidations.
 
 ## Collateral & Reserve Factor
 
