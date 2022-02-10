@@ -22,7 +22,7 @@ Cryptographic membership attestations can be validated against the PGP keys in t
 [Membership attestation](https://twitter.com/_vshapovalov/status/1299799139635679232) - [Etherscan](https://etherscan.io/address/0x6E83d6f57012D74e0F131753f8B5Ab557824507D)
 
 **0x6F2A8Ee9452ba7d336b3fba03caC27f7818AeAD6** - Mariano Conti (nanexcool.com, prev. MakerDAO)  
-[Etherscan](https://etherscan.io/address/0x6F2A8Ee9452ba7d336b3fba03caC27f7818AeAD6)
+[Membership attestation](https://twitter.com/nanexcool/status/1491900804223041540) - [Etherscan](https://etherscan.io/address/0x6F2A8Ee9452ba7d336b3fba03caC27f7818AeAD6)
 
 **0x7321ED86B0Eb914b789D6A4CcBDd3bB10f367153** - Leo Cheng (C.R.E.A.M. Finance)  
 [Etherscan](https://etherscan.io/address/0x7321ED86B0Eb914b789D6A4CcBDd3bB10f367153)
