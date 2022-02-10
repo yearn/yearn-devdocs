@@ -94,7 +94,7 @@
 
 #### Who is on the multisig?
 
-- [Yearn's Multisig](https://gov.yearn.finance/t/yip-62-change-two-multisig-signers/10758/)
+- [Multisig Documentation](../security/multisig)
 
 #### What is a YIP?
 
