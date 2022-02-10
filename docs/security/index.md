@@ -28,3 +28,10 @@ It is a conscious design decision that this role is not behind a time lock. Prio
 Trusting `Governance` to be honest is a pre-requisite in order to be able to trust Yearn's vaults.
 
 Modifications to these design decisions can be proposed in the forum through [Yearn's governance process](https://gov.yearn.finance/t/yip-61-governance-2-0/10460).
+
+
+## Testing
+
+Vault tests are done using brownie and the [ganache CLI](https://trufflesuite.com/docs/ganache/) development network.
+
+To see test coverage you can have a look at the [CI](https://github.com/yearn/yearn-vaults/actions/workflows/test.yaml) you must look for a run that runs `Run build test_duration`. The tests are run once a month together to compute the duration cache, then they are split into several test pipelines to speed up testing.
