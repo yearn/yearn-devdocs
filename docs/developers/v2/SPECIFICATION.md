@@ -42,6 +42,12 @@ NOTE: The strategy can also revoke itself during normal operation of the Vault, 
 1. The Treasury (which benefits Governance) collects a "performance fee" based on the amount of returns a Strategy produces during Normal Operation, assessed each time the Strategy interacts with the Vault, and is provided as newly minted shares to the Treasury.
 1. Each Strategist collects a "performance fee" based on the amount of positive returns their Strategy produces during Normal Operation, assessed each time the Strategy interacts with the Vault, and is provided as newly minted shares to the Strategist.
 
+
+### Oracle
+
+Yearn vaults aren't using any oracles.
+The vault doesn’t rely on oracle because it doesn’t require a price information, it’s not lending, exchanging assets, 
+
 ### Emergency Shutdown Mode
 
 NOTE: During Emergency Shutdown mode of the Vault, the intention is for the Vault to recall the debt as quickly as reasonable (given on-chain conditions) with minimal losses, and open up deposits to be withdrawn by Users as easily as possible. There is no restrictions on withdrawals above what is expected under Normal Operation.
