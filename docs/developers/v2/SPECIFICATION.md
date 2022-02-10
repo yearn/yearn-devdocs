@@ -42,6 +42,10 @@ NOTE: The strategy can also revoke itself during normal operation of the Vault, 
 1. The Treasury (which benefits Governance) collects a "performance fee" based on the amount of returns a Strategy produces during Normal Operation, assessed each time the Strategy interacts with the Vault, and is provided as newly minted shares to the Treasury.
 1. Each Strategist collects a "performance fee" based on the amount of positive returns their Strategy produces during Normal Operation, assessed each time the Strategy interacts with the Vault, and is provided as newly minted shares to the Strategist.
 
+### Profit distribution
+
+Once a strategy is harvested, the gains are distributed during 6 hours. 
+This is to prevent sandwich attacks of an account depositing tokens right before the harvest and withdrawing right after and getting the profits without staying in the vault.
 
 ### Oracle
 
