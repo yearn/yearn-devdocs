@@ -2,7 +2,9 @@
 
 ## How it works
 
-Yearn's governance is implemented by a 6-of-9 multi-signature wallet. The members of the multi-signature wallet were voted in by YFI holders and are subject to change from future governance votes. More information about Yearn governance and how it interacts with the multisig can be found on [YIP-61: Governance 2.0](https://gov.yearn.finance/t/yip-61-governance-2-0/10460) and on the [FAQ](../resources/faq#governance).
+Yearn's governance is managed by Governance 2.0, which was introduced with the [YIP-61 Proposal](https://gov.yearn.finance/t/yip-61-governance-2-0/10460). Through Governance 2.0, YFI holders delegate powers to the Governance Multisig.
+
+The Governance Multisig is implemented by a 6-of-9 multi-signature wallet. The members of the multi-signature wallet were voted in by YFI holders and are subject to change from future governance votes. More information about Yearn governance and how it interacts with the multisig can be found on  and on the [FAQ](https://docs.yearn.finance/resources/faq#governance).
 
 The multisig is implemented as a Gnosis Safe. The multisig's assets, transactions, and signers can be viewed using [Gnosis's Web UI](https://gnosis-safe.io/app/eth:0xFEB4acf3df3cDEA7399794D0869ef76A6EfAff52/balances). If there is a need to trustlessly audit Yearn's multisig (without trusting the Gnosis site), the Gnosis Safe web app source code can be found on Github [here](https://github.com/gnosis/safe-react). 
 

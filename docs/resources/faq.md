@@ -94,7 +94,7 @@
 
 #### Who is on the multisig?
 
-- [Multisig Documentation](../security/multisig)
+- [Multisig Documentation](https://docs.yearn.finance/security/multisig)
 
 #### What is a YIP?
 
