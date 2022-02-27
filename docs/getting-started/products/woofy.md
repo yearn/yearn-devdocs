@@ -4,7 +4,7 @@ The WOOFY token is the blue dog companion token of YFI. Utilizing special Woof t
 
 At its core, WOOFY solves two problems: YFI not being dog themed, and the price of a single YFI being too high in USD terms.
 
-**1 YFI = 1,000,000 WOOFY**. YFI and WOOFY can always be exchanged with one another at that fixed rate using either the [WOOFY contract](https://etherscan.io/address/0xd0660cd418a64a1d44e9214ad8e459324d8157f1#code), or the [Woofy website](https://woofy.finance/).
+**1 YFI = 1,000,000 WOOFY**. YFI and WOOFY can always be exchanged with one another at that fixed rate using either the [WOOFY Ethereum contract](https://etherscan.io/address/0xd0660cd418a64a1d44e9214ad8e459324d8157f1#code), or the [Woofy website](https://woofy.finance/).
 
 ## How to Woof and Unwoof
 
