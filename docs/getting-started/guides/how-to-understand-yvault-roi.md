@@ -4,15 +4,15 @@
 
 ### ROI
 
-Are you an advanced user trying to understand how ROI is calculated? Skip directly to "[_Why we can't use compound or linear interest formulas to estimate yVaults returns_](https://docs.yearn.finance/getting-started/guides/how-to-understand-yvault-roi#why-cant-we-use-compound-or-linear-interest-formulas-to-estimate-yvaults-returns)"
+Trying to understand how ROI is calculated? Skip directly to "[_Why we should use ROI instead of APY to estimate yVaults returns_](https://docs.yearn.finance/getting-started/guides/how-to-understand-yvault-roi#why-cant-we-use-compound-or-linear-interest-formulas-to-estimate-yvaults-returns)"
 
-If you are a beginner in DeFi or new to Yearn keep on reading.
+If you are a beginner in DeFi or new to Yearn keep on reading!
 
 #### ROI definition:
 
 > Return on investment \(ROI\) is a ratio between net profit \(over a period\) and cost of investment \(resulting from an investment of some resources at a point in time\). A high ROI means the investment's gains compare favorably to its cost. As a performance measure, ROI is used to evaluate the efficiency of an investment or to compare the efficiencies of several different investments.\[1\] In economic terms, it is one way of relating profits to capital invested. Source: [Wikipedia](https://en.wikipedia.org/wiki/Return_on_investment)
 
-- ROI is a key performance indicator \(KPI\) available in all Yearn Vaults \(yVaults\) located here: [https://yearn.finance/vaults](https://yearn.finance/vaults).
+- ROI is a key performance indicator \(KPI\) available in all Yearn Vaults \(yVaults\) located here as "Estimated Yearly Yield": [https://yearn.finance/vaults](https://yearn.finance/vaults).
 - ROI is useful when comparing and assessing vault performance.
 - ROI presented in Yearn is a **yearly ROI**. You deposit X and 1 year later you receive X + \(X \* ROI\).
 - The ROI presented is a _current estimation_ based on data since the yVault's inception. If performance remains constant, after 1 year you will receive the displayed ROI. Rates are unstable currently, and fluctuate based on market/strategy.
@@ -26,9 +26,9 @@ New strategies are also voted by the community through [governance proposals](ht
 
 ## ROI calculation
 
-Even though yVaults have a compounding effect inherently, this compound interest is not fixed like in a CeFi savings account. Hence, the concept of [APY](https://www.investopedia.com/terms/a/apy.asp) and [APR](https://www.investopedia.com/terms/a/apr.asp) do not apply directly to yVaults. They are used by the community but interpreting them should be taken with a grain of salt.
+Even though yVaults have a compounding effect inherently, this compound interest is not fixed like in a CeFi savings account. Hence, the concept of [APY](https://www.investopedia.com/terms/a/apy.asp) and [APR](https://www.investopedia.com/terms/a/apr.asp) is not the most accurate way to estimate yVault gains. They are used by the community and we also added them to our newer interfaces, but interpreting them should always be taken with a grain of salt.
 
-### Why can't we use compound or linear interest formulas to estimate yVaults returns?
+### Why we should use ROI to estimate yVaults returns?
 
 - This shows the estimation of an asset that has interest / compounded interest applied to it:
 
@@ -159,3 +159,4 @@ The community has been actively creating tools and guides on this topic.
 
 - [https://github.com/Zer0dot/yearn_roi/blob/master/yearn_vaults_ROI_calc.ipynb](https://github.com/Zer0dot/yearn_roi/blob/master/yearn_vaults_ROI_calc.ipynb) provides a mathemathical explanation on how ROI is calculated with some caveats. \(This repository is no longer being maintained\).
 - [Statistics FAQ](https://docs.yearn.finance/resources/faq#where-can-i-find-strategy-descriptions)
+- [How Yearn shows APY in the v3 interface](https://medium.com/iearn/how-yearn-calculates-estimated-returns-apy-b4fd5b687bf9)
