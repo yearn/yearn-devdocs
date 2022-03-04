@@ -1,4 +1,4 @@
-# Security
+# Security Home
 
 Information about Yearn's security processes, team members, disclosures, PGP keys and more can be found in the [/yearn-security](https://github.com/yearn/yearn-security) repo on Github.
 
