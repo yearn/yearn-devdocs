@@ -84,12 +84,6 @@
 
 - On [yearn.watch](https://yearn.watch), find your vault and click on the name. Click on the 'Allocation' tab to see what strategies are being utilized by the vaults. The debt percent allocation reflects the percent of vault funds allocated to each strategy.
 
-### Earn
-
-#### What's the difference between depositing in Earn and yVaults?
-
-- [Earn](https://docs.yearn.finance/getting-started/products/earn)
-
 ## Governance
 
 #### Who is on the multisig?
