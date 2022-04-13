@@ -19,12 +19,9 @@ We offer profit shares based on yield generated across all vaults. For now, we a
 Profit-sharing is paid out in the native token of the vaults that partners are utilizing.
 
 Yearn partner's profit works like this:
-* Yearn charges a **2% yearly management fee over the vault TVL**
-* **10% of the yield generated** by the vault is sent directly to the vault's strategist
-* **10% of the yield generated** by the vault is split as:
-    * **35% is operational costs** and goes to Yearn
-    * **65% is profit** which is then shared with our partner according to the [Profit-Sharing Tier Table](#Profit-Sharing-Tier-Table)
-
+* Yearn charges a **2% yearly management fee on the vault TVL and 20% performance fee**
+* **45% of the fees generated** by both fees are set aside for operational expenses (salaries, infrastructure gas, etc)
+* **55% of the fees generated** are split between the partner and Yearn based on the [Profit-Sharing Tier Table](Profit-Sharing-Tier-Table) below
 
 Tiers are what determine the percentage of profit-sharing with the partner. They are calculated based on the total TVL provided across all vaults:
 
@@ -48,22 +45,21 @@ Here is an example case on how yearn would share profits with a partner, the val
 
 Let's say a partner protocol contributes to Yearn during a year with:
 
-**$10.000.000 Total Locked Value**
+**$10,000,000 Total Locked Value**
 
 which generated a total yield of
 
-**$1.000.000 Anual Yield**
+**$1,000,000 Anual Yield**
 
-Here is how we calculate and distribute fees then:
+Here is how we calculate management and performance fees:
 
-- **2% of the vaults TVL ($200,000)** goes to Yearn every year (management fee)
-- **10% of yield ($100,000)** goes to Yearn (performance fee)
-- **10% of yield ($100,000)** goes to the strategist vault (performance fee)
+- 2% of the vaults yearly TVL ($200,000) goes to management fees
+- 20% of yield ($200,000) goes to performance fees
 
-Let's breakdown on the management and performance fees that yearn took in the process at the moment (which sums $300,000)
+So out of the $400,000:
 
-* **35% ($105,000)** goes to Yearn as operational costs
-* **65% ($195,000)** is shared with the partner according to the tier table
+* **45% ($180,000)** are set apart as operational costs
+* **55% ($220,000)** is shared with the partner according to the tier table
 
 Since the partner contributed with **$10.000.000 TVL** it fits in **tier 3** in the [Profit-Sharing Tier Table](#Profit-Sharing-Tier-Table)
 
@@ -71,4 +67,4 @@ Since the partner contributed with **$10.000.000 TVL** it fits in **tier 3** in 
 | -------- | -------- | -------- |
 | 3     | $10-50m     | 20%     |
 
-So the partner would receive in this case **20% of $195,000, so $39,000** of profit-sharing
+The partner would receive in this case **20% of $220,000** which is **$44,000**
