@@ -34,7 +34,7 @@ This is the short version of the vetting process for a new strategy.
 
 When the strategy has more than 10M in TVL, it should
 
-1. Create a a committee of 3 people with deep knowledge monitoring the strategy 24/7
+1. Create a committee of 3 people with deep knowledge monitoring the strategy 24/7
 
 When it's passed 100M in TVL
 
