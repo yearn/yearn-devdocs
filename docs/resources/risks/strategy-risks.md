@@ -41,7 +41,7 @@ Trading fees are earned in Automated Market Makers (AMMs) by providing liquidity
 | Governance       | Admin key holders change protocol adversely, e.g. reduce rewards paid to liquidity providers                                                         |
 | Technological    | Smart contract risk of AMM (e.g. Curve Finance, Sushiswap or Uniswap)                                                                                |
 | Market           | Trading volumes reduce leading to lower fees                                                                                                         |
-|                  | Impermanent loss](https://academy.binance.com/en/articles/impermanent-loss-explained) due to the pool’s token prices changing relative to each other |
+| Impermanent loss | [Impermanent loss](https://academy.binance.com/en/articles/impermanent-loss-explained) due to the pool’s token prices changing relative to each other |
 | Operational Risk | Delays or inability to withdraw liquidity from the AMM in an emergency                                                                               |
 
 ## Leverage
