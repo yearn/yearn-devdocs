@@ -23,7 +23,7 @@ If you want to integrate with our vaults:
 This is the short version of the vetting process for a new strategy.
 
 1. Code the strategy using [brownie-strategy-mix](https://github.com/yearn/brownie-strategy-mix) repository
-2. Complete peer review by, at least, 2 other startegists
+2. Complete peer review by, at least, 2 other strategists
 3. Test in prod on [ape.tax](https://ape.tax) with real funds
 4. Create a Due Diligence document for the protocol. Follow the examples:
    - [SNX](https://hackmd.io/0w1RZh7DSc27A9EyzlHbJQ?view)
@@ -34,7 +34,7 @@ This is the short version of the vetting process for a new strategy.
 
 When the strategy has more than 10M in TVL, it should
 
-1. Create a a committee of 3 people with deep knowledge monitoring the strategy 24/7
+1. Create a committee of 3 people with deep knowledge monitoring the strategy 24/7
 
 When it's passed 100M in TVL
 
