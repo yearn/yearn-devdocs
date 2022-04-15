@@ -1,6 +1,6 @@
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
-const math = require('remark-math');
-const katex = require('rehype-katex');
+const math = require('remark-math')
+const katex = require('rehype-katex')
 
 module.exports = {
   title: 'Yearn.finance',
@@ -33,10 +33,16 @@ module.exports = {
           marginLeft: '0px',
           backgroundColor: 'transparent',
         },
-      }
+      },
     },
     image: 'img/YFILogoGradient.png',
-    metadatas: [{name:'twitter:card', content:'Yearn Finance is a suite of products in Decentralized Finance (DeFi) that provides lending aggregation, yield generation, and insurance on the Ethereum blockchain.'}],
+    metadatas: [
+      {
+        name: 'twitter:card',
+        content:
+          'Yearn Finance is a suite of products in Decentralized Finance (DeFi) that provides lending aggregation, yield generation, and insurance on the Ethereum blockchain.',
+      },
+    ],
     navbar: {
       hideOnScroll: true,
       title: 'Yearn Finance',
@@ -47,27 +53,27 @@ module.exports = {
       items: [
         {
           to: 'getting-started/intro',
-          label: 'Getting Started'
+          label: 'Getting Started',
         },
         {
           to: 'developers/v2/getting-started',
-          label: "Develop"
+          label: 'Develop',
         },
         {
           to: 'partners/introduction',
-          label: "Partner"
+          label: 'Partner',
         },
         {
           to: 'contributing/contribute',
-          label: "Contribute"
+          label: 'Contribute',
         },
         {
           to: 'resources/faq',
-          label: "Resources"
+          label: 'Resources',
         },
         {
           to: 'security/index',
-          label: "Security"
+          label: 'Security',
         },
         {
           type: 'docsVersionDropdown',
@@ -79,7 +85,7 @@ module.exports = {
         },
         {
           type: 'search',
-          position: 'right'
+          position: 'right',
         },
       ],
     },
@@ -94,8 +100,8 @@ module.exports = {
               href: 'https://contribute.yearn.rocks/',
             },
             {
-              label: '#strategies',
-              href: 'https://discord.gg/ABh9zXGq',
+              label: '#strategies - Discord',
+              href: 'https://discord.gg/b8ENPNqG5c',
             },
             {
               label: 'Get Involved - Survey',
@@ -154,7 +160,7 @@ module.exports = {
           items: [
             {
               label: 'Discord',
-              href: 'https://discord.gg/yearn/',
+              href: 'https://discord.gg/b8ENPNqG5c',
             },
             {
               label: 'Twitter',
@@ -186,12 +192,13 @@ module.exports = {
       '@docusaurus/preset-classic',
       {
         docs: {
-          path: "vaults",
+          path: 'vaults',
           remarkPlugins: [math],
           rehypePlugins: [katex],
-          routeBasePath: "vaults",
+          routeBasePath: 'vaults',
           sidebarPath: require.resolve('./sidebars/sidebars.js'),
-          editUrl: 'https://github.com/yearn/yearn-devdocs/edit/master/website/',
+          editUrl:
+            'https://github.com/yearn/yearn-devdocs/edit/master/website/',
           includeCurrentVersion: false,
         },
         theme: {
@@ -203,11 +210,12 @@ module.exports = {
   stylesheets: [
     {
       href: 'https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/katex.min.css',
-      integrity: 'sha384-Um5gpz1odJg5Z4HAmzPtgZKdTBHZdw8S29IecapCSB31ligYPhHQZMIlWLYQGVoc',
-      crossorigin: 'anonymous'
+      integrity:
+        'sha384-Um5gpz1odJg5Z4HAmzPtgZKdTBHZdw8S29IecapCSB31ligYPhHQZMIlWLYQGVoc',
+      crossorigin: 'anonymous',
     },
-   ],
-    plugins: [
+  ],
+  plugins: [
     [
       '@docusaurus/plugin-content-docs',
       {
@@ -278,5 +286,5 @@ module.exports = {
         showLastUpdateTime: true,
       },
     ],
-  ]
-};
+  ],
+}
