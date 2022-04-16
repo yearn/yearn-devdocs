@@ -21,7 +21,7 @@ Profit-sharing is paid out in the native token of the vaults that partners are u
 Yearn partner's profit works like this:
 * Yearn charges a **2% yearly management fee on the vault TVL and 20% performance fee**
 * **45% of the fees generated** by both fees are set aside for operational expenses (salaries, infrastructure gas, etc)
-* **55% of the fees generated** are split between the partner and Yearn based on the [Profit-Sharing Tier Table](Profit-Sharing-Tier-Table) below
+* **55% of the fees generated** are split between the partner and Yearn based on the Profit-Sharing Tier Table below
 
 Tiers are what determine the percentage of profit-sharing with the partner. They are calculated based on the total TVL provided across all vaults:
 

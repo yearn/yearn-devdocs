@@ -45,7 +45,7 @@ Maker and Unit Protocol enable the minting of stablecoins against collateral. Th
 
 Aave and dYdX offer flash loans which allows Yearn’s strategies to take out a loan, deploy the capital in a strategy and repay the loan in one transaction.
 
-Cream.Finance, in combination with [Iron Bank](https://docs.yearn.finance/getting-started/products/iron-bank/collateral-and-reserve-factor), allows strategies to increase yield with protocol-to-protocol uncollateralized borrowing. This is because Yearn’s strategies have been white-listed by Cream.Finance allowing them to borrow depositors’ funds that have not been lent out, in order to deploy in strategies that have a greater return than the cost of borrowing.
+Cream.Finance, in combination with Iron Bank, allows strategies to increase yield with protocol-to-protocol uncollateralized borrowing. This is because Yearn’s strategies have been white-listed by Cream.Finance allowing them to borrow depositors’ funds that have not been lent out, in order to deploy in strategies that have a greater return than the cost of borrowing.
 
 
 |Risk|Description|
