@@ -12,11 +12,11 @@ First, **Connect your wallet** using the button at the top right corner. Multipl
 
 ## Yearn is multi-chain
 
-Our products are currently on Ethereum and Fantom, with more to come.
+Our products are currently on Ethereum, Fantom, and Arbitrum with more to come.
 
 Click on this button to select the network you would like to interact with:
 
-![](https://i.imgur.com/cDKJDcx.png)
+![](https://i.imgur.com/RUpd6Tl.png)
 
 ## If you **already have the required token** for the vault that you would like to deposit in:
 
