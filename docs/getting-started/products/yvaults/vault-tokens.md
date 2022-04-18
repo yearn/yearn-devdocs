@@ -6,7 +6,8 @@
 
 If your yVault generates profit, the share price of your yVault tokens will increase. This happens because there are more underlying tokens in the yVault to redeem upon withdrawal.
 
-![](https://i.imgur.com/OtK6kAA.png)
+![](https://i.imgur.com/3zkSnoE.png)
+![](https://i.imgur.com/yrGEVCr.png)
 
 _The yvYFI token at [Etherscan](https://etherscan.io/token/0xE14d13d8B3b85aF791b2AADD661cDBd5E6097Db1#readContract), showing its name, total assets and price per share._
 
