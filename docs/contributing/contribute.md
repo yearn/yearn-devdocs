@@ -121,7 +121,6 @@ This is complement to the others but it's not directly related to creating strat
 #### Contributors Websites
 
 - [yCosystem (Yearn Community Aggregator)](https://ycosystem.info/) - Repository Of Yearn Links
-- [Feel the Yearn](https://feel-the-yearn.app/vaults) - Vault Statistics
 - [YFI Address Stats](https://www.yfistats.com/) - Yearn Financial Information
 - [Yearn Newsletter](https://yearn.substack.com/) - Weekly YFI newsletter
 - [Trackavault](https://trackavault.com/) - Track V2 Vaults

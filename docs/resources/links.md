@@ -50,7 +50,6 @@
 
 ### Community Calculators
 
-- [Feel the Yearn](https://feel-the-yearn.app/vaults)
 - [yVault ROI Calc](https://yvault-roi.netlify.app/)
 - [Track a Vault](https://trackavault.com/)
 
