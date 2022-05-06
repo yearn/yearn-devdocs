@@ -4,7 +4,7 @@
 
 ## Yearn Contributors
 
-Help build the future of finance, shape your skills, and grow the Yearn ecosystem. Before joining our community, take some time to understand the philosophy behind Yearn through the [Yearn Manifesto](https://gov.yearn.finance/t/how-we-think-about-yearn/7137).
+Help build the future of finance, shape your skills, and grow the Yearn ecosystem. Before joining our community, take some time to understand the philosophy behind Yearn through the [The Bluepill](https://yfistory.org/thebluepill) and [Yearn Manifesto](https://gov.yearn.finance/t/how-we-think-about-yearn/7137).
 
 ## How to Contribute
 
@@ -66,10 +66,6 @@ If you are looking to integrate with Yearn, please visit our [Integration Guide]
 
 We invite designers, animators, artists, and more to share your skills with the Yearn ecosystem! If you're interested in creating graphics that describe Yearn's systems, creating video explainers, fixing Yearn's UI/UX, or any other combination of things — hop into the #ui-ux channel or #media-resources channels in [Discord](https://discord.gg/H8AVhpz63R).
 
-## Yearn Contributors
-
-See our wonderful list of contributors along with individual contribution stats at [yContributors.finance](https://ycontributors.finance/). Get your name added to the list by contributing to documentation, code, designs, or whatever else you're interested in!
-
 #### Creating Strategies
 
 ##### Workshop
@@ -125,7 +121,6 @@ This is complement to the others but it's not directly related to creating strat
 #### Contributors Websites
 
 - [yCosystem (Yearn Community Aggregator)](https://ycosystem.info/) - Repository Of Yearn Links
-- [Feel the Yearn](https://feel-the-yearn.app/vaults) - Vault Statistics
 - [YFI Address Stats](https://www.yfistats.com/) - Yearn Financial Information
 - [Yearn Newsletter](https://yearn.substack.com/) - Weekly YFI newsletter
 - [Trackavault](https://trackavault.com/) - Track V2 Vaults
