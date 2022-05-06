@@ -2,15 +2,6 @@
 
 This page is for the hackers and buidlers who are currently building, or planning to build, something cool with Yearn Finance. This guide  details all the info you need to start hacking!
 
-## Contents
-- Vault and Smart Contract Integrations
-- Front-end and SDK Integrations
-- Strategy Development
-- Data Analysis
-- Inspiration
-- Examples
-- Expectations
-
 # Core Tools
 
 - [Solidity](https://https://docs.soliditylang.org/en/v0.8.6/bugs.html)
