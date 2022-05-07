@@ -20,5 +20,6 @@ module.exports = {
       href: '/vaults/smart-contracts/BaseStrategy',
     },
     'v2/hacking-with-yearn',
+    'v2/yswaps',
   ],
 }
