@@ -1,26 +1,4 @@
-<!-- Output copied to clipboard! -->
-
-<!-----
-
-Yay, no errors, warnings, or alerts!
-
-Conversion time: 0.646 seconds.
-
-
-Using this Markdown file:
-
-1. Paste this output into your source file.
-2. See the notes and action items below regarding this conversion run.
-3. Check the rendered output (headings, lists, code blocks, tables) for proper
-   formatting and use a linkchecker before you publish this page.
-
-Conversion notes:
-
-* Docs to Markdown version 1.0β33
-* Mon May 09 2022 09:31:33 GMT-0700 (PDT)
-* Source doc: How we score risk
-* Tables are currently converted to HTML tables.
------>
+# Risk Score
 
 
 Risk for different strategies is measured using a point scoring system developed internally from yearn’s strategy deployment process. The higher the risk score number, the more riskier the strategy is. There are 7 dimensions that are assessed in calculating the risk:
