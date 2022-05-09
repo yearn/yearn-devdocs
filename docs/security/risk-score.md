@@ -19,9 +19,11 @@ The Risk score take all these into account and multiplies by the TVL Impact, so 
 
 **Risk Score **= Likelihood * TVL Impact
 
-This risk framework was developed as an ongoing process that never ends regarding management of security dimensions and TVL of yearn’s strategies. The security team realised that given yearn’s unique approach to deploying strategies on a constant basis it couldn’t rely on a heavy waterfall process (heavy analysis/design, testing, several audits before a release, etc) to deploy contracts. The strategies are deployed and capped by their risk score and as we mitigate each dimension and improve something in the scoring the strategy can grow its TVL, think of it as calculated bets based on our internal security process. This allows yearn to compare the risk score of two strategies and prioritise mitigations/preventive actions like forming a committee to spread knowledge on the code, get more audits, migrate current code for improved versions of the strat, etc. \
- \
+This risk framework was developed as an ongoing process that never ends regarding management of security dimensions and TVL of yearn’s strategies. The security team realised that given yearn’s unique approach to deploying strategies on a constant basis it couldn’t rely on a heavy waterfall process (heavy analysis/design, testing, several audits before a release, etc) to deploy contracts. The strategies are deployed and capped by their risk score and as we mitigate each dimension and improve something in the scoring the strategy can grow its TVL, think of it as calculated bets based on our internal security process. This allows yearn to compare the risk score of two strategies and prioritise mitigations/preventive actions like forming a committee to spread knowledge on the code, get more audits, migrate current code for improved versions of the strat, etc. 
+ 
+ 
 The current version works for yearn’s current needs but we are always looking to improve it and also extend this scoring system to the vaults to be able to get a weighted average risk score that makes reasonable assumptions and can help our users get informed around what’s going on behind the scenes in the vaults. Vault risk scoring is still under development at the moment.
+
 
 First dimension is audits. This is the process by which either an audit firm or an external security researcher reviews the code for any potential vulnerabilities and presents a report for mitigation. As audits usually take longer than an internal security review and are not immediately available given demand for audits in the space. Most strategies are sent to production with no audits (thus high risk score) to keep their TVL limited. This strikes a balance of validating the strategy in production with a calculated risk while we schedule a proper audit. The risk score overall helps us prioritise which strategies should get audited first, based on impact and other dimensions on scoring.
 
@@ -195,8 +197,9 @@ Longevity is how long the strategy has been running live on yearn.finance. Here�
 </table>
 
 
-Up next, protocol safety. This is meant as an internal evaluation from yearn’s point of view of how resilient is the protocol the strategy works with regarding safety measures given the current DeFi security standards. It is heavily based on informed opinions regarding our internal assessments and due diligence compared to the top projects in DeFI. Accounts among other things for multisig health, decentralisation, bounty programs, audits, etc. \
- \
+Up next, protocol safety. This is meant as an internal evaluation from yearn’s point of view of how resilient is the protocol the strategy works with regarding safety measures given the current DeFi security standards. It is heavily based on informed opinions regarding our internal assessments and due diligence compared to the top projects in DeFI. Accounts among other things for multisig health, decentralisation, bounty programs, audits, etc. 
+
+
 We hope to improve this dimension with the help of the security and overall DeFI community to potentially use a standard scoring system that is widely accepted in the ecosystem to replace our current scoring table.
 
 
@@ -234,8 +237,7 @@ We hope to improve this dimension with the help of the security and overall DeFI
   <tr>
    <td>1
    </td>
-   <td>Protocols involved in contracts are trusted blue chip protocols with a good record of security. For example: Maker, Uniswap, Curve, AAVE, and Compound. \
-These protocols handle at least all the criteria specified in item 2 and more.
+   <td>Protocols involved in contracts are trusted blue chip protocols with a good record of security. For example: Maker, Uniswap, Curve, AAVE, and Compound. These protocols handle at least all the criteria specified in item 2 and more.
    </td>
   </tr>
 </table>
