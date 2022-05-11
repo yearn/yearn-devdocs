@@ -73,7 +73,7 @@ For this example we are gonna assume that we will need to use two different dexe
 
 - This contract has the `enabled trades` that each strategy can make. Enabled trades are just a list of possible swaps that a strategy can make. So it only contains three variables: `strategyAddress`, `tokenIn`, `tokenOut`. We have these enabled trades to know which swaps can/should be made with each strategy.
 
-- This contract is also in changer of making the trades. To do that it will use the different `execute` methods in it and call the `swapper contracts` that needs to use. Remember that `swappers` are the contracts responsible to making the actual swap.
+- This contract is also in changer of verifying the trades. To do that it will use the different `execute` methods in it and call the `swapper contracts` that needs to use. Remember that `swappers` are the contracts responsible to making the actual swap.
 
 - When we execute the swap its important to point out that this  takes care of: `transfering tokenIn from strat to swapper`, `make final the check if the amount received > minAmountOut`.
 
