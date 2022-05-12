@@ -1,8 +1,5 @@
 # yvToken as collateral
 
-* [Why use yvTokens as collateral?](#Why-use-yvTokens-as-collateral?)
-* [Projects using yvTokens as collateral](#Projects-using-yvTokens-as-collateral)
-
 ## Why use yvTokens as collateral?
 
 ### They’re yield generating
