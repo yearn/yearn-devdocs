@@ -8,7 +8,7 @@ A Yearn Vault token is a yield-bearing version of a token, so when locked up as 
 
 ### The safest yields in DeFi
 
-Vaults strategies are constantly audited to pratice the highest security standards of DeFi. Grow with us one day at a time. More information at:
+Vaults strategies are constantly audited to practice the highest security standards of DeFi. Grow with us one day at a time. More information at:
 
 * [Vaults & Strategies Deployment Security Guidelines](https://docs.yearn.finance/developers/v2/DEPLOYMENT)
 * [Yearning for Yearn: Messari Report](https://messari.io/article/yearning-for-yearn)
