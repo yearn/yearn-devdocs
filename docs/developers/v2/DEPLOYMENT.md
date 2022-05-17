@@ -1,6 +1,6 @@
 # Deploying a Vault and Strategy V2
 
-**Note**: This [private repo](https://github.com/iearn-finance/chief-multisig-officer) is encouraged to create multiple scripts for governance and dev multisig execution of complex transactions.
+**Note**: This [private repo](https://github.com/iearn/chief-multisig-officer) is encouraged to create multiple scripts for governance and dev multisig execution of complex transactions.
 
 ## Requirements
 
@@ -47,7 +47,7 @@ vault.setGovernance(ychad.eth)
 
 ## Deploying a new Strategy
 
-1. Request for access from a Core Dev strategist and create a new issue in the strategies' [private repo](https://github.com/iearn-finance/yearn-strategies/issues) using the `Strategy Review` template. **Complete all the fields**.
+1. Request for access from a Core Dev strategist and create a new issue in the strategies' [private repo](https://github.com/iearn/yearn-strategies/issues) using the `Strategy Review` template. **Complete all the fields**.
 1. If the strategy is targeting a new protocol/new chain, not currently approved by yearn (used in production), a due diligence and path to production plan documents may also be required for the strategy to be considered for endorsing.
    Example(s) [SNX](https://hackmd.io/0w1RZh7DSc27A9EyzlHbJQ?view)
 1. Coordinate with Core Dev strategist for reviewing strategy, then follow the status on the [private board](https://github.com/orgs/yearn/projects/5).
@@ -198,7 +198,7 @@ These steps are required for all strategies. These descriptions will be pulled i
    strategy.setKeeper(0x736D7e3c5a6CB2CE3B764300140ABF476F6CFCCF)
    ```
 
-1. Create an add-strategy PR in Keep3r [repo](https://github.com/iearn-finance/yearn-keeper) (TBD)
+1. Create an add-strategy PR in Keep3r [repo](https://github.com/iearn/yearn-keeper) (TBD)
 
 ## References
 
