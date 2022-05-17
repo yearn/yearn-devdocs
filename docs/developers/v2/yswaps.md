@@ -16,14 +16,14 @@ ySwaps is used to **abstract** the token trading logic from the strategies harve
 
 ## Components
 
-- [Swappers](#Swappers)
-- [Trade Factory](#Trade-Factory)
-- [Solvers](#Solvers)
-- [Dexes Libraries](#Dexes-Libraries)
-- [Execute script](#Execute-script)
-- [Extra toolings](#Extra-toolings)
-- [Procedures](#Procedures)
-- [Keep3r Jobs](#Keep3r-Jobs)
+- [Swappers](#swappers)
+- [Trade Factory](#trade-factory)
+- [Solvers](#solvers)
+- [Dexes Libraries](#dexes-libraries)
+- [Execute script](#execute-script)
+- [Extra toolings](#extra-toolings)
+- [Procedures](#procedures)
+- [Keep3r Jobs](#keep3r-jobs)
 
 
 ### Swappers
