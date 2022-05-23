@@ -4,7 +4,7 @@
 
 ### ROI
 
-Trying to understand how ROI is calculated? Skip directly to "[_Why we should use ROI instead of APY to estimate yVaults returns_](https://docs.yearn.finance/getting-started/guides/how-to-understand-yvault-roi#why-cant-we-use-compound-or-linear-interest-formulas-to-estimate-yvaults-returns)"
+Trying to understand how ROI is calculated? Skip directly to "[_Why we should use ROI instead of APY to estimate yVaults returns_](https://docs.yearn.finance/getting-started/guides/how-to-understand-yvault-roi#why-we-should-use-roi-to-estimate-yvaults-returns)"
 
 If you are a beginner in DeFi or new to Yearn keep on reading!
 
