@@ -1,7 +1,8 @@
 module.exports = {
     mySidebar: [
       "index",
-      "multisig"
+      "multisig",
+      "risk-score"
     ],
   };
   
