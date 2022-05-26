@@ -48,7 +48,7 @@ The file that contains the calculation for the most recent version of the yVault
 
 - When the active strategy of a yVault uses Convex Finance, and the streaming of the rewards is frozen at Convex, Yearn.finance Net APY will show 0% until the streaming is resumed.
 
-![image](https://lh6.googleusercontent.com/I6W8YaKtwC2ah5-GI4xQf-AYva9yWRHqwtSo2PisQxgB7le9bArAl-BTcLxT2ydzwlUyAWyLGOjJWhikQ94lY7sDuDwZsYtY5QdSbjqMo6NhDOqcCTxMzL4ZMIVRRtAIvNraP7SUVNrngcvzHA)
+![image](https://i.imgur.com/H4VRhz8.png)
 
 > More details about rewards streaming on [Convex Finance](https://docs.convexfinance.com/)
 
