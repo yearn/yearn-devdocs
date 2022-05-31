@@ -1,4 +1,4 @@
-# How To Understand yVault ROI
+# How to understand yVault ROI
 
 ---
 

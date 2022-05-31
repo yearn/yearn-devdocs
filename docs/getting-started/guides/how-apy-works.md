@@ -56,5 +56,5 @@ The file that contains the calculation for the most recent version of the yVault
 
 ## Infographic
 
-![image](https://user-images.githubusercontent.com/88235023/170367134-80fbed93-aa87-4725-abb1-20ba6472a691.png)
+![image](https://i.imgur.com/uT6VW9f.png)
 

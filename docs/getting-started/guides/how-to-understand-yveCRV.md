@@ -1,4 +1,4 @@
-# How to Understand yveCRV
+# How to understand yveCRV
 
 On February 6th 2021 Yearn Finance launched its latest product, yveCRV.
 
