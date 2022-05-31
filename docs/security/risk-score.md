@@ -1,26 +1,31 @@
-# Risk Score
+# Risk Scores
 
-Risk for different strategies is measured using a point scoring system developed internally from yearn’s strategy deployment process. The higher the risk score number, the more riskier the strategy is. There are 7 dimensions that are assessed in calculating the risk:
+Yearn works with risk scores to quantify and assess the amount of risk of each strategy and vault, this document describes how we define risk vectors and work with them to reach a good balance between secure and innovative strategies
 
-* Audit
-* Code Review 
-* Complexity 
-* Longevity 
-* Protocol Safety
-* Team Knowledge
-* Testing Score
+* [**Strategy Risk Score**](#strategy-risk-score) defines each dimension of risk for a strategy and how we quantify them
+* [**Vault Risk Score**](#vault-risk-score) aggregates all strategies scores for a vault averaging by TVL
+* [**Overall Risk Score**](#overall-risk-score) aggregates strategy/vault scores into overall scores
 
-The Risk score take all these into account and multiplies by the TVL Impact, so the final formula is:
+## Strategy Risk Score
 
-**Likelihood** = (Audit + Code Review + Complexity + Longevity + Protocol Safety + Team Knowledge + Testing Score)
+Risk for different strategies is measured using a point scoring system developed internally from yearn’s strategy deployment process. The higher the risk score number, the more riskier the strategy is. Calculating the risk assesses eight dimensions:
 
-**Risk Score **= Likelihood * TVL Impact
+* [Audit](#audit)
+* [Code Review](#code-review)
+* [Complexity](#complexity)
+* [Longevity](#longevity)
+* [Protocol Safety](#protocol-safety)
+* [Team Knowledge](#team-knowledge)
+* [Testing Score](#testing-score)
+* [TVL Impact](#tvl-impact)
 
-This risk framework was developed as an ongoing process that never ends regarding management of security dimensions and TVL of yearn’s strategies. The security team realised that given yearn’s unique approach to deploying strategies on a constant basis it couldn’t rely on a heavy waterfall process (heavy analysis/design, testing, several audits before a release, etc) to deploy contracts. The strategies are deployed and capped by their risk score and as we mitigate each dimension and improve something in the scoring the strategy can grow its TVL, think of it as calculated bets based on our internal security process. This allows yearn to compare the risk score of two strategies and prioritise mitigations/preventive actions like forming a committee to spread knowledge on the code, get more audits, migrate current code for improved versions of the strat, etc. 
+This risk framework is an ongoing process regarding the security of yearn’s strategies. The security team realized that given yearn’s unique approach to deploying strategies constantly, it couldn’t rely on a waterfall process (heavy analysis/design, testing, several audits before a release, etc.) to deploy contracts. The strategies are deployed and capped by their risk score, and as we mitigate each dimension and improve something in the scoring, the strategy can grow its TVL. Think of it as calculated bets based on our internal security process. This allows yearn to compare the risk score of two strategies and prioritize mitigations/preventive actions like forming a committee to spread knowledge on the code, get more audits, migrate current code for improved versions of the strat, etc. 
  
-The current version works for yearn’s current needs but we are always looking to improve it and also extend this scoring system to the vaults to be able to get a weighted average risk score that makes reasonable assumptions and can help our users get informed around what’s going on behind the scenes in the vaults. Vault risk scoring is still under development at the moment.
+The current version works for yearn’s current needs. Still, we are always looking to improve and extend this scoring system to the vaults to be able to get a weighted average risk score that makes reasonable assumptions. We want to help our users know what’s going on behind the scenes in the vaults. Vault risk scoring is still under development at the moment!
 
-First dimension is audits. This is the process by which either an audit firm or an external security researcher reviews the code for any potential vulnerabilities and presents a report for mitigation. As audits usually take longer than an internal security review and are not immediately available given demand for audits in the space, most strategies are sent to production with no audits (thus high risk score) to keep their TVL limited. This strikes a balance of validating the strategy in production with a calculated risk while we schedule a proper audit. The risk score overall helps us prioritize which strategies should get audited first, based on impact and other dimensions on scoring.
+### Audit
+
+Auditing is the process where an audit firm or an external security researcher reviews the code for any potential vulnerabilities and presents a report for mitigation. Audits usually take longer than an internal security review and are not immediately available given the demand for audits in the space, so most strategies are sent to production with no audits (thus high-risk score) to keep their TVL limited. This strikes a balance of validating the strategy in production with a calculated risk while we schedule a proper audit. The risk score helps us prioritize which strategies should get audited first, based on impact and other dimensions of scoring:
 
 <table>
   <tr>
@@ -49,7 +54,15 @@ First dimension is audits. This is the process by which either an audit firm or 
   </tr>
 </table>
 
-Second, we’ve got code review. This is the process that blocks a strategy from going to production. Is done in two major phases, phase 1 consisting of  2 internal peers (2 strategists) reviewing the strategy for any potential issues regarding functionality and logical issues regarding handling of account, profits, losses, etc. After this phase is completed usually the strategy can go to ape.tax for live testing and validation. For phase 2 an internal security reviewer from yearn will review the code focusing more on security concerns. Once phase 2 is completed, the strategy gets a risk score in all dimensions and is usually deemed enough for a strategy to go to production with limited TVL based on scoring. After these steps a recurring review is scheduled, where either a second either internal or external security reviewer will have another look at the code. Here’s a table to showcase the scoring:
+### Code Review
+
+This is the process that reviews strategy code going to production. It is done in two major phases:
+
+**Phase 1:** Two internal peers (strategists) review the strategy for any potential issues regarding handling accounts, profits, losses, etc. After this phase is completed, the strategy can go to ape.tax for live testing and validation.
+
+**Phase 2:** An internal security reviewer from yearn will review the code focusing on security concerns. Once phase 2 is completed, the strategy gets a risk score in all dimensions and is usually deemed enough for a strategy to go to production with limited TVL based on scoring.
+
+After these steps a recurring review is scheduled, where either a second either internal or external security reviewer will have another look at the code:
 
 <table>
   <tr>
@@ -78,7 +91,9 @@ Second, we’ve got code review. This is the process that blocks a strategy from
   </tr>
 </table>
 
-Next up, complexity. This is how the strategy earns a return - is it a simple strategy like a masterchef staking or does it have complex mechanics like leverage, risk of liquidation, many protocols involved, etc? The more pieces and components it needs will require a higher complexity score. This score is key in an emergency to evaluate how difficult it is to mitigate a live issue.The scores are below:
+### Complexity
+
+This is how the strategy earns its returns: is it a simple strategy like a masterchef staking or does it have complex mechanics like leverage, risk of liquidation, many protocols involved, etc? The more pieces and components it needs will require a higher complexity score. This score is key in an emergency to evaluate how difficult it is to mitigate a live issue:
 
 <table>
   <tr>
@@ -107,7 +122,9 @@ Next up, complexity. This is how the strategy earns a return - is it a simple st
   </tr>
 </table>
 
-Longevity is how long the strategy has been running live on yearn.finance. Here’s the scores:
+### Longevity
+
+How long the strategy has been running live on yearn.finance:
 
 <table>
   <tr>
@@ -136,9 +153,11 @@ Longevity is how long the strategy has been running live on yearn.finance. Here�
   </tr>
 </table>
 
-Up next, protocol safety. This is meant as an internal evaluation from yearn’s point of view of how resilient is the protocol the strategy works with regarding safety measures given the current DeFi security standards. It is heavily based on informed opinions regarding our internal assessments and due diligence compared to the top projects in DeFI. Accounts among other things for multisig health, decentralisation, bounty programs, audits, etc. 
+### Protocol Safety
 
-We hope to improve this dimension with the help of the security and overall DeFI community to potentially use a standard scoring system that is widely accepted in the ecosystem to replace our current scoring table.
+Internal evaluation from yearn’s point-of-view of how resilient are the protocols that the strategy works with. It regards safety measures given the current DeFi security standards, it's heavily based on informed opinions regarding our internal assessments and due diligence compared to the top projects in DeFI. Accounts for multisig health, decentralization, bounty programs, audits, etc. 
+
+We hope to improve this dimension with the help of the DeFI community to potentially use a standard scoring system that is widely accepted in the ecosystem to replace our current scoring table:
 
 <table>
   <tr>
@@ -167,7 +186,9 @@ We hope to improve this dimension with the help of the security and overall DeFI
   </tr>
 </table>
 
-Team knowledge is about how the expertise of the strategy is shared amongst Yearn contributors. How many contributors can manage the strategy and respond in an emergency. The less people can manage and respond during an emergency the riskier the strategy assessment in this dimension.
+### Team knowledge
+
+Measures how much expertise on a strategy is shared amongst Yearn contributors. How many contributors can manage the strategy and respond in an emergency? The less people can manage and respond during an emergency the riskier the strategy assessment in this dimension:
 
 <table>
   <tr>
@@ -196,7 +217,9 @@ Team knowledge is about how the expertise of the strategy is shared amongst Year
   </tr>
 </table>
 
-Testing score is a metric of how much of the codebase for the strategy has been tested and uses the test coverage number as a reference. The higher the coverage means that the developer/strategist took time to test most of the operations of the strategy in a unit test or fork environment. This score assumes a less tested strategy entails more risk since it increases chances something was missed in normal operation of the strategy or other potential edge cases like a bug in the strategy’s accounting, a missed assumption about the underlying protocol, a hack or unexpected bad state on the underlying protocol, etc.
+### Testing score
+
+Testing score is a metric of how much of the codebase for the strategy has been tested. It uses the test coverage number as a reference, higher coverage means the developer/strategist took time to test most of the operations of the strategy in a unit test or fork environment. This score assumes a less tested strategy entails more risk since we know less about what is expected from the code:
 
 <table>
   <tr>
@@ -225,6 +248,87 @@ Testing score is a metric of how much of the codebase for the strategy has been 
   </tr>
 </table>
 
-The TVL (total value locked) impact is a figure between 1 and 5 as well, where 5 is the highest impact labelled “extreme” (above 100MM) and 1 is the lowest impact in TVL less than 1MM. This table was proposed as a way to measure how to allocate to new riskier strategies without having a catastrophic event in case of a hack or issue. The lower the impact the more likely yearn’s treasury can recover from an incident. The TVL is measured in USD and grows dynamically based on strategies allocations onchain. Through [yearn.watch](https://yearn.watch/) we keep track of the TVL and risk score to make fund allocation decisions and mitigations in case a strategy group has fallen into the “red” high risk zone. 
+### TVL Impact
 
-Overall the risk framework turns yearn strategy deployment into a constant never ending preventive process of assessing and mitigating risks.
+The TVL (total value locked) impact is a figure between 1 and 5 as well, where 5 is the highest impact labeled “extreme” (above 100MM) and 1 is the lowest impact in TVL less than 1MM. This table measures how to allocate to new riskier strategies without having a catastrophic event in case of a hack or issue. The lower the impact, the more likely yearn’s treasury can recover from an incident. The TVL is measured in USD and grows dynamically based on strategies allocations onchain. Through [yearn.watch](https://yearn.watch/) we keep track of the TVL and risk score to make fund allocation decisions and mitigations if a strategy group has fallen into the “red” high-risk zone:
+
+<table>
+  <tr>
+   <td><strong>Score</strong></td>
+   <td><strong>TVL Impact</strong></td>
+  </tr>
+  <tr>
+   <td>5</td>
+   <td>Extreme: > USD 100 MM’</td>
+  </tr>
+  <tr>
+   <td>4</td>
+   <td>Very high: less than USD 100 MM</td>
+  </tr>
+  <tr>
+   <td>3</td>
+   <td>High: less than USD 50 MM’</td>
+  </tr>
+  <tr>
+   <td>2</td>
+   <td>Medium: less than USD 10 MM</td>
+  </tr>
+  <tr>
+   <td>1</td>
+   <td>Low: less than USD 1 MM</td>
+  </tr>
+</table>
+
+## Vault Risk Score
+
+A vault is a contract that holds funds for up to 20 strategies, the vault risk score is a TVL weighted average for each active strategy, for example:
+
+**Strategy X** has **5000$** funds deposited  
+**Strategy Y** has **1000$** funds deposited
+
+This vault's risk score would be calculated like this:
+
+```
+(
+  (Strategy X risk) * 5000
+  +
+  (Strategy Y risk) * 1000
+)
+÷
+6000
+```
+
+## Overall Risk Score
+
+Risks on some projects may have more relevance than others, so before calculating the overall score we first define the weight for the context we want to apply the framework on and then we do a weighted average between all risk dimensions and risk profiles:
+
+**Risk Profile** = Weighted table of which risk dimension is more important given the current context  
+**Risk Score** = Weighted average of all 8 dimensions using the risk profile weights
+
+A project may have many risk profiles, so for each profile the score is calculated and the final list that remains is then used with medians to reach the final result:
+
+The projects overall risk score will be presented in 3 variables:
+
+* **high** - profile score for a risk-averse user
+* **low** - profile score for a risk-seeking user
+* **median** - profile score for a median representative user
+
+Where each one of these use the final list median:
+
+* median - the median value from the distribution
+* high - median + 1.5 IQR
+* low - median - 1.5 IQR
+
+Where IQR stands for the interquartile range of the distribution
+
+Here is what the final result looks like:
+
+```
+{
+  'overallScore': {
+    'high': 3.37675585284281,
+    'low': 2.5463210702341135,
+    'median': 2.9615384615384617
+  },
+}
+```
