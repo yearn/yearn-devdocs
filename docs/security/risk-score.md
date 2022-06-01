@@ -3,8 +3,8 @@
 Yearn works with risk scores to quantify and assess the amount of risk of each strategy and vault, this document describes how we define risk vectors and work with them to reach a good balance between secure and innovative strategies
 
 * [**Strategy Risk Score**](#strategy-risk-score) defines each dimension of risk for a strategy and how we quantify them
-* [**Vault Risk Score**](#vault-risk-score) aggregates all strategies scores for a vault averaging by TVL
-* [**Overall Risk Score**](#overall-risk-score) aggregates strategy/vault scores into overall scores
+* [**Vault Risk Score Proposal**](#vault-risk-score-proposal) aggregates all strategies scores for a vault averaging by TVL **(this is in draft stage)**
+* [**Overall Risk Score Proposal**](#overall-risk-score-proposal) aggregates strategy/vault scores into overall scores **(this is in draft stage)**
 
 ## Strategy Risk Score
 
@@ -279,7 +279,7 @@ The TVL (total value locked) impact is a figure between 1 and 5 as well, where 5
   </tr>
 </table>
 
-## Vault Risk Score
+## Vault Risk Score Proposal
 
 A vault is a contract that holds funds for up to 20 strategies, the vault risk score is a TVL weighted average for each active strategy, for example:
 
@@ -298,7 +298,7 @@ This vault's risk score would be calculated like this:
 6000
 ```
 
-## Overall Risk Score
+## Overall Risk Score Proposal
 
 Risks on some projects may have more relevance than others, so before calculating the overall score we first define the weight for the context we want to apply the framework on and then we do a weighted average between all risk dimensions and risk profiles:
 
