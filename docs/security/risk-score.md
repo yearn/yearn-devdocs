@@ -259,7 +259,7 @@ The TVL (total value locked) impact is a figure between 1 and 5 as well, where 5
   </tr>
   <tr>
    <td>5</td>
-   <td>Extreme: > USD 100 MM’</td>
+   <td>Extreme: > USD 100 MM</td>
   </tr>
   <tr>
    <td>4</td>
@@ -267,7 +267,7 @@ The TVL (total value locked) impact is a figure between 1 and 5 as well, where 5
   </tr>
   <tr>
    <td>3</td>
-   <td>High: less than USD 50 MM’</td>
+   <td>High: less than USD 50 MM</td>
   </tr>
   <tr>
    <td>2</td>
@@ -309,15 +309,15 @@ A project may have many risk profiles, so for each profile the score is calculat
 
 The projects overall risk score will be presented in 3 variables:
 
-* **high** - profile score for a risk-averse user
-* **low** - profile score for a risk-seeking user
-* **median** - profile score for a median representative user
+* **high:** profile score for a risk-averse user
+* **low:** profile score for a risk-seeking user
+* **median:** profile score for a median representative user
 
 Where each one of these use the final list median:
 
-* median - the median value from the distribution
-* high - median + 1.5 IQR
-* low - median - 1.5 IQR
+* **high:** median + 1.5 IQR
+* **low:** median - 1.5 IQR
+* **median:** the median value from the distribution
 
 Where IQR stands for the interquartile range of the distribution
 
@@ -328,7 +328,7 @@ Here is what the final result looks like:
   'overallScore': {
     'high': 3.37675585284281,
     'low': 2.5463210702341135,
-    'median': 2.9615384615384617
+    'median': 2.9615384615384617,
   },
 }
 ```
