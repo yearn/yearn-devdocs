@@ -60,6 +60,10 @@ module.exports = {
           label: 'Develop',
         },
         {
+          to: '/vaults/smart-contracts/BaseStrategy',
+          label: 'Smart Contracts',
+        },
+        {
           to: 'partners/introduction',
           label: 'Partner',
         },
