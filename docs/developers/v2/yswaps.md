@@ -42,9 +42,9 @@ This contract will receive a bundle of transactions that are required to aquire 
 
 **Single swapper example:** We have `tokenIn` and `tokenOut` and we know that we can go straight to sushiswap that has enought liquidity to make the trade with good conditions.
 
-**Multicall example:** We have a `tokenIn` and we want a `tokenOut`. But theres no path on any dex to do the trade directly, so we need to split the swap in two steps:
-1. Step 1: `tokenIn` for `hopToken`.
-2. Step 2: `hopToken` for `tokenOut`.
+**Multicall example:** We have a `tokenIn` and we want a `tokenOut`. But theres no path on any dex to do the trade directly, so we need to split the swap in two steps:  
+1. Step 1: `tokenIn` for `hopToken`.  
+2. Step 2: `hopToken` for `tokenOut`.  
 
 For this example we are gonna assume that we will need to use two different dexes for each step. Since we are gonna split the trade in two different transactions and the main objective is to use TWO DIFFERENT dexes, this is where we use the `Multicall Swapper`.Everything that requires more than just a single swap tx, will use multicall dexes.
 
@@ -117,9 +117,9 @@ There is one dex library per dex (uniswap, bancor, ...). They are in charge of g
 
 This is where everything starts. Here we will grab all the enabled trades, loop and use logic to determinate if:
 
-1) Should the trade by executed?
-2) If so, what solver should we use? 
-3) Once we have the solver response, execute the swap transaction provided by the solver.
+1) Should the trade by executed?  
+2) If so, what solver should we use?   
+3) Once we have the solver response, execute the swap transaction provided by the solver.  
 
 <br />
 
@@ -128,26 +128,26 @@ This is where everything starts. Here we will grab all the enabled trades, loop 
 
 #### Execute pending trades: What exactly happens?
 
-1. Script execute-mainnet-pending-trades
-  1.1. Identify "pending trades"
-  1.2. Determinate which solver to use.
-  1.3. Solver determinates best Dex and returns the swap tx
-  1.3. Execute swap tx provided by the solver.
+1. Script execute-mainnet-pending-trades  
+  1.1. Identify "pending trades"  
+  1.2. Determinate which solver to use.  
+  1.3. Solver determinates best Dex and returns the swap tx  
+  1.3. Execute swap tx provided by the solver.  
 
-2. Call the execute in Trade Factory
-  2.1. Contract validates the data and that trade in configuration is valid.
-  2.2 Moves the funds directly from the strategy to the swapper.
-  2.3 Calls `swapper.swap()` to execute the trade.
-  2.4 Check that amount received by strategy > minAmountOut provided by us.
+2. Call the execute in Trade Factory  
+  2.1. Contract validates the data and that trade in configuration is valid.  
+  2.2 Moves the funds directly from the strategy to the swapper.  
+  2.3 Calls `swapper.swap()` to execute the trade.  
+  2.4 Check that amount received by strategy > minAmountOut provided by us.  
 
-3. Swapper executes the trade
-  3.1. Validates some data.
-  3.2. Executes the trade
-  3.3. Send funds directly to the strategy.
+3. Swapper executes the trade  
+  3.1. Validates some data.  
+  3.2. Executes the trade  
+  3.3. Send funds directly to the strategy.  
 
 ### Extra toolings
 
-- **Gas service**: provides the correct params for gas options for each network
+- **Gas service**: provides the correct params for gas options for each network  
 - **Price service**: we use providers as CoinGecko API to normilize the `tokenInAmount` and `tokenOutAmount` in USD so we can verify that we are not getting a bad price from the Dex we ended up using.
 
 <br />
@@ -158,18 +158,18 @@ This is where everything starts. Here we will grab all the enabled trades, loop 
 
 ### Add new strategy
 
-1. Add `STRATEGY` role on Trade factory contract. From yMech.
-2. Add `enable trades` on Trade factory contract. From strategy.
-3. Add `enable trade` on ySwap repo config (`fantom.ts` `mainnet.ts`)
-    3.1 To add it to the config we also need to know what solver we are going to use. It would be `Dexes.ts` which is a generic solver or it would have its own `Custom Solver`.
-    3.2 In case of need a `Custom Solver`, we need to code it.
-4. Once added to config, we are ready to execute the script to swap available trades.
+1. Add `STRATEGY` role on Trade factory contract. From yMech.  
+2. Add `enable trades` on Trade factory contract. From strategy.  
+3. Add `enable trade` on ySwap repo config (`fantom.ts` `mainnet.ts`)  
+    3.1 To add it to the config we also need to know what solver we are going to use. It would be `Dexes.ts` which is a generic solver or it would have its own `Custom Solver`  
+    3.2 In case of need a `Custom Solver`, we need to code it.  
+4. Once added to config, we are ready to execute the script to swap available trades.  
 
 ### Remove strategy
 
-1. Revoke role from MS.
-2. Remove from network config file.
-3. OPTIONAL: remove custom solver if it has one.
+1. Revoke role from MS.  
+2. Remove from network config file.  
+3. OPTIONAL: remove custom solver if it has one.  
 
 ## Keep3r jobs
 
@@ -180,15 +180,15 @@ Previous knowledge about how `Keeper Network` works is needed.
 #### Add strategy fantom keeper harvest job
 
 ##### A)
- 1. Go straight to ftmscan harvest job and add the strategy manually by a yMech.
- 2. Add strategy to v2-ftm-strategies.ts config with `added: true`
+ 1. Go straight to ftmscan harvest job and add the strategy manually by a yMech.  
+ 2. Add strategy to v2-ftm-strategies.ts config with `added: true`  
 
 ##### B) (safest way to have everything added)
- 1. Review and merge pr from strategists to add new strategies.
- 2. On  packages/strategies-keep3r Execute script: `npx hardhat run scripts/jobs/detached/01-v2-harvest-ftm-detached-job-add-strategies.ts --network fantom`
- 3. On config file strategies-keep3r/utils/v2-ftm-strategies.ts change once again  strategies property added to true
+ 1. Review and merge pr from strategists to add new strategies.  
+ 2. On  packages/strategies-keep3r Execute script: `npx hardhat run scripts/jobs/detached/01-v2-harvest-ftm-detached-job-add-strategies.ts --network fantom`  
+ 3. On config file strategies-keep3r/utils/v2-ftm-strategies.ts change once again  strategies property added to true  
  4. Push changes.
 
 #### Remove strategy fantom keeper harvest job
-1. Go to ftmscan `Harvest Job SC` and remove the strategy manually using method `removeStrategies`. Call with a mechanic.
+1. Go to ftmscan `Harvest Job SC` and remove the strategy manually using method `removeStrategies`. Call with a mechanic.  
 2. Remove strategy from `v2-NETWORK-strategies.json` file.
