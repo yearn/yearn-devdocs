@@ -6,7 +6,7 @@ Budget requests are approved by the yBudget team and require a 3/5 consensus
 
 The team recommendations to make requests are:
 
-- When coordinating efforts with more people, apply a team (not as separate individuals)
+- When coordinating efforts with others, apply as a team (not as separate individuals)
 - Shorter timeframes of 1 to 3 months may have better rates of approval
 
 All Yearn payments streams can be visualized at our [LlamaPay Streams Dashboard](https://llamapay.io/streams?chainId=1&address=ychad.eth)
