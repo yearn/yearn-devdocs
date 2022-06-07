@@ -17,7 +17,6 @@ module.exports = {
           ],
         },
         'products/woofy',
-        'products/token-addresses',
       ],
     },
     {
@@ -31,5 +30,6 @@ module.exports = {
         'guides/how-apy-works',
       ],
     },
+    'products/token-addresses',
   ],
 }

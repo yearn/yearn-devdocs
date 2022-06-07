@@ -1,5 +1,7 @@
 # ySwaps
 
+*This document contain links to private repositories that might not be publicly available*
+
 ySwaps is used to **abstract** the token trading logic from the strategies harvest method, which means strategies can focus on farming tokens and don't have to handle tokens trading logic and paths. The "swappers" smart contracts allows trading optimizations and new paths to be added since the code is not hardcoded in strategies.
 
 - [ySwaps contracts repository](https://github.com/yearn/yswaps)
@@ -18,10 +20,10 @@ ySwaps is used to **abstract** the token trading logic from the strategies harve
 
 - [Swappers](#swappers)
 - [Trade Factory](#trade-factory)
-- [Solvers](#solvers)
+- [Solvers Scripts](#solvers-scripts)
 - [Dexes Libraries](#dexes-libraries)
-- [Execute script](#execute-script)
-- [Extra toolings](#extra-toolings)
+- [Execute Script](#execute-script)
+- [Extra Toolings](#extra-toolings)
 - [Procedures](#procedures)
 - [Keep3r Jobs](#keep3r-jobs)
 

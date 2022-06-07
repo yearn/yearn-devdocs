@@ -1,7 +1,6 @@
 {
   "name": "yearn-devdocs",
-  "version": "0.0.0",
-  "private": true,
+  "version": "0.4.3",
   "scripts": {
     "docusaurus": "docusaurus",
     "start": "docusaurus start",
@@ -19,12 +18,12 @@
   "dependencies": {
     "@docusaurus/core": "2.0.0-beta.6",
     "@docusaurus/preset-classic": "2.0.0-beta.6",
-    "@mdx-js/react": "^1.6.21",
-    "@openzeppelin/contracts": "^3.1.0",
-    "clsx": "^1.1.1",
+    "@mdx-js/react": "1.6.21",
+    "@openzeppelin/contracts": "3.1.0",
+    "clsx": "1.1.1",
     "hast-util-is-element": "1.1.0",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1",
+    "react": "17.0.1",
+    "react-dom": "17.0.1",
     "rehype-katex": "4",
     "remark-math": "3"
   },
@@ -41,17 +40,17 @@
     ]
   },
   "devDependencies": {
-    "@docusaurus/module-type-aliases": "^2.0.0-beta.6",
-    "@tsconfig/docusaurus": "^1.0.2",
-    "@types/react": "^17.0.3",
-    "@types/react-helmet": "^6.1.1",
-    "@types/react-router-dom": "^5.1.7",
-    "ava": "^3.15.0",
-    "glob": "^7.1.6",
-    "glob-promise": "^4.1.0",
-    "solidity-docgen": "^0.5.11",
-    "ts-node": "^9.1.1",
-    "typescript": "^4.2.4",
+    "@docusaurus/module-type-aliases": "2.0.0-beta.6",
+    "@tsconfig/docusaurus": "1.0.2",
+    "@types/react": "17.0.3",
+    "@types/react-helmet": "6.1.1",
+    "@types/react-router-dom": "5.1.7",
+    "ava": "3.15.0",
+    "glob": "7.1.6",
+    "glob-promise": "4.1.0",
+    "solidity-docgen": "0.5.11",
+    "ts-node": "9.1.1",
+    "typescript": "4.2.4",
     "vydoc": "https://github.com/yearn/vydoc"
   }
 }
