@@ -16,24 +16,20 @@ veYFI incorporates [YIP-56: Buyback and Build](https://gov.yearn.finance/t/yip-5
 - Receives bought-back YFI as rewards
 - Locking similar to the ve-style program of Curve.
 - YFI can be locked into veYFI, which is non-transferable.
-- The maximum lock duration is still to be determined, but will be in the range of min 1 year, max 4 years.
+- The maximum lock duration is still to be determined, but will be in the range of min 1 week, max 4 years.
 - Locking duration gives the same linear weights, so if max duration is 4 years, this is 100%, and 2 years = 50% etc.
 - Weights decay as the remaining lock duration decreases, and can be extended up to the max lock duration.
 - A user must have a veYFI lock in order to continue to earn rewards. No lock leads to no rewards. Maximum lock, continuously renewed, maximizes rewards.
 - It’s possible to exit the lock early, in exchange for paying a penalty that gets allocated to the other veYFI holders.
-- Penalty size may be fixed (i.e. 50%), or may be depending on the remaining lock duration.
+- The penalty is up to 75% and decaying overtime, the penalty formula is `75% locked amount  * (time remaining / 4 years)`
 - Once veYFI is introduced, only veYFI is accepted voting power in Yearn Governance.
 
 ### Vault gauges + Voting
 
 - Vault gauges allow vault depositors to stake their vault tokens and earn YFI rewards according to their veYFI weight.
-- YFI is allocated to gauges based on weekly governance votes. Each gauge can get a different amount of bought back YFI to emit.
-- Based on their veYFI lock, users can boost their rewards of up to 2.5x proportional to the amount of vault tokens deposited, when they claim YFI rewards from gauges. The greater the amount of veYFI, the more vault deposits can be boosted for the user.
-- Inspired by Andre Cronje’s [initial design of Fixed Forex](https://andrecronje.medium.com/fair-launches-decentralized-collaboration-and-fixed-forex-ab327a2e4fc4), in order for gauge rewards to be claimed, the user must have a veYFI lock. Depending on their lock duration, they are entitled to a different share of gauge rewards:
-  - if max lock = 4 years, and user is locked for 4 years, they are entitled to 100% of their rewards
-  - if user is locked for 2 years = 50% of their rewards
-  - if user has no lock = no rewards
-  - The difference is paid as penalty to veYFI holders, as an additional source of yield.
+- YFI is allocated to gauges based on bi-weekly governance votes. Each gauge can get a different amount of bought back YFI to emit.
+- Based on their veYFI lock, users can boost their rewards of up to 10x proportional to the amount of vault tokens deposited, when they claim YFI rewards from gauges. The greater the amount of veYFI, the more vault deposits can be boosted for the user.
+- A claim with a boost under 100% will send the leftover boost to the veYFI holders.
 
 ### Diagram
 
