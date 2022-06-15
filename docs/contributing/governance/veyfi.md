@@ -21,7 +21,10 @@ veYFI incorporates [YIP-56: Buyback and Build](https://gov.yearn.finance/t/yip-5
 - Weights decay as the remaining lock duration decreases, and can be extended up to the max lock duration.
 - A user must have a veYFI lock in order to continue to earn rewards. No lock leads to no rewards. Maximum lock, continuously renewed, maximizes rewards.
 - It’s possible to exit the lock early, in exchange for paying a penalty that gets allocated to the other veYFI holders.
-- The penalty is up to 75% and decaying overtime, the penalty formula is `75% locked amount  * (time remaining / 4 years)`
+- The penalty is up to 75% locked amount and decays overtime:
+  - The total penalty is the minimum percentage between `75% locked amount` and `(time remaining / 4 years)`
+  - So if your lock is more than 3 years you will pay 75%.
+  - If your lock is 2 years you will pay 2/4 = 50%
 - Once veYFI is introduced, only veYFI is accepted voting power in Yearn Governance.
 
 ### Vault gauges + Voting
