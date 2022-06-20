@@ -22,21 +22,9 @@ module.exports = {
       defaultMode: 'light',
       disableSwitch: false,
       respectPrefersColorScheme: true,
-      switchConfig: {
-        darkIcon: '\u0020',
-        darkIconStyle: {
-          marginLeft: '0px',
-          backgroundColor: 'transparent',
-        },
-        lightIcon: '\u{00A0}',
-        lightIconStyle: {
-          marginLeft: '0px',
-          backgroundColor: 'transparent',
-        },
-      },
     },
     image: 'img/YFILogoGradient.png',
-    metadatas: [
+    metadata: [
       {
         name: 'twitter:card',
         content:
@@ -76,7 +64,7 @@ module.exports = {
           label: 'Resources',
         },
         {
-          to: 'security/index',
+          to: 'security/',
           label: 'Security',
         },
         {
@@ -229,6 +217,7 @@ module.exports = {
         sidebarPath: require.resolve('./sidebars/sidebarsDevelopers.js'),
         showLastUpdateAuthor: true,
         showLastUpdateTime: true,
+        sidebarCollapsed: false,
       },
     ],
     [
@@ -240,6 +229,7 @@ module.exports = {
         sidebarPath: require.resolve('./sidebars/sidebarsGettingStarted.js'),
         showLastUpdateAuthor: true,
         showLastUpdateTime: true,
+        sidebarCollapsed: false,
         remarkPlugins: [math],
         rehypePlugins: [katex],
       },
@@ -253,6 +243,7 @@ module.exports = {
         sidebarPath: require.resolve('./sidebars/sidebarsPartners.js'),
         showLastUpdateAuthor: true,
         showLastUpdateTime: true,
+        sidebarCollapsed: false,
       },
     ],
     [
@@ -264,6 +255,7 @@ module.exports = {
         sidebarPath: require.resolve('./sidebars/sidebarsContributing.js'),
         showLastUpdateAuthor: true,
         showLastUpdateTime: true,
+        sidebarCollapsed: false,
         remarkPlugins: [math],
         rehypePlugins: [katex],
       },
@@ -277,6 +269,7 @@ module.exports = {
         sidebarPath: require.resolve('./sidebars/sidebarsResources.js'),
         showLastUpdateAuthor: true,
         showLastUpdateTime: true,
+        sidebarCollapsed: false,
       },
     ],
     [
