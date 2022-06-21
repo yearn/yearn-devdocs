@@ -21,5 +21,6 @@ module.exports = {
     },
     'v2/hacking-with-yearn',
     'v2/yswaps',
+    'v2/fork-yearn-ui',
   ],
 }
