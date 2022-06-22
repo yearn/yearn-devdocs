@@ -75,8 +75,11 @@ We will also label the vaults depending on collateralization properties. To do t
 
 ```js title="contexts/useYearn.tsx"
 // contexts/useYearn.tsx line 17
+
 defaultCategories: ['All', 'Crypto Backed', 'Fiat Backed', 'Decentralized', 'Centralized']
+
 // contexts/useYearn.tsx line 165
+
 vault.categories = ['All'];
 vault.chainID = chainID;
 if (chainID === 1 || chainID === 1337) {
@@ -113,6 +116,7 @@ Replace the logo image with either another image or a simple text:
 
 ```jsx title="pagex/app.tsx"
 // pagex/app.tsx line 71
+
 <h1>Cozy Stables Finance</h1>
 ```
 
