@@ -44,7 +44,7 @@ For this example we will make an UI focused on stablecoins, so we will add only 
 
 To add new vaults head to [yearn.finance](https://yearn.finance/#/vaults), click a vault, and copy the address in the URL to add to our list. Here is how it looks like after adding all addresses for stablecoins:
 
-```js
+```js title="contexts/useYearn.tsx"
 // contexts/useYearn.tsx line 67
 
 const endorsedVaults: {[key: number]: string[]} = {
@@ -73,7 +73,7 @@ We will also label the vaults depending on collateralization properties. To do t
 * **centralized** -> centralized emission and redeeming
 
 
-```js
+```js title="contexts/useYearn.tsx"
 // contexts/useYearn.tsx line 17
 defaultCategories: ['All', 'Crypto Backed', 'Fiat Backed', 'Decentralized', 'Centralized']
 // contexts/useYearn.tsx line 165
@@ -111,7 +111,7 @@ Here is what the new customized filtering should look like after applying all th
 
 Replace the logo image with either another image or a simple text:
 
-```jsx
+```jsx title="pagex/app.tsx"
 // pagex/app.tsx line 71
 <h1>Cozy Stables Finance</h1>
 ```
@@ -160,7 +160,7 @@ which will be compiled to:
 
 To change the color scheme go to `style.css` at line 9 and change to something like:
 
-```css
+```css title="style.css"
 /* style.css line 9 */
 
 --theme-primary-color: 180; /* teal */
@@ -202,7 +202,7 @@ PROJECT_GITHUB_URL: 'https://github.com/MarcoWorms/macarena-finance',
 ```
 
 - and at `public/manifest.json`:
-```js
+```js title=public/manifest.json
 {
 	"name": "Cozy Stables Finance",
 	"description": "Cozy Stables Finance, a place for everyone to sit comfy on their stables",
@@ -218,7 +218,7 @@ PROJECT_GITHUB_URL: 'https://github.com/MarcoWorms/macarena-finance',
 
 1. At `next.config.js` change `PARTNER_ID_ADDRESS` to the address that should receive the partner fees
 
-```js
+```js title=next.config.js
 PARTNER_ID_ADDRESS: '0x_WALLET_ADDRESS_TO_RECEIVE_FEES',
 ```
 
