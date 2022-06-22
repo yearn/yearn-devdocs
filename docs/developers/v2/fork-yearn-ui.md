@@ -122,19 +122,41 @@ Changing the above line will make the page header look like this now:
 
 ## Change Colors
 
-Color values use HSL by default:
+The default color theme uses HSL, this allows for quicker customization of the entire theme with less variables, a quick primer on HSL:
 
-- **Hue** is measured in degrees:
-  - 0° is red
-  - 120° is green
-  - 240° is blue.
-- **Saturation** is how colorful or vivid a color looks:
-  - 0% saturation is grey (no color)
-  - 100% saturation is vibrant and intense.
-- **Lightness** measures how close a color is to black or white:
-  - 0% lightness is pure black
-  - 50% lightness is a pure color at the given hue.
-  - 100% lightness is pure white
+**HSL** stands for Hue, Saturation, Lightness and is represented on tailwind like this:
+
+```css
+--variable: 200 100% 50%;
+```
+
+which will be compiled to:
+
+```css
+--variable: hsl(200, 100%, 50%);
+```
+
+**Hue** is measured in degrees:
+- 0° is red
+- 120° is green
+- 240° is blue.
+
+![hue examples](https://i.imgur.com/ddaVLBc.png)
+
+**Saturation** is how colorful or vivid a color looks:
+- 0% saturation is grey (no color)
+- 100% saturation is vibrant and intense.
+
+![saturation examples](https://i.imgur.com/PkTorUr.png)
+
+**Lightness** measures how close a color is to black or white:
+- 0% lightness is pure black
+- 50% lightness is a pure color at the given hue.
+- 100% lightness is pure white
+
+![lightness examples](https://i.imgur.com/A8coxLo.png)
+
+<br />
 
 To change the color scheme go to `style.css` at line 9 and change to something like:
 
@@ -169,7 +191,7 @@ and the page should now look like this:
 
 ## Change SEO settings
 
-- At `next.config.js` line 29:
+- Change SEO settings at `next.config.js` line 29:
 
 ```js
 WEBSITE_URI: 'https://cozy-stables.finance/',
@@ -178,6 +200,19 @@ WEBSITE_TITLE: 'Cozy Stables Finance',
 WEBSITE_DESCRIPTION: 'Cozy Stables Finance, a place for everyone to sit comfy on their stables',
 PROJECT_GITHUB_URL: 'https://github.com/MarcoWorms/macarena-finance',
 ```
+
+- and at `public/manifest.json`:
+```js
+{
+	"name": "Cozy Stables Finance",
+	"description": "Cozy Stables Finance, a place for everyone to sit comfy on their stables",
+	"iconPath": "/favicons/favicon.svg"
+}
+```
+
+- Change social media links at `/pages/_app.tsx` [lines 217-L243](https://github.com/yearn/macarena-finance/blob/main/pages/_app.tsx#L217-L243)
+
+- Change favico image at `public/favicons/`
 
 ## Apply to receive partner fees
 
