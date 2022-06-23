@@ -22,21 +22,9 @@ module.exports = {
       defaultMode: 'light',
       disableSwitch: false,
       respectPrefersColorScheme: true,
-      switchConfig: {
-        darkIcon: '\u0020',
-        darkIconStyle: {
-          marginLeft: '0px',
-          backgroundColor: 'transparent',
-        },
-        lightIcon: '\u{00A0}',
-        lightIconStyle: {
-          marginLeft: '0px',
-          backgroundColor: 'transparent',
-        },
-      },
     },
     image: 'img/YFILogoGradient.png',
-    metadatas: [
+    metadata: [
       {
         name: 'twitter:card',
         content:
@@ -76,7 +64,7 @@ module.exports = {
           label: 'Resources',
         },
         {
-          to: 'security/index',
+          to: 'security/',
           label: 'Security',
         },
         {
@@ -204,6 +192,7 @@ module.exports = {
           editUrl:
             'https://github.com/yearn/yearn-devdocs/edit/master/website/',
           includeCurrentVersion: false,
+          breadcrumbs: false,
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
@@ -227,8 +216,9 @@ module.exports = {
         path: 'docs/developers',
         routeBasePath: 'developers',
         sidebarPath: require.resolve('./sidebars/sidebarsDevelopers.js'),
-        showLastUpdateAuthor: true,
         showLastUpdateTime: true,
+        sidebarCollapsed: false,
+        breadcrumbs: false,
       },
     ],
     [
@@ -238,8 +228,9 @@ module.exports = {
         path: 'docs/getting-started',
         routeBasePath: 'getting-started',
         sidebarPath: require.resolve('./sidebars/sidebarsGettingStarted.js'),
-        showLastUpdateAuthor: true,
         showLastUpdateTime: true,
+        sidebarCollapsed: false,
+        breadcrumbs: false,
         remarkPlugins: [math],
         rehypePlugins: [katex],
       },
@@ -251,8 +242,9 @@ module.exports = {
         path: 'docs/partners',
         routeBasePath: 'partners',
         sidebarPath: require.resolve('./sidebars/sidebarsPartners.js'),
-        showLastUpdateAuthor: true,
         showLastUpdateTime: true,
+        sidebarCollapsed: false,
+        breadcrumbs: false,
       },
     ],
     [
@@ -262,8 +254,9 @@ module.exports = {
         path: 'docs/contributing',
         routeBasePath: 'contributing',
         sidebarPath: require.resolve('./sidebars/sidebarsContributing.js'),
-        showLastUpdateAuthor: true,
         showLastUpdateTime: true,
+        sidebarCollapsed: false,
+        breadcrumbs: false,
         remarkPlugins: [math],
         rehypePlugins: [katex],
       },
@@ -275,8 +268,9 @@ module.exports = {
         path: 'docs/resources',
         routeBasePath: 'resources',
         sidebarPath: require.resolve('./sidebars/sidebarsResources.js'),
-        showLastUpdateAuthor: true,
         showLastUpdateTime: true,
+        sidebarCollapsed: false,
+        breadcrumbs: false,
       },
     ],
     [
@@ -286,8 +280,8 @@ module.exports = {
         path: 'docs/security',
         routeBasePath: 'security',
         sidebarPath: require.resolve('./sidebars/sidebarsSecurity.js'),
-        showLastUpdateAuthor: true,
         showLastUpdateTime: true,
+        breadcrumbs: false,
       },
     ],
   ],

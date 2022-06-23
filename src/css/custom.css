@@ -6,6 +6,7 @@
  */
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&display=swap");
 /* You can override the default Infima variables here. */
+
 :root {
   --ifm-color-primary: #007bff;
   --ifm-color-primary-dark: rgb(0, 106, 227);
@@ -18,6 +19,10 @@
 }
 .body {
   font-family: "Roboto", serif;
+}
+
+html[data-theme="dark"] {
+  background-color: #18191a;
 }
 
 .DocSearch {
