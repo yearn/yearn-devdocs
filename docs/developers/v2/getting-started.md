@@ -11,8 +11,8 @@ Before you start, you will need to download and install the following requiremen
 
 If you are focusing on a strategy, you have the choice of brownie and foundry template repos:
 
-- [brownie-strategy-mix](https://github.com/yearn/brownie-strategy-mix) repository. 
-- [foundry-strategy-mix](https://github.com/storming0x/foundry_strategy_mix) repository. (See Readme.MD for setup.)
+- [brownie-strategy-mix](https://github.com/yearn/brownie-strategy-mix) repository.
+- [foundry-strategy-mix](https://github.com/storming0x/foundry_strategy_mix) repository.
 
 If you want to integrate with our vaults:
 
