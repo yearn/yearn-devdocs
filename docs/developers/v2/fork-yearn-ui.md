@@ -33,7 +33,7 @@ For this example we will make an UI focused on stablecoins, so we will add only 
 
 * Open `contexts/useYearn.tsx` and edit `endorsedVaults` to contain the vaults you want.
 
-To add new vaults head to [yearn.finance](https://yearn.finance/#/vaults), click a vault, and copy the address in the URL to add to our list. Here is how it looks like after adding all addresses for stablecoins:
+To add new vaults head to [vaults.yearn.finance](https://vaults.yearn.finance/ethereum/stables) and copy the address on the etherscan link to add it to our list. Here is how it looks like after adding all addresses for stablecoins:
 
 ```js title="contexts/useYearn.tsx"
 // contexts/useYearn.tsx line 67
