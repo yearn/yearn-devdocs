@@ -1,8 +1,8 @@
 # Fork Yearn UI
 
-This is a step-by-step guide on how to fork and customize [Macarena Finance](https://github.com/yearn/macarena-finance) which is a yearn UI made to be forked. Deploying your own UI makes you eligible to receive partner [profit-sharing](https://docs.yearn.finance/partners/introduction#profit-share-model) fees.
+This is a step-by-step guide on how to fork and customize [macarena.finance](https://macarena.finance/) which is a yearn UI made to be forked using the open-source [repository](https://github.com/yearn/macarena-finance). Deploying your own UI makes you eligible to receive partner [profit-sharing](https://docs.yearn.finance/partners/introduction#profit-share-model) fees.
 
-## Install required software
+  ## Install required software
 
 To follow all steps you need to install the following dependencies:
 
@@ -31,7 +31,7 @@ To follow all steps you need to install the following dependencies:
 
 For this example we will make an UI focused on stablecoins, so we will add only vaults that deal with stablecoins and allow users to filter them by collateralization properties
 
-* Open `contexts/useYearn.tsx` and edit `endorsedVaults` to contain the vaults you want. In this example we will add only vaults that receive stablecoins.
+* Open `contexts/useYearn.tsx` and edit `endorsedVaults` to contain the vaults you want.
 
 To add new vaults head to [yearn.finance](https://yearn.finance/#/vaults), click a vault, and copy the address in the URL to add to our list. Here is how it looks like after adding all addresses for stablecoins:
 
@@ -39,14 +39,14 @@ To add new vaults head to [yearn.finance](https://yearn.finance/#/vaults), click
 // contexts/useYearn.tsx line 67
 
 const endorsedVaults: {[key: number]: string[]} = {
-        1: [
+        1: [ // chain id, "1" is Ethereum
                 toAddress('0xdA816459F1AB5631232FE5e97a05BBBb94970c95'), //yvDAI
                 toAddress('0xa354F35829Ae975e850e23e9615b11Da1B3dC4DE'), //yvUSDC
                 toAddress('0x7Da96a3891Add058AdA2E826306D812C638D87a7'), //yvUSDT
                 toAddress('0xFD0877d9095789cAF24c98F7CCe092fa8E120775'), //yvTUSD
                 toAddress('0x378cb52b00F9D0921cb46dFc099CFf73b42419dC'), //yvLUSD
         ],
-        250 : [
+        250 : [ // chain id, "250" is Fantom
                 toAddress('0xEF0210eB96c7EB36AF8ed1c20306462764935607'), // yvUSDC
                 toAddress('0x637eC617c86D24E421328e6CAEa1d92114892439'), // yvDAI
                 toAddress('0x148c05caf1Bb09B5670f00D511718f733C54bC4c'), // yvUSDT
@@ -217,4 +217,4 @@ PROJECT_GITHUB_URL: 'https://github.com/MarcoWorms/macarena-finance',
 PARTNER_ID_ADDRESS: '0x_WALLET_ADDRESS_TO_RECEIVE_FEES',
 ```
 
-2. Fill up [this template issue](https://github.com/yearn/macarena-finance/issues/new?assignees=&labels=partnership+request&template=partnership-request.yml) to request Yearn to enable the configured ID to receive partner program profit-sharing fees
+2. Fill up this [form](https://github.com/yearn/macarena-finance/issues/new?assignees=&labels=partnership+request&template=partnership-request.yml) to request Yearn to enable the configured ID to receive partner fees
