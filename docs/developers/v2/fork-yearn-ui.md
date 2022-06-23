@@ -29,7 +29,7 @@ To follow all steps you need to install the following dependencies:
 
 ## Change Vaults Filter
 
-For this example we will make an UI focused on stablecoins, so we will add only vaults that deal with stablecoins and allow users to filter them by collateralization properties
+For this example we will make an UI focused on stablecoins, so we will add only vaults that deal with stablecoins and allow users to filter them by how they are collateralized
 
 * Open `contexts/useYearn.tsx` and edit `endorsedVaults` to contain the vaults you want.
 
@@ -55,14 +55,13 @@ const endorsedVaults: {[key: number]: string[]} = {
 };
 ```
 
-We will also label the vaults depending on collateralization properties. To do that we will change vault labels still at `contexts/useYearn.tsx` creating the following categories for filtering stablecoins:
+In this example we will label the vaults depending on each how each stablecoin is collateralized. To do that we will change vault labels still at `contexts/useYearn.tsx` creating the following categories for filtering stablecoins:
 
 * **all** -> all vaults (default homepage selection)
 * **fiat_backed** -> collateralized by fiat assets
 * **crypto_backed** -> collateralized by crypto assets
 * **decentralized** -> decentralized emission and redeeming
 * **centralized** -> centralized emission and redeeming
-
 
 ```js title="contexts/useYearn.tsx"
 // contexts/useYearn.tsx line 17
