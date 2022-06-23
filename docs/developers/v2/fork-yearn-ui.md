@@ -2,15 +2,6 @@
 
 This is a step-by-step guide on how to fork and customize [Macarena Finance](https://github.com/yearn/macarena-finance) which is a yearn UI made to be forked. Deploying your own UI makes you eligible to receive partner [profit-sharing](https://docs.yearn.finance/partners/introduction#profit-share-model) fees.
 
-*Table of Conent*
-- [Install required software](#install-required-software)
-- [Clone Macarena Finance](#clone-macarena-finance)
-- [Change Vaults Filter](#change-vaults-filter)
-- [Change Logo](#change-logo)
-- [Change Colors](#change-colors)
-- [Change SEO settings](#change-seo-settings)
-- [Apply to receive partner fees](#apply-to-receive-partner-fees)
-
 ## Install required software
 
 To follow all steps you need to install the following dependencies:
@@ -48,19 +39,19 @@ To add new vaults head to [yearn.finance](https://yearn.finance/#/vaults), click
 // contexts/useYearn.tsx line 67
 
 const endorsedVaults: {[key: number]: string[]} = {
-	1: [
-		toAddress('0xdA816459F1AB5631232FE5e97a05BBBb94970c95'), //yvDAI
-		toAddress('0xa354F35829Ae975e850e23e9615b11Da1B3dC4DE'), //yvUSDC
-		toAddress('0x7Da96a3891Add058AdA2E826306D812C638D87a7'), //yvUSDT
-		toAddress('0xFD0877d9095789cAF24c98F7CCe092fa8E120775'), //yvTUSD
-		toAddress('0x378cb52b00F9D0921cb46dFc099CFf73b42419dC'), //yvLUSD
-	],
-	250 : [
-		toAddress('0xEF0210eB96c7EB36AF8ed1c20306462764935607'), // yvUSDC
-		toAddress('0x637eC617c86D24E421328e6CAEa1d92114892439'), // yvDAI
-		toAddress('0x148c05caf1Bb09B5670f00D511718f733C54bC4c'), // yvUSDT
-		toAddress('0x0A0b23D9786963DE69CB2447dC125c49929419d8'), // yvMIM
-	]
+        1: [
+                toAddress('0xdA816459F1AB5631232FE5e97a05BBBb94970c95'), //yvDAI
+                toAddress('0xa354F35829Ae975e850e23e9615b11Da1B3dC4DE'), //yvUSDC
+                toAddress('0x7Da96a3891Add058AdA2E826306D812C638D87a7'), //yvUSDT
+                toAddress('0xFD0877d9095789cAF24c98F7CCe092fa8E120775'), //yvTUSD
+                toAddress('0x378cb52b00F9D0921cb46dFc099CFf73b42419dC'), //yvLUSD
+        ],
+        250 : [
+                toAddress('0xEF0210eB96c7EB36AF8ed1c20306462764935607'), // yvUSDC
+                toAddress('0x637eC617c86D24E421328e6CAEa1d92114892439'), // yvDAI
+                toAddress('0x148c05caf1Bb09B5670f00D511718f733C54bC4c'), // yvUSDT
+                toAddress('0x0A0b23D9786963DE69CB2447dC125c49929419d8'), // yvMIM
+        ]
 };
 ```
 
@@ -208,9 +199,9 @@ PROJECT_GITHUB_URL: 'https://github.com/MarcoWorms/macarena-finance',
 - and at `public/manifest.json`:
 ```js title=public/manifest.json
 {
-	"name": "Cozy Stables Finance",
-	"description": "Cozy Stables Finance, a place for everyone to sit comfy on their stables",
-	"iconPath": "/favicons/favicon.svg"
+        "name": "Cozy Stables Finance",
+        "description": "Cozy Stables Finance, a place for everyone to sit comfy on their stables",
+        "iconPath": "/favicons/favicon.svg"
 }
 ```
 
