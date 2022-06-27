@@ -2,7 +2,9 @@
 
 This is a step-by-step guide on how to fork and customize [macarena.finance](https://macarena.finance/) which is a yearn UI made to be forked using the open-source [repository](https://github.com/yearn/macarena-finance). Deploying your own UI makes you eligible to receive partner [profit-sharing](https://docs.yearn.finance/partners/introduction#profit-share-model) fees.
 
-  ## Install required software
+In this example we will create a fork dedicated only to stablecoin vaults, it will be called "Cozy Stables Finance" and it will help users filter vaults by stablecoins type (fiat backed, crypto backed, centralized, decentralized)
+
+## Install required software
 
 To follow all steps you need to install the following dependencies:
 
@@ -19,21 +21,31 @@ To follow all steps you need to install the following dependencies:
 
 1. Fork Macarena Finance
     - https://github.com/yearn/macarena-finance/fork
-2. Open terminal and clone your fork
+2. Open a terminal and clone your fork
     - `git clone git@github.com:YOUR_GITHUB_NAME/macarena-finance.git`
     - `cd macarena-finance` to enter project folder after cloning
 3. Install dependencies 
     - `yarn install`
 4. Run developer environment
-    - `yarn dev`
+    - `yarn run dev`
+
+## Apply to receive partner fees
+
+1. At `next.config.js` change `PARTNER_ID_ADDRESS` to the address that should receive the partner fees
+
+```js title=next.config.js
+PARTNER_ID_ADDRESS: '0x_WALLET_ADDRESS_TO_RECEIVE_FEES',
+```
+
+2. Fill up this [form](https://github.com/yearn/macarena-finance/issues/new?assignees=&labels=partnership+request&template=partnership-request.yml) to request Yearn to enable the configured ID to receive partner fees
 
 ## Change Vaults Filter
 
-For this example we will make an UI focused on stablecoins, so we will add only vaults that deal with stablecoins and allow users to filter them by how they are collateralized
+For this example we will make a UI focused on stablecoins, so we will add only vaults that deal with stablecoins and allow users to filter them by how the coins are collateralized. To do this we will add more vaults that aren't in the default macarena code and create new filter categories.
 
 * Open `contexts/useYearn.tsx` and edit `endorsedVaults` to contain the vaults you want.
 
-To add new vaults head to [vaults.yearn.finance](https://vaults.yearn.finance/ethereum/stables) and copy the address on the etherscan link to add it to our list. Here is how it looks like after adding all addresses for stablecoins:
+To add new vaults head to [vaults.yearn.finance](https://vaults.yearn.finance/ethereum/stables) and copy the address in the Etherscan link to add it to our list. Here is what it looks like after adding all addresses for stablecoins:
 
 ```js title="contexts/useYearn.tsx"
 // contexts/useYearn.tsx line 67
@@ -55,7 +67,7 @@ const endorsedVaults: {[key: number]: string[]} = {
 };
 ```
 
-In this example we will label the vaults depending on each how each stablecoin is collateralized. To do that we will change vault labels still at `contexts/useYearn.tsx` creating the following categories for filtering stablecoins:
+In this example, we will label the vaults depending on how each stablecoin is collateralized. To do that we will change vault labels still at `contexts/useYearn.tsx` creating the following categories for filtering stablecoins:
 
 * **all** -> all vaults (default homepage selection)
 * **fiat_backed** -> collateralized by fiat assets
@@ -116,7 +128,7 @@ Changing the above line will make the page header look like this now:
 
 ## Change Colors
 
-The default color theme uses HSL, this allows for quicker customization of the entire theme with less variables, a quick primer on HSL:
+The default color theme uses HSL, this allows for quicker customization of the entire theme with fewer variables, a quick primer on HSL:
 
 **HSL** stands for Hue, Saturation, Lightness and is represented on tailwind like this:
 
@@ -130,29 +142,9 @@ which will be compiled to:
 --variable: hsl(200, 100%, 50%);
 ```
 
-**Hue** is measured in degrees:
-- 0° is red
-- 120° is green
-- 240° is blue.
+*Check this [cheatsheet](https://gist.github.com/MarcoWorms/2d254f830045e1e189df808e5346017c) for a quick refresher on manipulating colors in HSL format.*
 
-![hue examples](https://i.imgur.com/ddaVLBc.png)
-
-**Saturation** is how colorful or vivid a color looks:
-- 0% saturation is grey (no color)
-- 100% saturation is vibrant and intense.
-
-![saturation examples](https://i.imgur.com/PkTorUr.png)
-
-**Lightness** measures how close a color is to black or white:
-- 0% lightness is pure black
-- 50% lightness is a pure color at the given hue.
-- 100% lightness is pure white
-
-![lightness examples](https://i.imgur.com/A8coxLo.png)
-
-<br />
-
-To change the color scheme go to `style.css` at line 9 and change to something like:
+To change the color scheme, go to `style.css` at line 9 and change to something like:
 
 ```css title="style.css"
 /* style.css line 9 */
@@ -207,13 +199,3 @@ PROJECT_GITHUB_URL: 'https://github.com/MarcoWorms/macarena-finance',
 - Change social media links at `/pages/_app.tsx` [lines 217-L243](https://github.com/yearn/macarena-finance/blob/main/pages/_app.tsx#L217-L243)
 
 - Change favico image at `public/favicons/`
-
-## Apply to receive partner fees
-
-1. At `next.config.js` change `PARTNER_ID_ADDRESS` to the address that should receive the partner fees
-
-```js title=next.config.js
-PARTNER_ID_ADDRESS: '0x_WALLET_ADDRESS_TO_RECEIVE_FEES',
-```
-
-2. Fill up this [form](https://github.com/yearn/macarena-finance/issues/new?assignees=&labels=partnership+request&template=partnership-request.yml) to request Yearn to enable the configured ID to receive partner fees
