@@ -1,8 +1,8 @@
-# Fork Yearn UI
+# Fork Yearn UI: create a customized stablecoins-only vaults website
 
 This is a step-by-step guide on how to fork and customize [macarena.finance](https://macarena.finance/) which is a yearn UI made to be forked using the open-source [repository](https://github.com/yearn/macarena-finance). Deploying your own UI makes you eligible to receive partner [profit-sharing](https://docs.yearn.finance/partners/introduction#profit-share-model) fees.
 
-In this example we will create a fork dedicated only to stablecoin vaults, it will be called "Cozy Stables Finance" and it will help users filter vaults by stablecoins type (fiat backed, crypto backed, centralized, decentralized)
+In this example we will create a fork dedicated only to stablecoin vaults, it will be called "Cozy Stables Finance" and it will help users filter vaults by some stablecoins types (fiat backed, crypto backed, centralized emission, decentralized emission)
 
 ## Install required software
 
@@ -41,11 +41,11 @@ PARTNER_ID_ADDRESS: '0x_WALLET_ADDRESS_TO_RECEIVE_FEES',
 
 ## Change Vaults Filter
 
-For this example we will make a UI focused on stablecoins, so we will add only vaults that deal with stablecoins and allow users to filter them by how the coins are collateralized. To do this we will add more vaults that aren't in the default macarena code and create new filter categories.
+Add more vaults (that aren't in the default macarena code) and also create new filter categories:
 
 * Open `contexts/useYearn.tsx` and edit `endorsedVaults` to contain the vaults you want.
 
-To add new vaults head to [vaults.yearn.finance](https://vaults.yearn.finance/ethereum/stables) and copy the address in the Etherscan link to add it to our list. Here is what it looks like after adding all addresses for stablecoins:
+To add new vaults head to [vaults.yearn.finance](https://vaults.yearn.finance/ethereum/stables) and copy the address in the Etherscan link to add it to our list. Here is what it looks like after adding all addresses for stablecoin vaults:
 
 ```js title="contexts/useYearn.tsx"
 // contexts/useYearn.tsx line 67
@@ -67,13 +67,13 @@ const endorsedVaults: {[key: number]: string[]} = {
 };
 ```
 
-In this example, we will label the vaults depending on how each stablecoin is collateralized. To do that we will change vault labels still at `contexts/useYearn.tsx` creating the following categories for filtering stablecoins:
+Change vault labels at `contexts/useYearn.tsx` to create the following new categories:
 
-* **all** -> all vaults (default homepage selection)
-* **fiat_backed** -> collateralized by fiat assets
-* **crypto_backed** -> collateralized by crypto assets
-* **decentralized** -> decentralized emission and redeeming
-* **centralized** -> centralized emission and redeeming
+* **All** -> all stablecoin vaults (default homepage selection)
+* **Crypto Backed** -> stablecoins collateralized by crypto assets
+* **Fiat Backed** -> stablecoins collateralized by fiat assets
+* **Decentralized** -> stablecoins with decentralized emission and redeeming
+* **Centralized** -> stablecoins with centralized emission and redeeming
 
 ```js title="contexts/useYearn.tsx"
 // contexts/useYearn.tsx line 17
