@@ -95,10 +95,6 @@ module.exports = {
               label: '#strategies - Discord',
               href: 'https://discord.gg/b8ENPNqG5c',
             },
-            {
-              label: 'Get Involved - Survey',
-              href: 'https://forms.gle/Jkbu81sjAfL6NzH17',
-            },
           ],
         },
         {
