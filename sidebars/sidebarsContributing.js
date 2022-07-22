@@ -19,6 +19,7 @@ module.exports = {
         'governance/proposal-process',
         'governance/proposal-repository',
         'governance/yfi',
+        'governance/veyfi',
       ],
     },
     {
