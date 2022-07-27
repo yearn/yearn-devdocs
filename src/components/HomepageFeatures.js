@@ -9,7 +9,7 @@ export default function HomepageFeatures(props) {
           <div key={index}>
             <h1 className={styles.title}>{column.title}</h1>
             <div>
-              {column.rows.map((row, index) => (
+              {column.rows.map((row) => (
                 <Link
                   style={{ textDecoration: 'none', color: 'white' }}
                   to={row.to}
