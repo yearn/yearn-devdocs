@@ -29,7 +29,7 @@
 
 - [Vaults at Yearn](https://vaults.yearn.finance/)
 - [yVaults v2 Strategies](https://yearn.watch/)
-- [Risk Dashboard](https://yearn.fi/system)
+- [Risk Dashboard](https://yearn.watch/risk)
 
 ### Statistics
 
