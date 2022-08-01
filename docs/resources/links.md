@@ -34,7 +34,6 @@
 ### Statistics
 
 - [Yearn Dashboard](https://yearn.vision)
-- [Yearn TVL](https://yearn.science/)
 - [Initial Distribution Dashboard](https://explore.duneanalytics.com/dashboard/yearn)
 - [Voting Stats Dashboard](https://explore.duneanalytics.com/public/dashboards/Lqnxzm7fa8NVhKC4kc37DDFPZgqXryaIjyLRYAYp)
 - [Vaults Stats Dashboard](https://thegraph.com/explorer/subgraph?id=0xf50b705e4eaba269dfe954f10c65bd34e6351e0c-0&view=Overview)
