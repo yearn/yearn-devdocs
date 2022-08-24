@@ -154,11 +154,7 @@
 
 ## Resources
 
-#### Where can I learn more about Yearn?
-
-- [Informational Resources](https://docs.yearn.finance/resources/links/#learn)
-
-#### Lists of yVaults deployed
+#### Lists of yVaults Deployed
 
 - Use the [Registry](https://docs.yearn.finance/vaults/smart-contracts/registry)
 
@@ -173,3 +169,8 @@
 #### Media Resources
 
 - Can be found in the Discord under [\#media-resources](https://discord.gg/pp3JKTVwtF)
+
+#### Use Yearn Data 
+
+- [Yearn Vision and Watch Guide](https://medium.com/iearn/diving-into-yearn-metrics-8c3fb0520927)
+- [Yearn Subgraph Guide](https://medium.com/iearn/subgraphs-explained-yearning-for-data-4e90d18e33e)
