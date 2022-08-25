@@ -52,7 +52,7 @@
 
 #### What is yveCRV?
 
-- [How to understand yveCRV](https://docs.yearn.finance/getting-started/guides/how-to-understand-yvecrv)
+- [How to understand yveCRV](https://docs.yearn.finance/getting-started/guides/how-to-understand-yveCRV)
 
 ### Vault Strategies
 
