@@ -11,10 +11,10 @@ Navigating [yearn.watch](yearn.watch) strategies descriptions may contain wordin
 - [Smart contract↗](https://ethereum.org/en/developers/docs/smart-contracts/) that holds user deposits and allocates into different strategies (up to 20 in the current version 2).
 ### yvToken / Token
 - Token is any [ERC20-compatible↗](https://ethereum.org/en/developers/docs/standards/tokens/erc-20/) DeFi token.
-- Yearn Vault Token (yvToken) is an ERC20-compatible token that represents a [position](#Position).
+- Yearn Vault Token (yvToken) is an ERC20-compatible token that represents a [position](#position).
 - For example: yvDAI represents a position in the DAI Yearn Vault.
 ### Strategy
-- A [smart contract↗](https://ethereum.org/en/developers/docs/smart-contracts/) that knows how to allocate funds into a specific [yield](#Yield--Profit)-generating strategy.
+- A [smart contract↗](https://ethereum.org/en/developers/docs/smart-contracts/) that knows how to allocate funds into a specific [yield](#yield--profit)-generating strategy.
 ### Strategist
 - A person that creates and maintains one or more strategies.
 
@@ -23,7 +23,7 @@ Navigating [yearn.watch](yearn.watch) strategies descriptions may contain wordin
 ### Yield / Profit
 - Money (or tokens) made by an investment that surpasses the invested initial amount.
 ### Interest
-- Fee charged for [lending](#Lend--Borrow-Against) money.
+- Fee charged for [lending](#lend--borrow-against) money.
 ### Compound / Autocompound
 - Compound is when you deposit yields into the same investment that it came from.
 - Autocoumpound is when a tool does compounding automatically for you.
@@ -33,13 +33,13 @@ Navigating [yearn.watch](yearn.watch) strategies descriptions may contain wordin
 ### Hedge
 - A position in a contrarian investment to one you already have, so if things go wrong in one thesis you offset losses by gains in the other position. 
 ### Arbitrage
-- Buy and Sell tokens for instant [profit](#Yield--Profit). For example: Eth is 2000$ at one place and 1950$ at another, so you quickly buy from the cheaper source and sell on the more expensive source for 50$ profit.  
+- Buy and Sell tokens for instant [profit](#yield--profit). For example: Eth is 2000$ at one place and 1950$ at another, so you quickly buy from the cheaper source and sell on the more expensive source for 50$ profit.  
 ### Vest
-- Gradual [unlocking](#Unlock) of tokens or stocks. For example, if you receive 4000 tokens in a 4 year vesting it usually means you get 1000 tokens/year (unlocked on a daily or monthly basis depending on the contract)
+- Gradual [unlocking](#unlock) of tokens or stocks. For example, if you receive 4000 tokens in a 4 year vesting it usually means you get 1000 tokens/year (unlocked on a daily or monthly basis depending on the contract)
 ### Collateral
-- An amount of money (or tokens) that gets [locked](#Lock--Unlock) until a pre-determined agreement is met, commonly at risk of [liquidation](#Liquidation)
+- An amount of money (or tokens) that gets [locked](#lock--unlock) until a pre-determined agreement is met, commonly at risk of [liquidation](#liquidation)
 ### Liquidation
-- When you fail to repay a [loan](#Lend--Borrow-Against) or other agreement which involves [collateral](#Collateral) and the collateral is sent to other parties to repay and make them whole, so you can't access the collateral anymore.
+- When you fail to repay a [loan](#lend--borrow-against) or other agreement which involves [collateral](#collateral) and the collateral is sent to other parties to repay and make them whole, so you can't access the collateral anymore.
 - For example: you add 100 Eth as collateral and borrow 75% of it's value as dollars, but you fail to repay the loan in due time, so your collateral gets *liquidated* which costs you 25% of the initial amount deposited.
 
 ### Lend / Borrow Against
@@ -53,12 +53,12 @@ Navigating [yearn.watch](yearn.watch) strategies descriptions may contain wordin
 ### Yield Aggregator / Yield Optimizer
 - DeFi protocols like Yearn that provides a single interface that aggregates/optimizes users deposits in a single place and reallocates them in an optimal way.
 ### Supply / Deposit / Stake
-- Might be used interchangeably sometimes, but it often means that tokens are sent to a contract external to a [strategy](#Strategy).
-- Supply often means that the money is being [lent](#Lend--Borrow-Against)
+- Might be used interchangeably sometimes, but it often means that tokens are sent to a contract external to a [strategy](#strategy).
+- Supply often means that the money is being [lent](#lend--borrow-against)
 ### Harvest / Collect / Claim
-- When a [strategy](#Strategy) collects [profits](#Yield--Profit) or [rewards](#Rewards) in a blockchain transaction.
+- When a [strategy](#strategy) collects [profits](#yield--profit) or [rewards](#rewards) in a blockchain transaction.
 ### Sell / Buy
-- Market buy or sell tokens on a Decentralized Exchange like [Uniswap](#Uniswap) or Sushiswap.
+- Market buy or sell tokens on a Decentralized Exchange like [Uniswap](#uniswap) or Sushiswap.
 ### Rewards
 - Tokens earned by a protocol-incentivized action.
 - For example, if you deposit liquidity into Uniswap you get trading fees, but you also get UNI *rewards* for doing this at Uniswap and not at SushiSwap.
@@ -69,7 +69,7 @@ Navigating [yearn.watch](yearn.watch) strategies descriptions may contain wordin
 ### Liquidity Provider
 - Liquidity Provider is anyone that invest tokens in a protocol.
 ### Joint Liquidity Provider
-- Joint [Liquidity Provider](#Liquidity-Provider) is when your tokens are aggregated with another person's tokens in order to provide liquidity together.
+- Joint [Liquidity Provider](#liquidity-provider) is when your tokens are aggregated with another person's tokens in order to provide liquidity together.
 ### Liquidity Pool
 - A [Liquidity Pool↗](https://www.coindesk.com/learn/what-are-liquidity-pools/) is a decentralized market for 2 (or more) tokens.
 ### Stable Pool
@@ -83,13 +83,13 @@ Navigating [yearn.watch](yearn.watch) strategies descriptions may contain wordin
 - The three largest stablecoins in the market, pegged to the dollar value, so 1 token represents 1 dollar.
 ### Curve
 - Curve is the most well-known and largest stablecoin swap protocol.
-- CRV is the token it emits and is locked to receive curve protocol [profits](#Yield--Profit).
+- CRV is the token it emits and is locked to receive curve protocol [profits](#yield--profit).
 ### 3pool
-- 3pool refers to the [DAI / USDT / USDC](#USDC--DAI--USDT) curve liquidity pool.
+- 3pool refers to the [DAI / USDT / USDC](#usdc--dai--usdt) curve [liquidity pool](liquidity-pool).
 ### Tricrypto
-- Tricripto refers to the wBTC + wETH + USDT curve liquidity pool.
+- Tricripto refers to the wBTC + wETH + USDT curve [liquidity pool](liquidity-pool).
 ### Curve Boost / Curve Gauge
-- Locking up CRV on Curve allows you to boost your CRV [rewards](#Rewards) for being a liquidity provider.
+- Locking up CRV on Curve allows you to boost your CRV [rewards](#rewards) for being a liquidity provider.
 - Read more at curve [docs↗](https://resources.curve.fi/reward-gauges/boosting-your-crv-rewards).
 ### Convex
 - A protocol that made locked CRV (called veCRV) tradeable and managed to amass huge liquidity and control more than 50% circulating CRV. [docs↗](https://docs.convexfinance.com/convexfinance/general-information/why-convex).
@@ -97,11 +97,11 @@ Navigating [yearn.watch](yearn.watch) strategies descriptions may contain wordin
 - Loan, use, and payback tokens in a single blockchain transaction.
 - Often used to amass high liquidity for a quick operation where you don't have it.
 ### Mint
-- The creation of new tokens. For example, new DAI is *minted* when someone [borrows against](#Lend--Borrow-Against) Eth.
+- The creation of new tokens. For example, new DAI is *minted* when someone [borrows against](#lend--borrow-against) Eth.
 ### Flashmint
-- [Flashloan](#Flashloan--Flashlend) tokens to [mint](#mint) new ones in a single blockchain transaction.
+- [Flashloan](#flashloan--flashlend) tokens to [mint](#mint) new ones in a single blockchain transaction.
 ### Cooldown
 - An obligatory period of waiting before you can do an action.
 ### Fold / Leverage
-- [Borrow](#Lend--Borrow-Against) tokens, sell them for the ones you borrowed against, and borrow again.
-- For example. You deposit 100 Eth as collateral, borrow DAI, trade DAI for ETH and deposit again as [collateral](#Collateral) for increased [yield](#Yield--Profit) (but also increased [liquidation](#Liquidation) risk).
+- [Borrow](#lend--borrow-against) tokens, sell them for the ones you borrowed against, and borrow again.
+- For example. You deposit 100 Eth as collateral, borrow DAI, trade DAI for ETH and deposit again as [collateral](#collateral) for increased [yield](#yield--profit) (but also increased [liquidation](#liquidation) risk).
