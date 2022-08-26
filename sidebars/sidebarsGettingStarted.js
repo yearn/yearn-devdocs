@@ -28,6 +28,7 @@ module.exports = {
         'guides/how-to-understand-yvault-roi',
         'guides/how-to-understand-yveCRV',
         'guides/how-apy-works',
+        'guides/how-to-understand-strategies-descriptions',
       ],
     },
     'products/token-addresses',
