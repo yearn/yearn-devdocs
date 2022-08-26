@@ -85,9 +85,9 @@ Navigating [yearn.watch](yearn.watch) strategies descriptions may expose you to 
 - Curve is the most well-known and largest stablecoin swap protocol.
 - CRV is the token it emits and is locked to receive curve protocol [profits](#yield--profit).
 ### 3pool
-- 3pool refers to the [DAI / USDT / USDC](#usdc--dai--usdt) curve [liquidity pool](liquidity-pool).
+- 3pool refers to the [DAI / USDT / USDC](#usdc--dai--usdt) curve [liquidity pool](#liquidity-pool).
 ### Tricrypto
-- Tricripto refers to the wBTC + wETH + USDT curve [liquidity pool](liquidity-pool).
+- Tricripto refers to the wBTC + wETH + USDT curve [liquidity pool](#liquidity-pool).
 ### Curve Boost / Curve Gauge
 - Locking up CRV on Curve allows you to boost your CRV [rewards](#rewards) for being a liquidity provider.
 - Read more at curve [docs↗](https://resources.curve.fi/reward-gauges/boosting-your-crv-rewards).
