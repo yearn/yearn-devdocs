@@ -61,7 +61,7 @@ Navigating [yearn.watch](yearn.watch) strategies descriptions may contain wordin
 - Market buy or sell tokens on a Decentralized Exchange like [Uniswap](#uniswap) or Sushiswap.
 ### Rewards
 - Tokens earned by a protocol-incentivized action.
-- For example, if you deposit liquidity into Uniswap you get trading fees, but you also get UNI *rewards* for doing this at Uniswap and not at SushiSwap.
+- For example: if you deposit liquidity into Uniswap you get trading fees, but you also get UNI *rewards* for doing this at Uniswap and not at SushiSwap.
 ### Lock
 - Tokens that are locked can't be used until a specific condition is met.
 ### Unlock
@@ -75,10 +75,10 @@ Navigating [yearn.watch](yearn.watch) strategies descriptions may contain wordin
 ### Stable Pool
 - A Stable Pool is a Liquidity Pool made only of stablecoins.
 ### Impermanent Loss
-- When you lose money for being a liquidity provider to liquidity pools when compared to just holding the 2 (or more) tokens in your wallet, it happens when market price ratio for the tokens diverge from the value that they had when you provided liquidity, which is why it can also be called Divergence Loss.
+- When you lose money for being a liquidity provider to liquidity pools when compared to just holding the 2 (or more) tokens in your wallet, it happens when the market price ratio for the tokens diverges from the value that they had when you provided liquidity, which is why it can also be called Divergence Loss.
 ### Uniswap
 - The [Uniswap](https://app.uniswap.org/#/swap?chain=mainnet↗) protocol, a decentralized exchange that aggregates many Liquidity Pools, used to buy and sell tokens.
-- The protocol has a v2 and a v3, both functioning at the moment, when you read "Uniswap" it refers to the v2, the v3 is always explicitly mentioned like "Uniswap v3".
+- The Uniswap protocol has a v1, v2 and v3, when you read "Uniswap" it refers to v2, the v3 is always explicitly mentioned like "Uniswap v3".
 ### DAI / USDT / USDC
 - The three largest stablecoins in the market, pegged to the dollar value, so 1 token represents 1 dollar.
 ### Curve
@@ -97,7 +97,8 @@ Navigating [yearn.watch](yearn.watch) strategies descriptions may contain wordin
 - Loan, use, and payback tokens in a single blockchain transaction.
 - Often used to amass high liquidity for a quick operation where you don't have it.
 ### Mint
-- The creation of new tokens. For example, new DAI is *minted* when someone [borrows against](#lend--borrow-against) Eth.
+- The creation of new tokens.
+- For example: new DAI is *minted* when someone [borrows against](#lend--borrow-against) Eth.
 ### Flashmint
 - [Flashloan](#flashloan--flashlend) tokens to [mint](#mint) new ones in a single blockchain transaction.
 ### Cooldown
