@@ -31,7 +31,7 @@ It complements our DeFi [Glossary](../../resources/defi-glossary) and it's more 
 - Autocoumpound is when a tool does compounding automatically for you.
 - There is also a protocol called Compound Finance (COMP) but that is different.
 ### Position
-- Total amount of money (or tokens) allocated into a investmet.
+- Total amount of money (or tokens) allocated into a investment.
 ### Hedge
 - A position in a contrarian investment to one you already have, so if things go wrong in one thesis you offset losses by gains in the other position. 
 ### Arbitrage
