@@ -77,7 +77,7 @@ Navigating [yearn.watch](yearn.watch) strategies descriptions may expose you to 
 ### Impermanent Loss
 - When you lose money for being a liquidity provider to liquidity pools when compared to just holding the 2 (or more) tokens in your wallet, it happens when the market price ratio for the tokens diverges from the value that they had when you provided liquidity, which is why it can also be called Divergence Loss.
 ### Uniswap
-- The [Uniswap](https://app.uniswap.org/#/swap?chain=mainnet↗) protocol, a decentralized exchange that aggregates many Liquidity Pools, used to buy and sell tokens.
+- The [Uniswap↗](https://app.uniswap.org/#/swap?chain=mainnet↗) protocol, a decentralized exchange that aggregates many Liquidity Pools, used to buy and sell tokens.
 - The Uniswap protocol has a v1, v2 and v3, when you read "Uniswap" it refers to v2, the v3 is always explicitly mentioned like "Uniswap v3".
 ### DAI / USDT / USDC
 - The three largest stablecoins in the market, pegged to the dollar value, so 1 token represents 1 dollar.
