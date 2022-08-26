@@ -35,7 +35,8 @@ Navigating [yearn.watch](yearn.watch) strategies descriptions may expose you to 
 ### Arbitrage
 - Buy and Sell tokens for instant [profit](#yield--profit). For example: Eth is 2000$ at one place and 1950$ at another, so you quickly buy from the cheaper source and sell on the more expensive source for 50$ profit.  
 ### Vest
-- Gradual [unlocking](#unlock) of tokens or stocks. For example, if you receive 4000 tokens in a 4 year vesting it usually means you get 1000 tokens/year (unlocked on a daily or monthly basis depending on the contract)
+- Gradual [unlocking](#unlock) of tokens or stocks.
+- For example: if you receive 4000 tokens in a 4 year vesting it usually means you get 1000 tokens/year (unlocked on a daily or monthly basis depending on the contract).
 ### Collateral
 - An amount of money (or tokens) that gets [locked](#lock--unlock) until a pre-determined agreement is met, commonly at risk of [liquidation](#liquidation)
 ### Liquidation
@@ -43,10 +44,10 @@ Navigating [yearn.watch](yearn.watch) strategies descriptions may expose you to 
 - For example: you add 100 Eth as collateral and borrow 75% of it's value as dollars, but you fail to repay the loan in due time, so your collateral gets *liquidated* which costs you 25% of the initial amount deposited.
 
 ### Lend / Borrow Against
-- Lending is when you provide liquidity to someone else for some time and expect them to pay you back in the future
-- Borrowing is when you take money from a lender
-- Borrowing *against* is used to specify the collateral used by the borrower. Example: "I borrowed 5000$ against my car, so if I don't repay the loan the bank can take it"
-- In DeFi this operation is always collateralized since there are no resources to charge debt
+- Lending is when you provide liquidity to someone else for some time and expect them to pay you back in the future.
+- Borrowing is when you take money from a lender.
+- Borrowing *against* is used to specify the collateral used by the borrower. Example: "I borrowed 5000$ against my car, so if I don't repay the loan the bank can take it".
+- In DeFi this operation is always collateralized since there are no resources to charge debt.
 
 # DeFi
 
