@@ -10,7 +10,7 @@ Yearn contributors work with tools geared towards promoting open-source feedback
 
 ### Discord
 
-Various Yearn teams (documentation, development etc) host AMAs, ideation, discussions, and follows-ups on Yearn's Discord Channel, an open-source platform geared towards improving team communication. The [Yearn Discord](https://discord.gg/yearn/) lists all channels and users.
+Various Yearn teams (documentation, development, etc.) host AMAs, ideation, discussions, and follow-ups on Yearn's Discord Channel, an open-source platform geared towards improving team communication. The [Yearn Discord](https://discord.gg/yearn/) lists all channels and users.
 
 Start participating in public discussions by joining the recommended channels below.
 
@@ -128,7 +128,7 @@ If you are using Google Docs to write, consider using Visual Studio Code and ins
     - **Correct:** `(SOMETHING)`
     - **Incorrect:** `\(SOMETHING\)`
 - Add tasks using check-boxes as projects grow.
-  - A dash and brackets (`- []`) on a new line show up as a check-box in GitHub's UI.
+  - A dash and brackets (`- []`) on a new line show up as a checkbox in GitHub's UI.
   - **Example:**
     - \[ \]
 - Ensure there is a single hard return at the end of a .md file.
@@ -167,7 +167,7 @@ For a document's final draft, name it "Final draft, moving to GitHub." Post a li
 - [Code Blocks](https://gsuite.google.com/marketplace/app/code_blocks/100740430168?pann=cwsdp&hl=en): for formatting blocks of code in a doc or adding Markdown.
 - [Markdown Conversion](https://github.com/lmmx/gdocs2md-html): for Google Drive.
   - A long [stack-exchange thread](https://webapps.stackexchange.com/questions/44047/how-can-google-docs-and-markdown-play-nice) on this use case.
-- [DrawIO](https://draw.io/): Open source software using Google Drive for createing flowcharts and schemas.
+- [DrawIO](https://draw.io/): Open source software using Google Drive for creating flowcharts and schemas.
 - [Figma](https://www.figma.com/): Creates visual mockups, especially for team collaboration.
 
 #### Wallets and 3rd Party Services
