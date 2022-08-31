@@ -40,6 +40,7 @@
 - [Yearn Vaults V2 Subgraph](https://api.yearn.finance/v1/chains/1/vaults/all)
 - [Yearn API](https://api.yearn.finance/v1/chains/1/vaults/all)
 - [Yearn on TokenTerminal](https://www.tokenterminal.com/terminal/projects/yearn-finance)
+- [Yearn Articles and Guides](https://medium.com/iearn)
 
 ### General Websites
 

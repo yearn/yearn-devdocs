@@ -4,7 +4,7 @@
 
 ### They’re yield generating
 
-A Yearn Vault token is a yield-bearing version of a token, so when locked up as collateral it will still generate yield. A single vault token can run up to 20 yield generating strategies. All Vaults at [yearn.finance main website](https://yearn.finance/#/vaults) run "uponly" strategies.
+A Yearn Vault token is a yield-bearing version of a token, so when locked up as collateral it will still generate yield. A single vault token can run up to 20 yield-generating strategies. All Vaults at [yearn.finance main website](https://yearn.finance/#/vaults) run "uponly" strategies.
 
 ### The safest yields in DeFi
 
@@ -16,11 +16,11 @@ Vaults strategies are constantly audited to practice the highest security standa
 
 ### Split fees with Yearn
 
-Yearn's fee sharing [partner program](https://docs.yearn.finance/partners/introduction) allows you to earn up to 50% of the fees generated on your users' TVL every month. We are in this together.
+Yearn's fee-sharing partner [program](https://docs.yearn.finance/partners/introduction) allows you to earn up to 50% of the fees generated on your users' TVL every month. We are in this together.
 
 ### They’re ERC20 compatible
 
-yvToken are [ERC-20](https://ethereum.org/en/developers/docs/standards/tokens/erc-20/) compatible (like any other commonly expected token), there is no code security overhead for developers to implement any yvToken as a new option for collateral
+yvTokens are [ERC-20](https://ethereum.org/en/developers/docs/standards/tokens/erc-20/) compatible (like any other commonly expected token), there is no code security overhead for developers to implement any yvToken as a new option for collateral
 
 ### They’re almost 100% liquid
 
@@ -28,7 +28,7 @@ Strategies that lock tokens are kept to an absolute minimum amount of time. To l
 
 ### They’re transparent
 
-What you see on-chain is what you get. For realtime protocol data see:
+What you see on-chain is what you get. For real-time protocol data see:
 
 * [yearn vaults descriptions](https://vaults.yearn.finance/)
 * [yearn.watch](https://yearn.watch/)

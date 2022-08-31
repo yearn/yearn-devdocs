@@ -4,7 +4,7 @@ Information about Yearn's security processes, team members, disclosures, PGP key
 
 ## Vulnerability disclosure process
 
-Potential vulnerabilities are welcomed to be disclosed following the guidelines established in [/yearn-security/SECURITY.md](https://github.com/yearn/yearn-security/blob/master/SECURITY.md). Valid vulnerabilities may be eligible for bounty rewards.
+Potential vulnerabilities are welcome to be disclosed following the guidelines established in [/yearn-security/SECURITY.md](https://github.com/yearn/yearn-security/blob/master/SECURITY.md). Valid vulnerabilities may be eligible for bounty rewards.
 
 ## Third-party audits
 
@@ -25,7 +25,7 @@ A compromised or malicious Governance can cause catastrophic damage across the e
 
 It is a conscious design decision that this role is not behind a time lock. Priority is given to the ability to rapidly update and iterate on live vaults, strategies, and other components. Both so as not to advertise new investment strategies in advance, but also in order to rapidly improve our existing components without interruption. It also avoids downtimes whenever there is a bug or security vulnerability that needs to be fixed.
 
-Trusting `Governance` to be honest is a pre-requisite in order to be able to trust Yearn's vaults.
+Trusting `Governance` to be honest is a prerequisite to trusting Yearn's vaults.
 
 Modifications to these design decisions can be proposed in the forum through [Yearn's governance process](https://gov.yearn.finance/t/yip-61-governance-2-0/10460).
 
