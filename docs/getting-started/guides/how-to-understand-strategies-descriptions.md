@@ -1,6 +1,6 @@
 # How to Understand Strategies Descriptions
 
-Navigating [yearn.watch](https://yearn.watch/) strategies descriptions may expose you to terms that you have never seen, this page contains a complete glossary on what each term means when used to describe strategies for yearn vaults.
+Navigating strategies descriptions at [yearn.watch](https://yearn.watch/) or [vaults.yearn.finance](https://vaults.yearn.finance/) may expose you to terms that you have never seen, this page contains a complete glossary on what each term means when used to describe strategies for yearn vaults.
 
 It complements our DeFi [Glossary](../../resources/defi-glossary) and it's more focused only on the words used by strategy descriptions and shorter explanations.
 
