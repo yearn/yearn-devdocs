@@ -16,7 +16,7 @@ Our products are currently on Ethereum, Fantom, and Arbitrum with more to come.
 
 Click on this button to select the network you would like to interact with:
 
-![](https://i.imgur.com/RUpd6Tl.png)
+![](https://i.imgur.com/UaVVGJr.png)
 
 ## If you **already have the required token** for the vault that you would like to deposit in:
 
