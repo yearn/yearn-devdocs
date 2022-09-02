@@ -40,12 +40,12 @@ It complements our DeFi [Glossary↗](https://docs.yearn.finance/resources/defi-
 - For example: ETH is $2000 at one place and $1950 at another, so you quickly buy from the cheaper source and sell on the more expensive source for $50 profit.  
 ### Vest
 - Gradual [unlocking](#unlock) of tokens or stocks.
-- For example: if you receive 4000 tokens in a 4 year linear vesting it means you get 1000 tokens/year (unlocked on a daily or monthly basis depending on the contract).
+- For example: if you receive 4000 tokens in a 4-year linear vesting it means you get 1000 tokens/year (unlocked on a daily or monthly basis depending on the contract).
 ### Collateral
 - An amount of money (or tokens) that gets [locked](#lock--unlock) until a pre-determined agreement is met, commonly at risk of [liquidation](#liquidation)
 ### Liquidation
-- When you fail to repay a [loan](#lend--borrow-against) or other agreement which involves [collateral](#collateral) and the collateral is sent to other parties to repay and make them whole, so you can't access the collateral anymore.
-- For example: you add 100 ETH as collateral and borrow 75% of it's value as dollars, but you fail to repay the loan in due time, so your collateral gets *liquidated* which costs you 25% of the initial amount deposited.
+- When you fail to repay a [loan](#lend--borrow-against) or other agreement which involves [collateral](#collateral) and the collateral is sent to other parties to repay and make them whole, so you can't access the collateral because it's not yours anymore.
+- For example: you add ETH as collateral and borrow dollars against it, but you fail to repay the loan in due time, so your collateral gets *liquidated* and you lose the ETH deposited.
 
 ### Lend / Borrow Against
 - Lending is when you provide liquidity to someone else for some time and expect them to pay you back in the future.
@@ -56,7 +56,7 @@ It complements our DeFi [Glossary↗](https://docs.yearn.finance/resources/defi-
 # DeFi
 
 ### Yield Aggregator / Yield Optimizer
-- DeFi protocols like Yearn that provides a single interface that aggregates/optimizes users deposits in a single place and reallocates them in an optimal way.
+- DeFi protocols like Yearn that provides a single interface to allocate capital in different yield sources, leveraging [autocompounding](#compound--autocompound) to improve the [yield](#yield--profit).
 ### Supply / Deposit / Stake
 - Might be used interchangeably sometimes, but it often means that tokens are sent to a contract external to the current wallet.
 - Supply often means that the money is being [lent](#lend--borrow-against)
@@ -74,7 +74,7 @@ It complements our DeFi [Glossary↗](https://docs.yearn.finance/resources/defi-
 ### Liquidity Provider
 - Liquidity Provider is anyone that [deposit](#supply--deposit--stake) tokens in a protocol.
 ### Joint Liquidity Provider
-- Joint [Liquidity Provider](#liquidity-provider) is when your tokens are aggregated with another person's tokens in order to provide liquidity together.
+- Joint [Liquidity Provider](#liquidity-provider) is when your tokens are aggregated with another person's tokens to provide liquidity together.
 ### Liquidity Pool
 - A [Liquidity Pool↗](https://www.coindesk.com/learn/what-are-liquidity-pools/) is a decentralized market for 2 (or more) tokens.
 ### Stable Pool
@@ -90,7 +90,7 @@ It complements our DeFi [Glossary↗](https://docs.yearn.finance/resources/defi-
 - Curve is the most well-known and largest stablecoin swap protocol.
 - CRV is the token Curve mints
 - CRV can be locked for veCRV (untradeable) to receive curve protocol [profits](#yield--profit).
-- veCRV also has governance power over the Curve protocol and allows to boost rewards for adding liquidity to their [pools](#liquidity-pool).
+- veCRV also has governance power over the Curve protocol and allows boosting rewards for adding liquidity to their [pools](#liquidity-pool).
 ### 3pool
 - 3pool refers to the [DAI / USDT / USDC](#usdc--dai--usdt) curve [liquidity pool](#liquidity-pool).
 ### Tricrypto
