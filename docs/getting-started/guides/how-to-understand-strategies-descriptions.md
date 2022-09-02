@@ -1,8 +1,8 @@
 # How to Understand Strategies Descriptions
 
-Navigating strategies descriptions at [yearn.watch](https://yearn.watch/) or [vaults.yearn.finance](https://vaults.yearn.finance/) may expose you to terms that you have never seen, this page contains a complete glossary on what each term means when used to describe strategies for yearn vaults.
+Navigating strategies descriptions at [yearn.watch↗](https://yearn.watch/) or [vaults.yearn.finance↗](https://vaults.yearn.finance/) may expose you to terms that you have never seen, this page contains a complete glossary on what each term means when used to describe strategies for yearn vaults.
 
-It complements our DeFi [Glossary](../../resources/defi-glossary) and it's more focused only on the words used by strategy descriptions and shorter explanations.
+It complements our DeFi [Glossary↗](https://docs.yearn.finance/resources/defi-glossary) and it's more focused only on the words used by strategy descriptions and shorter explanations.
 
 - Regular links navigate between the glossary.
 - Links marked with ↗ go to external websites.
@@ -50,20 +50,20 @@ It complements our DeFi [Glossary](../../resources/defi-glossary) and it's more 
 ### Lend / Borrow Against
 - Lending is when you provide liquidity to someone else for some time and expect them to pay you back in the future.
 - Borrowing is when you take money from a lender.
-- Borrowing *against* is used to specify the collateral used by the borrower. Example: "I borrowed 5000$ against my car, so if I don't repay the loan the bank can take it".
-- In DeFi this operation is always collateralized since there are no resources to charge debt.
+- Borrowing *against* is used to specify the [collateral](#collateral) used by the borrower. Example: "I borrowed 5000$ against my car, so if I don't repay the loan the bank can take it".
+- In DeFi this operation is often over-collateralized since there are no resources to charge debt.
 
 # DeFi
 
 ### Yield Aggregator / Yield Optimizer
 - DeFi protocols like Yearn that provides a single interface that aggregates/optimizes users deposits in a single place and reallocates them in an optimal way.
 ### Supply / Deposit / Stake
-- Might be used interchangeably sometimes, but it often means that tokens are sent to a contract external to a [strategy](#strategy).
+- Might be used interchangeably sometimes, but it often means that tokens are sent to a contract external to the current wallet.
 - Supply often means that the money is being [lent](#lend--borrow-against)
-### Harvest / Collect / Claim
+### Harvest / Claim
 - When a [strategy](#strategy) collects [profits](#yield--profit) or [rewards](#rewards) in a blockchain transaction.
 ### Sell / Buy
-- Market buy or sell tokens on a Decentralized Exchange like [Uniswap](#uniswap) or Sushiswap.
+- Exchange a token for another token, in DeFi this happens on Decentralized Exchanges
 ### Rewards
 - Tokens earned by a protocol-incentivized action.
 - For example: if you deposit liquidity into Uniswap you get trading fees, but you also get UNI *rewards* for doing this at Uniswap and not at SushiSwap.
@@ -72,7 +72,7 @@ It complements our DeFi [Glossary](../../resources/defi-glossary) and it's more 
 ### Unlock
 - Unlocking refers to meeting a condition and receiving locked tokens.
 ### Liquidity Provider
-- Liquidity Provider is anyone that invest tokens in a protocol.
+- Liquidity Provider is anyone that [deposit](#supply--deposit--stake) tokens in a protocol.
 ### Joint Liquidity Provider
 - Joint [Liquidity Provider](#liquidity-provider) is when your tokens are aggregated with another person's tokens in order to provide liquidity together.
 ### Liquidity Pool
