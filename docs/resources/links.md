@@ -5,11 +5,12 @@
 ### Community
 
 - [Discord](https://discord.gg/yearn)
-- [Telegram](https://t.me/yearnfinance)
 - [Reddit](https://www.reddit.com/r/yearn_finance/)
 - [Github](https://github.com/yearn)
-- [TG Price Chat](https://t.me/yearncommunity)
-- [TG ANN](https://t.me/yearnupdates)
+- [Telegram](https://t.me/yearnfinance)
+- [Telegram Price Chat](https://t.me/yearncommunity)
+- [Telegram ANN](https://t.me/yearnupdates)
+- [Press Kit](https://presskit.yearn.finance/)
 
 ### Updates
 
