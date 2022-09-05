@@ -9,7 +9,7 @@
 - [Github](https://github.com/yearn)
 - [Telegram](https://t.me/yearnfinance)
 - [Telegram Price Chat](https://t.me/yearncommunity)
-- [Telegram ANN](https://t.me/yearnupdates)
+- [Telegram Announcements](https://t.me/yearnupdates)
 - [Press Kit](https://presskit.yearn.finance/)
 
 ### Updates
