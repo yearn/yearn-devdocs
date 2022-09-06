@@ -11,6 +11,7 @@
 - [Telegram Price Chat](https://t.me/yearncommunity)
 - [Telegram Announcements](https://t.me/yearnupdates)
 - [Press Kit](https://presskit.yearn.finance/)
+- [Yearn Projects](https://world.yearn.finance/)
 
 ### Updates
 
