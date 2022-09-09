@@ -1,8 +1,8 @@
 # How to Understand Strategies Descriptions
 
-Navigating strategies descriptions at [yearn.watch↗](https://yearn.watch/) or [vaults.yearn.finance↗](https://vaults.yearn.finance/) may expose you to terms that you have never seen, this page contains a complete glossary on what each term means when used to describe strategies for yearn vaults.
+While reading the strategy descriptions at [yearn.watch↗](https://yearn.watch/) or [vaults.yearn.finance↗](https://vaults.yearn.finance/) you may come across unfamiliar terms. But do not fear, like a DeFi Duolingo, Yearn is here to help you navigate these strange semantic waters. So buckle in and let's learn the lingo of strategies.
 
-It complements our DeFi [Glossary↗](https://docs.yearn.finance/resources/defi-glossary) and it's more focused only on the words used by strategy descriptions and shorter explanations.
+This guide focuses primarily on strategy descriptions, but those thirsty for more DeFi jargon can see our broader [glossary↗](https://docs.yearn.finance/resources/defi-glossary).
 
 - Regular links navigate between the glossary.
 - Links marked with ↗ go to external websites.
@@ -14,7 +14,7 @@ It complements our DeFi [Glossary↗](https://docs.yearn.finance/resources/defi-
 ### Token
 - Token is any [ERC20-compatible↗](https://ethereum.org/en/developers/docs/standards/tokens/erc-20/) DeFi token.
 ### yvToken
-- Yearn Vault Token (yvToken) is an ERC20-compatible token that represents a [position](#position).
+- Yearn Vault Token (yvToken) is an ERC20-compatible token that represents a [position](#position) in a Yearn Vault.
 - For example: yvDAI represents a position in the DAI Yearn Vault.
 ### Strategy
 - A [smart contract↗](https://ethereum.org/en/developers/docs/smart-contracts/) that knows how to allocate funds into a specific [yield](#yield--profit)-generating automated operation.
