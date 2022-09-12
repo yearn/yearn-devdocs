@@ -24,6 +24,7 @@ When you decide to start, this reading material is going to come handy:
 - [Vaults V2 Repository](https://github.com/yearn/yearn-vaults)
 - [How to set up coding environment for Yearn Strategies](https://sambacha.github.io/yearn-vaults/index.html)
 - [Mint your own DAI](https://medium.com/ethereum-grid/forking-ethereum-mainnet-mint-your-own-dai-d8b62a82b3f7)
+- [Livecoding: How to write strategies with Foundry and Forge](https://www.youtube.com/watch?v=z48R7dhAGP4)
 
 Once you have the strategy ready. This will guide you further down the road.
 

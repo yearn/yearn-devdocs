@@ -30,6 +30,10 @@ module.exports = {
         content:
           'Yearn Finance is a suite of products in Decentralized Finance (DeFi) that provides lending aggregation, yield generation, and insurance on the Ethereum blockchain.',
       },
+      {
+        name: 'git-url',
+        content: 'https://github.com/yearn/yearn-devdocs'
+      }
     ],
     navbar: {
       hideOnScroll: true,
@@ -94,10 +98,6 @@ module.exports = {
             {
               label: '#strategies - Discord',
               href: 'https://discord.gg/b8ENPNqG5c',
-            },
-            {
-              label: 'Get Involved - Survey',
-              href: 'https://forms.gle/Jkbu81sjAfL6NzH17',
             },
           ],
         },

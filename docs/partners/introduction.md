@@ -4,13 +4,13 @@ title: Partnership Program
 
 Yearn's partnership program allows developers to easily integrate yield into their own services.
 
-In an effort to make yVaults accessible from virtually anywhere, any protocol that integrates yVaults can earn up to a 50% profit share from their contributed TVL. The Partnership program is being tested and audited as we currently work with a range of partners.
+To make yVaults accessible from virtually anywhere, any protocol that integrates yVaults can earn up to a 50% profit share from their contributed TVL. The Partnership program is being tested and audited as we currently work with a range of partners.
 
 If you are interested in partnering with us, we’d love to hear from you! Please reach out to us through this [Yearn Partners form](https://yearnfinance.typeform.com/to/uP7xOJUN).
 
 # Eligibility
 
-Yearn's Partnership Program is focused on protocols which want to build on top of Yearn's products. We firmly believe that the value a protocol brings to the community, and the ecosystem, is more than just funds parked in a vault. To this end, we work closely with our partners to integrate and form a mutually beneficial relationship to add value to both protocols.
+Yearn's Partnership Program is focused on protocols that want to build on top of Yearn's products. We firmly believe that the value a protocol brings to the community, and the ecosystem, is more than just funds parked in a vault. To this end, we work closely with our partners to integrate and form a mutually beneficial relationship to add value to both protocols.
 
 # Profit Share Model
 
@@ -41,7 +41,7 @@ Tiers are what determine the percentage of profit-sharing with the partner. They
 
 # Example Partner Profit Sharing Case
 
-Here is an example case on how yearn would share profits with a partner, the values won't match production ones but it helps to understand the entire flow:
+Here is an example case of how yearn would share profits with a partner, the values won't match production ones but it helps to understand the entire flow:
 
 Let's say a partner protocol contributes to Yearn during a year with:
 

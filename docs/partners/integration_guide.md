@@ -2,7 +2,7 @@
 title: Integration Methods
 ---
 
-We propose two methods of integration, each used for different purposes. If you think of an integration method that is more ideal, we are open to accepting it.
+We propose two methods of integration, each used for different purposes. If you think of a more ideal integration method, we are open to accepting it.
 
 ## Wrapper
 
@@ -32,11 +32,11 @@ Partners deploy a routing contract for each vault utilized.
 
 The v2 vault's deposit() function has a recipient parameter that defaults to msg.sender, but can also take any other address, effectively allowing a contract or EOA to delegate a deposit on behalf of another intended recipient. You can see the function #24 [here](https://etherscan.io/address/0x19D3364A399d251E894aC732651be8B0E4e85001#writeContract).
 
-If funds are deposit using this delegated method from an address already known to Yearn, the TVL can be attributed to the address and profit will be shared based on that data. 
+If funds are deposited using this delegated method from an address already known to Yearn, the TVL can be attributed to the address and profit will be shared based on that data. 
 
-A single routing contract can handle multiple vaults, but can also be deployed on a per vault basis. The design is very flexible as long as a defined set of addresses are provided to keep track of the partner's contributed TVL.
+A single routing contract can handle multiple vaults, but can also be deployed on a per vault basis. The design is very flexible as long as a defined set of addresses is provided to keep track of the partner's contributed TVL.
 
-Users will need to keep the issued vault token in the recipient address in order for TVL to be tracked. Tokens tend to stay in the end user's wallet, but this is an obvious tradeoff vs using the partner Wrapper. 
+Users will need to keep the issued vault token in the recipient address for TVL to be tracked. Tokens tend to stay in the end user's wallet, but this is an obvious tradeoff vs using the partner Wrapper. 
 
 Implications:
 

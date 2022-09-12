@@ -2,15 +2,15 @@
 
 ---
 
-Since [YIP-61: Governance 2.0](https://gov.yearn.finance/t/yip-61-governance-2-0/10460) passed on April 25th, 2021, yearn began the transition into a **multi-DAO** structure, managed by **constrained delegation**. This approach allows protocol development to not be stiffened by bureaucracy while maintaining a sufficient level of decentralization.
+Since [YIP-61: Governance 2.0](https://gov.yearn.finance/t/yip-61-governance-2-0/10460) passed on April 25th, 2021, yearn began the transition into a **multi-DAO** structure, managed by **constrained delegation**. This approach allows protocol development not to be stiffened by bureaucracy while maintaining a sufficient level of decentralization.
 
 Multi-DAO refers to the fluid number of decentralized autonomous organizations (DAOs) that contribute to the protocol in some unique way. These independent groups consist of YFI holders, yTeams and the Multisig.
 
-- **YFI holders** vote for changes to the protocol or the protocols governance structure
+- **YFI holders** vote for changes to the protocol or the governance structure
 - **yTeams** focus on specific aspects of the protocol or relevant operations
 - **Multisig** members execute or veto any on-chain decisions
 
-Token holders have ultimate say over what yTeams exist, who is part of the Multisig, and the limitations of each group's operational control. The term 'constrained delgation' originates from token holders delegating specific powers to various groups that build and manage yearn.
+Token holders have an ultimate say over what yTeams exist, who is part of the Multisig, and the limitations of each group's operational control. The term 'constrained delgation' originates from token holders delegating specific powers to various groups building and managing yearn.
 
 A simplified flow of governance would look like this:
 
@@ -25,7 +25,7 @@ A simplified flow of governance would look like this:
 
 ### Token Holders
 
-it is the [YFI token](https://docs.yearn.finance/contributing/governance/yfi) holder's duty to create and vote for proposals that improve the protocol.
+[YFI](https://docs.yearn.finance/contributing/governance/yfi) token-holders duty is to create and vote for proposals that improve the protocol.
 
 | Proposals                        | Descriptions                                                                                          |
 | -------------------------------- | ----------------------------------------------------------------------------------------------------- |
@@ -48,7 +48,7 @@ Specifically, these proposals allow token holders to make the following decision
 
 ### yTeams
 
-Each yTeam has an objective and discrete powers which are defined by token holders. They can be broken further into membership pools, which are separate groups of contributors working towards similar goals as the overarching team. Additionally, one membership pool can bet a part of multiple yTeams.
+Each yTeam has an objective and discrete powers which are defined by token holders. yTeams can be broken into membership pools, separating groups of contributors working towards similar goals as the overarching team. Additionally, one membership pool can bet a part of multiple yTeams.
 
 | yTeam   | Objective               | Membership Pool                                                       |
 | ------- | ----------------------- | --------------------------------------------------------------------- |
@@ -78,7 +78,7 @@ Each yTeam is assigned specific decision-making powers, defined by YIP-61:
 
 ### Multisig
 
-Decisions issued by yTeams will be executed on-chain by the Multisig until a more decentralized system is approved for implementation. In the mean time, the [Multisig](https://docs.yearn.finance/resources/faq#who-is-on-the-multisig) controls the following:
+Decisions issued by yTeams will be executed on-chain by the Multisig until a more decentralized system is approved for implementation. In the meantime, the [Multisig](https://docs.yearn.finance/resources/faq#who-is-on-the-multisig) controls the following:
 
 | Power               | Description                                                                                                                                           |
 | ------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -88,9 +88,13 @@ Decisions issued by yTeams will be executed on-chain by the Multisig until a mor
 
 ## Future Implementations
 
-Yearn is continuously paving the way towards an ideal balance of DAO decentralization and productivity. The current phase of efforts impliment changes mostly on the social layer, and in the future we will be moving towards software implementations such as:
+Yearn continuously paves the way towards an ideal balance of DAO decentralization and productivity. The current phase of efforts implements changes mainly on the social layer. In the future, we will be moving towards software implementations such as:
 
-- Multisig consensus mechanisms that allows each yTeam to have execution power
+- Multisig consensus mechanisms that allow each yTeam to have execution power
 - Move from proxy voting to on-chain voting
 - tokenize decision-making powers as NFTs
 - Utilize [Coordinape](https://coordinape.com/) for things like budget allocation and compensation
+
+## Read More
+
+- [Article](https://medium.com/iearn/yearn-governance-explained-proposals-yfi-token-and-execution-113ec86c3a3f) about yearn governance process and YFI token role in it
