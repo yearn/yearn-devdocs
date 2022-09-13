@@ -24,7 +24,7 @@ veYFI incorporates [YIP-56: Buyback and Build](https://gov.yearn.finance/t/yip-5
 - Vault gauges allow vault depositors to stake their vault tokens and earn YFI rewards according to their veYFI weight.
 - Increased locking duration is rewarded with increased weights, so locking for 4 years gives 100% weight, locking for 2 years 50% weight, etc.
 - Weights decay as the remaining lock duration decreases, and can be extended up to the max lock duration.
-- YFI is allocated to gauges based on bi-weekly governance votes. Each gauge can get a different amount of bought-back YFI to emit.
+- YFI is allocated to gauges based on bi-monthly governance votes. Each gauge can get a different amount of bought-back YFI to emit.
 - Based on their veYFI lock, users can boost their gauge rewards by up to 10x proportional to the number of vault tokens deposited, when they claim YFI rewards from gauges. The greater the amount of veYFI, the more vault deposits can be boosted for the user.
 - The boost mechanism will calculate your earning weight by taking the smaller amount of two values: The first value is the amount of liquidity you are providing. This amount is your maximum earning weight.
   - Gauge boost formula: `min(AmountDeposited, (AmountDeposited /10) + (TotalDepositedInTheGauge * VeYFIBalance / VeYFITotalSupply * 0.9))`
