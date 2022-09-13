@@ -10,7 +10,7 @@ veYFI incorporates [YIP-56: Buyback and Build](https://gov.yearn.finance/t/yip-5
 - Locking is similar to the ve-style program of Curve.
 - YFI can be locked into veYFI, which is non-transferable.
 - Lock duration can be decided on deposit: from 1 week to 4 years.
-- A user must have a veYFI lock to continue to earn rewards. No lock leads to no rewards. Maximum lock, continuously renewed, maximizes rewards.
+- A user must have a veYFI lock to continue to earn rewards. No lock leads to no boosting rewards. Maximum lock, continuously renewed, maximizes rewards.
 - It’s possible to exit the lock early, in exchange for paying a penalty that gets allocated to the other veYFI holders.
 - The penalty is up to 75% locked amount and decays overtime:
   - The total penalty is the minimum percentage between `75% locked amount` and `(time remaining / 4 years)`
@@ -28,12 +28,12 @@ veYFI incorporates [YIP-56: Buyback and Build](https://gov.yearn.finance/t/yip-5
 - Based on their veYFI lock, users can boost their gauge rewards by up to 10x proportional to the number of vault tokens deposited, when they claim YFI rewards from gauges. The greater the amount of veYFI, the more vault deposits can be boosted for the user.
 - The boost mechanism will calculate your earning weight by taking the smaller amount of two values: The first value is the amount of liquidity you are providing. This amount is your maximum earning weight.
   - Gauge boost formula: `min(AmountDeposited, (AmountDeposited /10) + (TotalDepositedInTheGauge * VeYFIBalance / VeYFITotalSupply * 0.9))`
-- A claim with a boost under 100% will send the leftover boost to the veYFI holders.
+- A claim with boost under 100% will send the leftover tokens to veYFI holders.
 
 ### veYFI Reward Pool
 
 - Users who lock veYFI can claim YFI from the veYFI exited early and the non-distributed gauge rewards due to the lack of boost.
-- You will be able to start claiming from the veFYI reward pool two or three weeks from the Thursday after which you lock before you can claim.
+- You will be able to start claiming from the veFYI reward pool two weeks from the Thursday after which you lock before you can claim.
 
 ### Diagram
 
