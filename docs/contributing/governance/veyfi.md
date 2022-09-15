@@ -43,7 +43,7 @@ veYFI incorporates [YIP-56: Buyback and Build](https://gov.yearn.finance/t/yip-5
 
 - **Incorporates YFI buybacks.** The mandate of [YIP-56: Buyback and Build](https://gov.yearn.finance/t/yip-56-buyback-and-build/8929) is unchanged, the new design builds on top of and integrates the bought-back YFI.
 - **It's a sustainable ecosystem.** The new design does not create a drain on Treasury assets. Instead, there are reinforcing flywheel effects where tokenomics rewards drive more TVL, that in turn drives more fees, which drives more YFI buybacks, which is then used to reinforce the tokenomics
-- **Incentivizes a long-term view on Yearn.** Token holders are motivated to support the protocol over the long term rather than to speculate in the short term.
+- **Incentivizes a long-term view on Yearn.** Token holders are motivated to support the protocol over the long term rather than to speculate on the short term.
 - **Disproportionately rewards those most loyal.** Weaker conviction holders effectively become diluted over time by the stronger conviction holders.
 - **Limits rent-seeking benefits.** The design avoids holders being rewarded for nothing, and avoids letting the largest holders accumulate more at the expense of the smaller holders.
 - **Makes vaults more competitive.** Additional YFI earned from vault gauges are effectively added yield for depositors in proportion to how dedicated they are in their support.
