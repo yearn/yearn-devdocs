@@ -19,7 +19,8 @@ We offer profit shares based on yield generated across all vaults. For now, we a
 Profit-sharing is paid out in the native token of the vaults that partners are utilizing.
 
 Yearn partner's profit works like this:
-* Yearn charges a **2% yearly management fee on the vault TVL and 20% performance fee**
+* Yearn fees for a vault can be checked at [yearn.watch](https://yearn.watch).
+    * For example, checking DAI vault fees at yearn watch: ![](https://i.imgur.com/Ok6hfVJ.png)
 * **45% of the fees generated** by both fees are set aside for operational expenses (salaries, infrastructure gas, etc)
 * **55% of the fees generated** are split between the partner and Yearn based on the Profit-Sharing Tier Table below
 
