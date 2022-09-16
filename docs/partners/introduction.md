@@ -46,24 +46,22 @@ Tiers are what determine the percentage of profit-sharing with the partner. They
 
 Here is an example case of how yearn would share profits with a partner, the values won't match production ones but it helps to understand the entire flow:
 
-Let's say a partner protocol contributes to Yearn during a year with:
+Let's say a partner protocol contributes to Yearn DAI vault during a year with:
 
 **$10,000,000 Total Locked Value**
 
 which generated a total yield of
 
-**$1,000,000 Anual Yield**
+**$1,000,000 Annual Yield**
 
 Here is how we calculate management and performance fees:
 
-- In this example the vault has a 2% management fee and a 20% performance fee:
-    - 2% of the vaults yearly TVL ($200,000) goes to management fees
-    - 20% of yield ($200,000) goes to performance fees
+- 20% of yield **($200,000)** goes to performance fees
 
-So out of the $400,000:
+So out of this $200,000:
 
-* **45% ($180,000)** are set apart as operational costs
-* **55% ($220,000)** is shared with the partner according to the tier table
+* **45% ($90,000)** are set apart as operational costs
+* **55% ($110,000)** is shared with the partner according to the tier table
 
 Since the partner contributed with **$10.000.000 TVL** it fits in **tier 3** in the [Profit-Sharing Tier Table](#Profit-Sharing-Tier-Table)
 
@@ -71,4 +69,4 @@ Since the partner contributed with **$10.000.000 TVL** it fits in **tier 3** in 
 | -------- | -------- | -------- |
 | 3     | $10-50m     | 20%     |
 
-The partner would receive in this case **20% of $220,000** which is **$44,000**
+The partner would receive in this case **20% of $110,000** which is **$22,000**
