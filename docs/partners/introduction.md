@@ -56,8 +56,9 @@ which generated a total yield of
 
 Here is how we calculate management and performance fees:
 
-- 2% of the vaults yearly TVL ($200,000) goes to management fees
-- 20% of yield ($200,000) goes to performance fees
+- In this example the vault has a 2% management fee and a 20% performance fee:
+    - 2% of the vaults yearly TVL ($200,000) goes to management fees
+    - 20% of yield ($200,000) goes to performance fees
 
 So out of the $400,000:
 
