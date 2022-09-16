@@ -17,9 +17,8 @@
 .card {
   font-family: 'Roboto Slab', 'Roboto', serif;
   display: flex;
-  min-width: 330px;
-  max-width: 500px;
-  height: 210px;
+  min-width: 500px;
+  min-height: 210px;
   padding: 1.3rem;
   margin: 1rem;
   flex-direction: column;
@@ -61,8 +60,13 @@
 }
 
 .row {
-  display: flex;
-  justify-content: space-evenly;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 16px;
+  justify-content: center;
+  margin: 0 auto;
+  padding: 1rem 0;
+  max-width: 960px;
 }
 
 .title {
@@ -96,12 +100,11 @@ html[data-theme="light"] .title {
 
 @media screen and (max-width: 1082px) {
   .row {
-    flex-wrap: wrap;
+    grid-template-columns: 1fr;
   }
 
   .card {
-    width: 90vw;
-    height: unset;
-    max-width: unset;
+    min-width: 88%;
+    margin: 0.8rem;
   }
 }
