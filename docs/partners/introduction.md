@@ -50,23 +50,19 @@ Let's say a partner protocol contributes to Yearn DAI vault during a year with:
 
 **$10,000,000 Total Locked Value**
 
-which generated a total yield of
+which generated a total yield of **$1,000,000 Annual Yield**
 
-**$100,000 Annual Yield**
-
-Here is how we calculate management and performance fees:
-
-- 20% of yield **($20,000)** goes to performance fees
+- 20% of yield **($200,000)** goes to performance fees
 
 So out of this $200,000:
 
-* **45% ($9,000)** are set apart as operational costs
-* **55% ($11,000)** is shared with the partner according to the tier table
+* **45% ($90,000)** are set apart as operational costs
+* **55% ($110,000)** is shared with the partner according to the tier table
 
-Since the partner contributed with **$10.000.000 TVL** it fits in **tier 3** in the [Profit-Sharing Tier Table](#Profit-Sharing-Tier-Table)
+Since the partner contributed with **$10,000,000 TVL** it fits in **tier 3** in the [Profit-Sharing Tier Table](#Profit-Sharing-Tier-Table)
 
 | Tier | TVL contributed | Profit Share |
 | -------- | -------- | -------- |
 | 3     | $10-50m     | 20%     |
 
-The partner would receive in this case **20% of $11,000** which is **$2,200**
+The partner would receive in this case **20% of $110,000** which is **$22,000**
