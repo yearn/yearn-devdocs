@@ -22,7 +22,7 @@ module.exports = {
           items: [
             'products/ycrv/overview',
             'products/ycrv/faq',
-            'products/ycrv/vl-crv',
+            'products/ycrv/vl-ycrv',
           ],
         },
         'products/woofy',
