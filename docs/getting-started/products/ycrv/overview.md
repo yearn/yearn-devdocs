@@ -52,6 +52,17 @@ Users in this position will not earn weekly admin fees or bribes, and will be su
 
 Read [more](https://docs.yearn.finance/getting-started/products/ycrv/vl-ycrv) about vl-yCRV
 
+## Addresses (Ethereum)
+
+| Name | Address |
+| ---------------------- | ------------------------------------------ |
+| yCrv | [0x4c1317326fd8efdebdbe5e1cd052010d97723bd6](https://etherscan.io/address/0x4c1317326fd8efdebdbe5e1cd052010d97723bd6) |
+| st-yCRV (vault) | [0x8a0889d47f9Aa0Fac1cC718ba34E26b867437880](https://etherscan.io/address/0x8a0889d47f9Aa0Fac1cC718ba34E26b867437880) |
+| lp-yCRV (vault) | [0x61f46C65E403429266e8b569F23f70dD75d9BeE7](https://etherscan.io/address/0x61f46C65E403429266e8b569F23f70dD75d9BeE7) |
+| vl-yCRV |  |
+| CRV/yCRV Gauge | [0x9672D72D5843ca5C6b1E0CC676E106920D6a650E](https://etherscan.io/address/0x9672D72D5843ca5C6b1E0CC676E106920D6a650E) |
+| ZapYCRV.vy | [0x6F3c2647f0C0fBcCbaF74c400D886033F8c6d2E6](https://etherscan.io/address/0x6F3c2647f0C0fBcCbaF74c400D886033F8c6d2E6) |
+
 # FAQ
 
 Read yCRV FAQ [page](https://docs.yearn.finance/getting-started/products/ycrv/faq) for more information
