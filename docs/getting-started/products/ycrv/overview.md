@@ -4,7 +4,7 @@ yCRV is the new and improved liquid veCRV wrapper from Yearn. The yCRV system ai
 The system is organized into a set of 4 tokens, each representing a different position a user within the ecosystem can elect to hold:
 
 <p align="center">
-  <img width="410" height="400" src="https://i.imgur.com/dOyMPk3.png"/>
+  <img width="410" height="400" src="https://i.imgur.com/XH05fIy.png"/>
 </p>
 
 ## yCRV
