@@ -4,28 +4,28 @@ yCRV is the new and improved liquid veCRV wrapper from Yearn. The yCRV system ai
 The system is organized into a set of 4 tokens, each representing a different position a user within the ecosystem can elect to hold:
 
 <p align="center">
-  <img width="410" height="400" src="https://i.imgur.com/XH05fIy.png"/>
+  <img width="640" height="400" src="https://i.imgur.com/XH05fIy.png"/>
 </p>
 
 ## yCRV
 yCRV is the "base token" that has no native rewards, but serves as a starting point for users in the system from which they can enter token positions (vaults) which do. Yearn will supply a handy zap contract that allows users to efficiently move into their preferred position in a single transaction.
 
 New yCRV can be minted in two ways:
-1. Lock CRV (permanant 1-way lock)
+1. Lock CRV (permanent 1-way lock)
 2. Migration from yveCRV (or yvBOOST via our zap)
 
-When holding yCRV users can then choose to position into three different types of rewards:
+When holding yCRV, users can then choose to position into three different types of rewards:
 
-- Staking Rewards (st-yCRV) - Receives admin fees and bribes from CRV locked
-- Liquidity Pool Rewards (lp-yCRV) - Deposit CRV/yCRV LP positions and receive autocompounded LP emissions
-- CRV Voting Power (vl-yCRV) - Vote in Curve governance proposals
+- Staking Rewards (st-yCRV) - Receive admin fees and bribes from locked CRV.
+- Liquidity Pool Rewards (lp-yCRV) - Deposit CRV/yCRV LP positions and receive autocompounded LP emissions.
+- CRV Voting Power (vl-yCRV) - Vote in Curve governance proposals.
 
 ## Staked yCRV (st-yCRV)
 
-Staked yCRV is designed to be the yield optimized position for yCRV users. Source of yield comes from two primary places:
+Staked yCRV is designed to be the yield-optimized position for yCRV users. Source of yield comes from two primary places:
 
 #### Admin Fees
-Every week, veCRV holders earn weekly "admin fees" from Curve protocol. Staked yCRV is where 100% of admin fees earned by Yearn's veCRV position are sent and auto-compounded into more yCRV. 
+Every week, veCRV holders earn weekly "admin fees" from Curve protocol. Staked yCRV is where 100% of admin fees earned by Yearn's veCRV position are sent and auto-compounded into more yCRV.
 
 #### Bribes
 Additionally, for all the yCRV within st-yCRV, 1 veCRV worth of vote power will be used to vote in favor of the Curve gauge which optimizes bribe revenue for st-yCRV users. Bribes (or misc. revenue) collected from these votes will be allocated as supplemental yield to st-yCRV users.
