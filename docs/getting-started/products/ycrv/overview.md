@@ -40,7 +40,7 @@ Under the hood, it is yet another v2 Yearn vault with a strategy that deposits a
 
 Yearn will earmark 1 veCRV worth of voting power for every 1 yCRV in this position to vote in favor of yCRV Curve gauge - increasing CRV emissions to users.
 
-# Vote Locked yCRV (vl-yCRV)
+## Vote Locked yCRV (vl-yCRV)
 
 vl-yCRV is the position that users can enter which allows them to cast votes for Curve gauge weights.
 
