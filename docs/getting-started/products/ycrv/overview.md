@@ -50,8 +50,8 @@ In this position, users can vote for gauge weights only (no DAO votes).
 
 Users in this position will not earn weekly admin fees or bribes, and will be subject to a minimum 14-day lock (21-day maximum). Once the lock period is over, user is free to withdraw to yCRV if they choose and move freely within/without the yCRV ecosystem.
 
-Read [more](https://docs.yearn.finance/getting-started/products/ycrv/vl-crv) about vl-yCRV
+Read [more](https://docs.yearn.finance/getting-started/products/ycrv/vl-ycrv) about vl-yCRV
 
 # FAQ
 
-Read yCRV FAQ [page](https://docs.yearn.finance/getting-started/products/ycrv/vl-crv) for more information
+Read yCRV FAQ [page](https://docs.yearn.finance/getting-started/products/ycrv/faq) for more information
