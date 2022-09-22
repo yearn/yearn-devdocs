@@ -18,7 +18,7 @@ When holding yCRV, users can then choose to position into three different types 
 
 - Staking Rewards (st-yCRV) - Receive admin fees and bribes from locked CRV.
 - Liquidity Pool Rewards (lp-yCRV) - Deposit CRV/yCRV LP positions and receive autocompounded LP emissions.
-- CRV Voting Power (vl-yCRV) - Vote in Curve governance proposals.
+- CRV Voting Power (vl-yCRV) - Vote on Curve gauge weights (not DAO proposals).
 
 ## Staked yCRV (st-yCRV)
 
