@@ -19,7 +19,10 @@ We offer profit shares based on yield generated across all vaults. For now, we a
 Profit-sharing is paid out in the native token of the vaults that partners are utilizing.
 
 Yearn partner's profit works like this:
-* Yearn charges a **2% yearly management fee on the vault TVL and 20% performance fee**
+* Yearn fees for a vault can be checked at [yearn.watch](https://yearn.watch).
+    * Management fee (if applied) is yearly charged from the vault's TVL
+    * Performance fee is charged from the vault's strategies harvest profits
+    * For example, checking DAI vault fees at yearn watch: ![](https://i.imgur.com/Ok6hfVJ.png)
 * **45% of the fees generated** by both fees are set aside for operational expenses (salaries, infrastructure gas, etc)
 * **55% of the fees generated** are split between the partner and Yearn based on the Profit-Sharing Tier Table below
 
@@ -43,28 +46,23 @@ Tiers are what determine the percentage of profit-sharing with the partner. They
 
 Here is an example case of how yearn would share profits with a partner, the values won't match production ones but it helps to understand the entire flow:
 
-Let's say a partner protocol contributes to Yearn during a year with:
+Let's say a partner protocol contributes to Yearn DAI vault during a year with:
 
 **$10,000,000 Total Locked Value**
 
-which generated a total yield of
+which generated a total yield of **$1,000,000 Annual Yield**
 
-**$1,000,000 Anual Yield**
+- 20% of yield **($200,000)** goes to performance fees
 
-Here is how we calculate management and performance fees:
+So out of this $200,000:
 
-- 2% of the vaults yearly TVL ($200,000) goes to management fees
-- 20% of yield ($200,000) goes to performance fees
+* **45% ($90,000)** are set apart as operational costs
+* **55% ($110,000)** is shared with the partner according to the tier table
 
-So out of the $400,000:
-
-* **45% ($180,000)** are set apart as operational costs
-* **55% ($220,000)** is shared with the partner according to the tier table
-
-Since the partner contributed with **$10.000.000 TVL** it fits in **tier 3** in the [Profit-Sharing Tier Table](#Profit-Sharing-Tier-Table)
+Since the partner contributed with **$10,000,000 TVL** it fits in **tier 3** in the [Profit-Sharing Tier Table](#Profit-Sharing-Tier-Table)
 
 | Tier | TVL contributed | Profit Share |
 | -------- | -------- | -------- |
 | 3     | $10-50m     | 20%     |
 
-The partner would receive in this case **20% of $220,000** which is **$44,000**
+The partner would receive in this case **20% of $110,000** which is **$22,000**
