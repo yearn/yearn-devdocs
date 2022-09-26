@@ -1,18 +1,21 @@
 # Overview
-yCRV is the new and improved liquid veCRV wrapper from Yearn. The yCRV system aims to advance both the simplicity and functionality of its predecessor tokens, yveCRV and yvBOOST. 
+yCRV is Yearn’s new liquid veCRV wrapper, redesigned from the ground up to give users ‘the best CRV yields in DeFi’.
+
+By increasing simplicity and improving functionality, the new system offers significant enhancements over its predecessor tokens (yveCRV and yvBOOST).
 
 The system is organized into a set of 4 tokens, each representing a different position a user within the ecosystem can elect to hold:
 
+
 <p align="center">
-  <img width="640" height="400" src="https://i.imgur.com/XH05fIy.png"/>
+  <img width="640" height="400" src="https://i.imgur.com/wz9BVxF.png"/>
 </p>
 
 ## yCRV
-yCRV is the "base token" that has no native rewards, but serves as a starting point for users in the system from which they can enter token positions (vaults) which do. Yearn will supply a handy zap contract that allows users to efficiently move into their preferred position in a single transaction.
+yCRV is the ‘base token’ which, while having no native rewards, lets users easily enter into the other ecosystem tokens that do. Yearn’s UI will let users efficiently zap from any ecosystem token to any other. 
 
 New yCRV can be minted in two ways:
 1. Lock CRV (permanent 1-way lock)
-2. Migration from yveCRV (or yvBOOST via our zap)
+2. Migrate from legacy tokens yveCRV or yvBOOST.
 
 When holding yCRV, users can then choose to position into three different types of rewards:
 
