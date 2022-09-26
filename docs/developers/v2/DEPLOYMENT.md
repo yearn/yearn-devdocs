@@ -4,16 +4,16 @@
 
 ## Requirements
 
-Make sure you have the brownie environment setup before trying to deploy a vault. Check out the [Readme MD in Yearn Vaults Repo](https://github.com/yearn/yearn-vaults/blob/master/README.md) for instructions.
+Make sure you have the brownie environment set up before trying to deploy a vault. Check out the [Readme MD in Yearn Vaults Repo](https://github.com/yearn/yearn-vaults/blob/master/README.md) for instructions.
 
-The below instructions show some python commands that assume you are using the brownie console or a brownie script setup is in place.
+The below instructions show some python commands that assume you are using the brownie console or a brownie script setup.
 
 ## Deploying a new Experimental Vault
 
 1. Clone the [Yearn Vaults Repo](https://github.com/yearn/yearn-vaults/) and run `brownie run scripts/deploy.py --network <network-to-deploy-vault>`
-1. Choose the brownie account for deploying your vault. This account needs to have balance to pay for the deploy transaction.
-1. Confirm the script is using the latest version of registry `v2.registry.ychad.eth` against the planned new release vault to be sure its an updated version. (Can validate on Etherscan for latest address)
-1. Select the version of vault to deploy or press enter to use latest release.
+1. Choose the brownie account for deploying your vault. This account needs to have funds to pay for the deployment transaction.
+1. Confirm the script is using the latest version of registry `v2.registry.ychad.eth` against the planned new release vault to be sure it's an updated version. (Can validate on Etherscan for latest address)
+1. Select the version of the vault to deploy or press enter to use the latest release.
 1. Enter `Y` when prompt to deploy Proxy Vault
 1. Enter the checksummed address of the ERC20 token the vault will use.
 1. Enter the vault Parameters (Below are some suggested values):
@@ -21,9 +21,9 @@ The below instructions show some python commands that assume you are using the b
    - Set Treasury (`treasury.ychad.eth`) as the rewards address.
    - Set Core Dev multisig (`dev.ychad.eth`) as guardian.
    - Set Strategist multisig (`brain.ychad.eth`) as management.
-   - Set description and symbol for vault or use suggested as default (can be changed on chain later)
-1. Confirm the Parameters are set correctly and press `y`and ENTER to deploy vault.
-1. Check new vault has ABI setup on Etherscan (Some vault versions from older releases may have verification issues with Vyper and proxy detection on Etherscan, consider using latest releases >0.3.5 to ensure verification works).
+   - Set description and symbol for vault or use suggested as default (can be changed on-chain later)
+1. Confirm the Parameters are correct and press `y` and ENTER to deploy the vault.
+1. Check new vault has ABI setup on Etherscan (Some vault versions from older releases may have verification issues with Vyper and proxy detection on Etherscan, consider using the latest releases >0.3.5 to ensure verification works).
 
 1. Set up the vault with correct deposit limit:
 
@@ -47,13 +47,13 @@ vault.setGovernance(ychad.eth)
 
 ## Deploying a new Strategy
 
-1. Request for access from a Core Dev strategist and create a new issue in the strategies' [private repo](https://github.com/yearn/yearn-strategies/issues) using the `Strategy Review` template. **Complete all the fields**.
-1. If the strategy is targeting a new protocol/new chain, not currently approved by yearn (used in production), a due diligence and path to production plan documents may also be required for the strategy to be considered for endorsing.
+1. Request access to a Core Dev strategist and create a new issue using the `Strategy Review` template in the strategies [private repo](https://github.com/yearn/yearn-strategies/issues) **Complete all the fields**.
+1. If the strategy targets a new protocol/new chain not currently approved by yearn (used in production) it may also require due diligence and path to production plan documents for the strategy to be considered for endorsement.
    Example(s) [SNX](https://hackmd.io/0w1RZh7DSc27A9EyzlHbJQ?view)
 1. Coordinate with Core Dev strategist for reviewing strategy, then follow the status on the [private board](https://github.com/orgs/yearn/projects/5).
-1. Complete peer review by at least 2 strategists.
+1. Have it peer-reviewed by at least **two** strategists.
 1. Check if `want` token has a deployed vault already (>=v0.3.0) and coordinate to use that first if possible.
-1. Coordinate with core developer to set proper deposit limit and other settings for new vault. See the table below: [Limits per Stage](#limits-per-stage).
+1. Coordinate with a core developer to set a proper deposit limit and other settings for the new vault. See the table below: [Limits per Stage](#limits-per-stage).
 1. Deploy strategy and upload code to Etherscan for verification.
 1. Tag GitHub review issue with deployed version and attach mainnet address(es) to the strategy item in [private board](https://github.com/orgs/yearn/projects/5).
 
@@ -119,7 +119,7 @@ vault.setGovernance(ychad.eth)
 
 ## Test harvesting manually
 
-If you need a UI to test, you can coordinate with the strategists.
+> You can coordinate with the strategists if you need a UI to test.
 
 1. Deposit some `want` tokens into the vault.
 1. Do first `harvest` and make sure it worked correctly.
@@ -132,7 +132,7 @@ If you need a UI to test, you can coordinate with the strategists.
 
 ## Scaling up / Moving to Endorse
 
-In addition to the 2 strategists, a Core Developer has to review the strategy before going into production.
+In addition to the two strategist reviews, a Core Developer has to review the strategy before going into production.
 
 1. Increase deposit limit according to the table [below](#limits-per-stage)
 1. Set management fee to production level:
@@ -141,15 +141,15 @@ In addition to the 2 strategists, a Core Developer has to review the strategy be
    vault.setManagementFee(200)
    ```
 
-1. Set parameters for vault correctly before endorse:
+1. Set parameters for vault correctly before endorsement:
 
    - Set Governance to (`ychad.eth`)
    - Set Treasury (`treasury.ychad.eth`) as the rewards address.
    - Set Core Dev multisig (`dev.ychad.eth`) as guardian.
    - Set Strategist multisig (`brain.ychad.eth`) as management.
-   - Set description and symbol for vault or use suggested as default (can be changed on chain later)
+   - Set description and symbol for vault or use suggested as default (can be changed on-chain later)
 
-1. Yearn governance now must accept governance and endorse the vault:
+2. Yearn's governance now must accept this vault's governance and endorse it:
 
 ```python
 strategy.acceptGovernance()
@@ -160,8 +160,8 @@ registry.endorseVault(vault)
 
 ### Endorsing a vault from a previous release
 
-1. Check for latest release number in the registry contract
-1. Check the apiVersion of the vault you want to endorse to identify target release
+1. Check for the latest release number in the registry contract
+1. Check the apiVersion of the vault you want to endorse to identify the target release
 1. Calculate the releaseDelta from your target release. (see registry endorseVault param details)
    E.g: latestRelease = 0.3.3 and numReleases = 5. New vault apiVersion is 0.3.2
    `releaseDelta = numReleases - 1 - releaseTarget`
@@ -176,7 +176,7 @@ registry.endorseVault(vault)
 
 ## Publishing Your Strategy Description
 
-These steps are required for all strategies. These descriptions will be pulled into the new v3 website and used to generate strategy diagrams.
+The following steps are required for all strategies. These descriptions are pulled into the v3 website and used to generate strategy diagrams.
 
 1. Create a pull request [at this link](https://github.com/yearn/yearn-meta/tree/master/data/strategies) to add a new `.json` file with your strategy description and details.
 2. Using other strategy files as a reference, create a 1-2 sentence description for your strategy.
@@ -192,7 +192,7 @@ These steps are required for all strategies. These descriptions will be pulled i
    strategy.setMaxReportDelay()
    ```
 
-1. Set strategy's Keep3r role to v2-keeper-contract
+1. Set strategy's Keep3r role to v2-keeper-contract:
 
    ```python
    strategy.setKeeper(0x736D7e3c5a6CB2CE3B764300140ABF476F6CFCCF)
@@ -204,7 +204,7 @@ These steps are required for all strategies. These descriptions will be pulled i
 
 ### Limits per Stage
 
-These are the standard deposit limits per stage. They can be adjusted on a case by case basis.
+These are the standard deposit limits per stage, and they can be adjusted on a case-by-case basis:
 
 | Stage        | Limit  |
 | ------------ | ------ |
@@ -215,7 +215,7 @@ These are the standard deposit limits per stage. They can be adjusted on a case 
 
 "Sharer" is a contract for distributing/splitting strategist rewards. For boarding school graduates suggested split is 34% to strategist multisig and 66% to strategist – [Sharer Contract](https://github.com/Grandthrax/Sharer).
 
-- Setup rewards for your strategy by calling `sharer.addContributors`.
+- Set up rewards for your strategy by calling `sharer.addContributors`.
 - Include devs if you forked someone else's strategy.
 - Be sure to reward people who helped you.
 - You can find the sharer here: [0x2c641e14afecb16b4aa6601a40ee60c3cc792f7d](https://etherscan.io/address/0x2c641e14afecb16b4aa6601a40ee60c3cc792f7d)
@@ -224,7 +224,7 @@ These are the standard deposit limits per stage. They can be adjusted on a case 
 
 Since the v0.4.3 release, we introduce the concept of Health Checks contracts to vaults and strategies. These are helper contracts that can validate the end state of a harvest, or critical transaction, to ensure the accounting stays within established safe parameters.
 
-You can think of these contracts as on-chain unit tests, or "self asserts" that ensure that the end state of a critical transaction matches an expected condition. The design allows for health checks to be configured per individual vault or strategy. In case the "assert" doesn't match expectations the entire transaction will revert and will require manual intervention by strategists, or core devs.
+You can think of these contracts as on-chain unit tests, or "self asserts", ensuring that the end state of a critical transaction matches an expected condition. The design allows health checks to be configured per individual vault or strategy. If the "assert" doesn't match expectations, the entire transaction will revert and require manual intervention by strategists or core devs.
 
 Vaults from release v0.4.3 and onward, support attaching an on-chain health check contract to be called after every harvest report.
 
@@ -251,9 +251,9 @@ strategy.setHealthCheck(commonHealthCheck)
 
 ## Health Check Operations
 
-A global setting is used to check against deviations in reported profit and losses that are within a safe interval. Any report/harvest that falls outside this global safe interval will report.
+A global setting is used to check against deviations in reported profit and losses within a safe interval. Any report/harvest that falls outside this global safe interval will report.
 
-In case there is a harvest/report revert transaction detected on-chain manual intervention is required to debug and accept the transaction into the vaults accounting. This should be done after proper validation by the strategist's multi-sig and Core Devs group.
+If a harvest/report revert transaction is detected on-chain, manual intervention is required to debug and accept the transaction into the vaults accounting. This should be done after proper validation by the strategist's multi-sig and Core Devs group.
 
 Disabling health checks is meant to be a one-time special event using the following steps:
 
@@ -282,7 +282,7 @@ lossLimit = 100 # in bps
 healthcheck.setStrategyLimits(strategy, profitLimit, lossLimit)
 ```
 
-Finally, if needed, a custom Health Check contract can be deployed and attached to the common Health Check contract, which works as a registry. You can attach a custom Health Check to a strategy using the following operation:
+Finally, if needed, a custom Health Check contract can be deployed and attached to the standard Health Check contract, which works as a registry. You can attach a custom Health Check to a strategy using the following operation:
 
 ```python
 strategy = ''; # strategy address
