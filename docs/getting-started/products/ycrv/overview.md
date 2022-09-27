@@ -59,12 +59,12 @@ Read [more](https://docs.yearn.finance/getting-started/products/ycrv/vl-ycrv) ab
 
 | Name | Address |
 | ---------------------- | ------------------------------------------ |
-| yCrv | [x](https://etherscan.io/address/x) |
-| st-yCRV (vault) | [x](https://etherscan.io/address/x) |
-| lp-yCRV (vault) | [x](https://etherscan.io/address/x) |
-| vl-yCRV |  |
-| CRV/yCRV Gauge | [x](https://etherscan.io/address/x) |
-| ZapYCRV.vy | [x](https://etherscan.io/address/x) |
+| yCrv | [`0xFCc5c47bE19d06BF83eB04298b026F81069ff65b`](https://etherscan.io/address/0xFCc5c47bE19d06BF83eB04298b026F81069ff65b) |
+| st-yCRV (vault) | [`0x27B5739e22ad9033bcBf192059122d163b60349D`](https://etherscan.io/address/0x27B5739e22ad9033bcBf192059122d163b60349D) |
+| lp-yCRV (vault) | [`0xc97232527B62eFb0D8ed38CF3EA103A6CcA4037e`](https://etherscan.io/address/0xc97232527B62eFb0D8ed38CF3EA103A6CcA4037e) |
+| vl-yCRV | in audit |
+| CRV/yCRV Curve Pool | [`0x453D92C7d4263201C69aACfaf589Ed14202d83a4`](https://etherscan.io/address/0x453D92C7d4263201C69aACfaf589Ed14202d83a4) |
+| ZapYCRV.vy | [`0x01D7f32B6E463c96c00575fA97B8224326C6A6B9`](https://etherscan.io/address/0x01D7f32B6E463c96c00575fA97B8224326C6A6B9) |
 
 # FAQ
 
