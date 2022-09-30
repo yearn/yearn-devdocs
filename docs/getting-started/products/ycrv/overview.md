@@ -21,8 +21,8 @@ yCRV can only ever be minted when a user either locks their CRV or migrates thei
 
 Yearn passes all benefits of its veCRV position on to yCRV users who hold one of its **activated-tokens:**
 
-- [**st-yCRV (Staking Rewards):**](#staking-ycrv) [yVault](https://medium.com/iearn/yearn-finance-explained-what-are-vaults-and-strategies-96970560432) that receives admin fees and bribes from locked CRV.
-- [**lp-yCRV (Liquidity Pool Rewards):**](#pooling-ycrvcrv) yVault for CRV/yCRV LP tokens, autocompounds emissions and fees.
+- [**st-yCRV (Staking Rewards):**](#staked-ycrv) [yVault](https://medium.com/iearn/yearn-finance-explained-what-are-vaults-and-strategies-96970560432) that receives admin fees and bribes from locked CRV.
+- [**lp-yCRV (Liquidity Pool Rewards):**](#lpd-ycrvcrv) yVault for CRV/yCRV LP tokens, autocompounds emissions and fees.
 - [**vl-yCRV (Curve Gauges Voting Power):**](#voting-with-ycrv) Vote power mechanism to vote on Curve gauge weights. 
 
 Users can choose to move between activated-tokens at any time depending on which benefits they want, with the exception of vl-yCRV that has time lock [restrictions](#voting-with-ycrv) varying from 14 to 28 days.
@@ -89,7 +89,7 @@ We expect this system to be especially useful protocols that seek to boost emiss
 
 ## How yveCRV and veBOOST functionality was migrated to yCRV
 
-yveCRV and yvBOOST are being deprecated, and there is a migration path available to users. The functionality of both was integrated into [st-yCRV](#staking-ycrv) so if you are looking for the same benefits check the guide on [how to migrate from the legacy tokens](https://hackmd.io/XVhdtVYLTFG0r7lUXdQkrA#How-to-migrate-from-yveCRV-andor-yvBOOST) using yearn's UI
+yveCRV and yvBOOST are being deprecated, and there is a migration path available to users. The functionality of both was integrated into [st-yCRV](#staked-ycrv) so if you are looking for the same benefits check the guide on [how to migrate from the legacy tokens](#how-to-migrate-from-yvecrv-andor-yvboost) using yearn's UI
 
 ![](https://i.imgur.com/Htl3AgP.png)
 
@@ -120,8 +120,8 @@ So, with Eth and CRV loaded up, let's find out how to start earning supercharged
 As yCRV is the base-token and carries no native yield or voting power, you'll likely want to position yourself into one of the three activated-tokens.
 
 1) Go to [yCRV interface](https://ycrvdev.yearn.farm/) and decide which token you want to zap to. You can zap from either CRV or yCRV:
-    - [**st-yCRV (Staking Rewards):**](#staking-ycrv) [yVault](https://medium.com/iearn/yearn-finance-explained-what-are-vaults-and-strategies-96970560432) that receives admin fees and bribes from locked CRV.
-    - [**lp-yCRV (Liquidity Pool Rewards):**](#pooling-ycrvcrv) yVault for CRV/yCRV LP tokens, autocompounds emissions and fees.
+    - [**st-yCRV (Staking Rewards):**](#staked-ycrv) [yVault](https://medium.com/iearn/yearn-finance-explained-what-are-vaults-and-strategies-96970560432) that receives admin fees and bribes from locked CRV.
+    - [**lp-yCRV (Liquidity Pool Rewards):**](#lpd-ycrvcrv) yVault for CRV/yCRV LP tokens, autocompounds emissions and fees.
     - [**st-yCRV (Curve Gauges Voting Power):**](#voting-with-ycrv) Vote power mechanism to vote on Curve gauge weights. 
 ![](https://i.imgur.com/rpLcCwg.png)
 
