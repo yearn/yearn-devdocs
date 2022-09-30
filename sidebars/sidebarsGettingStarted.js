@@ -16,8 +16,16 @@ module.exports = {
             'products/yvaults/yvault-advantages',
           ],
         },
+        {
+          type: 'category',
+          label: 'yCRV',
+          items: [
+            'products/ycrv/overview',
+            'products/ycrv/guide',
+            'products/ycrv/faq',
+          ],
+        },
         'products/woofy',
-        'products/yCRV',
       ],
     },
     {
