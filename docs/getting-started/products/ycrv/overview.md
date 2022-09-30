@@ -89,7 +89,7 @@ We expect this system to be especially useful protocols that seek to boost emiss
 
 ## How yveCRV and veBOOST functionality was migrated to yCRV
 
-yveCRV and yvBOOST are being deprecated, and there is a migration path available to users. The functionality of both was integrated into [st-yCRV](#staked-ycrv) so if you are looking for the same benefits check the guide on [how to migrate from the legacy tokens](#how-to-migrate-from-yvecrv-andor-yvboost) using yearn's UI
+yveCRV and yvBOOST are being deprecated, and there is a migration path available to users. The functionality of both was integrated into [st-yCRV](#staked-ycrv) so if you are looking for the same benefits check the [guide](https://docs.yearn.finance/getting-started/products/ycrv/guide) on how to migrate from the legacy tokens using yearn's UI
 
 ![](https://i.imgur.com/Htl3AgP.png)
 

@@ -1,4 +1,4 @@
-## How To Use yCRV UI
+# How To Use yCRV UI
 
 DeFi can look complicated, but like any new technology, the best way to get comfortable with it… is to use it. This short guide will take you through the steps to start earning that sweet sweet yield with yCRV. Are you ready anon? Let’s go.
 
@@ -8,7 +8,7 @@ So, with Eth and CRV loaded up, let's find out how to start earning supercharged
 
 - **yCRV Interface:** https://ycrvdev.yearn.farm/
 
-### Connect Wallet with yCRV interface
+## Connect Wallet with yCRV interface
 
 1) Click "Connect Wallet" in [yCRV interface](https://ycrvdev.yearn.farm/)
 ![](https://i.imgur.com/QVAmOXb.png)
@@ -19,7 +19,7 @@ So, with Eth and CRV loaded up, let's find out how to start earning supercharged
 3) If you see a wallet address instead of "Connect Wallet" you are connected!
 ![](https://i.imgur.com/FNjmMQG.png)
 
-### How to zap from CRV or yCRV to any of the 3 types of reward tokens
+## How to zap from CRV or yCRV to any of the 3 types of reward tokens
 
 As yCRV is the base-token and carries no native yield or voting power, you'll likely want to position yourself into one of the three activated-tokens.
 
@@ -38,8 +38,7 @@ As yCRV is the base-token and carries no native yield or voting power, you'll li
 4) Execute the swap:
 ![](https://i.imgur.com/xigS4rA.png)
 
-
-### How to migrate from yveCRV and/or yvBOOST
+## How to migrate from yveCRV and/or yvBOOST
 
 yCRV and its ecosystem tokens are a redesign of our previous yveCRV and yvBOOST tokens (which are no longer supported), however if you hold these tokens, you can easily migrate to the new tokens.
 
