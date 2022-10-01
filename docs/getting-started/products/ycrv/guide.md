@@ -1,4 +1,4 @@
-# How To Use yCRV UI
+# Interface Guide
 
 DeFi can look complicated, but like any new technology, the best way to get comfortable with it… is to use it. This short guide will take you through the steps to start earning that sweet sweet yield with yCRV. Are you ready anon? Let’s go.
 
@@ -6,11 +6,11 @@ You'll need a browser [wallet](https://finematics.com/top-3-defi-wallets-for-202
 
 So, with Eth and CRV loaded up, let's find out how to start earning supercharged yields.
 
-- **yCRV Interface:** https://ycrvdev.yearn.farm/
+- **yCRV Interface:** http://y.finance/
 
 ## Connect Wallet with yCRV interface
 
-1) Click "Connect Wallet" in [yCRV interface](https://ycrvdev.yearn.farm/)
+1) Click "Connect Wallet" in [yCRV interface](http://y.finance/)
 ![](https://i.imgur.com/QVAmOXb.png)
 
 2) Select your preferred wallet and confirm the connection
@@ -23,7 +23,7 @@ So, with Eth and CRV loaded up, let's find out how to start earning supercharged
 
 As yCRV is the base-token and carries no native yield or voting power, you'll likely want to position yourself into one of the three activated-tokens.
 
-1) Go to [yCRV interface](https://ycrvdev.yearn.farm/) and decide which token you want to zap to. You can zap from either CRV or yCRV:
+1) Go to [yCRV interface](http://y.finance/) and decide which token you want to zap to. You can zap from either CRV or yCRV:
     - [**st-yCRV (Staking Rewards):**](#staked-ycrv) [yVault](https://medium.com/iearn/yearn-finance-explained-what-are-vaults-and-strategies-96970560432) that receives admin fees and bribes from locked CRV.
     - [**lp-yCRV (Liquidity Pool Rewards):**](#lpd-ycrvcrv) yVault for CRV/yCRV LP tokens, autocompounds emissions and fees.
     - [**st-yCRV (Curve Gauges Voting Power):**](#voting-with-ycrv) Vote power mechanism to vote on Curve gauge weights. 
@@ -42,7 +42,7 @@ As yCRV is the base-token and carries no native yield or voting power, you'll li
 
 yCRV and its ecosystem tokens are a redesign of our previous yveCRV and yvBOOST tokens (which are no longer supported), however if you hold these tokens, you can easily migrate to the new tokens.
 
-1) Select the token you want to migrate from in [yCRV interface](https://ycrvdev.yearn.farm/):
+1) Select the token you want to migrate from in [yCRV interface](http://y.finance/):
 ![](https://i.imgur.com/6wPMtAJ.png)
 
 2) Select the token you want to migrate to:

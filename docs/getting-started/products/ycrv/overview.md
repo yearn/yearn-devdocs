@@ -15,7 +15,7 @@ New yCRV can be minted in two ways:
 
 - Migrate from legacy tokens [yveCRV and yvBOOST](#how-yvecrv-and-veboost-functionality-was-migrated-to-ycrv).
 
-yCRV can only ever be minted when a user either locks their CRV or migrates their yveCRV. Both operations mint yCRV at a 1:1 rate. All CRV locked in this way will automatically get max-locked as veCRV to increase Yearn's veCRV position. 
+Both operations mint yCRV at a 1:1 rate. All CRV locked in this way will automatically get max-locked as veCRV to increase Yearn's veCRV position. 
 
 ### 'Activated'-tokens
 
@@ -101,7 +101,7 @@ yveCRV and yvBOOST are being deprecated, and there is a migration path available
 - **vl-yCRV:** in audit
 - **CRV/yCRV Curve Pool:** [0x453D92C7d4263201C69aACfaf589Ed14202d83a4](https://etherscan.io/address/0x453D92C7d4263201C69aACfaf589Ed14202d83a4)
 - **ZapYCRV.vy (zapper):** [0x01D7f32B6E463c96c00575fA97B8224326C6A6B9](https://etherscan.io/address/0x01D7f32B6E463c96c00575fA97B8224326C6A6B9)
-- **yCRV Interface:** https://ycrvdev.yearn.farm/
+- **yCRV Interface:** http://y.finance/
 
 ## Read more
 
