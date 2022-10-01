@@ -15,7 +15,7 @@ New yCRV can be minted in two ways:
 
 - Migrate from legacy tokens [yveCRV and yvBOOST](#how-yvecrv-and-veboost-functionality-was-migrated-to-ycrv).
 
-yCRV can only ever be minted when a user either locks their CRV or migrates their yveCRV. Both operations mint yCRV at a 1:1 rate. All CRV locked in this way will automatically get max-locked as veCRV to increase Yearn's veCRV position. 
+Both operations mint yCRV at a 1:1 rate. All CRV locked in this way will automatically get max-locked as veCRV to increase Yearn's veCRV position. 
 
 ### 'Activated'-tokens
 
