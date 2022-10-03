@@ -1,7 +1,9 @@
 # Overview
 
-## What is yCRV
 ![](https://i.imgur.com/ni42qE6.png)
+
+## What is yCRV
+yCRV is Yearn's new and improved veCRV wrapper system designed to tokenize the different benefits of Yearn's veCRV position. This system is composed of a [`base-token`](#base-token) called yCRV as well as 3 derivative tokens called [`activated tokens`](#activated-tokens).
 
 ### Base-token
 
@@ -9,13 +11,13 @@ yCRV is the base-token, which carries no native rewards, but lets users easily e
 
 New yCRV can be minted in two ways:
 
-- Lock CRV in yearn (permanent 1-way lock).
+- Lock CRV to Yearn's veCRV position (permanent 1-way lock).
 
 *or*
 
 - Migrate from legacy tokens [yveCRV and yvBOOST](#how-yvecrv-and-veboost-functionality-was-migrated-to-ycrv).
 
-Both operations mint yCRV at a 1:1 rate. All CRV locked in this way will automatically get max-locked as veCRV to increase Yearn's veCRV position. 
+Both operations mint yCRV to the user at a 1:1 rate. Users migrating from yvBOOST can use the zap at [y.finance](https://y.finance) to efficiently unwrap their tokens to yveCRV and migrates to yCRV in a single step. Of course, users can also choose to purchase yCRV from the new Curve factory pool [here](https://curve.fi/factory/192).
 
 ### 'Activated'-tokens
 
@@ -95,12 +97,12 @@ yveCRV and yvBOOST are being deprecated, and there is a migration path available
 
 ## Addresses
 
-- **yCRV:** [0xFCc5c47bE19d06BF83eB04298b026F81069ff65b](https://etherscan.io/address/0xFCc5c47bE19d06BF83eB04298b026F81069ff65b)
-- **st-yCRV (vault):**	[0x27B5739e22ad9033bcBf192059122d163b60349D](https://etherscan.io/address/0x27B5739e22ad9033bcBf192059122d163b60349D)
-- **lp-yCRV (vault):** [0xc97232527B62eFb0D8ed38CF3EA103A6CcA4037e](https://etherscan.io/address/0xc97232527B62eFb0D8ed38CF3EA103A6CcA4037e)
+- **yCRV:** [0xFCc5c47bE19d06BF83eB04298b026F81069ff65b](https://etherscan.io/token/0xFCc5c47bE19d06BF83eB04298b026F81069ff65b)
+- **st-yCRV (vault):**	[0x27B5739e22ad9033bcBf192059122d163b60349D](https://etherscan.io/token/0x27B5739e22ad9033bcBf192059122d163b60349D)
+- **lp-yCRV (vault):** [0xc97232527B62eFb0D8ed38CF3EA103A6CcA4037e](https://etherscan.io/token/0xc97232527B62eFb0D8ed38CF3EA103A6CcA4037e)
 - **vl-yCRV:** in audit
-- **CRV/yCRV Curve Pool:** [0x453D92C7d4263201C69aACfaf589Ed14202d83a4](https://etherscan.io/address/0x453D92C7d4263201C69aACfaf589Ed14202d83a4)
-- **ZapYCRV.vy (zapper):** [0x01D7f32B6E463c96c00575fA97B8224326C6A6B9](https://etherscan.io/address/0x01D7f32B6E463c96c00575fA97B8224326C6A6B9)
+- **CRV/yCRV Curve Pool:** [0x453D92C7d4263201C69aACfaf589Ed14202d83a4](https://etherscan.io/token/0x453D92C7d4263201C69aACfaf589Ed14202d83a4)
+- **ZapYCRV.vy (zapper):** [0x01D7f32B6E463c96c00575fA97B8224326C6A6B9](https://etherscan.io/token/0x01D7f32B6E463c96c00575fA97B8224326C6A6B9)
 - **yCRV Interface:** http://y.finance/
 
 ## Read more
