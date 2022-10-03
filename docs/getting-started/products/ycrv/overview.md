@@ -61,7 +61,7 @@ In this position, users can vote for gauge weights (not DAO votes).
 
 Users in this position will not earn weekly admin fees or bribes, and will be subject to a minimum 14-day lock (28-day maximum). Once the lock period is over, the user is free to withdraw to yCRV if they choose and move freely within/without the yCRV ecosystem.
 
-We expect this system to be especially useful protocols that seek to boost emissions to their pool's Curve gauges without committing to a 4-year veCRV lock or repeatedly submitting large bribes.
+We expect this system to be especially useful for protocols that seek to boost emissions to their pool's Curve gauges without committing to a 4-year veCRV lock or repeatedly submitting large bribes.
 
 ### Voting In-depth:
 - Voting periods last 14 days.
@@ -87,7 +87,7 @@ We expect this system to be especially useful protocols that seek to boost emiss
 - While in vl-yCRV, users forego yield from other parts of the yCRV system.
 - vl-yCRV users will not collect bribes on the gauges they vote for.
 
-## How yveCRV and veBOOST functionality was migrated to yCRV
+## How yveCRV and yvBOOST functionality was migrated to yCRV
 
 yveCRV and yvBOOST are being deprecated, and there is a migration path available to users. The functionality of both was integrated into [st-yCRV](#staked-ycrv) so if you are looking for the same benefits check the [guide](https://docs.yearn.finance/getting-started/products/ycrv/guide) on how to migrate from the legacy tokens using yearn's UI
 

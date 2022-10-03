@@ -26,16 +26,19 @@ As yCRV is the base-token and carries no native yield or voting power, you'll li
 1) Go to [yCRV interface](http://y.finance/) and decide which token you want to zap to. You can zap from either CRV or yCRV:
     - [**st-yCRV (Staking Rewards):**](#staked-ycrv) [yVault](https://medium.com/iearn/yearn-finance-explained-what-are-vaults-and-strategies-96970560432) that receives admin fees and bribes from locked CRV.
     - [**lp-yCRV (Liquidity Pool Rewards):**](#lpd-ycrvcrv) yVault for CRV/yCRV LP tokens, autocompounds emissions and fees.
-    - [**st-yCRV (Curve Gauges Voting Power):**](#voting-with-ycrv) Vote power mechanism to vote on Curve gauge weights. 
+    - [**vl-yCRV (Curve Gauges Voting Power):**](#voting-with-ycrv) Vote power mechanism to vote on Curve gauge weights. 
 ![](https://i.imgur.com/rpLcCwg.png)
 
 2) Choose your desired position:
+
 ![](https://i.imgur.com/xjSlSd0.png)
 
 3) Approve the contract:
+
 ![](https://i.imgur.com/qahKX4O.png)
 
 4) Execute the swap:
+
 ![](https://i.imgur.com/xigS4rA.png)
 
 ## How to migrate from yveCRV and/or yvBOOST
