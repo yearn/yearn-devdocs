@@ -23,7 +23,7 @@ Yearn as a protocol hinges on the critical assumption that the `Governance` role
 
 A compromised or malicious Governance can cause catastrophic damage across the entire protocol.
 
-It is a conscious design decision that this role is not behind a time lock. Priority is given to the ability to rapidly update and iterate on live vaults, strategies, and other components. Both so as not to advertise new investment strategies in advance, but also in order to rapidly improve our existing components without interruption. It also avoids downtimes whenever there is a bug or security vulnerability that needs to be fixed.
+It is a conscious design decision that this role is not behind a time lock. Priority is given to the ability to rapidly update and iterate on live vaults, strategies, and other components. Both so as not to advertise new investment strategies in advance, but also to rapidly improve our existing components without interruption. It also avoids downtimes whenever there is a bug or security vulnerability that needs to be fixed.
 
 Trusting `Governance` to be honest is a prerequisite to trusting Yearn's vaults.
 
