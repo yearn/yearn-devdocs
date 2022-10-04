@@ -177,7 +177,7 @@ These posts describe the most important considerations on security reviews.
 ## Sources
 
 - [Explained XToken Hack](https://halborn.com/explained-the-xtoken-hack-august-2021/)
-- [BzX Network Post Mortem](https://bzx.network/blog/post-mortem-update)
+- [BzX Network Post Mortem](http://web.archive.org/web/20220709131325/https://bzx.network/blog/post-mortem-update)
 - [Harvest Finance Uninitialized Proxies](https://medium.com/immunefi/harvest-finance-uninitialized-proxies-bug-fix-postmortem-ea5c0f7af96b)
 - [Uniswap V3: Risk Analysis for TWAP](https://twitter.com/mudit__gupta/status/1459340913751117826?s=21)
 - [Minimal Proxies - Reasons Why You Should Use EIP1167](https://medium.com/taipei-ethereum-meetup/reason-why-you-should-use-eip1167-proxy-contract-with-tutorial-cbb776d98e53)
