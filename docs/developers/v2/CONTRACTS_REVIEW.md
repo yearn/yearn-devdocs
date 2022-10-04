@@ -31,11 +31,11 @@ Most smart contracts are built in Solidity (except the core contracts) and use t
 
 ## Formatting & Naming Conventions
 
-All of us are working remotely, and each of us has different ways to develop smart contracts. So, it is extremelly important to get a standard and a naming convention for developing the smart contracts.
+All of us are working remotely, and each of us has different ways to develop smart contracts. So, it is extremely important to get a standard formatting and naming convention for developing smart contracts.
 
-### Formating
+### Formatting
 
-The linting or formatting the smart contract is a very important action to make them more readable, clear and easy to understand.
+The linting or formatting of the smart contract is a very important action to make them more readable, clear and easy to understand.
 
 In our [Brownie Strategy Mix repo](https://github.com/yearn/brownie-strategy-mix) we use [Pretty Quick](https://www.npmjs.com/package/pretty-quick).
 
@@ -119,7 +119,7 @@ require(value > 0, "invalid external value");
 
 ### Variables - Naming Convention
 
-In order to make the code more clear and readable, we need to identify the unit in the variables that express amounts.
+To make the code more clear and readable, we need to identify the unit in the variables that express amounts.
 
 Example:
 
@@ -135,7 +135,7 @@ In case we need to use multiple routers to swap tokens, we should use this appro
 - To get the router, use:
     - `Router router = useUniswap ? uniswapRouter : sushiswapRouter;`
 
-See example [here](https://github.com/therealmonoloco/geist-lender-borrower/blob/master/contracts/Strategy.sol#L158).
+See an example [here](https://github.com/therealmonoloco/geist-lender-borrower/blob/master/contracts/Strategy.sol#L158).
 
 ## Github Issues
 
@@ -173,33 +173,6 @@ These posts describe the most important considerations on security reviews.
 - [Stackoverflow - Security Review on Smart Contracts](https://ethereum.stackexchange.com/questions/8551/security-review-checklist-for-a-smart-contract)
 - [Sushiswap - Multiple Checks](https://github.com/sushiswap/bentobox/blob/master/documentation/checks.txt)
 - [Not Only Owner - Intro Security Hacking Smart Contracts](https://www.notonlyowner.com/learn/intro-security-hacking-smart-contracts-ethereum)
-
-### Strategies
-
-#### Single Sided LPs Strategies
-
-- Item 1
-- Item 2
-
-#### Leveraged Strategies
-
-- Item 1
-- Item 2
-
-#### Joint / Hedged Strategies
-
-- Item 1
-- Item 2
-
-#### Fixed Rate Strategies
-
-- Item 1
-- Item 2
-
-#### MasterChef Strategies
-
-- Item 1
-- Item 2
 
 ## Sources
 
