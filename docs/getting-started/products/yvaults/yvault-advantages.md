@@ -37,7 +37,7 @@ Because yVaults batch your transaction with many other depositors, it is cumulat
 
 ## Leverage
 
-Yearn utilizes the [Iron Bank (C.R.E.A.M. Finance)](https://docs.yearn.finance/getting-started/products/iron-bank/collateral-and-reserve-factor) to access credit that is used to enhance yVault yields. Only white-listed addresses have this feature available to them, meaning that typically, individuals are not able to do this on their own.
+Yearn utilizes the [Iron Bank (C.R.E.A.M. Finance)](https://docs.ib.xyz/) to access credit that is used to enhance yVault yields. Only white-listed addresses have this feature available to them, meaning that typically, individuals are not able to do this on their own.
 
 ![](https://i.imgur.com/WJIjOKv.png)
 
@@ -47,4 +47,4 @@ Some strategies also implement [flash loans](https://docs.yearn.finance/resource
 
 The Backscratcher yVault is only possible due to synergistic relationships with protocols like Curve, SushiSwap and Pickle Finance. Our relationships across DeFi allow yVault depositors benefits that they cannot get elsewhere.
 
-Yearn actively collaborates on development with protocols like the ones mentioned in order to create new opportunities for yield and further DeFi as an industry.
+Yearn actively collaborates on development with protocols like the ones mentioned to create new opportunities for yield and further DeFi as an industry.

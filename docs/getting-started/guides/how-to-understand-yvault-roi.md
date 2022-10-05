@@ -145,7 +145,7 @@ At this point, she could withdraw and receive her initial yCRV deposit and an ad
 
 ### Conclusions
 
-1. The short-term ROI data is a suitable estimation for the short-term \(i.e. if we compare the % from the last two days, it's likely that the following two days are going go be similar\).
+1. The short-term ROI data is a suitable estimation for the short-term \(i.e. if we compare the % from the last two days, it's likely that the following two days are going to be similar\).
 2. Short-term ROI data is _**absolutely not accurate**_ when extrapolated in the long-term.
 3. Long-term data \(say today and [inception of vault](https://docs.yearn.finance/resources/faq#where-can-i-find-strategy-descriptions)\) is a good overall estimation of the vaults performance and should be used when comparing different investment opportunities.
 
@@ -157,6 +157,6 @@ If you would like to make a crude estimation on how returns may look like in a y
 
 The community has been actively creating tools and guides on this topic.
 
-- [https://github.com/Zer0dot/yearn_roi/blob/master/yearn_vaults_ROI_calc.ipynb](https://github.com/Zer0dot/yearn_roi/blob/master/yearn_vaults_ROI_calc.ipynb) provides a mathemathical explanation on how ROI is calculated with some caveats. \(This repository is no longer being maintained\).
+- [https://github.com/Zer0dot/yearn_roi/blob/master/yearn_vaults_ROI_calc.ipynb](https://github.com/Zer0dot/yearn_roi/blob/master/yearn_vaults_ROI_calc.ipynb) provides a mathematical explanation of how ROI is calculated with some caveats. \(This repository is no longer being maintained\).
 - [Statistics FAQ](https://docs.yearn.finance/resources/faq#where-can-i-find-strategy-descriptions)
 - [How Yearn shows APY in the v3 interface](https://medium.com/iearn/how-yearn-calculates-estimated-returns-apy-b4fd5b687bf9)

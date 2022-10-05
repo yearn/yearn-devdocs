@@ -4,7 +4,7 @@ This is a collection of resources that aim to be an introduction to how yVaults 
 
 ## Introduction
 
-The best introduction to V2 is the workshop did by [Storming0x](https://github.com/storming0x/). It's security focused but nevertheless a great introduction to yVaults V2.
+The best introduction to V2 is the workshop done by [Storming0x](https://github.com/storming0x/). It's security-focused but still a great introduction to yVaults V2.
 
 - [Video - Part 1](https://www.youtube.com/watch?v=C0fsYiCI54g)
 - [Video - Part 2](https://www.youtube.com/watch?v=Y8y8ALmuLu4)
@@ -34,7 +34,7 @@ Once you have the strategy ready. This will guide you further down the road.
 
 ## Other reading material
 
-This is complement to the others but it's not directly related to creating strategies.
+This is a complement to the others but it's not directly related to creating strategies.
 
 - [The Keep3r Network](https://macarse.medium.com/the-keep3r-network-experiment-bb1c5182bda3)
 - [Andre intro to Yearn Vaults](https://medium.com/iearn/yearn-finance-v2-af2c6a6a3613)
