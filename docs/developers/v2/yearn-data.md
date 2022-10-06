@@ -8,9 +8,9 @@ If you need to fetch large amounts of historical yearn data there are 2 services
 ## yDaemon
 
 - **Live API:** https://ydaemon.yearn.finance/
-- **Source:** https://github.com/yearn/ydaemon
+- **Source + Docs:** https://github.com/yearn/ydaemon
 - **Guide:** https://medium.com/iearn/ydaemon-one-api-to-unify-all-yearn-data-4fc74dc9a33b
 
 ## Subgraph
 
-- **Live API:** https://api.thegraph.com/subgraphs/name/messari/yearn-v2-ethereum/graphql
+- **Live API + Docs:** https://api.thegraph.com/subgraphs/name/messari/yearn-v2-ethereum/graphql
