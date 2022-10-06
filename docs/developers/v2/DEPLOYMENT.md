@@ -135,7 +135,7 @@ vault.setGovernance(ychad.eth)
 
 In addition to the two strategist reviews, a Core Developer has to review the strategy before going into production.
 
-1. Consult with Yearn's web team to ensure that the new vault won't create any issues with the API and that all necessary token/vault metadata is ready. Additionally, if this vault needs to go in the "labs" category, then it needs to be manually added to the website.
+1. Create an [issue](https://github.com/yearn/yearn-finance-v3/issues) in yearn's web repo to ensure that the new vault won't create any problems with the API and that all necessary token/vault metadata is ready. Additionally, if this vault needs to go in the "labs" category, it must be manually added to the website.
 2. Increase deposit limit according to the table [below](#Limits-per-Stage)
 3. Set management fee to production level:
 
@@ -228,7 +228,7 @@ These are the standard deposit limits per stage, and they can be adjusted on a c
 
 ### Health Checks
 
-Since the v0.4.3 release, we introduce the concept of Health Checks contracts to vaults and strategies. These are helper contracts that can validate the end state of a harvest, or critical transaction, to ensure the accounting stays within established safe parameters.
+Since the v0.4.3 release, we have introduced the concept of Health Checks contracts to vaults and strategies. These are helper contracts that can validate the end state of a harvest, or critical transaction, to ensure the accounting stays within established safe parameters.
 
 You can think of these contracts as on-chain unit tests, or "self asserts", ensuring that the end state of a critical transaction matches an expected condition. The design allows health checks to be configured per individual vault or strategy. If the "assert" doesn't match expectations, the entire transaction will revert and require manual intervention by strategists or core devs.
 
@@ -244,7 +244,7 @@ v0.3.5 -> [v0.3.5-1](https://github.com/yearn/yearn-vaults/tree/v0.3.5-1) (compa
 
 1. Before deploying a strategy with [brownie-strategy-mix](https://github.com/yearn/brownie-strategy-mix) make sure your `brownie-config.yml` points to the correct patched vault version, to get a Health Check enabled `BaseStrategy` imported to your strategy.
 
-1. No change should be necessary on your extended `Strategy` logic to interact with the health check contract. **IMPORTANT**: Check your contract size to see if refactoring is needed for compilation.
+1. To interact with the health check contract, no change should be necessary on your extended `Strategy` logic. **IMPORTANT**: Check your contract size to see if refactoring is needed for compilation.
 
 1. Update your unit tests to set to the common Health Check contract [health.ychad.eth](https://etherscan.io/address/0xddcea799ff1699e98edf118e0629a974df7df012)
 
@@ -257,7 +257,7 @@ strategy.setHealthCheck(commonHealthCheck)
 
 ## Health Check Operations
 
-A global setting is used to check against deviations in reported profit and losses within a safe interval. Any report/harvest that falls outside this global safe interval will report.
+A global setting check against deviations in reported profit and losses within a safe interval. Any report/harvest that falls outside this global safe interval will report.
 
 If a harvest/report revert transaction is detected on-chain, manual intervention is required to debug and accept the transaction into the vaults accounting. This should be done after proper validation by the strategist's multi-sig and Core Devs group.
 
