@@ -1,6 +1,6 @@
 # Subgraph and yDaemon
 
-If you need to fetch large amounts of historical yearn data you will need to either use a subgraph or yDaemon.
+If you need to fetch large amounts of historical yearn data there are 2 services built for that:
 
 - The subgraph is a GraphQL interface to raw historical data
 - yDaemon is a RESTful API that hydrates subgraph responses with more data, like APY calculations
