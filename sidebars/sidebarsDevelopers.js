@@ -19,7 +19,7 @@ module.exports = {
       label: 'Smart Contracts',
       href: '/vaults/smart-contracts/BaseStrategy',
         },
-    'v2/yearn-data'
+    'v2/yearn-data',
     'v2/hacking-with-yearn',
     'v2/yswaps',
     'v2/fork-yearn-ui',
