@@ -56,8 +56,8 @@
 
 | Identity               | Address                                    |
 | ---------------------- | ------------------------------------------ |
-| Registry               | [0x81291ceb9bB265185A9D07b91B5b50Df94f005BF](https://arbiscan.io/address/0x81291ceb9bB265185A9D07b91B5b50Df94f005BF) |
-| Strategist multisig    | [0xea3a15df68fCdBE44Fdb0DB675B2b3A14a148b26](https://arbiscan.io/address/0xea3a15df68fCdBE44Fdb0DB675B2b3A14a148b26) |
-| Governance multisig    | [0xF5d9D6133b698cE29567a90Ab35CfB874204B3A7](https://arbiscan.io/address/0xF5d9D6133b698cE29567a90Ab35CfB874204B3A7) |
-| Treasury               | [0x84654e35E504452769757AAe5a8C7C6599cBf954](https://arbiscan.io/address/0x84654e35E504452769757AAe5a8C7C6599cBf954) |
-| Health Check           | [0x3d8F58774611676fd196D26149C71a9142C45296](https://arbiscan.io/address/0x3d8F58774611676fd196D26149C71a9142C45296) |
+| Registry               | [0x81291ceb9bB265185A9D07b91B5b50Df94f005BF](https://optimistic.etherscan.io/address/0x81291ceb9bB265185A9D07b91B5b50Df94f005BF) |
+| Strategist multisig    | [0xea3a15df68fCdBE44Fdb0DB675B2b3A14a148b26](https://optimistic.etherscan.io/address/0xea3a15df68fCdBE44Fdb0DB675B2b3A14a148b26) |
+| Governance multisig    | [0xF5d9D6133b698cE29567a90Ab35CfB874204B3A7](https://optimistic.etherscan.io/address/0xF5d9D6133b698cE29567a90Ab35CfB874204B3A7) |
+| Treasury               | [0x84654e35E504452769757AAe5a8C7C6599cBf954](https://optimistic.etherscan.io/address/0x84654e35E504452769757AAe5a8C7C6599cBf954) |
+| Health Check           | [0x3d8F58774611676fd196D26149C71a9142C45296](https://optimistic.etherscan.io/address/0x3d8F58774611676fd196D26149C71a9142C45296) |
