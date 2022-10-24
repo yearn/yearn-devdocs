@@ -93,3 +93,75 @@
 0x5FD3815DcB668200A662114fbC9aF13AC0A55b4D - Chainlink Calculations  
 0x0Ffe8434eAe67C9838b12C3cd11ac4005DAa7227 - Curve Calculations  
 0x0000000022D53366457F9d5E68Ec105046FC4383 - Curve Registry Address Provider  
+
+## Fantom
+
+0xac5A9E4135A3A26497F3890bFb602b06Ee592B61 - AddressesProvider  
+
+### Oracle
+
+0x57AA88A0810dfe3f9b71a9b179Dd8bF5F956C46A - Oracle  
+
+### Management List
+
+0x5EA7E501c9A23F4A76Dc7D33a11D995B13a1dD25 - ManagementList  
+
+### Registry Adapters
+
+0xF628Fb7436fFC382e2af8E63DD7ccbaa142E3cd1 - RegisteryAdapterV2Vault  
+0x1164587b49ff7aCE303962cC7A7E0841C1b34986 - RegistryAdapterIronBank  
+
+#### Helpers
+
+0xE55Dd55b3355c261A048B3f310706C7478657d74 - Helper  
+0x14785E5E3650F0603eE17401c9890De380713914 - HelperAllowances  
+0x6B8DE08D2520C955554E837aE72022Cd46Ba7F0e - HelperBalances  
+0x001d0a58B336F60ee050cB11EE455Fd7eB984518 - HelperAddressesMerger  
+0x97D0bE2a72fc4Db90eD9Dbc2Ea7F03B4968f6938 - HelperStrategies  
+
+#### Calculations
+
+0x0b53e9df372e72d8fdCDBEDfbb56059957a37128 - CalculationsCurve  
+0x44536dE2220987d098d1d29D3AAfc7f7348E9ee4 - CalculationsSpooky  
+0x560144C25E53149aC410E5D33BDB131e49A850e5 - CalculationsSushiswap  
+0xebAA0B431618bCd9eA67D39C232625c20880d9bA - CalculationsBand  
+
+#### Registries
+
+0x727fe1759430df13655ddb0731dE0D0FDE929b04 - Registry  
+0x7f462B92F92114A2D57A03e5Ae2DB5DA28b77d73 - Mechanics Registry  
+0x8CC45f739104b3Bdb98BFfFaF2423cC0f817ccc1 - VaultsRegistryHelper  
+
+## Arbitrum 
+
+0xcAd10033C86B0C1ED6bfcCAa2FF6779938558E9f - Addresses Provider  
+
+### Oracle
+
+0x043518AB266485dC085a1DB095B8d9C2Fc78E9b9 - Oracle  
+0xdF43263DFec19117f2Fe79d1D9842a10c7495CcD - Base Fee Oracle Contract  
+
+### Management List
+
+0x8A5f0876b217ee61d101E022Bb00d032e6D353bc - ManagementList  
+
+### Registry Adapters
+
+0x57AA88A0810dfe3f9b71a9b179Dd8bF5F956C46A - RegistryAdapterV2Vault  
+0x7AAd416eB4e16a27b85e7076dD56742A44E9d25B - RegistryAdapterIronBank  
+
+#### Helpers
+
+0xE55Dd55b3355c261A048B3f310706C7478657d74 - Helper  
+0xf5875d60241C8F6448649206A6f485b812ACF44D - AllowancesHelper  
+0x94734Ba0f9f8c2464d963a402743Fd79B402Efd7 - BalancesHelper  
+0x2A139A2812f1424F0C88e3d73854b16fb04E9449 - AddressMergeHelper  
+0x66a1A27f4b22DcAa24e427DCFFbf0cdDd9D35e0f - StrategiesHelper  
+
+#### Generators
+
+0x3A8efa2D87d60c0289f19B44A0928F4269c0f094 - AddressesGeneratorV2Vaults  
+
+#### Calculations
+
+0x5EA7E501c9A23F4A76Dc7D33a11D995B13a1dD25 - CalculationsSushiswap  
