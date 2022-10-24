@@ -1,4 +1,6 @@
-# How Yearn increases your yield
+# veCRV Boosts (deprecated)
+
+> **This page is outdated since yveCRV was deprecated in favour of yCRV. Check the new yCRV [page](https://docs.yearn.finance/getting-started/products/ycrv/overview).**
 
 Almost everything that yVaults interact with is available to the public. So how is Yearn able to offer users better yield than they'd be able to achieve on their own?
 
