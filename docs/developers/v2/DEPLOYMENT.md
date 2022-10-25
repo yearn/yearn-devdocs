@@ -11,33 +11,33 @@ The below instructions show some python commands that assume you are using the b
 ## Deploying a new Experimental Vault
 
 1. Clone the [Yearn Vaults Repo](https://github.com/yearn/yearn-vaults/) and run `brownie run scripts/deploy.py --network <network-to-deploy-vault>`
-1. Choose the brownie account for deploying your vault. This account needs to have funds to pay for the deployment transaction.
-1. Confirm the script is using the latest version of registry `v2.registry.ychad.eth` against the planned new release vault to be sure it's an updated version. (Can validate on Etherscan for latest address)
-1. Select the version of the vault to deploy or press enter to use the latest release.
-1. Enter `Y` when prompt to deploy Proxy Vault
-1. Enter the checksummed address of the ERC20 token the vault will use.
-1. Enter the vault Parameters (Below are some suggested values):
+2. Choose the brownie account for deploying your vault. This account needs to have funds to pay for the deployment transaction.
+3. Confirm the script is using the latest version of registry `v2.registry.ychad.eth` against the planned new release vault to be sure it's an updated version. (Can validate on Etherscan for latest address)
+4. Select the version of the vault to deploy or press enter to use the latest release.
+5. Enter `Y` when prompt to deploy Proxy Vault
+6. Enter the checksummed address of the ERC20 token the vault will use.
+7. Enter the vault Parameters (Below are some suggested values):
    - Set your address or an address you control as governance.
    - Set Treasury (`treasury.ychad.eth`) as the rewards address.
    - Set Core Dev multisig (`dev.ychad.eth`) as guardian.
    - Set Strategist multisig (`brain.ychad.eth`) as management.
    - Set name and symbol for vault or use suggested as default (can be changed on-chain later, but please check out our [naming conventions](https://docs.yearn.finance/developers/naming-convention)). 
-2. Confirm the Parameters are correct and press `y` and ENTER to deploy the vault.
-3. Check new vault has ABI setup on Etherscan (Some vault versions from older releases may have verification issues with Vyper and proxy detection on Etherscan, consider using latest releases >0.3.5 to ensure verification works).
+8. Confirm the Parameters are correct and press `y` and ENTER to deploy the vault.
+9. Check new vault has ABI setup on Etherscan (Some vault versions from older releases may have verification issues with Vyper and proxy detection on Etherscan, consider using latest releases >0.3.5 to ensure verification works).
 
-4. Set deposit limit according to the table [below](#Limits-per-Stage)
+10. Set deposit limit according to the table [below](#Limits-per-Stage)
 
    ```python
    vault.setDepositLimit(limit)
    ```
 
-5. Set management fee to 0:
+11. Set management fee to 0:
 
    ```python
    vault.setManagementFee(0)
    ```
 
-6. (Optional) Set governance to ychad.eth (`0xFEB4acf3df3cDEA7399794D0869ef76A6EfAff52`) if vault is planned to be endorsed soon:
+12. (Optional) Set governance to ychad.eth (`0xFEB4acf3df3cDEA7399794D0869ef76A6EfAff52`) if vault is planned to be endorsed soon:
 
 - Note you can still make changes to the vault after setting governance up until governance is accepted
 
@@ -48,14 +48,14 @@ vault.setGovernance(ychad.eth)
 ## Deploying a new Strategy
 
 1. Request access to a Core Dev strategist and create a new issue using the `Strategy Review` template in the strategies [private repo](https://github.com/yearn/yearn-strategies/issues) **Complete all the fields**.
-1. If the strategy targets a new protocol/new chain not currently approved by yearn (used in production) it may also require due diligence and path to production plan documents for the strategy to be considered for endorsement.
+2. If the strategy targets a new protocol/new chain not currently approved by yearn (used in production) it may also require due diligence and path to production plan documents for the strategy to be considered for endorsement.
    Example(s) [SNX](https://hackmd.io/0w1RZh7DSc27A9EyzlHbJQ?view)
-1. Coordinate with Core Dev strategist for reviewing strategy, then follow the status on the [private board](https://github.com/orgs/yearn/projects/5).
-1. Have it peer-reviewed by at least **two** strategists.
-1. Check if `want` token has a deployed vault already (>=v0.3.0) and coordinate to use that first if possible.
-1. Coordinate with a core developer to set a proper deposit limit and other settings for the new vault. See the table below: [Limits per Stage](#limits-per-stage).
-1. Deploy strategy and upload code to Etherscan for verification.
-1. Tag GitHub review issue with deployed version and attach mainnet address(es) to the strategy item in [private board](https://github.com/orgs/yearn/projects/5).
+3. Coordinate with Core Dev strategist for reviewing strategy, then follow the status on the [private board](https://github.com/orgs/yearn/projects/5).
+4. Have it peer-reviewed by at least **two** strategists.
+5. Check if `want` token has a deployed vault already (>=v0.3.0) and coordinate to use that first if possible.
+6. Coordinate with a core developer to set a proper deposit limit and other settings for the new vault. See the table below: [Limits per Stage](#limits-per-stage).
+7. Deploy strategy and upload code to Etherscan for verification.
+8. Tag GitHub review issue with deployed version and attach mainnet address(es) to the strategy item in [private board](https://github.com/orgs/yearn/projects/5).
 
 ## Make the Vault and Strategy work together
 
@@ -80,7 +80,7 @@ vault.setGovernance(ychad.eth)
    - `debt_ratio` should be `9800` if first strategy on vault.
    - `rate_limit` is `0` unless there is reason for it to be different.
 
-1. Set keeper:
+2. Set keeper:
 
    ```python
    strategy.setKeeper(keep3r_manager)
@@ -88,7 +88,7 @@ vault.setGovernance(ychad.eth)
 
    - `keep3r_manager` = `0x736D7e3c5a6CB2CE3B764300140ABF476F6CFCCF`
 
-1. Set health check:
+3. Set health check:
 
    ```python
    strategy.setHealthCheck(health_check)
@@ -106,7 +106,7 @@ vault.setGovernance(ychad.eth)
 
    - Read [below](<#sharer-contract>) if you want to use the sharer contract.
 
-1. Run tests against "live" vault and strategy in mainnet-fork:
+2. Run tests against "live" vault and strategy in mainnet-fork:
 
    - Harvest.
    - Profitable harvest.
@@ -122,14 +122,14 @@ vault.setGovernance(ychad.eth)
 > You can coordinate with the strategists if you need a UI to test.
 
 1. Deposit some `want` tokens into the vault.
-1. Do first `harvest` and make sure it worked correctly.
+2. Do first `harvest` and make sure it worked correctly.
 
    ```python
    strategy.harvest()
    ```
 
-1. Monitor `harvest` and `tend` triggers for first few days. Call `harvest`/`tend` manually.
-1. If this is a new vault deployment, test deposit, withdraw, and transfer to ensure functionality is as expected.
+3. Monitor `harvest` and `tend` triggers for first few days. Call `harvest`/`tend` manually.
+4. If this is a new vault deployment, test deposit, withdraw, and transfer to ensure functionality is as expected.
 
 ## Scaling up / Moving to Endorse
 
@@ -167,11 +167,11 @@ proxy.approveStrategy(gauge, strategy)
 ### Endorsing a vault from a previous release
 
 1. Check for the latest release number in the registry contract
-1. Check the apiVersion of the vault you want to endorse to identify the target release
-1. Calculate the releaseDelta from your target release. (see registry endorseVault param details)
+2. Check the apiVersion of the vault you want to endorse to identify the target release
+3. Calculate the releaseDelta from your target release. (see registry endorseVault param details)
    E.g: latestRelease = 0.3.3 and numReleases = 5. New vault apiVersion is 0.3.2
    `releaseDelta = numReleases - 1 - releaseTarget`
-1. Confirm using `registry.releases(uint256)` that your `targetRelease` has the same apiVersion as your vault.
+4. Confirm using `registry.releases(uint256)` that your `targetRelease` has the same apiVersion as your vault.
 
    ```python
    releaseTarget = 3 # e.g vault api version 0.3.2
@@ -198,13 +198,13 @@ The following steps are required for all strategies. These descriptions are pull
    strategy.setMaxReportDelay()
    ```
 
-1. Set strategy's Keep3r role to v2-keeper-contract:
+2. Set strategy's Keep3r role to v2-keeper-contract:
 
    ```python
    strategy.setKeeper(0x736D7e3c5a6CB2CE3B764300140ABF476F6CFCCF)
    ```
 
-1. Create an add-strategy PR in Keep3r [repo](https://github.com/yearn/yearn-keeper) (TBD)
+3. Create an add-strategy PR in Keep3r [repo](https://github.com/yearn/yearn-keeper) (TBD)
 
 ## References
 
@@ -244,16 +244,16 @@ v0.3.5 -> [v0.3.5-1](https://github.com/yearn/yearn-vaults/tree/v0.3.5-1) (compa
 
 1. Before deploying a strategy with [brownie-strategy-mix](https://github.com/yearn/brownie-strategy-mix) make sure your `brownie-config.yml` points to the correct patched vault version, to get a Health Check enabled `BaseStrategy` imported to your strategy.
 
-1. To interact with the health check contract, no change should be necessary on your extended `Strategy` logic. **IMPORTANT**: Check your contract size to see if refactoring is needed for compilation.
+2. To interact with the health check contract, no change should be necessary on your extended `Strategy` logic. **IMPORTANT**: Check your contract size to see if refactoring is needed for compilation.
 
-1. Update your unit tests to set to the common Health Check contract [health.ychad.eth](https://etherscan.io/address/0xddcea799ff1699e98edf118e0629a974df7df012)
+3. Update your unit tests to set to the common Health Check contract [health.ychad.eth](https://etherscan.io/address/0xddcea799ff1699e98edf118e0629a974df7df012)
 
 ```python
 commonHealthCheck = Contract(web3.ens.resolve(“health.ychad.eth”))
 strategy.setHealthCheck(commonHealthCheck)
 ```
 
-1. Test your normal harvest operations using mainnet-fork and unit tests to validate that the integration is working correctly.
+4. Test your normal harvest operations using mainnet-fork and unit tests to validate that the integration is working correctly.
 
 ## Health Check Operations
 
