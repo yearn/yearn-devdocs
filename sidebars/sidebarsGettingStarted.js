@@ -40,6 +40,6 @@ module.exports = {
         'guides/how-to-understand-strategies-descriptions',
       ],
     },
-    'products/token-addresses',
+    'products/addresses',
   ],
 }
