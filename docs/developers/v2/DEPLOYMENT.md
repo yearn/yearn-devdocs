@@ -23,7 +23,7 @@ The below instructions show some python commands that assume you are using the b
    - Set Strategist multisig (`brain.ychad.eth`) as management.
    - Set name and symbol for vault or use suggested as default (can be changed on-chain later, but please check out our [naming conventions](https://docs.yearn.finance/developers/naming-convention)). 
 8. Confirm the Parameters are correct and press `y` and ENTER to deploy the vault.
-9. Check new vault has ABI setup on Etherscan (Some vault versions from older releases may have verification issues with Vyper and proxy detection on Etherscan, consider using latest releases >0.3.5 to ensure verification works).
+9. Check new vault has ABI setup on Etherscan (Some vault versions from older releases may have verification issues with Vyper and proxy detection on Etherscan, consider using later releases >0.3.5 to ensure verification works).
 
 10. Set deposit limit according to the table [below](#Limits-per-Stage)
 
