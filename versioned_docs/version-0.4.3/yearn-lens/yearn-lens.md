@@ -34,7 +34,7 @@ Yearn Lens is a series of smart contracts that aggregate and format Yearn family
   - Supports adding, removing and upgrading price calculations
     - Currently supported calculations:
       - Sushiswap market price (based on `getAmountsOut`)
-      - Uniswap market price  (based on `getAmountsOut`)
+      - Uniswap market price (based on `getAmountsOut`)
       - Sushiswap/Uniswap LP token prices (based on `getReserves`)
       - Iron Bank market price (based on `exchangeRateStored`)
       - Curve LP token price (based on `virtualPrice` and base underlying token price)
@@ -180,7 +180,7 @@ struct Position {
     uint256 balance; // asset.balanceOf(account) - shares owned by user
     TokenPostion underlyingTokenBalance; // Amount of underlying token in the asset that a user owns
     TokenPosition accountTokenBalance; // Amount of underlying token a user owns
-    Allowance[] tokenAllowances; 
+    Allowance[] tokenAllowances;
     Allowance[] assetAllowances;
 }
 ```
@@ -275,15 +275,15 @@ struct AssetMetadata {
 
 ###### Earn
 
-```TBD```
+`TBD`
 
 ###### Iron Bank
 
-```TBD```
+`TBD`
 
 ###### veCrv
 
-```TBD```
+`TBD`
 
 #### Methods
 
@@ -376,7 +376,7 @@ uint256 assetTvl = registryAdapter.assetTvl(assetAddress);
 
 ###### Example Response
 
-```1637032292```
+`1637032292`
 
 ##### assetsTvl
 
@@ -397,7 +397,7 @@ uint256 assetTvl = registryAdapter.assetsTvl();
 
 ###### Example Response
 
-```443923433354832```
+`443923433354832`
 
 ##### asset
 
@@ -621,9 +621,9 @@ function calculations() external view returns (address[] memory);
 
 ```json
 [
-   '0xfC714174E5c8bd056a45a5337E7b402CC4af7BF3',
-   '0x55e9B18fefFF7E00548d54480373Fc8843De8eA4',
-   '0x88dE7d7F7b9597C86b8cD195374FbF602934F334'
+  "0xfC714174E5c8bd056a45a5337E7b402CC4af7BF3",
+  "0x55e9B18fefFF7E00548d54480373Fc8843De8eA4",
+  "0x88dE7d7F7b9597C86b8cD195374FbF602934F334"
 ]
 ```
 
@@ -643,7 +643,7 @@ function getPriceUsdcRecommended(address tokenAddress)
 
 ###### Example Response
 
-```103000```
+`103000`
 
 ##### getNormalizedValueUsdc
 
@@ -662,7 +662,7 @@ function getNormalizedValueUsdc(address tokenAddress, uint256 amount)
 
 ###### Example Response
 
-```3442238822```
+`3442238822`
 
 ##### tokenAliases
 
@@ -714,6 +714,7 @@ function addTokenAlias(address tokenAddress, address tokenAliasAddress)
 #### Standardized methods
 
 All calculation contracts must implement the following methods.
+
 ##### getPriceUsdc
 
 Fetch the recommended price given a token address. Reverts if no relevant price is found.
@@ -724,7 +725,7 @@ function getPriceUsdc(address tokenAddress) public view returns (uint256)
 
 ###### Example Response
 
-```103000```
+`103000`
 
 #### Calculation specific methods
 
@@ -737,30 +738,29 @@ function getPriceFromRouter(address token0Address, address token1Address)
         public
         view
         returns (uint256);
-        
+
 function getPriceFromRouterUsdc(address tokenAddress)
         public
         view
         returns (uint256);
-        
+
 function isLpToken(address tokenAddress) public view returns (bool);
 
 function getRouterForLpToken(address tokenAddress)
         public
         view
         returns (PriceRouter);
-        
+
 function getLpTokenTotalLiquidityUsdc(address tokenAddress)
         public
         view
         returns (uint256);
-        
+
 function getLpTokenPriceUsdc(address tokenAddress)
         public
         view
         returns (uint256);
 ```
-
 
 ##### Curve
 
@@ -774,7 +774,7 @@ function getVirtualPrice(address curveLpTokenAddress)
         public
         view
         returns (uint256);
-        
+
 function isCurveLpToken(address tokenAddress) public view returns (bool);
 
 function getFirstUnderlyingCoinFromPool(address poolAddress)
@@ -934,7 +934,7 @@ See: [registryAdapter.assetsAddresses](#assetsaddresses)
 
 ##### allowances
 
-Batch fetch allowances given an owner, tokens and spender. This is a helper utility for fetching large amounts of token allowances for a specific set of contracts (zapper contract, for example)
+Batch fetch allowances given an owner, tokens and spender. This is a helper utility for fetching large amounts of token allowances for a specific set of contracts
 
 ```solidity
     function allowances(
