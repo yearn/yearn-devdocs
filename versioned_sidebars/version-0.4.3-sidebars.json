@@ -20,7 +20,7 @@
     {
       "type": "category",
       "label": "Yearn Lens",
-      "items":["version-0.4.3/yearn-lens/yearn-lens", "version-0.4.3/yearn-lens/contracts"]
+      "items":["version-0.4.3/yearn-lens/yearn-lens"]
     }
   ]
 }
