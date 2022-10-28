@@ -19,7 +19,7 @@ veYFI incorporates [YIP-56: Buyback and Build](https://gov.yearn.finance/t/yip-5
   - Penalty Formula: `min(75%, lock_duration_left / 4 years * 100%)`
 - Once veYFI is introduced, only veYFI is accepted voting power in Yearn Governance.
 
-### Vault gauges + Voting
+### Vault Gauges + Voting
 
 - Vault gauges allow vault depositors to stake their vault tokens and earn YFI rewards according to their veYFI weight.
 - Increased locking duration is rewarded with increased weights, so locking for 4 years gives 100% weight, locking for 2 years 50% weight, etc.
