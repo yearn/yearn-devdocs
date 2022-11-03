@@ -99,7 +99,7 @@ This guide focuses primarily on strategy descriptions, but those thirsty for mor
 - Locking up [CRV](#curve) on Curve allows you to boost your CRV [rewards](#rewards) for being a liquidity provider.
 - Read more at curve [docs↗](https://resources.curve.fi/reward-gauges/boosting-your-crv-rewards).
 ### Convex
-- A protocol that made locked CRV (called veCRV) tradeable and managed to amass huge liquidity and control more than 50% circulating CRV. [docs↗](https://docs.convexfinance.com/convexfinance/general-information/why-convex).
+- A protocol that made locked CRV (called veCRV) tradeable, managed to amass huge liquidity, and controls more than 50% of all circulating CRV. [docs↗](https://docs.convexfinance.com/convexfinance/general-information/why-convex).
 ### Flashloan / Flashlend
 - Loan, use, and payback tokens in a single blockchain transaction.
 - Often used to amass high liquidity for a quick operation where you don't have it.
