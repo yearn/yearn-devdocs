@@ -8,14 +8,6 @@
 
 ![](https://i.imgur.com/T9ftjDa.png)
 
-## Zap in with any asset
-
-Thanks to [Zapper](https://zapper.fi/), yVaults are extremely easy to deposit into. As long as you hold a token that can be swapped on Uniswap with less than 1% slippage, the vault will accept the token, convert it into what's required for the vault, and deposit all in the same transaction.
-
-When withdrawing, users will be able to zap back into one of the following tokens:
-
-- ETH, WETH, DAI, USDT, USDC, WBTC
-
 ## yVault Fee Structure
 
 **20% Performance Fee**: Deducted from yield earned every time a vault harvests a strategy.
