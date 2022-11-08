@@ -19,7 +19,7 @@ Cryptographic membership attestations can be validated against the PGP keys in t
 [Membership attestation](https://twitter.com/nanexcool/status/1491900804223041540) - [Etherscan](https://etherscan.io/address/0x6F2A8Ee9452ba7d336b3fba03caC27f7818AeAD6)
 
 **0x7321ED86B0Eb914b789D6A4CcBDd3bB10f367153** - Leo Cheng (C.R.E.A.M. Finance)  
-[Membership Attestation](https://twitter.com/lumbergdoteth/status/1492736002724876291) - [Etherscan](https://etherscan.io/address/0x7321ED86B0Eb914b789D6A4CcBDd3bB10f367153)
+[Membership attestation](https://twitter.com/lumbergdoteth/status/1492736002724876291) - [Etherscan](https://etherscan.io/address/0x7321ED86B0Eb914b789D6A4CcBDd3bB10f367153)
 
 **0x74630370197b4c4795bFEeF6645ee14F8cf8997D** - cp287 (cp0x.com)  
 [Membership attestation](https://twitter.com/kaplansky1/status/1285427247286046725) - [Etherscan](https://etherscan.io/address/0x74630370197b4c4795bFEeF6645ee14F8cf8997D)
