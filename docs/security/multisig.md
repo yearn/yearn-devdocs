@@ -31,10 +31,10 @@ Cryptographic membership attestations can be validated against the PGP keys in t
 [Membership attestation](https://twitter.com/Daryllautk/status/1285434908383444992) - [Etherscan](https://etherscan.io/address/0x99BC02c239025E431D5741cC1DbA8CE77fc51CE3)
 
 **0xf5D3dbda5F41A0E26D71B948e29522398e71cFaE** - 0xngmi (DefiLlama)
-[Membership attestation](https://twitter.com/0xngmi/status/1590047391797088257) - [Etherscan](0xf5D3dbda5F41A0E26D71B948e29522398e71cFaE)
+[Membership attestation](https://twitter.com/0xngmi/status/1590047391797088257) - [Etherscan](https://etherscan.io/address/0xf5D3dbda5F41A0E26D71B948e29522398e71cFaE)
 
-**0x1496546f89fc1605880e556c9a1d6c5e2409fb0a** - monoloco
-[Etherscan](0x1496546f89fc1605880e556c9a1d6c5e2409fb0a)
+**0x1496546f89fc1605880e556c9a1d6c5e2409fb0a** - monoloco (Yearn Finance)
+[Membership attestation](https://therealmonoloco.keybase.pub/yearn-social-proof.txt) - [Etherscan](https://etherscan.io/address/0x1496546f89fc1605880e556c9a1d6c5e2409fb0a)
 
 **0x2B888954421b424C5D3D9Ce9bB67c9bD47537d12** - Lefteris Karapetsas (rotkiapp)
 [Etherscan](0x2B888954421b424C5D3D9Ce9bB67c9bD47537d12)
