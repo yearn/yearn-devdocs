@@ -23,7 +23,7 @@ module.exports = {
       disableSwitch: false,
       respectPrefersColorScheme: true,
     },
-    image: 'img/YFILogoGradient.png',
+    image: 'img/YFILogoGradient.jpg',
     metadata: [
       {
         name: 'twitter:card',
