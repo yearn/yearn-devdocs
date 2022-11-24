@@ -97,7 +97,7 @@ Scripts in charge of providing the swap transaction that will be used and sent t
 
 - **Dexes solvers**: this script is used for situations where the trade can be resolved with a normal swap on an exchange and does NOT require multiple tx to ensure the trade is possible. Different to `Custom Solvers`, this can be used in a generic way for different strategies/swaps. This script checks with every DeX and chooses the best one to make the trade. The tx provided by this solver is gonna be used with the `Single swapper`.
 
-- **Multicall Dexes solvers**: This solver is gonna split the trade in different steps using the `hopTokens` provided by us. Each step of the swap will loop between every dexes library and will take the best dex for each step of the trade. This solver generally will be using the `MulticallSwapper` since we are doing 2 steps or tx for the swap. But it is also possible to use the `SingleSwapper` because if both steps of the trade are using the same Dex, we should merge them into one for gas efficiency. We will be transformir `2 tx` into `1 tx` so we can use the `SingleSwapper`.
+- **Multicall Dexes solvers**: This solver is gonna split the trade in different steps using the `hopTokens` provided by us. Each step of the swap will loop between every dexes library and will take the best dex for each step of the trade. This solver generally will be using the `MulticallSwapper` since we are doing 2 steps or tx for the swap. But it is also possible to use the `SingleSwapper` because if both steps of the trade are using the same Dex, we should merge them into one for gas efficiency. We will be transforming `2 tx` into `1 tx` so we can use the `SingleSwapper`.
 
 <br />
 
