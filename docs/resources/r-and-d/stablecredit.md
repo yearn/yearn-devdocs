@@ -1,10 +1,10 @@
 ---
-Status: In Research & Development
+Status: On Hold (No Active Development or R&D)
 ---
 
 # StableCredit
 
-StableCredit is an upcoming product in research & development that combines three pillars of existing DeFi infrastructure:
+StableCredit combines three pillars of existing DeFi infrastructure:
 
 - Minting synthetic debt (DAI, Synthetix).
 - Decentralized lending platform (Compound, AAVE).
