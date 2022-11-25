@@ -36,13 +36,13 @@ Use the [Feedback](https://gov.yearn.finance/c/feedback/2) section of the govern
 
 The Yearn ecosystem is expanding and, as a result, so is the need for documentation. You can find the "official" Yearn Documentation [here](https://docs.yearn.finance/) — which provides high-level overviews _and_ technical documentation.
 
-Whether its writing _How To_ guides on using vaults or creating diagrams on how the protocol ties together, there is something for everyone. If you speak another language, translations might be up your alley!
+Whether it's writing _How To_ guides on using vaults or creating diagrams on how the protocol ties together, there is something for everyone. If you speak another language, translations might be up your alley!
 
 You can see our progress on the [Github Project Board](https://github.com/orgs/yearn/projects/2) where you can look through any issue that interests you. Before contributing: Please see our [How to Use Github](https://hackmd.io/4U35op0ORoGT24lzPhbGNQ) guide and ensure that your PRs adhere to our [Writing Style Guide](https://hackmd.io/dXQecpkJQX6XRy4y7k7j3g).
 
 We use a combination of HackMD, Docusaurus, and Github for our [Documentation](https://docs.yearn.finance/) and we use [DrawIO](https://draw.io) with Google Drive for our diagrams & schemas. If you are a grammar stickler, you can see our [Reviewer Guide](https://hackmd.io/juTKNn3xTpKJgFDo2AglLw).
 
-Last, but not least, join the #documentation channel in [Discord](https://discord.gg/freT6YRNSX) and introduce yourself.
+Last but not least, join the #documentation channel in [Discord](https://discord.gg/freT6YRNSX) and introduce yourself.
 
 If this sounds confusing, please let us know what we can clear up. In the meantime: You can begin contributing to our HackMD docs immediately via the Github issues — we'll guide you through the rest.
 
@@ -50,17 +50,17 @@ If this sounds confusing, please let us know what we can clear up. In the meanti
 
 #### Developers
 
-If you're a developer we need your help! Before you begin: Familiarize yourself with Yearn, its products, and its infrastructure by reading our [Documentation](https://docs.yearn.finance/).
+If you're a developer, we need your help! Before you begin: Familiarize yourself with Yearn, its products, and its infrastructure by reading our [Documentation](https://docs.yearn.finance/).
 
-You can see our progress on our [Github Project Board](https://github.com/orgs/yearn/projects/1) and you can immediately begin contributing where you see fit. We recommend checking out issues tagged as `help wanted` and recommend sticking to the respective repository's coding guidelines (linting, formatting, PRs, etc). It's that simple 🙂. You can also join us on the #dev channel in [Discord](https://discord.gg/w89vVxeV9h).
+You can see our progress on our [Github Project Board](https://github.com/orgs/yearn/projects/1), and you can immediately begin contributing where you see fit. We recommend checking out issues tagged as `help wanted` and recommend sticking to the respective repository's coding guidelines (linting, formatting, PRs, etc). It's that simple 🙂. You can also join us on the #dev channel in [Discord](https://discord.gg/w89vVxeV9h).
 
 If you are interested in working on a specific project, check out the list of Yearn products in the [General Resources](#general-resources) section below or check out our list of repos [here](https://github.com/orgs/yearn/repositories).
 
-If you want an overview on how our services interact with one another in Vaults, please see the schema and accompanying descriptions in the [Vaults Overview](https://docs.yearn.finance/getting-started/products/yvaults/overview).
+If you want an overview of how our services interact with one another in Vaults, please see the schema and accompanying descriptions in the [Vaults Overview](https://docs.yearn.finance/getting-started/products/yvaults/overview).
 
-If you're wondering how **strategies** work, please check out [Yearn Vaults v2 intro](https://www.youtube.com/watch?v=C0fsYiCI54g) — hosted by our Yearn Devs. To start writing a Strategy of your own, please visit the [Yearn Brownie Mix](https://github.com/yearn/brownie-strategy-mix).
+If you're wondering how **strategies** work, please check out [Yearn Vaults v2 intro](https://www.youtube.com/watch?v=C0fsYiCI54g) — hosted by our Yearn Devs. To start writing your own strategy, please visit the [Yearn Brownie Mix](https://github.com/yearn/brownie-strategy-mix).
 
-If you are looking to integrate with Yearn, please visit our [Integration Guide](https://docs.yearn.finance/partners/integration_guide) and check out our [Vault API Documentation](https://docs.yearn.finance/vaults/smart-contracts/VaultAPI).
+If you want to integrate with Yearn, please visit our [Integration Guide](https://docs.yearn.finance/partners/integration_guide) and check out our [Vault API Documentation](https://docs.yearn.finance/vaults/smart-contracts/VaultAPI).
 
 #### Designers
 
@@ -85,7 +85,7 @@ When you decide to start, this reading material is going to come handy:
 - [Mint your own DAI](https://medium.com/ethereum-grid/forking-ethereum-mainnet-mint-your-own-dai-d8b62a82b3f7)
 - [Dev Docs](https://docs.yearn.finance/developers/v2/getting-started)
 
-Once you have the strategy ready. This will guide you further down the road.
+Once you have the strategy ready, this will guide you further down the road:
 
 - [Vault naming standard](https://docs.yearn.finance/developers/v2/naming-convention)
 - [Release process](https://docs.yearn.finance/developers/v2/DEPLOYMENT)
@@ -93,7 +93,7 @@ Once you have the strategy ready. This will guide you further down the road.
 
 ##### Other reading material
 
-This is complement to the others but it's not directly related to creating strategies.
+This is complementary to the others, but it's not directly related to creating strategies.
 
 - [The Keep3r Network](https://macarse.medium.com/the-keep3r-network-experiment-bb1c5182bda3)
 - [Andre intro to Yearn Vaults](https://medium.com/iearn/yearn-finance-v2-af2c6a6a3613)
