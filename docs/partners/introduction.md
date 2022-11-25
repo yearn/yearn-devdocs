@@ -2,25 +2,26 @@
 title: Partnership Program
 ---
 
-Yearn's partnership program allows developers to easily integrate yield into their own services.
+Yearn's partnership program allows developers to easily integrate yield-generation into their own services.
 
-To make yVaults accessible from virtually anywhere, any protocol that integrates yVaults can earn up to a 50% profit share from their contributed TVL. The Partnership program is being tested and audited as we currently work with a range of partners.
+To make yVaults accessible from virtually anywhere, any protocol that integrates yVaults can earn up to a 50% profit share from their contributed TVL. The partnership program launched in early 2021 and has been battle tested by our wide range of partners. 
 
 If you are interested in partnering with us, we’d love to hear from you! Please reach out to us through this [Yearn Partners form](https://yearnfinance.typeform.com/to/uP7xOJUN).
 
 # Eligibility
 
-Yearn's Partnership Program is focused on protocols that want to build on top of Yearn's products. We firmly believe that the value a protocol brings to the community, and the ecosystem, is more than just funds parked in a vault. To this end, we work closely with our partners to integrate and form a mutually beneficial relationship to add value to both protocols.
+Yearn's Partnership Program is aimed at protocols that want to build on top of Yearn's products. We firmly believe that the value a protocol brings to the community, and the ecosystem, is more than just funds parked in a vault. To this end, we work closely with our partners to integrate and form a mutually beneficial relationship to add value to both protocols. Please note that becoming a Yearn Partner doesn’t mean we’ll be reviewing your code. Users who deposit into Yearn through one of our Partners, rely on their codebase and team.
+
 
 # Profit Share Model
 
-We offer profit shares based on yield generated across all vaults. For now, we are paying out profit shares manually, retroactively, but we want to move it on-chain as the program matures.
+We offer profit shares based on yield generated across all vaults. We are currently paying out profit shares manually and retroactively, but plan to move payments on-chain in the near future.
 
 Profit-sharing is paid out in the native token of the vaults that partners are utilizing.
 
 Yearn partner's profit works like this:
 * Yearn fees for a vault can be checked at [yearn.watch](https://yearn.watch).
-    * Management fee (if applied) is yearly charged from the vault's TVL
+    * Management fee (if applied) is charged yearly from the vault's TVL
     * Performance fee is charged from the vault's strategies harvest profits
     * For example, checking DAI vault fees at yearn watch: ![](https://i.imgur.com/Ok6hfVJ.png)
 * **45% of the fees generated** by both fees are set aside for operational expenses (salaries, infrastructure gas, etc)
@@ -44,7 +45,7 @@ Tiers are what determine the percentage of profit-sharing with the partner. They
 
 # Example Partner Profit Sharing Case
 
-Here is an example case of how yearn would share profits with a partner, the values won't match production ones but it helps to understand the entire flow:
+Here is an example of how yearn would share profits with a partner (please note the values listed do not match what is in production. These values are meant to help partners understand the process):
 
 Let's say a partner protocol contributes to Yearn DAI vault during a year with:
 
