@@ -55,11 +55,20 @@ In `versioned_docs` you will find several versions of the vault doc that corresp
 
 Versioned doc should not be edited but generated directly from the vault codebase.
 
-##### Generating Versioned doc
+##### Generating Versioned Docs
+
+**Dependencies**
+
+- Clone [yearn/yearn-vaults](https://github.com/yearn/yearn-vaults) in the same folder where you cloned yearn-devdocs (not inside devdocs, but besides it)
+- Run the yearn-vaults [installation](https://github.com/yearn/yearn-vaults#installation), you will need to have brownie installed to run it once so it installs the required dependencies.
+- Check the vyper compiler version on the vaults repo ([here](https://github.com/yearn/yearn-vaults/blob/master/contracts/Vault.vy#L1)) and update the `~/.vvm/vyper-X.X.X` in the end of the first command below.
+- Make sure [Vault.vy](https://github.com/yearn/yearn-vaults/blob/master/contracts/Vault.vy#L1) and [Registry.vy](https://github.com/yearn/yearn-vaults/blob/master/contracts/Registry.vy#L1) on `yearn-vaults` folder has the same compiler version on their first line. If not, bump the file with the lowest version to the current version the other uses.
+
+**Generate:**
 
 To generate API docs and coin a new release, do the following.
 ```
-npx vydoc -i ../yearn-vaults/contracts/ -o docs/v2/smart-contracts -t ./templates/contract.ejs -c ~/.vvm/vyper-0.2.11
+npx vydoc -i ../yearn-vaults/contracts/ -o docs/v2/smart-contracts -t ./templates/contract.ejs -c ~/.vvm/vyper-0.3.3
 npx solidity-docgen --templates=templates --helpers=helpers/solidityHelpers.js -i ../yearn-vaults/contracts/ -o docs/v2/smart-contracts
 npm run docusaurus docs:version 1.0.0
 ```
