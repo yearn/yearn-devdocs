@@ -51,7 +51,7 @@ In the `docs` folder:
 
 #### Versioned doc
 
-In `versioned_docs` you will find several versions of the vault doc that corresponds to a tagged release. In `docs/v2` you can find the latest version that corresponds to the changes on yearn-vault master is the documentation for the next/unreleased version.
+In `versioned_docs` you will find several versions of the vault doc that corresponds to a tagged release. In `vaults` folder you can find the latest version that corresponds to the changes on yearn-vault master is the documentation for the next/unreleased version.
 
 Versioned doc should not be edited but generated directly from the vault codebase.
 
@@ -70,7 +70,7 @@ Versioned doc should not be edited but generated directly from the vault codebas
 
 To generate API docs and coin a new release, do the following.
 ```
-npx vydoc -i ../yearn-vaults/contracts/ -o ./vaults -t ./templates/contract.ejs -c ~/.vvm/vyper-0.3.3
-npx solidity-docgen --solc-module solc --templates=templates --helpers=helpers/solidityHelpers.js -i ../yearn-vaults/contracts/ -o ./vaults
+npx vydoc -i ../yearn-vaults/contracts/ -o ./vaults/smart-contracts -t ./templates/contract.ejs -c ~/.vvm/vyper-0.3.3
+npx solidity-docgen --solc-module solc --templates=templates --helpers=helpers/solidityHelpers.js -i ../yearn-vaults/contracts/ -o ./vaults/smart-contracts
 npm run docusaurus docs:version 0.4.5
 ```
