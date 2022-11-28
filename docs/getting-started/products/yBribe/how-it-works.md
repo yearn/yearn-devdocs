@@ -12,8 +12,6 @@ veCRV holders can sell their gauge votes to the highest bidder each week by 1- v
 
 1. Review the APRs for each guage.
 
-![](https://i.imgur.com/5Qu240a.png)
-
 *    Current Period APR: The APR users can claim this week (if they haven’t already claimed)
 *    Pending Period APR: The APR they will be able to claim next week (week in this case starts on Thursday)
     
@@ -21,13 +19,18 @@ veCRV holders can sell their gauge votes to the highest bidder each week by 1- v
 2. Use the APRs to identify which guage to vote for.
 3. Head to Curve by clicking **"Vote for Guage"**  at the top of the page to cast your vote. 
 
+**Process Flow:**
+
 ![](https://i.imgur.com/mDUm09z.png)
+
 
 
 
 ***Claiming Bribes***
 
-4. After you vote, you’ll be able to claim any applicable rewards at the start of the next period.
+1. After you vote, you’ll be able to claim any applicable rewards at the start of the next period.
+
+**Process Flow:**
 
 ![](https://i.imgur.com/iHnEpZk.png)
 
@@ -35,6 +38,7 @@ veCRV holders can sell their gauge votes to the highest bidder each week by 1- v
 
 > **Note**: Make sure you claim any claimable rewards before the current period ends, and/ or submit your votes for the next period. Be sure to claim any rewards before voting again on the same gauge or you’ll be locked out of rewards until the following week.
 > 
+
 ## Example
 
 Facu is a veCRV holder. Facu goes to yBribe (which gets all data directly on-chain) to figure out which gauge is the best one to vote for.
@@ -58,11 +62,14 @@ Bribers can offer a bribe to increase CRV emissions to your favorite Curve pool.
 2. Weight, Current $/veCRV, and Pending $/veCRV are listed for each token.
 3. Offer bribe for upcoming period
 
+**Process Flow:**
 
 ![](https://i.imgur.com/5O5UT8j.png)
 
 
 yBribe now lets users assign rewards to a different claiming address than the one used to vote. It also fixes a bug which under certain circumstances, allowed an initial bribe allocation to be drained before the start of a voting period.
+
+
 
 
 # FAQ
