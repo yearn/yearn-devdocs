@@ -64,14 +64,13 @@ Versioned doc should not be edited but generated directly from the vault codebas
 - Check the vyper compiler version on the vaults repo ([here](https://github.com/yearn/yearn-vaults/blob/master/contracts/Vault.vy#L1)) and update the `~/.vvm/vyper-X.X.X` in the end of the first command below.
 - Make sure [Vault.vy](https://github.com/yearn/yearn-vaults/blob/master/contracts/Vault.vy#L1) and [Registry.vy](https://github.com/yearn/yearn-vaults/blob/master/contracts/Registry.vy#L1) on `yearn-vaults` folder has the same compiler version on their first line. If not, bump the file with the lowest version to the current version the other uses.
 - If any contract file in yearn-vaults uses a fixed compiler version (without leading `^`) you may have to add it so the `solc` compiler is able to run. Also make sure `solc` version is up-to-date.
-- More information on docusaurus versioning [here](https://docusaurus.io/docs/versioning#tagging-a-new-version) if the last command has any issue, remember to change the version to the one you are generating for!
-- In docusaurus.config.js comment out `routeBasePath: 'vaults',` `path: 'vaults',` lines to run the last command
+- More information on docusaurus versioning [here](https://docusaurus.io/docs/versioning#tagging-a-new-version) if the last command has any issue, and remember to change the version to the one you are generating for!
 
 **Generate:**
 
 To generate API docs and coin a new release, do the following.
 ```
-npx vydoc -i ../yearn-vaults/contracts/ -o docs/v2/smart-contracts -t ./templates/contract.ejs -c ~/.vvm/vyper-0.3.3
-npx solidity-docgen --solc-module solc --templates=templates --helpers=helpers/solidityHelpers.js -i ../yearn-vaults/contracts/ -o docs/v2/smart-contracts
+npx vydoc -i ../yearn-vaults/contracts/ -o ./vaults -t ./templates/contract.ejs -c ~/.vvm/vyper-0.3.3
+npx solidity-docgen --solc-module solc --templates=templates --helpers=helpers/solidityHelpers.js -i ../yearn-vaults/contracts/ -o ./vaults
 npm run docusaurus docs:version 0.4.5
 ```
