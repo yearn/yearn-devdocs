@@ -51,7 +51,7 @@ In the `docs` folder:
 
 #### Versioned doc
 
-In `versioned_docs` you will find several versions of the vault doc that corresponds to a tagged release. In `docs/v2` you can find the latest version that corresponds to the changes on yearn-vault master is the documentation for the next/unreleased version.
+In `versioned_docs` you will find several versions of the vault doc that corresponds to a tagged release. In `vaults` folder you can find the latest version that corresponds to the changes on yearn-vault master is the documentation for the next/unreleased version.
 
 Versioned doc should not be edited but generated directly from the vault codebase.
 
