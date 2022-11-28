@@ -25,7 +25,8 @@
     "react": "17.0.1",
     "react-dom": "17.0.1",
     "rehype-katex": "4",
-    "remark-math": "3"
+    "remark-math": "3",
+    "solidity-docgen": "^0.5.11"
   },
   "browserslist": {
     "production": [
@@ -48,7 +49,7 @@
     "ava": "3.15.0",
     "glob": "7.1.6",
     "glob-promise": "4.1.0",
-    "solidity-docgen": "0.5.11",
+    "solc-0.8": "npm:solc@^0.8.17",
     "ts-node": "9.1.1",
     "typescript": "4.2.4",
     "vydoc": "https://github.com/yearn/vydoc"
