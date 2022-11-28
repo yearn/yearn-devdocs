@@ -24,12 +24,12 @@ module.exports = {
     'v2/yswaps',
     'v2/fork-yearn-ui',
   ],
-}
+},
 {
   type: 'category',
   label: 'Subgraph Information',
   items: [
-    'docs/developers/v2/subgraph info.md',
+    'docs/developers/v2/subgraph-info.md',
     'docs/developers/v2/entities.md',
     'docs/developers/v2/queries.md',
   ],
