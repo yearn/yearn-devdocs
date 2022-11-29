@@ -21,7 +21,7 @@
 - [`VaultDayData`](#vaultdaydata)
 - [`Yearn`](#yearn)
 
-<br>
+<br />
 
 # SCHEMA GUIDELINES
 
@@ -41,8 +41,8 @@
 
 #### Use plurals when referring to Tokens or Shares (e.g. totalShares, balanceTokens)
 
- <br>
- <br>
+ <br />
+ <br />
 
 # Transaction
 
