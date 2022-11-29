@@ -1,17 +1,36 @@
-# Yearn Subgraph Introduction
+# Introduction
 
-Yearn has a GraphQL API Endpoint hosted by [The Graph](https://thegraph.com/docs/about/introduction#what-the-graph-is) called a subgraph for indexing and organizing data from the Yearn smart contracts.
+The Graph Network is a decentralized indexing protocol for organizing blockchain data. Applications use GraphQL to query open APIs called subgraphs, to retrieve data that is indexed on the network. With The Graph, developers can build serverless applications that run entirely on public infrastructure.
 
-This subgraph can be used to query Yearn data.
+Yearn maintains subgraphs for each network we have yVaults on: Ethereum, Fantom, Arbitrum, and Optimism which index and organize data from Yearn smart contracts.
 
-Subgraph information is serviced by a decentralized group of server operators called Indexers.
+Subgraph information is serviced by a decentralized group of server operators called Indexers. Some subgraphs are decentralized and some run on a hosted service, Yearn currently uses both. 
 
-## Ethereum Mainnet
+## Ethereum
 
 - [Explorer Page](https://thegraph.com/explorer/subgraphs/5xMSe3wTNLgFQqsAc5SCVVwT4MiRb5AogJCuSN9PjzXF?view=Overview)
-- Graphql Endpoint: https://gateway.thegraph.com/api/[api-key]/subgraphs/id/5xMSe3wTNLgFQqsAc5SCVVwT4MiRb5AogJCuSN9PjzXF
+- Graphql Endpoint: https://gateway.thegraph.com/api/{api-key}/subgraphs/id/5xMSe3wTNLgFQqsAc5SCVVwT4MiRb5AogJCuSN9PjzXF
 - [Code Repo](https://github.com/yearn/yearn-vaults-v2-subgraph)
 
+## Fantom
+- [Explorer Page](https://thegraph.com/hosted-service/subgraph/yearn/yearn-vaults-v2-optimism)
+- Graphql Endpoint: https://thegraph.com/hosted-service/subgraph/yearn/yearn-vaults-v2-optimism
+- [Code Repo](https://github.com/yearn/yearn-vaults-v2-subgraph)
+
+## Arbitrum
+- [Explorer Page](https://thegraph.com/hosted-service/subgraph/yearn/yearn-vaults-v2-arbitrum)
+- Graphql Endpoint: https://thegraph.com/hosted-service/subgraph/yearn/yearn-vaults-v2-arbitrum
+- [Code Repo](https://github.com/yearn/yearn-vaults-v2-subgraph)
+
+## Optimism
+- [Explorer Page](https://thegraph.com/hosted-service/subgraph/yearn/yearn-vaults-v2-optimism)
+- Graphql Endpoint: https://thegraph.com/hosted-service/subgraph/yearn/yearn-vaults-v2-optimism
+- [Code Repo](https://github.com/yearn/yearn-vaults-v2-subgraph)
+
+## Bribe v3
+- [Explorer Page](https://thegraph.com/hosted-service/subgraph/rareweasel/yearn-bribe-v3)
+- Graphql Endpoint: - https://api.thegraph.com/subgraphs/name/rareweasel/yearn-bribe-v3
+  
 ## Helpful Resources
 
 - [Video Tutorial on creating an API Key](https://www.youtube.com/watch?v=UrfIpm-Vlgs)
