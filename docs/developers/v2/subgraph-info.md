@@ -18,3 +18,4 @@ Subgraph information is serviced by a decentralized group of server operators ca
 - [Managing your API Key & setting your indexer preferences](https://thegraph.com/docs/en/studio/managing-api-keys/)
 - [Querying from an application](https://thegraph.com/docs/en/developer/querying-from-your-app/)
 - [How to use the explorer and playground to query on-chain data](https://medium.com/@chidubem_/how-to-query-on-chain-data-with-the-graph-f8507488215)
+- [Subgraphs explained: Yearning for Data](https://medium.com/iearn/subgraphs-explained-yearning-for-data-4e90d18e33e)
