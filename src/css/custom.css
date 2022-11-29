@@ -142,6 +142,6 @@ html[data-theme="dark"] .wireImg2 {
     border: none;
   }
   html[data-theme="light"] .DocSearch:hover {
-    border: none;
+    border: none; /**/
   }
 }
