@@ -53,8 +53,6 @@ In the `docs` folder:
 
 In `versioned_docs` you will find several versions of the vault doc that corresponds to a tagged release. In `vaults` folder you can find the latest version that corresponds to the changes on yearn-vault master is the documentation for the next/unreleased version.
 
-Versioned doc should not be edited but generated directly from the vault codebase.
-
 ##### Generating Versioned Docs
 
 **Dependencies**
@@ -74,3 +72,4 @@ npx vydoc -i ../yearn-vaults/contracts/ -o ./vaults/smart-contracts -t ./templat
 npx solidity-docgen --solc-module solc --templates=templates --helpers=helpers/solidityHelpers.js -i ../yearn-vaults/contracts/ -o ./vaults/smart-contracts
 npm run docusaurus docs:version 0.4.5
 ```
+After that put everything generated in the new version docs into `versioned_docs/version-x.x.x/smart-contracts` folder, then copy `yearn-lens/.`, `yearn-sdk/.` and ``yearn-api.md` from the previous versioned docs folder into the new one
