@@ -13,7 +13,7 @@ Subgraph information is serviced by a decentralized group of server operators ca
 - [Code Repo](https://github.com/yearn/yearn-vaults-v2-subgraph)
 
 ## Fantom
-- [Explorer Page](https://thegraph.com/hosted-service/subgraph/yearn/yearn-vaults-v2-optimism](https://thegraph.com/hosted-service/subgraph/yearn/yearn-vaults-v2-fantom)
+- [Explorer Page](https://thegraph.com/hosted-service/subgraph/yearn/yearn-vaults-v2-fantom)
 - Graphql Endpoint: https://api.thegraph.com/subgraphs/name/yearn/yearn-vaults-v2-fantom
 - [Code Repo](https://github.com/yearn/yearn-vaults-v2-subgraph)
 
