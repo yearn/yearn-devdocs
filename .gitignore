@@ -19,6 +19,9 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
+# Use yarn.lock
+package-lock.json
+
 # Not needed doc
 docs/developers/contracts/test
 docs/developers/contracts/IWETH.md
