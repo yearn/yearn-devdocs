@@ -52,6 +52,6 @@
     "glob-promise": "4.1.0",
     "ts-node": "9.1.1",
     "typescript": "4.2.4",
-    "vydoc": "https://github.com/yearn/vydoc"
+    "vydoc": "git+https://github.com/yearn/vydoc.git"
   }
 }
