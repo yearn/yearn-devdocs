@@ -33,7 +33,7 @@ veYFI incorporates [YIP-56: Buyback and Build](https://gov.yearn.finance/t/yip-5
 ### veYFI Reward Pool
 
 - Users who lock veYFI can claim YFI from the veYFI exited early and the non-distributed gauge rewards due to the lack of boost.
-- You will be able to start claiming from the veFYI reward pool two or three weeks from the Thursday after which you lock before you can claim.
+- You will be able to start claiming from the veYFI reward pool two or three weeks (to be defined) from the Thursday after which you lock before you can claim.
 
 ### Diagram
 
