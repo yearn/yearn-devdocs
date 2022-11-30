@@ -80,8 +80,6 @@ Yearn SDK integrates several components, both on-chain and off-chain.
 
 We can store Strategy information directly on IPFS so they can be then be queried and rendered the frontend.
 
-Example: [Idle Finance Reinvest](https://meta.yearn.network/strategies/1/0x01b54c320d6B3057377cbc71d953d1BBa84df44e)
-
 ```json
 {
   "$schema":"strategy",
@@ -94,8 +92,6 @@ Example: [Idle Finance Reinvest](https://meta.yearn.network/strategies/1/0x01b54
 #### Assets management
 
 We can store Asset informations so in critical situations we can toggle interactions and add custom messages.
-
-Example: [Curve EURS](https://meta.yearn.network/vaults/1/0x25212Df29073FfFA7A67399AcEfC2dd75a831A1A)
 
 ```json
 {
