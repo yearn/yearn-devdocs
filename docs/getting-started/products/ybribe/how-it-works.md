@@ -3,7 +3,7 @@
 
 ## Scenario #1: Voters Looking to Claim Bribes
 
-veCRV holders can sell their gauge votes to the highest bidder each week by 1- voting on the bribed gauge with the highest APR and then choosing to 2- claim any applicable rewards
+veCRV holders can sell their gauge votes to the highest bidder each week by 1 - voting on the bribed gauge with the highest APR and then choosing to 2 - claim any applicable rewards.
 
 ![](https://i.imgur.com/uwO1vBe.png)
 
@@ -33,23 +33,23 @@ veCRV holders can sell their gauge votes to the highest bidder each week by 1- v
 
 **Claim periods** run from Thursday to Thursday, and the scrolling clock on the main page displays the time remaining in the current period.
 
-> **Note**: Make sure you claim any claimable rewards before the current period ends, and/ or submit your votes for the next period. Be sure to claim any rewards before voting again on the same gauge or you’ll be locked out of rewards until the following week.
-> 
+> **Note**: Make sure you claim any claimable rewards before the current period ends, and / or submit your votes for the next period. Be sure to claim any rewards before voting again on the same gauge or you’ll be locked out of rewards until the following week.
+
 ## Example
 
-Facu is a veCRV holder. Facu goes to yBribe (which gets all data directly on-chain) to figure out which gauge is the best one to vote for.
+Ghosty is a veCRV holder. Ghosty goes to yBribe (which gets all data directly on-chain) to figure out which gauge is the best one to vote for.
 
 ![](https://i.imgur.com/OR1ZDlK.png)
 
-As seen above, we can see MIM gauge is the best for the upcoming period. Facu goes to vote for the MIM gauge on Curve and then at the start of the next period, they can claim their bribe.
+As seen above, we can see MIM gauge is the highest yielding for the upcoming period. Ghosty goes to vote for the MIM gauge on Curve and then at the start of the next period, he can claim his bribe.
 
-The amount of the overall bribe they will collect is dynamically calculated based on how much vote weight Facu provided relative to global vote weight on MIM gauge.
+The amount of the overall bribe they will collect is dynamically calculated based on how much vote weight Ghosty provided relative to global vote weight on the MIM gauge.
 
 ----
 
 ## Scenario #2: Offering a Bribe
 
-Bribers can offer a bribe to increase CRV emissions to your favorite Curve pool. Bribers can deposit any token as their bribe.
+Bribers can offer a bribe to increase CRV emissions to their favorite Curve pool. Bribers can deposit any token as their bribe.
 
 ![](https://i.imgur.com/tLp1787.png)
 
@@ -62,17 +62,16 @@ Bribers can offer a bribe to increase CRV emissions to your favorite Curve pool.
 ![](https://i.imgur.com/5O5UT8j.png)
 
 
-yBribe now lets users assign rewards to a different claiming address than the one used to vote. It also fixes a bug which under certain circumstances, allowed an initial bribe allocation to be drained before the start of a voting period.
+yBribe now lets users assign rewards to a different claiming address than the one used to vote. 
 
 
 # FAQ
 
 * **What’s a bribe?** In DeFi, incentives for voting are commonly referred to as ‘bribes’.
-* **How does yBribe work under the hood?** yBribe ‘holds’ bribe rewards and performs the calculations and distributions of those rewards. A user interacts with yBribe by claiming or offering a bribe. The vote occurs directly on the Curve contract.
+* **How does yBribe work?** A user interacts with yBribe by claiming or offering a bribe. Voting occurs directly on Curve's contracts. yBribe performs relevant calculations and distributions of those rewards.
 * **Will I be able to convert my bribes into another token?** No
-* **What is the countdown timer on the main page?** It is how long users have left to claim their rewards/bribes from the current period and get their vote in for the next period. It’s midnight wednesday to thursday (00:00 thursday) every week that the new round starts.
+* **What is the countdown timer on the main page?** It is how long users have left to claim their rewards from the current period and get their vote in for the next period. It’s midnight wednesday to Thursday (00:00 UTC Thursday) every week that the new round starts.
 * **Can we claim on L2**? No
-* **Will there be a bribe system for yCRV or veYFI?** yBribe is a generic system that anyone can use. We are not planning on making a bribe system just for yCRV or veYFI atm.
+* **Will there be a bribe system for yCRV or veYFI?** yBribe is a generic system that anyone can use. We are not planning on making a bribe system just for yCRV or veYFI at this time.
 * **What is the 1% fee used for?** To support continued development and new features.
-* **What happens to the rewards I had in the old contract?** Users with bribes still claimable in the legacy contract can still claim them.
-* **What is veCRV anyways?** Participating in Curve DAO governance requires that an account have a balance of vote-escrowed CRV (veCRV). veCRV is a non-standard ERC20 implementation and cannot be transferred. The only way to obtain veCRV is by locking CRV. The maximum lock time is four years. One CRV locked for four years provides an initial balance of one veCRV. These rewards are generated by 0.04% swapping fees that Curve charges on each trade. 50% of these fees go to users who add to the liquidity pools and 50% goes to users who hold veCRV.
+* **What is veCRV anyways?** Participating in Curve DAO governance requires that an account have a balance of vote-escrowed CRV (veCRV). veCRV is a non-standard ERC20 implementation and cannot be transferred. The only way to obtain veCRV is by locking CRV. The maximum lock time is four years. One CRV locked for four years provides an initial balance of one veCRV. These rewards are generated by the 0.04% swap fees that Curve charges on each trade. 50% of these fees go to users who add to the liquidity pools and 50% goes to users who hold veCRV.
