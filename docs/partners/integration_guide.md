@@ -13,8 +13,6 @@ Partners deploy the Wrapper contract for each vault utilized.
 1. Vault issues vault tokens to Wrapper
 1. Wrapper issues wrapper tokens to User
 
-See the template available on [Github](https://github.com/yearn/brownie-wrapper-mix) with tests
-
 Implications:
 
 - Contributed TVLs are easily tracked with precision
