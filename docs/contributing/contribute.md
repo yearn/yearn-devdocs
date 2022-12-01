@@ -85,7 +85,7 @@ When you decide to start, this reading material is going to come handy:
 - [Mint your own DAI](https://medium.com/ethereum-grid/forking-ethereum-mainnet-mint-your-own-dai-d8b62a82b3f7)
 - [Dev Docs](https://docs.yearn.finance/developers/v2/getting-started)
 
-Once you have the strategy ready, this will guide you further down the road:
+Once you have your strategy ready, this will guide you further down the road:
 
 - [Vault naming standard](https://docs.yearn.finance/developers/v2/naming-convention)
 - [Release process](https://docs.yearn.finance/developers/v2/DEPLOYMENT)
