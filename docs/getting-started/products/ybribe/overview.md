@@ -11,7 +11,7 @@ In DeFi, incentives for voting are commonly referred to as ‘bribes’. yBribe 
 
 **yBribe pairs users looking to buy votes, with those looking to sell them.**
 
-Curve conducts weekly gauge votes that determine the allocation of CRV rewards to various pools. By buying votes, DAOs, protocols, and users can influence the direction of these rewards and boost yields in pools beneficial to them. To do this, use the ‘Bribe a Gauge’ function on yBribe. Once the bribe is posted, voters will see the pending APR for the gauge increase.
+Curve conducts weekly gauge votes that determine the allocation of CRV rewards to various pools. By buying votes, DAOs, protocols, and users can influence the direction of these rewards while boosting yields in pools beneficial to them. To do this, use the ‘Bribe a Gauge’ function on yBribe. Once the bribe is posted, voters will see the pending APR for that gauge increase.
 
 veCRV holders can sell their gauge votes to the highest bidder each week by voting on the bribed gauge with the highest APR. 
 
@@ -19,7 +19,7 @@ veCRV holders can sell their gauge votes to the highest bidder each week by voti
 
 #### yBribe is fully trustless, permissionless and non-custodial
 
-* A new UI makes it clear for veCRV user to identify which opportunities are the best.
+* A new UI makes it easy for veCRV holders to identify the best opportunities.
 * Convex votes are excluded from the system to make bribes more efficient.
-* Fully trustless design, and 100% on-chain.
-* Codebase is fully audited.
+* Fully trustless design and 100% on-chain design.
+* The codebase is fully audited.
