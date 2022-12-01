@@ -58,7 +58,7 @@ If you are interested in working on a specific project, check out the list of Ye
 
 If you want an overview of how our vaults work, please see the schema and accompanying descriptions in the [Vaults Overview](https://docs.yearn.finance/getting-started/products/yvaults/overview).
 
-If you're wondering how **strategies** work, please check out [Yearn Vaults v2 intro](https://www.youtube.com/watch?v=C0fsYiCI54g) — hosted by our Yearn Devs. To start writing your own strategy, please visit the [Yearn Brownie Mix](https://github.com/yearn/brownie-strategy-mix).
+If you're wondering how **strategies** work, please check out [Yearn Vaults v2 Introduction](https://www.youtube.com/watch?v=C0fsYiCI54g) — hosted by our Yearn Devs. To start writing your own strategy, please check out our template [Yearn Brownie Mix](https://github.com/yearn/brownie-strategy-mix).
 
 If you want to integrate with Yearn, please visit our [Integration Guide](https://docs.yearn.finance/partners/integration_guide) and check out our [Vault API Documentation](https://docs.yearn.finance/vaults/smart-contracts/VaultAPI).
 
