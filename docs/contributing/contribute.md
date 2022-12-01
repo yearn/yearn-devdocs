@@ -93,7 +93,7 @@ Once you have your strategy ready, this will guide you further down the road:
 
 ##### Other reading material
 
-This is complementary to the others, but it's not directly related to creating strategies.
+This is complementary to the above, but it's not directly related to creating strategies.
 
 - [The Keep3r Network](https://macarse.medium.com/the-keep3r-network-experiment-bb1c5182bda3)
 - [Andre intro to Yearn Vaults](https://medium.com/iearn/yearn-finance-v2-af2c6a6a3613)
