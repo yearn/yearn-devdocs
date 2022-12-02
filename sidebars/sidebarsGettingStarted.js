@@ -34,7 +34,6 @@ module.exports = {
         'guides/how-boost-works',
         'guides/how-to-add-a-custom-token-to-metamask',
         'guides/how-to-understand-yvault-roi',
-        'guides/how-to-understand-yveCRV',
         'guides/how-apy-works',
         'guides/how-to-understand-strategies-descriptions',
       ],
