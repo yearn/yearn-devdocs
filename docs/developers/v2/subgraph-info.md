@@ -30,6 +30,7 @@ Subgraph information is serviced by a decentralized group of server operators ca
 ## Bribe v3
 - [Explorer Page](https://thegraph.com/hosted-service/subgraph/rareweasel/yearn-bribe-v3)
 - Graphql Endpoint: - https://api.thegraph.com/subgraphs/name/rareweasel/yearn-bribe-v3
+- [Code Repo](https://github.com/yearn/yearn-ybribe-subgraph)
   
 ## Helpful Resources
 
