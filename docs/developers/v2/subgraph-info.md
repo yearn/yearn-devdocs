@@ -9,7 +9,7 @@ Subgraph information is serviced by a decentralized group of server operators ca
 ## Ethereum
 
 - [Explorer Page](https://thegraph.com/explorer/subgraphs/5xMSe3wTNLgFQqsAc5SCVVwT4MiRb5AogJCuSN9PjzXF?view=Overview)
-- Graphql Endpoint: https://gateway.thegraph.com/api/{api-key}/subgraphs/id/5xMSe3wTNLgFQqsAc5SCVVwT4MiRb5AogJCuSN9PjzXF
+- Graphql Endpoint: [https://gateway.thegraph.com/api/{api-key}/subgraphs/id/5xMSe3wTNLgFQqsAc5SCVVwT4MiRb5AogJCuSN9PjzXF](https://thegraph.com/docs/en/querying/managing-api-keys/)
 - [Code Repo](https://github.com/yearn/yearn-vaults-v2-subgraph)
 
 ## Fantom
