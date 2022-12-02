@@ -14,9 +14,7 @@ We are always open to new suggestions or better ways of doing things. If you hav
 
 ### Ready to contribute?
 
-[Contributor onboarding](https://yearnfinance.notion.site/yearnfinance)
-
-For developers, check out our [list of open Github issues here](https://contribute.yearn.rocks/).
+Check out our [list of open Github issues here](https://contribute.yearn.rocks/).
 
 ### File a Bug
 
@@ -106,7 +104,7 @@ This is complementary to the above, but it's not directly related to creating st
 - [Yearn.Finance](https://yearn.finance/), [Github](https://github.com/yearn/yearn-finance-v3)
 - [Yearn Documentation](https://docs.yearn.finance/), [Github](https://github.com/yearn/yearn-docs)
 - [Yearn Governance Forum](https://gov.yearn.finance/)
-- [Yearn Snapshot Governance Voting](https://yearn.snapshot.page/)
+- [Yearn Snapshot Governance Voting](https://snapshot.org/#/ybaby.eth)
 
 #### List of Yearn Tools
 
@@ -115,7 +113,6 @@ This is complementary to the above, but it's not directly related to creating st
 - Yearn SDK, [Github](https://github.com/yearn/yearn-sdk)
 - [Yearn API](https://api.yearn.finance/v1/chains/1/vaults/all), [Github](https://github.com/yearn/yearn-api)
 - [Yearn Vision](https://yearn.vision/)
-- [Yearn Science (TVL graph)](https://yearn.science/)
 - Yearn Discord FAQ Bot, [Github](https://github.com/dgornjakovic/yfi-faq-bot)
 
 #### Contributors Websites
