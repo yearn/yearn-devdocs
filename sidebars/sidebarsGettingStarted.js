@@ -29,7 +29,8 @@ module.exports = {
           label: 'yBribe',
           items: [
             'products/ybribe/overview',
-            'products/ybribe/how-it-works',
+            'products/ybribe/guide',
+            'products/ybribe/faq',
           ],
         },
         'products/woofy',
