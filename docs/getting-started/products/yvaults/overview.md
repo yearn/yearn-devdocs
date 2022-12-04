@@ -14,7 +14,7 @@
 
 **Management Fee**: Flat rate taken from vault deposits over a year. The fee is extracted by minting new shares of the vault, thereby diluting vault participants. This is done at the time of harvest, and calculated based on time since the previous harvest.
 
-The old structure used before [YIP-69](https://gov.yearn.finance/t/yip-69-reduce-and-cap-fees-through-yrates/12588) was 20% performance fees and 2% management fees, but this has changed and vaults now have a dynamic fee structure. Single asset vaults have no management fee. Fee values for all yVaults can be checked in real-time at https://yearn.watch/
+The old structure used before the changes brought by [YIP-69](https://gov.yearn.finance/t/yip-69-reduce-and-cap-fees-through-yrates/12588) was 20% performance fees and 2% management fees, but this has changed and vaults now have a dynamic fee structure. Single asset vaults have no management fee. Fee values for all yVaults can be checked in real-time at https://yearn.watch/
 
 *Example YFI yVault fee structure at the time of writing:*  
 
