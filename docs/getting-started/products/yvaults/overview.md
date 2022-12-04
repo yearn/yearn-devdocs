@@ -18,7 +18,7 @@ The old structure used before [YIP-69](https://gov.yearn.finance/t/yip-69-reduce
 
 *Example YFI yVault fee structure at the time of writing:*  
 
-| Management Fee  | %   |
+| Fee Type        | Value   |
 |-----------------|-----|
 | Management Fee  | 0%  |
 | Performance Fee | 20% |
