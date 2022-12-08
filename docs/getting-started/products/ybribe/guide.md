@@ -50,7 +50,7 @@ The amount of the overall bribe they will collect is dynamically calculated base
 
 ## Scenario #2: Offering a Bribe
 
-Bribers can offer a bribe to increase CRV emissions to their favorite Curve pool. Bribers can deposit any token as their bribe.
+Bribers can offer incentives to increase CRV emissions to their favorite Curve pool. Bribers can deposit any token as their bribe.
 
 ![](https://i.imgur.com/tLp1787.png)
 
