@@ -24,6 +24,15 @@ module.exports = {
             'products/ycrv/faq',
           ],
         },
+         {
+          type: 'category',
+          label: 'yBribe',
+          items: [
+            'products/ybribe/overview',
+            'products/ybribe/guide',
+            'products/ybribe/faq',
+          ],
+        },
         'products/woofy',
       ],
     },
