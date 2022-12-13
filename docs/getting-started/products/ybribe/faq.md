@@ -1,4 +1,4 @@
-# yBribe FAQ
+# FAQ
 
 * **What’s a bribe?** In DeFi, incentives for voting are commonly referred to as ‘bribes’.
 
