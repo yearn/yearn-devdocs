@@ -1,4 +1,4 @@
-# Guide
+# Interface Guide
  
 
 ## Scenario #1: Voters Looking to Claim Bribes
