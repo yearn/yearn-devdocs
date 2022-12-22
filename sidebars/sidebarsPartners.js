@@ -4,5 +4,6 @@ module.exports = {
     'integration_guide',
     'submit_pr',
     'yvtokens-as-collateral',
+    'partner-tracker-v2',
   ],
 }
