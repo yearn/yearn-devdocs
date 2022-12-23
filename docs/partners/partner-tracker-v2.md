@@ -39,7 +39,7 @@ The amount of funds that are deposited can be specified, or the user can opt to 
 Once the deposit is complete, the `ReferredBalanceIncreased()` event will be emitted, which will indicate the amount of funds that were deposited, as well as the total amount that has been deposited by the user. 
 
 
-## Example
+## Examples
 
 ### Deposit full balance for a token
 Alice is a partner who has referred Bob to deposit some funds into the VaultA contract. Bob wants to deposit the full balance of a token he owns into VaultA. He can do this by calling the following function:
