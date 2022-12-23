@@ -41,7 +41,7 @@ Once the deposit is complete, the `ReferredBalanceIncreased()` event will be emi
 
 ## Example
 
-### 1. Deposit full balance for a token
+### Deposit full balance for a token
 Alice is a partner who has referred Bob to deposit some funds into the VaultA contract. Bob wants to deposit the full balance of a token he owns into VaultA. He can do this by calling the following function:
 
 ```
@@ -50,7 +50,7 @@ function deposit(address vault, address partnerId) external returns (uint256)
 
 He specifies the address of VaultA as the `vault` argument, and the address of Alice as the `partnerId` argument.
 
-### 2. Deposit specific token amount
+### Deposit specific token amount
 Bob wants to deposit a specific amount of tokens into VaultA, instead of the entire balance. He can do this by calling the following function:
 
 ```
@@ -59,7 +59,7 @@ function deposit(address vault, address partnerId, uint256 amount) external retu
 
 He specifies the address of VaultA as the vault argument, the address of Alice as the partnerId argument, and the amount of tokens he wants to deposit as the amount argument.
 
-### 3. Check balances tracked
+### Check balances tracked
 Alice has referred multiple people to deposit into different vaults. The YearnPartnerTracker contract keeps track of the referred balance for each partner, vault, and depositor combination. Alice can check her referred balance for a particular vault and depositor by querying the following mapping:
 
 ```
@@ -77,7 +77,7 @@ function checkReferredBalance(address partnerId, address vault, address deposito
 
 She specifies her own address as the `partnerId` argument, the address of `VaultA` as the `vault` argument, and the address of Bob as the `depositor` argument. This function returns the referred balance for Alice, Bob, and `VaultA`.
 
-### 4. Event Emitted
+### Event Emitted
 
 When deposits happen, the `YearnPartnerTracker` contract emits the `ReferredBalanceIncreased` event. Partners and other interested parties can use this event to track changes to referred balances. The event contains the following information:
 
