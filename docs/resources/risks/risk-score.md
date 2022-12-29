@@ -1,4 +1,4 @@
-Risk Scores
+# Risk Scores
 
 Yearn works with risk scores to quantify and assess the amount of risk of each strategy and vault. This document outlines how we measure risk vectors and use them to find the optimal balance of security and innovation.
 
