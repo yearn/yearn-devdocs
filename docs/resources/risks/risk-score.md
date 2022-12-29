@@ -93,7 +93,7 @@ After these steps a recurring review is scheduled, where either a second either 
 
 ### Complexity
 
-This is how the strategy earns its returns: is it a simple strategy like a masterchef staking or does it have complex mechanics like leverage, risk of liquidation, many protocols involved, etc? The more pieces and components it needs will require a higher complexity score. This score is key in an emergency to evaluate how difficult it is to mitigate a live issue:
+This is how the strategy earns its returns: is it a simple strategy like a masterchef staking or does it have complex mechanics such as leverage, risk of liquidation, and involvement with multiple protocols? The more components it needs will require a higher complexity score. This score is essential in an emergency to evaluate how difficult it is to mitigate a live issue:
 
 <table>
   <tr>
@@ -102,23 +102,23 @@ This is how the strategy earns its returns: is it a simple strategy like a maste
   </tr>
   <tr>
    <td>5</td>
-   <td>Strategy is very complex, uses leverage or debt, not easy to unwind. No health check</td>
+   <td>Strategy is highly complex, uses leverage or debt, and is not easy to unwind. No health check available</td>
   </tr>
   <tr>
    <td>4</td>
-   <td>Uses leverage or debt, not easy to unwind. No health check</td>
+   <td>Uses leverage or debt, and is not easy to unwind. No health check available</td>
   </tr>
   <tr>
    <td>3</td>
-   <td>Has loss potential, withdrawal fee or requires detailed queue management to avoid losses. No health check</td>
+   <td>Has potential for losses, withdrawal fees, or requires detailed queue management to prevent losses. No health check available</td>
   </tr>
   <tr>
    <td>2</td>
-   <td>Strategy is simple, easy to migrate/unwind. Has health check</td>
+   <td>Strategy is relatively simple, and is easy to migrate/unwind. Has a health check</td>
   </tr>
   <tr>
    <td>1</td>
-   <td>Strategy is simple, easy to migrate/unwide. No leverage and zero public unrestricted methods. Is highly unlikely to have a loss.</td>
+   <td>Strategy is easy to understand, and can be migrated/unwound easily. No leverage and no publicly accessible methods. Highly unlikely to incur losses.</td>
   </tr>
 </table>
 
