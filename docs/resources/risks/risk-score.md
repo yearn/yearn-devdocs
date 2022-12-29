@@ -25,7 +25,7 @@ The current version of the risk score system works for yearn's current needs, bu
 
 ### Audit
 
-Auditing is the process where an audit firm or an external security researcher reviews the code for any potential vulnerabilities and presents a report for mitigation. Audits usually take longer than an internal security review and are not immediately available given the demand for audits in the space, so most strategies are sent to production with no audits (thus high-risk score) to keep their TVL limited. This strikes a balance of validating the strategy in production with a calculated risk while we schedule a proper audit. The risk score helps us prioritize which strategies should get audited first, based on impact and other dimensions of scoring:
+Auditing is a process that an audit firm or external security researcher reviews code for any potential vulnerabilities and present a report for mitigation. Audits take longer than an internal security review and are not immediately available due to the high demand for audits in the space. As such, most strategies are sent to production without an audit (leading to a high risk score) in order to limit their Total Value Locked (TVL). This approach allows for strategies to be validated in production while still managing risk, and the risk score helps determine which strategies should get an audit first, based on impact and other scoring criteria. The table below outlines the scoring criteria associated with audits.
 
 <table>
   <tr>
@@ -34,23 +34,23 @@ Auditing is the process where an audit firm or an external security researcher r
   </tr>
   <tr>
    <td>5</td>
-   <td>No audit by a trusted firm or security researcher</td>
+   <td>No audit by a trusted firm or security researcher.</td>
   </tr>
   <tr>
    <td>4</td>
-   <td>Audit by trusted firm or security researcher took place 6 months+ ago</td>
+   <td>Audit by trusted firm or security researcher conducted more than 6 months ago.</td>
   </tr>
   <tr>
    <td>3</td>
-   <td>Audit by trusted firm or security researcher took place 3 months+ ago</td>
+   <td>Audit by trusted firm or security researcher conducted more than 3 months ago.</td>
   </tr>
   <tr>
    <td>2</td>
-   <td>Audit less than 3 months ago. Independent audit by a trusted firm.</td>
+   <td>Audit conducted less than 3 months ago by an independent trusted firm.</td>
   </tr>
   <tr>
    <td>1</td>
-   <td>Audit less than 3 months ago. In total, 3 or more independent audits by trusted firms.</td>
+   <td>Audit conducted less than 3 months ago by 3 or more independent trusted firms.</td>
   </tr>
 </table>
 
