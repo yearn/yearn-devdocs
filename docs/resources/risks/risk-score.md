@@ -1,14 +1,14 @@
-# Risk Scores
+Risk Scores
 
-Yearn works with risk scores to quantify and assess the amount of risk of each strategy and vault, this document describes how we define risk vectors and work with them to reach a good balance between secure and innovative strategies
+Yearn works with risk scores to quantify and assess the amount of risk of each strategy and vault. This document outlines how we measure risk vectors and use them to find the optimal balance of security and innovation.
 
 * [**Strategy Risk Score**](#strategy-risk-score) defines each dimension of risk for a strategy and how we quantify them
-* [**Vault Risk Score Proposal**](#vault-risk-score-proposal) aggregates all strategies scores for a vault averaging by TVL **(this is in draft stage)**
+* [**Vault Risk Score Proposal**](#vault-risk-score-proposal) aggregates all strategy scores for a vault, averaging by TVL **(this is in draft stage)**
 * [**Overall Risk Score Proposal**](#overall-risk-score-proposal) aggregates strategy/vault scores into overall scores **(this is in draft stage)**
 
 ## Strategy Risk Score
 
-Risk for different strategies is measured using a point scoring system developed internally from yearn’s strategy deployment process. The higher the risk score number, the more riskier the strategy is. Calculating the risk assesses eight dimensions:
+Risk for different strategies is quantified using an internal point system developed by yearn's strategy deployment process. The higher the risk score number, the more risky the strategy is. The risk assessment evaluates eight dimensions:
 
 * [Audit](#audit)
 * [Code Review](#code-review)
@@ -19,9 +19,9 @@ Risk for different strategies is measured using a point scoring system developed
 * [Testing Score](#testing-score)
 * [TVL Impact](#tvl-impact)
 
-This risk framework is an ongoing process regarding the security of yearn’s strategies. The security team realized that given yearn’s unique approach to deploying strategies constantly, it couldn’t rely on a waterfall process (heavy analysis/design, testing, several audits before a release, etc.) to deploy contracts. The strategies are deployed and capped by their risk score, and as we mitigate each dimension and improve something in the scoring, the strategy can grow its TVL. Think of it as calculated bets based on our internal security process. This allows yearn to compare the risk score of two strategies and prioritize mitigations/preventive actions like forming a committee to spread knowledge on the code, get more audits, migrate current code for improved versions of the strat, etc. 
+This risk framework is an ongoing process to ensure the security of yearn's strategies. Yearn recognized that, due to its unique approach to deploying strategies, it could not rely on a traditional waterfall process (heavy analysis and design, testing, multiple audits before release, etc.) to deploy contracts. Strategies are deployed and capped by their risk score. As we reduce the risk in any of the eight dimensions, the strategy can grow its TVL. This system allows yearn to compare the risk score of two strategies and prioritize risk mitigation and preventive actions, such as forming a committee to spread knowledge on the code, getting more audits, migrating current code to improved versions of the strategy, etc. 
  
-The current version works for yearn’s current needs. Still, we are always looking to improve and extend this scoring system to the vaults to be able to get a weighted average risk score that makes reasonable assumptions. We want to help our users know what’s going on behind the scenes in the vaults. Vault risk scoring is still under development at the moment!
+The current version of the risk score system works for yearn's current needs, but we are always looking to improve and expand it to the vaults. We want to provide our users with a better understanding of what is happening behind the scenes in the vaults. The development of vault risk scoring is still in progress!
 
 ### Audit
 
