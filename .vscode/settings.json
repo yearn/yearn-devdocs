@@ -1,9 +1,0 @@
-{
-    "grammarly.selectors": [
-        {
-            "language": "markdown",
-            "scheme": "file",
-            "pattern": "docs/partners/partner-tracker-v2.md"
-        }
-    ]
-}
