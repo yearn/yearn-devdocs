@@ -1,4 +1,4 @@
-# Vault Factories
+# Vault Factory
 
 Yearn's brand new "Vault Factory" allows anyone to permissionlessly deploy an official Yearn Vault with ready-made yield strategies. The current version of the Vault Factory works with the following:
 

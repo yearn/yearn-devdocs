@@ -13,7 +13,7 @@ module.exports = {
             'products/yvaults/overview',
             'products/yvaults/vaults-and-strategies',
             'products/yvaults/vault-tokens',
-            'products/yvaults/vault-factories',
+            'products/yvaults/vault-factory',
           ],
         },
         {
