@@ -18,7 +18,7 @@ Only one vault can be live for each token, so the Vault Factory will only deploy
 
 ## Curve LP Tokens
 
-The first Vault Factory deployed live on Ethereum is the Curve LP Token Vault Factory. This factory allows users to deploy yVaults for any Curve LP token that represents a Curve pool with an active gauge (allowing it to receiving CRV emissions).
+The first Vault Factory deployed live on Ethereum is the Curve LP Token Vault Factory. This factory allows users to deploy yVaults for any Curve LP token that represents a Curve pool with an active gauge (allowing it to receive CRV emissions).
 
 ### Strategies
 
@@ -28,11 +28,11 @@ Factory-deployed yVaults for Curve LP tokens contain up to three ready-made yiel
 2. StrategyConvexFactory
 3. StrategyConvexFraxFactory
 
-**StrategyCurveBoostedFactory** uses yearn's own veCRV balance (currently 45.1m) to give users the maximum 2.5x boost on their CRV rewards.
+**StrategyCurveBoostedFactory** uses Yearn's veCRV balance (currently 45.1m) to give users the maximum 2.5x boost on their CRV rewards.
 
-**StrategyConvexFactory** supplies any additional Curve LP tokens (beyond which can receive the maximumum 2.5x boost via the Curve strategy) to Convex Finance to earn CRV rewards (boosted by Convex's veCRV balance) and CVX rewards.
+**StrategyConvexFactory** supplies any additional Curve LP tokens (beyond which would receive the maximum 2.5x boost via the Curve strategy) to Convex Finance to earn CRV rewards (boosted by Convex's veCRV balance) and CVX rewards.
 
-**StrategyConvexFraxFactory** will only be added to the vault if the Curve LP token of the vault can be staked in Convex for Frax (currently available for over 20 Curve LPs). This ConvexFrax strategy will be used instead of the standard Convex strategy in order to earn additional FXS rewards (on top of the standard CRV and CVX rewards).
+**StrategyConvexFraxFactory** will only be added to the vault if the Curve LP token of the vault can be staked in Convex for Frax (currently available for over 20 Curve LPs). This ConvexFrax strategy will be used instead of the standard Convex strategy to earn additional FXS rewards (on top of the standard CRV and CVX rewards).
 
 ![](https://i.imgur.com/oJdwz6n.png)
 
@@ -56,6 +56,8 @@ Example usage:
 
 ![](https://i.imgur.com/RBS2DIq.png)
 
-2. Call `createNewVaultsAndStrategies()` to create a new permisionless vault for.
+2. Call `createNewVaultsAndStrategies()` to create a new permissionless vault.
 
 ![](https://i.imgur.com/2bMxjU0.png)
+
+3. Now your new Yearn Vault will be deployed and you can sit back while it auto-compounds your rewards into more of your Curve lp position.
