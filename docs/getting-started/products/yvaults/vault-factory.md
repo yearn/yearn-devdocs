@@ -10,7 +10,7 @@ The Vault Factory is a massive step forward in automation which has enabled us t
 - 0% management fee (previously 2%)
 - 10% performance fee (previously 20%)
 
-Performance fees for every type of yVault go straight to yearn treasury ([ychad.eth](https://etherscan.io/address/0xfeb4acf3df3cdea7399794d0869ef76a6efaff52)) and are calculated only on top of harvest profits. The current fee structure for each yVault can be seen directly on the new [yearn.finance](https://yearn.finance/vaults) website by clicking on the vault.
+Performance fees for every type of yVault go straight to Yearn treasury ([ychad.eth](https://etherscan.io/address/0xfeb4acf3df3cdea7399794d0869ef76a6efaff52)) and are calculated only on top of harvest profits. The current fee structure for each yVault can be seen directly on the new [yearn.finance](https://yearn.finance/vaults) website by clicking on the vault.
 
 ![](https://i.imgur.com/0QIydKb.png)
 
