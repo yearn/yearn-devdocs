@@ -4,9 +4,11 @@ title: Integration Methods
 
 Yearn provides three different methods of integration: Wrapper, Delegated Deposit, and Yearn V2 Partner Tracker. Each of these methods has different advantages and disadvantages, so it is important to consider the requirements of your particular use case when selecting an integration method:
 
-- [Wrapper](#wrapper)
-- [Delegated Deposit](#delegated-deposit)
-- [Yearn V2 Partner Tracker](#yearn-v2-partner-tracker)
+Integration Method | Advantages | Disadvantages
+----------------- | ---------- | -------------
+[Wrapper](#wrapper) | Contributed TVLs are easily tracked with precision | Vault tokens are not fungible with other partner tokens or with Yearn's vanilla vault tokens, each vault requires its own wrapper, solution and testing are comparatively complex
+[Delegated Deposit](#delegated-deposit) | User gets credited regular vanilla yearn vault tokens for a better user experience | Loss of TVL attributed if users transfer the vault tokens, simpler implementation and testing
+[Yearn V2 Partner Tracker](#yearn-v2-partner-tracker) | Accurately tracks amount of deposits generated, emits events to track balance increases | Must approve contract before using, users must specify partnerId when making deposits
 
 ## Wrapper
 
