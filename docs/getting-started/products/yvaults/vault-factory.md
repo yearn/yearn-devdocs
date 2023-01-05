@@ -3,7 +3,7 @@
 Yearn's brand new "Vault Factory" allows anyone to permissionlessly deploy an official Yearn Vault with ready-made yield strategies.
 
 The easiest way to get started using the factory is through the User Interface:
-- TODO_ADD_PRODUCTION_LINK ([example usage](#create-with-ui))
+- https://yearn.finance/vaults/factory - [Tutorial](#create-with-ui)
 
 The current version of the Vault Factory works with the following:
 
@@ -57,7 +57,7 @@ The CurveGlobal contract provides a few main functions:
 
 ## Create with UI
 
-- TODO_ADD_PRODUCTION_LINK
+- User Interface: https://yearn.finance/vaults/factory
 
 Follow these steps to create a new vault with the UI:
 
@@ -75,7 +75,7 @@ Follow these steps to create a new vault with the UI:
 
 4. Sign the transaction and the vault will be created
 
-<img src="https://i.imgur.com/v2DYa4T.png" width="280" />
+<img src="https://i.imgur.com/uRhX2VB.png" width="280" />
 
 ## Create from Contract
 
@@ -83,10 +83,10 @@ Follow these steps to create a new vault with the UI:
 
 2. Call `canCreateVaultPermissionlessly()` function to make sure that a vault does not already exist for the gauge you want to create
 
-![](https://i.imgur.com/RBS2DIq.png)
+<img src="https://i.imgur.com/RBS2DIq.png" width="500" />
 
 3. Call `createNewVaultsAndStrategies()` to create a new permissionless vault.
 
-![](https://i.imgur.com/2bMxjU0.png)
+<img src="https://i.imgur.com/2bMxjU0.png" width="500" />
 
 4. Now your new Yearn Vault will be deployed and you can sit back while it auto-compounds your rewards into more of your Curve lp position.
