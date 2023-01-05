@@ -55,7 +55,7 @@ The CurveGlobal contract provides a few main functions:
 - `createNewVaultsAndStrategies()`: takes in an address for a gauge and a boolean that determines whether duplicate vaults are allowed, and creates a new vault and strategy.
 - `latestDefaultOrAutomatedVaultFromGauge()`: takes in an address for a gauge and returns the latest default or automated vault from that gauge.
 
-### Usage with UI:
+## Usage with UI:
 
 - TODO_ADD_PRODUCTION_LINK
 
@@ -71,7 +71,7 @@ The CurveGlobal contract provides a few main functions:
 4. Sign the transaction and the vault will be created
 ![](https://i.imgur.com/v2DYa4T.png)
 
-### Usage without UI:
+## Usage without UI:
 
 1. Call `canCreateVaultPermissionlessly()` function to make sure that a vault does not already exist for the gauge you want to create
 
