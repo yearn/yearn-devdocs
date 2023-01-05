@@ -60,15 +60,19 @@ The CurveGlobal contract provides a few main functions:
 - TODO_ADD_PRODUCTION_LINK
 
 1. Make sure your wallet is connected
+
 ![](https://i.imgur.com/SKF9VsE.png)
 
 2. Chose a token to create a vault for
+
 ![](https://i.imgur.com/4xc5Biw.png)
 
 3. Review details and click "Create Vault"
+
 ![](https://i.imgur.com/l7Z7oYm.png)
 
 4. Sign the transaction and the vault will be created
+
 ![](https://i.imgur.com/v2DYa4T.png)
 
 ## Create without UI
