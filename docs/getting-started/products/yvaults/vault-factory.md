@@ -3,7 +3,7 @@
 Yearn's brand new "Vault Factory" allows anyone to permissionlessly deploy an official Yearn Vault with ready-made yield strategies.
 
 The easiest way to get started using the factory is through the User Interface:
-- TODO_ADD_PRODUCTION_LINK ([example usage](#usage-with-ui))
+- TODO_ADD_PRODUCTION_LINK ([example usage](#create-with-ui))
 
 The current version of the Vault Factory works with the following:
 
@@ -55,7 +55,7 @@ The CurveGlobal contract provides a few main functions:
 - `createNewVaultsAndStrategies()`: takes in an address for a gauge and a boolean that determines whether duplicate vaults are allowed, and creates a new vault and strategy.
 - `latestDefaultOrAutomatedVaultFromGauge()`: takes in an address for a gauge and returns the latest default or automated vault from that gauge.
 
-## Usage with UI
+## Create with UI
 
 - TODO_ADD_PRODUCTION_LINK
 
@@ -71,7 +71,7 @@ The CurveGlobal contract provides a few main functions:
 4. Sign the transaction and the vault will be created
 ![](https://i.imgur.com/v2DYa4T.png)
 
-## Usage without UI
+## Create without UI
 
 1. Open the contract at etherscan: [0x21b1FC8A52f179757bf555346130bF27c0C2A17A](https://etherscan.io/address/0x21b1FC8A52f179757bf555346130bF27c0C2A17A#writeContract)
 
