@@ -1,6 +1,11 @@
 # Vault Factory
 
-Yearn's brand new "Vault Factory" allows anyone to permissionlessly deploy an official Yearn Vault with ready-made yield strategies. The current version of the Vault Factory works with the following:
+Yearn's brand new "Vault Factory" allows anyone to permissionlessly deploy an official Yearn Vault with ready-made yield strategies.
+
+The easiest way to get started using the factory is through the User Interface:
+- TODO_ADD_PRODUCTION_LINK ([example usage](#usage-with-ui))
+
+The current version of the Vault Factory works with the following:
 
 - [Curve LP Tokens](#Curve-LP-Tokens)
 - Balancer LP Tokens (soon)
@@ -50,7 +55,23 @@ The CurveGlobal contract provides a few main functions:
 - `createNewVaultsAndStrategies()`: takes in an address for a gauge and a boolean that determines whether duplicate vaults are allowed, and creates a new vault and strategy.
 - `latestDefaultOrAutomatedVaultFromGauge()`: takes in an address for a gauge and returns the latest default or automated vault from that gauge.
 
-Example usage:
+### Usage with UI:
+
+- TODO_ADD_PRODUCTION_LINK
+
+1. Make sure your wallet is connected
+![](https://i.imgur.com/SKF9VsE.png)
+
+2. Chose a token to create a vault for
+![](https://i.imgur.com/4xc5Biw.png)
+
+3. Review details and click "Create Vault"
+![](https://i.imgur.com/l7Z7oYm.png)
+
+4. Sign the transaction and the vault will be created
+![](https://i.imgur.com/v2DYa4T.png)
+
+### Usage without UI:
 
 1. Call `canCreateVaultPermissionlessly()` function to make sure that a vault does not already exist for the gauge you want to create
 
