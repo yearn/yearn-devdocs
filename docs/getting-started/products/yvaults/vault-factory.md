@@ -17,7 +17,7 @@ The Vault Factory is a massive step forward in automation which has enabled us t
 
 Performance fees for every type of yVault go straight to Yearn treasury ([ychad.eth](https://etherscan.io/address/0xfeb4acf3df3cdea7399794d0869ef76a6efaff52)) and are calculated only on top of harvest profits. The current fee structure for each yVault can be seen directly on the new [yearn.finance](https://yearn.finance/vaults) website by clicking on the vault.
 
-![](https://i.imgur.com/0QIydKb.png)
+<img src="https://i.imgur.com/0QIydKb.png" width="500" />
 
 Only one vault can be live for each token, so the Vault Factory will only deploy a new yVault if there is no vault for that token already deployed (excluding "legacy" vaults).
 
@@ -39,7 +39,7 @@ Factory-deployed yVaults for Curve LP tokens contain up to three ready-made yiel
 
 **StrategyConvexFraxFactory** will only be added to the vault if the Curve LP token of the vault can be staked in Convex for Frax (currently available for over 20 Curve LPs). This ConvexFrax strategy will be used instead of the standard Convex strategy to earn additional FXS rewards (on top of the standard CRV and CVX rewards).
 
-![](https://i.imgur.com/oJdwz6n.png)
+<img src="https://i.imgur.com/oJdwz6n.png" width="500" />
 
 In all three strategies, any earned tokens are regularly claimed, sold for more of the underlying Curve LP token, and then deposited back into the strategy to compound the yield.
 
@@ -59,21 +59,23 @@ The CurveGlobal contract provides a few main functions:
 
 - TODO_ADD_PRODUCTION_LINK
 
+Follow these steps to create a new vault with the UI:
+
 1. Make sure your wallet is connected
 
-![](https://i.imgur.com/SKF9VsE.png)
+<img src="https://i.imgur.com/EKqOla1.png" />
 
 2. Chose a token to create a vault for
 
-![](https://i.imgur.com/4xc5Biw.png)
+<img src="https://i.imgur.com/nIt8h8v.png" width="500" />
 
 3. Review details and click "Create Vault"
 
-![](https://i.imgur.com/l7Z7oYm.png)
+<img src="https://i.imgur.com/l7Z7oYm.png" width="500" />
 
 4. Sign the transaction and the vault will be created
 
-![](https://i.imgur.com/v2DYa4T.png)
+<img src="https://i.imgur.com/v2DYa4T.png" width="280" />
 
 ## Create from Contract
 
