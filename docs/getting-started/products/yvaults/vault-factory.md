@@ -39,7 +39,7 @@ Factory-deployed yVaults for Curve LP tokens contain up to three ready-made yiel
 
 **StrategyConvexFraxFactory** will only be added to the vault if the Curve LP token of the vault can be staked in Convex for Frax (currently available for over 20 Curve LPs). This ConvexFrax strategy will be used instead of the standard Convex strategy to earn additional FXS rewards (on top of the standard CRV and CVX rewards).
 
-<img src="https://i.imgur.com/oJdwz6n.png" width="500" />
+<img src="https://i.imgur.com/oJdwz6n.png" />
 
 In all three strategies, any earned tokens are regularly claimed, sold for more of the underlying Curve LP token, and then deposited back into the strategy to compound the yield. Harvests on vaults created from the Vault Factory are permissionless and anyone can call it via the harvest() function on the attached strategies.
 
@@ -71,7 +71,7 @@ Follow these steps to create a new vault with the UI:
 
 3. Review details and click "Create Vault"
 
-<img src="https://i.imgur.com/l7Z7oYm.png" width="500" />
+<img src="https://i.imgur.com/l7Z7oYm.png" />
 
 4. Sign the transaction and the vault will be created
 
