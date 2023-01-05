@@ -75,7 +75,7 @@ The CurveGlobal contract provides a few main functions:
 
 ![](https://i.imgur.com/v2DYa4T.png)
 
-## Create without UI
+## Create from Contract
 
 1. Open the contract at etherscan: [0x21b1FC8A52f179757bf555346130bF27c0C2A17A](https://etherscan.io/address/0x21b1FC8A52f179757bf555346130bF27c0C2A17A#writeContract)
 
