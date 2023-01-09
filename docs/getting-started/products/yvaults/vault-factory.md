@@ -45,7 +45,7 @@ In all three strategies, any earned tokens are regularly claimed, sold for more 
 
 #### Harvests
 
-Harvests on vaults created from the Vault Factory are permissionless and anyone can call it via the [harvestStrategy()](https://etherscan.io/address/0x256e6a486075fbadbb881516e9b6b507fd082b5d#writeContract) function on our wrapped keep3r bot (keeper.factory.ychad.eth). Simply put in the strategy address from the factory vault which you would like to call harvest on, and click write.
+Harvests on vaults created from the Vault Factory are permissionless and anyone can call it via the [harvestStrategy()](https://etherscan.io/address/0x256e6a486075fbadbb881516e9b6b507fd082b5d#writeContract) function (keeper.factory.ychad.eth). Simply put in the strategy address from the factory vault which you would like to call harvest on, and click write.
 
 ### Contracts
 
