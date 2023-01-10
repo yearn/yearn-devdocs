@@ -41,7 +41,11 @@ Factory-deployed yVaults for Curve LP tokens contain up to three ready-made yiel
 
 <img src="https://i.imgur.com/oJdwz6n.png" />
 
-In all three strategies, any earned tokens are regularly claimed, sold for more of the underlying Curve LP token, and then deposited back into the strategy to compound the yield. Harvests on vaults created from the Vault Factory are permissionless and anyone can call it via the harvest() function on the attached strategies.
+In all three strategies, any earned tokens are regularly claimed, sold for more of the underlying Curve LP token, and then deposited back into the strategy to compound the yield. 
+
+#### Harvests
+
+Harvests on vaults created from the Vault Factory are permissionless and anyone can call it via the [harvestStrategy()](https://etherscan.io/address/0x256e6a486075fbadbb881516e9b6b507fd082b5d#writeContract) function (keeper.factory.ychad.eth). Simply put in the strategy address from the factory vault which you would like to call harvest on, and click write.
 
 ### Contracts
 
