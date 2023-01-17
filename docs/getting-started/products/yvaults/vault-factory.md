@@ -10,7 +10,7 @@ The current version of the Vault Factory works with the following:
 - [Curve LP Tokens](#Curve-LP-Tokens)
 - Balancer LP Tokens (soon)
 
-The Vault Factory is a massive step forward in automation which has enabled us to significantly reduce our cost of operations. As such, all vaults deployed using this new method will utilize the following fee structure:
+The Vault Factory is a massive step forward in automation. We're significantly reducing our operational costs for all vaults deployed with this new method. Here's the fee structure for them:
 
 - 0% management fee (previously 2%)
 - 10% performance fee (previously 20%)
