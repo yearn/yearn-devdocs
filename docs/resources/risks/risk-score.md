@@ -251,7 +251,7 @@ Testing score is a metric of how much of the codebase for the strategy has been 
 
 ### TVL Impact
 
-The TVL (total value locked) impact is a figure between 1 and 5, where 5 is the highest impact labeled “extreme” (above 100MM) and 1 is the lowest impact in TVL less than 1MM. This metric measures how to allocate to new riskier strategies without having a catastrophic event in case of a hack or issue. The lower the impact, the more likely yearn’s treasury can recover from an incident. The TVL is measured in USD and grows dynamically based on strategies allocations onchain. Through [yearn.watch](https://yearn.watch/), we keep track of the TVL and risk score to make fund allocation decisions and mitigations if a strategy group has fallen into the “red” high-risk zone:
+The TVL (total value locked) metric measures how to allocate to new riskier strategies without having a catastrophic event in case of a hack or issue. The lower the impact, the more likely yearn’s treasury can recover from an incident. The TVL is measured in USD and grows dynamically based on strategies allocations onchain. Through [yearn.watch](https://yearn.watch/), we keep track of the TVL and risk score to make fund allocation decisions and mitigations if a strategy group has fallen into the “red” high-risk zone:
 
 <table>
   <tr>
