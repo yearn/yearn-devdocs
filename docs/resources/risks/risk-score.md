@@ -188,7 +188,7 @@ We hope to improve this dimension with the help of the DeFI community to potenti
 
 ### Team Knowledge
 
-Measures the amount of expertise on a strategy that is shared amongst Yearn contributors. How many contributors can manage the strategy and respond in an emergency? The less people who can manage and respond during an emergency the riskier the strategy assessment in this dimension:
+Measures the amount of expertise on a strategy that is shared amongst Yearn contributors. How many contributors can manage the strategy and respond in an emergency? The fewer people who can manage and respond during an emergency the riskier the strategy assessment in this dimension:
 
 <table>
   <tr>
