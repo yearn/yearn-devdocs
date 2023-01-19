@@ -155,7 +155,7 @@ How long the strategy has been running live on yearn.finance:
 
 ### Protocol Safety
 
-Internal evaluation from yearn’s point-of-view of how resilient are the protocols that the strategy works with. It takes into account safety measures given the current DeFi security standards, based on our internal assessments and due diligence compared to the top projects in DeFI. This includes multisig health, decentralization, bounty programs, audits, etc. 
+Protocol Safety evaluates the resilience of the protocol the strategy uses. It takes into account the safety measures given the current DeFi security standards, based on our internal assessments and due diligence compared to the top projects in DeFI. This includes multisig health, decentralization, bounty programs, audits, etc. 
 
 We hope to improve this dimension with the help of the DeFI community to potentially use a standard scoring system that is widely accepted in the ecosystem to replace our current scoring table:
 
