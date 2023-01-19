@@ -4,9 +4,7 @@ Yearn V2 Partner Tracker is an implementation of Delegated Deposit:
 
 - Contract Source Code: https://github.com/yearn/yearn-partner-tracker
 
-Yearn V2 Partner Tracker is deployed at the following addresses:
-
-Network | Address
+Network | Deploy Address
 ------- | -------
 Ethereum (1) | [0x8ee392a4787397126C163Cb9844d7c447da419D8](https://etherscan.io/address/0x8ee392a4787397126C163Cb9844d7c447da419D8)
 Optimism (10) | [0x7E08735690028cdF3D81e7165493F1C34065AbA2](https://optimistic.etherscan.io/address/0x7E08735690028cdF3D81e7165493F1C34065AbA2)
