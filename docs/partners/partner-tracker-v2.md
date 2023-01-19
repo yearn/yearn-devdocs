@@ -1,6 +1,6 @@
 # Yearn V2 Partner Tracker
 
-Yearn V2 Partner Tracker is an implementation of Delegated Deposit. This contract makes use of the `VaultAPI` contract to track and manage deposits.
+Yearn V2 Partner Tracker is an implementation of Delegated Deposit:
 
 - Contract Source Code: https://github.com/yearn/yearn-partner-tracker
 
