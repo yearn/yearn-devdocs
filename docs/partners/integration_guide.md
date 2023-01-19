@@ -2,7 +2,7 @@
 title: Integration Methods
 ---
 
-Yearn offers two different types of integration: Wrapper and Delegated Deposit. Each method has its unique advantages and disadvantages, so it is essential to consider the requirements of your specific use case when selecting one. 
+Yearn offers two different types of integration: Wrapper and Delegated Deposit. Each method has its unique advantages and disadvantages, so it is essential to consider the requirements of your specific use case when selecting one below. *We are always open to new suggestions on how you can integrate with us!*
 
 **Wrapper**
 - Custodial, with yvTokens inside the wrapper contract 
