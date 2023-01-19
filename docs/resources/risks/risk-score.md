@@ -8,7 +8,7 @@ Yearn works with risk scores to quantify and assess the amount of risk of each s
 
 ## Strategy Risk Score
 
-Risk for different strategies is quantified using an internal point system developed by yearn's strategy deployment process. The higher the risk score number, the more risky the strategy is. The risk assessment evaluates eight dimensions using a 1-5 point system:
+Risk for different strategies is quantified using a 1-5 point system developed by yearn's strategy deployment process. The higher the risk score number, the more risky the strategy is. The risk assessment evaluates eight dimensions:
 
 * [Audit](#audit)
 * [Code Review](#code-review)
