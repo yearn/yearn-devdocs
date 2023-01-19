@@ -13,20 +13,20 @@ Arbitrum (42161) | [0x0e5b46E4b2a05fd53F5a4cD974eb98a9a613bcb7](https://arbiscan
 
 ## Functionality
 
-The `deposit()` function is used to deposit funds into a vault. The function takes two parameters: 
+The `deposit()` function is used to deposit funds into a vault. This function takes two parameters: 
 
-- `vault` - This is the address of the vault where the funds will be deposited. 
-- `partnerId` - This is the address of the partner who has referred the deposit. 
+- `vault` - Address of the vault where the funds will be deposited. 
+- `partnerId` - Address of the partner who has referred the deposit. 
 
-When a user deposits funds into the vault, the contract will pull the specified amount from their wallet and assign it to the partner. The contract will also record the amount of funds that were deposited, allowing the user to track how much they have deposited in total.
+When a user deposits funds into the vault, the contract will log the amount of funds that were deposited, allowing the user to keep track and monitor their total deposits.
 
 The `ReferredBalanceIncreased()` event will be emitted when a partner's referred balance increases. This event will contain the following data: 
 
-- `partnerId` - The address of the partner who referred the deposit. 
-- `vault` - The address of the vault where the deposit was made. 
-- `depositer` - The address of the user who made the deposit. 
-- `amountAdded` - The amount of funds that were deposited. 
-- `totalDeposited` - The total amount of funds deposited by the user. 
+- `partnerId` - Address of the partner who referred the deposit. 
+- `vault` - Address of the vault where the deposit was made. 
+- `depositer` - Address of the user who made the deposit. 
+- `amountAdded` - Amount of funds that were deposited. 
+- `totalDeposited` - Total amount of funds deposited by the user. 
 
 ## Usage
 
