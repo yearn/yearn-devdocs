@@ -2,7 +2,13 @@ module.exports = {
   mySidebar: [
     'introduction',
     'integration_guide',
-    'partner-tracker-v2',
+    {
+      type: 'category',
+      label: 'Templates',
+      items: [,
+        'partner-tracker',
+      ],
+    },
     'submit_pr',
     'yvtokens-as-collateral',
   ],

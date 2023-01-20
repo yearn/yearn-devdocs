@@ -49,4 +49,4 @@ Implications:
 - Loss of TVL attributed if users transfer the vault tokens
 - Simpler implementation and testing
 
-See an example implementation of Delegated Deposit that can be used without deploying your own contract at [Partner Tracker V2](https://docs.yearn.finance/partners/partner-tracker-v2)
+See an example implementation of Delegated Deposit that can be used without deploying your own contract at [Yearn's Partner Tracker](https://docs.yearn.finance/partners/partner-tracker).
