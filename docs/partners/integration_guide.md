@@ -4,17 +4,12 @@ title: Integration Methods
 
 Yearn offers two different types of integration: Wrapper and Delegated Deposit. Each method has its unique advantages and disadvantages, so it is essential to consider the requirements of your specific use case when selecting one below. *We are always open to new suggestions on how you can integrate with us!*
 
-**Wrapper**
-- Custodial, with yvTokens inside the wrapper contract 
-- The user receives a custom token, with the ability to only use the partner’s contract to deposit, withdraw, etc
-- Allows for custom integrations with complex logic
-- Since tokens are held in the contract, we can track the balance at any given time
-
-**Delegated Deposit**
-- Non-custodial, with tokens sent to Yearn’s contracts 
-- The user receives standard yvTokens, and can use Yearn’s website to interact with their funds
-- Designed for UIs, wallets, and other more straightforward integrations
-- The TVL is attributed until the user transfers the tokens to another address
+|  Wrapper  | Delegated Deposit  |
+|---|---|
+| Custodial, with yvTokens inside the wrapper contract  | Non-custodial, with tokens sent to Yearn’s contracts  |
+| The user receives a custom token, with the ability to only use the partner’s contract to deposit, withdraw, etc | The user receives standard yvTokens, and can use Yearn’s website to interact with their funds |
+| Allows for custom integrations with complex logic  | Designed for UIs, wallets, and other more straightforward integrations |
+| Since tokens are held in the contract, we can track the balance at any given time  | The TVL is attributed until the user transfers the tokens to another address |
 
 ## Wrapper
 
@@ -54,4 +49,4 @@ Implications:
 - Loss of TVL attributed if users transfer the vault tokens
 - Simpler implementation and testing
 
-See an example implementation of Delegated Deposit at [Partner Tracker V2](https://docs.yearn.finance/partners/partner-tracker-v2)
+See an example implementation of Delegated Deposit that can be used without deploying your own contract at [Partner Tracker V2](https://docs.yearn.finance/partners/partner-tracker-v2)
