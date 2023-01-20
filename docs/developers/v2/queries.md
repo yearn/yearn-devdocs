@@ -1,4 +1,4 @@
-# Querying
+# Subgraph Queries
 
 Below are some sample queries you can use to gather information from the Yearn contracts.
 

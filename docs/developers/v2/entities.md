@@ -1,4 +1,4 @@
-# Entities
+# Subgraph Entities
 
 - [`Transaction`](#transaction)
 - [`Token`](#token)

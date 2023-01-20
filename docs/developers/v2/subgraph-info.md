@@ -1,4 +1,4 @@
-# Introduction
+# Subgraph Introduction
 
 The Graph Network is a decentralized indexing protocol for organizing blockchain data. Applications use GraphQL to query open APIs called subgraphs, to retrieve data that is indexed on the network. With The Graph, developers can build serverless applications that run entirely on public infrastructure.
 

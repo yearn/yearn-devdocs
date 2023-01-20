@@ -19,18 +19,18 @@ module.exports = {
       label: 'Smart Contracts',
       href: '/vaults/smart-contracts/BaseStrategy',
     },
-    'v2/hacking-with-yearn',
-    'v2/yswaps',
-    'v2/fork-yearn-ui',
     {
       type: 'category',
-      label: 'Subgraph Information',
+      label: 'Yearn Data Services',
       items: [
+        'v2/yearn-data',
         'v2/subgraph-info',
         'v2/entities',
         'v2/queries',
-        'v2/yearn-data',
       ],
     },
+    'v2/hacking-with-yearn',
+    'v2/fork-yearn-ui',
+    'v2/yswaps',
   ],
 }
