@@ -16,7 +16,8 @@ The exporter is used to build our Grafana dashboard at [yearn.vision](https://ye
 
 The subgraph is a GraphQL interface to raw historical data. Check yDaemon before using the subgraph directly.
 
-- **Live API + Docs:** https://api.thegraph.com/subgraphs/name/messari/yearn-v2-ethereum/graphql
+- **Live API:** https://api.thegraph.com/subgraphs/name/messari/yearn-v2-ethereum/graphql
+- **Docs: ** https://yearn-docs-git-fork-marcoworms-exportooor.yearn.farm/developers/v2/subgraph-info
 
 ## yDaemon
 
