@@ -8,20 +8,24 @@ Yearn works with risk scores to quantify and assess the amount of risk of each s
 
 ## Strategy Risk Score
 
-Risk for different strategies is quantified using a 1-5 point system developed by yearn's strategy deployment process. The higher the risk score number, the more risky the strategy is. The risk assessment evaluates eight dimensions:
+Risk for different strategies is quantified using a 1-5 point system developed by Yearn's strategy deployment process. The higher the risk score number, the more risky the strategy is. The risk assessment evaluates eight dimensions:
 
-* [Audit](#audit)
-* [Code Review](#code-review)
-* [Complexity](#complexity)
-* [Longevity](#longevity)
-* [Protocol Safety](#protocol-safety)
-* [Team Knowledge](#team-knowledge)
-* [Testing Score](#testing-score)
-* [TVL Impact](#tvl-impact)
+- [Risk Scores](#risk-scores)
+  - [Strategy Risk Score](#strategy-risk-score)
+    - [Audit](#audit)
+    - [Code Review](#code-review)
+    - [Complexity](#complexity)
+    - [Longevity](#longevity)
+    - [Protocol Safety](#protocol-safety)
+    - [Team Knowledge](#team-knowledge)
+    - [Testing Score](#testing-score)
+    - [TVL Impact](#tvl-impact)
+  - [Vault Risk Score Proposal](#vault-risk-score-proposal)
+  - [Overall Risk Score Proposal](#overall-risk-score-proposal)
 
 This risk framework is an ongoing process to ensure the security of Yearn strategies. Yearn recognized that, due to its unique approach to deploying strategies, it could not rely on a traditional waterfall process (heavy analysis and design, testing, multiple audits before release, etc.) to deploy contracts. Strategies are deployed and capped by their risk score. As we reduce the risk in any of the eight dimensions, the strategy can grow its TVL. This system allows Yearn to compare the risk score of two strategies and prioritize risk mitigation and preventive actions, such as forming a committee to spread knowledge on the code, getting more audits, migrating current code to improved versions of the strategy, etc. 
  
-The current version of the risk score system works for yearn's current needs, but we are always looking to improve and expand it to the vaults. We want to provide our users with a better understanding of what is happening behind the scenes in the vaults. The development of vault risk scoring is still in progress!
+The current version of the risk score system works for Yearn's current needs, but we are always looking to improve and expand it to the vaults. We want to provide our users with a better understanding of what is happening behind the scenes in the vaults. The development of vault risk scoring is still in progress!
 
 ### Audit
 
@@ -60,7 +64,7 @@ This is the process that reviews strategy code going to production. It is done i
 
 **Phase 1:** Two internal peers (strategists) review the strategy for any potential issues regarding handling accounts, profits, losses, etc. After this phase is completed, the strategy can go to ape.tax for live testing and validation.
 
-**Phase 2:** An internal security reviewer from yearn will review the code focusing on security concerns. Once phase 2 is completed, the strategy gets a risk score in all dimensions and is usually deemed enough for a strategy to go to production with limited TVL based on scoring.
+**Phase 2:** An internal security reviewer from Yearn will review the code focusing on security concerns. Once phase 2 is completed, the strategy gets a risk score in all dimensions and is usually deemed enough for a strategy to go to production with limited TVL based on scoring.
 
 After these steps a recurring review is scheduled, where either a second either internal or external security reviewer will have another look at the code:
 
@@ -251,7 +255,7 @@ Testing score is a metric of how much of the codebase for the strategy has been 
 
 ### TVL Impact
 
-The TVL (total value locked) metric measures how to allocate to new riskier strategies without having a catastrophic event in case of a hack or issue. The lower the impact, the more likely yearn’s treasury can recover from an incident. The TVL is measured in USD and grows dynamically based on strategies allocations onchain. Through [yearn.watch](https://yearn.watch/), we keep track of the TVL and risk score to make fund allocation decisions and mitigations if a strategy group has fallen into the “red” high-risk zone:
+The TVL (total value locked) metric measures how to allocate to new riskier strategies without having a catastrophic event in case of a hack or issue. The lower the impact, the more likely Yearn’s treasury can recover from an incident. The TVL is measured in USD and grows dynamically based on strategies allocations onchain. Through [yearn.watch](https://yearn.watch/), we keep track of the TVL and risk score to make fund allocation decisions and mitigations if a strategy group has fallen into the “red” high-risk zone:
 
 <table>
   <tr>
