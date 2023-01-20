@@ -45,3 +45,7 @@ Governance 2.0, described in [YIP-61](https://snapshot.org/#/ybaby.eth/proposal/
 YSPs allow token holders to formally request that a yTeam executes a decision with the power they are entitled to. This allows token holders to have a voice while avoiding a drawn-out YIP process. yTeams can choose to respect the suggestion or not, and if they don't it can become an issue as a formal YIP.
 
 YDPs are proposals that change where any discrete decision-making power is delegated. This is relevant in Governance 2.0 as it introduces yTeams, who are given an objective, and certain powers that can be modified by token holders. 
+
+## veYFI
+
+With [veYFI](https://docs.yearn.finance/contributing/governance/veyfi) launch, governance changed from using YFI to veYFI as voting power.

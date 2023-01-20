@@ -19,6 +19,8 @@ A simplified flow of governance would look like this:
     3. yTx creates a delegated transaction and send it to the Multisig
     4. Multisig executes or vetos the transaction
 
+With [veYFI](https://docs.yearn.finance/contributing/governance/veyfi) launch, governance moved from using YFI to veYFI as voting power.
+
 ## DAO Responsibilities
 
 ![](https://i.imgur.com/IDysF5O.png)
@@ -26,6 +28,7 @@ A simplified flow of governance would look like this:
 ### Token Holders
 
 [YFI](https://docs.yearn.finance/contributing/governance/yfi) token-holders duty is to create and vote for proposals that improve the protocol.
+
 
 | Proposals                        | Descriptions                                                                                          |
 | -------------------------------- | ----------------------------------------------------------------------------------------------------- |
