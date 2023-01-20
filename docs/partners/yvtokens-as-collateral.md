@@ -1,4 +1,4 @@
-# yvToken as collateral
+# yvToken as Collateral
 
 ## Why use yvTokens as collateral?
 
