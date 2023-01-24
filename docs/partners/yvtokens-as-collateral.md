@@ -1,10 +1,10 @@
-# yvToken as collateral
+# yvToken as Collateral
 
 ## Why use yvTokens as collateral?
 
 ### They’re yield generating
 
-A Yearn Vault token is a yield-bearing version of a token, so when locked up as collateral it will still generate yield. A single vault token can run up to 20 yield-generating strategies. All Vaults at [yearn.finance main website](https://yearn.finance/#/vaults) run "uponly" strategies.
+A Yearn Vault token is a yield-bearing version of a token, so when locked up as collateral it will still generate yield. A single vault token can run up to 20 yield-generating strategies. All Vaults at [yearn.finance main website](https://yearn.finance/#/vaults) run "up-only" strategies.
 
 ### The safest yields in DeFi
 
