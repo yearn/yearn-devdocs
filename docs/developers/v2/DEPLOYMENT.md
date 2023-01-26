@@ -206,7 +206,7 @@ The following steps are required for all strategies. These descriptions are pull
 
 3. Create an add-strategy PR in Keep3r [repo](https://github.com/yearn/yearn-keeper) (TBD)
 
-## Deplying at Other Chains
+## Deploying in Other Chains
 
 The process described above is currently tailored to deployment on Ethereum mainnet. This process can be adapted and extended to other chains:
 
