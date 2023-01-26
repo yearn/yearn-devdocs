@@ -206,6 +206,21 @@ The following steps are required for all strategies. These descriptions are pull
 
 3. Create an add-strategy PR in Keep3r [repo](https://github.com/yearn/yearn-keeper) (TBD)
 
+## Deplying at Other Chains
+
+The process described above is currently tailored to deployment on Ethereum mainnet. This process can be adapted and extended to other chains:
+
+1. Check if the selected vault and strategy versions are available on the target chain.
+2. Follow the same process as described above, using the appropriate deployment methods and mainnet-fork setup.
+3. Make sure to use the correct multisig and registry contracts for the target chain.
+4. Make sure to use the correct `want` token for the target chain.
+5. Make sure to use the correct `keep3r` contract for the target chain.
+6. Make sure that the deposit limit, management fee, and other parameters are set correctly for the target chain.
+7. Test the vault and strategy on the target chain's mainnet-fork.
+8. Publish the strategy description on the yearn-meta repo.
+9. Create a pull request to add the strategy to the Keep3r repo.
+10. Follow the same process to move to production as described above.
+
 ## References
 
 ### Limits per Stage
