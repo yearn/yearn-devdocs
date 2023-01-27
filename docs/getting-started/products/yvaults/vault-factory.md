@@ -25,7 +25,7 @@ Only one vault can be live for each token, so the Vault Factory will only deploy
 
 The first Vault Factory deployed live on Ethereum is the Curve LP Token Vault Factory. This factory allows users to deploy yVaults for any Curve LP token that represents a Curve pool with an active gauge (allowing it to receive CRV emissions).
 
-### Strategies
+## Strategies
 
 Factory-deployed yVaults for Curve LP tokens contain up to three ready-made yield strategies:
 
@@ -43,21 +43,21 @@ Factory-deployed yVaults for Curve LP tokens contain up to three ready-made yiel
 
 In all three strategies, any earned tokens are regularly claimed, sold for more of the underlying Curve LP token, and then deposited back into the strategy to compound the yield. 
 
-#### Harvests
+## Harvests
 
 Harvests on vaults created from the Vault Factory are split into two steps and the first step is permissionless. This new process splits harvest from the older vaults into two steps. The first step users can call permissionlessly adjusts the strategy's debtRatio, adding idle funds to strategies and rebalancing between the up-to three vault strategies for optimal yield, and sends rewards earned to the vault but does not sell them. The second step swaps the reward tokens accumulated into the vault's deposit token and donates them to the vault. Instead of using hard-coded paths for swaps, the vaults use ySwaps for optimal pricing on swaps. ySwaps will pull the stored reward tokens and swapping into the deposit token which is a manual process for now. 
 
 Anyone can call the first step of harvest via the [harvestStrategy()](https://etherscan.io/address/0x256e6a486075fbadbb881516e9b6b507fd082b5d#writeContract) function (keeper.factory.ychad.eth). Simply put in the strategy address from the factory vault which you would like to call harvest on, and click write. 
 
-##### Determine Accumulated Rewards
-###### Curve Strategy
+### Determine Accumulated Rewards
+#### Curve Strategy
 For curve strategies, you can view how much rewards have accumulated for that vault by using Curve.Fi's [dashboard](https://curve.fi/#/ethereum/dashboard) and putting in Yearn's Curve Voter Proxy address `0xF147b8125d2ef93FB6965Db97D6746952a133934` (curve-voter.ychad.eth). This will show you the dollar amount accumulated in the strategy for all factory vaults. 
 
-###### Convex and Convex Frax Strategies
+#### Convex and Convex Frax Strategies
 For Convex and Convex Frax you can view how much rewards have accumulated in USD by viewing claimableProfitInUsdc() on the strategy under the Read Contract tab.
 
 
-### Contracts
+## Contracts
 
 - Ethereum Deploy Address: [0x21b1FC8A52f179757bf555346130bF27c0C2A17A](https://etherscan.io/address/0x21b1FC8A52f179757bf555346130bF27c0C2A17A#writeContract)
 
