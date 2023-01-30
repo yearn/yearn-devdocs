@@ -45,17 +45,20 @@ In all three strategies, any earned tokens are regularly claimed, sold for more 
 
 ## Harvests
 
-Harvests on vaults created from the Vault Factory are split into two steps and the first step is permissionless. This new process splits harvest from the older vaults into two steps. The first step users can call permissionlessly adjusts the strategy's debtRatio, adding idle funds to strategies and rebalancing between the up-to three vault strategies for optimal yield, and sends rewards earned to the vault but does not sell them. The second step swaps the reward tokens accumulated into the vault's deposit token and donates them to the vault. Instead of using hard-coded paths for swaps, the vaults use ySwaps for optimal pricing on swaps. ySwaps will pull the stored reward tokens and swapping into the deposit token which is a manual process for now. 
+With the introduction of factory vaults, there was one subtle but important modification made in the way harvests work which allows them to be performed permissionlessly (i.e. by anybody willing to pay transaction costs for it). In traditional strategies, token swap logic is hardcoded into the strategy itself which means that a harvest call atomically performs debt rebalances and swaps into realized profit in a single transaction. 
 
-Anyone can call the first step of harvest via the [harvestStrategy()](https://etherscan.io/address/0x256e6a486075fbadbb881516e9b6b507fd082b5d#writeContract) function (keeper.factory.ychad.eth). Simply put in the strategy address from the factory vault which you would like to call harvest on, and click write. 
+Now, with factory strategies, the swap logic is decoupled from the strategy and is performed in a separate transaction from the harvest. Swap transactions must remain permissioned in order to stay safe from MEV attacks. But as soon as swaps are complete, anybody can call harvest to recognize the profit that the swap created and airdropped into the strategy. Since harvest calls also invest tokens from the vault into the strategy, sometimes it may make sense to call harvest on a strategy even if there is no profit yet available from a prior swap. While harvests will be permissionless on this specific subset of vaults, Yearn will continue to use standard keeper automation to call harvests even if nobody else does.
+
+Anyone can call harvest via the [harvestStrategy()](https://etherscan.io/address/0x256e6a486075fbadbb881516e9b6b507fd082b5d#writeContract) function (keeper.factory.ychad.eth). Simply put in the strategy address from the factory vault which you would like to call harvest on, and click write. 
 
 ### Determine Accumulated Rewards
+This section will help you know how much rewards have accumulated, but calling harvest will **not** recognize profits unless they are sitting in the strategy's contract address. 
+
 #### Curve Strategy
 For curve strategies, you can view how much rewards have accumulated for that vault by using Curve.Fi's [dashboard](https://curve.fi/#/ethereum/dashboard) and putting in Yearn's Curve Voter Proxy address `0xF147b8125d2ef93FB6965Db97D6746952a133934` (curve-voter.ychad.eth). This will show you the dollar amount accumulated in the strategy for all factory vaults. 
 
 #### Convex and Convex Frax Strategies
 For Convex and Convex Frax you can view how much rewards have accumulated in USD by viewing claimableProfitInUsdc() on the strategy under the Read Contract tab.
-
 
 ## Contracts
 
