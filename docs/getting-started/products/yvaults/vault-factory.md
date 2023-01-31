@@ -19,7 +19,7 @@ Performance fees for every type of yVault go straight to Yearn treasury ([ychad.
 
 <img src="https://i.imgur.com/0QIydKb.png" width="500" />
 
-Only one vault can be live for each token, so the Vault Factory will only deploy a new yVault if there is no vault for that token already deployed (excluding "legacy" vaults).
+Only one factory vault can be live for each token, so the Vault Factory will only deploy a new yVault if there is no vault for that token already deployed (excluding "legacy" vaults, though factory versions of these must be deployed from one of Yearn's multisigs).
 
 ## Curve LP Tokens
 
