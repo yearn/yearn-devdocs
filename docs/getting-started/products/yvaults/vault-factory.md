@@ -45,7 +45,7 @@ In all three strategies, any earned tokens are regularly claimed, sold for more 
 
 ## Harvests
 
-With the introduction of factory vaults, there was one subtle but important modification made in the way harvests work which allows them to be performed permissionlessly (i.e. by anybody willing to pay transaction costs for it). In traditional strategies, token swap logic is hardcoded into the strategy itself which means that a harvest call atomically performs debt rebalances and swaps into realized profit in a single transaction. 
+With the introduction of factory vaults, there was one subtle but important modification made in the way harvests work which allows them to be performed permissionlessly (i.e. by anybody willing to pay transaction costs for it). In traditional strategies, token swap logic is hardcoded into the strategy itself, which means that a harvest call atomically performs debt rebalances and swaps into realized profit in a single transaction. 
 
 Now, with factory strategies, the swap logic is decoupled from the strategy and is performed in a separate transaction from the harvest. Swap transactions must remain permissioned in order to stay safe from MEV attacks. Harvests, as before, rebalance debt between strategies and put idle funds to work into strategies, but also pull accumulated rewards into the strategy contract so they can be swapped. But as soon as swaps are complete, anybody can call harvest to recognize the profit that the swap created and airdropped to the strategy. While harvests will be permissionless on this specific subset of vaults, Yearn will continue to use standard keeper automation to call harvests even if nobody else does.
 
