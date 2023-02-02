@@ -49,7 +49,7 @@ With the introduction of factory vaults, there was one subtle but important modi
 
 Now, with factory strategies, the swap logic is decoupled from the strategy and is performed in a separate transaction from the harvest. Swap transactions must remain permissioned in order to stay safe from MEV attacks. Harvests, as before, rebalance debt between strategies and put idle funds to work into strategies, but also pull accumulated rewards into the strategy contract so they can be swapped. But as soon as swaps are complete, anybody can call harvest to recognize the profit that the swap created and airdropped to the strategy. While harvests will be permissionless on this specific subset of vaults, Yearn will continue to use standard keeper automation to call harvests even if nobody else does.
 
-Anyone can call harvest via the harvestStrategy() function on the keeper attached to the vault's strategies. To find this address simply go to the strategy on a contract explorer such as etherscan, and it is listed under keeper(). Then in that keeper's harvestStrategy() put in the strategy address and click write. 
+Anyone can call harvest via the harvestStrategy() function on the keeper found at keeper.factory.ychad.eth. Simply put in the strategy address from the factory vault which you would like to call harvest on, and click write.
 
 ### Determine Accumulated Rewards
 This section will help you know how much profit has accumulated, but calling harvest will **not** recognize profits unless they are sitting in the strategy's contract address. Also if there are reward tokens in the strategy's contract, those values should be added to your calculation in the section below. 
