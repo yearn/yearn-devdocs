@@ -12,8 +12,7 @@ This page is for the hackers and buidlers who are currently building, or plannin
 - [Foundry](https://github.com/nicolasgarcia214/damn-vulnerable-defi-foundry)
 
 # Yearn Vaults & Smart Contract Integrations
-Yearn’s core product is the Vault (also known as yVault) — a set-it-and-forget-it yield aggregator running on top of DeFi’s yield-generating protocols like Compound, Aave, Curve, and Convex. Most of the core functionality such as deposit, withdraw, borrow, repay, or flashloan occurs in the XX contract ().
-For a breakdown of V2 features see the contract overview or dive even deeper with the V2 Technical Paper.
+Yearn’s core product is the Vault (also known as yVault) — a set-it-and-forget-it yield aggregator running on top of DeFi’s yield-generating protocols like Compound, Aave, Curve, and Convex.
 
 ## Getting Started
 
