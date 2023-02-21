@@ -178,8 +178,6 @@ paying bills and subscriptions
 
 # Examples
 
-[**Bunker Finance**](https://bunker.finance/): Bunker.finance is a decentralized protocol for NFT-backed loans. They integrated with Yearn v3’s USDC and WETH vaults and use them as a place to earn interest on funds that are currently not being supplied to borrowers.
-
 [**Skew You**](https://github.com/Tburm/tracer-vault): Users can borrow against their options collateral, unlocking a whole new world of capital efficiency.
 
 [**Possum**](https://github.com/Possum-ONE): Fixed-income product that can turn every farm into two fix/variable pools. Based on the game model, fixed pool users can have guaranteed APY while the variable user gets higher APY with higher risk.
