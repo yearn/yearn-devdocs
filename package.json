@@ -25,7 +25,7 @@
     "react-dom": "17.0.1",
     "rehype-katex": "4",
     "remark-math": "3",
-    "solc": "^0.8.17",
+    "solc": "^0.8.18",
     "solidity-docgen": "^0.5.11"
   },
   "browserslist": {
