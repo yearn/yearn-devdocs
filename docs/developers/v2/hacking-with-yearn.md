@@ -182,8 +182,6 @@ paying bills and subscriptions
 
 [**Possum**](https://github.com/Possum-ONE): Fixed-income product that can turn every farm into two fix/variable pools. Based on the game model, fixed pool users can have guaranteed APY while the variable user gets higher APY with higher risk.
 
-[**Demon**](https://demon-finance.netlify.app/): Demystifying obscure APY numbers
-
 [**Bowtie**](https://github.com/ShayanJa/bowtie_finance): Allows users to borrow against their options collateral.
 
 Additionally, doing a GitHub search for Yearn functionality you are interested in implementing is a good way to find working code examples.
