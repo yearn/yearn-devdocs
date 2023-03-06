@@ -4,7 +4,7 @@ This page is for the hackers and buidlers who are currently building, or plannin
 
 # Core Tools
 
-- [Solidity](https://https://docs.soliditylang.org/en/v0.8.6/bugs.html)
+- [Solidity](https://docs.soliditylang.org/en/v0.8.6/index.html)
 - [Brownie](https://eth-brownie.readthedocs.io/en/stable/)
 - [ethers.js](https://docs.ethers.io/v5/)
 - [Web3.js](https://web3js.readthedocs.io/en/v1.4.0/)
