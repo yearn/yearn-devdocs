@@ -11,33 +11,17 @@ The multisig is implemented as a Gnosis Safe. The multisig's assets, transaction
 Multisig membership can be validated from the Gnosis UI [here](https://gnosis-safe.io/app/eth:0xFEB4acf3df3cDEA7399794D0869ef76A6EfAff52/settings/owners).  
 Cryptographic membership attestations can be validated against the PGP keys in the [yearn-security](https://github.com/yearn/yearn-security/tree/master/keys) repository.
 
-
-**0x0Cec743b8CE4Ef8802cAc0e5df18a180ed8402A7** - Milkyklim (Yearn Finance)  
-[Membership attestation](https://milkyklim.keybase.pub/yearn-social-proof.txt) - [Etherscan](https://etherscan.io/address/0x0Cec743b8CE4Ef8802cAc0e5df18a180ed8402A7)
-
-**0x6F2A8Ee9452ba7d336b3fba03caC27f7818AeAD6** - Mariano Conti (nanexcool.com, prev. MakerDAO)  
-[Membership attestation](https://twitter.com/nanexcool/status/1491900804223041540) - [Etherscan](https://etherscan.io/address/0x6F2A8Ee9452ba7d336b3fba03caC27f7818AeAD6)
-
-**0x7321ED86B0Eb914b789D6A4CcBDd3bB10f367153** - Leo Cheng (C.R.E.A.M. Finance)  
-[Membership attestation](https://twitter.com/lumbergdoteth/status/1492736002724876291) - [Etherscan](https://etherscan.io/address/0x7321ED86B0Eb914b789D6A4CcBDd3bB10f367153)
-
-**0x74630370197b4c4795bFEeF6645ee14F8cf8997D** - cp287 (cp0x.com)  
-[Membership attestation](https://twitter.com/kaplansky1/status/1285427247286046725) - [Etherscan](https://etherscan.io/address/0x74630370197b4c4795bFEeF6645ee14F8cf8997D)
-
-**0x7A1057E6e9093DA9C1D4C1D049609B6889fC4c67** - Banteg (Yearn Finance)  
-[Membership attestation](https://twitter.com/bantg/status/1285426492906909696) - [Etherscan](https://etherscan.io/address/0x7A1057E6e9093DA9C1D4C1D049609B6889fC4c67)
-
-**0x99BC02c239025E431D5741cC1DbA8CE77fc51CE3** - Daryl Lau (Not3Lau Capital)  
-[Membership attestation](https://twitter.com/Daryllautk/status/1285434908383444992) - [Etherscan](https://etherscan.io/address/0x99BC02c239025E431D5741cC1DbA8CE77fc51CE3)
-
-**0xf5D3dbda5F41A0E26D71B948e29522398e71cFaE** - 0xngmi (DefiLlama)  
-[Membership attestation](https://twitter.com/0xngmi/status/1590047391797088257) - [Etherscan](https://etherscan.io/address/0xf5D3dbda5F41A0E26D71B948e29522398e71cFaE)
-
-**0x1496546f89fc1605880e556c9a1d6c5e2409fb0a** - monoloco (Yearn Finance)  
-[Membership attestation](https://gist.github.com/therealmonoloco/306ffd61c46c662bb7f8d7a09b2ffb02) - [Etherscan](https://etherscan.io/address/0x1496546f89fc1605880e556c9a1d6c5e2409fb0a)
-
-**0x2B888954421b424C5D3D9Ce9bB67c9bD47537d12** - Lefteris Karapetsas (rotkiapp)  
-[Membership attestation](https://twitter.com/LefterisJP/status/1590083336210644992) - [Etherscan](https://etherscan.io/address/0x2B888954421b424C5D3D9Ce9bB67c9bD47537d12)
+| Address                                                                                              | Member Name                                 | Membership Attestation                                                           | Etherscan                                                                                          |
+|------------------------------------------------------------------------------------------------------|--------------------------------------------|---------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------|
+| 0x0Cec743b8CE4Ef8802cAc0e5df18a180ed8402A7 | Milkyklim (Yearn Finance) | keybase://public/milkyklim/yearn-social-proof.txt | [Etherscan](https://etherscan.io/address/0x0Cec743b8CE4Ef8802cAc0e5df18a180ed8402A7) |
+| 0x6F2A8Ee9452ba7d336b3fba03caC27f7818AeAD6 | Mariano Conti (nanexcool.com, prev. MakerDAO) | [Twitter](https://twitter.com/nanexcool/status/1491900804223041540) | [Etherscan](https://etherscan.io/address/0x6F2A8Ee9452ba7d336b3fba03caC27f7818AeAD6) |
+| 0x7321ED86B0Eb914b789D6A4CcBDd3bB10f367153 | Leo Cheng (C.R.E.A.M. Finance) | [Twitter](https://twitter.com/lumbergdoteth/status/1492736002724876291) | [Etherscan](https://etherscan.io/address/0x7321ED86B0Eb914b789D6A4CcBDd3bB10f367153) |
+| 0x74630370197b4c4795bFEeF6645ee14F8cf8997D | cp287 (cp0x.com) | [Twitter](https://twitter.com/kaplansky1/status/1285427247286046725) | [Etherscan](https://etherscan.io/address/0x74630370197b4c4795bFEeF6645ee14F8cf8997D) |
+| 0x7A1057E6e9093DA9C1D4C1D049609B6889fC4c67 | Banteg (Yearn Finance) | [Twitter](https://twitter.com/bantg/status/1285426492906909696) | [Etherscan](https://etherscan.io/address/0x7A1057E6e9093DA9C1D4C1D049609B6889fC4c67) |
+| 0x99BC02c239025E431D5741cC1DbA8CE77fc51CE3 | Daryl Lau (Not3Lau Capital) | [Twitter](https://twitter.com/Daryllautk/status/1285434908383444992) | [Etherscan](https://etherscan.io/address/0x99BC02c239025E431D5741cC1DbA8CE77fc51CE3) |
+| 0xf5D3dbda5F41A0E26D71B948e29522398e71cFaE | 0xngmi (DefiLlama) | [Twitter](https://twitter.com/0xngmi/status/1590047391797088257) | [Etherscan](https://etherscan.io/address/0xf5D3dbda5F41A0E26D71B948e29522398e71cFaE) |
+| 0x1496546f89fc1605880e556c9a1d6c5e2409fb0a | monoloco (Yearn Finance) | [Gist](https://gist.github.com/therealmonoloco/306ffd61c46c662bb7f8d7a09b2ffb02) | [Etherscan](https://etherscan.io/address/0x1496546f89fc1605880e556c9a1d6c5e2409fb0a) |
+| 0x2B888954421b424C5D3D9Ce9bB67c9bD47537d12 | Lefteris Karapetsas (rotkiapp) | [Twitter](https://twitter.com/LefterisJP/status/1590083336210644992) | [Etherscan](https://etherscan.io/address/0x2B888954421b424C5D3D9Ce9bB67c9bD47537d12) |
 
 
 ## History
