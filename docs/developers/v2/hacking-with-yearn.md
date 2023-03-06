@@ -1,10 +1,10 @@
 # Hacking on Yearn
 
-This page is for the hackers and buidlers who are currently building, or planning to build, something cool with Yearn Finance. This guide  details all the info you need to start hacking!
+This page is for the hackers and buidlers who are currently building, or planning to build, something cool with Yearn Finance. This guide details all the info you need to start hacking!
 
 # Core Tools
 
-- [Solidity](https://https://docs.soliditylang.org/en/v0.8.6/bugs.html)
+- [Solidity](https://docs.soliditylang.org/en/v0.8.6/index.html)
 - [Brownie](https://eth-brownie.readthedocs.io/en/stable/)
 - [ethers.js](https://docs.ethers.io/v5/)
 - [Web3.js](https://web3js.readthedocs.io/en/v1.4.0/)
@@ -12,14 +12,13 @@ This page is for the hackers and buidlers who are currently building, or plannin
 - [Foundry](https://github.com/nicolasgarcia214/damn-vulnerable-defi-foundry)
 
 # Yearn Vaults & Smart Contract Integrations
-Yearn’s core product is the Vault (also known as yVault) — a set-it-and-forget-it yield aggregator running on top of DeFi’s yield-generating protocols like Compound, Aave, Curve, and Convex. Most of the core functionality such as deposit, withdraw, borrow, repay, or flashloan occurs in the XX contract ().
-For a breakdown of V2 features see the contract overview or dive even deeper with the V2 Technical Paper.
+Yearn’s core product is the Vault (also known as yVault) — a set-it-and-forget-it yield aggregator running on top of DeFi’s yield-generating protocols like Compound, Aave, Curve, and Convex.
 
 ## Getting Started
 
 #### Starter Kit
 
-Here's an example for integrating V2 vaults and ERC-4626. 
+Here's an example of integrating V2 vaults and ERC-4626. 
 
 https://github.com/storming0x/ystarter-foundry-kit
 
@@ -31,12 +30,12 @@ What you'll find:
 
 **Yearn Vaults**
 
-[This repository](https://github.com/yearn/yearn-vaults#readme) includes the set of smart contracts that are used for the Yearn Vaults. It contains the requirements, code, deployment scripts, and tests necessary for the core protocol, including a inheritable template strategy for use with Solidity-based strategies that interact with Yearn Vaults. These contracts are used to create a simple way to generate high risk-adjusted returns for depositors of various assets via best- in-class lending protocols, liquidity pools, and community-made yield farming strategies on Ethereum.
+[This repository](https://github.com/yearn/yearn-vaults#readme) includes the set of smart contracts that are used for the Yearn Vaults. It contains the requirements, code, deployment scripts, and tests necessary for the core protocol, including an inheritable template strategy for use with Solidity-based strategies that interact with Yearn Vaults. These contracts are used to create a simple way to generate high risk-adjusted returns for depositors of various assets via best-in-class lending protocols, liquidity pools, and community-made yield farming strategies on Ethereum.
 
 ## Testing
 
 ### Introduction
-You are able to test Yearn vaults without spending cryptoassets  on the available testnet for each network. 
+You can test Yearn vaults without spending cryptoassets on the available testnet for each network. 
 
 To get started, head to the yearn testnet client which is available at: https://hack.yearn.finance/
 
@@ -61,14 +60,14 @@ When accessing each testnet, you will need to use its own native asset token.
 - Make sure to have the native asset for the specific network 
 - Get some tokens from the test client faucet (Ethereum Rinkeby https://faucet.rinkeby.io/)
 
-Make sure to select the correct market in the top right corner. You can find this towards the left side of the address. Select the token you need and submit the faucet transaction but be mindful to make sure that you have certain amount of the native asset of the testnet you wish to transact on.
+Make sure to select the correct market in the top right corner. You can find this on the left side of the address. Select the token you need and submit the faucet transaction but be mindful to make sure that you have certain amount of the native asset of the testnet you wish to transact on.
 
 #### How do I select a supported testnet?
-First, be sure to check your wallet provider allows you to switch to testnet.  Some providers, such as the Metamask extension, display the network selection on top of the menu over the extension and, in the case of mobile Metamask, above of the wallet section. It’s important to always do your research for compatible wallets with compatible networks.
+First, be sure to check if your wallet provider allows you to switch to testnet.  Some providers, such as the Metamask extension, display the network selection on top of the menu over the extension and, in the case of mobile Metamask, above the wallet section. It’s important to always do your research for compatible wallets with compatible networks.
 
 #### Additional Resources
 * Workshop: Building and Integrating with Yearn Vaults: https://www.youtube.com/watch?v=urC35PMbpJ4
---> Learn how to leverage the power of Yearn by creating a money making integration on top of v2 vaults by taking advantage of the brand new EIP-4626: Tokenized Vault Standard! This workshop will guide you through creating a B2B/business router for yearn v2 vaults, which complies with the new EIP-4626. You'll be able to choose from multiple fee strategies for your users to maximize your profit.
+--> Learn how to leverage the power of Yearn by creating a money-making integration on top of v2 vaults by taking advantage of the brand new EIP-4626: Tokenized Vault Standard! This workshop will guide you through creating a B2B/business router for yearn v2 vaults, which complies with the new EIP-4626. You'll be able to choose from multiple fee strategies for your users to maximize your profit.
 * Smart Contract parameters: https://docs.yearn.finance/vaults/smart-contracts/vault
 * https://hackmd.io/t8HlcedLQeCu2l7RG-5Vbw?view
 * https://twitter.com/storming0x/status/1436851219864059906?s=20
@@ -81,14 +80,14 @@ Yearn uses a JavaScript SDK for formatting protocol data and generating transact
 
 **Live Preview Sandbox**
 
-The following repository contains a live preview and example usage of the Yearn SDK. Explore this codebase to learn how to started:
+The following repository contains a live preview and example usage of the Yearn SDK. Explore this codebase to learn how to start:
 https://github.com/turtlemoji/yearn-sdk-examples
 
 # Strategy Development
 
 A Yearn Strategy is a set of smart contracts that implement different farming strategies that utilize the deposited assets to generate the best yields for users. 
 
-The implementation of the strategies basically moves assets from one farming application to another one with higher interest. This will be mostly be done automatically , which automatically monitors and tracks the best farming applications with high yield and low risks.
+The implementation of the strategies moves assets from one farming application to another one with higher interest. This will mostly be done automatically, which automatically monitors and tracks the best farming applications with high yield and low risks.
 
 Rewards/profits generated by strategies are regularly updated, harvested, swapped for the original vault asset, and deposited again for compound farming. Each vault has a unique strategy and the strategy will be improved constantly based on the observations of our AI-based monitoring engines. 
 
@@ -100,13 +99,13 @@ By having a strategy, users only need to deposit single assets and let the strat
 
 # Data Analysis
 
-Yearn aims to provide more insights on our products to our customers and partners through analyzing the on-chain and off-chain data. Given that all Yearn protocol data is publicly stored on-chain, there are lots of insights to be gained from analyzing these transactions. 
+Yearn aims to provide more insights into our products to our customers and partners through analyzing the on-chain and off-chain data. Given that all Yearn protocol data is publicly stored on-chain, there are lots of insights to be gained from analyzing these transactions. 
 
 Two common tools for on-chain data analysis are:
 1. **Dune Analytics**- Query contract data and generate dashboards with SQL
 - [Current Dashboards](https://dune.com/projects/yearn )
     
-    Here's a list of all new things you can query for:
+    Here's a list of all the new things you can query for:
     - harvests
     - deployments
     - transactions
@@ -173,19 +172,15 @@ Here are some ideas on what you can build:
 donate yield to an NGO
 invest the yield in more risky stuff or directional bets
 paying bills and subscriptions
-3. Create a metavault on top of multiple vaults. One idea that comes to my mind is having a USD metavault that deposits into multiple dollar pegged vaults based on some strategy and abstracts the complexity from the user.
+3. Create a metavault on top of multiple vaults. One idea that comes to my mind is having a USD metavault that deposits into multiple dollar-pegged vaults based on some strategy and abstracts the complexity from the user.
 4. Build a UI that accepts deposits and allows you to move assets across chains.
 5. Use the vaults as a place to earn interest on funds that are not currently actively being used by the user.
 
 # Examples
 
-[**Bunker Finance**](https://bunker.finance/): Bunker.finance is a decentralized protocol for NFT-backed loans. They integrated with Yearn v3’s USDC and WETH vaults and use them as a place to earn interest on funds that are currently not being supplied to borrowers.
-
 [**Skew You**](https://github.com/Tburm/tracer-vault): Users can borrow against their options collateral, unlocking a whole new world of capital efficiency.
 
 [**Possum**](https://github.com/Possum-ONE): Fixed-income product that can turn every farm into two fix/variable pools. Based on the game model, fixed pool users can have guaranteed APY while the variable user gets higher APY with higher risk.
-
-[**Demon**](https://demon-finance.netlify.app/): Demystifying obscure APY numbers
 
 [**Bowtie**](https://github.com/ShayanJa/bowtie_finance): Allows users to borrow against their options collateral.
 
@@ -193,7 +188,7 @@ Additionally, doing a GitHub search for Yearn functionality you are interested i
 
 # Expectations
 
-Here are some guidelines on how to maximise your chances of 'winning':
+Here are some guidelines on how to maximize your chances of 'winning':
 
 - Have your code well documented on Github.
 - Have a front end!
