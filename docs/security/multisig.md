@@ -34,7 +34,7 @@ Cryptographic membership attestations can be validated against the PGP keys in t
 [Membership attestation](https://twitter.com/0xngmi/status/1590047391797088257) - [Etherscan](https://etherscan.io/address/0xf5D3dbda5F41A0E26D71B948e29522398e71cFaE)
 
 **0x1496546f89fc1605880e556c9a1d6c5e2409fb0a** - monoloco (Yearn Finance)  
-[Membership attestation](https://therealmonoloco.keybase.pub/yearn-social-proof.txt) - [Etherscan](https://etherscan.io/address/0x1496546f89fc1605880e556c9a1d6c5e2409fb0a)
+[Membership attestation](https://gist.github.com/therealmonoloco/306ffd61c46c662bb7f8d7a09b2ffb02) - [Etherscan](https://etherscan.io/address/0x1496546f89fc1605880e556c9a1d6c5e2409fb0a)
 
 **0x2B888954421b424C5D3D9Ce9bB67c9bD47537d12** - Lefteris Karapetsas (rotkiapp)  
 [Membership attestation](https://twitter.com/LefterisJP/status/1590083336210644992) - [Etherscan](https://etherscan.io/address/0x2B888954421b424C5D3D9Ce9bB67c9bD47537d12)
