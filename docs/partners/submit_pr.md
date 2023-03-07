@@ -13,7 +13,7 @@ Below you will find the specification for the file and some examples.
 The file consists of an array of `Partner` objects. Each `Partner` has the following attributes:
 
 - `name`: Descriptive name for the partner.
-- `start_date`: Date of the PR that feesharing will start. In the format date(yyyy, mm, dd).
+- `start_date`: Date of the PR that fee-sharing will start. In the format date(yyyy, mm, dd).
 - `treasury`: Address where you want to receive the shared fees.
 - `wrappers`: Array of objects that contain the addresses that will hold the vault tokens. It's an array of `Wrapper` or `WildcardWrapper` objects
 
@@ -41,9 +41,9 @@ The file consists of an array of `Partner` objects. Each `Partner` has the follo
 Add your protocol's logo via a pull request so they can be referenced easily. 
 
 - Make a folder here https://github.com/yearn/yearn-assets/tree/master/icons/protocols using the name you entered in the `name` field above.
-- Add in your logo as an svg titled `logo.svg` in the newly created folder.
-- Add in your logo sized 32x32 as a png titled `logo-32.png`.
-- Add in your logo sized 128x128 as a png titled `logo-128.png`.
+- Add your logo as an svg titled `logo.svg` in the newly created folder.
+- Add your logo sized 32x32 as a png titled `logo-32.png`.
+- Add your logo sized 128x128 as a png titled `logo-128.png`.
 - If you have a banner feel free to add that as a png or svg as well, name it `banner`.
 
 ## Full Example
