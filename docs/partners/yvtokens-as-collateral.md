@@ -60,7 +60,7 @@ To learn more reach out through https://yearnfinance.typeform.com/to/uP7xOJUN
 
 ## Hacks History
 
-The CREAM hack in 2021 proved that without proper care, an attacker could trick the lending market into thinking they have far larger position than reality. This led to a tragic $130M loss for the protocol. Technical reference: https://mudit.blog/cream-hack-analysis/
+The [CREAM hack in 2021](https://github.com/yearn/yearn-security/blob/master/disclosures/2021-10-27.md) proved that without proper care, an attacker could trick the lending market into thinking they have a far larger position than reality. This led to a tragic $130M loss for the protocol. Technical reference: https://mudit.blog/cream-hack-analysis/
 
 ## Oracle Safety and PricePerShare Calculations
 
