@@ -3,9 +3,9 @@
 ## Overview of Yearn Vaults as Collateral
 
 Yearn vault tokens are yield-generating wrappers around underlying assets.
-Ideally they are a great way to hold collateral because they are secure and grow in value over time rather than remaining as idle capital.
+Ideally, they are a great way to hold collateral because they are secure and grow in value over time rather than remaining as idle capital.
 
-However, there are some risks to consider with some implementations of Yearn vaults before on-boarding them as a collateral type in lending markets.
+However, there are some risks to consider with some implementations of Yearn vaults before onboarding them as a collateral type in lending markets.
 
 Aside from obvious risks involved with smart contracts (including the vault contract itself, it’s strategies, and protocols farmed by the strategy), lending protocols should also study the risks involved with how a vault’s pricePerShare is calculated, as this function is important in computing the vault token’s value.
 
@@ -64,11 +64,11 @@ The CREAM hack in 2021 proved that without proper care, an attacker could trick 
 
 ## Oracle Safety and PricePerShare Calculations
 
-Critical to the hack cited above, is the ability for an attacker to affect pricePerShare by transferring the vaults’ underlying token directly to the vault contract.
+Critical to the hack cited above is the ability of an attacker to affect pricePerShare by transferring the vaults’ underlying token directly to the vault contract.
 
 While this does not affect the accuracy/reliability of the vault token pricing, it can be used by an attacker to trick a lending market while leveraging up their position.
 
-Beginning in API version 0.4.4, Yearn vaults introduced feature called “Airdrop Protection”, which prevents pricePerShare changes when tokens are transferred directly to the vault contract.
+Beginning in API version 0.4.4, Yearn vaults introduced a feature called “Airdrop Protection”, which prevents pricePerShare changes when tokens are transferred directly to the vault contract.
 
 ## Recommendations
 
