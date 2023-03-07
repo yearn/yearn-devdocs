@@ -1,5 +1,14 @@
 # yvToken as Collateral
 
+## Overview of Yearn vaults as collateral
+
+Yearn vault tokens are yield-generating wrappers around underlying assets.
+Ideally they are a great way to hold collateral because they are secure and grow in value over time rather than remaining as idle capital.
+
+However, there are some risks to consider with some implementations of Yearn vaults before on-boarding them as a collateral type in lending markets.
+
+Aside from obvious risks involved with smart contracts (including the vault contract itself, it’s strategies, and protocols farmed by the strategy), lending protocols should also study the risks involved with how a vault’s pricePerShare is calculated, as this function is important in computing the vault token’s value.
+
 ## Why use yvTokens as collateral?
 
 ### They’re yield generating
@@ -48,3 +57,26 @@ What you see on-chain is what you get. For real-time protocol data see:
 * Tempus: https://tempus.finance/
 
 To learn more reach out through https://yearnfinance.typeform.com/to/uP7xOJUN
+
+## Hacks History
+
+The CREAM hack in 2021 proved that without proper care, an attacker could trick the lending market into thinking they have far larger position than reality. This led to a tragic $130M loss for the protocol. Technical reference: https://mudit.blog/cream-hack-analysis/
+
+## Oracle Safety and PricePerShare Calculations
+
+Critical to the hack cited above, is the ability for an attacker to affect pricePerShare by transferring the vaults’ underlying token directly to the vault contract.
+
+While this does not affect the accuracy/reliability of the vault token pricing, it can be used by an attacker to trick a lending market while leveraging up their position.
+
+Beginning in API version 0.4.4, Yearn vaults introduced feature called “Airdrop Protection”, which prevents pricePerShare changes when tokens are transferred directly to the vault contract.
+
+## Recommendations
+
+### Vault tokens with API version <= v0.4.3
+
+* ⚠️ Not recommended for protocols without isolated lending markets and configurable borrow limits
+* ⚠️ Not recommended for vaults with low TVL
+
+### Vault tokens with API version >= v0.4.4
+
+* ✅ There are no known ways for a public user to manipulate pricePerShare, and therefore v0.4.4+ is determined to be a much safer collateral type for all types of markets.
