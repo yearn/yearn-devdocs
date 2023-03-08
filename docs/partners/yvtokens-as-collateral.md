@@ -13,7 +13,7 @@ Aside from obvious risks involved with smart contracts (including the vault cont
 
 ### They’re Yield Generating
 
-A Yearn Vault token is a yield-bearing version of a token, so when locked up as collateral it will still generate yield. A single vault token can run up to 20 yield-generating strategies. All Vaults at [yearn.finance main website](https://yearn.finance/#/vaults) run "up-only" strategies.
+A Yearn Vault token is a yield-bearing version of a token, so when locked up as collateral it will still generate yield. A single vault token can run up to 20 yield-generating strategies. All Vaults at [yearn.finance](https://yearn.finance/#/vaults) run "up-only" strategies.
 
 ### The Safest Yields in DeFi
 
