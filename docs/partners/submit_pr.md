@@ -40,7 +40,7 @@ The file consists of an array of `Partner` objects. Each `Partner` has the follo
 
 Add your protocol's logo via a pull request so they can be referenced easily. 
 
-- Make a folder in the protocols section in our [yearn-assets](https://github.com/yearn/yearn-assets/tree/master/icons/protocols) repository using the name you entered in the `name` field above.
+- Make a folder in the protocols section of our [yearn-assets](https://github.com/yearn/yearn-assets/tree/master/icons/protocols) repository using the name you entered in the `name` field above.
 - Add your logo as an svg titled `logo.svg` in the newly created folder.
 - Add your logo sized 32x32 as a png titled `logo-32.png`.
 - Add your logo sized 128x128 as a png titled `logo-128.png`.
