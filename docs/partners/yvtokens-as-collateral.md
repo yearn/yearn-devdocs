@@ -13,7 +13,7 @@ Aside from obvious risks involved with smart contracts (including the vault cont
 
 ### They’re Yield Generating
 
-A Yearn Vault token is a yield-bearing version of a token, so when locked up as collateral it will still generate yield. A single vault token can run up to 20 yield-generating strategies. All Vaults at [yearn.finance main website](https://yearn.finance/#/vaults) run "up-only" strategies.
+A Yearn Vault token is a yield-bearing version of a token, so when locked up as collateral it will still generate yield. A single vault token can run up to 20 yield-generating strategies. All Vaults at [yearn.finance](https://yearn.finance/#/vaults) run "up-only" strategies.
 
 ### The Safest Yields in DeFi
 
@@ -74,9 +74,9 @@ Beginning in API version 0.4.4, Yearn vaults introduced a feature called “Aird
 
 ### Vault Tokens with API Version <= v0.4.3
 
-* ⚠️ Not recommended for protocols without isolated lending markets and configurable borrow limits
-* ⚠️ Not recommended for vaults with low TVL
+* Not recommended for protocols without isolated lending markets and configurable borrow limits
+* Not recommended for vaults with low TVL
 
 ### Vault Tokens with API Version >= v0.4.4
 
-* ✅ There are no known ways for a public user to manipulate pricePerShare, and therefore v0.4.4+ is determined to be a much safer collateral type for all types of markets.
+* There are no known ways for a public user to manipulate pricePerShare, and therefore v0.4.4+ is determined to be a much safer collateral type for all types of markets.
