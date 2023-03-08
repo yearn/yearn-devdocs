@@ -74,9 +74,9 @@ Beginning in API version 0.4.4, Yearn vaults introduced a feature called “Aird
 
 ### Vault Tokens with API Version <= v0.4.3
 
-* ⚠️ Not recommended for protocols without isolated lending markets and configurable borrow limits
-* ⚠️ Not recommended for vaults with low TVL
+* Not recommended for protocols without isolated lending markets and configurable borrow limits
+* Not recommended for vaults with low TVL
 
 ### Vault Tokens with API Version >= v0.4.4
 
-* ✅ There are no known ways for a public user to manipulate pricePerShare, and therefore v0.4.4+ is determined to be a much safer collateral type for all types of markets.
+* There are no known ways for a public user to manipulate pricePerShare, and therefore v0.4.4+ is determined to be a much safer collateral type for all types of markets.
