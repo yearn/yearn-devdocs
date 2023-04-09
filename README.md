@@ -36,10 +36,10 @@ If you are using GitHub pages for hosting, this command is a convenient way to b
 
 ### Documentation structure
 
-Documentation is split in two: the versioned doc and the non-versioned:
+We have 2 types of documentations: the versioned docs and the non-versioned docs:
 
-- Non-versioned documentation is generated from markdown or HTML files.
-- Versioned documentation is generated from other repo's code.
+- Non-versioned documentation is generated from markdown or HTML files, edited manually.
+- Versioned documentation is automatically generated from other repo's code.
 
 For detailed information on the contributing workflow, please see the [Contributing doc](CONTRIBUTING.md).
 
