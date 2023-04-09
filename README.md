@@ -34,10 +34,12 @@ If you are using GitHub pages for hosting, this command is a convenient way to b
 
 ## Contribute
 
-### Doc structure
+### Documentation structure
 
-Doc is split in two, the versioned doc and the non-versioned doc.
-Doc is generated from markdown or HTML files.
+We have 2 types of documentation: versioned docs and non-versioned docs:
+
+- Versioned documentation is automatically generated from other repo's code.
+- Non-versioned documentation is generated from markdown or HTML files, and edited manually.
 
 For detailed information on the contributing workflow, please see the [Contributing doc](CONTRIBUTING.md).
 
