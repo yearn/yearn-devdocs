@@ -74,4 +74,6 @@ npx vydoc -i ../yearn-vaults/contracts/ -o ./vaults/smart-contracts -t ./templat
 npx solidity-docgen --solc-module solc --templates=templates --helpers=helpers/solidityHelpers.js -i ../yearn-vaults/contracts/ -o ./vaults/smart-contracts
 npm run docusaurus docs:version 0.4.5
 ```
+
+
 After that put everything generated in the new version docs into `versioned_docs/version-x.x.x/smart-contracts` folder, then copy `yearn-lens/.`, `yearn-sdk/.` and ``yearn-api.md` from the previous versioned docs folder into the new one
