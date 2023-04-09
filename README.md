@@ -1,6 +1,6 @@
 # Yearn Protocol Documentation Website
 
-The yearn devdocs [website](https://docs.yearn.finance/) is built using [Docusaurus](https://docusaurus.io/), a modern static website generator.
+The yearn devdocs [website](https://docs.yearn.finance/) is built using [Docusaurus](https://docusaurus.io/), a static website generator.
 
 ## Installation
 
@@ -34,10 +34,12 @@ If you are using GitHub pages for hosting, this command is a convenient way to b
 
 ## Contribute
 
-### Doc structure
+### Documentation structure
 
-Doc is split in two, the versioned doc and the non-versioned doc.
-Doc is generated from markdown or HTML files.
+Documentation is split in two: the versioned doc and the non-versioned:
+
+- Non-versioned documentation is generated from markdown or HTML files.
+- Versioned documentation is generated from other repo's code.
 
 For detailed information on the contributing workflow, please see the [Contributing doc](CONTRIBUTING.md).
 
