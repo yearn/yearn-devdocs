@@ -41,7 +41,7 @@ We have 2 types of documentation: versioned documentation and non-versioned docu
 - Versioned documentation is automatically generated from another repositories's code.
 - Non-versioned documentation is generated from markdown or HTML files and edited manually.
 
-For detailed information on the contributing workflow, please see the [Contributing doc](CONTRIBUTING.md).
+For detailed information on the contributing workflow, please see the [Contributing Documentation](CONTRIBUTING.md).
 
 #### Non-versioned Documentation
 
@@ -53,9 +53,9 @@ In the `docs` folder:
 
 #### Versioned Documentation
 
-In `versioned_docs` you will find several versions of the vault doc that corresponds to a tagged release. In `vaults` folder you can find the latest version that corresponds to the changes on yearn-vault master is the documentation for the next/unreleased version.
+In `versioned_docs` you will find several versions of the vault documentation that corresponds to a tagged release. In `vaults` folder you can find the latest version that corresponds to the changes on yearn-vault master is the documentation for the next/unreleased version.
 
-##### Generating Versioned Docs
+##### Generating Versioned Documentation
 
 **Dependencies**
 
@@ -68,10 +68,10 @@ In `versioned_docs` you will find several versions of the vault doc that corresp
 
 **Generate:**
 
-To generate API docs and coin a new release, do the following.
+To generate API documentation and coin a new release, do the following.
 ```
 npx vydoc -i ../yearn-vaults/contracts/ -o ./vaults/smart-contracts -t ./templates/contract.ejs -c ~/.vvm/vyper-0.3.3
 npx solidity-docgen --solc-module solc --templates=templates --helpers=helpers/solidityHelpers.js -i ../yearn-vaults/contracts/ -o ./vaults/smart-contracts
 npm run docusaurus docs:version 0.4.5
 ```
-After that put everything generated in the new version docs into `versioned_docs/version-x.x.x/smart-contracts` folder, then copy `yearn-lens/.`, `yearn-sdk/.` and ``yearn-api.md` from the previous versioned docs folder into the new one
+After that put everything generated in the new version documentation into `versioned_docs/version-x.x.x/smart-contracts` folder, then copy `yearn-lens/.`, `yearn-sdk/.` and ``yearn-api.md` from the previous versioned documentation's folder into the new one.
