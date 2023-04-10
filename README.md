@@ -34,16 +34,16 @@ If you are using GitHub pages for hosting, this command is a convenient way to b
 
 ## Contribute
 
-### Documentation structure
+### Documentation Structure
 
-We have 2 types of documentation: versioned docs and non-versioned docs:
+We have 2 types of documentation: versioned documentation and non-versioned documentation:
 
-- Versioned documentation is automatically generated from other repo's code.
-- Non-versioned documentation is generated from markdown or HTML files, and edited manually.
+- Versioned documentation is automatically generated from another repositories's code.
+- Non-versioned documentation is generated from markdown or HTML files and edited manually.
 
 For detailed information on the contributing workflow, please see the [Contributing doc](CONTRIBUTING.md).
 
-#### Not versioned doc
+#### Non-versioned Documentation
 
 In the `docs` folder:
 
@@ -51,7 +51,7 @@ In the `docs` folder:
 - partners
 - v1
 
-#### Versioned doc
+#### Versioned Documentation
 
 In `versioned_docs` you will find several versions of the vault doc that corresponds to a tagged release. In `vaults` folder you can find the latest version that corresponds to the changes on yearn-vault master is the documentation for the next/unreleased version.
 
