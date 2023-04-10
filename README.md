@@ -38,7 +38,7 @@ If you are using GitHub pages for hosting, this command is a convenient way to b
 
 We have 2 types of documentation: versioned documentation and non-versioned documentation:
 
-- Versioned documentation is automatically generated from another repositories's code.
+- Versioned documentation is automatically generated from another repository's code.
 - Non-versioned documentation is generated from markdown or HTML files and edited manually.
 
 For detailed information on the contributing workflow, please see the [Contributing Documentation](CONTRIBUTING.md).
@@ -63,7 +63,7 @@ In `versioned_docs` you will find several versions of the vault documentation th
 - Run the yearn-vaults [installation](https://github.com/yearn/yearn-vaults#installation), you will need to have brownie installed to run it once so it installs the required dependencies.
 - Check the vyper compiler version on the vaults repo ([here](https://github.com/yearn/yearn-vaults/blob/master/contracts/Vault.vy#L1)) and update the `~/.vvm/vyper-X.X.X` in the end of the first command below.
 - Make sure [Vault.vy](https://github.com/yearn/yearn-vaults/blob/master/contracts/Vault.vy#L1) and [Registry.vy](https://github.com/yearn/yearn-vaults/blob/master/contracts/Registry.vy#L1) on `yearn-vaults` folder has the same compiler version on their first line. If not, bump the file with the lowest version to the current version the other uses.
-- If any contract file in yearn-vaults uses a fixed compiler version (without leading `^`) you may have to add it so the `solc` compiler is able to run. Also make sure `solc` version is up-to-date.
+- If any contract file in yearn-vaults uses a fixed compiler version (without leading `^`) you may have to add it so the `solc` compiler will run. Also, make sure `solc` version is up-to-date.
 - More information on docusaurus versioning [here](https://docusaurus.io/docs/versioning#tagging-a-new-version) if the last command has any issue, and remember to change the version to the one you are generating for!
 
 **Generate:**
