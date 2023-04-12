@@ -32,7 +32,7 @@
 - [Vaults at Yearn](https://vaults.yearn.finance/)
 - [yVaults v2 Strategies](https://yearn.watch/)
 - [Risk Dashboard](https://yearn.watch/risk)
-- [Yearn Lens]([Yearn Lens](https://github.com/yearn/yearn-lens)
+- [Yearn Lens][Yearn Lens](https://github.com/yearn/yearn-lens)
 
 ### Statistics
 
