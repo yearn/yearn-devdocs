@@ -81,7 +81,7 @@ She specifies her own address as the `partnerId` argument, the address of `Vault
 When deposits happen, the `YearnPartnerTracker` contract emits the `ReferredBalanceIncreased` event. Partners and other interested parties can use this event to track changes to referred balances. The event contains the following information:
 
 ```
-    event ReferredBalanceIncreased(
+event ReferredBalanceIncreased(
     address indexed partnerId,
     address indexed vault,
     address indexed depositor,
