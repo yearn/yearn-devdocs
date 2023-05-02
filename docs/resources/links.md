@@ -39,7 +39,7 @@
 - [Yearn Dashboard](https://yearn.vision)
 - [Yearn v2 Subgraph](https://thegraph.com/explorer/subgraph?id=0xf50b705e4eaba269dfe954f10c65bd34e6351e0c-0&view=Overview)
 - [Yearn API](https://ydaemon.yearn.finance/1/vaults/all)
-- [Yearn on TokenTerminal](https://www.tokenterminal.com/terminal/projects/yearn-finance)
+- [Yearn on Token Terminal](https://www.tokenterminal.com/terminal/projects/yearn-finance)
 
 ### General Websites
 
