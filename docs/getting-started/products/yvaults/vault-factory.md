@@ -61,7 +61,7 @@ Although harvests will be permissionless for this specific group of vaults, Year
 
 ### Calling Harvest
 
-To call harvest, use the harvest() function on the keeper found at keeper.factory.ychad.eth. Simply enter the strategy address from the factory vault you wish to call harvest on and click “write.”
+To call harvest, use the harvest() function on the keeper found at [keeper.factory.ychad.eth](https://etherscan.io/address/keeper.factory.ychad.eth#writeContract). Simply enter the strategy address from the factory vault you wish to call harvest on and click “write.”
 
 ## Determine Accumulated Rewards
 
