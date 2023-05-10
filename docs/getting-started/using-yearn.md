@@ -6,9 +6,7 @@ Here's how it works:
 
 First, **Connect your wallet** using the button at the top right corner. Multiple types of wallets are supported, but most people use [MetaMask](https://metamask.io/), which can be downloaded for free as a Chrome extension or through the Apple and Android app stores. Make sure that your wallet is connected to the Ethereum network.
 
-<p align="center">
-  <img width="900" height="305" src="https://i.imgur.com/XolXLi4.png" className="topRightImg"/>
-</p>
+![image](https://github.com/yearn/yearn-devdocs/assets/7863230/3b537d18-bbfe-449a-8d6d-d6b53c44e056)
 
 ## Yearn is multi-chain
 
@@ -16,16 +14,14 @@ Our products are currently on Ethereum, Fantom, and Arbitrum with more to come.
 
 Click on this button to select the network you would like to interact with:
 
-![](https://i.imgur.com/UaVVGJr.png)
+![image](https://github.com/yearn/yearn-devdocs/assets/7863230/5a2d63ad-6a67-4622-b8d7-c44021efdfb5)
 
 ## If you **already have the required token** for the vault that you would like to deposit in:
 
 1. Select the vault that you would like to deposit into.
 2. Enter the amount of tokens you want to deposit into the vault. If you are depositing ETH, make sure you have enough ETH left over to pay for future transactions that you might need to make.
 
-<p align="center">
-  <img width="900" height="460" src="https://i.imgur.com/EmOAKlt.png" className="topRightImg"/>
-</p>
+![image](https://github.com/yearn/yearn-devdocs/assets/7863230/b829c7f3-078c-4674-be24-3763443a4299)
 
 3. Click 'Approve' or 'Deposit' button, depending on if you have previously approved
 4. Your wallet will ask you to confirm the transaction. This will take about 3 minutes, but you can speed it up by [paying a higher gas fee to the network](https://blog.leverj.io/how-to-set-the-gas-limit-and-gas-price-in-metamask-1b33c38c32fd). If your transaction gets stuck, see [this guide](https://metamask.zendesk.com/hc/en-us/articles/360015489251-How-to-Speed-Up-or-Cancel-a-Pending-Transaction) on speeding up or cancelling the transaction.
@@ -36,17 +32,13 @@ Click on this button to select the network you would like to interact with:
 
 6. When your transaction succeeds, you will see your deposited balance in the vault's interface, which should appear at the top of the vault list.
 
-<p align="center">
-  <img width="900" src="https://i.imgur.com/ICFADLL.jpeg"/>
-</p>
+![image](https://github.com/yearn/yearn-devdocs/assets/7863230/5b2c2308-0384-4446-ab12-2fc23d8cc829)
 
 When you're ready to withdraw:
 
 1. Select the vault that you would like to withdraw from. Click the "Withdraw" tab
 
-<p align="center">
-  <img width="900" height="300" src="https://i.imgur.com/9Uw4oSB.png" className="topRightImg"/>
-</p>
+![image](https://github.com/yearn/yearn-devdocs/assets/7863230/935b97f8-b740-432a-bd89-543ff0cce484)
 
 2. Enter the amount you want to withdraw, or click 'Max' to withdraw the entire balance.
 3. Click 'Withdraw'
@@ -54,6 +46,8 @@ When you're ready to withdraw:
 5. When your transaction succeeds, the tokens will show up in your wallet again
 
 ## If you **don't have the required token** for the vault that you would like to deposit in:
+
+> Zapping at the moment is only available in the old UI: https://v3.yearn.finance/#/vaults
 
 This can be a common occurrence, because many of Yearn's vaults generate yield by using [Curve Finance](https://curve.fi/) liquidity provider (LP) tokens, which are acquired through depositing into a Curve pool.
 
@@ -89,15 +83,13 @@ When you're ready to withdraw:
 5. Confirm the approval if needed, and then approve the withdrawal transaction.
 6. When your transaction succeeds, the tokens will show up in your wallet again
 
-## Customization
-
-Personalize your Yearn experience with customizations, in [Settings](https://yearn.finance/#/settings).
-<p align="center">
-  <img width="900" src="https://i.imgur.com/Ujduvty.png"/>
-</p>
 
 ### Slippage Tolerance
-Change your slippage preferences to one of three preset options listed. Learn more about slippage [here](https://docs.yearn.finance/resources/defi-glossary#slippage)
+
+You can change slippage settings in the UI right next to the deposit/withdraw button:
+
+![image](https://github.com/yearn/yearn-devdocs/assets/7863230/447f443e-d664-4a9c-bfdd-341335ea0dc5)
+
 ### Themes
 View Yearn.Finance with community-created themes or [create a custom theme](https://github.com/yearn/yearn-finance-v3/tree/develop/src/client/themes) to suit your style.
 
