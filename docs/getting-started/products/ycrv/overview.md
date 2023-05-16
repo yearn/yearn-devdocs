@@ -27,7 +27,7 @@ Yearn passes all benefits of its veCRV position on to yCRV users who hold one of
 - [**st-yCRV (Staking Rewards):**](#staked-ycrv) [yVault](https://medium.com/iearn/yearn-finance-explained-what-are-vaults-and-strategies-96970560432) that receives admin fees and bribes from locked CRV.
 - [**lp-yCRV (Liquidity Pool Rewards):**](#lpd-ycrvcrv) yVault for CRV/yCRV LP tokens, autocompounds emissions and fees.
 
-Users can choose to move between activated-tokens at any time depending on which benefits they want, except for vl-yCRV which has time lock [restrictions](#voting-with-ycrv) varying from 14 to 28 days.
+> Note: a third activated token, vl-yCRV, was never rolled out due to lack of demand.
 
 ![image](https://github.com/yearn/yearn-devdocs/assets/7863230/b0988ee4-4160-4680-9cee-fe6a6ef5b138)
 
