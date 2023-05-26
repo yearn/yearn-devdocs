@@ -47,42 +47,17 @@ When you're ready to withdraw:
 
 ## If you **don't have the required token** for the vault that you would like to deposit in:
 
-> Zapping at the moment is only available in the old UI: https://v3.yearn.finance/#/vaults
+Yearn provides a zapping feature so you can deposit from any token into any vault:
 
-This can be a common occurrence, because many of Yearn's vaults generate yield by using [Curve Finance](https://curve.fi/) liquidity provider (LP) tokens, which are acquired through depositing into a Curve pool.
+![image](https://github.com/yearn/yearn-devdocs/assets/7863230/63cb991c-71de-4840-8bf2-38084e7ab907)
 
-So for instance, if you would rather deposit into the ibJPY vault instead of the ETH vault, and accept the additional risk that comes with the curve pool and an ETH derivative (stETH) in return for higher yield, but you only have ETH in your wallet, your ETH will need to be converted to a ibJPY token before it is accepted in the vault.
+Zapping provider can be set in the same page:
 
-Thankfully, due to Yearn's 'zap' feature, this can all be done in the same transaction as your deposit. Here's how it works using the ibJPY vault as an example:
+![image](https://github.com/yearn/yearn-devdocs/assets/7863230/87d20e40-2792-4790-a3f9-d7cb0d6ed961)
 
-**NOTE:** Zapping a token into a vault will require more transactions than depositing the native token. This means you will be paying more in gas and potentially lose value to slippage when the token is swapped or deposited into a pool. Yearn limits slippage to 1% and the transaction will fail if slippage exceeds that, in which case you will have to swap or deposit the tokens manually. See our [zap](https://docs.yearn.finance/getting-started/products/yvaults/overview#zap-in-with-any-asset) section for more details.
+Zapping also works on withdraw, so you can receive any desired token:
 
-1. Select the ibJPY vault
-2. Click the dropdown box by the 'Approve' or 'Deposit' button
-3. Select which token you would like to be converted into ibJPY. It will only display the tokens that are in your wallet.
-
-<p align="center">
-  <img width="900" src="https://i.imgur.com/IbYRzDN.png"/>
-</p>
-
-4. Enter the amount of tokens you would like to deposit and click 'Approve' or 'Deposit' depending on whether or not you have previously approved the token.
-5. Confirm the transaction through your wallet. See step 4 in the section above for more details.
-6. When your transaction succeeds, you will see your deposited balance in the vault's interface, which should appear at the top of the vault list.
-
-When you're ready to withdraw:
-
-1. Select the ibJPY vault
-2. Click the dropdown box by the 'Withdraw' button
-
-<p align="center">
-  <img width="900" src="https://i.imgur.com/t0VEznT.png"/>
-</p>
-
-3. Select which asset you would like to receive upon withdrawal. Your options will be the ibJPY, ETH, BTC, DAI, USDC or USDT
-4. Enter the amount you want to withdraw, or click 'Max' to withdraw the entire balance.
-5. Confirm the approval if needed, and then approve the withdrawal transaction.
-6. When your transaction succeeds, the tokens will show up in your wallet again
-
+![image](https://github.com/yearn/yearn-devdocs/assets/7863230/0a6e66de-222a-471c-9003-071bdf87e042)
 
 ### Slippage Tolerance
 
