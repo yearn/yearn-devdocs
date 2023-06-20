@@ -25,6 +25,14 @@ module.exports = {
             'products/ycrv/faq',
           ],
         },
+        {
+          type: 'category',
+          label: 'yETH',
+          items: [
+            'products/yeth/overview',
+            'products/yeth/guide',
+          ],
+        },
          {
           type: 'category',
           label: 'yBribe',
