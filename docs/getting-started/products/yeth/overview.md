@@ -47,7 +47,7 @@ If an LSD underperforms or faces issues, its weight may decrease, reducing its i
 | Management                  |                                     |
 | Guardian                    |                                     |
 | Whitelister                 |                                     |
-| Treasury                    |     [ychad.eth]()                   |
+| Treasury                    |     ychad.eth                       |
 | Rate Providers              |                                     |
 
 ## Management Role
