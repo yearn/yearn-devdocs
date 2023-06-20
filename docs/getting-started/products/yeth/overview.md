@@ -1,6 +1,4 @@
-# <img src="https://i.imgur.com/6xGCtx2.jpg" width="32" /> yETH
-
-![](https://i.imgur.com/GHyjfXA.gif)
+# Overview
 
 **yETH**
 
@@ -38,7 +36,7 @@ If an LSD underperforms or faces issues, its weight may decrease, reducing its i
 
 > TO BE DONE: This paragraph will just link to https://hackmd.io/RxCM6oi5Rue6vSzfyvSUaw?both because it is already a detailed breakdown focused on bootstrapping
 
-# <img src="https://i.imgur.com/6xGCtx2.jpg" width="32" /> Contracts & Roles
+# Contracts & Roles
 
 | Name                        | Address                             |
 |-----------------------------|-------------------------------------|
