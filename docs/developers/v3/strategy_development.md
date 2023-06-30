@@ -28,8 +28,17 @@ This increased functionality not only means strategies have a much larger potent
 
 ## Definitions
 - [Strategy](https://github.com/yearn/tokenized-strategy) : A strategy or "Tokenized Strategy" in V3 refers to a ERC-4626 compliant contract that utilizes the [TokenizedStrategy](https://github.com/yearn/tokenized-strategy/blob/master/src/TokenizedStrategy.sol#L14-L26) pattern that either meta vaults or individual users can deposit directly into and receive shares in return. The strategy takes the underlying asset and deploys it in a single source in order to generate yield on that asset.
-- Management: 
-- Keeper:
+- Asset: Any ERC20-compliant token
+- Shares: ERC20-compliant token that tracks Asset balance in the strategy for every distributor.
+- Strategy: ERC4626 compliant smart contract that receives Assets from Depositors (vault or otherwise) to deposit in any external protocol to generate yield.
+- Tokenized Strategy: The implementation contract that all strategies delegateCall to for the standard ERC4626 and profit locking functions.
+- BaseTokenizedStrategy: The abstract contract that a strategy should inherit from that handles all communication with the Tokenized Strategy contract.
+- Strategist: The developer of a specific strategy.
+- Depositor: Account that holds Shares
+- Vault: Or "Meta Vault" is an ERC4626 compliant Smart contract that receives Assets from Depositors to then distribute them among the different Strategies added to the vault, managing accounting and Assets distribution. 
+- Management: The owner of the specific strategy that can set fees, profit unlocking time etc.
+- Keeper: the address of a contract allowed to call report() and tend() on a strategy.
+    - Factory: The factory that all meta vaults of a specific API version are cloned from that also controls the protocol fee amount and recipient.
 - Performance Fee:
 - Performance Fee recipient:
 - Protocol Fee:
@@ -49,8 +58,8 @@ While the complete archeticutre of the Tokenized Strategy is out of the scope of
 Yearn has base templates made to build off of built in both [Ape Worx](https://www.apeworx.io/), a python based development toolkit, and [Foundry](https://book.getfoundry.sh/).
 
 1. Choose your development framework.
-    - [Tokenized Strategy Ape Mix]()
-    - [Tokenized Strategy Foundry Mix]()
+    - [Tokenized Strategy Ape Mix](https://github.com/yearn/tokenized-strategy-ape-mix)
+    - [Tokenized Strategy Foundry Mix](https://github.com/yearn/tokenized-strategy-foundry-mix)
 2. Set up local environment with selected mix. Each mix has detailed instructions in the "How To Start" section of the README, of specific requirements as well as cloning instructions and needed environment variables. 
 3. Assure tests pass. Each mix comes with a small set of pre-written tests, to serve as both examples and can be used to make sure your local repository is set up properly before adding your own logic.
 
@@ -286,55 +295,66 @@ While that may be all that's necessary for some of the most simple strategies it
         }
 
 
+
 All other functionality, such as reward selling, upgradability, etc., is up to the strategist to determine what best fits their vision. Due to the ability of strategies to stand alone from a Vault, it is expected and encouraged for strategists to experiment with more complex, risky, or previously unfeasible Strategies.
 
 To include permissioned functions such as extra setters, the two modifiers of `onlyManagement` and `onlyManagementAndKeepers` are available by default.
 
 
-### Reporting
-
-It is recommended to build strategies on the assumption that reports will happen based on the strategies specific `profitMaxUnlockTime`. Since this is the only time _harvestAndReport will be called any strategies that need more frequent checks or updates should override the _tend and tendTrigger functions for any needed mid-report maintenance.
-
-
-The symbol used for each tokenized Strategy is set automatically with a standardized approach based on the `asset`'s symbol. Strategists should use the `name` parameter in the constructor for a unique and descriptive name that encapsulates their specific Strategy. Standard naming conventions will include the asset name, the protocol used to generate yield, and the method rewards are sold if applicable. I.e., "Weth-AaveV3Lender-UniV3Swapper".
-
+The symbol used for each tokenized Strategy is set automatically with a standardized approach based on the `asset`'s symbol. Strategists should use the `name` parameter in the constructor for a unique and descriptive name that encapsulates their specific Strategy.
 
 ## Periphery
 
-To make Strategy writing as simple as possible, a suite of optional 'Periphery Helper' contracts can be inherited by your Strategy to provide standardized and tested functionality for things like swaps. A complete list of the periphery contracts can be viewed here https://github.com/Schlagonia/tokenized-strategy-periphery.
+To make Strategy writing as simple as possible, a suite of optional 'Periphery' helper contracts can be inherited by your Strategy to provide standardized and tested functionality for things like swaps. A complete list of the periphery contracts can be viewed here https://github.com/Schlagonia/tokenized-strategy-periphery.
 
 
-All periphery contracts are optional, and strategists are free to choose if they wish to use them.
+*All periphery contracts are optional, and strategists are free to choose if they wish to use them.
 
-### Swappers
+### [Swappers](https://github.com/Schlagonia/tokenized-strategy-periphery/tree/master/src/swappers)
 
-In order to make reward swapping as easy and standardized as possible there are multiple swapper contracts that can be inherited by a strategy to inherit pre-built and tested logic for whichever method of reward swapping is desired. This allows a strategist to only need to set a few global variables and then simply use the default syntax of `_swapFrom(tokenFrom, tokenTo, amount, minAmountOut)` to swap any tokens easily during `_harvestAndReport`.
+In order to make reward swapping as easy and standardized as possible there are multiple swapper contracts that can be inherited by a strategy to inherit pre-built and tested logic for whichever method of reward swapping is desired. This allows a strategist to only need to set a few global variables and then simply use the default syntax of `_swapFrom(tokenFrom, tokenTo, amountIn, minAmountOut)` to swap any tokens easily during `_harvestAndReport`.
 
-### APR Oracles
+### [APR Oracles](https://github.com/Schlagonia/tokenized-strategy-periphery/tree/master/src/AprOracle)
 
-In order for easy integration with Vaults, front ends, debt allocators etc. There is the option to create an APR oracle contract for your specific strategy that should return the expected APR of the Strategy based on some given `debtChange`. 
+In order for easy integration with Vaults, front ends, debt allocators etc. There is the option to create an [APR oracle](https://github.com/Schlagonia/tokenized-strategy-periphery/blob/master/src/AprOracle/AprOracleBase.sol) contract for your specific strategy that should return the expected APR of the Strategy based on some given `debtChange`. 
 
 
-### HealthCheck
+### [HealthCheck](https://github.com/Schlagonia/tokenized-strategy-periphery/tree/master/src/HealthCheck)
 
-In order to prevent automated reports from reporting losses/excessive profits from automated reports that may not be accurate, a strategist can inherit and implement the HealtCheck contract. Using this can assure that a keeper will not call a report that may incorrectly realize incorrect losses or excessive gains. It can cause the report to revert if the gain/loss is outside of the desired bounds and will require manual intervention to assure the strategy is reporting correctly.
+In order to prevent automated reports from reporting losses/excessive profits from automated reports that may not be accurate, a strategist can inherit and implement the [HealthCheck](https://github.com/Schlagonia/tokenized-strategy-periphery/blob/master/src/HealthCheck/HealthCheck.sol) contract. Using this can assure that a keeper will not call a report that may incorrectly realize incorrect losses or excessive gains. It can cause the report to revert if the gain/loss is outside of the desired bounds and will require manual intervention to assure the strategy is reporting correctly.
 
 NOTE: It is recommended to implement some checks in `_harvestAndReport` for leveraged or manipulatable strategies that could report incorrect losses due to unforeseen circumstances.
 
-### Report Triggers
+### [Report Triggers](https://github.com/Schlagonia/tokenized-strategy-periphery/tree/master/src/ReportTrigger)
 
-The expected behavior is that strategies report profits/losses on a set schedule based on their specific `profitMaxUnlockTime` that management can customize. If a custom trigger cycle is desired or extra checks should be added a strategist can create their own customReportTrigger that can be added to the default contract for a specific strategy.
+The expected behavior is that strategies report profits/losses on a set schedule based on their specific `profitMaxUnlockTime` that management can customize. If a custom trigger cycle is desired or extra checks should be added a strategist can create their own [customReportTrigger](https://github.com/Schlagonia/tokenized-strategy-periphery/blob/master/src/ReportTrigger/CustomStrategyTriggerBase.sol) that can be added to the default contract for a specific strategy.
+
+*More information on this can be found below in the "Reporting" section.
 
 ## Testing
 
+Due to the nature of the BaseTokenizedStrategy utilizing an external contract for the majority of its logic, the default interface for any strategy will not allow proper testing of all functions. Testing of your Strategy should utilize the pre-built [IStrategyInterface](https://github.com/yearn/tokenized-strategy-foundry-mix/blob/master/src/interfaces/IStrategyInterface.sol) to cast any deployed strategy through for testing, as seen in the testing setups in each mix. You can add any external functions that you add for your specific strategy to this interface to be able to test all functions with one variable. 
+
+Foundry Example:
+
+    Strategy _strategy = new Strategy(asset, name);
+    IStrategyInterface strategy =  IStrategyInterface(address(_strategy));
+
+Ape Example:
+
+    strategy = management.deploy(project.Strategy, asset, name)
+    strategy =  project.IStrategyInterface.at(strategy.address)
+
+Due to the permissionless nature of the tokenized Strategies, all tests are written without integration with any meta vault funding it. While those tests can be added, all V3 vaults utilize the ERC-4626 standard for deposit/withdraw and accounting, so they can be plugged in easily to any number of different vaults with the same `asset.`
+
 ## Deployment
 
-For strategies that will be used with multiple different asset's it is recommended to build a factory, that can be deployed once and then all strategies can be deployed on chain. Cloning is not recommended for Tokenized Strategies.
+For strategies that will be used with multiple different asset's it is recommended to build a factory, that can be deployed once and then all strategies can be deployed on chain using the factory. Cloning is not recommended for Tokenized Strategies.
 
 
 #### Contract Verification
 
-Once the Strategy is fully deployed and verified, you will need to verify the TokenizedStrategy functions. To do this, navigate to the /#code page on etherscan.
+Once the Strategy is deployed and verified, you will need to verify the TokenizedStrategy functions as well. To do this, navigate to the /#code page on etherscan.
 
 1. Click on the `More Options` drop-down menu. 
 2. Click "is this a proxy?".
@@ -343,7 +363,51 @@ Once the Strategy is fully deployed and verified, you will need to verify the To
 
 This should add all of the external `TokenizedStrategy` functions to the contract interface on Etherscan.
 
-## Keepers
+## Operating Your strategy
+
+Once deployed your strategy should be able to be interacted with as any other ERC-4626 vault.
+
+In addition to the normal 4626 interface Tokenized Strategies come built in with some simple function for management to properly maintain the strategy.
+
+### Reporting
+
+The main operational procedure strategists need to take care of the reporting of a strategy. Calling `report` on a strategy must be done by either the 'management' or 'keeper' address. 
+
+Reporting causes the strategy to accrue rewards, record any gains or losses as well as charge and pay fees. It is needed in order for the depositers of a vault to earn yield as well as for the strategist to to earn fees.
+
+It is recommended to build strategies on the assumption that reports will happen based on the strategies specific `profitMaxUnlockTime`. 
+
+Since reports are the only time _harvestAndReport will be called any strategies that need more frequent checks or updates should override the _tend and tendTrigger functions for any needed mid-report maintenance.
+
+#### Keepers
+
+The easiest way to assure regular reports and tends on your strategy is to hook it up with a 3rd party keeper.
+
+The recommended keeper network to use is the [Gelato Network](https://www.gelato.network/). For a comprehensive guide on how to set up your strategy with a Gelato keeper see [INSER LINK]()
+
+### Setters
+
+The strategy comes with some default variables that the management of a strategy has the ability to set and update.
+
+1. Changing management: Changing the strategies management is a two step process. First the current management must call `setPendingManagment(address)` with the desired address to transfer the management to. Then that address must call `acceptManagement()` in order for the change to go into effect.
+2. Keeper. The manager of a strategy can set a new address to be the keeper at any time wit `setKeeper(address)`.
+3. Performance Fee. Management can adjust the amount of the gain realized during a report that gets charged as a performance fee with `setPerformanceFee(uint16)`. 
+    *Subject to min and max's.
+4. Performance Fee Recipient. Can set the address that will receive the performance fees charged during a report with `setPerformanceFeeRecipient(address)`.
+5. Profit Unlocking Period. Profits recorded during reports are slowly unlocked to depositers of a strategy over the strategy specific 'profitMaxUnlockTime'. This defaults to 10 days and can be changed at any time by the strategist with `setProfitMaxUnlockTime(uint256)`.
+
+
+### Emergencies
+
+There is two default emergency functions built in. First of which is `shutdownStrategy`. This can only ever be called by the management and is non-reversible.
+
+Once this is called it will stop any further deposit or mints but will have no effect on any other functionality including withdraw, redeem, report and tend. This is to allow management to continue potentially recording profits or losses and users to withdraw even post shutdown.
+
+This can be used in an emergency or simply to retire a vault.
+
+Once a strategy is shutdown management can also call `emergencyWithdraw(_amount)`. Which will tell the strategy to withdraw a specified `_amount` from the yield source and keep it as idle in the vault. This function will also do any needed updates to totalDebt and totalIdle, based on amounts withdrawn to assure withdraws continue to function properly.
+
+All other emergency functionality is left up to the individual strategist.
 
 ## FAQ
 
