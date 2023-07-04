@@ -8,7 +8,7 @@ yETH does not accrue any yield, it all goes to Staked yETH (st-yETH) holders, wh
 
 **Staked yETH (st-yETH)**
 
-Users can deposit yETH to mint st-yETH, and can burn st-yETH to receive yETH back from the staking contract. Stakers receive all yield and slashings from beacon chain (Ethereum proof-of-stake validators).
+Users stake their yETH to mint st-yETH, accrue yield, and later unstake st-yETH to receive yETH back according to their earnings. Stakers receive all yield and slashings from beacon chain (Ethereum proof-of-stake validators) and earn incentives if they participate and vote in yETH governance.
 
 By bundling LSDs together, st-yETH generates the best risk-adjusted yields from ETH staking. The protocol management can constantly readjust pool weights in order to maximize yield, while protecting users from catastrophic scenarios if one of the LSDs implodes.
 
