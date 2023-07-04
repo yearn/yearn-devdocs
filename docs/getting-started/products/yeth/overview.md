@@ -4,7 +4,7 @@
 
 yETH is a user-governed liquidity pool token consisting of various Ethereum Liquid Staking Derivatives (LSDs). yETH represents one-to-one [beacon chain ETH](https://ethereum.org/en/upgrades/beacon-chain/) (a.k.a. "ETH staked").
 
-yETH does not accrue any yield, it all goes to st-yETH, which makes yETH a good token to use in a stableswaps like Curve. In order to mint yETH users must provide liquidity for all LSDs currently in the yETH pool, or trade in the yETH<->ETH Curve pool.
+yETH does not accrue any yield, it all goes to Staked yETH (st-yETH) holders, which makes yETH a good token to LP in stableswap pools like those on Curve. To acquire yETH, users can mint yETH by depositing LSTs, or swap against the yETH/ETH Curve pool.
 
 **Staked yETH (st-yETH)**
 
