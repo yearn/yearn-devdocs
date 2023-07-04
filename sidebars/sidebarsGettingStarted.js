@@ -30,7 +30,6 @@ module.exports = {
           label: 'yETH',
           items: [
             'products/yeth/overview',
-            'products/yeth/guide',
           ],
         },
          {
