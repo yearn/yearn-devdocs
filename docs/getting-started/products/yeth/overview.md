@@ -2,7 +2,7 @@
 
 **yETH**
 
-yETH is a user-governed liquidity pool token consisting of various Ethereum Liquid Staking Derivatives (LSDs). yETH represents one-to-one [beacon chain ETH](https://ethereum.org/en/upgrades/beacon-chain/) (a.k.a. "ETH staked").
+yETH is a user-governed liquidity pool token consisting of various Ethereum Liquid Staking Derivatives (LSTs). yETH represents one-to-one [beacon chain ETH](https://ethereum.org/en/upgrades/beacon-chain/) (a.k.a. "ETH staked").
 
 yETH does not accrue any yield, it all goes to Staked yETH (st-yETH) holders, which makes yETH a good token to LP in stableswap pools like those on Curve. To acquire yETH, users can mint yETH by depositing LSTs, or swap against the yETH/ETH Curve pool.
 
@@ -12,29 +12,19 @@ Users stake their yETH to mint st-yETH, accrue yield, and later unstake st-yETH 
 
 By bundling LSTs together, st-yETH aims to generate the best risk-adjusted yield from ETH staking. Through protocol governance, st-yETH users can readjust pool weights in order to maximize yield, while mitigating catastrophic scenarios where one or several LSTs in the yETH composition suffer adverse events like de-pegging or security incidents.
 
-**Pool Weights for each LSD**
+**Pool Weights for each LST**
 
-In yETH, each Liquid Staking Derivative (LSD) has an assigned weight representing its proportion in the pool. The weight management system ensures that the pool remains diversified and balanced. When an LSD's weight increases, it occupies a larger share of the pool, while a decrease in weight reduces its share.
+In yETH, each Liquid Staking Derivative (LST) has an assigned weight representing its proportion in the pool. The weight management system ensures that the pool remains diversified and balanced. When an LST's weight increases, it occupies a larger share of the pool, while a decrease in weight reduces its share.
 
-This dynamic adjustment allows the pool to optimize risk and yield distribution among the LSDs. In practice, this means that as an LSD performs well or gains popularity, its weight in the pool may increase, attracting more liquidity and providing better returns.
+This dynamic adjustment allows the pool to optimize risk and yield distribution among the LSTs. In practice, this means that as an LST performs well or gains popularity, its weight in the pool may increase, attracting more liquidity and providing better returns.
 
-If an LSD underperforms or faces issues, its weight may decrease, reducing its impact on the overall pool performance. This weight adjustment mechanism helps maintain an optimal risk-adjusted yield for yETH users.
-
-**Which LSDs compose yETH?**
-
-> TO BE DONE: tutorial on how to check this onchain + check weights for each current LSD
-
-**How to start using yETH**
-
-> TO BE DONE: add ui guide from webapp
-
-**How to stake yETH into st-yETH**
-
-> TO BE DONE:  add ui guide from webapp
+If an LST underperforms or faces issues, its weight may decrease, reducing its impact on the overall pool performance. This weight adjustment mechanism helps maintain an optimal risk-adjusted yield for yETH users.
 
 **How boostraping (launch) works?**
 
-> TO BE DONE: This paragraph will just link to https://hackmd.io/RxCM6oi5Rue6vSzfyvSUaw?both because it is already a detailed breakdown focused on bootstrapping
+![image](https://github.com/MarcoWorms/yearn-devdocs/assets/7863230/b92613a6-42e6-4936-affa-4c77a395ceb3)
+
+The bootstrapping process aims to kickstart yETH first LSTs and liquidity. You can read all about each phase in our bootstrapping release [article](https://medium.com/@marcoworms/yeth-lsd-lobbying-season-is-now-open-ff8a2537402d).
 
 # Contracts & Roles
 
@@ -53,7 +43,7 @@ If an LSD underperforms or faces issues, its weight may decrease, reducing its i
 Trusted addresses with privileged access for limited operations. Should eventually be replaced by a smart contract:
 
 - Can start a gradual weight change, as long as no weight change is active yet.
-- Can whitelist a new asset, which sets an initial weight, sets the rate provider and requires an initial deposit. New assets can only be whitelisted if no weight change has been scheduled yet.
+- Can whitelist a new asset, which sets an initial weight, sets the rate provider, and requires an initial deposit. New assets can only be whitelisted if no weight change has been scheduled yet.
 - Can update the rate provider for every whitelisted asset.
 - Can update the staking contract.
 - Can set the pool swap fee.
@@ -65,7 +55,7 @@ Trusted addresses with privileged access for limited operations. Should eventual
 
 #### Pause mode
 
-> This mode is to be enabled in the event of extreme market conditions or suspicious LSD minting behaviour or oracle activity.
+> This mode is to be enabled in the event of extreme market conditions or suspicious LST minting behavior or oracle activity.
 
 - No user may deposit assets into the contract.
 - Users may only withdraw assets in a balanced manner.
@@ -73,7 +63,7 @@ Trusted addresses with privileged access for limited operations. Should eventual
 
 #### Killed mode
 
-> This mode is to be activated in the event of a LSD depeg, such as a mint bug or a compromised oracle or a critical bug in the protocol. This can also be used as part of upgrading to a new version of yETH.
+> This mode is to be activated in the event of a LST depegs, such as a mint bug or a compromised oracle or a critical bug in the protocol. This can also be used as part of upgrading to a new version of yETH.
 
 - No user may deposit assets into the contract.
 - Users may only withdraw assets in a balanced manner.
