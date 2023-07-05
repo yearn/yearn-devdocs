@@ -63,7 +63,7 @@ Trusted addresses with privileged access for limited operations. Should eventual
 
 #### Killed mode
 
-> This mode is to be activated in the event of a LST depegs, such as a mint bug or a compromised oracle or a critical bug in the protocol. This can also be used as part of upgrading to a new version of yETH.
+> This mode is to be activated in the event of critical failures, whether in the protocol itself or in any of the underlying LST tokens that back it. This can also be used as part of migrating to a new version of the yETH protocol.
 
 - No user may deposit assets into the contract.
 - Users may only withdraw assets in a balanced manner.
