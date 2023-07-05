@@ -25,7 +25,7 @@ Only one factory vault can be live for each token, so the Vault Factory will onl
 
 The first Vault Factory deployed live on Ethereum is the Curve LP Token Vault Factory. This factory allows users to deploy yVaults for any Curve LP token that represents a Curve pool with an active gauge (allowing it to receive CRV emissions).
 
-## Strategies
+### Curve Strategies
 
 Factory-deployed yVaults for Curve LP tokens contain up to three ready-made yield strategies:
 
@@ -42,6 +42,10 @@ Factory-deployed yVaults for Curve LP tokens contain up to three ready-made yiel
 <img src="https://i.imgur.com/oJdwz6n.png" />
 
 In all three strategies, any earned tokens are regularly claimed, sold for more of the underlying Curve LP token, and then deposited back into the strategy to compound the yield. 
+
+## Velodrome LP Tokens
+
+On Optimism, we have deployed the Velodrome LP Token Vault Factory. A number of factories have already been deployed, and users will soon be able to deploy a new factory permissionlessly for any of Velodrome V2 pools. The strategy collects VELO emissions from gauge incentives, which are then sold back for the LP token, making auto-compounding effortless!
 
 ## Harvests: Traditional vs. Factory Strategies
 
