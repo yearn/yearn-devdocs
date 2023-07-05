@@ -50,8 +50,8 @@ Trusted addresses with privileged access for limited operations. Should eventual
 - Can set the tolerance range.
 - Can set the new management address.
 - Can set the new guardian and whitelister addresses.
-- Can trigger [`pause mode`](pause-mode).
-- Can trigger [`killed mode`](killed-mode).
+- Can trigger `pause mode`.
+- Can trigger `killed mode`.
 
 #### Pause mode
 
