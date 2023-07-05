@@ -55,7 +55,7 @@ Trusted addresses with privileged access for limited operations. Should eventual
 
 #### Pause mode
 
-> This mode is to be enabled in the event of extreme market conditions or suspicious LST minting behavior or oracle activity.
+> This mode is to be activated in the event of extreme market conditions or detected suspicious behavior, either in the protocol itself or in the underlying LST tokens that back it.
 
 - No user may deposit assets into the contract.
 - Users may only withdraw assets in a balanced manner.
