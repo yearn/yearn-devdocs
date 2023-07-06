@@ -45,7 +45,7 @@ In all three strategies, any earned tokens are regularly claimed, sold for more 
 
 ## Velodrome LP Tokens
 
-On Optimism, we have deployed the Velodrome LP Token Vault Factory. Several vaults have already been deployed and soon users will be able to deploy a new vault permissionlessly for any of Velodrome V2 pools. The strategy collects VELO emissions from gauge incentives, which are then sold back for the LP token, making auto-compounding effortless! At this time, harvests for the Velodrome Vault Factory are permissioned and called at regular intervals by keepers. 
+On Optimism, we have deployed the Velodrome LP Token Vault Factory. Several vaults have already been deployed and soon users will be able to deploy a new vault permissionlessly for any Velodrome V2 pool. The strategy collects VELO emissions from gauge incentives, which are then sold for the LP token, making auto-compounding effortless! At this time, harvests for the Velodrome Vault Factory are permissioned and called at regular intervals by keepers. 
 
 ## Harvests: Traditional vs. Factory Strategies
 
