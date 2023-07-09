@@ -33,7 +33,7 @@ Factory-deployed yVaults for Curve LP tokens contain up to three ready-made yiel
 2. StrategyConvexFactory
 3. StrategyConvexFraxFactory
 
-**StrategyCurveBoostedFactory** uses Yearn's veCRV balance (currently [47.6m](https://yearn.finance/ycrv/holdings)) to give users the maximum 2.5x boost on their CRV rewards.
+**StrategyCurveBoostedFactory** uses Yearn's veCRV balance (currently [62.8m](https://yearn.finance/ycrv)) to give users the maximum 2.5x boost on their CRV rewards.
 
 **StrategyConvexFactory** supplies any additional Curve LP tokens (beyond which would receive the maximum 2.5x boost via the Curve strategy) to Convex Finance to earn CRV rewards (boosted by Convex's veCRV balance) and CVX rewards.
 
