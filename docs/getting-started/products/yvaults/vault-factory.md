@@ -25,7 +25,7 @@ Only one factory vault can be live for each token, so the Vault Factory will onl
 
 The first Vault Factory deployed live on Ethereum is the Curve LP Token Vault Factory. This factory allows users to deploy yVaults for any Curve LP token that represents a Curve pool with an active gauge (allowing it to receive CRV emissions).
 
-## Strategies
+### Curve Strategies
 
 Factory-deployed yVaults for Curve LP tokens contain up to three ready-made yield strategies:
 
@@ -33,7 +33,7 @@ Factory-deployed yVaults for Curve LP tokens contain up to three ready-made yiel
 2. StrategyConvexFactory
 3. StrategyConvexFraxFactory
 
-**StrategyCurveBoostedFactory** uses Yearn's veCRV balance (currently [47.6m](https://yearn.finance/ycrv/holdings)) to give users the maximum 2.5x boost on their CRV rewards.
+**StrategyCurveBoostedFactory** uses Yearn's veCRV balance (currently [62.8m](https://yearn.finance/ycrv)) to give users the maximum 2.5x boost on their CRV rewards.
 
 **StrategyConvexFactory** supplies any additional Curve LP tokens (beyond which would receive the maximum 2.5x boost via the Curve strategy) to Convex Finance to earn CRV rewards (boosted by Convex's veCRV balance) and CVX rewards.
 
@@ -42,6 +42,10 @@ Factory-deployed yVaults for Curve LP tokens contain up to three ready-made yiel
 <img src="https://i.imgur.com/oJdwz6n.png" />
 
 In all three strategies, any earned tokens are regularly claimed, sold for more of the underlying Curve LP token, and then deposited back into the strategy to compound the yield. 
+
+## Velodrome LP Tokens
+
+On Optimism, we have deployed the Velodrome LP Token Vault Factory. Several vaults have already been deployed and soon users will be able to deploy a new vault permissionlessly for any Velodrome V2 pool. The strategy collects VELO emissions from gauge incentives, which are then sold for the LP token, making auto-compounding effortless! At this time, harvests for the Velodrome Vault Factory are permissioned and called at regular intervals by keepers. 
 
 ## Harvests: Traditional vs. Factory Strategies
 
