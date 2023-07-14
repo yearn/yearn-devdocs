@@ -24,10 +24,8 @@ So whether you are a full blown solidity gas golfing expert, a degen looking to 
 - [Deploying and managing a V3 Vault](link)
 - [Building your own V3 Strategy](link)
 - [Integrate with V3](link)
+- [Protocol Fees](LINK)
 
 ## Other reading material
 
 This is a complement to the others but it's not directly related to creating strategies.
-
-- [The Keep3r Network](https://macarse.medium.com/the-keep3r-network-experiment-bb1c5182bda3)
-- [Andre intro to Yearn Vaults](https://medium.com/iearn/yearn-finance-v2-af2c6a6a3613)
