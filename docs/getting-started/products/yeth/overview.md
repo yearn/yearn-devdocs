@@ -30,13 +30,17 @@ The bootstrapping process aims to kickstart yETH first LSTs and liquidity. You c
 
 | Name                        | Address                             |
 |-----------------------------|-------------------------------------|
-| yETH                        |                                     |
-| st-yETH                     |                                     |
-| Management                  |                                     |
-| Guardian                    |                                     |
-| Whitelister                 |                                     |
-| Treasury                    |     ychad.eth                       |
-| Rate Providers              |                                     |
+| yETH                        | [`0x1BED97CBC3c24A4fb5C069C6E311a967386131f7`](https://etherscan.io/address/0x1BED97CBC3c24A4fb5C069C6E311a967386131f7) |
+| st-yETH                     | [`0x8E5CBc6f470d064063341aceF7c45172A3EEf766`](https://etherscan.io/address/0x8E5CBc6f470d064063341aceF7c45172A3EEf766) |
+| Management                  | [`0xbBBBBbbB6B942883EAd4976882C99201108c784d`](https://etherscan.io/address/0xbBBBBbbB6B942883EAd4976882C99201108c784d) |
+| Protocol Owned Liquidity    | [`0x929401e30Aab6bd648dEf2d30FF44952BaB04478`](https://etherscan.io/address/0x929401e30Aab6bd648dEf2d30FF44952BaB04478) |
+| Bootstrap                   | [`0x41B994C192183793bB9cc35bAAb8bD9C6885c6bf`](https://etherscan.io/address/0x41B994C192183793bB9cc35bAAb8bD9C6885c6bf) |
+| Guardian                    | To be determined*                          |
+| Pool                        | To be determined*                          |
+| Treasury                    | [`ychad.eth`](https://etherscan.io/address/ychad.eth) |
+| Rate Providers              | To be determined*                          |
+
+\* Will be set when the bootstrapping is complete and the Pool is launched
 
 ## Management Role
 
