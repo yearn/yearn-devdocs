@@ -19,3 +19,5 @@ EXAMPLE:
 The purpose of protocol fees it to give the managers of vaults and strategies complete control over the actual fees charged, while also rewarding Yearn for supplying the infrastructure that those vaults are built on.
 
 The amount of the Protocol fee is dictated by Yearn Governance and can be set anywhere between 0 - 50%. Yearn governance also holds the ability to set custom protocol fees for individual vaults and strategies. Allowing full customization of the system.
+
+#### HOW TO GET THE CURRENT PF

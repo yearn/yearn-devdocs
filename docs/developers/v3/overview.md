@@ -21,8 +21,8 @@ So whether you are a full blown solidity gas golfing expert, a degen looking to 
 
 ## Get started
 
-- [Deploying and managing a V3 Vault](link)
 - [Building your own V3 Strategy](link)
+- [Deploying and managing a V3 Vault](link)
 - [Integrate with V3](link)
 - [Protocol Fees](LINK)
 
