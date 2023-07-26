@@ -36,18 +36,18 @@ Click on this button to select the network you would like to interact with:
 
 When you're ready to withdraw:
 
-1. Select the vault that you would like to withdraw from. Click the "Withdraw" tab
+1. Select the vault that you would like to withdraw from. Click the "Withdraw" tab.
 
 ![image](https://github.com/yearn/yearn-devdocs/assets/7863230/935b97f8-b740-432a-bd89-543ff0cce484)
 
 2. Enter the amount you want to withdraw, or click 'Max' to withdraw the entire balance.
 3. Click 'Withdraw'
 4. Your wallet will ask you to confirm the transaction. See step 4 above for more details.
-5. When your transaction succeeds, the tokens will show up in your wallet again
+5. When your transaction succeeds, the tokens will show up in your wallet again.
 
 ## If you **don't have the required token** for the vault that you would like to deposit in:
 
-Yearn provides a zapping feature so you can deposit from any token into any vault:
+Yearn provides a zapping feature so you can deposit with any token into any vault:
 
 ![image](https://github.com/yearn/yearn-devdocs/assets/7863230/63cb991c-71de-4840-8bf2-38084e7ab907)
 
@@ -70,7 +70,7 @@ View Yearn.Finance with community-created themes or [create a custom theme](http
 
 ## Tools to track your funds
 
-If you would like to see how your USD balance changes while your assets are in a vault, connect your wallet to [zapper.fi](https://zapper.fi) or a similar portfolio tracking product. This is also the easiest way to tell how much profit the vault has made for you.
+If you would like to see how your USD balance changes while your assets are in a vault, connect your wallet to [Zapper.fi](https://zapper.fi) or a similar portfolio-tracking product. This is also the easiest way to tell how much profit the vault has made for you.
 
 Your balance WILL NOT increase continuously. Profit will be distributed to your share of the vault when the harvest() function is called, which happens on a fluctuating basis.
 
