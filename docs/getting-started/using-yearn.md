@@ -65,9 +65,6 @@ You can change slippage settings in the UI right next to the deposit/withdraw bu
 
 ![image](https://github.com/yearn/yearn-devdocs/assets/7863230/447f443e-d664-4a9c-bfdd-341335ea0dc5)
 
-### Themes
-View Yearn.Finance with community-created themes or [create a custom theme](https://github.com/yearn/yearn-finance-v3/tree/develop/src/client/themes) to suit your style.
-
 ## Tools to track your funds
 
 If you would like to see how your USD balance changes while your assets are in a vault, connect your wallet to [Zapper.fi](https://zapper.fi) or a similar portfolio-tracking product. This is also the easiest way to tell how much profit the vault has made for you.
