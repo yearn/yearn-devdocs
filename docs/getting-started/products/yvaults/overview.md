@@ -31,3 +31,7 @@ On the [yearn.finance](https://yearn.finance/) user interface, yield is displaye
 - **Strategist and Guardian are the new Controllers:** The Controller concept is not available in V2 yVaults and has been replaced by a Guardian and the Strategy creator \(strategist\). These 2 actors oversee strategy performance and are empowered to take action to improve capital management or act on critical situations.
 - **Automated vault housekeeping \(Keep3r network\):** `harvest()` and `earn()` calls are now automated through the Keep3r bots network. These 2 function calls are used to purchase new underlying collateral by selling the earned tokens while moving the profits back to the vault and later into strategies. The keep3r network takes the heavy lifting of doing these calls and running with the gas costs in exchange for keep3r tokens. This approach unloads humans from these housekeeping tasks.
 - **No Withdrawal Fee**: The one-time fee charged on balance upon withdrawal has been turned off for all vaults and only existed in the v1 iteration.
+
+## v3 yVaults
+
+The newest version of yVaults is EIP-4626 compatible and allows for tokenized strategies, read more: https://docs.yearn.finance/getting-started/products/yvaults/v3
