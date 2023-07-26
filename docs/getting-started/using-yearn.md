@@ -23,8 +23,8 @@ Click on this button to select the network you would like to interact with:
 
 ![image](https://github.com/yearn/yearn-devdocs/assets/7863230/b829c7f3-078c-4674-be24-3763443a4299)
 
-3. Click 'Approve' or 'Deposit' button, depending on if you have previously approved
-4. Your wallet will ask you to confirm the transaction. This will take about 3 minutes, but you can speed it up by [paying a higher gas fee to the network](https://blog.leverj.io/how-to-set-the-gas-limit-and-gas-price-in-metamask-1b33c38c32fd). If your transaction gets stuck, see [this guide](https://metamask.zendesk.com/hc/en-us/articles/360015489251-How-to-Speed-Up-or-Cancel-a-Pending-Transaction) on speeding up or cancelling the transaction.
+3. Click the 'Approve' or 'Deposit' button, depending on if you have previously approved.
+4. Your wallet will ask you to confirm the transaction. This will take about 3 minutes, but you can speed it up by [paying a higher gas fee to the network](https://blog.leverj.io/how-to-set-the-gas-limit-and-gas-price-in-metamask-1b33c38c32fd). If your transaction gets stuck, see [this guide](https://metamask.zendesk.com/hc/en-us/articles/360015489251-How-to-Speed-Up-or-Cancel-a-Pending-Transaction) on how to speed up or cancel the transaction.
 
 <p align="center">
   <img width="258.75" height=" 459.75" src="https://i.imgur.com/qjryeGD.png" className="topRightImg"/>
