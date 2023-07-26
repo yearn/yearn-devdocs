@@ -10,7 +10,7 @@ First, **Connect your wallet** using the button at the top right corner. Multipl
 
 ## Yearn is multi-chain
 
-Our products are currently on Ethereum, Fantom, and Arbitrum with more to come.
+Our products are currently on Ethereum, Fantom, Arbitrum, and Optimism with more to come.
 
 Click on this button to select the network you would like to interact with:
 
