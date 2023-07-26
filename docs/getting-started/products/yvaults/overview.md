@@ -34,4 +34,4 @@ On the [yearn.finance](https://yearn.finance/) user interface, yield is displaye
 
 ## v3 yVaults
 
-The newest version of yVaults is EIP-4626 compatible and allows for tokenized strategies, read more: https://docs.yearn.finance/getting-started/products/yvaults/v3
+The newest version of yVaults are EIP-4626 compatible and allow for tokenized strategies, read more: https://docs.yearn.finance/getting-started/products/yvaults/v3
