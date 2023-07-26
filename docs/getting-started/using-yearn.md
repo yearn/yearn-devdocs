@@ -51,11 +51,11 @@ Yearn provides a zapping feature so you can deposit from any token into any vaul
 
 ![image](https://github.com/yearn/yearn-devdocs/assets/7863230/63cb991c-71de-4840-8bf2-38084e7ab907)
 
-Zapping provider can be set in the same page:
+The Zap provider can be set on the same page:
 
 ![image](https://github.com/yearn/yearn-devdocs/assets/7863230/87d20e40-2792-4790-a3f9-d7cb0d6ed961)
 
-Zapping also works on withdraw, so you can receive any desired token:
+Zapping also works on withdrawal, so you can receive any desired token:
 
 ![image](https://github.com/yearn/yearn-devdocs/assets/7863230/0a6e66de-222a-471c-9003-071bdf87e042)
 
@@ -78,5 +78,3 @@ Community resources to monitor your returns:
 
 - [Zapper](https://zapper.fi/)
 - [Zerion](https://app.zerion.io/)
-- [yVault ROI](https://yvault-roi.netlify.app/)
-- [Trackavault](https://trackavault.com/)
