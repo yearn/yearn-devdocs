@@ -54,7 +54,7 @@ Yearn SDK integrates several components, both on-chain and off-chain.
 
 #### IPFS CI/CD for frontend and metadata
 
-- Frontend and hardcoded values will be stored in IPFS utilizing a similar system to the one [introduced](https://uniswap.org/blog/ipfs-uniswap-interface/) by Uniswap.
+- Frontend and hardcoded values will be stored in IPFS utilizing a similar system to the one [introduced](https://github.com/Uniswap/interface) by Uniswap.
 
 ### Historical APY and TVL
 
