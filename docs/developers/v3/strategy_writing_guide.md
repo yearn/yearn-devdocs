@@ -24,27 +24,29 @@ This increased functionality not only means strategies have a much larger potent
 
 - *Strategist Fees!* - V3 brings back the ability for developers of strategies to earn the fees generated from their strategy. Meaning your earning potential is unlimited.
 - *Codify Your yield Farming* - Tokenized strategies make it super easy for anyone to codify their own yield generating strategies. Wanna keep your alpha private? No problem they come fully customizable to allow for you to be the only one allowed to deposit.
-- *Simple 4626 Wrappers* - Tokenized Strategies make a super easy and cheap way to give any previously deployed protocol a ERC-4626 interface. This opens up any protocol to easily integrate into the fast growing 4626 ecosystem (including Yearn Meta Vaults).
+- *Simple 4626 Wrappers* - Tokenized Strategies make a super easy and cheap way to give any previously deployed protocol a ERC-4626 interface. This opens up any protocol to easily integrate into the rapidly growing 4626 ecosystem (including Yearn Meta Vaults).
 
 ## Definitions
 - [Strategy](https://github.com/yearn/tokenized-strategy) : A strategy or "Tokenized Strategy" in V3 refers to an ERC-4626 compliant contract that utilizes the [TokenizedStrategy](https://github.com/yearn/tokenized-strategy/blob/master/src/TokenizedStrategy.sol#L14-L26) pattern that either meta vaults or individual users can deposit directly into and receive shares in return. The strategy takes the underlying asset and deploys it in a single source in order to generate yield on that asset.
 - Asset: Any ERC20-compliant token
-- Shares: ERC20-compliant token that tracks the asset balance in the strategy for every distributor.
-- Tokenized Strategy: The implementation contract that all strategies delegateCall to for the standard ERC4626 and profit locking functions.
-- BaseTokenizedStrategy: The abstract contract that a strategy should inherit from that handles all communication with the Tokenized Strategy contract.
+- Shares: ERC20-compliant token that tracks the asset balance in the strategy for every depositer.
+- [TokenizedStrategy.sol](https://github.com/yearn/tokenized-strategy/blob/master/src/TokenizedStrategy.sol): The implementation contract that all strategies delegateCall to for the standard ERC4626 and profit locking functions.
+- [BaseTokenizedStrategy.sol](https://github.com/yearn/tokenized-strategy/blob/master/src/BaseTokenizedStrategy.sol): The abstract contract that a strategy should inherit from that handles all communication with the Tokenized Strategy contract.
 - Strategist: The developer of a specific strategy.
-- Depositor: Account that holds Shares
-- Vault: Or "Meta Vault" is an ERC4626 compliant Smart contract that receives Assets from Depositors to then distribute them among the different Strategies added to the vault, managing accounting and Assets distribution. 
+- Depositor: Account that deposits the asset and holds Shares
+- Vault: Or "Meta Vault" is an Yearn ERC4626 compliant Smart contract that receives assets from Depositors to then distribute them among the different Strategies added to the vault, managing accounting and asset distribution. 
 - Management: The owner of the specific strategy that can set fees, profit unlocking time etc.
 - Keeper: the address of a contract allowed to call report() and tend() on a strategy.
-- Factory: The factory that all meta vaults of a specific API version are cloned from that also controls the protocol fee amount and recipient.
+- Factory: The factory that all meta vaults of a specific API version are cloned from that also controls the protocol fee amount and recipient for a strategy.
 - Performance Fee: The fee strategies charge during reports base on the yield earned since the last report.
 - Performance Fee recipient: The address that receives the shares charged as performance fees.
-- Protocol Fee: A fee on the fees charged by a strategists sent to the Yearn Treasury. see [Protocol Fees](insert LINK)
+- Protocol Fee: A fee on the fees charged by a strategists sent to the Yearn Treasury.
 - Profit Max Unlock Time: Time in seconds over which reported profits will unlock over.
-- report: Called by management or keepers to accrrue all profits or losses charge fees and lock profit to be distributed.
-- tend: Called by management or keepers between reports for any maintenence that should happen that doesn't require a full report.
-- api version: The version that a specific Strategy is using for its logic.
+- `totalIdle` : The amount of loose asset that is sitting in a strategy.
+- `totalDebt` : The amount of deployed funds that a strategy has control over.
+- `report`: Called by management or keepers to accrue all profits or losses, charge fees and lock profit to be distributed.
+- `tend`: Called by management or keepers between reports for any maintenence that should happen that doesn't require a full report.
+- API Version: The version that a specific Strategy is using for its logic.
 
 ## Architecture
 
@@ -57,30 +59,35 @@ While the complete architecture of the Tokenized Strategy is out of the scope of
 Yearn has base templates made to build off of built in both [Ape Worx](https://www.apeworx.io/), a python based development toolkit, and [Foundry](https://book.getfoundry.sh/).
 
 1. Choose your development framework.
-    - [Tokenized Strategy Ape Mix](https://github.com/yearn/tokenized-strategy-ape-mix)
     - [Tokenized Strategy Foundry Mix](https://github.com/yearn/tokenized-strategy-foundry-mix)
+    - [Tokenized Strategy Ape Mix](https://github.com/yearn/tokenized-strategy-ape-mix)
+    
 2. Set up local environment with selected mix. Each mix has detailed instructions in the "How To Start" section of the README, of specific requirements as well as cloning instructions and needed environment variables. 
-3. Assure tests pass. Each mix comes with a small set of pre-written tests, to serve as examples and can be used to make sure your local repository is set up properly before adding your own logic.
+4. Assure tests pass. Each mix comes with a small set of pre-written tests, to serve as examples and can be used to make sure your local repository is set up properly before adding your own logic.
 
 ## Strategy Writing
 
-So you have your idea and local environment setup. Now its time to start writing your actual strategy. To create your Tokenized Strategy, you must override at least three functions outlined in the `Strategy.sol`. 
+So you have your idea and local environment setup. Now its time to start writing your actual strategy. 
+
+To create your Tokenized Strategy, you must override at least three functions outlined in the `Strategy.sol`. 
+
+___
 
 1. *_deployFunds(uint256 _amount)*
     **Purpose**: 
     - This function is called during every deposit into your strategy to give it the opportunity to deploy the underlying asset just deposited into the yield source. 
     
     **Parameters**: 
-    - `_amount`: The total amount of underlying asset that is currently available for the strategy to deploy.
-    - 
+    - `_amount`: The total amount of underlying asset that is currently available for the strategy to deploy including the amount deposited and previously idle funds.
+    
     **Returns**: NONE.
     
     **Good to Know**: 
     - This function is entirely permissionless, so anything such as swaps or lp movements can be sandwiched or otherwise manipulated.
-    - This does not need to deploy the full _amount if the strategy doesn't want to.
+    - This does not need to deploy the full `_amount` if the strategy doesn't want to.
     
     **Best Practice**: 
-    - Use the _amount parameter passed in rather than relying on .balanceOf(address(this))
+    - Use the `_amount` parameter passed in rather than relying on .balanceOf(address(this))
     
     **Example**:
         
@@ -102,7 +109,7 @@ So you have your idea and local environment setup. Now its time to start writing
     - This function is also entirely permissionless, so anything such as swaps or lp values can be sandwiched or otherwise manipulated.
     
     **Best Practice**: 
-    - Use the _amount parameter passed in rather than relying on .balanceOf(address(this)).
+    - Use the `_amount` parameter passed in rather than relying on .balanceOf(address(this)).
     - **Any difference between the `_amount` parameter and the actual amount withdrawn will count as a loss and be passed on to the withdrawer. It may be preferred to revert for temporary issues such as liquidity constraints rather than pass on a loss**.
     - If your strategy is illiquid or can not always service full withdraws, you can limit the amount by overriding `availableWithdrawLimt` which is outlined below.
     
@@ -114,7 +121,7 @@ So you have your idea and local environment setup. Now its time to start writing
 
 3. *_harvestAndReport()*
     **Purpose**: 
-    - Called during every report to harvest and sell any rewards, reinvest any proceeds, perform any position maintanence and return a full accounting of a trusted amount denominated in the underlying asset that the strategy holds.
+    - Called during every report. This should harvest and sell any rewards, reinvest any proceeds, perform any position maintanence and return a full accounting of a trusted amount denominated in the underlying asset that the strategy holds.
     
     **Parameters**: NONE
     
@@ -149,7 +156,7 @@ So you have your idea and local environment setup. Now its time to start writing
 ### Optional Functions
 Simply overriding those three function will make your strategy a fully functional, permissionless, 4626 compliant stand alone vault. It can work entirely on its own or be integrated seemlessly into any Yearn V3 vault. 
 
-While that may be all that's necessary for some of the most simple strategies it is likely that most strategists may want to add a bit more customization or complexity to their strategy. Their are five more optional functions that can be overriden by strategist if desired to continue to build out their Tokenized Strategy.
+While that may be all that's necessary for some of the most simple strategies it is likely that most strategists may want to add a bit more customization or complexity to their strategy. Their are five more optional functions that can be overriden by a strategist if desired to continue to build out their Tokenized Strategy.
 
 
 1. *availableDeositLimit(address _owner)*
@@ -167,7 +174,7 @@ While that may be all that's necessary for some of the most simple strategies it
     - This does not need to take into account any conversion rates from assets to shares. But should know that any limit under uint256 max may get converted to shares and should not be high enough to overflow  on multiplication.
     
     **Best Practices**:
-    - MAke sure to implement setter functions for any deposit limit or whitelist's that are enforced.
+    - Make sure to implement setter functions for any deposit limit or whitelist's that are enforced.
     
     **Example**:
     
@@ -189,16 +196,25 @@ While that may be all that's necessary for some of the most simple strategies it
     - The limit if any that should be enforced on withdraws.
     
     **Good to Know**:
-    - This is not how much can be withdrawn from the yield sour
     - This does not need to take into account the balance of the _owner.
     - This can be more than the actual amount available to withdraw.
+    - Defaults to max uint256.
     
     **Best Practices**:
     - This should be overridden for strategies that have illiquid, or sandwichable positions to prevent reporting incorrect losses on withdraws.
-    - **The minimum this should ever be is the TokenizedStrategy.totalIdle()**.
+    - **This should never be lower than TokenizedStrategy.totalIdle()**.
     - This does not need to take into account any conversion rates from assets to shares. But should know that any limit under uint256 max may get converted to shares and should not be high enough to overflow  on multiplication.
     
     **Example**:
+    
+        function availableWithdrawLimit(
+            address _owner
+        ) public view override returns (uint256) {
+            return TokenizedStrategy.totalIdle() + 
+                ERC20(asset).balanceOf(address(yieldSource));
+        }
+        
+    **Example #2**:
     
         function availableWithdrawLimit(
             address _owner
@@ -278,7 +294,7 @@ While that may be all that's necessary for some of the most simple strategies it
     
     **Best Practices**:
     - Keep the withdraw logic as simple as possible.
-    - Check _amount against the available amount to withdraw.
+    - Check `_amount` against the available amount to withdraw.
     
     **Example**:
     
@@ -292,6 +308,7 @@ While that may be all that's necessary for some of the most simple strategies it
 ---
 All other functionality, such as reward selling, upgradability, etc., is up to the strategist to determine what best fits their vision. Due to the ability of strategies to stand alone from a Vault, it is expected and encouraged for strategists to experiment with more complex, risky, or previously unfeasible Strategies.
 
+### FYI
 NOTE: The only default global variables from the BaseTokenizedStrategy that can be accessed from storage is `asset` and `TokenizedStrategy`. If other global variables are needed for your specific strategy, you can use the `TokenizedStrategy` variable to quickly retrieve any other needed variables within the strategy, such as totalAssets, totalDebt, isShutdown etc.
 
 Example:
@@ -313,24 +330,24 @@ To make Strategy writing as simple as possible, a suite of optional 'Periphery' 
 
 *All periphery contracts are optional, and strategists are free to choose if they wish to use them.
 
-### [Swappers](https://github.com/Schlagonia/tokenized-strategy-periphery/tree/master/src/swappers)
+### [Swappers](https://github.com/yearn/tokenized-strategy-periphery/tree/master/src/swappers)
 
 In order to make reward swapping as easy and standardized as possible there are multiple swapper contracts that can be inherited by a strategy to inherit pre-built and tested logic for whichever method of reward swapping is desired. This allows a strategist to only need to set a few global variables and then simply use the default syntax of `_swapFrom(tokenFrom, tokenTo, amountIn, minAmountOut)` to swap any tokens easily during `_harvestAndReport`.
 
-### [APR Oracles](https://github.com/Schlagonia/tokenized-strategy-periphery/tree/master/src/AprOracle)
+### [APR Oracles](https://github.com/yearn/tokenized-strategy-periphery/tree/master/src/AprOracle)
 
-In order for easy integration with Vaults, front ends, debt allocators etc. There is the option to create an [APR oracle](https://github.com/Schlagonia/tokenized-strategy-periphery/blob/master/src/AprOracle/AprOracleBase.sol) contract for your specific strategy that should return the expected APR of the Strategy based on some given `debtChange`. 
+In order for easy integration with Vaults, front ends, debt allocators etc. There is the option to create an [APR oracle](https://github.com/yearn/tokenized-strategy-periphery/blob/master/src/AprOracle/AprOracleBase.sol) contract for your specific strategy that should return the expected APR of the Strategy based on some given `debtChange`. 
 
 
 ### [HealthCheck](https://github.com/Schlagonia/tokenized-strategy-periphery/tree/master/src/HealthCheck)
 
-In order to prevent automated reports from reporting losses/excessive profits from automated reports that may not be accurate, a strategist can inherit and implement the [HealthCheck](https://github.com/Schlagonia/tokenized-strategy-periphery/blob/master/src/HealthCheck/HealthCheck.sol) contract. Using this can assure that a keeper will not call a report that may incorrectly realize incorrect losses or excessive gains. It can cause the report to revert if the gain/loss is outside of the desired bounds and will require manual intervention to assure the strategy is reporting correctly.
+In order to prevent automated reports from reporting losses/excessive profits that may not be accurate, a strategist can inherit and implement the [HealthCheck](https://github.com/yearn/tokenized-strategy-periphery/blob/master/src/HealthCheck/HealthCheck.sol) contract. Using this can assure that a keeper will not call a report that may incorrectly realize incorrect losses or excessive gains. It can cause the report to revert if the gain/loss is outside of the desired bounds and will require manual intervention to assure the strategy is reporting correctly.
 
 NOTE: It is recommended to implement some checks in `_harvestAndReport` for leveraged or manipulatable strategies that could report incorrect losses due to unforeseen circumstances.
 
-### [Report Triggers](https://github.com/Schlagonia/tokenized-strategy-periphery/tree/master/src/ReportTrigger)
+### [Report Triggers](https://github.com/yearn/tokenized-strategy-periphery/tree/master/src/ReportTrigger)
 
-The expected behavior is that strategies report profits/losses on a set schedule based on their specific `profitMaxUnlockTime` that management can customize. If a custom trigger cycle is desired or extra checks should be added a strategist can create their own [customReportTrigger](https://github.com/Schlagonia/tokenized-strategy-periphery/blob/master/src/ReportTrigger/CustomStrategyTriggerBase.sol) that can be added to the default contract for a specific strategy.
+The expected behavior is that strategies report profits/losses on a set schedule based on their specific `profitMaxUnlockTime` that management can customize. If a custom trigger cycle is desired or extra checks should be added a strategist can create their own [customReportTrigger](https://github.com/yearn/tokenized-strategy-periphery/blob/master/src/ReportTrigger/CustomStrategyTriggerBase.sol) that can be added to the default contract for a specific strategy.
 
 *More information on this can be found below in the "Reporting" section.
 
@@ -352,7 +369,9 @@ Due to the permissionless nature of the tokenized Strategies, all tests are writ
 
 ## Deployment
 
-For strategies that will be used with multiple different asset's it is recommended to build a factory, that can be deployed once and then all strategies can be deployed on chain using the factory. Cloning is not recommended for Tokenized Strategies.
+For strategies that will be used with multiple different asset's it is recommended to build a factory, that can be deployed once and then all strategies can be deployed on chain using the factory. 
+
+**Cloning is not recommended for Tokenized Strategies.**
 
 
 #### Contract Verification
@@ -374,7 +393,7 @@ In addition to the normal 4626 interface Tokenized Strategies come built in with
 
 ### Reporting
 
-The main operational procedure strategists need to take care of the reporting of a strategy. Calling `report` on a strategy must be done by either the 'management' or 'keeper' address. 
+The main operational procedure strategists need to take care of is the reporting of a strategy. Calling `report` on a strategy must be done by either the 'management' or 'keeper' address. 
 
 Reporting causes the strategy to accrue rewards, record any gains or losses as well as charge and pay fees. It is needed in order for the depositers of a vault to earn yield as well as for the strategist to to earn fees.
 
@@ -386,7 +405,7 @@ Since reports are the only time _harvestAndReport will be called any strategies 
 
 The easiest way to assure regular reports and tends on your strategy is to hook it up with a 3rd party keeper.
 
-The recommended keeper network to use is the [Gelato Network](https://www.gelato.network/). For a comprehensive guide on how to set up your strategy with a Gelato keeper see [INSER LINK]()
+The recommended keeper network to use is the [Gelato Network](https://www.gelato.network/). 
 
 ### Setters
 
@@ -402,7 +421,7 @@ The strategy comes with some default variables that the management of a strategy
 
 ### Emergencies
 
-There is two default emergency functions built in. First of which is `shutdownStrategy`. This can only ever be called by the management and is non-reversible.
+There is two default emergency functions built in. First of which is `shutdownStrategy()`. This can only ever be called by the management and is non-reversible.
 
 Once this is called it will stop any further deposit or mints but will have no effect on any other functionality including withdraw, redeem, report and tend. This is to allow management to continue potentially recording profits or losses and users to withdraw even post shutdown.
 
