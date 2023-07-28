@@ -55,7 +55,7 @@ In the `docs` folder:
 
 In `versioned_docs` you will find several versions of the vault documentation that corresponds to a tagged release. In `vaults` folder you can find the latest version that corresponds to the changes on yearn-vault master is the documentation for the next/unreleased version.
 
-##### Generating Versioned Documentation
+### Generating Versioned Documentation
 
 **Dependencies**
 
@@ -64,14 +64,15 @@ In `versioned_docs` you will find several versions of the vault documentation th
 - Check the vyper compiler version on the vaults repo ([here](https://github.com/yearn/yearn-vaults/blob/master/contracts/Vault.vy#L1)) and update the `~/.vvm/vyper-X.X.X` in the end of the first command below.
 - Make sure [Vault.vy](https://github.com/yearn/yearn-vaults/blob/master/contracts/Vault.vy#L1) and [Registry.vy](https://github.com/yearn/yearn-vaults/blob/master/contracts/Registry.vy#L1) on `yearn-vaults` folder has the same compiler version on their first line. If not, bump the file with the lowest version to the current version the other uses.
 - If any contract file in yearn-vaults uses a fixed compiler version (without leading `^`) you may have to add it so the `solc` compiler will run. Also, make sure `solc` version is up-to-date.
-- More information on docusaurus versioning [here](https://docusaurus.io/docs/versioning#tagging-a-new-version) if the last command has any issue, and remember to change the version to the one you are generating for!
+- If you get errors with global `solc` try to install it locally on the project with npm
+- More information on docusaurus versioning [here](https://docusaurus.io/docs/versioning#tagging-a-new-version) if the last command has any issues
 
 **Generate:**
 
 To generate API documentation and coin a new release, do the following.
 ```
 npx vydoc -i ../yearn-vaults/contracts/ -o ./vaults/smart-contracts -t ./templates/contract.ejs -c ~/.vvm/vyper-0.3.3
-npx solidity-docgen --solc-module solc --templates=templates --helpers=helpers/solidityHelpers.js -i ../yearn-vaults/contracts/ -o ./vaults/smart-contracts
+npx solidity-docgen@0.5.17 --solc-module solc --templates=templates --helpers=helpers/solidityHelpers.js -i ../yearn-vaults/contracts/ -o ./vaults/smart-contracts
 npm run docusaurus docs:version 0.4.5
 ```
-After that put everything generated in the new version documentation into `versioned_docs/version-x.x.x/smart-contracts` folder, then copy `yearn-lens/.`, `yearn-sdk/.` and `yearn-api.md` from the previous versioned documentation's folder into the new one.
+After that copy `yearn-lens/.`, `yearn-sdk/.` and `yearn-api.md` from the previous versioned documentation's folder into the new one.
