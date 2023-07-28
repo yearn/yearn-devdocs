@@ -14,6 +14,7 @@ module.exports = {
             'products/yvaults/vaults-and-strategies',
             'products/yvaults/vault-tokens',
             'products/yvaults/vault-factory',
+            'products/yvaults/v3',
           ],
         },
         {
