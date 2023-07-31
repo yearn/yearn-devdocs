@@ -32,6 +32,6 @@ module.exports = {
     'v2/hacking-with-yearn',
     'v2/fork-yearn-ui',
     'v2/yswaps',
+    'v3/strategy_writing_guide.md',
   ],
-  'v3/strategy_writing_guide.md'
 }
