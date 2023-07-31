@@ -33,4 +33,5 @@ module.exports = {
     'v2/fork-yearn-ui',
     'v2/yswaps',
   ],
+  'v3/strategy_writing_guide.md'
 }
