@@ -20,9 +20,9 @@ This increased functionality not only means strategies have a much larger potent
 
 ## Why?
 
-- *Strategist Fees!* - V3 brings back the ability for developers of strategies to earn the fees generated from their strategy. Meaning your earning potential is unlimited.
-- *Codify Your yield Farming* - Tokenized strategies make it super easy for anyone to codify their own yield generating strategies. Wanna keep your alpha private? No problem they come fully customizable to allow for you to be the only one allowed to deposit.
-- *Simple 4626 Wrappers* - Tokenized Strategies make a super easy and cheap way to give any previously deployed protocol a ERC-4626 interface. This opens up any protocol to easily integrate into the rapidly growing 4626 ecosystem (including Yearn Meta Vaults).
+- *Strategist Fees!* - V3 brings back the ability for developers of strategies to earn the fees generated from their strategy: meaning your earning potential is unlimited.
+- *Codify Your Yield Farming* - Tokenized strategies make it super easy for anyone to codify their own yield-generating strategies. Want to keep your alpha private? No problem they come fully customizable to allow for you to be the only one allowed to deposit.
+- *Simple 4626 Wrappers* - Tokenized strategies make a super easy and cheap way to give any previously deployed protocol a ERC-4626 interface. This opens up any protocol to easily integrate into the rapidly growing 4626 ecosystem (including Yearn Meta Vaults).
 
 ## Definitions
 - [Strategy](https://github.com/yearn/tokenized-strategy) : A strategy or "Tokenized Strategy" in V3 refers to an ERC-4626 compliant contract that utilizes the [TokenizedStrategy](https://github.com/yearn/tokenized-strategy/blob/master/src/TokenizedStrategy.sol#L14-L26) pattern that either meta vaults or individual users can deposit directly into and receive shares in return. The strategy takes the underlying asset and deploys it in a single source in order to generate yield on that asset.
