@@ -21,30 +21,30 @@ This increased functionality not only means strategies have a much larger potent
 ## Why?
 
 - *Strategist Fees!* - V3 brings back the ability for developers of strategies to earn the fees generated from their strategy: meaning your earning potential is unlimited.
-- *Codify Your Yield Farming* - Tokenized strategies make it super easy for anyone to codify their own yield-generating strategies. Want to keep your alpha private? No problem they come fully customizable to allow for you to be the only one allowed to deposit.
-- *Simple 4626 Wrappers* - Tokenized strategies make a super easy and cheap way to give any previously deployed protocol a ERC-4626 interface. This opens up any protocol to easily integrate into the rapidly growing 4626 ecosystem (including Yearn Meta Vaults).
+- *Codify Your Yield Farming* - Tokenized Strategies make it super easy for anyone to codify their own yield-generating strategies. Want to keep your alpha private? No problem they come fully customizable to allow for you to be the only one allowed to deposit.
+- *Simple 4626 Wrappers* - Tokenized Strategies offer a super easy and cheap way to give any previously deployed protocol a ERC-4626 interface. This opens up any protocol to easily integrate into the rapidly growing 4626 ecosystem (including Yearn Meta Vaults).
 
 ## Definitions
-- [Strategy](https://github.com/yearn/tokenized-strategy) : A strategy or "Tokenized Strategy" in V3 refers to an ERC-4626 compliant contract that utilizes the [TokenizedStrategy](https://github.com/yearn/tokenized-strategy/blob/master/src/TokenizedStrategy.sol#L14-L26) pattern that either meta vaults or individual users can deposit directly into and receive shares in return. The strategy takes the underlying asset and deploys it in a single source in order to generate yield on that asset.
-- Asset: Any ERC20-compliant token
-- Shares: ERC20-compliant token that tracks the asset balance in the strategy for every depositer.
+- [Strategy](https://github.com/yearn/tokenized-strategy) : A strategy or "Tokenized Strategy" in V3 refers to an ERC-4626 compliant contract that utilizes the [TokenizedStrategy](https://github.com/yearn/tokenized-strategy/blob/master/src/TokenizedStrategy.sol#L14-L26) pattern that either Meta Vaults or individual users can deposit directly into and receive shares in return. The strategy takes the underlying asset and deploys it into a single source to generate yield on that asset.
+- Asset: Any ERC20-compliant token.
+- Shares: ERC20-compliant token that tracks the asset balance in the strategy for every depositor.
 - [TokenizedStrategy.sol](https://github.com/yearn/tokenized-strategy/blob/master/src/TokenizedStrategy.sol): The implementation contract that all strategies delegateCall to for the standard ERC4626 and profit locking functions.
-- [BaseTokenizedStrategy.sol](https://github.com/yearn/tokenized-strategy/blob/master/src/BaseTokenizedStrategy.sol): The abstract contract that a strategy should inherit from that handles all communication with the Tokenized Strategy contract.
+- [BaseTokenizedStrategy.sol](https://github.com/yearn/tokenized-strategy/blob/master/src/BaseTokenizedStrategy.sol): The abstract contract that a strategy should inherit from, which handles all communication with the Tokenized Strategy contract.
 - Strategist: The developer of a specific strategy.
-- Depositor: Account that deposits the asset and holds Shares
-- Vault: Or "Meta Vault" is an Yearn ERC4626 compliant Smart contract that receives assets from Depositors to then distribute them among the different Strategies added to the vault, managing accounting and asset distribution. 
-- Management: The owner of the specific strategy that can set fees, profit unlocking time etc.
-- Keeper: the address of a contract allowed to call report() and tend() on a strategy.
-- Factory: The factory that all meta vaults of a specific API version are cloned from that also controls the protocol fee amount and recipient for a strategy.
-- Performance Fee: The fee strategies charge during reports base on the yield earned since the last report.
-- Performance Fee recipient: The address that receives the shares charged as performance fees.
-- Protocol Fee: A fee on the fees charged by a strategists sent to the Yearn Treasury.
-- Profit Max Unlock Time: Time in seconds over which reported profits will unlock over.
-- `totalIdle` : The amount of loose asset that is sitting in a strategy.
-- `totalDebt` : The amount of deployed funds that a strategy has control over.
-- `report`: Called by management or keepers to accrue all profits or losses, charge fees and lock profit to be distributed.
-- `tend`: Called by management or keepers between reports for any maintenence that should happen that doesn't require a full report.
-- API Version: The version that a specific Strategy is using for its logic.
+- Depositor: Account that deposits the asset and holds Shares.
+- Vault: Or also called "Meta Vault", is a Yearn ERC4626 compliant Smart Contract that receives assets from Depositors to then distribute them among the different Strategies added to the vault, managing accounting and asset distribution. 
+- Management: The owner of the specific strategy that can set fees, profit unlock time, etc.
+- Keeper: The address of a contract allowed to call report() and tend() on a strategy.
+- Factory: The factory that all Meta Vaults of a specific API version are deployed from which also controls the protocol fee amount and protocol fee recipient.
+- Performance Fee: The fee strategies charge during reports based on the yield earned since the last report.
+- Performance Fee Recipient: The address that receives the shares charged as performance fees.
+- Protocol Fee: A fee on the fees charged by the strategists, sent to the Protocol Fee Recipient.
+- Profit Max Unlock Time: Time in seconds over which reported profits will unlock.
+- `totalIdle`: The amount of loose asset that are sitting in a strategy.
+- `totalDebt`: The amount of deployed funds that a strategy has control over.
+- `report`: Called by Management or Keepers to accrue all profits or losses, charge fees, and lock profit to be distributed.
+- `tend`: Called by Management or Keepers between reports for any maintenance that should happen that doesn't require a full report.
+- API Version: The version that a specific strategy is using for its logic.
 
 ## Architecture
 
