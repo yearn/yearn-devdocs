@@ -38,7 +38,7 @@ This increased functionality not only means strategies have a much larger potent
 - Factory: The factory that all Meta Vaults of a specific API version are deployed from which also controls the protocol fee amount and protocol fee recipient.
 - Performance Fee: The fee strategies charge during reports based on the yield earned since the last report.
 - Performance Fee Recipient: The address that receives the shares charged as performance fees.
-- Protocol Fee: A fee on the fees charged by the strategists, sent to the Protocol Fee Recipient.
+- Protocol Fee: A fee on the earnings of the strategists, sent to the Protocol Fee Recipient.
 - Profit Max Unlock Time: Time in seconds over which reported profits will unlock.
 - `totalIdle`: The amount of loose asset that are sitting in a strategy.
 - `totalDebt`: The amount of deployed funds that a strategy has control over.
@@ -50,7 +50,7 @@ This increased functionality not only means strategies have a much larger potent
 
 While the complete architecture of the Tokenized Strategy is out of the scope of this document you can read more about how it works [here](https://github.com/yearn/tokenized-strategy/blob/master/SPECIFICATION.md)
 
-**TLDR**: V3 strategies use an immutable proxy pattern to outsource all of its complex, high risk and redundant code to one [TokenizedStrategy.sol](https://github.com/yearn/tokenized-strategy/blob/master/src/TokenizedStrategy.sol) implementation contract that is used by every strategy of a specific api version. To use this pattern you simply need to inherit the [BaseTokenizedStrategy.sol](https://github.com/yearn/tokenized-strategy/blob/master/src/BaseTokenizedStrategy.sol) contract, that holds all of the logic to communicate with the implementation contract, and then just override a few simple functions with your specific strategy logic.
+**TLDR**: V3 strategies use an immutable proxy pattern to outsource all of its complex, high-risk, and redundant code to one [TokenizedStrategy.sol](https://github.com/yearn/tokenized-strategy/blob/master/src/TokenizedStrategy.sol) implementation contract that is used by every strategy of a specific API version. To use this pattern you simply need to inherit the [BaseTokenizedStrategy.sol](https://github.com/yearn/tokenized-strategy/blob/master/src/BaseTokenizedStrategy.sol) contract, which holds all of the logic to communicate with the implementation contract, and then just override a few simple functions with your specific strategy logic.
 
 ## Getting started
 
