@@ -6,13 +6,13 @@ So you wanna be a Yearn strategist?
 
 Can you write 3 lines of code?
 
-Well then you came to the right place. 
+Well then, you came to the right place. 
 
-The strategy creation process has been very simplified in V3 so that it is technically possible to write a Tokenized Strategy with only 3 lines of code. However, of course most strategies will need more than that. This will guide you through the full strategy development process from getting your local repo set up, through deployment, automation all the way to cashing out those sweet sweet strategist fees.
+The strategy creation process has been simplified in V3 so that it is technically possible to write a Tokenized Strategy with only 3 lines of code. However, of course, most strategies will need more than that. This will guide you through the full strategy development process from getting your local repository set up, through deployment, automation, and all the way to cashing out those sweet strategist fees.
 
 ## Introduction
 
-A strategies job is to hold the actual logic that is responsible for generating yield on some underlying asset. It should hold the code to integrate with an external protocol and do any needed asset deployment, withdraw logic, reward selling, reinvesting LTV maintenance etc. to most efficiently generate the most possible yield from that particular source.
+A strategy's job is to hold the actual logic that is responsible for generating yield on some underlying asset. It should hold the code to integrate with an external protocol and do any needed asset deployment, withdraw logic, reward selling, reinvesting Loan-to-Value maintenance, and other such logic to most efficiently generate the most yield possible from that particular source.
 
 The biggest update to Yearn V3 from V2 was the introduction of "Tokenized Strategies". In V2 strategies were stand alone contracts that were attached to one specific vault. That vault was the only one who could ever deposit or withdraw funds from the strategy and each had a trusted relationship with the other.
 
