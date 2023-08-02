@@ -153,9 +153,9 @@ ___
         }
         
 ### Optional Functions
-Simply overriding those three function will make your strategy a fully functional, permissionless, 4626 compliant stand alone vault. It can work entirely on its own or be integrated seemlessly into any Yearn V3 vault. 
+Simply overriding those three functions will make your strategy a fully functional, permissionless, 4626-compliant, stand-alone vault. It can work entirely on its own or be seamlessly integrated into any Yearn V3 vault.
 
-While that may be all that's necessary for some of the most simple strategies it is likely that most strategists may want to add a bit more customization or complexity to their strategy. Their are five more optional functions that can be overriden by a strategist if desired to continue to build out their Tokenized Strategy.
+While that may be all that's necessary for some of the most simple strategies, generally most strategists will add a bit more customization or complexity to their strategy. There are five more optional functions which can be overridden by a strategist to continue to build out their Tokenized Strategy.
 
 
 1. *availableDeositLimit(address _owner)*
@@ -184,7 +184,7 @@ While that may be all that's necessary for some of the most simple strategies it
             return totalAssets >= depositLimit ? 0 : depositLimit - totalAssets;
         }
     
-1. *availableWithdrawLimit(address _owner)*
+2. *availableWithdrawLimit(address _owner)*
     **Purpose**:
     - This is called during every withdraw and can be used to enforce any witdhraw limit the strategist desires.
     
@@ -225,7 +225,7 @@ While that may be all that's necessary for some of the most simple strategies it
             }
         }
 
-1. *_tend(uint256 _totalIdle)*
+3. *_tend(uint256 _totalIdle)*
     **Purpose**:
     - This would get called during a `tend` call and can be used if a strategy needs to perform any maintenance or other actions that don't require a full report. If used the strategy should also implement a `tendTrigger` that keepers can monitor to know when it should be called.
     
@@ -252,7 +252,7 @@ While that may be all that's necessary for some of the most simple strategies it
             }
         }
     
-1. *tendTrigger()*
+4. *tendTrigger()*
     **Purpose**:
     - Should return whether or not a keeper should call `tend` on the strategy. This should be implemented if tend is needed to be used.
     
@@ -277,7 +277,7 @@ While that may be all that's necessary for some of the most simple strategies it
             }
         }
     
-1. *_emergencyWithdraw(uint256 _amount)*
+5. *_emergencyWithdraw(uint256 _amount)*
     **Purpose**:
     - Allows management the option to manually pull funds from the yield source once a strategy has been shutdown.
     
