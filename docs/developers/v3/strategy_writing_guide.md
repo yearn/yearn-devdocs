@@ -155,7 +155,7 @@ ___
 ### Optional Functions
 Simply overriding those three functions will make your strategy a fully functional, permissionless, 4626-compliant, stand-alone vault. It can work entirely on its own or be seamlessly integrated into any Yearn V3 vault.
 
-While that may be all that's necessary for some of the most simple strategies, generally most strategists will add a bit more customization or complexity to their strategy. There are five more optional functions which can be overridden by a strategist to continue to build out their Tokenized Strategy.
+While that may be all that's necessary for some of the most simple strategies, generally most strategists will add a bit more customization or complexity to their strategy. Five more optional functions can be overridden by a strategist to continue to build out their Tokenized Strategy.
 
 
 1. *availableDeositLimit(address _owner)*
