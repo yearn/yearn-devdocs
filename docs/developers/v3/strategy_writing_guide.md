@@ -26,7 +26,7 @@ This increased functionality not only means strategies have a much larger potent
 
 ## Definitions
 - [Strategy](https://github.com/yearn/tokenized-strategy) : A strategy or "Tokenized Strategy" in V3 refers to an ERC-4626 compliant contract that utilizes the [TokenizedStrategy](https://github.com/yearn/tokenized-strategy/blob/master/src/TokenizedStrategy.sol#L14-L26) pattern that either Meta Vaults or individual users can deposit directly into and receive shares in return. The strategy takes the underlying asset and deploys it into a single source to generate yield on that asset.
-- Asset: Any ERC20-compliant token.
+- asset: Any ERC20-compliant token.
 - Shares: ERC20-compliant token that tracks the asset balance in the strategy for every depositor.
 - [TokenizedStrategy.sol](https://github.com/yearn/tokenized-strategy/blob/master/src/TokenizedStrategy.sol): The implementation contract that all strategies delegateCall to for the standard ERC4626 and profit locking functions.
 - [BaseTokenizedStrategy.sol](https://github.com/yearn/tokenized-strategy/blob/master/src/BaseTokenizedStrategy.sol): The abstract contract that a strategy should inherit from, which handles all communication with the Tokenized Strategy contract.
@@ -66,7 +66,7 @@ Yearn has base templates made to build off of built in both [Ape Worx](https://w
 
 ## Strategy Writing
 
-So you have your idea and local environment setup. Now its time to start writing your actual strategy. 
+So you have your idea and local environment setup. Now it's time to start writing your actual strategy. 
 
 To create your Tokenized Strategy, you must override at least three functions outlined in the `Strategy.sol`. 
 
@@ -74,7 +74,7 @@ ___
 
 1. *_deployFunds(uint256 _amount)*
     **Purpose**: 
-    - This function is called during every deposit into your strategy to give it the opportunity to deploy the underlying asset just deposited into the yield source. 
+    - This function is called during every deposit into your strategy to allow it to deploy the underlying asset just deposited into the yield source. 
     
     **Parameters**: 
     - `_amount`: The total amount of underlying asset that is currently available for the strategy to deploy including the amount deposited and previously idle funds.
@@ -86,7 +86,7 @@ ___
     - This does not need to deploy the full `_amount` if the strategy doesn't want to.
     
     **Best Practice**: 
-    - Use the `_amount` parameter passed in rather than relying on .balanceOf(address(this))
+    - Use the `_amount` parameter passed in rather than relying on .balanceOf(address(this)).
     
     **Example**:
         
@@ -96,15 +96,15 @@ ___
         
 2. *_freeFunds(uint256 _amount)*
     **Purpose**: 
-    - This function is called during withdraws from your strategy if there is not enough idle asset to service the full withdraw. 
+    - This function is called during withdraws from your strategy if there are not enough idle assets to service the full withdrawal.
     
     **Parameters**: 
-    - `_amount`: The amount of the underlying asset that needs to be pulled from the yield source.
+    - `_amount`: The amount of the underlying assets that need to be pulled from the yield source.
     
     **Returns**: NONE.
     
     **Good to Know**: 
-    - The amount of loose asset has already been accounted for. 
+    - The amount of loose assets has already been accounted for. 
     - This function is also entirely permissionless, so anything such as swaps or lp values can be sandwiched or otherwise manipulated.
     
     **Best Practice**: 
@@ -120,7 +120,7 @@ ___
 
 3. *_harvestAndReport()*
     **Purpose**: 
-    - Called during every report. This should harvest and sell any rewards, reinvest any proceeds, perform any position maintanence and return a full accounting of a trusted amount denominated in the underlying asset that the strategy holds.
+    - Called during every report. This should harvest and sell any rewards, reinvest any proceeds, perform any position maintenance and return a full accounting of a trusted amount denominated in the underlying asset that the strategy holds.
     
     **Parameters**: NONE
     
@@ -129,11 +129,11 @@ ___
     
     **Good to Know**:  
     - This can only be called by a permissioned address so if set up correctly can be trusted to be through a protected relay in order to perform swaps, lp movements etc.
-    - It is safe to account for loose asset in this function since any profit reported is immediately locked and therefore is not subject to price per share manipulation.
+    - It is safe to account for loose `asset` in this function since any profit reported is immediately locked and therefore is not subject to price per share manipulation.
 
     **Best Practice**: 
-    - The returned value is used to account for all strategy profits, losses and fees so care should be taken when relying on oracle values, lp prices etc. that have the potential to be manipulated.
-    - This can still be called after a strategy has been shutdown so you may want to check if the strategy is shutdown before performing certain functions like re-deploying loose funds.
+    - The returned value is used to account for all the strategy's profits, losses, and fees so care should be taken when relying on oracle values, lp prices, etc. that have the potential to be manipulated.
+    - This can still be called after a strategy has been shutdown, so you may want to check if the strategy is shutdown before performing certain functions like re-deploying loose funds.
     
     **Example**:
     
