@@ -59,9 +59,10 @@ Yearn has base templates made to build off of built in both [Ape Worx](https://w
 1. Choose your development framework.
     - [Tokenized Strategy Foundry Mix](https://github.com/yearn/tokenized-strategy-foundry-mix)
     - [Tokenized Strategy Ape Mix](https://github.com/yearn/tokenized-strategy-ape-mix)
-    
-2. Set up local environment with selected mix. Each mix has detailed instructions in the "How To Start" section of the README, of specific requirements as well as cloning instructions and needed environment variables. 
-4. Assure tests pass. Each mix comes with a small set of pre-written tests, to serve as examples and can be used to make sure your local repository is set up properly before adding your own logic.
+
+2. Set up a local environment with the selected mix. Each mix has detailed instructions in the "How To Start" section of the README, specific requirements needed, as well as cloning instructions and required environment variables. 
+
+3. Assure the tests pass. Each mix comes with a small set of pre-written tests which serve as examples. They can be used to make sure your local repository is set up properly before adding your own logic.
 
 ## Strategy Writing
 
