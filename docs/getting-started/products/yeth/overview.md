@@ -43,7 +43,7 @@ The bootstrapping process aims to kickstart yETH first LSTs and liquidity. You c
 
 \* Will be set when the bootstrapping is complete and the Pool is launched
 
-> Due to a redeploy of st-yETH during the bootstrap process the first st-yETH contract has been deprecated, use the `Bootstrap: Claim st-yETH` contract to claim the new version if you participated in bootstrap.
+> Due to a redeploy of st-yETH during the bootstrap process the first st-yETH contract has been deprecated, use the `Bootstrap: Claim st-yETH` contract to claim the new version if you participated in the bootstrap phase.
 
 ## Management Role
 
