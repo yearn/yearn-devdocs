@@ -60,7 +60,7 @@ Trusted addresses with privileged access for limited operations. Should eventual
 - Can trigger `pause mode`.
 - Can trigger `killed mode`.
 
-#### Pause mode
+### Pause mode
 
 > This mode is to be activated in the event of extreme market conditions or detected suspicious behavior, either in the protocol itself or in the underlying LST tokens that back it.
 
@@ -68,7 +68,7 @@ Trusted addresses with privileged access for limited operations. Should eventual
 - Users may only withdraw assets in a balanced manner.
 - Management or guardian can undo pause mode to resume normal operation.
 
-#### Killed mode
+### Killed mode
 
 > This mode is to be activated in the event of critical failures, whether in the protocol itself or in any of the underlying LST tokens that back it. This can also be used as part of migrating to a new version of the yETH protocol.
 
