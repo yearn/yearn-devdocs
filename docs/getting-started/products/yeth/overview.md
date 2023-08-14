@@ -26,7 +26,7 @@ If an LST underperforms or faces issues, its weight may decrease, reducing its i
 
 The bootstrapping process aims to kickstart yETH first LSTs and liquidity. You can read all about each phase in our bootstrapping release [article](https://medium.com/@marcoworms/yeth-lsd-lobbying-season-is-now-open-ff8a2537402d).
 
-### Contracts & Roles
+## Contracts & Roles
 
 | Name                                             | Address                             |
 |--------------------------------------------------|-------------------------------------|
