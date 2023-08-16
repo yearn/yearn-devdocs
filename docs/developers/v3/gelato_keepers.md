@@ -1,1 +1,0 @@
-# Set up a Vault or Strategy with Gelato Keeper Network

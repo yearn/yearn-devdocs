@@ -21,7 +21,7 @@ Each release of the vaults will have its own "VaultFactory" deployed to make it 
 
 ** Vaults not deployed through the factory will not be recognized as part of the Yearn ecosystem and may cause issues during runtime.
 
-To deploy your own vault, simply find the address of the factory for the most recent release [here](INSERT LINK) and call `Factory.deploy_new_vault(parms)`.
+To deploy your own vault, simply find the address of the factory for the most recent release [here](INSERT LINK) and call `Factory.deploy_new_vault(params)`.
 
 The needed parameters are:
 
@@ -47,7 +47,7 @@ Once deployed there are some additional setup steps to take as well as variables
 ---
 The first is to set up the Role's for your specific vault. The vaults use a [Role](INSER LINK) based system for access control to the permissioned functions. The roles are a [Vyper Enumerator](https://docs.vyperlang.org/en/stable/types.html#enums) pattern which is based on Pythons. 
 
-Each permissioned function in the Vaults has its own "role" that can call that specific function. For example in order to call `add_strategy(new_strategy: addres)` the address must have the `ADD_STRATEGY_MANAGER` role. Roles can be held by any number of addresses as well as by no address. There is also the option to "open" any role, meaning that the function becomes permissionless. (This is not recommended for most permissioned function and should be done with care.)
+Each permissioned function in the Vaults has its own "role" that can call that specific function. For example in order to call `add_strategy(new_strategy: address)` the address must have the `ADD_STRATEGY_MANAGER` role. Roles can be held by any number of addresses as well as by no address. There is also the option to "open" any role, meaning that the function becomes permissionless. (This is not recommended for most permissioned function and should be done with care.)
 
 The same address can hold every role, each role can be help by a different address or any combination desired.
 
@@ -56,19 +56,19 @@ To give an account a specific role simply call `vault.set_role(account, role)` w
 Example:
 
     # Set `account` to be the ADD_STRATEGY_MANAGER
-    vault.set_role(acount, 1)
+    vault.set_role(account, 1)
     
     # Set `account` to be the REVOKE_STRATEGY_MANAGER
-    vault.set_role(acount, 2)
+    vault.set_role(account, 2)
     
     # Set `account` to be both the ADD_STRATEGY_MANAGER and REVOKE_STRATEGY_MANAGER
-    vault.set_role(acount, 3)
+    vault.set_role(account, 3)
     
     # Set `account` to hold every role
-    vault.set_role(acount, 8191)
+    vault.set_role(account, 8191)
     
     # Set `account` to hold no roles
-    vault.set_role(acount, 0)
+    vault.set_role(account, 0)
     
 
 NOTE: The vault `role_manager` can not call any permissioned function by default, and would have to give itself any roles that it should have.
