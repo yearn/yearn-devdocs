@@ -4,11 +4,11 @@
 
 The multisig is implemented by a 6-of-9 multi-signature wallet. The members of the multi-signature wallet were voted in by YFI holders and are subject to change from future governance votes. Specific powers are delegated to the governance multisig, as defined by [Governance 2.0](https://gov.yearn.finance/t/yip-41-temporarily-empower-multisig/3630). More information about Yearn governance and how it interacts with the multisig can be found on the [FAQ](https://docs.yearn.finance/resources/faq#governance).
 
-The multisig is implemented as a Gnosis Safe. The multisig's assets, transactions, and signers can be viewed using [Gnosis's Web UI](https://gnosis-safe.io/app/eth:0xFEB4acf3df3cDEA7399794D0869ef76A6EfAff52/balances). If there is a need to trustlessly audit Yearn's multisig (without trusting the Gnosis site), the Gnosis Safe web app source code can be found on Github [here](https://github.com/gnosis/safe-react). 
+The multisig is implemented as a Gnosis Safe. The multisig's assets, transactions, and signers can be viewed using [Gnosis's Web UI](https://app.safe.global/home?safe=eth:0xFEB4acf3df3cDEA7399794D0869ef76A6EfAff52). If there is a need to trustlessly audit Yearn's multisig (without trusting the Gnosis site), the Gnosis Safe web app source code can be found on Github [here](https://github.com/gnosis/safe-react). 
 
 ## Members
 
-Multisig membership can be validated from the Gnosis UI [here](https://app.safe.global/home?safe=eth:0xFEB4acf3df3cDEA7399794D0869ef76A6EfAff52).  
+Multisig membership can be validated from the Gnosis UI [here](https://app.safe.global/settings/setup?safe=eth:0xFEB4acf3df3cDEA7399794D0869ef76A6EfAff52).  
 Cryptographic membership attestations can be validated against the PGP keys in the [yearn-security](https://github.com/yearn/yearn-security/tree/master/keys) repository.
 
 | Address                                                                                              | Member Name                                 | Membership Attestation                                                           | Etherscan                                                                                          |
