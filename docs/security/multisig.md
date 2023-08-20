@@ -8,7 +8,7 @@ The multisig is implemented as a Gnosis Safe. The multisig's assets, transaction
 
 ## Members
 
-Multisig membership can be validated from the Gnosis UI [here](https://gnosis-safe.io/app/eth:0xFEB4acf3df3cDEA7399794D0869ef76A6EfAff52/settings/owners).  
+Multisig membership can be validated from the Gnosis UI [here](https://app.safe.global/home?safe=eth:0xFEB4acf3df3cDEA7399794D0869ef76A6EfAff52).  
 Cryptographic membership attestations can be validated against the PGP keys in the [yearn-security](https://github.com/yearn/yearn-security/tree/master/keys) repository.
 
 | Address                                                                                              | Member Name                                 | Membership Attestation                                                           | Etherscan                                                                                          |
