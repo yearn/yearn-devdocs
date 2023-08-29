@@ -20,7 +20,7 @@ This dynamic adjustment allows the pool to optimize risk and yield distribution 
 
 If an LST underperforms or faces issues, its weight may decrease, reducing its impact on the overall pool performance. This weight adjustment mechanism helps maintain an optimal risk-adjusted yield for yETH users.
 
-## How bootstrapping (launch) work?
+## How Bootstrapping Works
 
 ![image](https://github.com/MarcoWorms/yearn-devdocs/assets/7863230/b92613a6-42e6-4936-affa-4c77a395ceb3)
 
