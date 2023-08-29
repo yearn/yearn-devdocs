@@ -4,23 +4,23 @@
 
 yETH is a user-governed liquidity pool token consisting of various Ethereum Liquid Staking Derivatives (LSTs). yETH represents one-to-one [beacon chain ETH](https://ethereum.org/en/upgrades/beacon-chain/) (a.k.a. "ETH staked").
 
-yETH does not accrue any yield, it all goes to Staked yETH (st-yETH) holders, which makes yETH a good token to LP in stableswap pools like those on Curve. To acquire yETH, users can mint yETH by depositing LSTs, or swap against the yETH/ETH Curve pool.
+yETH does not accrue any yield, it all goes to Staked yETH (st-yETH) holders, which makes yETH a good token to LP in stableswap pools like those on Curve. To acquire yETH, users can mint yETH by depositing LSTs or swap against the yETH/ETH Curve pool.
 
 ## Staked yETH (st-yETH)
 
-Users stake their yETH to mint st-yETH, accrue yield, and later unstake st-yETH to receive yETH back according to their earnings. Stakers receive all yield and slashings from beacon chain (Ethereum proof-of-stake validators) and earn incentives if they participate and vote in yETH governance.
+Users stake their yETH to mint st-yETH, accrue yield, and later unstake st-yETH to receive yETH back according to their earnings. Stakers receive all yield and slashings from the beacon chain (Ethereum proof-of-stake validators) and earn incentives if they participate and vote in yETH governance.
 
-By bundling LSTs together, st-yETH aims to generate the best risk-adjusted yield from ETH staking. Through protocol governance, st-yETH users can readjust pool weights in order to maximize yield, while mitigating catastrophic scenarios where one or several LSTs in the yETH composition suffer adverse events like de-pegging or security incidents.
+By bundling LSTs, st-yETH aims to generate the best risk-adjusted yield from ETH staking. Through protocol governance, st-yETH users can readjust pool weights to maximize yield while mitigating catastrophic scenarios where one or several LSTs in the yETH composition suffer adverse events like de-pegging or security incidents.
 
 ## Pool Weights for each LST
 
 In yETH, each Liquid Staking Derivative (LST) has an assigned weight representing its proportion in the pool. The weight management system ensures that the pool remains diversified and balanced. When an LST's weight increases, it occupies a larger share of the pool, while a decrease in weight reduces its share.
 
-This dynamic adjustment allows the pool to optimize risk and yield distribution among the LSTs. In practice, this means that as an LST performs well or gains popularity, its weight in the pool may increase, attracting more liquidity and providing better returns.
+This dynamic adjustment allows the pool to optimize risk and yield distribution among the LSTs. In practice, as an LST performs well or gains popularity, its weight in the pool may increase, attracting more liquidity and providing better returns.
 
 If an LST underperforms or faces issues, its weight may decrease, reducing its impact on the overall pool performance. This weight adjustment mechanism helps maintain an optimal risk-adjusted yield for yETH users.
 
-## How boostraping (launch) works?
+## How Bootstrapping Works
 
 ![image](https://github.com/MarcoWorms/yearn-devdocs/assets/7863230/b92613a6-42e6-4936-affa-4c77a395ceb3)
 
@@ -70,7 +70,7 @@ Trusted addresses with privileged access for limited operations. Should eventual
 
 ### Killed mode
 
-> This mode is to be activated in the event of critical failures, whether in the protocol itself or in any of the underlying LST tokens that back it. This can also be used as part of migrating to a new version of the yETH protocol.
+> This mode is to be activated in the event of critical failures, whether in the protocol itself or in any of the underlying LST tokens that back it. This can also be used to migrate to a new version of the yETH protocol.
 
 - No user may deposit assets into the contract.
 - Users may only withdraw assets in a balanced manner.
@@ -86,6 +86,6 @@ Trusted addresses with emergency privileges:
 
 ## Whitelister Role
 
-Trusted addresses with privilege to whitelist new assets:
+Trusted addresses with the privilege to whitelist new assets:
 
 - Can whitelist a new asset, which sets an initial weight, sets the rate provider and requires an initial deposit. New assets can only be whitelisted if no weight change has been scheduled yet.
