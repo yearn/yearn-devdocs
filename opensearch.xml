@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <OpenSearchDescription xmlns="http://a9.com/-/spec/opensearch/1.1/"
                        xmlns:moz="http://www.mozilla.org/2006/browser/search/">
-  <ShortName>Yearn.finance</ShortName>
-  <Description>Search Yearn.finance</Description>
+  <ShortName>yearn.fi</ShortName>
+  <Description>Search yearn.fi</Description>
   <InputEncoding>UTF-8</InputEncoding>
-  <Image width="16" height="16" type="image/x-icon">https://docs.yearn.finance/img/favicon.ico</Image>
-  <Url type="text/html" method="get" template="https://docs.yearn.finance/search?q={searchTerms}"/>
-  <Url type="application/opensearchdescription+xml" rel="self" template="https://docs.yearn.finance/opensearch.xml" />
-  <moz:SearchForm>https://docs.yearn.finance/</moz:SearchForm>
+  <Image width="16" height="16" type="image/x-icon">https://docs.yearn.fi/img/favicon.ico</Image>
+  <Url type="text/html" method="get" template="https://docs.yearn.fi/search?q={searchTerms}"/>
+  <Url type="application/opensearchdescription+xml" rel="self" template="https://docs.yearn.fi/opensearch.xml" />
+  <moz:SearchForm>https://docs.yearn.fi/</moz:SearchForm>
 </OpenSearchDescription>
