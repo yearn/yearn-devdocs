@@ -2,7 +2,7 @@
 
 ---
 
-[veYFI](https://docs.yearn.finance/contributing/governance/veyfi) token holders control the Yearn ecosystem through off-chain proposals and votes via [Snapshot](https://snapshot.org/#/ybaby.eth). Proposals that generate majority support (>50% of the vote) are implemented by a 9-member multi-signature wallet, and 6 out of 9 wallet signers must sign for a change to be implemented. The [members of the multi-signature wallet](https://docs.yearn.finance/resources/faq#who-is-on-the-multisig) were voted in by YFI holders and are subject to change from future governance votes.
+[veYFI](https://docs.yearn.fi/contributing/governance/veyfi) token holders control the Yearn ecosystem through off-chain proposals and votes via [Snapshot](https://snapshot.org/#/ybaby.eth). Proposals that generate majority support (>50% of the vote) are implemented by a 9-member multi-signature wallet, and 6 out of 9 wallet signers must sign for a change to be implemented. The [members of the multi-signature wallet](https://docs.yearn.fi/resources/faq#who-is-on-the-multisig) were voted in by YFI holders and are subject to change from future governance votes.
 
 ## Discussion
 
@@ -24,7 +24,7 @@ Getting as much feedback as possible from the various communication channels is 
 
 #### Previous and current proposals
 
-- Previous: [Proposal Repository](https://docs.yearn.finance/contributing/governance/proposal-repository)
+- Previous: [Proposal Repository](https://docs.yearn.fi/contributing/governance/proposal-repository)
 - Current: [Snapshot](https://snapshot.org/#/ybaby.eth)
 
 #### Requirements to pass proposals
@@ -51,7 +51,7 @@ The default template for proposals can be found on [Github](https://github.com/y
 
 #### How do I vote?
 
-- Holding [veYFI](https://docs.yearn.finance/contributing/governance/veyfi) enables you to vote on Yearn's [Snapshot](https://snapshot.org/#/ybaby.eth) page
+- Holding [veYFI](https://docs.yearn.fi/contributing/governance/veyfi) enables you to vote on Yearn's [Snapshot](https://snapshot.org/#/ybaby.eth) page
 
 #### What’s the difference between voting for a poll on the forum and an off-chain vote?
 

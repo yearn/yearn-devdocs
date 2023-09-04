@@ -8,35 +8,35 @@
 
 #### What is a Vault?
 
-- [yVaults](https://docs.yearn.finance/getting-started/products/yvaults/overview#what-are-yvaults)
+- [yVaults](https://docs.yearn.fi/getting-started/products/yvaults/overview#what-are-yvaults)
 
 #### How is vault growth calculated?
 
-- [Vault Returns](https://docs.yearn.finance/getting-started/guides/how-to-understand-yvault-roi#roi-calculation)
+- [Vault Returns](https://docs.yearn.fi/getting-started/guides/how-to-understand-yvault-roi#roi-calculation)
 
 #### How can I deposit?
 
-- [yVaults](https://docs.yearn.finance/getting-started/using-yearn)
+- [yVaults](https://docs.yearn.fi/getting-started/using-yearn)
 
 #### What are the implications of depositing or withdrawing with an asset that isn't native to the vault?
 
-- You can potentially [lose value](https://docs.yearn.finance/getting-started/using-yearn#if-you-dont-have-the-required-token-for-the-vault-that-you-would-like-to-deposit-in) to slippage.
+- You can potentially [lose value](https://docs.yearn.fi/getting-started/using-yearn#if-you-dont-have-the-required-token-for-the-vault-that-you-would-like-to-deposit-in) to slippage.
 
 #### Can I deposit any token into any vault?
 
-- [Zap](https://docs.yearn.finance/getting-started/products/yvaults/overview#zap-in-with-any-asset)
+- [Zap](https://docs.yearn.fi/getting-started/products/yvaults/overview#zap-in-with-any-asset)
 
 #### Where can I go to see how my deposit is performing?
 
-- [Tools to track your funds](https://docs.yearn.finance/getting-started/using-yearn#tools-to-track-your-funds)
+- [Tools to track your funds](https://docs.yearn.fi/getting-started/using-yearn#tools-to-track-your-funds)
 
 #### When do I realize profits from a vault?
 
-- Your profits [are compounded](https://docs.yearn.finance/getting-started/using-yearn#tools-to-track-your-funds) into the vault token overtime, which can be withdrawn for your principal plus profit.
+- Your profits [are compounded](https://docs.yearn.fi/getting-started/using-yearn#tools-to-track-your-funds) into the vault token overtime, which can be withdrawn for your principal plus profit.
 
 #### How is vault growth calculated?
 
-- [Vault Returns](https://docs.yearn.finance/getting-started/guides/how-to-understand-yvault-roi#roi-calculation)
+- [Vault Returns](https://docs.yearn.fi/getting-started/guides/how-to-understand-yvault-roi#roi-calculation)
 
 #### How can I migrate vaults?
 
@@ -44,7 +44,7 @@
 
 #### What is the fee structure?
 
-- [Detailed description of fees](https://docs.yearn.finance/getting-started/products/yvaults/overview#yvault-fee-structure)
+- [Detailed description of fees](https://docs.yearn.fi/getting-started/products/yvaults/overview#yvault-fee-structure)
 
 #### Why is gas so expensive?
 
@@ -52,13 +52,13 @@
 
 #### What is yveCRV?
 
-- [How to understand yveCRV](https://docs.yearn.finance/getting-started/guides/how-to-understand-yveCRV)
+- [How to understand yveCRV](https://docs.yearn.fi/getting-started/guides/how-to-understand-yveCRV)
 
 ### Vault Strategies
 
 #### What is a Vault Strategy?
 
-- [Strategies](https://docs.yearn.finance/getting-started/products/yvaults/vaults-and-strategies)
+- [Strategies](https://docs.yearn.fi/getting-started/products/yvaults/vaults-and-strategies)
 
 #### Where can I find strategy descriptions?
 
@@ -70,11 +70,11 @@
 
 #### Does anyone monitor strategy performance?
 
-- [Strategists and Guardians](https://docs.yearn.finance/getting-started/products/yvaults/vaults-and-strategies)
+- [Strategists and Guardians](https://docs.yearn.fi/getting-started/products/yvaults/vaults-and-strategies)
 
 #### What is the process for getting my strategy onto Yearn?
 
-- [Protocol Contributors](https://docs.yearn.finance/developers/v2/getting-started#overview-of-our-vetting-process)
+- [Protocol Contributors](https://docs.yearn.fi/developers/v2/getting-started#overview-of-our-vetting-process)
 
 #### My strategy hasn't been harvested in a while. Is that normal?
 
@@ -88,15 +88,15 @@
 
 #### Who is on the multisig?
 
-- [Multisig Documentation](https://docs.yearn.finance/security/multisig)
+- [Multisig Documentation](https://docs.yearn.fi/security/multisig)
 
 #### What is a YIP?
 
-- [Yearn Improvement Proposals](https://docs.yearn.finance/contributing/governance/proposal-process)
+- [Yearn Improvement Proposals](https://docs.yearn.fi/contributing/governance/proposal-process)
 
 #### How do I vote?
 
-- [Voting Details](https://docs.yearn.finance/contributing/governance/proposal-process#voting)
+- [Voting Details](https://docs.yearn.fi/contributing/governance/proposal-process#voting)
 
 ## Security
 
@@ -110,13 +110,13 @@
 
 #### Where should I report a bug?
 
-- [File a bug](https://docs.yearn.finance/contributing/contribute#file-a-bug) — create a new issue in the relevant repository.
+- [File a bug](https://docs.yearn.fi/contributing/contribute#file-a-bug) — create a new issue in the relevant repository.
 
 ## Support
 
 #### I deposited into a vault, but the vault token isn't showing in my wallet? How do I make it appear?
 
-- On the [yearn.finance](https://yearn.finance) user interface, click the name of the vault that you deposited in. This will take you to to the Etherscan page for the vault. Click on the "Tracker" link in the "More Info" box to find the vault token page. Copy the address from there and follow your wallet's instructions on [adding a custom token](https://docs.yearn.finance/getting-started/guides/how-to-add-a-custom-token-to-metamask)
+- On the [yearn.finance](https://yearn.finance) user interface, click the name of the vault that you deposited in. This will take you to to the Etherscan page for the vault. Click on the "Tracker" link in the "More Info" box to find the vault token page. Copy the address from there and follow your wallet's instructions on [adding a custom token](https://docs.yearn.fi/getting-started/guides/how-to-add-a-custom-token-to-metamask)
 - Alternatively, most vault tokens are supported on [Zapper.fi](https://zapper.fi) shortly after their release.
 
 #### I'm getting an error that says "SafeERC20: low-level call failed". How do I resolve this?
@@ -156,15 +156,15 @@
 
 #### Lists of yVaults Deployed
 
-- Use the [Registry](https://docs.yearn.finance/vaults/smart-contracts/registry)
+- Use the [Registry](https://docs.yearn.fi/vaults/smart-contracts/registry)
 
 #### Statistics
 
-- [Yearn Statistics Links](https://docs.yearn.finance/resources/links/#statistics)
+- [Yearn Statistics Links](https://docs.yearn.fi/resources/links/#statistics)
 
 #### Latest Yearn News and Blog Posts
 
-- [Yearn News Links](https://docs.yearn.finance/resources/links/#updates)
+- [Yearn News Links](https://docs.yearn.fi/resources/links/#updates)
 
 #### Media Resources
 

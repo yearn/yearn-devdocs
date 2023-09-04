@@ -19,13 +19,13 @@ A Yearn Vault token is a yield-bearing version of a token, so when locked up as 
 
 Vaults strategies are constantly audited to practice the highest security standards of DeFi. Grow with us one day at a time. More information at:
 
-* [Vaults & Strategies Deployment Security Guidelines](https://docs.yearn.finance/developers/v2/DEPLOYMENT)
+* [Vaults & Strategies Deployment Security Guidelines](https://docs.yearn.fi/developers/v2/DEPLOYMENT)
 * [Yearning for Yearn: Messari Report](https://messari.io/article/yearning-for-yearn)
 * [Yearn Security Processes](https://github.com/yearn/yearn-security/blob/master/SECURITY.md)
 
 ### Split Fees with Yearn
 
-Yearn's fee-sharing partner [program](https://docs.yearn.finance/partners/introduction) allows you to earn up to 50% of the fees generated on your users' TVL every month. We are in this together.
+Yearn's fee-sharing partner [program](https://docs.yearn.fi/partners/introduction) allows you to earn up to 50% of the fees generated on your users' TVL every month. We are in this together.
 
 ### They’re ERC20 Compatible
 

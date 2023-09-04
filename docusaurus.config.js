@@ -5,7 +5,7 @@ const katex = require('rehype-katex')
 module.exports = {
   title: 'Yearn.finance',
   tagline: 'DeFi made simple',
-  url: 'https://docs.yearn.finance',
+  url: 'https://docs.yearn.fi',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',

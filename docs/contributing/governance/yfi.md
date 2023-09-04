@@ -48,4 +48,4 @@ YDPs are proposals that change where any discrete decision-making power is deleg
 
 ## veYFI
 
-With [veYFI](https://docs.yearn.finance/contributing/governance/veyfi) launch, governance changed from using YFI to veYFI as voting power.
+With [veYFI](https://docs.yearn.fi/contributing/governance/veyfi) launch, governance changed from using YFI to veYFI as voting power.

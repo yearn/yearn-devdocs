@@ -23,7 +23,7 @@ The old structure used before the changes brought by [YIP-69](https://gov.yearn.
 | Management Fee  | 0%  |
 | Performance Fee | 20% |
 
-On the [yearn.finance](https://yearn.finance/) user interface, yield is displayed as net APY. This means that both fees and compounding returns are taken into consideration in the rates presented. Since harvests don't occur on a set basis, yield is estimated based on historical data. For more information, see [How to Understand yVault ROI](https://docs.yearn.finance/getting-started/guides/how-to-understand-yvault-roi)
+On the [yearn.finance](https://yearn.finance/) user interface, yield is displayed as net APY. This means that both fees and compounding returns are taken into consideration in the rates presented. Since harvests don't occur on a set basis, yield is estimated based on historical data. For more information, see [How to Understand yVault ROI](https://docs.yearn.fi/getting-started/guides/how-to-understand-yvault-roi)
 
 ## v2 yVault Improvements
 
@@ -34,4 +34,4 @@ On the [yearn.finance](https://yearn.finance/) user interface, yield is displaye
 
 ## v3 yVaults
 
-The newest version of yVaults are EIP-4626 compatible and allow for tokenized strategies, read more: https://docs.yearn.finance/getting-started/products/yvaults/v3
+The newest version of yVaults are EIP-4626 compatible and allow for tokenized strategies, read more: https://docs.yearn.fi/getting-started/products/yvaults/v3

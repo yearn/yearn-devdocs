@@ -1,6 +1,6 @@
 # Fork Yearn UI: create a customized stablecoins-only vaults website
 
-This is a step-by-step guide on how to fork and customize [macarena.finance](https://macarena.finance/) which is a yearn UI made to be forked using the open-source [repository](https://github.com/yearn/macarena-finance). Deploying your own UI makes you eligible to receive partner [profit-sharing](https://docs.yearn.finance/partners/introduction#profit-share-model) fees.
+This is a step-by-step guide on how to fork and customize [macarena.finance](https://macarena.finance/) which is a yearn UI made to be forked using the open-source [repository](https://github.com/yearn/macarena-finance). Deploying your own UI makes you eligible to receive partner [profit-sharing](https://docs.yearn.fi/partners/introduction#profit-share-model) fees.
 
 In this example we will create a fork dedicated only to stablecoin vaults, it will be called "Cozy Stables Finance" and it will help users filter vaults by some stablecoins types (fiat backed, crypto backed, centralized emission, decentralized emission)
 
