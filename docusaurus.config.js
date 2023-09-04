@@ -156,7 +156,7 @@ module.exports = {
             },
             {
               label: 'Twitter',
-              href: 'https://twitter.com/iearnfinance',
+              href: 'https://x.com/yearnfi',
             },
             {
               label: 'Telegram',
