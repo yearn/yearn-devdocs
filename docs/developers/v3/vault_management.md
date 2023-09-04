@@ -1,15 +1,15 @@
 # Deploying and managing a V3 Vault
 
-V3 makes it as simple as possible for anyone to deploy and manage their own Vaults. No longer will Yearn be the only manager of Vaults, gate keeping who can be debt allocator or what strategies should be added to a vault. Now anyone can deploy, manage and earn fees from their own vision and preferences for everything from risk profile, fee model, decentralization etc.
+V3 makes it as simple as possible for anyone to deploy and manage their own Vaults. No longer will Yearn be the only manager of Vaults, gate-keeping who can be debt allocator or what strategies should be added to a vault. Now anyone can deploy, manage, and earn fees from their own vision and preferences for everything from risk profile, fee model, decentralization etc.
 
-In V3 our "Meta Vaults" or "Vaults of Vaults" are designed to be efficient 4626 compliant debt allocators that can have many different "strategies" attached to them and will direct funds to theses strategies based on the vault managements choice. The vaults are built to be "plug and play" meaning managers can simply deploy, add their strategies and start the yield generation process. But also hold many customization factors which allows different managers to differentiate themselves and experiment with different optionality.
+In V3 our "Meta Vaults" or "Vaults of Vaults" are designed to be efficient 4626 compliant debt allocators that can have many different "strategies" attached to them and will direct funds to these strategies based on the vault's management choice. The vaults are built to be "plug and play" meaning managers can simply deploy, add their strategies, and start the yield generation process. But they also hold many customization factors which allows different managers to differentiate themselves and experiment with different optionality.
 
 Running your own vault requires no need to know how to code. Anyone with a desire to manage their own strategies and allocations can simply deploy and run their own vault. 
 
 ## Definitions
 
 **vault**: ERC-4626 compliant contract that accepts deposits, issues shares and allocates funds to different strategies to earn yield on.
-**shares**: A tokenized representation of a depositers share of the underlying balance of a vault.
+**shares**: A tokenized representation of a depositor's share of the underlying balance of a vault.
 **strategy**: Any ERC-4626 compliant contract that can be added to a vault that earns yield on an underlying asset.
 **debt**: The amount of the underlying asset that a vault has sent to a strategy to earn yield on.
 **report**: The function where a vault accounts for any profits or losses a strategy has accrued, charges any applicable fees and locks profit to be distributed to depositers.
@@ -17,21 +17,21 @@ Running your own vault requires no need to know how to code. Anyone with a desir
 
 ## Deployment
 
-Each release of the vaults will have its own "VaultFactory" deployed to make it as simple and trustless a possible to deploy your own vault. The vault factory utilizes [ERC-5202](https://eips.ethereum.org/EIPS/eip-5202) Blueprint pattern to allow anyone to trustlessly deploy their own vault that is an exact copy of the previously deployed "Blueprint" vault for that specific version.
+Each release of the vaults will have its own "Vault Factory" deployed to make it as simple and trustless as possible to deploy your own vault. The vault factory utilizes [ERC-5202](https://eips.ethereum.org/EIPS/eip-5202) blueprint pattern to allow anyone to trustlessly deploy their vault which is an exact copy of the previously deployed "blueprint" vault for that specific version.
 
 ** Vaults not deployed through the factory will not be recognized as part of the Yearn ecosystem and may cause issues during runtime.
 
-To deploy your own vault, simply find the address of the factory for the most recent release [here](INSERT LINK) and call `Factory.deploy_new_vault(params)`.
+To deploy your own vault, simply find the address of the factory for the most recent release here and call `Factory.deploy_new_vault(params)`.
 
 The needed parameters are:
 
-**asset**: The ERC-20 compliant token that will be used as the underlying asset to earn yield on for the vault.
+**asset**: The ERC-20 compliant token used as the underlying asset to earn yield on for the vault.
 **name**: The name for your vault that will apply to the token issues to depositers.
-**symbol**: The symbol the token issued to depositers will use.
-**role_manager**: The address that will be in charge of giving permissions to other address's to allow access to certain permissioned functions.
+**symbol**: The symbol the token issued to depositors will use.
+**role_manager**: The address in charge of giving permissions to other addresses which allow access to certain permissioned functions.
 **profit_max_unlock_time**: The time in seconds that profits reported from strategies will be unlocked over.
 
-The Blueprint ERC standard lowers the gas cost compared to a traditional off chain deployment, however deployments of the vaults are still expected to be relatively expensive costing over 400k gas.
+The blueprint ERC standard lowers the gas cost compared to a traditional off-chain deployment, however, deployments of the vaults are still expected to be relatively expensive costing over 400k gas.
 
 Once deployed you can get the address of your vault from either the return value of the Factory function or the `NewVault` event emitted by the factory.
 
@@ -45,13 +45,13 @@ Once deployed there are some additional setup steps to take as well as variables
 
 #### Roles
 ---
-The first is to set up the Role's for your specific vault. The vaults use a [Role](INSER LINK) based system for access control to the permissioned functions. The roles are a [Vyper Enumerator](https://docs.vyperlang.org/en/stable/types.html#enums) pattern which is based on Pythons. 
+The first is to set up the Roles for your specific vault. The vaults use a role-based system for access control to the permissioned functions. The roles are a [Vyper Enumerator](https://docs.vyperlang.org/en/stable/types.html#enums) pattern which is based on Pythons. 
 
-Each permissioned function in the Vaults has its own "role" that can call that specific function. For example in order to call `add_strategy(new_strategy: address)` the address must have the `ADD_STRATEGY_MANAGER` role. Roles can be held by any number of addresses as well as by no address. There is also the option to "open" any role, meaning that the function becomes permissionless. (This is not recommended for most permissioned function and should be done with care.)
+Each permissioned function in the Vaults has its own "role" that can call that specific function. For example, to call `add_strategy(new_strategy: address)` the address must have the `ADD_STRATEGY_MANAGER` role. Roles can be held by any number of addresses as well as by no address. There is also the option to "open" any role, meaning that the function becomes permissionless. (This is not recommended for most permissioned function and should be done with care.)
 
-The same address can hold every role, each role can be help by a different address or any combination desired.
+The same address can hold every role, each role can be helped by a different address or any combination desired.
 
-To give an account a specific role simply call `vault.set_role(account, role)` where 'role' is the int representing all the roles you would like the 'account' to hold. A full explanation of [python enumerators](https://docs.python.org/3/howto/enum.html) is beyond the scope of this doc, but the corresponding int to each role can be viewed [here](https://github.com/yearn/yearn-vaults-v3/blob/master/tests/utils/constants.py#L12)
+To give an account a specific role can simply call `vault.set_role(account, role)` where 'role' is the int representing all the roles you would like the 'account' to hold. A full explanation of [python enumerators](https://docs.python.org/3/howto/enum.html) is beyond the scope of this doc, but the corresponding int to each role can be viewed [here](https://github.com/yearn/yearn-vaults-v3/blob/master/tests/utils/constants.py#L12)
 
 Example:
 
@@ -75,16 +75,16 @@ NOTE: The vault `role_manager` can not call any permissioned function by default
 
 #### Deposit Limit
 ---
-Each vault will default to have a deposit limit set to 0. Meaning all deposits will revert.
+Each vault will default to have a deposit limit set to 0. Which means all deposits will revert.
 
-Once ready the address with the DEPOSIT_LIMIT_MANAGER will need to call `vault.set_deposit_limit(deposit_limit)`
+Once ready, the address with the DEPOSIT_LIMIT_MANAGER will need to call `vault.set_deposit_limit(deposit_limit)`
 
 #### MISC
 ---
 There are other options that a vault manager can set that are not necessary for the vault to function but may be desired for further customization.
 
 **minimum_total_idle**: An amount specified in the underlying asset that the vault will force to remain loose in the vault during debt updates to make servicing withdraws cheaper.
-**profit_max_unlock_time**: The time in which profits that have been reported by the strategies will be distributed to depositers. This can be adjusted to match the current report cycle of the vaults strategies to create a continuous stream of APY being payed to depositers.
+**profit_max_unlock_time**: The time in which profits that have been reported by the strategies will be distributed to depositors. This can be adjusted to match the current report cycle of the vaults strategies to create a continuous stream of APY being paid out to depositors.
 
 ## Running the Vault
 
