@@ -83,26 +83,26 @@ Once ready, the address with the DEPOSIT_LIMIT_MANAGER will need to call `vault.
 ---
 There are other options that a vault manager can set that are not necessary for the vault to function but may be desired for further customization.
 
-**minimum_total_idle**: An amount specified in the underlying asset that the vault will force to remain loose in the vault during debt updates to make servicing withdraws cheaper.
-**profit_max_unlock_time**: The time in which profits that have been reported by the strategies will be distributed to depositors. This can be adjusted to match the current report cycle of the vaults strategies to create a continuous stream of APY being paid out to depositors.
+**minimum_total_idle**: An amount specified in the underlying asset that the vault will force to remain free in the vault during debt updates to make servicing withdraws cheaper.
+**profit_max_unlock_time**: The time in which profits that have been reported by the strategies will be distributed to depositors. This can be adjusted to match the current report cycle of the vault's strategies to create a continuous stream of APY being paid out to depositors.
 
 ## Running the Vault
 
 #### Strategy Management
-The job of a vault is to manage debt between strategies that do the yield generation. There are 3 roles that control what strategies are added to the vault, ADD_STRATEGY_MANAGER, REVOKE_STRATEGY_MANAGER and FORCE_REVOKE_MANAGER. 
+The job of a vault is to manage debt between strategies that do the yield generation. There are 3 roles that control what strategies are added to the vault, ADD_STRATEGY_MANAGER, REVOKE_STRATEGY_MANAGER, and FORCE_REVOKE_MANAGER. 
 
-A strategy can be any contract that meets has the needed [4626 interface](https://github.com/yearn/yearn-vaults-v3/blob/master/contracts/VaultV3.vy#L39) for the vault to interact with it. This includes Tokenized Strategies, 3rd party 4626 vaults as well as other Yearn meta vaults.
+A strategy can be any contract that has the needed [4626 interface](https://github.com/yearn/yearn-vaults-v3/blob/master/contracts/VaultV3.vy#L39) for the vault to interact with it. This includes Tokenized Strategies, 3rd party 4626 vaults, as well as other Yearn meta vaults.
 
 To add a strategy first call `vault.add_strategy(strategy_address)`. Each strategy gets added with a default 'max_debt' of 0. Meaning the MAX_DEBT_MANAGER will need to call `vault.update_max_debt_for_strategy(strategy, max_debt)`.
 
-Once a strategy has been added and given a max_debt the DEBT_MANAGER role can allocate funds to it.
+Once a strategy has been added and given a max_debt, the DEBT_MANAGER role can allocate funds to it.
 
-To remove a strategy first remove all the debt from the strategy and then call `vault.revoke_strategy(strategy)`.
+To remove a strategy, first remove all the debt from the strategy and then call `vault.revoke_strategy(strategy)`.
 
 If a strategy has issues and is unable to pay all of its debt back `vault.force_revoke_strategy(strategy)` can be used to forcefully remove the strategy.
 
-NOTE: Forcefully removing a strategy that still has debt will cause a loss to be recorded and a reduction of Price Per Shares.
-#### Debt Updates:
+NOTE: Forcefully removing a strategy that still has debt will cause a loss to be recorded and a reduction of Price Per Share.
+#### Debt Updates
 
 The DEBT_MANAGER role is in charge of allocating funds between the strategies added to a vault.
 
@@ -113,40 +113,35 @@ Debt updates will also respect the strategies specific `maxWithdraw` and `maxDep
 To deposit or withdraw vault funds from a strategy simply call `vault.update_debt(strategy, desired_debt)` where desired debt is the end amount denominated in the underlying asset that the strategy should have after the full debt update.
 
 NOTE: If a strategy has unrealized losses you will not be able to lower its debt.
+NOTE: It is recommended to report a strategy's gain before withdrawing 100% of debt from the strategy.
 
-NOTE: It is recommended to report a strategies gain before withdrawing 100% of debt from the strategy.
+#### Reporting
 
-#### Reporting:
+To properly record any profits/losses from a strategy, charge fees, and lock profits for distribution to depositors, the REPORTING_MANAGER will need to "report" for each strategy via `vault.process_report(strategy)`.
 
-In order to properly record any profits/losses from a strategy, charge fees and lock profits for distribution to depositers the REPORTING_MANAGER will need to "report" for each strategy. 
+This function will trigger all necessary logic to record a strategy's gain since the last report and begin distributing that profit to depositors over the vault's specific `profit_max_unlock_time`.
 
-`vault.proccess_report(strategy)`
+NOTE: To charge fees you will need to first have added an 'accountant' to your vault that will hold the fee logic as well as receive the fees that are charged.
 
-This function will trigger all necessary logic to record a strategies gain since the last report and begin distributing that profit to depositers over the vaults specific `profit_max_unlock_time`.
-
-NOTE: In order to charge fees you will need to first have added an ['accountant'](#Accountant) to your vault that will hold the fee logic as well as receive the fees that are charged.
-
-**NOTE: All profit and loss calculation are done using the strategies 'convertToAssets' function. If this function can be manipulated it can lead to incorrect profits or losses being recorded by the vault**
+**NOTE: All profit and loss calculations are done using the strategies 'convertToAssets' function. If this function can be manipulated it can lead to incorrect profits or losses being recorded by the vault**
 
 ## Customization
 
-#### Accountant:
+#### Accountant
 
-In order to charge fees you will need to add a separate contract as the vault's 'accountnat'.
+To charge fees you will need to add a separate contract as the vault's 'accountant'.
 
 `vault.set_accountant(accountant)`
 
-The accountant is [called by the vault](https://github.com/yearn/yearn-vaults-v3/blob/master/contracts/VaultV3.vy#L1070) during every `report` with the strategy that is reporting and the gain or loss its reporting. The accountant will then return the total fees or refunds that should be charged by the vault during that report and payed to the accountant.
+The accountant is [called by the vault](https://github.com/yearn/yearn-vaults-v3/blob/master/contracts/VaultV3.vy#L1070) during every `report` with the strategy that is reporting and the gain or loss it's reporting. The accountant will then return the total fees or refunds that should be charged by the vault during that report and paid to the accountant.
 
-Accountants can hold any logic that vault managers want to dictate fees or simply charge normal performance or management fees.
-
-A ready to use Generic Accountant that can be easily used with any vault has been developed already and can be deployed and added to any vault for those that just want to charge standard fees.
+Accountants can hold any logic that vault managers want to dictate fees or simply charge normal performance or management fees. A ready-to-use Generic Accountant can easily be used with any vault for those who wish to just charge standard fees.
 
 See Here: https://github.com/yearn/vault-periphery/blob/master/contracts/accountants/GenericAccountant.vy
 
-#### Default Queue:
+#### Default Queue
 
-Each vault has a `default_queue` that it keeps track of based on the strategies that are added and removed that is used to service withdraws when no custom queue is passed in. This queue is simply ordered by the time when strategies were added. Where the oldest strategy is at the beginning of the queue.
+Each vault has a `default_queue` which is based on the strategies that are added and removed from the vault. The `default_queue` is used to service withdraws when no custom queue is passed in. This queue is simply ordered by the time when strategies were added: where the oldest strategy is at the beginning of the queue.
 
 If a different ordering is desired or management would like to remove a certain strategy from the default queue, the QUEUE_MANAGER role can set a new queue.
 
@@ -158,11 +153,11 @@ Where `new_default_queue` is an array of strategies with a max length of 10, in 
 
 ### What Tokens Not to Use
 
-There are certain tokens who's native behavior makes them incompatible with being the underlying asset of a vault and should be avoided.
+There are certain tokens whose native behavior makes them incompatible with being the underlying asset of a vault and should be avoided.
 
 A few examples of this are:
 - Rebasing Tokens
 - Fee on Transfer
 - Re-entrancy Tokens (ERC-777)
 
-Any token thats normal functionality breaks with the ERC-20 standard may not be compatible with the vaults.
+Any token whose normal functionality breaks the ERC-20 standard may not be compatible with V3 vaults.
