@@ -4,13 +4,13 @@ This is a collection of resources that aim to be an introduction to how yVaults 
 
 ## Introduction
 
-The architecture of V3 is an improved version of V2, with increased customization and features. For a complete intro guide of V2 see [here](https://docs.yearn.finance/developers/v2/additional-resources).
+The architecture of V3 is an improved version of V2, with increased customization and features. For a complete intro guide of V2 see [here](https://docs.yearn.fi/developers/v2/additional-resources).
 
-Yearns V3 system is designed to be an un-opinionated and customizable infrastructure for anyone to easily build on to make the task of generating yield in a safe and efficient manner as easy as possible for all parties involved. 
+Yearns V3 system is designed to be an un-opinionated and customizable infrastructure for anyone to easily build on which makes the task of generating yield safely and efficiently as easy as possible for all parties involved.
 
-V3 is built in the hopes of opening up the gates to allow anyone and everyone who wants to build their own strategy or manage their own vaults to easily be able to. Allowing for a greater and more decentralized suite of yield generating products that fit any needs. 
+V3 is built in the hopes of opening up the gates to allow anyone and everyone who wants to build a strategy or manage vaults to be easily able to do so. It allows for a greater and more decentralized suite of yield-generating products that fit any needs.
 
-So whether you are a full blown gas golfing expert, a degen looking to codify your personal yield farming or just an average crypto user looking to earn some passive yield on your magical internet tokens V3 is for you.
+So whether you are a full-blown gas golfing expert, a degen looking to codify your personal yield farming, or just an average crypto user looking to earn some passive yield on your magical internet tokens, V3 is for you.
 
 ## Definitions
 - [Vault](https://github.com/yearn/yearn-vaults-v3/blob/master/contracts/VaultV3.vy) : A vault or "Meta Vault" in V3 refers to a ERC-4626 compliant contract that takes in user deposits, mints shares corresponding to the users share of the underlying assets held in that vault and then allocates the underlying asset to a range of different "strategies" that earn yield on that asset. 
