@@ -10,11 +10,11 @@ Yearn Vaults are capital pools that automatically generate yield based on opport
 
 ## Governance
 
-The Yearn ecosystem is controlled by YFI token holders who submit and vote on off-chain proposals that govern the ecosystem. Proposals that generate majority support \(&gt;50% of the vote\) are implemented by a 9-member multi-signature wallet. Changes must be signed by 6 out of the 9 wallet signers to be implemented. The members of the multi-signature wallet were voted in by YFI holders and are subject to change from future governance votes. Please refer to the [multisig documentation](https://docs.yearn.fi/security/multisig) for the list of multisig signers. For more info about the governance process, please consult the [Governance FAQ](https://docs.yearn.fi/resources/faq#governance) and [YIP-61: Governance 2.0](https://gov.yearn.finance/t/yip-61-governance-2-0/10460).
+The Yearn ecosystem is controlled by YFI token holders who submit and vote on off-chain proposals that govern the ecosystem. Proposals that generate majority support \(&gt;50% of the vote\) are implemented by a 9-member multi-signature wallet. Changes must be signed by 6 out of the 9 wallet signers to be implemented. The members of the multi-signature wallet were voted in by YFI holders and are subject to change from future governance votes. Please refer to the [multisig documentation](https://docs.yearn.fi/security/multisig) for the list of multisig signers. For more info about the governance process, please consult the [Governance FAQ](https://docs.yearn.fi/resources/faq#governance) and [YIP-61: Governance 2.0](https://gov.yearn.fi/t/yip-61-governance-2-0/10460).
 
 ## Communication Channels
 
-Governance Forum [https://gov.yearn.finance/](https://gov.yearn.finance/)
+Governance Forum [https://gov.yearn.fi/](https://gov.yearn.fi/)
 
 Discord [https://discord.gg/yearn](https://discord.gg/yearn)
 

@@ -1,6 +1,6 @@
 # Vault.vy
 > vyper: `0.3.3`
-> author: `yearn.finance`
+> author: `yearn.fi`
 > license: `GNU AGPLv3`
 
 

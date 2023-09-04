@@ -7,6 +7,6 @@ After depositing, your funds first go to the vault contract and then are deploye
 **Vault and Strategies Contracts:** [Yearn Watch](https://yearn.watch/)
 
 
-**Vault and Strategies Descriptions:** [The Vaults at Yearn](https://vaults.yearn.finance/)
+**Vault and Strategies Descriptions:** [The Vaults at Yearn](https://vaults.yearn.fi/)
 
 **Strategy Descriptions Glossary:** [How to Understand Strategies Descriptions](https://docs.yearn.fi/getting-started/guides/how-to-understand-strategies-descriptions)

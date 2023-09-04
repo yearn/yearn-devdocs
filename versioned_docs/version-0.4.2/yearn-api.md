@@ -1,7 +1,7 @@
 # Yearn API
 
 ### Production Endpoint
-https://api.yearn.finance/v1/chains/1/vaults/all
+https://api.yearn.fi/v1/chains/1/vaults/all
 
 ### API Schema
 

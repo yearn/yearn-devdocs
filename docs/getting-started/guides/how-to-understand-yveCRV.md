@@ -14,7 +14,7 @@ yveCRV stands for veCRV-DAO yVault and is [listed on CoinGecko](https://www.coin
 
 ## How do I participate?
 
-Deposit CRV into the yveCRV vault: [https://yearn.finance/vaults](https://yearn.finance/vaults)
+Deposit CRV into the yveCRV vault: [https://yearn.fi/vaults](https://yearn.fi/vaults)
 
 As with all vaults, if you are depositing for the first time two transactions are required. First you need to approve the transaction. This allows CRV to be deposited into Yearn vaults. And then you decide how much CRV you would like to deposit. Please refer to the [general guide](https://docs.yearn.fi/getting-started/using-yearn) for more information.
 
@@ -78,7 +78,7 @@ Deposit your Sushiswap LP into the [Pickle jar](https://app.pickle.finance/jars)
 
 ## How can I stay up-to-date with vaults?
 
-Visit [The Vaults at Yearn](https://vaults.yearn.finance/) newsletter.
+Visit [The Vaults at Yearn](https://vaults.yearn.fi/) newsletter.
 
 ## Still have questions?
 

@@ -4,7 +4,7 @@
 
 ## What are yVaults?
 
-[yVaults](https://yearn.finance/vaults) are like savings accounts for your crypto assets. They accept your deposit, then route it through strategies which seek out the highest yield available in DeFi.
+[yVaults](https://yearn.fi/vaults) are like savings accounts for your crypto assets. They accept your deposit, then route it through strategies which seek out the highest yield available in DeFi.
 
 ![image](https://github.com/yearn/yearn-devdocs/assets/7863230/af161f3d-ed71-4010-84ba-e1bfab66d782)
 
@@ -14,7 +14,7 @@
 
 **Management Fee**: Flat rate taken from vault deposits over a year. The fee is extracted by minting new shares of the vault, thereby diluting vault participants. This is done at the time of harvest, and calculated based on time since the previous harvest.
 
-The old structure used before the changes brought by [YIP-69](https://gov.yearn.finance/t/yip-69-reduce-and-cap-fees-through-yrates/12588) was 20% performance fees and 2% management fees, but this has changed and vaults now have a dynamic fee structure. Single asset vaults have no management fee. Fee values for all yVaults can be checked in real-time at [yearn.watch](https://yearn.watch/)
+The old structure used before the changes brought by [YIP-69](https://gov.yearn.fi/t/yip-69-reduce-and-cap-fees-through-yrates/12588) was 20% performance fees and 2% management fees, but this has changed and vaults now have a dynamic fee structure. Single asset vaults have no management fee. Fee values for all yVaults can be checked in real-time at [yearn.watch](https://yearn.watch/)
 
 *Example YFI yVault fee structure at the time of writing:*  
 
@@ -23,7 +23,7 @@ The old structure used before the changes brought by [YIP-69](https://gov.yearn.
 | Management Fee  | 0%  |
 | Performance Fee | 20% |
 
-On the [yearn.finance](https://yearn.finance/) user interface, yield is displayed as net APY. This means that both fees and compounding returns are taken into consideration in the rates presented. Since harvests don't occur on a set basis, yield is estimated based on historical data. For more information, see [How to Understand yVault ROI](https://docs.yearn.fi/getting-started/guides/how-to-understand-yvault-roi)
+On the [yearn.fi](https://yearn.fi/) user interface, yield is displayed as net APY. This means that both fees and compounding returns are taken into consideration in the rates presented. Since harvests don't occur on a set basis, yield is estimated based on historical data. For more information, see [How to Understand yVault ROI](https://docs.yearn.fi/getting-started/guides/how-to-understand-yvault-roi)
 
 ## v2 yVault Improvements
 

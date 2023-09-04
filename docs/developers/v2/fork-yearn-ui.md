@@ -45,7 +45,7 @@ Add more vaults (that aren't in the default macarena code) and also create new f
 
 * Open `contexts/useYearn.tsx` and edit `endorsedVaults` to contain the vaults you want.
 
-To add new vaults head to [vaults.yearn.finance](https://vaults.yearn.finance/ethereum/stables) and copy the address in the Etherscan link to add it to our list. Here is what it looks like after adding all addresses for stablecoin vaults:
+To add new vaults head to [vaults.yearn.fi](https://vaults.yearn.fi/ethereum/stables) and copy the address in the Etherscan link to add it to our list. Here is what it looks like after adding all addresses for stablecoin vaults:
 
 ```js title="contexts/useYearn.tsx"
 // contexts/useYearn.tsx line 67

@@ -12,14 +12,14 @@ If you are a beginner in DeFi or new to Yearn keep on reading!
 
 > Return on investment \(ROI\) is a ratio between net profit \(over a period\) and cost of investment \(resulting from an investment of some resources at a point in time\). A high ROI means the investment's gains compare favorably to its cost. As a performance measure, ROI is used to evaluate the efficiency of an investment or to compare the efficiencies of several different investments.\[1\] In economic terms, it is one way of relating profits to capital invested. Source: [Wikipedia](https://en.wikipedia.org/wiki/Return_on_investment)
 
-- ROI is a key performance indicator \(KPI\) available in all Yearn Vaults \(yVaults\) located here as "Estimated Yearly Yield": [https://yearn.finance/vaults](https://yearn.finance/vaults).
+- ROI is a key performance indicator \(KPI\) available in all Yearn Vaults \(yVaults\) located here as "Estimated Yearly Yield": [https://yearn.fi/vaults](https://yearn.fi/vaults).
 - ROI is useful when comparing and assessing vault performance.
 - ROI presented in Yearn is a **yearly ROI**. You deposit X and 1 year later you receive X + \(X \* ROI\).
 - The ROI presented is a _current estimation_ based on data since the yVault's inception. If performance remains constant, after 1 year you will receive the displayed ROI. Rates are unstable currently, and fluctuate based on market/strategy.
 
 yVaults have different yield farming [strategies](https://docs.yearn.fi/resources/faq#where-can-i-find-strategy-descriptions), which determine how assets are moved between liquidity pools. Strategies are created by the `Controller` who manages the yVault.
 
-New strategies are also voted by the community through [governance proposals](https://gov.yearn.finance). A new strategy creates a new challenge in terms of ROI calculation.
+New strategies are also voted by the community through [governance proposals](https://gov.yearn.fi). A new strategy creates a new challenge in terms of ROI calculation.
 
 - Individuals interested in participating in a yVault should monitor the ROI presented in the vault dashboard after a strategy change. The rate presented reflects the most recent ROI.
 - An individual participating before a strategy change might be interested in comparing ROI before and ROI after. Historic ROI, e.g. since yVault creation, can also help users understand performance and inform future decisions.
