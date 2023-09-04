@@ -3,9 +3,9 @@ const math = require('remark-math')
 const katex = require('rehype-katex')
 
 module.exports = {
-  title: 'Yearn.finance',
+  title: 'yearn.fi',
   tagline: 'DeFi made simple',
-  url: 'https://docs.yearn.finance',
+  url: 'https://docs.yearn.fi',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -135,7 +135,7 @@ module.exports = {
           items: [
             {
               label: 'Vaults',
-              href: 'https://yearn.finance/vaults',
+              href: 'https://yearn.fi/vaults',
             },
             {
               label: 'YFI Stats',
@@ -156,7 +156,7 @@ module.exports = {
             },
             {
               label: 'Twitter',
-              href: 'https://twitter.com/iearnfinance',
+              href: 'https://x.com/yearnfi',
             },
             {
               label: 'Telegram',
@@ -168,7 +168,7 @@ module.exports = {
             },
             {
               label: 'Forum',
-              href: 'https://gov.yearn.finance',
+              href: 'https://gov.yearn.fi',
             },
             {
               label: 'Snapshot voting',

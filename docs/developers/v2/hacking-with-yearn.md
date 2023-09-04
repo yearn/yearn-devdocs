@@ -37,7 +37,7 @@ What you'll find:
 ### Introduction
 You can test Yearn vaults without spending cryptoassets on the available testnet for each network. 
 
-To get started, head to the yearn testnet client which is available at: https://hack.yearn.finance/
+To get started, head to the yearn testnet client which is available at: https://hack.yearn.fi/
 
 Make sure to switch your wallet provider to the appropriate testnet network in order to use the protocol testnet without incurring costs on the mainnet network. 
  
@@ -55,7 +55,7 @@ When accessing each testnet, you will need to use its own native asset token.
  
 **Steps to test**: 
 
-- Go to https://hack.yearn.finance/
+- Go to https://hack.yearn.fi/
 - Switch to the testnet you wish to utilize over your wallet provider 
 - Make sure to have the native asset for the specific network 
 - Get some tokens from the test client faucet (Ethereum Rinkeby https://faucet.rinkeby.io/)
@@ -68,7 +68,7 @@ First, be sure to check if your wallet provider allows you to switch to testnet.
 #### Additional Resources
 * Workshop: Building and Integrating with Yearn Vaults: https://www.youtube.com/watch?v=urC35PMbpJ4
 --> Learn how to leverage the power of Yearn by creating a money-making integration on top of v2 vaults by taking advantage of the brand new EIP-4626: Tokenized Vault Standard! This workshop will guide you through creating a B2B/business router for yearn v2 vaults, which complies with the new EIP-4626. You'll be able to choose from multiple fee strategies for your users to maximize your profit.
-* Smart Contract parameters: https://docs.yearn.finance/vaults/smart-contracts/vault
+* Smart Contract parameters: https://docs.yearn.fi/vaults/smart-contracts/vault
 * https://hackmd.io/t8HlcedLQeCu2l7RG-5Vbw?view
 * https://twitter.com/storming0x/status/1436851219864059906?s=20
 
@@ -143,10 +143,10 @@ More details on these topics can be seen in our issues tab.
 **Data Sources**
 
 [**Yearn SDK**](https://github.com/yearn/yearn-sdk) [[Docs](https://yearn.github.io/yearn-sdk/)]
-https://docs.yearn.finance/vaults/yearn-sdk/yearn-stack
+https://docs.yearn.fi/vaults/yearn-sdk/yearn-stack
 If you are not sure about which service you should first look into, Yearn SDK can provide you with addresses of contracts and endpoints of yearn’s services.
 
-[**Yearn API**](https://github.com/yearn/yearn-caching-api) [[Docs](https://docs.yearn.finance/vaults/yearn-api)]
+[**Yearn API**](https://github.com/yearn/yearn-caching-api) [[Docs](https://docs.yearn.fi/vaults/yearn-api)]
 Yearn API can provide non-user specific metadata, including the tvl of vaults, apys, fees, and strategy metadata through REST API, without the need to make web3 calls.
 
 [**Yearn Vision**](https://yearn.vision)

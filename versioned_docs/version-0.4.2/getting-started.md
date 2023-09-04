@@ -8,7 +8,7 @@ The best introduction to V2 is the workshop did by [Storming0x](https://github.c
 
 - [Video](https://www.youtube.com/watch?v=C0fsYiCI54g)
 - [Slides](https://docs.google.com/presentation/d/1NsePa_hXV1vsbMixTSRsPKYBHYvmVQf7IvpI_8k4p_k/edit#slide=id.p)
-- [Yearn State of the Vaults](https://vaults.yearn.finance/)
+- [Yearn State of the Vaults](https://vaults.yearn.fi/)
 
 ## Start coding
 

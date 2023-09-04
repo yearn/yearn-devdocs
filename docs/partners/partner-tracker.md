@@ -1,6 +1,6 @@
 # Yearn's Partner Tracker
 
-Yearn's Partner Tracker is an implementation of [Delegated Deposit](https://docs.yearn.finance/partners/integration_guide#delegated-deposit):
+Yearn's Partner Tracker is an implementation of [Delegated Deposit](https://docs.yearn.fi/partners/integration_guide#delegated-deposit):
 
 - Contract Source Code: https://github.com/yearn/yearn-partner-tracker
 

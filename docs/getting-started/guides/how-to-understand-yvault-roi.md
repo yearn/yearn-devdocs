@@ -4,7 +4,7 @@
 
 ### ROI
 
-Trying to understand how ROI is calculated? Skip directly to "[_Why we should use ROI instead of APY to estimate yVaults returns_](https://docs.yearn.finance/getting-started/guides/how-to-understand-yvault-roi#why-we-should-use-roi-to-estimate-yvaults-returns)"
+Trying to understand how ROI is calculated? Skip directly to "[_Why we should use ROI instead of APY to estimate yVaults returns_](https://docs.yearn.fi/getting-started/guides/how-to-understand-yvault-roi#why-we-should-use-roi-to-estimate-yvaults-returns)"
 
 If you are a beginner in DeFi or new to Yearn keep on reading!
 
@@ -12,14 +12,14 @@ If you are a beginner in DeFi or new to Yearn keep on reading!
 
 > Return on investment \(ROI\) is a ratio between net profit \(over a period\) and cost of investment \(resulting from an investment of some resources at a point in time\). A high ROI means the investment's gains compare favorably to its cost. As a performance measure, ROI is used to evaluate the efficiency of an investment or to compare the efficiencies of several different investments.\[1\] In economic terms, it is one way of relating profits to capital invested. Source: [Wikipedia](https://en.wikipedia.org/wiki/Return_on_investment)
 
-- ROI is a key performance indicator \(KPI\) available in all Yearn Vaults \(yVaults\) located here as "Estimated Yearly Yield": [https://yearn.finance/vaults](https://yearn.finance/vaults).
+- ROI is a key performance indicator \(KPI\) available in all Yearn Vaults \(yVaults\) located here as "Estimated Yearly Yield": [https://yearn.fi/vaults](https://yearn.fi/vaults).
 - ROI is useful when comparing and assessing vault performance.
 - ROI presented in Yearn is a **yearly ROI**. You deposit X and 1 year later you receive X + \(X \* ROI\).
 - The ROI presented is a _current estimation_ based on data since the yVault's inception. If performance remains constant, after 1 year you will receive the displayed ROI. Rates are unstable currently, and fluctuate based on market/strategy.
 
-yVaults have different yield farming [strategies](https://docs.yearn.finance/resources/faq#where-can-i-find-strategy-descriptions), which determine how assets are moved between liquidity pools. Strategies are created by the `Controller` who manages the yVault.
+yVaults have different yield farming [strategies](https://docs.yearn.fi/resources/faq#where-can-i-find-strategy-descriptions), which determine how assets are moved between liquidity pools. Strategies are created by the `Controller` who manages the yVault.
 
-New strategies are also voted by the community through [governance proposals](https://gov.yearn.finance). A new strategy creates a new challenge in terms of ROI calculation.
+New strategies are also voted by the community through [governance proposals](https://gov.yearn.fi). A new strategy creates a new challenge in terms of ROI calculation.
 
 - Individuals interested in participating in a yVault should monitor the ROI presented in the vault dashboard after a strategy change. The rate presented reflects the most recent ROI.
 - An individual participating before a strategy change might be interested in comparing ROI before and ROI after. Historic ROI, e.g. since yVault creation, can also help users understand performance and inform future decisions.
@@ -147,7 +147,7 @@ At this point, she could withdraw and receive her initial yCRV deposit and an ad
 
 1. The short-term ROI data is a suitable estimation for the short-term \(i.e. if we compare the % from the last two days, it's likely that the following two days are going to be similar\).
 2. Short-term ROI data is _**absolutely not accurate**_ when extrapolated in the long-term.
-3. Long-term data \(say today and [inception of vault](https://docs.yearn.finance/resources/faq#where-can-i-find-strategy-descriptions)\) is a good overall estimation of the vaults performance and should be used when comparing different investment opportunities.
+3. Long-term data \(say today and [inception of vault](https://docs.yearn.fi/resources/faq#where-can-i-find-strategy-descriptions)\) is a good overall estimation of the vaults performance and should be used when comparing different investment opportunities.
 
 In other words, if your goal is to approximate returns in the short-term, you should use datasets that are recent \(daily/weekly\).
 
@@ -158,5 +158,5 @@ If you would like to make a crude estimation on how returns may look like in a y
 The community has been actively creating tools and guides on this topic.
 
 - [https://github.com/Zer0dot/yearn_roi/blob/master/yearn_vaults_ROI_calc.ipynb](https://github.com/Zer0dot/yearn_roi/blob/master/yearn_vaults_ROI_calc.ipynb) provides a mathematical explanation of how ROI is calculated with some caveats. \(This repository is no longer being maintained\).
-- [Statistics FAQ](https://docs.yearn.finance/resources/faq#where-can-i-find-strategy-descriptions)
+- [Statistics FAQ](https://docs.yearn.fi/resources/faq#where-can-i-find-strategy-descriptions)
 - [How Yearn shows APY in the v3 interface](https://medium.com/iearn/how-yearn-calculates-estimated-returns-apy-b4fd5b687bf9)

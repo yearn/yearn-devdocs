@@ -13,19 +13,19 @@ Aside from obvious risks involved with smart contracts (including the vault cont
 
 ### They’re Yield Generating
 
-A Yearn Vault token is a yield-bearing version of a token, so when locked up as collateral it will still generate yield. A single vault token can run up to 20 yield-generating strategies. All Vaults at [yearn.finance](https://yearn.finance/#/vaults) run "up-only" strategies.
+A Yearn Vault token is a yield-bearing version of a token, so when locked up as collateral it will still generate yield. A single vault token can run up to 20 yield-generating strategies. All Vaults at [yearn.fi](https://yearn.fi/#/vaults) run "up-only" strategies.
 
 ### The Safest Yields in DeFi
 
 Vaults strategies are constantly audited to practice the highest security standards of DeFi. Grow with us one day at a time. More information at:
 
-* [Vaults & Strategies Deployment Security Guidelines](https://docs.yearn.finance/developers/v2/DEPLOYMENT)
+* [Vaults & Strategies Deployment Security Guidelines](https://docs.yearn.fi/developers/v2/DEPLOYMENT)
 * [Yearning for Yearn: Messari Report](https://messari.io/article/yearning-for-yearn)
 * [Yearn Security Processes](https://github.com/yearn/yearn-security/blob/master/SECURITY.md)
 
 ### Split Fees with Yearn
 
-Yearn's fee-sharing partner [program](https://docs.yearn.finance/partners/introduction) allows you to earn up to 50% of the fees generated on your users' TVL every month. We are in this together.
+Yearn's fee-sharing partner [program](https://docs.yearn.fi/partners/introduction) allows you to earn up to 50% of the fees generated on your users' TVL every month. We are in this together.
 
 ### They’re ERC20 Compatible
 
@@ -39,7 +39,7 @@ Strategies that lock tokens are kept to an absolute minimum amount of time. To l
 
 What you see on-chain is what you get. For real-time protocol data see:
 
-* [yearn vaults descriptions](https://vaults.yearn.finance/)
+* [yearn vaults descriptions](https://vaults.yearn.fi/)
 * [yearn.watch](https://yearn.watch/)
 * [yearn.vision](https://yearn.vision/) 
 * [yearn at dune analytics](https://dune.com/projects/yearn)

@@ -128,7 +128,7 @@ This is how the strategy earns its returns: is it a simple strategy like a maste
 
 ### Longevity
 
-How long the strategy has been running live on yearn.finance:
+How long the strategy has been running live on yearn.fi:
 
 <table>
   <tr>
@@ -137,7 +137,7 @@ How long the strategy has been running live on yearn.finance:
   </tr>
   <tr>
    <td>5</td>
-   <td>Code is new and did not go to ape tax before going live on yearn.finance</td>
+   <td>Code is new and did not go to ape tax before going live on yearn.fi</td>
   </tr>
   <tr>
    <td>4</td>

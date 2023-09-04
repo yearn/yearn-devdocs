@@ -54,7 +54,7 @@ Yearn will mark 1 veCRV worth of voting power for every 1 yCRV in this position 
 
 ## How yveCRV and yvBOOST functionality was migrated to yCRV
 
-yveCRV and yvBOOST are being deprecated, and there is a migration path available to users. The functionality of both was integrated into [st-yCRV](#staked-ycrv) so if you are looking for the same benefits check the [guide](https://docs.yearn.finance/getting-started/products/ycrv/guide) on how to migrate from the legacy tokens using yearn's UI
+yveCRV and yvBOOST are being deprecated, and there is a migration path available to users. The functionality of both was integrated into [st-yCRV](#staked-ycrv) so if you are looking for the same benefits check the [guide](https://docs.yearn.fi/getting-started/products/ycrv/guide) on how to migrate from the legacy tokens using yearn's UI
 
 ![](https://i.imgur.com/Htl3AgP.png)
 
@@ -69,5 +69,5 @@ yveCRV and yvBOOST are being deprecated, and there is a migration path available
 
 ## Read more
 
-- [yCRV Interface Guide](https://docs.yearn.finance/getting-started/products/ycrv/guide)
-- [yCRV FAQ](https://docs.yearn.finance/getting-started/products/ycrv/faq)
+- [yCRV Interface Guide](https://docs.yearn.fi/getting-started/products/ycrv/guide)
+- [yCRV FAQ](https://docs.yearn.fi/getting-started/products/ycrv/faq)

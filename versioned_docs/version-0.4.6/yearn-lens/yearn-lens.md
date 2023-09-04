@@ -126,7 +126,7 @@ assetsStatic():
   tokenId: "0x234..."
   token: {
     id: "0x234...",
-    name: "yearn.finance",
+    name: "yearn.fi",
     symbol: "YFI",
     decimals: 18
   }

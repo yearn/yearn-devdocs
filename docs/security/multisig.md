@@ -2,7 +2,7 @@
 
 ## How it works
 
-The multisig is implemented by a 6-of-9 multi-signature wallet. The members of the multi-signature wallet were voted in by YFI holders and are subject to change from future governance votes. Specific powers are delegated to the governance multisig, as defined by [Governance 2.0](https://gov.yearn.finance/t/yip-41-temporarily-empower-multisig/3630). More information about Yearn governance and how it interacts with the multisig can be found on the [FAQ](https://docs.yearn.finance/resources/faq#governance).
+The multisig is implemented by a 6-of-9 multi-signature wallet. The members of the multi-signature wallet were voted in by YFI holders and are subject to change from future governance votes. Specific powers are delegated to the governance multisig, as defined by [Governance 2.0](https://gov.yearn.fi/t/yip-41-temporarily-empower-multisig/3630). More information about Yearn governance and how it interacts with the multisig can be found on the [FAQ](https://docs.yearn.fi/resources/faq#governance).
 
 The multisig is implemented as a Gnosis Safe. The multisig's assets, transactions, and signers can be viewed using [Gnosis's Web UI](https://app.safe.global/home?safe=eth:0xFEB4acf3df3cDEA7399794D0869ef76A6EfAff52). If there is a need to trustlessly audit Yearn's multisig (without trusting the Gnosis site), the Gnosis Safe web app source code can be found on Github [here](https://github.com/gnosis/safe-react). 
 
@@ -26,8 +26,8 @@ Cryptographic membership attestations can be validated against the PGP keys in t
 
 ## History
 
-- June 2022 - [YIP-68: Change Three Multisig signers](https://gov.yearn.finance/t/yip-68-rotate-multisig-signers/12582)
-- May 2021 - [YIP-62: Change Two Multisig Signers](https://gov.yearn.finance/t/yip-62-change-two-multisig-signers/10758)
-- April 2021 - [YIP-61: Governance 2.0](https://gov.yearn.finance/t/yip-61-governance-2-0/10460)
-- August 2020 - [YIP-41: Temporarily Empower Multisig](https://gov.yearn.finance/t/yip-41-temporarily-empower-multisig/3630)
-- August 2020 - [YIP-40: Replace inactive multisig signers](https://yips.yearn.finance/YIPS/yip-40)
+- June 2022 - [YIP-68: Change Three Multisig signers](https://gov.yearn.fi/t/yip-68-rotate-multisig-signers/12582)
+- May 2021 - [YIP-62: Change Two Multisig Signers](https://gov.yearn.fi/t/yip-62-change-two-multisig-signers/10758)
+- April 2021 - [YIP-61: Governance 2.0](https://gov.yearn.fi/t/yip-61-governance-2-0/10460)
+- August 2020 - [YIP-41: Temporarily Empower Multisig](https://gov.yearn.fi/t/yip-41-temporarily-empower-multisig/3630)
+- August 2020 - [YIP-40: Replace inactive multisig signers](https://yips.yearn.fi/YIPS/yip-40)

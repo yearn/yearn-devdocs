@@ -1,6 +1,6 @@
 # Yearn Protocol Documentation Website
 
-The yearn devdocs [website](https://docs.yearn.finance/) is built using [Docusaurus](https://docusaurus.io/), a modern static website generator.
+The yearn devdocs [website](https://docs.yearn.fi/) is built using [Docusaurus](https://docusaurus.io/), a modern static website generator.
 
 ## Installation
 
