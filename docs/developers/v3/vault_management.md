@@ -1,4 +1,4 @@
-# Deploying and managing a V3 Vault
+# Deploying and Managing a V3 Vault
 
 V3 makes it as simple as possible for anyone to deploy and manage their own Vaults. No longer will Yearn be the only manager of Vaults, gate-keeping who can be debt allocator or what strategies should be added to a vault. Now anyone can deploy, manage, and earn fees from their own vision and preferences for everything from risk profile, fee model, decentralization etc.
 
@@ -79,7 +79,7 @@ Each vault will default to have a deposit limit set to 0. Which means all deposi
 
 Once ready, the address with the DEPOSIT_LIMIT_MANAGER will need to call `vault.set_deposit_limit(deposit_limit)`
 
-#### MISC
+#### Miscellaneous
 ---
 There are other options that a vault manager can set that are not necessary for the vault to function but may be desired for further customization.
 
@@ -88,7 +88,7 @@ There are other options that a vault manager can set that are not necessary for 
 
 ## Running the Vault
 
-#### Strategy management
+#### Strategy Management
 The job of a vault is to manage debt between strategies that do the yield generation. There are 3 roles that control what strategies are added to the vault, ADD_STRATEGY_MANAGER, REVOKE_STRATEGY_MANAGER and FORCE_REVOKE_MANAGER. 
 
 A strategy can be any contract that meets has the needed [4626 interface](https://github.com/yearn/yearn-vaults-v3/blob/master/contracts/VaultV3.vy#L39) for the vault to interact with it. This includes Tokenized Strategies, 3rd party 4626 vaults as well as other Yearn meta vaults.
@@ -102,7 +102,7 @@ To remove a strategy first remove all the debt from the strategy and then call `
 If a strategy has issues and is unable to pay all of its debt back `vault.force_revoke_strategy(strategy)` can be used to forcefully remove the strategy.
 
 NOTE: Forcefully removing a strategy that still has debt will cause a loss to be recorded and a reduction of Price Per Shares.
-#### Debt updates:
+#### Debt Updates:
 
 The DEBT_MANAGER role is in charge of allocating funds between the strategies added to a vault.
 
@@ -154,9 +154,9 @@ If a different ordering is desired or management would like to remove a certain 
 
 Where `new_default_queue` is an array of strategies with a max length of 10, in which all strategies are currently active in the vault.
 
-## Good to know
+## Good to Know
 
-### What tokens not to use
+### What Tokens Not to Use
 
 There are certain tokens who's native behavior makes them incompatible with being the underlying asset of a vault and should be avoided.
 
