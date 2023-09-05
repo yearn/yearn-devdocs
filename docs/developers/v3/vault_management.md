@@ -8,11 +8,11 @@ Running your vault requires no need to know how to code. Anyone desiring to mana
 
 ## Definitions
 
-**vault**: ERC-4626 compliant contract that accepts deposits, issues shares, and allocates funds to different strategies to earn yield.
-**shares**: A tokenized representation of a depositor's share of the underlying balance of a vault.
-**strategy**: Any ERC-4626 compliant contract that can be added to a vault that earns yield on an underlying asset.
-**debt**: The amount of the underlying asset that a vault has sent to a strategy to earn yield.
-**report**: The function where a vault accounts for any profits or losses a strategy has accrued, charges applicable fees, and locks profit to be distributed to depositors.
+- **vault**: ERC-4626 compliant contract that accepts deposits, issues shares, and allocates funds to different strategies to earn yield.
+- **shares**: A tokenized representation of a depositor's share of the underlying balance of a vault.
+- **strategy**: Any ERC-4626 compliant contract that can be added to a vault that earns yield on an underlying asset.
+- **debt**: The amount of the underlying asset that a vault has sent to a strategy to earn yield.
+- **report**: The function where a vault accounts for any profits or losses a strategy has accrued, charges applicable fees, and locks profit to be distributed to depositors.
 
 
 ## Deployment
