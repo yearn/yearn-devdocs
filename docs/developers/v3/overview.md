@@ -22,9 +22,9 @@ So whether you are a full-blown gas golfing expert, a degen looking to codify yo
 
 ## Get started
 
-- [Building your own V3 Strategy](https://docs.yearn.fi/developers/v3/strategy_development.md)
-- [Deploying and managing a V3 Vault](https://docs.yearn.fi/developers/v3/vault_management.md)
-- [Protocol Fees](https://docs.yearn.fi/developers/v3/protocol_fees.md)
+- [Building your own V3 Strategy](https://docs.yearn.fi/developers/v3/strategy_development)
+- [Deploying and managing a V3 Vault](https://docs.yearn.fi/developers/v3/vault_management)
+- [Protocol Fees](https://docs.yearn.fi/developers/v3/protocol_fees)
 
 
 ## Contract Addresses
