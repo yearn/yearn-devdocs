@@ -83,7 +83,7 @@ ___
     **Returns**: NONE.
     
     **Good to Know**: 
-    - This function is permissionless, so swaps or LP movements can't be sandwiched or manipulated.
+    - This function is permissionless, so swaps or LP movements can be sandwiched or manipulated.
     - This does not need to deploy the full `_amount` if the strategy doesn't want to.
     
     **Best Practice**: 
@@ -106,7 +106,7 @@ ___
     
     **Good to Know**: 
     - The amount of loose assets has already been accounted for. 
-    - This function is also entirely permissionless, so swaps or lp values can't be sandwiched or otherwise manipulated.
+    - This function is also entirely permissionless, so swaps or lp values can be sandwiched or otherwise manipulated.
     
     **Best Practice**: 
     - Use the `_amount` parameter passed in rather than relying on .balanceOf(address(this)).
