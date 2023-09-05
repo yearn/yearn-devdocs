@@ -32,7 +32,7 @@ module.exports = {
     'v2/hacking-with-yearn',
     'v2/fork-yearn-ui',
     'v2/yswaps',
-        {
+    {
       type: 'category',
       label: 'V3',
       items: [
