@@ -1,6 +1,6 @@
 # Protocol Fees
 
-The V3 system sees the introduction of "Protocol Fees" to the stack. Protocol fees are charged each time a V3 vault or strategy "reports" and are taken as a percent of the overall fees charged by that vault's management.
+The V3 system sees the introduction of "Protocol Fees" to the stack: a percentage charged each time a V3 vault or strategy "reports".
 
 EXAMPLE:
     
@@ -16,9 +16,9 @@ EXAMPLE:
     1 would get paid to the Yearn Treasury.
     
 
-The purpose of protocol fees is to give the managers of vaults and strategies complete control over the actual fees charged, while also rewarding Yearn for supplying the infrastructure that those vaults are built on.
+Protocol fees give the managers of vaults and strategies complete control over the fees charged while rewarding Yearn for supplying the infrastructure those vaults are built on.
 
-The amount of the Protocol fee is dictated by Yearn Governance and can be set anywhere between 0 - 50%. Yearn governance also holds the ability to set custom protocol fees for individual vaults and strategies. Allowing full customization of the system.
+Yearn Governance dictates the amount of the Protocol fee and can be set anywhere between 0 - 50%. Yearn governance also holds the ability to set custom protocol fees for individual vaults and strategies. Allowing full customization of the system.
 
 You can retrieve both the default protocol fee as well as if a custom config has been set for a specific vault or strategy using the Vault Factory that corresponds to that vault's API.
 
