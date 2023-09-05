@@ -37,7 +37,6 @@ module.exports = {
       label: 'V3',
       items: [
         'v3/overview',
-        'v3/strategy_writing_guide',
         'v3/strategy_development',
         'v3/protocol_fees',
         'v3/vault_management',
