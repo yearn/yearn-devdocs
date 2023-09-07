@@ -348,19 +348,19 @@ For easy integration with Vaults, front ends, debt allocators etc. There is the 
 
 ### [HealthCheck](https://github.com/Schlagonia/tokenized-strategy-periphery/tree/master/src/HealthCheck)
 
-In order to prevent automated reports from reporting losses/excessive profits that may not be accurate, a strategist can inherit and implement the [HealthCheck](https://github.com/yearn/tokenized-strategy-periphery/blob/master/src/HealthCheck/HealthCheck.sol) contract. Using this can ensure that a keeper will not call a report that may incorrectly realize incorrect losses or excessive gains. It can cause the report to revert if the gain/loss is outside of the desired bounds and will require manual intervention to ensure the strategy is reporting correctly.
+In order to prevent automated reports from reporting losses/excessive profits that may not be accurate, a strategist can inherit and implement the [HealthCheck](https://github.com/yearn/tokenized-strategy-periphery/blob/master/src/HealthCheck/BaseHealthCheck.sol) contract. This can ensure that a keeper will not call a report that may incorrectly realize incorrect losses or excessive gains. It can cause the report to revert if the gain/loss is outside of the desired bounds and will require manual intervention to ensure the strategy is reporting correctly.
 
 NOTE: It is recommended to implement some checks in `_harvestAndReport` for leveraged or manipulatable strategies that could report incorrect losses due to unforeseen circumstances.
 
 ### [Report Triggers](https://github.com/yearn/tokenized-strategy-periphery/tree/master/src/ReportTrigger)
 
-The expected behavior is that strategies report profits/losses on a set schedule based on their specific `profitMaxUnlockTime` that management can customize. If a custom trigger cycle is desired or extra checks should be added a strategist can create their own [customReportTrigger](https://github.com/yearn/tokenized-strategy-periphery/blob/master/src/ReportTrigger/CustomStrategyTriggerBase.sol) that can be added to the default contract for a specific strategy.
+The expected behavior is that strategies report profits/losses on a schedule based on their specific `profitMaxUnlockTime` that management can customize. If a custom trigger cycle is desired or extra checks should be added a strategist can create their own [customReportTrigger](https://github.com/yearn/tokenized-strategy-periphery/blob/master/src/ReportTrigger/CustomStrategyTriggerBase.sol) that can be added to the default contract for a specific strategy.
 
-*More information on this can be found below in the "Reporting" section.
+*More information can be found below in the "Reporting" section.
 
 ## Testing
 
-Due to the nature of the BaseTokenizedStrategy utilizing an external contract for the majority of its logic, the default interface for any strategy will not allow proper testing of all functions. Testing of your Strategy should utilize the pre-built [IStrategyInterface](https://github.com/yearn/tokenized-strategy-foundry-mix/blob/master/src/interfaces/IStrategyInterface.sol) to cast any deployed strategy through for testing, as seen in the testing setups in each mix. You can add any external functions that you add for your specific strategy to this interface to be able to test all functions with one variable. 
+Due to the nature of the BaseTokenizedStrategy utilizing an external contract for most of its logic, the default interface for any strategy will not allow proper testing of all functions. Testing of your Strategy should utilize the pre-built [IStrategyInterface](https://github.com/yearn/tokenized-strategy-foundry-mix/blob/master/src/interfaces/IStrategyInterface.sol) to cast any deployed strategy through for testing, as seen in the testing setups in each mix. You can add any external functions you add for your specific strategy to this interface to test all functions with one variable. 
 
 Foundry Example:
 
@@ -376,14 +376,14 @@ Due to the permissionless nature of the tokenized Strategies, all tests are writ
 
 ## Deployment
 
-For strategies that will be used with multiple different asset's it is recommended to build a factory, that can be deployed once and then all strategies can be deployed on chain using the factory. 
+For strategies that will be used with multiple different asset's, it is recommended to build a factory, that can be deployed once. Then, all strategies can be deployed on chain using the factory. 
 
 **Cloning is not recommended for Tokenized Strategies.**
 
 
 #### Contract Verification
 
-Once the Strategy is deployed and verified, you will need to verify the TokenizedStrategy functions as well. To do this, navigate to the /#code page on etherscan.
+Once the Strategy is deployed and verified, you must also verify the TokenizedStrategy functions. To do this, navigate to the /#code page on Etherscan.
 
 1. Click on the `More Options` drop-down menu. 
 2. Click "is this a proxy?".
@@ -421,7 +421,7 @@ The strategy comes with some default variables that the management of a strategy
 1. Changing management: Changing the strategies management is a two-step process. First, the current management must call `setPendingManagment(address)` with the desired address to transfer the management to. Then that address must call `acceptManagement()` in order for the change to go into effect.
 2. Keeper. The manager of a strategy can set a new address to be the keeper at any time with `setKeeper(address)`.
 3. Performance Fee. Management can adjust the amount of the gain realized during a report that gets charged as a performance fee with `setPerformanceFee(uint16)`. 
-    **Subject to min and max's.
+    **Subject to min and max.
 4. Performance Fee Recipient. Can set the address that will receive the performance fees charged during a report with `setPerformanceFeeRecipient(address)`.
 5. Profit Unlocking Period. Profits recorded during reports are slowly unlocked to depositors of a strategy over the strategy-specific 'profitMaxUnlockTime'. This defaults to 10 days and can be changed at any time by the strategist with `setProfitMaxUnlockTime(uint256)`.
 
@@ -434,7 +434,7 @@ Once this is called it will stop any further deposits or mints but will have no 
 
 This can be used in an emergency or simply to retire a vault.
 
-Once a strategy is shutdown management can also call `emergencyWithdraw(_amount)`. Which will tell the strategy to withdraw a specified `_amount` from the yield source and keep it idle in the vault. This function will also do any needed updates to `totalDebt` and `totalIdle`, based on amounts withdrawn to ensure withdraws continue to function properly.
+Once a strategy is shut down management can also call `emergencyWithdraw(_amount)`. Which will tell the strategy to withdraw a specified `_amount` from the yield source and keep it idle in the vault. This function will also do any needed updates to `totalDebt` and `totalIdle`, based on amounts withdrawn to ensure withdraws continue to function properly.
 
 All other emergency functionality is left up to the individual strategist.
 
