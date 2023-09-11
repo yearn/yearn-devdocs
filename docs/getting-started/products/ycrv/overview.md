@@ -62,7 +62,8 @@ yveCRV and yvBOOST are being deprecated, and there is a migration path available
 
 - **yCRV:** [0xFCc5c47bE19d06BF83eB04298b026F81069ff65b](https://etherscan.io/token/0xFCc5c47bE19d06BF83eB04298b026F81069ff65b)
 - **st-yCRV (vault):** [0x27B5739e22ad9033bcBf192059122d163b60349D](https://etherscan.io/token/0x27B5739e22ad9033bcBf192059122d163b60349D)
-- **lp-yCRV (vault):** [0xc97232527B62eFb0D8ed38CF3EA103A6CcA4037e](https://etherscan.io/token/0xc97232527B62eFb0D8ed38CF3EA103A6CcA4037e)
+- **lp-yCRV (DEPRECATED):** [0xc97232527B62eFb0D8ed38CF3EA103A6CcA4037e](https://etherscan.io/token/0xc97232527B62eFb0D8ed38CF3EA103A6CcA4037e)
+- **lp-yCRV v2 (vault):** [0x6E9455D109202b426169F0d8f01A3332DAE160f3](https://etherscan.io/token/0x6E9455D109202b426169F0d8f01A3332DAE160f3)
 - **CRV/yCRV Curve Pool:** [0x453D92C7d4263201C69aACfaf589Ed14202d83a4](https://etherscan.io/token/0x453D92C7d4263201C69aACfaf589Ed14202d83a4)
 - **ZapYCRV.vy :** [0x01D7f32B6E463c96c00575fA97B8224326C6A6B9](https://etherscan.io/token/0x01D7f32B6E463c96c00575fA97B8224326C6A6B9)
 - **yCRV Interface:** http://y.finance/
