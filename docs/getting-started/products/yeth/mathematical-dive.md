@@ -1,4 +1,50 @@
-# Weighted Stableswap: Math Deep Dive
+# Weighted Stableswap
+
+## Invariant Derivation
+
+The invariant derivation is a way to ensure that the total value in the pool remains constant, even as the individual assets' values change. This is done by setting up two equations:
+
+1. The sum of all virtual balances (the amount of each asset adjusted for its weight) equals a constant.
+
+2. The product of each virtual balance raised to its corresponding weight (a measure of its importance in the pool) equals a constant.
+
+These two equations form the basis of the weighted stableswap invariant, which ensures that the value of the pool remains constant. It's similar to Curve's stableswap invariant, but it allows for unequal weights among the assets. If you input equal weights into our invariant, it will reduce to Curve's invariant.
+
+## Supply Calculation
+
+To calculate the supply of the pool, we use an iterative process to solve the invariant equation for the total supply, D. This process starts with a guess for D and continues until the desired precision is achieved. 
+
+During this process, the rates of the assets are also updated to reflect changes in their values. The rate providers are external contracts that provide the current exchange rate for each asset.
+
+## Balance Calculation
+
+To find the balance of a specific asset, we solve the invariant equation for that asset's virtual balance. This involves using an iterative method, similar to the one used in the supply calculation.
+
+This method can also be used to calculate the amount of one asset a user will receive or have to send in a swap operation.
+
+## Swaps
+
+In a swap operation, a user trades one asset for another. The amount of each asset involved in the swap is calculated using the balance calculation method. 
+
+If the user wants to send a fixed amount of one asset and receive an unknown amount of another, we solve the balance equation for the received asset. Conversely, if the user wants to receive a fixed amount of one asset and send an unknown amount of another, we solve the balance equation for the sent asset.
+
+In both cases, the goal is to ensure that the value of the pool remains constant, even as the individual assets' values change.
+
+## LP Token (yETH)
+
+The Liquidity Provider (LP) token for this system is yETH. When users deposit their assets into the pool, they receive yETH in return. The amount of yETH they receive is proportional to the amount they deposit and the current supply of yETH. Users can redeem their yETH for the underlying assets at any time.
+
+## Yield and Slashings
+
+Yield and slashings are two factors that can affect the value of the assets in the pool. Yield is the return earned on the assets, while slashings are penalties imposed for misbehavior. 
+
+These factors are taken into account when calculating the rates and balances of the assets. If an asset's yield increases or it is slashed, its rate will change, which will in turn affect its balance and the total value of the pool.
+
+## Bands
+
+Bands are ranges within which the weights of the assets can fluctuate. If an asset's weight goes outside its band, it will be rebalanced to bring it back within the band. This ensures that the pool remains diversified and balanced, optimizing the risk and yield distribution among the assets.
+
+# Math Deep Dive
 
 ## Invariant Derivation
 
