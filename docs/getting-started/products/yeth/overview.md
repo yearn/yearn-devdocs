@@ -36,10 +36,9 @@ The bootstrapping process aims to kickstart yETH first LSTs and liquidity. You c
 | Protocol Owned Liquidity                         | [`0x929401e30Aab6bd648dEf2d30FF44952BaB04478`](https://etherscan.io/address/0x929401e30Aab6bd648dEf2d30FF44952BaB04478) |
 | Bootstrap: Deposit, Vote, Claim Incentives       | [`0x41B994C192183793bB9cc35bAAb8bD9C6885c6bf`](https://etherscan.io/address/0x41B994C192183793bB9cc35bAAb8bD9C6885c6bf) |
 | Bootstrap: Claim st-yETH                         | [`0x7cf484D9d16BA26aB3bCdc8EC4a73aC50136d491`](https://etherscan.io/address/0x7cf484D9d16BA26aB3bCdc8EC4a73aC50136d491) |
-| Guardian                                         | To be determined*                          |
-| Pool                                             | To be determined*                          |
-| Treasury                                         | [`ychad.eth`](https://etherscan.io/address/ychad.eth) |
-| Rate Providers                                   | To be determined*                          |
+| Guardian                                         | [`0xDC775e813cDB38a4f02c4BAd3942319088018eFA`](https://etherscan.io/address/0xDC775e813cDB38a4f02c4BAd3942319088018eFA) |
+| Pool                                             | [`0x2cced4ffA804ADbe1269cDFc22D7904471aBdE63`](https://etherscan.io/address/0x2cced4ffA804ADbe1269cDFc22D7904471aBdE63) |
+| Rate Providers                                   | [`0x4e322aeAf355dFf8fb9Fd5D18F3D87667E8f8316`](https://etherscan.io/address/0x4e322aeAf355dFf8fb9Fd5D18F3D87667E8f8316) |
 
 \* Will be set when the bootstrapping is complete and the Pool is launched
 
