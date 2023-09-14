@@ -1,56 +1,117 @@
-# yETH: A Mathematical Deep Dive
+# Weighted Stableswap: Math Deep Dive
 
-yETH is a user-governed liquidity pool token consisting of various Ethereum Liquid Staking Derivatives (LSTs). This document provides a detailed mathematical explanation of the underlying mechanisms that govern yETH's functioning.
+This document provides a detailed mathematical explanation of the yETH weighted stableswap system.
 
 ## Invariant Derivation
 
-The yETH system relies on two key invariants:
+The yETH weighted stableswap system is based on two fundamental invariants:
 
-1. Constant sum: The sum of all assets in the pool, denoted by $x_i$, remains constant and is represented by $c_1$. Mathematically, this is represented as $sum_i x_i = c_1$.
+1. Constant sum: The sum of all virtual balances equals a constant, $c_1$.
+    ```
+    sum_i x_i = c_1
+    ```
 
-2. Constant weighted product: The product of all assets in the pool, each raised to their respective weight, remains constant and is represented by $c_2$. The sum of all weights is 1. This is expressed as $product_i x_i^w_i = c_2$ with $sum_i w_i = 1$.
+2. Constant weighted product: The product of each virtual balance raised to its corresponding weight equals a constant, $c_2$. The sum of all weights equals 1.
+    ```
+    product_i x_i^w_i = c_2
+    sum_i w_i = 1
+    ```
 
-We define $1/f := product_i w_i^(w_i)$ and $v_i := w_i n$. The balanced pool condition is expressed as $x_i = w_i D => quad c_1 = D sum_i w_i = D, quad c_2 = D product_i w_i^w_i = D/f$.
+We define $1/f := product_i w_i^(w_i)$ and $v_i := w_i n$. In a balanced pool, $x_i = w_i D$ implies that $c_1 = D sum_i w_i = D$ and $c_2 = D product_i w_i^w_i = D/f$.
 
-From these conditions, we derive two important equations:
+From these definitions, we can derive the following expressions:
+```
+sum_i x_i = D
+product_i x_i^(v_i) = (D/f)^n
+```
 
-- $ sum_i x_i = D quad quad quad product_i x_i^(v_i) = (D/f)^n $
-- $ chi D^(n-1) sum_i x_i + product_i x_i^(v_i) = chi D^n + (D/f)^n $
+The leveraged invariant can be defined as:
+```
+chi D^(n-1) sum_i x_i + product_i x_i^(v_i) = chi D^n + (D/f)^n
+```
 
-These equations form the basis of the leveraged invariant and dynamic leverage in the yETH system. The weighted stableswap invariant is then derived as follows:
+Where dynamic leverage, $chi$, is given by:
+```
+chi = A (product_i x_i^(v_i))/(D/f)^n
+```
 
-$ A f^n sum_i x_i + D = A D f^n + D^(n+1)/(f^n product_i x_i^v_i) $
+The weighted stableswap invariant then becomes:
+```
+A f^n sum_i x_i + D = A D f^n + D^(n+1)/(f^n product_i x_i^v_i)
+```
 
 If we set equal weights $w_i = 1/n$, this reduces to the original stableswap invariant.
 
+We define $sigma := sum_i x_i$ and $pi := D^n product_i (w_i/x_i)^(v_i)$, and the invariant is then expressed as:
+```
+A f^n sigma + D = A D f^n + D pi     (1)
+```
+
 ## Supply Calculation
 
-Given a pool with weights ${w_i}$ and virtual balances ${x_i}$, we can find the equilibrium supply by solving the stableswap invariant iteratively for $D$:
-
-$ D_(m+1) = (A f^n sigma - D_m pi_m) \/ (A f^n - 1) \
-pi_m = (D_m/D_(m-1))^n pi_(m-1) \
-pi_0 = product_i (D_0 w_i/x_i)^(v_i) $
-
+Given a pool with weights ${w_i}$ and virtual balances ${x_i}$, we can find the equilibrium supply by solving equation (1) iteratively for $D$:
+```
+D_(m+1) = (A f^n sigma - D_m pi_m) / (A f^n - 1)
+pi_m = (D_m/D_(m-1))^n pi_(m-1)
+pi_0 = product_i (D_0 w_i/x_i)^(v_i)    (2)
+```
 The iterative process is started with a good guess for $D_0$ (such as $sigma$) and continued until the desired precision is achieved.
+
+### Rate Update
+
+When updating rates, we have $x_i = b_i r_i -> x_i' = b_i r_i'$, $sigma -> sigma' = sigma + b_i (r_i' - r_i)$, $D -> D'$ and $pi -> pi' = ((D')/D)^n (r_i/(r'_i))^(v_i) pi$.
+
+The iterative process in equation (2) is used to find both $D'$ and $pi'$, starting off with $D'_0 = D$ and $pi'_0 = (r_i/(r_i'))^(v_i) pi$.
 
 ## Balance Calculation
 
-Given a pool with weights ${w_i}$, virtual balances ${x_i}_(i != j)$ and supply $D$, we can find the balance of a specific asset $j$ by solving the stableswap invariant for $y := x_j$.
+Given a pool with weights ${w_i}$, virtual balances ${x_i}_(i != j)$ and supply $D$, we can find the balance of a specific asset $j$ by solving equation (1) for $y := x_j$.
 
 First, we define intermediary variables $tilde(sigma) := sum_(i != j) x_i$ and $tilde(pi) := D^n w_j^(v_j) product_(i != j) (w_i/x_i)^(v_i)$.
-
-This allows us to rewrite the invariant to
-$ A f^n (tilde(sigma) + y) + D = A D f^n +  D tilde(pi)/y^(v_j) $
+This allows us to rewrite equation (1) to
+```
+A f^n (tilde(sigma) + y) + D = A D f^n +  D tilde(pi)/y^(v_j)
+```
 Rearranging gives us
-$ y^(v_j + 1) + (tilde(sigma) + D/(A f^n) - D) y^(v_j) - D/(A f_n) tilde(pi) = 0 $
+```
+y^(v_j + 1) + (tilde(sigma) + D/(A f^n) - D) y^(v_j) - D/(A f_n) tilde(pi) = 0
+```
 
-This is equivalent to finding the root of $g(y) = y^(a+1) + b y^a - c$, which is something that can be done iteratively using Newtons method: $y_(m+1) = y_m - g(y_m)/(g'(y_m))$.
+This is equivalent to finding the root of $g(y) = y^(a+1) + b y^a - c$, which can be done iteratively using Newton's method: $y_(m+1) = y_m - g(y_m)/(g'(y_m))$.
+Plugging in our function yields
+```
+y_(m+1) = (v_j y_m^2 + b (v_j - 1) y_m + c y_m^(1-v_j))/((v_j + 1) y_m + v_j b)
+where b = tilde(sigma) + D/(A f^n) - D, c = D/(A f^n) tilde(pi)    (3)
+```
 
-## Swaps
+### Swaps
 
-In a swap, a user exchanges asset $k$ for asset $l$ ($k != l$). The balances of these assets change as follows:
+In a swap operation, a user swaps asset $k$ for asset $l$ ($k != l$). The virtual balances change as follows:
+$x_k -> x_k' = x_k + Delta b_k r_k$
+$x_l -> x_l' = x_l - Delta b_l r_l$
 
-$ x_k -> x_k' = x_k + Delta b_k r_k $
-$ x_l -> x_l' = x_l - Delta b_l r_l $
+#### Exact Input
 
-The exact amount of asset $l$ the user will receive (or have to send) in exchange for a fixed amount of asset $k$ can be calculated by solving the balance calculation equation for $y=x_l'$ (or $y=x_k'$) and adjusting the intermediary variables accordingly.
+Our goal is to find $Delta b_l$, given $Delta b_k$, i.e. how much of asset $l$ the user will receive (is taken out of the pool) in exchange for sending a fixed amount of asset $k$ (is added to the pool).
+To that end, we solve equation (3) for $y=x_l'$, where we set the intermediary variables to
+```
+tilde(sigma) = sigma + Delta b_k r_k - x_l
+tilde(pi) = (x_k/(x_k'))^(v_k) x_l^(v_l) pi
+```
+From this we obtain the amount to send to the user:
+```
+Delta b_l = (x_l - x_l')/r_l
+```
+
+#### Exact Output
+
+Alternatively we can compute $Delta b_k$ given $Delta b_l$, i.e. how much of asset $k$ the user will have to send (is added to the pool) in exchange for receiving a fixed amount of asset $k$ (is taken out of the pool).
+In this scenario the intermediary variables are set to
+```
+tilde(sigma) = sigma - x_k - Delta b_l r_l
+tilde(pi) = x_k^(v_k) (x_l/(x_l'))^(v_l) pi
+```
+and we use equation (3) to find $y=x_k$. Finally we obtain the amount to take from the user:
+```
+Delta b_k = (x_k' - x_k)/r_k
+```
