@@ -107,7 +107,7 @@ Given a pool with weights ${w_i}$ and virtual balances ${x_i}$, we can find the 
 
 The iterative process is started with a good guess for $D_0$ (such as $sigma$) and continued until the desired precision is achieved.
 
-### Math: Rate Update
+### Rate Update
 
 When updating rates, we have 
 
