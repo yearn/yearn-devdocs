@@ -44,9 +44,7 @@ These factors are taken into account when calculating the rates and balances of 
 
 Bands are ranges within which the weights of the assets can fluctuate. If an asset's weight goes outside its band, it will be rebalanced to bring it back within the band. This ensures that the pool remains diversified and balanced, optimizing the risk and yield distribution among the assets.
 
-# Math Deep Dive
-
-## Invariant Derivation
+## Math: Invariant Derivation
 
 1. Constant sum: The sum of all virtual balances equals a constant, $c_1$.
 
@@ -99,7 +97,7 @@ The invariant is then expressed as:
 
 - $A f^n sigma + D = A D f^n + D pi$     (1)
 
-## Supply Calculation
+## Math: Supply Calculation
 
 Given a pool with weights ${w_i}$ and virtual balances ${x_i}$, we can find the equilibrium supply by solving equation (1) iteratively for $D$:
 
@@ -109,7 +107,7 @@ Given a pool with weights ${w_i}$ and virtual balances ${x_i}$, we can find the 
 
 The iterative process is started with a good guess for $D_0$ (such as $sigma$) and continued until the desired precision is achieved.
 
-### Rate Update
+### Math: Rate Update
 
 When updating rates, we have 
 
@@ -120,7 +118,7 @@ When updating rates, we have
 
 The iterative process in equation (2) is used to find both $D'$ and $pi'$, starting off with $D'_0 = D$ and $pi'_0 = (r_i/(r_i'))^{(v_i)} pi$.
 
-## Balance Calculation
+## Math: Balance Calculation
 
 Given a pool with weights ${w_i}$, virtual balances ${x_i}_{(i != j)}$ and supply $D$, we can find the balance of a specific asset $j$ by solving equation (1) for $y := x_j$.
 
@@ -143,7 +141,7 @@ Plugging in our function yields
 - $y_{(m+1)} = (v_j y_m^2 + b (v_j - 1) y_m + c y_m^{(1-v_j)})/((v_j + 1) y_m + v_j b)$
 - where $b = \tilde{sigma} + D/(A f^n) - D$, $c = D/(A f^n) \tilde{pi}$    (3)
 
-### Swaps
+### Math: Swaps
 
 In a swap operation, a user swaps asset $k$ for asset $l$ ($k != l$). The virtual balances change as follows:
 
