@@ -31,6 +31,7 @@ module.exports = {
           label: 'yETH',
           items: [
             'products/yeth/overview',
+            'products/yeth/mathematical-dive',
           ],
         },
          {
