@@ -80,11 +80,11 @@ The main difference between Balancer and Curve lies in their respective veTokens
 
 ## Aerodrome LP Tokens
 
-On Binance Smart Chain, we have deployed the Aerodrome LP Token Vault Factory. This is essentially a fork of the Velodrome Vault Factory launched by the same team.
+On Base, we have deployed the Aerodrome LP Token Vault Factory. Aerodrome is a fork of Velodrome V2 and was deployed by the Velodrome team on Base.
 
-The Aerodrome Vault Factory works identically to the Velodrome one. It allows users to deploy new vaults permissionlessly for any Aerodrome V2 pool. The strategy collects AERO emissions from gauge incentives, which are sold for the LP token, making auto-compounding effortless!
+The Aerodrome Vault Factory works identically to the Velodrome one. It allows users to deploy new vaults permissionlessly for any Aerodrome V2 pool. The strategy collects AERO emissions from gauge incentives, which are sold for the LP token, making auto-compounding effortless.
 
-Just like with the Velodrome Vault Factory, harvests for the Aerodrome Vault Factory are permissioned and regularly called by keepers.
+Like with the Velodrome Vault Factory, harvests for the Aerodrome Vault Factory are permissioned and regularly called by keepers.
 
 ## Determine Accumulated Rewards
 
