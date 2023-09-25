@@ -105,7 +105,7 @@ Please note that yield is paid out one week after it is generated. The yield gen
 
 ### What other benefits does yETH give holders?
 
-yETH provides diversification by holding a basket of LSDs. This helps to spread the risk and potentially increase returns.
+yETH provides diversification by holding a basket of LSDs, which helps to spread the risk.
 
 ### How is yield passed onto stakers?
 
