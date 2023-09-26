@@ -76,13 +76,13 @@ Balancer is another protocol we have integrated with our Vault Factory. The proc
 
 **StrategyAuraFactory** is currently the only strategy used for Balancer factory vaults. It leverages the Aura rewards program on Balancer to earn additional yield.
 
-The main difference between Balancer and Curve lies in their respective veTokens. Balancer's veBAL is their LP token (an 80/20 BAL/WETH pair), and their maximum lock duration is 1 year (compared to 4 on Curve). Unlike our Curve strategies where we use our veCRV balance to boost rewards, we currently do not have a huge veBAL stack. Therefore, the strategy focuses on earning Aura rewards.
+The main difference between Balancer and Curve lies in their respective veTokens. Balancer's veBAL is their LP token (an 80/20 BAL/WETH pair), and their maximum lock duration is 1 year (compared to 4 on Curve). Unlike our Curve strategies where we use our veCRV balance to boost rewards, we currently do not have a large amount of veBAL in the treasury. Therefore, the strategy focuses on earning Aura rewards.
 
 ## Aerodrome LP Tokens
 
 On Base, we have deployed the Aerodrome LP Token Vault Factory. Aerodrome is a fork of Velodrome V2 and was deployed by the Velodrome team on Base.
 
-The Aerodrome Vault Factory works identically to the Velodrome one. It allows users to deploy new vaults permissionlessly for any Aerodrome V2 pool. The strategy collects AERO emissions from gauge incentives, which are sold for the LP token, making auto-compounding effortless.
+The Aerodrome Vault Factory works identically to the Velodrome Factory. It allows users to deploy new vaults permissionlessly for any Aerodrome V2 pool. The strategy collects AERO emissions from gauge incentives, which are sold for the LP token, making auto-compounding effortless.
 
 Like with the Velodrome Vault Factory, harvests for the Aerodrome Vault Factory are permissioned and regularly called by keepers.
 
