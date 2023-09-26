@@ -100,15 +100,25 @@ For Convex and Convex Frax you can view how much rewards have accumulated in USD
 
 ## Contracts
 
-- Ethereum Deploy Address: [0x21b1FC8A52f179757bf555346130bF27c0C2A17A](https://etherscan.io/address/0x21b1FC8A52f179757bf555346130bF27c0C2A17A#writeContract)
+### Ethereum
 
-The CurveGlobal contract provides a few main functions:
+- Curve LP Factory Address: [0x21b1FC8A52f179757bf555346130bF27c0C2A17A](https://etherscan.io/address/0x21b1FC8A52f179757bf555346130bF27c0C2A17A#readContract)
+- Balancer LP Factory Address: [0x06393857dB733b76DD3ec91F3681cE85db275438](https://etherscan.io/address/0x06393857db733b76dd3ec91f3681ce85db275438#readContract)
+
+### Optimism
+- Velodrome LP Factory Address: [0x8eb53a4fD9D2727a49E9e68a32108C18049bFf86](https://optimistic.etherscan.io/address/0x8eb53a4fD9D2727a49E9e68a32108C18049bFf86#readContract)
+
+### Base
+- Aerodrome LP Factory Address: [0x2d12caFfa46ab3b6c5cEb224620de8b4DE3cDff1](https://basescan.org/address/0x2d12caffa46ab3b6c5ceb224620de8b4de3cdff1#readContract)
+
+The LP Factory contract provides a few main functions:
 
 - `allDeployedVaults()`: returns an array of all the deployed vaults.
 - `numVaults()`: returns the number of vaults deployed.
 - `canCreateVaultPermissionlessly()`: takes in an address for a gauge and returns a boolean that indicates whether a vault can be created permissionlessly.
 - `createNewVaultsAndStrategies()`: takes in an address for a gauge and a boolean that determines whether duplicate vaults are allowed, and creates a new vault and strategy.
 - `latestDefaultOrAutomatedVaultFromGauge()`: takes in an address for a gauge and returns the latest default or automated vault from that gauge.
+- `~StrategyImplementation()`: Has the name of the strategy in front of `StrategyImplmentation` and returns the strategy contract template address used in the vault factory each factory will have at least one.
 
 ## Create with UI
 
