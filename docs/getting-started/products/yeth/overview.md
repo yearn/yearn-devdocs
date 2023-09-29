@@ -76,7 +76,6 @@ Trusted addresses with privileged access for limited operations. Should eventual
 - No user may deposit assets into the contract.
 - Users may only withdraw assets in a balanced manner, single-sided withdrawals are not allowed.
 - Weights, rates, and rate providers cannot be updated during this mode.
-- A weight or amplification ramp cannot be started.
 - Management or guardian can undo pause mode to resume normal operation.
 
 ### Killed mode
