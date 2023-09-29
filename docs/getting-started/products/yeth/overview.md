@@ -73,7 +73,7 @@ Let's consider a pool with two assets, A and B, with a target weight of 50%. Due
 - If a user withdraws asset A, they will receive a withdrawal bonus because the withdrawal brings the weight of A closer to its target weight. The system will send more asset A to the withdrawer than the rate would suggest.
 - If a user withdraws asset B, they will incur a withdrawal penalty because the withdrawal decreases the weight of B below its target weight. The system will send less asset B to the withdrawer than the rate would suggest.
 
-For a deeper dive into the math behind the calculation of yETH weighted stable swap check this [paper](https://github.com/yearn/yETH/blob/main/whitepaper/derivation.pdf).
+For a deeper dive into the math behind the calculation of yETH weighted stable swap check this paper: https://github.com/yearn/yETH/blob/main/whitepaper/derivation.pdf
 
 ## Contracts & Roles
 
@@ -139,3 +139,7 @@ Trusted addresses with emergency privileges:
 Trusted addresses with the privilege to whitelist new assets:
 
 - Can whitelist a new asset, which sets an initial weight, sets the rate provider, and requires an initial deposit. New assets can only be whitelisted if no weight change has been scheduled.
+
+## Protocol Specs
+
+- The yETH specification can be found in the source repo: https://github.com/yearn/yETH/blob/main/SPECIFICATION.md
