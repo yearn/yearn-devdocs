@@ -36,6 +36,35 @@ Here's how the voting outcome affects the weights:
 2. The incentives for voting are distributed only to those who explicitly voted for a particular LST, making the incentive system more effective.
 3. If a new LST, say E, is added during the voting process, they start at 0% weight and do not fight for the 7% redistribution. They are gradually increased to 1% in the first epoch. In the next epoch, they participate like all other LSTs.
 
+## Single-Sided Deposits and Withdrawals
+
+Single-sided deposits and withdrawals allow users to add or remove a specific asset from the pool. This differs from balanced operations where users deposit or withdraw a proportionate amount of all assets in the pool. Single-sided operations can be more convenient but may also incur bonuses or penalties.
+
+### Single-Sided Deposits
+
+When a user makes a single-sided deposit, they add a specific amount of one asset to the pool. The system calculates the equivalent amount of yETH tokens to mint based on the current rate of the deposited asset.
+
+However, single-sided deposits can distort the balance of assets in the pool. The system applies a deposit penalty if the deposited asset's weight increases above its target weight due to the deposit. This penalty reduces the amount of yETH tokens minted for the depositor, making the deposit operation more expensive. The penalty serves as an incentive for users to maintain the balance of assets in the pool.
+
+Conversely, the system applies a deposit bonus if the deposited asset's weight is below its target weight. This bonus increases the yETH tokens minted for the depositor, making the deposit operation cheaper. The bonus serves as an incentive for users to restore the balance of assets in the pool.
+
+### Single-Sided Withdrawals
+
+Users who make a single-sided withdrawal burn a specific amount of yETH tokens to withdraw one asset from the pool. The system calculates the amount of the asset to send based on the current rate.
+
+Like single-sided deposits, single-sided withdrawals can also distort the balance of assets in the pool. If the withdrawn asset's weight decreases below its target weight due to the withdrawal, the system applies a withdrawal penalty. This penalty reduces the amount of the asset sent to the withdrawer, making the withdrawal operation more expensive.
+
+Conversely, the system applies a withdrawal bonus if the withdrawn asset's weight is above its target weight. This bonus increases the amount of the asset sent to the withdrawer, effectively making the withdrawal operation cheaper.
+
+### Examples
+
+Let's consider a pool with two assets, A and B, with a target weight of 50%. Due to market fluctuations, the current weights are 60% for A and 40% for B.
+
+- If a user deposits asset A, they will incur a deposit penalty because the deposit increases the weight of A above its target weight. The system will mint fewer yETH tokens for the depositor than the rate would suggest.
+- If a user deposits asset B, they will receive a deposit bonus because the deposit brings the weight of B closer to its target weight. The system will mint more yETH tokens for the depositor than the rate would suggest.
+- If a user withdraws asset A, they will receive a withdrawal bonus because the withdrawal brings the weight of A closer to its target weight. The system will send more asset A to the withdrawer than the rate would suggest.
+- If a user withdraws asset B, they will incur a withdrawal penalty because the withdrawal decreases the weight of B below its target weight. The system will send less asset B to the withdrawer than the rate would suggest.
+
 ## Contracts & Roles
 
 | Name                                             | Address                             |
