@@ -4,7 +4,7 @@
 
 yETH is a user-governed liquidity pool token consisting of various Ethereum Liquid Staking Derivatives (LSTs).
 
-The yETH protocol is an Automated Market Maker (AMM) for LSTs. Each LST in the yETH pool is priced according to the amount of [beacon chain](https://ethereum.org/en/upgrades/beacon-chain/) ETH it represents. This allows users to deposit their LSTs into the pool and receive yETH tokens pegged 1:1 with beacon chain ETH. Users can also stake their yETH tokens to mint st-yETH, accrue yield, and participate in yETH governance.
+The yETH protocol is an Automated Market Maker (AMM) for LSTs. Each LST in the yETH pool is priced according to the amount of [beacon chain](https://ethereum.org/en/upgrades/beacon-chain/) ETH it represents. This lets users deposit their LSTs into the pool and receive yETH tokens pegged 1:1 with beacon chain ETH. Users can also stake their yETH tokens to mint st-yETH, accrue yield, and participate in yETH governance.
 
 This AMM model, combined with the governance and incentive mechanisms of the yETH protocol, aims to provide an optimal risk-adjusted yield for ETH staking by dynamically adjusting the weights of the LSTs in the pool. It also offers users flexibility with single-sided deposits and withdrawals, and maintains the pool's balance and diversification through a weight management system.
 
@@ -62,7 +62,7 @@ Users who make a single-sided withdrawal burn a specific amount of yETH tokens t
 
 Like single-sided deposits, single-sided withdrawals can also distort the balance of assets in the pool. If the withdrawn asset's weight decreases below its target weight due to the withdrawal, the system applies a withdrawal penalty. This penalty reduces the amount of the asset sent to the withdrawer, making the withdrawal operation more expensive.
 
-Conversely, the system applies a withdrawal bonus if the withdrawn asset's weight is above its target weight. This bonus increases the amount of the asset sent to the withdrawer, effectively making the withdrawal operation cheaper.
+Conversely, the system applies a withdrawal bonus if the withdrawn asset's weight exceeds its target weight. This bonus increases the amount of the asset sent to the withdrawer, effectively making the withdrawal operation cheaper.
 
 ### Examples
 
@@ -72,6 +72,8 @@ Let's consider a pool with two assets, A and B, with a target weight of 50%. Due
 - If a user deposits asset B, they will receive a deposit bonus because the deposit brings the weight of B closer to its target weight. The system will mint more yETH tokens for the depositor than the rate would suggest.
 - If a user withdraws asset A, they will receive a withdrawal bonus because the withdrawal brings the weight of A closer to its target weight. The system will send more asset A to the withdrawer than the rate would suggest.
 - If a user withdraws asset B, they will incur a withdrawal penalty because the withdrawal decreases the weight of B below its target weight. The system will send less asset B to the withdrawer than the rate would suggest.
+
+For a deeper dive into the math behind the calculation of yETH weighted stable swap check this [paper](https://github.com/yearn/yETH/blob/main/whitepaper/derivation.pdf).
 
 ## Contracts & Roles
 
