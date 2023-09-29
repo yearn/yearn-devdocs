@@ -16,25 +16,25 @@ By bundling LSTs, st-yETH aims to generate the best risk-adjusted yield from ETH
 
 In yETH, each Liquid Staking Derivative (LST) has an assigned weight representing its proportion in the pool. The weight management system ensures that the pool remains diversified and balanced. As an LST performs well or gains popularity, its weight in the pool may increase, attracting more liquidity and providing better returns. Conversely, if an LST underperforms or faces issues, its weight may decrease, reducing its impact on the overall pool performance. This dynamic adjustment helps maintain an optimal risk-adjusted yield for yETH users.
 
-Each epoch, users can vote to adjust the weights of the LSTs in the pool. The voting process also involves a "do nothing" option, which effectively votes for the current weight distribution to remain unchanged. If a new LST is added during the voting process, they start at 0% weight and gradually increase to 1% in the first epoch. In the subsequent epoch, they participate like all other LSTs.
+For each epoch, users can vote to adjust the weights of the LSTs in the pool. The voting process also involves a "do nothing" option, allowing the current weight distribution to remain unchanged. If a new LST is added during the voting process, it starts at 0% weight and gradually increases to 1% in the first epoch. In the subsequent epoch, they participate like all other LSTs.
 
 ### Example
 
-Suppose we have four LSTs: Alice, Bob, Charlie, and David with weights 10%, 20%, 30%, and 40% respectively in epoch n. For the next epoch (n+1), Charlie has incentives worth $100.
+Suppose we have four LSTs: A, B, C, and D with weights 10%, 20%, 30%, and 40% respectively in epoch n. For the next epoch (n+1), C has incentives worth $100.
 
 The voting outcome for epoch n+1 is:
 
 - Do nothing: 30%
-- Alice: 7%
-- Bob: 10%
-- Charlie: 43%
-- David: 10%
+- A: 7%
+- B: 10%
+- C: 43%
+- D: 10%
 
 Here's how the voting outcome affects the weights:
 
 1. The "do nothing" vote is distributed to the current weight, reducing the total redistribution to 7%.
 2. The incentives for voting are distributed only to those who explicitly voted for a particular LST, making the incentive system more effective.
-3. If a new LST, say Eric, is added during the voting process, they start at 0% weight and do not fight for the 7% redistribution. They are gradually increased to 1% in the first epoch. In the next epoch, they participate like all other LSTs.
+3. If a new LST, say E, is added during the voting process, they start at 0% weight and do not fight for the 7% redistribution. They are gradually increased to 1% in the first epoch. In the next epoch, they participate like all other LSTs.
 
 ## Contracts & Roles
 
@@ -74,9 +74,9 @@ Trusted addresses with privileged access for limited operations. Should eventual
 
 - No user may swap assets with the contract.
 - No user may deposit assets into the contract.
-- Users may only withdraw assets in a balanced manner, single sided withdrawals are not allowed.
-- Weights, rates and rate providers cannot be updated during this mode.
-- A weight and/or amplification ramp cannot be started.
+- Users may only withdraw assets in a balanced manner, single-sided withdrawals are not allowed.
+- Weights, rates, and rate providers cannot be updated during this mode.
+- A weight or amplification ramp cannot be started.
 - Management or guardian can undo pause mode to resume normal operation.
 
 ### Killed mode
@@ -100,4 +100,4 @@ Trusted addresses with emergency privileges:
 
 Trusted addresses with the privilege to whitelist new assets:
 
-- Can whitelist a new asset, which sets an initial weight, sets the rate provider and requires an initial deposit. New assets can only be whitelisted if no weight change has been scheduled yet.
+- Can whitelist a new asset, which sets an initial weight, sets the rate provider, and requires an initial deposit. New assets can only be whitelisted if no weight change has been scheduled.
