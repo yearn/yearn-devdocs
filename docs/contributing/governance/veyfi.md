@@ -81,11 +81,11 @@ dYFI (previously specified as oYFI) is a token introduced as part of Yearn's veY
 - The amount of ETH required for redemption is at a discount of the current spot price of YFI/ETH.
 - Discount calculation is an approximation of the following formula:
   - discount = `c/(1 + a * e^k(s*x − 1))`, where:
-    - c = 1
-    - a = 9.9999
-    - k = 4.6969
-    - s = configurable scaling factor
-    - x = veYFI_supply / YFI_supply
+    - **c** = `1`
+    - **a** = `9.9999`
+    - **k** = `4.6969`
+    - **s** = `configurable scaling factor`
+    - **x** = `veYFI_supply / YFI_supply`
 - ETH received from dYFI redemption is redirected to automated YFI buybacks handled by an immutable smart contract, like the one already in production for DAI.
 
 ## Benefits
