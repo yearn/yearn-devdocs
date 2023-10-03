@@ -44,7 +44,7 @@ Governance Forum Thread: https://gov.yearn.fi/t/yip-65-evolving-yfi-tokenomics
 
 ### veYFI Reward Pool
 
-- Users who lock veYFI can claim YFI from the veYFI exited early and the non-distributed gauge rewards due to the lack of boost.
+- Users who lock veYFI can claim accumulated fees from the veYFI reward pool. The reward pool gets fees two ways: YFI from the veYFI early exit fee and the non-distributed gauge rewards due to a lack of full boost.
 - You can start claiming from the veYFI reward pool two or three weeks (to be defined) from the Thursday after which you lock before you can claim.
 
 ## Benefits
