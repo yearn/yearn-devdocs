@@ -16,7 +16,7 @@ The biggest update to Yearn Version 3 yVaults from V2 was the introduction of "T
 
 In V3 strategies are now, themselves, fully ERC-4626-compliant stand-alone vaults. Though their job remains the same (i.e., generate yield from one external source), strategies can now be connected to many different vaults simultaneously and deposited directly into by an end user.
 
-This increased functionality not only means strategies have a much larger potential market of depositors but also means anyone (including you) now has the ability to build, deploy, market, and maintain your own Yearn strategy without any need for an endorsement or permission from Yearn.
+This increased functionality not only means strategies have a much larger potential market of depositors but also means anyone (including you) now have the ability to build, deploy, market, and maintain your own Yearn strategy without any need for an endorsement or permission from Yearn.
 
 ## Why?
 
@@ -25,11 +25,11 @@ This increased functionality not only means strategies have a much larger potent
 - *Simple 4626 Wrappers* - Tokenized Strategies offer a super easy and cheap way to give any previously deployed protocol an ERC-4626 interface. This opens up any protocol to easily integrate into the rapidly growing 4626 ecosystem (including Yearn Meta Vaults).
 
 ## Definitions
-- [Strategy](https://github.com/yearn/tokenized-strategy): A strategy or "Tokenized Strategy" in V3 refers to an ERC-4626 compliant contract that utilizes the [TokenizedStrategy](https://github.com/yearn/tokenized-strategy/blob/master/src/TokenizedStrategy.sol#L14-L26) pattern that either Meta Vaults or individual users can deposit directly into and receive shares in return. The strategy takes the underlying asset and deploys it into a single source to generate yield on that asset.
+- [Strategy](https://github.com/yearn/tokenized-strategy) : A strategy or "Tokenized Strategy" in V3 refers to an ERC-4626 compliant contract that utilizes the [TokenizedStrategy](https://github.com/yearn/tokenized-strategy/blob/master/src/TokenizedStrategy.sol#L14-L26) pattern that either Meta Vaults or individual users can deposit directly into and receive shares in return. The strategy takes the underlying asset and deploys it into a single source to generate yield on that asset.
 - asset: Any ERC20-compliant token.
 - Shares: ERC20-compliant token that tracks the asset balance in the strategy for every depositor.
 - [TokenizedStrategy.sol](https://github.com/yearn/tokenized-strategy/blob/master/src/TokenizedStrategy.sol): The implementation contract that all strategies delegateCall to for the standard ERC4626 and profit locking functions.
-- [BaseStrategy.sol](https://github.com/yearn/tokenized-strategy/blob/master/src/BaseStrategy.sol): The abstract contract that a strategy should inherit from, which handles all communication with the Tokenized Strategy contract.
+- [BaseTokenizedStrategy.sol](https://github.com/yearn/tokenized-strategy/blob/master/src/BaseTokenizedStrategy.sol): The abstract contract that a strategy should inherit from, which handles all communication with the Tokenized Strategy contract.
 - Strategist: The developer of a specific strategy.
 - Depositor: Account that deposits the asset and holds Shares.
 - Vault: Or also called "Meta Vault", is a Yearn ERC4626 compliant Smart Contract that receives assets from Depositors to then distribute them among the different Strategies added to the vault, managing accounting and asset distribution. 
@@ -50,7 +50,7 @@ This increased functionality not only means strategies have a much larger potent
 
 While the complete architecture of the Tokenized Strategy is out of the scope of this document you can read more about how it works [here](https://github.com/yearn/tokenized-strategy/blob/master/SPECIFICATION.md)
 
-**TLDR**: V3 strategies use an immutable proxy pattern to outsource all of its complex, high-risk, and redundant code to one [TokenizedStrategy.sol](https://github.com/yearn/tokenized-strategy/blob/master/src/TokenizedStrategy.sol) implementation contract that is used by every strategy of a specific API version. To use this pattern you simply need to inherit the [BaseStrategy.sol](https://github.com/yearn/tokenized-strategy/blob/master/src/BaseStrategy.sol) contract, which holds all of the logic to communicate with the implementation contract, and then just override a few simple functions with your specific strategy logic.
+**TLDR**: V3 strategies use an immutable proxy pattern to outsource all of its complex, high-risk, and redundant code to one [TokenizedStrategy.sol](https://github.com/yearn/tokenized-strategy/blob/master/src/TokenizedStrategy.sol) implementation contract that is used by every strategy of a specific API version. To use this pattern you simply need to inherit the [BaseTokenizedStrategy.sol](https://github.com/yearn/tokenized-strategy/blob/master/src/BaseTokenizedStrategy.sol) contract, which holds all of the logic to communicate with the implementation contract, and then just override a few simple functions with your specific strategy logic.
 
 ## Getting started
 
@@ -191,7 +191,7 @@ While that may be all that's necessary for some of the most simple strategies, g
 2. *availableWithdrawLimit(address _owner)*
   
 **Purpose**:
-- This is called during every withdraw and can be used to enforce any withdraw limit the strategist desires.
+- This is called during every withdraw and can be used to enforce any witdhraw limit the strategist desires.
 
 **Parameters**:
 - `_owner`: The address that owns the shares that would be burnt for the underlying assets.
@@ -316,7 +316,7 @@ While that may be all that's necessary for some of the most simple strategies, g
 All other functionality, such as reward selling, upgradability, etc., is up to the strategist to determine what best fits their vision. Due to the ability of strategies to stand alone from a Vault, it is expected and encouraged for strategists to experiment with more complex, risky, or previously unfeasible Strategies.
 
 ### FYI
-NOTE: The only default global variables from the BaseStrategy that can be accessed from storage is `asset` and `TokenizedStrategy`. If other global variables are needed for your specific strategy, you can use the `TokenizedStrategy` variable to quickly retrieve any other needed variables within the strategy, such as `totalAssets`, `totalDebt`, `isShutdown` etc.
+NOTE: The only default global variables from the BaseTokenizedStrategy that can be accessed from storage is `asset` and `TokenizedStrategy`. If other global variables are needed for your specific strategy, you can use the `TokenizedStrategy` variable to quickly retrieve any other needed variables within the strategy, such as `totalAssets`, `totalDebt`, `isShutdown` etc.
 
 Example:
 
@@ -360,7 +360,7 @@ The expected behavior is that strategies report profits/losses on a schedule bas
 
 ## Testing
 
-Due to the nature of the BaseStrategy utilizing an external contract for most of its logic, the default interface for any strategy will not allow proper testing of all functions. Testing of your Strategy should utilize the pre-built [IStrategyInterface](https://github.com/yearn/tokenized-strategy-foundry-mix/blob/master/src/interfaces/IStrategyInterface.sol) to cast any deployed strategy through for testing, as seen in the testing setups in each mix. To test all functions with one variable, you can add any external functions you add for your specific strategy to this interface. 
+Due to the nature of the BaseTokenizedStrategy utilizing an external contract for most of its logic, the default interface for any strategy will not allow proper testing of all functions. Testing of your Strategy should utilize the pre-built [IStrategyInterface](https://github.com/yearn/tokenized-strategy-foundry-mix/blob/master/src/interfaces/IStrategyInterface.sol) to cast any deployed strategy through for testing, as seen in the testing setups in each mix. To test all functions with one variable, you can add any external functions you add for your specific strategy to this interface. 
 
 Foundry Example:
 
@@ -445,4 +445,3 @@ All other emergency functionality is left up to the individual strategist.
 - How do I get My strategy added to the Yearn UI?
 
 ## Other reading material
-
