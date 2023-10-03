@@ -19,23 +19,23 @@ Governance Forum Thread: https://gov.yearn.fi/t/yip-65-evolving-yfi-tokenomics
   - So if your lock is over 3 years you will pay 75%.
   - If your lock is 2 years you will pay 2/4 = 50%
   - Penalty Formula: `min(75%, lock_duration_left / 4 years * 100%)`
-- Once veYFI is introduced, only veYFI is accepted voting power in Yearn Governance.
+- Now that veYFI has been implemented, only veYFI is accepted voting power in Yearn Governance.
 
 ### dYFI
 
-- dYFI is a token that implements the ERC-20 standard.
+- dYFI is an ERC-20 token.
 - Gauges pay dYFI that you can either sell for ETH or convert to YFI (by paying ETH, this ETH gets routed to buybacks immediately).
-- Gives its bearer the right to redeem an equivalent YFI in exchange for ETH.
+- Gives its bearer the right to redeem an equivalent amount of YFI in exchange for ETH.
 - dYFI is burned upon redemption.
 - The circulating supply of dYFI must not exceed the amount of YFI available to be redeemed as part of the tokenomics program.
-- The amount of ETH required for redemption is at a discount of the current spot price of YFI/ETH.
+- The amount of ETH required for redemption is at a discount to the current spot price of YFI/ETH.
 - ETH received from dYFI redemption is redirected to automated YFI buybacks handled by an immutable smart contract.
 
 ### Vault Gauges + Voting
 
 - Vault gauges allow vault depositors to stake their vault tokens and earn YFI rewards according to their veYFI weight.
-- Weights decay as the remaining lock duration decreases, and can be extended up to the max lock duration.
-- Increased locking duration is rewarded with increased weights, so locking for 4 years gives 100% weight, locking for 2 years 50% weight, etc.
+- Weights decay as the remaining lock duration decreases and can be extended up to the max lock duration.
+- Increased locking duration is rewarded with increased weight, so locking for 4 years gives 100% weight, locking for 2 years 50% weight, etc.
 - YFI is allocated to gauges based on bi-monthly governance votes. Each gauge can get a different amount of bought-back YFI to emit.
 - Based on their veYFI lock, users can boost their gauge rewards by up to 10x proportional to the number of vault tokens deposited, when they claim YFI rewards from gauges. The greater the amount of veYFI, the more vault deposits can be boosted for the user.
 - The boost mechanism will calculate your earning weight by taking the smaller amount of two values, provided in the formula below: 
@@ -45,15 +45,12 @@ Governance Forum Thread: https://gov.yearn.fi/t/yip-65-evolving-yfi-tokenomics
 ### veYFI Reward Pool
 
 - Users who lock veYFI can claim accumulated fees from the veYFI reward pool. The reward pool gets fees two ways: YFI from the veYFI early exit fee and the non-distributed gauge rewards due to a lack of full boost.
-- You can start claiming from the veYFI reward pool two or three weeks (to be defined) from the Thursday after which you lock before you can claim.
+- You can claim from the veYFI reward pool two or three weeks (to be defined) from the Thursday after you lock.
 
 ## Benefits
 
 - **Incorporates YFI buybacks.** The mandate of [YIP-56: Buyback and Build](https://gov.yearn.fi/t/yip-56-buyback-and-build/8929) is unchanged, the new design builds on top of and integrates the bought-back YFI.
-- **It's a sustainable ecosystem.** The new design does not create a drain on Treasury assets. Instead, there are reinforcing flywheel effects where tokenomics rewards drive more TVL, which in turn drives more fees, which drives more YFI buybacks, which is then used to reinforce the tokenomics
-- **Incentivizes a long-term view on Yearn.** Token holders are motivated to support the protocol over the long term rather than to speculate on the short term.
-- **Disproportionately rewards those most loyal.** Weaker conviction holders effectively become diluted over time by the stronger conviction holders.
-- **Limits rent-seeking benefits.** The design avoids holders being rewarded for nothing and lets the largest holders accumulate more at the expense of the smaller holders.
+- **Incentivizes a long-term view on Yearn.** Token holders are motivated to support the protocol over the long-term rather than to speculate on the short-term.
 - **Makes vaults more competitive.** Additional YFI earned from vault gauges are effectively added yield for depositors in proportion to how dedicated they are in their support.
 - **Motivates 3rd party protocols and DAOs to become YFI holders.** Yearn products are used as yield components of a broader DeFi stack, and integrated into wallets and protocols. With this design, they have incentives to direct rewards to vaults and products they use.
 - **A seamless experience for integrators.** Participation is optional. This maintains the simplicity integrators have come to appreciate and makes it easy to reason about vault behavior. Only those who are motivated to do so can participate.
