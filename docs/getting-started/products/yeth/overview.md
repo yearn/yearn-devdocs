@@ -103,7 +103,7 @@ Trusted addresses with privileged access for limited operations. Should eventual
 - Can set the pool swap fee.
 - Can set the tolerance range.
 - Can set the new management address.
-- Can set the new guardian and whitelister addresses.
+- Can set the new guardian addresses.
 - Can trigger `pause mode`.
 - Can trigger `killed mode`.
 
@@ -133,12 +133,6 @@ There is no way to undo `killed mode`.
 Trusted addresses with emergency privileges:
 
 - Can trigger pause mode.
-
-## Whitelister Role
-
-Trusted addresses with the privilege to whitelist new assets:
-
-- Can whitelist a new asset, which sets an initial weight, sets the rate provider, and requires an initial deposit. New assets can only be whitelisted if no weight change has been scheduled.
 
 ## Protocol Specs
 
