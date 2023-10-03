@@ -38,7 +38,7 @@ Governance Forum Thread: https://gov.yearn.fi/t/yip-65-evolving-yfi-tokenomics
 - Increased locking duration is rewarded with increased weights, so locking for 4 years gives 100% weight, locking for 2 years 50% weight, etc.
 - YFI is allocated to gauges based on bi-monthly governance votes. Each gauge can get a different amount of bought-back YFI to emit.
 - Based on their veYFI lock, users can boost their gauge rewards by up to 10x proportional to the number of vault tokens deposited, when they claim YFI rewards from gauges. The greater the amount of veYFI, the more vault deposits can be boosted for the user.
-- The boost mechanism will calculate your earning weight by taking the smaller amount of two values: The first is the amount of liquidity you provide. This amount is your maximum earning weight.
+- The boost mechanism will calculate your earning weight by taking the smaller amount of two values, provided in the formula below: 
   - Gauge boost formula: `min(AmountDeposited, (AmountDeposited /10) + (TotalDepositedInTheGauge * VeYFIBalance / VeYFITotalSupply * 0.9))`
 - A claim with boost under 100% will send the leftover tokens to veYFI holders.
 
