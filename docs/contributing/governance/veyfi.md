@@ -75,9 +75,9 @@ dYFI (previously specified as oYFI) is a token introduced as part of Yearn's veY
 - Gives its bearer the right to redeem an equivalent YFI in exchange for ETH.
 - dYFI is burned upon redemption.
 - The circulating supply of dYFI must not exceed the amount of YFI available to be redeemed as part of the tokenomics program.
-- The amount of ETH required for redemption is at a discount of the current spot price of YFI/ETH.
+- The amount of ETH required for redemption is at a discount to the current spot price of YFI/ETH.
 - Discount calculation is an approximation of the following formula:
-  - discount = `c/(1 + a * e^k(s*x − 1))`, where:
+  - discount = `c / (1 + a * e^k(s * x − 1))`, where:
     - **c** = `1`
     - **a** = `9.9999`
     - **k** = `4.6969`
@@ -88,8 +88,7 @@ dYFI (previously specified as oYFI) is a token introduced as part of Yearn's veY
 ## Benefits
 
 - **Rewards active protocol participants.** dYFI is rewarded to users who stake their vault tokens in gauges, thereby incentivizing active participation in the protocol.
-- **Promotes YFI buybacks.** The ETH received from dYFI redemption is used for automated YFI buybacks, reinforcing the YFI tokenomics.
-- **Attracts more locking of veYFI.** As more veYFI is locked, the discount decreases. When veYFI decreases, discount increases to attract more locking.
+- **Promotes YFI buybacks.** The ETH received from dYFI redemption is used for automated YFI buybacks.
 
 ## Risks
 
