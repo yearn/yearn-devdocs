@@ -57,7 +57,7 @@ Governance Forum Thread: https://gov.yearn.fi/t/yip-65-evolving-yfi-tokenomics
 
 ## Risks
 
-- **Risk of governance attacks**, where one or several actors accumulate sizable positions of YFI and can control rewards and decisions of the protocol. These risks exist today and are mitigated somewhat by the limited supply of YFI and how the strong demand for YFI amongst Yearn contributors makes such attacks costly.
+ - **Risk of governance attacks**, where one or several actors accumulate sizable positions of YFI and can control rewards and decisions of the protocol.
 - **Risk of insufficient rewards to make locking attractive**, where vaults may not generate enough tokens for the Treasury to buy back enough YFI to motivate YFI holders to lock into veYFI. This has somewhat of a balancing effect: as demand for locking decreases so does the share of the rewards for those who lock. If it’s determined that the equilibrium does not lead to enough YFI being locked, additional YFI could be minted and rewarded to veYFI holders.
 - **Risk of YFI liquidity drying up.** Currently YFI is traded on multiple centralized and decentralized exchanges. As demand for using YFI elsewhere grows, there may be a lack of YFI/ETH LP supply in liquidity pools and lack of interest in general YFI market-making, leading to YFI becoming more illiquid. In such an event, additional incentives may be required to ensure healthy liquidity for trading in and out of YFI. The Treasury may also explore owning some of this liquidity outright.
 
