@@ -23,9 +23,9 @@ Governance Forum Thread: https://gov.yearn.fi/t/yip-65-evolving-yfi-tokenomics
   - Penalty Formula: `min(75%, lock_duration_left / 4 years * 100%)`
 - Now that veYFI has been implemented, only veYFI is accepted voting power in Yearn Governance.
 
-### dYFI
+### dYFI as Gauges Reward
 
-- dYFI is an ERC-20 token.
+- [dYFI](#dyfi) is an ERC-20 token.
 - Gauges pay dYFI that you can either sell for ETH or convert to YFI (by paying ETH, this ETH gets routed to buybacks immediately).
 - Gives its bearer the right to redeem an equivalent amount of YFI in exchange for ETH.
 - dYFI is burned upon redemption.
@@ -63,17 +63,17 @@ Governance Forum Thread: https://gov.yearn.fi/t/yip-65-evolving-yfi-tokenomics
 - **Risk of insufficient rewards to make locking attractive**, where vaults may not generate enough tokens for the Treasury to buy back enough YFI to motivate YFI holders to lock into veYFI. This has somewhat of a balancing effect: as demand for locking decreases so does the share of the rewards for those who lock. If it’s determined that the equilibrium does not lead to enough YFI being locked, additional YFI could be minted and rewarded to veYFI holders.
 - **Risk of YFI liquidity drying up.** Currently YFI is traded on multiple centralized and decentralized exchanges. As demand for using YFI elsewhere grows, there may be a lack of YFI/ETH LP supply in liquidity pools and lack of interest in general YFI market-making, leading to YFI becoming more illiquid. In such an event, additional incentives may be required to ensure healthy liquidity for trading in and out of YFI. The Treasury may also explore owning some of this liquidity outright.
 
-# dYFI Specification
+## dYFI
 
 dYFI (previously specified as oYFI) is a token introduced as part of Yearn's veYFI tokenomics program. It is an ERC-20 token that allows its holder to buy back YFI at a discount. 
 
 Contract Address: [`0x41252e8691e964f7de35156b68493bab6797a275`](https://etherscan.io/address/0x41252e8691e964f7de35156b68493bab6797a275)
 
-## Specification
+### Specification
 
 - Governance Forum Thread: https://gov.yearn.fi/t/yip-73-activate-veyfi-rewards-with-oyfi-gauges
 
-## Overview
+### Overview
 
 - Implements the ERC-20 standard.
 - Gives its bearer the right to redeem an equivalent YFI in exchange for ETH.
@@ -89,12 +89,12 @@ Contract Address: [`0x41252e8691e964f7de35156b68493bab6797a275`](https://ethersc
     - **x** = `veYFI_supply / YFI_supply`
 - ETH received from dYFI redemption is redirected to automated YFI buybacks handled by an immutable smart contract, like the one already in production for DAI.
 
-## Benefits
+### Benefits
 
 - **Rewards active protocol participants.** dYFI is rewarded to users who stake their vault tokens in gauges, thereby incentivizing active participation in the protocol.
 - **Promotes YFI buybacks.** The ETH received from dYFI redemption is used for automated YFI buybacks.
 
-## Risks
+### Risks
 
 - **Risk of insufficient rewards to make locking attractive**, where vaults may not generate enough tokens for the Treasury to buy back enough YFI to motivate YFI holders to lock into veYFI. This has somewhat of a balancing effect: as demand for locking decreases so does the share of the rewards for those who lock. If it’s determined that the equilibrium does not lead to enough YFI being locked, additional YFI could be minted and rewarded to veYFI holders.
 - **Risk of YFI liquidity drying up.** Currently YFI is traded on multiple centralized and decentralized exchanges. As demand for using YFI elsewhere grows, there may be a lack of YFI/ETH LP supply in liquidity pools and lack of interest in general YFI market-making, leading to YFI becoming more illiquid. In such an event, additional incentives may be required to ensure healthy liquidity exists for trading in and out of YFI. The Treasury may also explore owning some of this liquidity outright.
