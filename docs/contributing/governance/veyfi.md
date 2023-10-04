@@ -2,6 +2,8 @@
 
 veYFI incorporates [YIP-56: Buyback and Build](https://gov.yearn.fi/t/yip-56-buyback-and-build/8929) funds into YFI tokenomics. Users can lock YFI tokens and receive veYFI, which allows them to boost vault rewards and vote on where bought-back YFI will be sent.
 
+Contract Address: [`0x90c1f9220d90d3966fbee24045edd73e1d588ad5`](https://etherscan.io/address/0x90c1f9220d90d3966fbee24045edd73e1d588ad5)
+
 ## Specification
 
 Governance Forum Thread: https://gov.yearn.fi/t/yip-65-evolving-yfi-tokenomics
@@ -64,6 +66,8 @@ Governance Forum Thread: https://gov.yearn.fi/t/yip-65-evolving-yfi-tokenomics
 # dYFI
 
 dYFI (previously specified as oYFI) is a token introduced as part of Yearn's veYFI tokenomics program. It is an ERC-20 token that allows its holder to buy back YFI at a discount. 
+
+Contract Address: [`0x41252e8691e964f7de35156b68493bab6797a275`](https://etherscan.io/address/0x41252e8691e964f7de35156b68493bab6797a275)
 
 ## Specification
 
