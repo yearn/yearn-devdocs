@@ -110,10 +110,10 @@ Yearn’s work to automate the yield generation and rebalancing of your crypto a
 
 ## More information
 
-- [curve.fi](https://www.curve.fi/usecrv) webpage
+- [curve.fi](https://www.curve.fi/) webpage
 - Curve [Guide](https://resources.curve.fi/guides/staking-your-crv) for staking CRV
-- Curve [Guide](https://resources.curve.fi/guides/boosting-your-crv-rewards) for vote locking
-- Curve [FAQ](https://resources.curve.fi/faq/vote-locking-boost)
+- Curve [Guide](https://resources.curve.fi/reward-gauges/boosting-your-crv-rewards/) for vote locking
+- Curve [FAQ](https://resources.curve.fi/governance/vote-locking-boost)
 - deFinn [Infographic](https://gateway.pinata.cloud/ipfs/QmY8BZjN6oT4rrgveSqHjygcQmWitoMQk5B3moqFA6K8ea) on CRV Voting Boost and formula
 - Boost [calculator](https://dao.curve.fi/minter/calc)
 - Yearn CurveDAO proxy strategy [diagram](https://twitter.com/bantg/status/1308680661801340929)
