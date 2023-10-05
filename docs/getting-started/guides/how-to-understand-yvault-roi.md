@@ -157,6 +157,5 @@ If you would like to make a crude estimation on how returns may look like in a y
 
 The community has been actively creating tools and guides on this topic.
 
-- [https://github.com/Zer0dot/yearn_roi/blob/master/yearn_vaults_ROI_calc.ipynb](https://github.com/Zer0dot/yearn_roi/blob/master/yearn_vaults_ROI_calc.ipynb) provides a mathematical explanation of how ROI is calculated with some caveats. \(This repository is no longer being maintained\).
 - [Statistics FAQ](https://docs.yearn.fi/resources/faq#where-can-i-find-strategy-descriptions)
 - [How Yearn shows APY in the v3 interface](https://medium.com/iearn/how-yearn-calculates-estimated-returns-apy-b4fd5b687bf9)
