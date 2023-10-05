@@ -38,7 +38,7 @@ The actual boost multiplier is determined by a formula that depends on the curre
 
 A "Yearn boost" tool displaying Yearn's current active and potential boost is available [here](https://crv.ape.tax/).
 
-See the [Curve Guide](https://resources.curve.fi/guides/boosting-your-crv-rewards) for more details on the formula and its calculation.
+See the [Curve Guide](https://resources.curve.fi/reward-gauges/boosting-your-crv-rewards/) for more details on the formula and its calculation.
 
 ## The yveCRV yVault
 
@@ -111,7 +111,7 @@ Yearn’s work to automate the yield generation and rebalancing of your crypto a
 ## More information
 
 - [curve.fi](https://www.curve.fi/) webpage
-- Curve [Guide](https://resources.curve.fi/guides/staking-your-crv) for staking CRV
+- Curve [Guide](https://resources.curve.fi/crv-token/staking-your-crv/) for staking CRV
 - Curve [Guide](https://resources.curve.fi/reward-gauges/boosting-your-crv-rewards/) for vote locking
 - Curve [FAQ](https://resources.curve.fi/governance/vote-locking-boost)
 - deFinn [Infographic](https://gateway.pinata.cloud/ipfs/QmY8BZjN6oT4rrgveSqHjygcQmWitoMQk5B3moqFA6K8ea) on CRV Voting Boost and formula
