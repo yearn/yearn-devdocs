@@ -32,7 +32,7 @@ This guide focuses primarily on strategy descriptions, but those thirsty for mor
 - Autocoumpound is when a tool does compounding automatically for you.
 - There is also a protocol called Compound Finance (COMP), but that is different.
 ### Position
-- Total amount of money (or tokens) allocated into a investment.
+- Total amount of money (or tokens) allocated into an investment.
 ### Hedge
 - A position in a contrarian investment to one you already have, so if things go wrong in one thesis you offset losses by gains in the other position. 
 ### Arbitrage
@@ -56,7 +56,7 @@ This guide focuses primarily on strategy descriptions, but those thirsty for mor
 # DeFi
 
 ### Yield Aggregator / Yield Optimizer
-- DeFi protocols like Yearn that provides a single interface to allocate capital in different yield sources, leveraging [autocompounding](#compound--autocompound) to improve the [yield](#yield--profit).
+- DeFi protocols like Yearn that provide a single interface to allocate capital in different yield sources, leveraging [autocompounding](#compound--autocompound) to improve the [yield](#yield--profit).
 ### Supply / Deposit / Stake
 - Might be used interchangeably sometimes, but it often means that tokens are sent to a contract external to the current wallet.
 - Supply often means that the money is being [lent](#lend--borrow-against)
