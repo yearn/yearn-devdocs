@@ -16,7 +16,7 @@ The biggest update to Yearn Version 3 yVaults from V2 was the introduction of "T
 
 In V3 strategies are now, themselves, fully ERC-4626-compliant stand-alone vaults. Though their job remains the same (i.e., generate yield from one external source), strategies can now be connected to many different vaults simultaneously and deposited directly into by an end user.
 
-This increased functionality not only means strategies have a much larger potential market of depositors but also means anyone (including you) now have the ability to build, deploy, market, and maintain your own Yearn strategy without any need for an endorsement or permission from Yearn.
+This increased functionality not only means strategies have a much larger potential market of depositors but also means anyone (including you) now has the ability to build, deploy, market, and maintain your own Yearn strategy without any need for an endorsement or permission from Yearn.
 
 ## Why?
 
@@ -25,7 +25,7 @@ This increased functionality not only means strategies have a much larger potent
 - *Simple 4626 Wrappers* - Tokenized Strategies offer a super easy and cheap way to give any previously deployed protocol an ERC-4626 interface. This opens up any protocol to easily integrate into the rapidly growing 4626 ecosystem (including Yearn Meta Vaults).
 
 ## Definitions
-- [Strategy](https://github.com/yearn/tokenized-strategy) : A strategy or "Tokenized Strategy" in V3 refers to an ERC-4626 compliant contract that utilizes the [TokenizedStrategy](https://github.com/yearn/tokenized-strategy/blob/master/src/TokenizedStrategy.sol#L14-L26) pattern that either Meta Vaults or individual users can deposit directly into and receive shares in return. The strategy takes the underlying asset and deploys it into a single source to generate yield on that asset.
+- [Strategy](https://github.com/yearn/tokenized-strategy): A strategy or "Tokenized Strategy" in V3 refers to an ERC-4626 compliant contract that utilizes the [TokenizedStrategy](https://github.com/yearn/tokenized-strategy/blob/master/src/TokenizedStrategy.sol#L14-L26) pattern that either Meta Vaults or individual users can deposit directly into and receive shares in return. The strategy takes the underlying asset and deploys it into a single source to generate yield on that asset.
 - asset: Any ERC20-compliant token.
 - Shares: ERC20-compliant token that tracks the asset balance in the strategy for every depositor.
 - [TokenizedStrategy.sol](https://github.com/yearn/tokenized-strategy/blob/master/src/TokenizedStrategy.sol): The implementation contract that all strategies delegateCall to for the standard ERC4626 and profit locking functions.
@@ -191,7 +191,7 @@ While that may be all that's necessary for some of the most simple strategies, g
 2. *availableWithdrawLimit(address _owner)*
   
 **Purpose**:
-- This is called during every withdraw and can be used to enforce any witdhraw limit the strategist desires.
+- This is called during every withdraw and can be used to enforce any withdraw limit the strategist desires.
 
 **Parameters**:
 - `_owner`: The address that owns the shares that would be burnt for the underlying assets.
