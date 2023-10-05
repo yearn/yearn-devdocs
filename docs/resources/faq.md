@@ -60,10 +60,6 @@
 
 - [Strategies](https://docs.yearn.fi/getting-started/products/yvaults/vaults-and-strategies)
 
-#### Where can I find strategy descriptions?
-
-- [Yearn State of the Vaults](https://vaults.yearn.fi/)
-
 #### Where can I find current strategy contracts?
 
 - [yearn.watch](https://yearn.watch/)
