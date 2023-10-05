@@ -341,7 +341,7 @@ For easy integration with Vaults, front ends, debt allocators, etc. There is the
 
 ### [HealthCheck](https://github.com/Schlagonia/tokenized-strategy-periphery/tree/master/src/HealthCheck)
 
-To prevent automated reports from reporting losses/excessive profits that may not be accurate, a strategist can inherit and implement the [HealthCheck](https://github.com/yearn/tokenized-strategy-periphery/blob/master/src/HealthCheck/HealthCheck.sol) contract. This can ensure that a keeper will not call a report that may incorrectly realize incorrect losses or excessive gains. It can cause the report to revert if the gain/loss is outside of the desired bounds and will require manual intervention to ensure the strategy is reporting correctly.
+To prevent automated reports from reporting losses/excessive profits that may not be accurate, a strategist can inherit and implement the [HealthCheck](https://github.com/yearn/tokenized-strategy-periphery/blob/master/src/HealthCheck/BaseHealthCheck.sol) contract. This can ensure that a keeper will not call a report that may incorrectly realize incorrect losses or excessive gains. It can cause the report to revert if the gain/loss is outside of the desired bounds and will require manual intervention to ensure the strategy is reporting correctly.
 
 NOTE: It is recommended to implement some checks in `_harvestAndReport` for leveraged or manipulatable strategies that could report incorrect losses due to unforeseen circumstances.
 
