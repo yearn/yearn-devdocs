@@ -31,7 +31,7 @@ This increased functionality not only means strategies have a much larger potent
 - Asset: Any ERC20-compliant token
 - Shares: ERC20-compliant token that tracks the asset balance in the strategy for every depositor.
 - [TokenizedStrategy.sol](https://github.com/yearn/tokenized-strategy/blob/master/src/TokenizedStrategy.sol): The implementation contract that all strategies delegateCall to for the standard ERC4626 and profit locking functions.
-- [BaseTokenizedStrategy.sol](https://github.com/yearn/tokenized-strategy/blob/master/src/BaseTokenizedStrategy.sol): The abstract contract that a strategy should inherit from that handles all communication with the Tokenized Strategy contract.
+- [BaseStrategy.sol](https://github.com/yearn/tokenized-strategy/blob/master/src/BaseStrategy.sol): The abstract contract that a strategy should inherit from that handles all communication with the Tokenized Strategy contract.
 - Strategist: The developer of a specific strategy.
 - Depositor: Account that deposits the asset and holds Shares
 - Vault: Or "Meta Vault" is a Yearn ERC4626 compliant Smart contract that receives assets from Depositors to distribute among the different Strategies added to the vault, managing accounting and asset distribution. 
@@ -52,7 +52,7 @@ This increased functionality not only means strategies have a much larger potent
 
 While the complete architecture of the Tokenized Strategy is out of the scope of this document you can read more about how it works [here](https://github.com/yearn/tokenized-strategy/blob/master/SPECIFICATION.md)
 
-**TLDR**: V3 strategies use an immutable proxy pattern to outsource all of its complex, high risk, and redundant code to one [TokenizedStrategy.sol](https://github.com/yearn/tokenized-strategy/blob/master/src/TokenizedStrategy.sol) implementation contract that is used by every strategy of a specific API version. To use this pattern you simply need to inherit the [BaseTokenizedStrategy.sol](https://github.com/yearn/tokenized-strategy/blob/master/src/BaseTokenizedStrategy.sol) contract, that holds all of the logic to communicate with the implementation contract, and then just override a few simple functions with your specific strategy logic.
+**TLDR**: V3 strategies use an immutable proxy pattern to outsource all of its complex, high risk, and redundant code to one [TokenizedStrategy.sol](https://github.com/yearn/tokenized-strategy/blob/master/src/TokenizedStrategy.sol) implementation contract that is used by every strategy of a specific API version. To use this pattern you simply need to inherit the [BaseStrategy.sol](https://github.com/yearn/tokenized-strategy/blob/master/src/BaseStrategy.sol) contract, that holds all of the logic to communicate with the implementation contract, and then just override a few simple functions with your specific strategy logic.
 
 ## Getting started
 
@@ -309,7 +309,7 @@ While that may be all that's necessary for some of the most straightforward stra
 All other functionality, such as reward selling, upgradability, etc., is up to the strategist to determine what best fits their vision. Due to the ability of strategies to stand alone from a Vault, it is expected and encouraged for strategists to experiment with more complex, risky, or previously unfeasible Strategies.
 
 ### FYI
-NOTE: The only default global variables from the BaseTokenizedStrategy that can be accessed from storage is `asset` and `TokenizedStrategy`. If other global variables are needed for your specific strategy, you can use the `TokenizedStrategy` variable to quickly retrieve any other needed variables, such as `totalAssets`, `totalDebt`, `isShutdown` etc.
+NOTE: The only default global variables from the BaseStrategy that can be accessed from storage is `asset` and `TokenizedStrategy`. If other global variables are needed for your specific strategy, you can use the `TokenizedStrategy` variable to quickly retrieve any other needed variables, such as `totalAssets`, `totalDebt`, `isShutdown` etc.
 
 Example:
 
@@ -353,7 +353,7 @@ The expected behavior is that strategies report profits/losses on a schedule bas
 
 ## Testing
 
-Due to the nature of the BaseTokenizedStrategy utilizing an external contract for most of its logic, the default interface for any strategy will not allow proper testing of all functions. Testing of your Strategy should utilize the pre-built [IStrategyInterface](https://github.com/yearn/tokenized-strategy-foundry-mix/blob/master/src/interfaces/IStrategyInterface.sol) to cast any deployed strategy through for testing, as seen in the testing setups in each mix. You can add any external functions you add for your specific strategy to this interface to test all functions with one variable. 
+Due to the nature of the BaseStrategy utilizing an external contract for most of its logic, the default interface for any strategy will not allow proper testing of all functions. Testing of your Strategy should utilize the pre-built [IStrategyInterface](https://github.com/yearn/tokenized-strategy-foundry-mix/blob/master/src/interfaces/IStrategyInterface.sol) to cast any deployed strategy through for testing, as seen in the testing setups in each mix. You can add any external functions you add for your specific strategy to this interface to test all functions with one variable. 
 
 Foundry Example:
 
