@@ -27,7 +27,7 @@ This increased functionality not only means strategies have a much larger potent
 - *Simple 4626 Wrappers* - Tokenized Strategies make a super easy and cheap way to give any previously deployed protocol an ERC-4626 interface. This opens up any protocol to easily integrate into the rapidly growing 4626 ecosystem (including Yearn Meta Vaults).
 
 ## Definitions
-- [Strategy](https://github.com/yearn/tokenized-strategy) : A strategy or "Tokenized Strategy" in V3 refers to an ERC-4626 compliant contract that utilizes the [TokenizedStrategy](https://github.com/yearn/tokenized-strategy/blob/master/src/TokenizedStrategy.sol#L14-L26) pattern that either meta vaults or individual users can deposit directly into and receive shares in return. The strategy takes the underlying asset and deploys it in a single source in order to generate yield on that asset.
+- [Strategy](https://github.com/yearn/tokenized-strategy): A strategy or "Tokenized Strategy" in V3 refers to an ERC-4626 compliant contract that utilizes the [TokenizedStrategy](https://github.com/yearn/tokenized-strategy/blob/master/src/TokenizedStrategy.sol#L14-L26) pattern that either meta vaults or individual users can deposit directly into and receive shares in return. The strategy takes the underlying asset and deploys it in a single source in order to generate yield on that asset.
 - Asset: Any ERC20-compliant token
 - Shares: ERC20-compliant token that tracks the asset balance in the strategy for every depositor.
 - [TokenizedStrategy.sol](https://github.com/yearn/tokenized-strategy/blob/master/src/TokenizedStrategy.sol): The implementation contract that all strategies delegateCall to for the standard ERC4626 and profit locking functions.
@@ -42,8 +42,8 @@ This increased functionality not only means strategies have a much larger potent
 - Performance Fee recipient: The address that receives the shares charged as performance fees.
 - Protocol Fee: A fee on the fees charged by strategist sent to the Yearn Treasury.
 - Profit Max Unlock Time: Time in seconds over which reported profits will unlock over.
-- `totalIdle` : The amount of loose asset sitting in a strategy.
-- `totalDebt` : The amount of deployed funds that a strategy has control over.
+- `totalIdle`: The amount of loose asset sitting in a strategy.
+- `totalDebt`: The amount of deployed funds that a strategy has control over.
 - `report`: Called by management or keepers to accrue all profits or losses, charge fees, and lock profit to be distributed.
 - `tend`: Called by management or keepers between reports for any maintenance that should happen that doesn't require a full report.
 - API Version: The version that a specific Strategy is using for its logic.
@@ -67,7 +67,7 @@ Yearn has base templates made to build off of built-in both [Ape Worx](https://w
 
 ## Strategy Writing
 
-So you have your idea and local environment setup. Now its time to start writing your actual strategy. 
+So you have your idea and local environment setup. Now it's time to start writing your actual strategy. 
 
 To create your Tokenized Strategy, you must override at least three functions outlined in the `Strategy.sol`. 
 
@@ -187,7 +187,7 @@ While that may be all that's necessary for some of the most straightforward stra
     
 1. *availableWithdrawLimit(address _owner)*
     **Purpose**:
-    - This is called during every withdraw and can be used to enforce any witdhraw limit the strategist desires.
+    - This is called during every withdraw and can be used to enforce any withdraw limit the strategist desires.
     
     **Parameters**:
     - `_owner`: The address that owns the shares that would be burnt for the underlying assets.
