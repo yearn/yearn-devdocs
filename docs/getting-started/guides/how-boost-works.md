@@ -1,6 +1,6 @@
 # How Yearn Boosts Yield
 
-This is an overview of how Yearn investment strategies takes advantage of CRV vote locking on Curve Finance in order to increase yield.
+This is an overview of how Yearn investment strategies take advantage of CRV vote locking on Curve Finance in order to increase yield.
 
 ## CRV vote locking
 
