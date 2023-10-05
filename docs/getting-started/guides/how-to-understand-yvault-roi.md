@@ -87,7 +87,7 @@ $$F = I * P$$
 
 Now, we want to calculate the increment of $F$ which would be our return.
 
-Since $I$ is constant, and only $P$ changes, if we know $P$ at a future date, we can calulate our return.
+Since $I$ is constant, and only $P$ changes, if we know $P$ at a future date, we can calculate our return.
 
 In order to get the formula for a line having two points we have to do some math:
 
