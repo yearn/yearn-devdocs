@@ -15,6 +15,8 @@ Governance Forum Thread: https://gov.yearn.fi/t/yip-65-evolving-yfi-tokenomics
 - YFI can be locked into veYFI, which is non-transferable.
 - Lock duration can be decided on deposit: from 1 week to 4 years.
 - A user must have a veYFI lock earn boosted rewards. No lock leads to no boosted rewards. A Maximum lock, continuously renewed, maximizes rewards.
+  - Just like with Curve, even without a veYFI lock, you can still deposit into a vault and stake the vault token into a gauge then you get min boost, which is 1x
+With 1x boost, you get to keep 10% of the dYFI you farm. This is your only rewards. The other 90% goes to veYFI lockers.
 - It’s possible to exit the lock early, in exchange for paying a penalty that gets allocated to the other veYFI holders.
 - The penalty is up to 75% locked amount and decays over time:
   - The total penalty is the minimum percentage between `75% locked amount` and `(time remaining / 4 years)`
