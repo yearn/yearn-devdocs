@@ -39,8 +39,4 @@ So whether you are a full-blown gas golfing expert, a degen looking to codify yo
 
 ### Periphery
 
- - Address Provider: ``
- - Router: `0x1112dbCF805682e828606f74AB717abf4b4FD8DE`
- - Release Registry: `0x5a6E1eCC767d949D6da74e76b05DBB4870488ef6`
- - Registry Factory: `0xe0aFFaC3D8e7CBac1e73FCBD0281C3FD2B2cC2a5`
- - Common Report Trigger: `0x4D25b3aed34eC1222846F6C87e2ac4A73f4ab6b6`
+**If a contract has not been deployed on a specific chain it can be done permissionlessly using the scripts in the relevant GitHub repo. Or reach out to a Yearn contributor for help.**
