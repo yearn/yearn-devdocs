@@ -74,7 +74,7 @@ Example:
     vault.remove_role(account, 2)
     
     # Set `account` to hold every role
-    vault.set_role(account, 8191)
+    vault.set_role(account, 16383)
     
     # Set `account` to hold no roles
     vault.set_role(account, 0)
@@ -118,7 +118,7 @@ The DEBT_MANAGER role is in charge of allocating funds between the strategies ad
 
 All debt updates are denominated in the underlying asset and are restricted by the `max_debt` for each strategy and the `minimum_total_idle` for the specific vault.
 
-Debt updates will also respect the strategies specific `maxWithdraw` and `maxDeposit`.
+Debt updates will also respect the strategies specific `maxRedeem` and `maxDeposit`.
 
 To deposit or withdraw vault funds from a strategy simply call `vault.update_debt(strategy, desired_debt)` where desired debt is the end amount denominated in the underlying asset that the strategy should have after the full debt update.
 
@@ -170,7 +170,7 @@ If a different ordering is desired or management wants to remove a certain strat
 
 Where `new_default_queue` is an array of strategies with a max length of 10, in which all strategies are currently active in the vault.
 
-The vaults QUEUE_MANAGER can also choose to not allow custom queues to be passed into the vault on withdraws at any time by turning on the 'override_custom_queue' flag by calling, `vault.set_override_custom_queue(True)`. 
+The vaults QUEUE_MANAGER can also choose to not allow custom queues to be passed into the vault on withdraws at any time by turning on the 'use_default_queue' flag by calling, `vault.set_use_default_queue(True)`. 
 
 ## Good to Know
 
