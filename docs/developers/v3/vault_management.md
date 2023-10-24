@@ -21,7 +21,7 @@ Each release of the vaults will have its own "Vault Factory" deployed to make it
 
 **Vaults not deployed through the factory will not be recognized as part of the Yearn ecosystem and may experience issues during runtime.
 
-To deploy your vault, simply find the factory's address for the most recent release [here](https://docs.yearn.fi/developers/v3/deployment_addresses) and call `Factory.deploy_new_vault(params)`.
+To deploy your vault, simply find the factory's address for the most recent release [here](https://docs.yearn.fi/developers/v3/overview) and call `Factory.deploy_new_vault(params)`.
 
 The needed parameters are:
 
@@ -144,7 +144,7 @@ You will need to add a separate contract as the vault's 'accountant' to charge f
 
 `vault.set_accountant(accountant)`
 
-The accountant is [called by the vault](https://github.com/yearn/yearn-vaults-v3/blob/master/contracts/VaultV3.vy#L1070) during every `report` with the strategy that is reporting and the gain or loss it's reporting. The accountant will then return the total fees or refunds that should be charged by the vault during that report and paid to the accountant.
+The accountant is called by the vault during every `report` with the strategy that is reporting and the gain or loss it's reporting. The accountant will then return the total fees or refunds that should be charged by the vault during that report and paid to the accountant.
 
 Accountants can hold any logic that vault managers want to dictate fees or simply charge normal performance or management fees. A ready-to-use Generic Accountant can easily be used with any vault for those who wish just to charge standard fees.
 
