@@ -69,7 +69,10 @@ Governance Forum Thread: https://gov.yearn.fi/t/yip-65-evolving-yfi-tokenomics
 
 dYFI (previously specified as oYFI) is a token introduced as part of Yearn's veYFI tokenomics program. It is an ERC-20 token that allows its holder to buy back YFI at a discount. 
 
-Contract Address: [`0x41252e8691e964f7de35156b68493bab6797a275`](https://etherscan.io/address/0x41252e8691e964f7de35156b68493bab6797a275)
+- dYFI Address: [`0x41252e8691e964f7de35156b68493bab6797a275`](https://etherscan.io/address/0x41252e8691e964f7de35156b68493bab6797a275)
+- dYFI Redemption: [`0x2fBa208E1B2106d40DaA472Cb7AE0c6C7EFc0224`](https://etherscan.io/address/0x2fBa208E1B2106d40DaA472Cb7AE0c6C7EFc0224)
+- YFI Reward Pool: [`0xb287a1964AEE422911c7b8409f5E5A273c1412fA`](https://etherscan.io/address/0xb287a1964AEE422911c7b8409f5E5A273c1412fA)
+- dYFI Reward Pool: [`0x2391Fc8f5E417526338F5aa3968b1851C16D894E`](https://etherscan.io/address/0x2391Fc8f5E417526338F5aa3968b1851C16D894E)
 
 ### Specification
 
