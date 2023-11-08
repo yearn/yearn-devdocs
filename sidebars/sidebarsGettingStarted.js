@@ -19,6 +19,13 @@ module.exports = {
         },
         {
           type: 'category',
+          label: 'yETH',
+          items: [
+            'products/yeth/overview',
+          ],
+        },
+        {
+          type: 'category',
           label: 'yCRV',
           items: [
             'products/ycrv/overview',
@@ -28,12 +35,13 @@ module.exports = {
         },
         {
           type: 'category',
-          label: 'yETH',
+          label: 'yPrisma',
           items: [
-            'products/yeth/overview',
+            'products/yprisma/overview',
+            'products/yprisma/farming',
           ],
         },
-         {
+        {
           type: 'category',
           label: 'yBribe',
           items: [
