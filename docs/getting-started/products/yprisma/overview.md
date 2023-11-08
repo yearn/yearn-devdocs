@@ -23,7 +23,7 @@ With built-in boost delegation coming soon, users who hold yPRISMA will be able 
 
 ## How do I obtain yPRISMA?
 
-There are many ways to get yPRISMA, visit yprisma.yearn.fi to:
+There are many ways to get yPRISMA:
 
 - Claim your PRISMA airdrop directly to yPRISMA
 - Claim your emissions directly from yPRISMA from prismafinance.com
