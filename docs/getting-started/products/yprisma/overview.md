@@ -37,4 +37,4 @@ Until Prisma governance begins distributing fee revenue, the best thing to do wi
 
 ## Read More
 
-- [Farming](https://docs.yearn.finance/getting-started/products/yprisma/farming)
+- [Introduction to Yearn PRISMA Incentives Farming](https://docs.yearn.finance/getting-started/products/yprisma/farming)
