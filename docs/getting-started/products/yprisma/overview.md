@@ -19,7 +19,7 @@ With built-in boost delegation coming soon, users who hold yPRISMA will be able 
 - Prisma Vaults (CDPs)
 - Stability Pool
 - Curve / Convex Farming
-- Yearn farming (coming soon!)
+- Yearn Farming (coming soon!)
 
 ## How do I obtain yPRISMA?
 
