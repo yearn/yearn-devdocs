@@ -1,5 +1,7 @@
 # Overview
 
+Claim and deposit at https://yprisma.yearn.fi
+
 ## What is yPRISMA?
 
 yPRISMA is Yearn's latest veToken wrapper, built on top of Prisma Finance. Importantly, yPRISMA:
