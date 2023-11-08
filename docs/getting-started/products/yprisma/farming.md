@@ -10,9 +10,7 @@ This post will outline exactly how that will work.
 
 The roughly 280,000 yPRISMA tokens minted from Yearn's airdrop claim will be distributed across two simple staking contracts: yCRV and yPRISMA LPs.
 
-If you are a user in the yCRV ecosystem, you may choose to migrate your position to the new staking contract on yprisma.yearn.fi to farm yPRISMA. 
-
-Fortunately, even those who choose not to migrate should expect an APR increase thanks to users leaving st-yCRV and lp-yCRV to chase the new yPRISMA yield: A win-win!
+If you are a user in the yCRV ecosystem, you may choose to migrate your position by withdrawing to vanilla yCRV and depositing it into the new staking contract on https://yprisma.yearn.fi to earn yPRISMA rewards.
 
 ## What do I do with yPRISMA?
 
