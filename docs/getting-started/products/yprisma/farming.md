@@ -31,4 +31,4 @@ The breakdown of the scheduled events will be as follows:
 | yCRV     | yPRISMA     | 200,000     | Nov 9 @ 10:00 PM |
 | Curve PRISMA/yPRISMA LPs     | yPRISMA    | 80,000     | Nov 9 @ 10:00 PM |
 
-You can claim and deposit at yprisma.yearn.fi
+You can claim and deposit at https://yprisma.yearn.fi
