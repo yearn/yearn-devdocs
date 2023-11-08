@@ -30,10 +30,19 @@ There are many ways to get yPRISMA:
 - Mint 1:1 directly from PRISMA tokens
 - Buy yPRISMA from the Curve pool
 
-
 ## What can I do with my yPRISMA?
 
 Until Prisma governance begins distributing fee revenue, the best thing to do with your yPRISMA is to farm wstETH yield on [yprisma.yearn.fi](https://yprisma.yearn.fi).
+
+## Addresses
+
+| Name                                             | Address                             |
+|--------------------------------------------------|-------------------------------------|
+| yPRISMA                                          | [`0xe3668873d944e4a949da05fc8bde419eff543882`](https://etherscan.io/address/0xe3668873d944e4a949da05fc8bde419eff543882) |
+| yPRISMA Locker                                   | [`0x90be6DFEa8C80c184C442a36e17cB2439AAE25a7`](https://etherscan.io/address/0x90be6DFEa8C80c184C442a36e17cB2439AAE25a7) |
+| yPrisma Staking                                  | [`0x774a55C3Eeb79929fD445Ae97191228Ab39c4d0f`](https://etherscan.io/address/0x774a55C3Eeb79929fD445Ae97191228Ab39c4d0f) |
+| yCRV Staking                                     | To Be Determined |
+| yPrisma LP Staking                               | To Be Determined |
 
 ## Read More
 
