@@ -42,7 +42,7 @@ Until Prisma governance begins distributing fee revenue, the best thing to do wi
 | yPRISMA Locker                                   | [`0x90be6DFEa8C80c184C442a36e17cB2439AAE25a7`](https://etherscan.io/address/0x90be6DFEa8C80c184C442a36e17cB2439AAE25a7) |
 | yPrisma Staking                                  | [`0x774a55C3Eeb79929fD445Ae97191228Ab39c4d0f`](https://etherscan.io/address/0x774a55C3Eeb79929fD445Ae97191228Ab39c4d0f) |
 | yCRV Staking                                     | To Be Determined |
-| yPrisma LP Staking:                              | To Be Determined |
+| yPrisma LP Staking                               | To Be Determined |
 
 ## Read More
 
