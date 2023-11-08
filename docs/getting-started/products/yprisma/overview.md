@@ -35,4 +35,6 @@ There are many ways to get yPRISMA:
 
 Until Prisma governance begins distributing fee revenue, the best thing to do with your yPRISMA is to farm wstETH yield on [yprisma.yearn.fi](https://yprisma.yearn.fi).
 
-More info here: https://docs.yearn.finance/getting-started/products/yprisma/farming
+## Read More
+
+- [Farming](https://docs.yearn.finance/getting-started/products/yprisma/farming)
