@@ -14,7 +14,7 @@ If you are a user in the yCRV ecosystem, you may migrate your position by withdr
 
 ## What do I do with yPRISMA?
 
-As the Prisma protocol continues progressing towards native yield distribution to vePRISMA lockers, Yearn has approved an incentive program for yPRISMA stakers. This will provide a direct source of yield for yPRISMA users until native fee distribution is live.
+As the Prisma protocol continues progressing towards native yield distribution to vePRISMA lockers, Yearn has approved an incentive program for yPRISMA stakers. This will provide a direct source of yield for yPRISMA users while we wait for native fee distribution to go live on Prisma Finance.
 
 When ready, any yPRISMA holder can stake to earn wstETH rewards.
 
