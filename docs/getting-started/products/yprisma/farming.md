@@ -1,6 +1,6 @@
 # Introduction to Yearn PRISMA Incentives Farming
 
-The Prisma Wars are officially underway, which means full steam ahead for yPRISMA, Yearn's newest tokenized locker product.
+The Prisma Wars are officially underway, which means full steam ahead for yPRISMA: Yearn's newest tokenized locker product.
 
 Yearn has claimed its PRISMA airdrop as yPRISMA and is preparing to distribute these tokens to yCRV users and yPRISMA LPs. 
 
@@ -8,7 +8,7 @@ This post will outline exactly how that will work.
 
 ### What's happening with Yearn's veCRV Airdrop?
 
-The roughly 280,000 yPRISMA tokens received from the airdrop will be distributed across two simple staking contracts: one for yCRV and another for yPRISMA LPs.
+The roughly 280,000 yPRISMA tokens minted from Yearn's airdrop claim will be distributed across two simple staking contracts: yCRV and yPRISMA LPs.
 
 If you are a user in the yCRV ecosystem, you may choose to migrate your position to the new staking contract on yprisma.yearn.fi to farm yPRISMA. 
 
