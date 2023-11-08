@@ -12,7 +12,7 @@ yPRISMA is Yearn's latest veToken wrapper, built on top of Prisma Finance. Impor
 
 Governance for Prisma is controlled by vePRISMA, a locked token position that grants users voting power, fee revenue, and boosted PRISMA emissions.
 
-Because all PRISMA emissions come as locked vePRISMA, it is often inconvenient for users who want to avoid managing their position or want to cash out. YPRISMA aims to offer users a tokenized version of this position, giving them instant liquidity and auto-managing governance participation to maximize yield.
+Because all PRISMA emissions come as locked vePRISMA, it is often inconvenient for users who want to avoid managing their position or want to cash out. yPRISMA aims to offer users a tokenized version of this position, giving them instant liquidity and auto-managing governance participation to maximize yield.
 
 With built-in boost delegation coming soon, users who hold yPRISMA will be able to boost their yields on any of their positions within the Prisma ecosystem, including:
 
