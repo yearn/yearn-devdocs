@@ -22,11 +22,11 @@ When ready, any yPRISMA holder can stake to earn wstETH rewards.
 
 The breakdown of the scheduled events will be:
 
-| Deposit Token | Reward Token | Reward Token amount | Start time|
-| -------- | -------- | -------- |----|
-| yPRISMA     | wstETH    | ?    |Nov 9 @ 03:00 AM UTC|
-| PRISMA Early-user Airdrop | n/a    | n/a    |Nov 9 @ 9:00 AM|
-| yCRV     | yPRISMA     | 200,000     | Nov 10 @ 12:00 AM |
-| Curve PRISMA/yPRISMA LPs     | yPRISMA    | 80,000     | Nov 10 @ 12:00 PM |
+| Deposit Token             | Reward Token | Reward Token amount | Start time            |
+| ------------------------- | ------------ | ------------------- |-----------------------|
+| yPRISMA                   | wstETH       | ?                   | Nov 9 @ 3:00 AM UTC   |
+| PRISMA Early-user Airdrop | n/a          | n/a                 | Nov 9 @ 9:00 AM UTC   |
+| yCRV                      | yPRISMA      | 200,000             | Nov 10 @ 12:00 AM UTC |
+| Curve PRISMA/yPRISMA LPs  | yPRISMA      | 80,000              | Nov 10 @ 12:00 PM UTC |
 
 You can claim and deposit at https://yprisma.yearn.fi
