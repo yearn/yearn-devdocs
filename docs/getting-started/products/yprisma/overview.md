@@ -36,13 +36,14 @@ Until Prisma governance begins distributing fee revenue, the best thing to do wi
 
 ## Addresses
 
-| Name                                             | Address                             |
-|--------------------------------------------------|-------------------------------------|
+| Name                                             | Address                                                                                                                 |
+|--------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------|
 | yPRISMA                                          | [`0xe3668873d944e4a949da05fc8bde419eff543882`](https://etherscan.io/address/0xe3668873d944e4a949da05fc8bde419eff543882) |
 | yPRISMA Locker                                   | [`0x90be6DFEa8C80c184C442a36e17cB2439AAE25a7`](https://etherscan.io/address/0x90be6DFEa8C80c184C442a36e17cB2439AAE25a7) |
-| yPrisma Staking                                  | [`0x774a55C3Eeb79929fD445Ae97191228Ab39c4d0f`](https://etherscan.io/address/0x774a55C3Eeb79929fD445Ae97191228Ab39c4d0f) |
-| yCRV Staking                                     | To Be Determined |
-| yPrisma LP Staking                               | To Be Determined |
+| yPRISMA Staking                                  | [`0x774a55C3Eeb79929fD445Ae97191228Ab39c4d0f`](https://etherscan.io/address/0x774a55C3Eeb79929fD445Ae97191228Ab39c4d0f) |
+| yPRISMA LP Staking                               | [`0x6806D62AAdF2Ee97cd4BCE46BF5fCD89766EF246`](https://etherscan.io/address/0x6806D62AAdF2Ee97cd4BCE46BF5fCD89766EF246) |
+| yCRV Staking                                     | [`0x84c94d739e075b3C7431bdb1A005F0412DF828a5`](https://etherscan.io/address/0x84c94d739e075b3C7431bdb1A005F0412DF828a5) |
+
 
 ## Read More
 
