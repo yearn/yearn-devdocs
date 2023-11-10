@@ -68,7 +68,7 @@ yveCRV and yvBOOST are being deprecated, and there is a migration path available
 - **ZapYCRV.vy :** [0x01D7f32B6E463c96c00575fA97B8224326C6A6B9](https://etherscan.io/token/0x01D7f32B6E463c96c00575fA97B8224326C6A6B9)
 - **yCRV Interface:** http://y.finance/
 
-## Read more
+## Read More
 
 - [yCRV Interface Guide](https://docs.yearn.fi/getting-started/products/ycrv/guide)
 - [yCRV FAQ](https://docs.yearn.fi/getting-started/products/ycrv/faq)
