@@ -164,7 +164,7 @@
 
 #### Media Resources
 
-- Can be found in the Discord under [\#media-resources](https://discord.gg/pp3JKTVwtF)
+- [Yearn Press Kit](https://presskit.yearn.fi/)
 
 #### Use Yearn Data 
 
