@@ -25,10 +25,10 @@ With built-in boost delegation coming soon, users who hold yPRISMA will be able 
 
 There are many ways to get yPRISMA:
 
-1. Claim your PRISMA airdrop directly to yPRISMA
-1. Claim your emissions directly from yPRISMA from prismafinance.com [more info here](https://yprisma.yearn.fi/)
-1. Mint 1:1 directly from PRISMA tokens
-1. Buy yPRISMA from the Curve pool
+- Claim your PRISMA airdrop directly to yPRISMA
+- Claim your emissions directly from yPRISMA from prismafinance.com [more info here](https://yprisma.yearn.fi/)
+- Mint 1:1 directly from PRISMA tokens
+- Buy yPRISMA from the Curve pool
 
 ## Why would I claim my emissions as yPRISMA?
 There are several key reasons to claim your emissions as yPRISMA instead of locking yourself.
