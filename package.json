@@ -26,7 +26,8 @@
     "rehype-katex": "4",
     "remark-math": "3",
     "solc": "^0.8.17",
-    "solidity-docgen": "^0.5.11"
+    "solidity-docgen": "^0.5.11",
+    "yarn": "^1.22.21"
   },
   "browserslist": {
     "production": [
