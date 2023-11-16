@@ -24,10 +24,10 @@ The breakdown of the scheduled events will be:
 
 | Deposit Token             | Reward Token | Reward Token amount | Start time            |
 | ------------------------- | ------------ | ------------------- |-----------------------|
-| yPRISMA                   | wstETH       | 18                  | Nov 9                |
-| yPRISMA                   | dYFI         | 6                   | Nov 16               |
-| PRISMA Early-user Airdrop | n/a          | n/a                 | Nov 9                |
-| yCRV                      | yPRISMA      | 200,000             | Nov 10               |
-| Curve PRISMA/yPRISMA LPs  | yPRISMA      | 80,000              | Nov 10               |
+| yPRISMA                   | wstETH       | 18                  | Nov 09                |
+| yPRISMA                   | dYFI         | 6                   | Nov 16                |
+| PRISMA Early-user Airdrop | n/a          | n/a                 | Nov 09                |
+| yCRV                      | yPRISMA      | 200,000             | Nov 10                |
+| Curve PRISMA/yPRISMA LPs  | yPRISMA      | 80,000              | Nov 10                |
 
 You can claim and deposit at https://yprisma.yearn.fi
