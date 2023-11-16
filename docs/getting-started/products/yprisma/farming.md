@@ -14,9 +14,9 @@ If you are a user in the yCRV ecosystem, you may migrate your position by withdr
 
 ## What do I do with yPRISMA?
 
-As the Prisma protocol continues progressing towards native yield distribution to vePRISMA lockers, Yearn has approved an incentive program for yPRISMA stakers. This will provide a direct source of yield for yPRISMA users while we wait for native fee distribution to go live on Prisma Finance.
+The yPRISMA ecosystem aims to deliver a user experience similar to yCRV. As the Prisma DAO is still in the bootstrapping phase, there is not yet a clear decision on how protocol fees will be distributed to vePRISMA holders.
 
-When ready, any yPRISMA holder can stake to earn wstETH rewards.
+As the Prisma protocol continues progressing towards native yield distribution to vePRISMA lockers, Yearn has approved a subsidized incentive program for yPRISMA stakers. This will provide a direct source of yield for yPRISMA users as we wait for the DAO to turn on the fee switch.
 
 ## Rewards Breakdown
 
@@ -24,9 +24,10 @@ The breakdown of the scheduled events will be:
 
 | Deposit Token             | Reward Token | Reward Token amount | Start time            |
 | ------------------------- | ------------ | ------------------- |-----------------------|
-| yPRISMA                   | wstETH       | ?                   | Nov 9 @ 3:00 AM UTC   |
-| PRISMA Early-user Airdrop | n/a          | n/a                 | Nov 9 @ 9:00 AM UTC   |
-| yCRV                      | yPRISMA      | 200,000             | Nov 10 @ 12:00 AM UTC |
-| Curve PRISMA/yPRISMA LPs  | yPRISMA      | 80,000              | Nov 10 @ 12:00 PM UTC |
+| yPRISMA                   | wstETH       | 18                  | Nov 09                |
+| yPRISMA                   | dYFI         | 6                   | Nov 16                |
+| PRISMA Early-user Airdrop | n/a          | n/a                 | Nov 09                |
+| yCRV                      | yPRISMA      | 200,000             | Nov 10                |
+| Curve PRISMA/yPRISMA LPs  | yPRISMA      | 80,000              | Nov 10                |
 
 You can claim and deposit at https://yprisma.yearn.fi
