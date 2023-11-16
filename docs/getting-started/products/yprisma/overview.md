@@ -41,9 +41,12 @@ There are several key reasons to claim your emissions as yPRISMA instead of lock
 1. Browse to https://app.prismafinance.com/rewards
 1. Select "Lock All"
 1. In the modal, choose "Liquid Lockers"
-    ![LiquidLockers](image.png)
+
+    <img src="/img/yprisma-liquid-lockers.png" alt="Liquid Lockers" width="500" />
+
 1. Tick the checkbox for Yearn's `yprisma.eth` delegator and press "Confirm".
-![Alt text](image-1.png)
+
+    <img src="/img/yprisma-boost-rental.png" alt="Liquid Lockers" width="500" />
 
 When the transaction is complete, congratulations! You should now how yPRISMA tokens in your wallet!
 
