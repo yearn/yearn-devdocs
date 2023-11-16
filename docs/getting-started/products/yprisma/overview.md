@@ -52,7 +52,7 @@ When the transaction is complete, congratulations! You should now how yPRISMA to
 
 ## What can I do with my yPRISMA?
 
-Until Prisma governance begins distributing fee revenue, the best thing to do with your yPRISMA is to farm wstETH yield on [yprisma.yearn.fi](https://yprisma.yearn.fi).
+Until Prisma governance begins distributing fee revenue, the best thing to do with your yPRISMA is to farm wstETH or dYFI yield on [yprisma.yearn.fi](https://yprisma.yearn.fi).
 
 ## Addresses
 
