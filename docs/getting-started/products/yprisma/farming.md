@@ -16,7 +16,7 @@ If you are a user in the yCRV ecosystem, you may migrate your position by withdr
 
 The yPRISMA ecosystem aims to deliver a user experience similar to yCRV. As the Prisma DAO is still in the bootstrapping phase, there is not yet a clear decision on how protocol fees will be distributed to vePRISMA holders.
 
-As the Prisma protocol continues progressing towards native yield distribution to vePRISMA lockers, Yearn has approved an subsidiezed incentive program for yPRISMA stakers. This will provide a direct source of yield for yPRISMA users as we wait for the DAO to turn on the fee switch.
+As the Prisma protocol continues progressing towards native yield distribution to vePRISMA lockers, Yearn has approved a subsidized incentive program for yPRISMA stakers. This will provide a direct source of yield for yPRISMA users as we wait for the DAO to turn on the fee switch.
 
 ## Rewards Breakdown
 
