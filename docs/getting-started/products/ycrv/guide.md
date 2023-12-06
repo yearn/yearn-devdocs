@@ -2,7 +2,7 @@
 
 DeFi can look complicated, but like any new technology, the best way to get comfortable with it… is to use it. This short guide will take you through the steps to start earning that sweet sweet yield with yCRV. Are you ready anon? Let’s go.
 
-You'll need a browser [wallet](https://finematics.com/top-3-defi-wallets-for-2021/) and some [ETH](https://consensys.net/blog/metamask/how-to-use-the-browser-buy-eth-and-send-transactions-on-metamask-mobile/) in it to pay for gas fees. You'll also need some CRV in your wallet which can be bought at your favorite exchange like CowSwap, Uniswap, Binance, FTX.
+You'll need a browser [wallet](https://finematics.com/top-3-defi-wallets-for-2021/) and some [ETH](https://consensys.net/blog/metamask/how-to-use-the-browser-buy-eth-and-send-transactions-on-metamask-mobile/) in it to pay for gas fees. You'll also need some CRV in your wallet which can be bought at your favorite exchange like CowSwap, Uniswap, Binance.
 
 So, with Eth and CRV loaded up, let's find out how to start earning supercharged yields.
 
