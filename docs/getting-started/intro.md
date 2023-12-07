@@ -4,9 +4,13 @@ Yearn Finance is DeFi’s premier yield aggregator. Giving individuals, DAOs and
 
 The protocol is maintained by various independent developers and is governed by YFI holders. You can find brief descriptions of Yearn's core products, the governance process, and links to active communication channels below.
 
+- https://yearn.fi/
+
 ## Vaults
 
 Yearn Vaults are capital pools that automatically generate yield based on opportunities present in the market. Vaults benefit users by socializing gas costs, automating the yield generation and rebalancing process, and automatically shifting capital as opportunities arise. End users also do not need to have proficient knowledge of the underlying protocols involved or DeFi, thus the Vaults represent a passive-investing strategy.
+
+- https://yearn.fi/vaults
 
 ## Governance
 
