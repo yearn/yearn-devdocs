@@ -18,7 +18,7 @@ _or_
 
 - Migrate from legacy tokens [yveCRV and yvBOOST](#how-yvecrv-and-veboost-functionality-was-migrated-to-ycrv).
 
-Both operations mint yCRV to the user at a 1:1 rate. Users migrating from yvBOOST can use the zap at [y.finance](https://y.finance) to efficiently unwrap their tokens to yveCRV and migrates to yCRV in a single step. Of course, users can also choose to purchase yCRV from the new Curve factory pool [here](https://curve.fi/factory/192).
+Both operations mint yCRV to the user at a 1:1 rate. Users migrating from yvBOOST can use the zap at https://yearn.fi/ycrv to efficiently unwrap their tokens to yveCRV and migrates to yCRV in a single step. Of course, users can also choose to purchase yCRV from the new Curve factory pool [here](https://curve.fi/factory/192).
 
 ### 'Activated'-tokens
 
@@ -66,7 +66,7 @@ yveCRV and yvBOOST are being deprecated, and there is a migration path available
 - **lp-yCRV v2 (vault):** [0x6E9455D109202b426169F0d8f01A3332DAE160f3](https://etherscan.io/token/0x6E9455D109202b426169F0d8f01A3332DAE160f3)
 - **CRV/yCRV Curve Pool:** [0x453D92C7d4263201C69aACfaf589Ed14202d83a4](https://etherscan.io/token/0x453D92C7d4263201C69aACfaf589Ed14202d83a4)
 - **ZapYCRV.vy :** [0x01D7f32B6E463c96c00575fA97B8224326C6A6B9](https://etherscan.io/token/0x01D7f32B6E463c96c00575fA97B8224326C6A6B9)
-- **yCRV Interface:** http://y.finance/
+- **yCRV Interface:** https://yearn.fi/ycrv
 
 ## Read More
 

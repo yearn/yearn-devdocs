@@ -1,6 +1,4 @@
-# yCRV FAQ
-
-## Launch and Migration
+# Launch and Migration FAQ
 
 ### When will yCRV launch?
 Contracts are live, you can find relevant addresses [here](https://docs.yearn.fi/getting-started/products/ycrv/overview#addresses).
