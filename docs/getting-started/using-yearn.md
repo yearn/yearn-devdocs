@@ -1,16 +1,16 @@
 # Using Yearn
 
-Thanks to a feature called 'zap', it's extremely easy to deposit into any vault with almost any token.
+Thanks to a feature called 'zap', depositing into any vault with almost any token is effortless.
 
 Here's how it works:
 
-First, **Connect your wallet** using the button at the top right corner. Multiple types of wallets are supported, but most people use [MetaMask](https://metamask.io/), which can be downloaded for free as a Chrome extension or through the Apple and Android app stores. Make sure that your wallet is connected to the Ethereum network.
+First, **Connect your wallet** using the button at the top right corner. Multiple wallets are supported, but most people use [MetaMask](https://metamask.io/), which can be downloaded for free as a Chrome extension or through the Apple and Android app stores. Make sure that your wallet is connected to the Ethereum network.
 
 ![image](https://github.com/yearn/yearn-devdocs/assets/7863230/3b537d18-bbfe-449a-8d6d-d6b53c44e056)
 
 ## Yearn is multi-chain
 
-Our products are currently on Ethereum, Fantom, Arbitrum, and Optimism with more to come.
+Our products are currently on Ethereum, Fantom, Arbitrum, and Optimism, with more to come.
 
 Click on this button to select the network you would like to interact with:
 
@@ -19,7 +19,7 @@ Click on this button to select the network you would like to interact with:
 ## If you **already have the required token** for the vault that you would like to deposit in:
 
 1. Select the vault that you would like to deposit into.
-2. Enter the amount of tokens you want to deposit into the vault. If you are depositing ETH, make sure you have enough ETH left over to pay for future transactions that you might need to make.
+2. Enter the amount of tokens you want to deposit into the vault. If you are depositing ETH, ensure you have enough ETH left over to pay for future transactions you might need to make.
 
 ![image](https://github.com/yearn/yearn-devdocs/assets/7863230/b829c7f3-078c-4674-be24-3763443a4299)
 
@@ -30,7 +30,7 @@ Click on this button to select the network you would like to interact with:
   <img width="258.75" height=" 459.75" src="https://i.imgur.com/qjryeGD.png" className="topRightImg"/>
 </p>
 
-6. When your transaction succeeds, you will see your deposited balance in the vault's interface, which should appear at the top of the vault list.
+5. When your transaction succeeds, you will see your deposited balance in the vault's interface, which should appear at the top of the vault list.
 
 ![image](https://github.com/yearn/yearn-devdocs/assets/7863230/5b2c2308-0384-4446-ab12-2fc23d8cc829)
 
