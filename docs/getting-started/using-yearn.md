@@ -47,7 +47,7 @@ When you're ready to withdraw:
 
 ## If you **don't have the required token** for the vault that you would like to deposit in:
 
-Yearn provides a zapping feature so you can deposit with any token into any vault:
+Yearn provides a zapping feature so you can deposit any token into any vault (zapping fees are explicit in the UI):
 
 ![image](https://github.com/yearn/yearn-devdocs/assets/7863230/63cb991c-71de-4840-8bf2-38084e7ab907)
 
