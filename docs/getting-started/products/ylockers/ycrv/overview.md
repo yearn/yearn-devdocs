@@ -18,7 +18,7 @@ _or_
 
 - Migrate from legacy tokens [yveCRV and yvBOOST](#how-yvecrv-and-veboost-functionality-was-migrated-to-ycrv).
 
-Both operations mint yCRV to the user at a 1:1 rate. Users migrating from yvBOOST can use the zap at https://yearn.fi/ycrv to efficiently unwrap their tokens to yveCRV and migrates to yCRV in a single step. Of course, users can also choose to purchase yCRV from the new Curve factory pool [here](https://curve.fi/factory/192).
+Both operations mint yCRV to the user at a 1:1 rate. Users migrating from yvBOOST can use the zap at https://yearn.fi/ycrv to efficiently unwrap their tokens to yveCRV and migrates to yCRV in a single step. Of course, users can also choose to purchase yCRV from the new Curve factory pool: https://curve.fi/#/ethereum/pools/factory-v2-280/deposit
 
 ### 'Activated'-tokens
 
