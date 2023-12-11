@@ -36,6 +36,7 @@
 
 - [Yearn Dashboard](https://yearn.vision)
 - [Yearn API](https://ydaemon.yearn.fi/1/vaults/all)
+- [Kong Data Platform](https://kong-one.vercel.app/)
 - [Yearn on Token Terminal](https://www.tokenterminal.com/terminal/projects/yearn-finance)
 
 ### General Websites
