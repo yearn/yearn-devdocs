@@ -4,12 +4,13 @@ This page is for the hackers and buidlers who are currently building, or plannin
 
 ## Core Tools
 
-- [Solidity](https://docs.soliditylang.org/en/v0.8.6/index.html)
+- [Solidity](https://docs.soliditylang.org/en/v0.8.23/)
 - [Brownie](https://eth-brownie.readthedocs.io/en/stable/)
 - [ethers.js](https://docs.ethers.io/v5/)
 - [Web3.js](https://web3js.readthedocs.io/en/v1.4.0/)
-- [Ganache](https://trufflesuite.com/ganache/)
-- [Foundry](https://github.com/nicolasgarcia214/damn-vulnerable-defi-foundry)
+- [Hardhat](https://hardhat.org/)
+- [Ape Framework](https://www.apeworx.io/framework/)
+- [Foundry](https://github.com/foundry-rs/foundry)
 
 ## Yearn Vaults & Smart Contract Integrations
 
@@ -63,7 +64,7 @@ When accessing each testnet, you will need to use its own native asset token.
 - Go to https://hack.yearn.fi/
 - Switch to the testnet you wish to utilize over your wallet provider
 - Make sure to have the native asset for the specific network
-- Get some tokens from the test client faucet (Ethereum Rinkeby https://faucet.rinkeby.io/)
+- Get some tokens from the test client faucet (Ethereum Goerli https://goerlifaucet.com/)
 
 Make sure to select the correct market in the top right corner. You can find this on the left side of the address. Select the token you need and submit the faucet transaction but be mindful to make sure that you have certain amount of the native asset of the testnet you wish to transact on.
 
