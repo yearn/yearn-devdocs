@@ -18,7 +18,6 @@
 - [Twitter](https://twitter.com/yearnfi)
 - [Medium](https://medium.com/iearn)
 - [Yearn Newsletter](https://yearn.substack.com/)
-- [The Vaults at Yearn](https://vaults.yearn.fi/)
 
 ### Collaborate
 
@@ -28,17 +27,14 @@
 
 ### Vaults Detail Reference
 
-- [Vaults at Yearn](https://vaults.yearn.fi/)
 - [yVaults v2 Strategies](https://yearn.watch/)
 - [yVaults v2 Details](https://seafood.yearn.watch)
 - [Risk Dashboard](https://seafood.yearn.watch/risk)
-- [Seafood Dashboard](https://seafood.yearn.watch)
 - [Yearn Lens](https://github.com/yearn/yearn-lens)
 
 ### Statistics
 
 - [Yearn Dashboard](https://yearn.vision)
-- [Yearn v2 Subgraph](https://thegraph.com/explorer/subgraph?id=0xf50b705e4eaba269dfe954f10c65bd34e6351e0c-0&view=Overview)
 - [Yearn API](https://ydaemon.yearn.fi/1/vaults/all)
 - [Yearn on Token Terminal](https://www.tokenterminal.com/terminal/projects/yearn-finance)
 
