@@ -60,7 +60,7 @@ When accessing each testnet, you will need to use its own native asset token.
 
 #### Steps to test
 
-- Go to <https://hack.yearn.fi/>
+- Go to https://hack.yearn.fi/
 - Switch to the testnet you wish to utilize over your wallet provider
 - Make sure to have the native asset for the specific network
 - Get some tokens from the test client faucet (Ethereum Rinkeby <https://faucet.rinkeby.io/>)
