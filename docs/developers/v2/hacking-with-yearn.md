@@ -76,7 +76,7 @@ First, be sure to check if your wallet provider allows you to switch to testnet.
 - Workshop: Building and Integrating with Yearn Vaults: https://www.youtube.com/watch?v=urC35PMbpJ4
 --> Learn how to leverage the power of Yearn by creating a money-making integration on top of v2 vaults by taking advantage of the brand new EIP-4626: Tokenized Vault Standard! This workshop will guide you through creating a B2B/business router for yearn v2 vaults, which complies with the new EIP-4626. You'll be able to choose from multiple fee strategies for your users to maximize your profit.
 
-- Smart Contract parameters: <https://docs.yearn.fi/vaults/smart-contracts/vault>
+- Smart Contract parameters: https://docs.yearn.fi/vaults/smart-contracts/vault
 - <https://hackmd.io/t8HlcedLQeCu2l7RG-5Vbw?view>
 - <https://twitter.com/storming0x/status/1436851219864059906?s=20>
 
