@@ -6,7 +6,7 @@ Contract Address: [`0x90c1f9220d90d3966fbee24045edd73e1d588ad5`](https://ethersc
 
 ## Specification
 
-Governance Forum Thread: <https://gov.yearn.fi/t/yip-65-evolving-yfi-tokenomics>
+Governance Forum Thread: https://gov.yearn.fi/t/yip-65-evolving-yfi-tokenomics
 
 ## Overview
 
@@ -78,7 +78,7 @@ dYFI (previously specified as oYFI) is a token introduced as part of Yearn's veY
 
 ### Specification
 
-- Governance Forum Thread: <https://gov.yearn.fi/t/yip-73-activate-veyfi-rewards-with-oyfi-gauges>
+- Governance Forum Thread: https://gov.yearn.fi/t/yip-73-activate-veyfi-rewards-with-oyfi-gauges
 
 ### Overview
 
