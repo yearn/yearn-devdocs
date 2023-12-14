@@ -31,7 +31,7 @@
 - [Vaults at Yearn](https://vaults.yearn.fi/)
 - [yVaults v2 Strategies](https://yearn.watch/)
 - [yVaults v2 Details](https://seafood.yearn.watch)
-- [Risk Dashboard](https://yearn.watch/risk)
+- [Risk Dashboard](https://seafood.yearn.watch/risk)
 - [Seafood Dashboard](https://seafood.yearn.watch)
 - [Yearn Lens](https://github.com/yearn/yearn-lens)
 
