@@ -40,7 +40,7 @@ What you'll find:
 
 You can test Yearn vaults without spending cryptoassets on the available testnet for each network.
 
-To get started, head to the yearn testnet client which is available at: <https://hack.yearn.fi/>
+To get started, head to the yearn testnet client which is available at: https://hack.yearn.fi/
 
 Make sure to switch your wallet provider to the appropriate testnet network in order to use the protocol testnet without incurring costs on the mainnet network.
 
