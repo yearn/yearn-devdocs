@@ -21,7 +21,7 @@ Yearn’s core product is the Vault (also known as yVault) — a set-it-and-forg
 
 Here's an example of integrating V2 vaults and ERC-4626.
 
-<https://github.com/storming0x/ystarter-foundry-kit>
+https://github.com/storming0x/ystarter-foundry-kit
 
 What you'll find:
 
