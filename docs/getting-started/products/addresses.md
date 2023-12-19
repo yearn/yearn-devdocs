@@ -32,10 +32,18 @@
 | Treasury               | treasury.ychad.eth    | [0x93A62dA5a14C80f265DAbC077fCEE437B1a0Efde](https://etherscan.io/address/0x93A62dA5a14C80f265DAbC077fCEE437B1a0Efde) |
 | Health Check           | health.ychad.eth      | [0xDDCea799fF1699e98EDF118e0629A974Df7DF012](https://etherscan.io/address/0xDDCea799fF1699e98EDF118e0629A974Df7DF012) |
 
-## Polygon Contracts
+## Polygon Contracts for yVaults V3
 
-| ---------------------- | --------------------- | ------------------------------------------ |
-| V3 Registry            | ???                   | [0xfF5e3A7C4cBfA9Dd361385c24C3a0A4eE63CE500](https://polygonscan.com/address/0xfF5e3A7C4cBfA9Dd361385c24C3a0A4eE63CE500) |
+| Identity               | Address                                    |
+| ---------------------- | ------------------------------------------ |
+| Vault Blueprint        | [0xDE992C652b266AE649FEC8048aFC35954Bee6145](https://polygonscan.com/address/0xDE992C652b266AE649FEC8048aFC35954Bee6145) |
+| VaultFactory           | [0xE9E8C89c8Fc7E8b8F23425688eb68987231178e5](https://polygonscan.com/address/0xE9E8C89c8Fc7E8b8F23425688eb68987231178e5) |
+| TokenizedStrategy      | [0xDFC8cD9F2f2d306b7C0d109F005DF661E14f4ff2](https://polygonscan.com/address/0xDFC8cD9F2f2d306b7C0d109F005DF661E14f4ff2) |
+| pChad Multisig         | [0xC4ad0000E223E398DC329235e6C497Db5470B626](https://polygonscan.com/address/0xC4ad0000E223E398DC329235e6C497Db5470B626) |
+| Strategist Multisig    | [0x16388000546eDed4D476bd2A4A374B5a16125Bc1](https://polygonscan.com/address/0x16388000546eDed4D476bd2A4A374B5a16125Bc1) |
+| ySec Multisig          | [0x757f29A77D90a45b188c095A04aFa19F497c8B0E](https://polygonscan.com/address/0x757f29A77D90a45b188c095A04aFa19F497c8B0E) |
+| V3 Multisig            | [0x33333333D5eFb92f19a5F94a43456b3cec2797AE](https://polygonscan.com/address/0x33333333D5eFb92f19a5F94a43456b3cec2797AE) |
+| V3 Registry            | [0xfF5e3A7C4cBfA9Dd361385c24C3a0A4eE63CE500](https://polygonscan.com/address/0xfF5e3A7C4cBfA9Dd361385c24C3a0A4eE63CE500) |
 
 ## Fantom Contracts
 
