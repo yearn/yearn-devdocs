@@ -41,9 +41,8 @@
 | TokenizedStrategy      | [0xDFC8cD9F2f2d306b7C0d109F005DF661E14f4ff2](https://polygonscan.com/address/0xDFC8cD9F2f2d306b7C0d109F005DF661E14f4ff2) |
 | pChad Multisig         | [0xC4ad0000E223E398DC329235e6C497Db5470B626](https://polygonscan.com/address/0xC4ad0000E223E398DC329235e6C497Db5470B626) |
 | Strategist Multisig    | [0x16388000546eDed4D476bd2A4A374B5a16125Bc1](https://polygonscan.com/address/0x16388000546eDed4D476bd2A4A374B5a16125Bc1) |
-| ySec Multisig          | [0x757f29A77D90a45b188c095A04aFa19F497c8B0E](https://polygonscan.com/address/0x757f29A77D90a45b188c095A04aFa19F497c8B0E) |
-| V3 Multisig            | [0x33333333D5eFb92f19a5F94a43456b3cec2797AE](https://polygonscan.com/address/0x33333333D5eFb92f19a5F94a43456b3cec2797AE) |
 | V3 Registry            | [0xfF5e3A7C4cBfA9Dd361385c24C3a0A4eE63CE500](https://polygonscan.com/address/0xfF5e3A7C4cBfA9Dd361385c24C3a0A4eE63CE500) |
+| Release Registry       | [0x990089173D5d5287c344092Be0bB37950A67d17B](https://polygonscan.com/address/0x990089173D5d5287c344092Be0bB37950A67d17B) |
 
 ## Fantom Contracts
 
