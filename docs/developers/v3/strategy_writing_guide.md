@@ -68,8 +68,6 @@ Yearn has base templates made to build off of built-in both [Ape Worx](https://w
 
 ## Strategy Writing
 
-> You may need this list of important addresses to deploy a v3 strategy: https://hackmd.io/iHxG-foWT2ag9y6z-u9gpQ?view
-
 So you have your idea and local environment setup. Now its time to start writing your actual strategy. 
 
 To create your Tokenized Strategy, you must override at least three functions outlined in the `Strategy.sol`. 
