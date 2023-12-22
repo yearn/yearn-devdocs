@@ -44,6 +44,10 @@ module.exports = {
       },
       items: [
         {
+          to: 'getting-started/intro',
+          label: 'Introduction',
+        },
+        {
           to: 'developers/v2/getting-started',
           label: 'Develop',
         },
