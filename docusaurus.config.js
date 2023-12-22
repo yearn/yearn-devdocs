@@ -44,20 +44,12 @@ module.exports = {
       },
       items: [
         {
-          to: 'getting-started/intro',
-          label: 'Getting Started',
-        },
-        {
           to: 'developers/v2/getting-started',
           label: 'Develop',
         },
         {
           to: '/vaults/smart-contracts/BaseStrategy',
           label: 'Smart Contracts',
-        },
-        {
-          to: 'partners/introduction',
-          label: 'Partner',
         },
         {
           to: 'contributing/contribute',
