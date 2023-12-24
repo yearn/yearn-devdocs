@@ -1,3 +1,4 @@
+// @ts-check
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 const math = require('remark-math')
 const katex = require('rehype-katex')
@@ -98,19 +99,19 @@ module.exports = {
           ],
         },
         {
-          title: 'Github',
+          title: 'GitHub',
           items: [
             {
               label: 'yearn-vaults',
               href: 'https://github.com/yearn/yearn-vaults',
             },
             {
-              label: 'brownie-strategy-mix',
-              href: 'https://github.com/yearn/brownie-strategy-mix',
+              label: 'foundry-tokenized--strategy-mix',
+              href: 'https://github.com/yearn/tokenized-strategy-foundry-mix',
             },
             {
-              label: 'brownie-wrapper-mix',
-              href: 'https://github.com/yearn/brownie-wrapper-mix',
+              label: 'apeworx-tokenized-strategy-mix',
+              href: 'https://github.com/yearn/tokenized-strategy-ape-mix',
             },
             {
               label: 'yearn-watch',
@@ -124,6 +125,10 @@ module.exports = {
               label: 'yearn-security',
               href: 'https://github.com/yearn/yearn-security',
             },
+            {
+              label: 'yearn-devdocs',
+              href: 'https://github.com/yearn/yearn-devdocs',
+            },
           ],
         },
         {
@@ -132,6 +137,10 @@ module.exports = {
             {
               label: 'Vaults',
               href: 'https://yearn.fi/vaults',
+            },
+            {
+              label: 'yETH',
+              href: 'https://yeth.yearn.fi/',
             },
             {
               label: 'YFI Stats',
@@ -198,9 +207,9 @@ module.exports = {
   ],
   stylesheets: [
     {
-      href: 'https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/katex.min.css',
+      href: 'https://cdn.jsdelivr.net/npm/katex@0.13.24/dist/katex.min.css',
       integrity:
-        'sha384-Um5gpz1odJg5Z4HAmzPtgZKdTBHZdw8S29IecapCSB31ligYPhHQZMIlWLYQGVoc',
+        'sha384-odtC+0UGzzFL/6PNoE8rX/SPcQDXBJ+uRepguP4QkPCm2LBxH3FA3y+fKSiJ+AmM',
       crossorigin: 'anonymous',
     },
   ],
