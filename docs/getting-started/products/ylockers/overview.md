@@ -5,4 +5,4 @@ To achieve this, Yearn has deployed a system of smart contracts that allows user
 
 The benefit of doing this is to provide the end user with a fully transferrable and liquid token that can still receive a share of governance benefits like yield or voting power depending on the protocol. No longer is there a need to lock up your asset value for up to 4 full years!
 
-⚠️ Important: Liquid locker tokens are not redeemable for the underlying locked tokens. This is not possible. But because they are liquid, they can be traded on decentralized exchanges, and bought and sold at market value.
+> **⚠️ Important**: Liquid locker tokens are not redeemable for the underlying locked tokens. This is not possible. But because they are liquid, they can be traded on decentralized exchanges, and bought and sold at market value.
