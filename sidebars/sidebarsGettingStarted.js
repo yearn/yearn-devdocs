@@ -26,19 +26,15 @@ module.exports = {
         },
         {
           type: 'category',
-          label: 'yCRV',
+          label: 'yLockers',
           items: [
-            'products/ycrv/overview',
-            'products/ycrv/guide',
-            'products/ycrv/faq',
-          ],
-        },
-        {
-          type: 'category',
-          label: 'yPrisma',
-          items: [
-            'products/yprisma/overview',
-            'products/yprisma/farming',
+            'products/ylockers/overview',
+            'products/ylockers/ycrv/overview',
+            'products/ylockers/ycrv/faq',
+            'products/ylockers/ycrv/guide',            
+            'products/ylockers/yprisma/overview',
+            'products/ylockers/yprisma/farming',
+            
           ],
         },
         {

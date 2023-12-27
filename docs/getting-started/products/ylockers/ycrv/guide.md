@@ -1,4 +1,4 @@
-# Interface Guide
+# yCRV Interface Guide
 
 DeFi can look complicated, but like any new technology, the best way to get comfortable with it… is to use it. This short guide will take you through the steps to start earning that sweet sweet yield with yCRV. Are you ready anon? Let’s go.
 
