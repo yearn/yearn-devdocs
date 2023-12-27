@@ -1,14 +1,14 @@
-# Overview
+# yPRISMA
 
 Claim and deposit at [yprisma.yearn.fi](https://yprisma.yearn.fi)
 
 ## What is yPRISMA?
 
-yPRISMA is Yearn's latest veToken wrapper, built on top of Prisma Finance. Importantly, yPRISMA:
+yPRISMA is Yearn's latest liquid locker, built for Prisma Finance's governance token. It's important to know the basics of liquid locker token like yPRISMA:
 
-- Is a token that represents 1 vePRISMA max-locked to Yearn 
-- Is not redeemable for PRISMA
-- Has no transfer restrictions and can always be swapped in DEX pools.
+- Represents 1 vePRISMA max-locked to Yearn 
+- Not redeemable for the underlying locked PRISMA
+- Has no transfer restrictions and can always be swapped in DEX pools
 
 Governance for Prisma is controlled by vePRISMA, a locked token position that grants users voting power, fee revenue, and boosted PRISMA emissions.
 
@@ -19,20 +19,20 @@ With built-in boost delegation coming soon, users who hold yPRISMA will be able 
 - Prisma Vaults (CDPs)
 - Stability Pool
 - Curve / Convex Farming
-- Yearn Farming (coming soon!)
+- Yearn vault farming (coming soon!)
 
 ## How do I obtain yPRISMA?
 
-There are many ways to get yPRISMA:
+There are a few ways to get yPRISMA:
 
-- Claim your PRISMA airdrop directly to yPRISMA
+- Buy yPRISMA from the Curve pool
 - Claim your emissions directly from yPRISMA from https://prismafinance.com and see more info here: https://yprisma.yearn.fi/
 - Mint 1:1 directly from PRISMA tokens
-- Buy yPRISMA from the Curve pool
+- Claim your PRISMA airdrop directly to yPRISMA
 
 ## Why would I claim my emissions as yPRISMA?
 There are several key reasons to claim your emissions as yPRISMA instead of locking yourself.
-1. When minting yPRISMA, you also get to use Yearn's boost, which is among the highest of all lockers.
+1. When minting yPRISMA, you get to utilize Yearn's boost, which is among the highest of total Prisma accounts.
 1. yPRISMA is minted 1:1 against your max locked claim amount.
 1. yPRISMA is fully transferrable and can be swaped on DEXes like Curve, or staked for benefits in the ecosystem.
 
@@ -56,16 +56,24 @@ Until Prisma governance begins distributing fee revenue, the best thing to do wi
 
 ## Addresses
 
+##### Core Protocol
 | Name                                             | Address                                                                                                                 |
 |--------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------|
 | yPRISMA                                          | [`0xe3668873d944e4a949da05fc8bde419eff543882`](https://etherscan.io/address/0xe3668873d944e4a949da05fc8bde419eff543882) |
 | yPRISMA Locker                                   | [`0x90be6DFEa8C80c184C442a36e17cB2439AAE25a7`](https://etherscan.io/address/0x90be6DFEa8C80c184C442a36e17cB2439AAE25a7) |
-| yPRISMA Staking (wstETH rewards)                 | [`0x774a55C3Eeb79929fD445Ae97191228Ab39c4d0f`](https://etherscan.io/address/0x774a55C3Eeb79929fD445Ae97191228Ab39c4d0f) |
-| yPRISMA Staking (dYFI rewards)                   | [`0x93283184650f4d3B4253ABd00978176732118428`](https://etherscan.io/address/0x93283184650f4d3B4253ABd00978176732118428) |
-| yPRISMA LP Staking                               | [`0x6806D62AAdF2Ee97cd4BCE46BF5fCD89766EF246`](https://etherscan.io/address/0x6806D62AAdF2Ee97cd4BCE46BF5fCD89766EF246) |
-| yCRV Staking                                     | [`0x84c94d739e075b3C7431bdb1A005F0412DF828a5`](https://etherscan.io/address/0x84c94d739e075b3C7431bdb1A005F0412DF828a5) |
 
+##### Staking Farms
+| Name                                             | Address |
+|--------------------------------------------------|------------------------------------------------------------|
+| yPRISMA Staking (yvmkUSD-A rewards)       |       [`0xE3EE395C9067dD15C492Ca950B101a7d6c85b5Fc`](https://etherscan.io/address/0xE3EE395C9067dD15C492Ca950B101a7d6c85b5Fc) |
+| *yPRISMA Staking (wstETH rewards)          |       [`0x774a55C3Eeb79929fD445Ae97191228Ab39c4d0f`](https://etherscan.io/address/0x774a55C3Eeb79929fD445Ae97191228Ab39c4d0f) |
+| *yPRISMA Staking (dYFI rewards)            |       [`0x93283184650f4d3B4253ABd00978176732118428`](https://etherscan.io/address/0x93283184650f4d3B4253ABd00978176732118428) |
+| *yPRISMA LP Staking (yPRISMA rewards)                        |       [`0x6806D62AAdF2Ee97cd4BCE46BF5fCD89766EF246`](https://etherscan.io/address/0x6806D62AAdF2Ee97cd4BCE46BF5fCD89766EF246) |
+| *yCRV Staking (yPRISMA rewards)            |       [`0x84c94d739e075b3C7431bdb1A005F0412DF828a5`](https://etherscan.io/address/0x84c94d739e075b3C7431bdb1A005F0412DF828a5) |
+**expired*
 
 ## Read More
 
+- [yPRISMA Roadmap](https://medium.com/iearn/yprisma-roadmap-8fb3e2376594)
 - [Introduction to Yearn PRISMA Incentives Farming](https://docs.yearn.finance/getting-started/products/yprisma/farming)
+
