@@ -9,14 +9,11 @@ You can purchase yPRISMA through the following platforms:
 
 ## How do I mint yPRISMA directly?
 
-To mint yPRISMA you must claim your emissions, earned from staked LP tokens in PRISMA, as yPRISMA.
+To mint yPRISMA you must claim your emissions earned in PRISMA as yPRISMA.
 
 All emissions in Prisma come as locked vePRISMA. Prisma allows protocols like Yearn to plug into the "claim rewards" function, so the user gets yPRISMA and vePRISMA goes to Yearn (which uses it to boost yPRISMA strategy in our staking [contract](https://yprisma.yearn.fi/)).
 
-Here's the process to mint yPRISMA:
-
-1. Stake LP tokens from Curve and Convex at https://app.prismafinance.com/earn
-2. Claim emission rewards as yPRISMA to mint it.
+There is a complete guide on how to claim through Prisma [here](https://docs.yearn.fi/getting-started/products/ylockers/yprisma/overview#how-can-i-claim-my-emissions-as-yprisma)
 
 vePRISMA is not tradeable, yPRISMA is tradeable, allowing you to avoid the 50% penalty associated with unlocking vePRISMA directly.
 
