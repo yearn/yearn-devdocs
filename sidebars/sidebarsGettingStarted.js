@@ -46,6 +46,7 @@ module.exports = {
             'products/ybribe/faq',
           ],
         },
+        'products/woofy',
       ],
     },
     {
