@@ -28,8 +28,8 @@ There is active research on Prisma governance proposals to determine how to pass
 
 You can purchase yPRISMA through the following platforms:
 
-- **Curve LP**: The main liquidity pool for yPRISMA is available on Curve. You can swap for yPRISMA [here](https://curve.fi/#/ethereum/swap?from=0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee&to=0xe3668873d944e4a949da05fc8bde419eff543882).
-- **CowSwap**: Another option for swapping is CowSwap, which you can access [here](https://swap.cow.fi/#/1/swap/ETH/YPRISMA).
+- **Curve LP**: The primary liquidity source for yPRISMA is on Curve. You can swap for yPRISMA [here](https://curve.fi/#/ethereum/swap?from=0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee&to=0xe3668873d944e4a949da05fc8bde419eff543882).
+- **CowSwap**: DEX aggregators like CowSwap should also work well, which you can access [here](https://swap.cow.fi/#/1/swap/ETH/YPRISMA).
 
 ## How do I mint yPRISMA directly?
 
