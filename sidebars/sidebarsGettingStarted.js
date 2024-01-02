@@ -34,6 +34,7 @@ module.exports = {
             'products/ylockers/ycrv/guide',            
             'products/ylockers/yprisma/overview',
             'products/ylockers/yprisma/farming',
+            
           ],
         },
         {
