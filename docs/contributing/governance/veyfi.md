@@ -46,6 +46,16 @@ Governance Forum Thread: https://gov.yearn.fi/t/yip-65-evolving-yfi-tokenomics
   - Gauge boost formula: `min(AmountDeposited, (AmountDeposited /10) + (TotalDepositedInTheGauge * VeYFIBalance / VeYFITotalSupply * 0.9))`
 - A claim with boost under 100% will send the leftover tokens to veYFI holders.
 
+#### Vault Gauges table
+
+| Symbol | Name | Address |
+| ------ | ---- | ------- |
+| `yG-yvCurve-YFIETH` | yGauge Curve YFI-ETH Pool yVault | [`0x7Fd8Af959B54A677a1D8F92265Bd0714274C56a3`](https://etherscan.io/address/0x7Fd8Af959B54A677a1D8F92265Bd0714274C56a3) |
+| `yG-yvCurve-dYFIETH-f-f` | yGauge Curve dYFIETH-f Factory yVault | [`0x28da6dE3e804bDdF0aD237CFA6048f2930D0b4Dc`](https://etherscan.io/address/0x28da6dE3e804bDdF0aD237CFA6048f2930D0b4Dc) |
+| `yG-lp-yCRVv2` | yGauge LP Yearn CRV Vault v2 | [`0x107717C98C8125A94D3d2Cc82b86a1b705f3A27C`](https://etherscan.io/address/0x107717C98C8125A94D3d2Cc82b86a1b705f3A27C) |
+| `yG-yvCurve-yETH-f` | yGauge Curve yETH Factory yVault | [`0x81d93531720d86f0491DeE7D03f30b3b5aC24e59`](https://etherscan.io/address/0x81d93531720d86f0491DeE7D03f30b3b5aC24e59) |
+| `yG-lp-yPRISMA` | yGauge LP Yearn PRISMA Vault | [`0x6130E6cD924a40b24703407F246966D7435D4998`](https://etherscan.io/address/0x6130E6cD924a40b24703407F246966D7435D4998) |
+
 ### veYFI Reward Pool
 
 - Users who lock veYFI can claim accumulated fees from the veYFI reward pool. The reward pool gets fees two ways: YFI from the veYFI early exit fee and the non-distributed gauge rewards due to a lack of full boost.
