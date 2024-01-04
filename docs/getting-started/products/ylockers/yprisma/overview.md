@@ -40,13 +40,16 @@ There are several key reasons to claim your emissions as yPRISMA instead of lock
 ## How can I claim my emissions as yPRISMA?
 1. Browse to https://app.prismafinance.com/rewards
 1. Select "Lock All"
+
+   <img src="https://i.imgur.com/FKpkwcG.png" alt="Liquid Lockers" width="300" />
+    
 1. In the modal, choose "Liquid Lockers"
 
-    <img src="/img/yprisma-liquid-lockers.png" alt="Liquid Lockers" width="500" />
+    <img src="https://i.imgur.com/tVEGdkI.png" alt="Liquid Lockers" width="500" />
 
 1. Tick the checkbox for Yearn's `yprisma.eth` delegator and press "Confirm".
 
-    <img src="/img/yprisma-boost-rental.png" alt="Liquid Lockers" width="500" />
+    <img src="https://i.imgur.com/NVvfVUG.png" alt="Liquid Lockers" width="700" />
 
 When the transaction is complete, congratulations! You now have yPRISMA tokens in your wallet!
 
@@ -75,5 +78,5 @@ Until Prisma governance begins distributing fee revenue, the best thing to do wi
 ## Read More
 
 - [yPRISMA Roadmap](https://medium.com/iearn/yprisma-roadmap-8fb3e2376594)
-- [Introduction to Yearn PRISMA Incentives Farming](https://docs.yearn.finance/getting-started/products/yprisma/farming)
+- [Introduction to Yearn PRISMA Incentives Farming and FAQ](https://docs.yearn.finance/getting-started/products/ylockers/yprisma/farming)
 
