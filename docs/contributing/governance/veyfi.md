@@ -46,7 +46,7 @@ Governance Forum Thread: https://gov.yearn.fi/t/yip-65-evolving-yfi-tokenomics
   - Gauge boost formula: `min(AmountDeposited, (AmountDeposited /10) + (TotalDepositedInTheGauge * VeYFIBalance / VeYFITotalSupply * 0.9))`
 - A claim with boost under 100% will send the leftover tokens to veYFI holders.
 
-#### Vault Gauges table
+#### Vault Gauges Table
 
 | Symbol | Name | Address |
 | ------ | ---- | ------- |
