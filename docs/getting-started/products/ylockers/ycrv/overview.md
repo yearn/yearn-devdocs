@@ -70,5 +70,5 @@ yveCRV and yvBOOST are being deprecated, and there is a migration path available
 
 ## Read More
 
-- [yCRV Interface Guide](https://docs.yearn.fi/getting-started/products/ycrv/guide)
-- [yCRV FAQ](https://docs.yearn.fi/getting-started/products/ycrv/faq)
+- [yCRV Interface Guide](https://docs.yearn.fi/getting-started/products/ylockers/ycrv/guide)
+- [yCRV FAQ](https://docs.yearn.fi/getting-started/products/ylockers/ycrv/faq)
