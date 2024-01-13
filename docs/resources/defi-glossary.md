@@ -185,7 +185,7 @@ Investopedia's definition:
 
 ### Financial Primitive
 
-A cryptocurrency-based financial generic building block. Financial Primitives are designed to efficiently and reliably perform one task. Financial Primitives may be combined to create smart contracts. These smart contract may even be stacked upon one another to implement financial trading strategies.
+A cryptocurrency-based financial generic building block. Financial Primitives are designed to efficiently and reliably perform one task. Financial Primitives may be combined to create smart contracts. These smart contracts may even be stacked upon one another to implement financial trading strategies.
 
 ### Flash Loan
 
@@ -213,7 +213,7 @@ Governance refers to the control and use of a Governance coin, token, and/or pro
 
 ### Governance Token
 
-A token is used to govern the operations and influence the direction of a coin, token, and/or project controlled by the Governance Token. Holding these tokens are often profitable through direct price appreciation of popular governance tokens, but may come with other benefits that are only available to governance token holders and voters. Examples of governance tokens are MKR and YFI.
+A token is used to govern the operations and influence the direction of a coin, token, and/or project controlled by the Governance Token. Holding these tokens is often profitable through direct price appreciation of popular governance tokens, but may come with other benefits that are only available to governance token holders and voters. Examples of governance tokens are MKR and YFI.
 
 ### Gwei
 
@@ -233,7 +233,7 @@ One who HODLs.
 
 In Automated Market Makers \(AMM\) lending providers \(LPs\) contribute assets for liquidity to market participants. These AMM pools utilize a bonding curve, typically built on a constant function market marker formula. Asset prices are constantly changed by the AMM pool in response to trading activities by participants. This is an effort to ensure that LPs can receive the same amount of assets they deposited when they withdrawal.
 
-However, due to the volatility of asset prices and arbitragers, LPs occasionally will not receive the exact amount of assets upon withdrawal. The dollar value of the assets they withdraw would typically be lower than if they had no provided liquidity and just held the assets. This dollar value shortfall is known as impermanent loss. The loss is said to be impermanent because if asset prices return to the level during withdrawal the loss is eliminated.
+However, due to the volatility of asset prices and arbitragers, LPs occasionally will not receive the exact amount of assets upon withdrawal. The dollar value of the assets they withdraw would typically be lower than if they had not provided liquidity and just held the assets. This dollar value shortfall is known as impermanent loss. The loss is said to be impermanent because if asset prices return to the level during withdrawal the loss is eliminated.
 
 ### Institutional Investor
 
@@ -383,7 +383,7 @@ A stablecoin is an attractive investment to investors because:
 
 - It can be used as a safe harbor or hedge for cryptocurrency funds in times of downward volatility, also known as a bear market, whether this trend in downward volatility is temporary or prolonged in duration.
 - It can be used as diversification into the realm of Cryptocurrency finance to take advantage of new products in CeFi and DeFi that are unavailable elsewhere, as a safe diversification into crypto that won't lose nor gain significant value to the stablecoin price.
-- A coin with a stable price is used for transferring crypto around, as a means to not lose value in the base asset itself as its being moved around or deployed to Smart Contracts or wallets.
+- A coin with a stable price is used for transferring crypto around, as a means to not lose value in the base asset itself as it's being moved around or deployed to Smart Contracts or wallets.
 
 ### Stake
 
@@ -491,7 +491,7 @@ An example of a complex strategy that can be accomplished by a yVault using a Tu
 
 [Zapper.fi](https://www.zapper.fi/) is a DeFi tool that allows users to simplify their entry and exit into DeFi products and offerings by batching or "zapping" transactions in a batch. It is designed to simplify and speed up this process. In some cases, this method of transaction can reduce gas fees for investors.
 
-This tool is also used to provide granular insight and tracking of a user's DeFi investments and assets. Zapper . fi is natively supported by many DeFi protocols and products.
+This tool is also used to provide granular insight and tracking of a user's DeFi investments and assets. Zapper.fi is natively supported by many DeFi protocols and products.
 
 ---
 

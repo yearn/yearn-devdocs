@@ -18,4 +18,4 @@ As of September 2020, the YTD annualized return for yPool liquidity providers is
 
 ## Resources
 
-- [Earn Homepage](https://v1.yearn.finance/earn)
+- [Earn Homepage](https://v1.yearn.fi/earn)
