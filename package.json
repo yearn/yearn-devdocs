@@ -42,7 +42,7 @@
   },
   "devDependencies": {
     "@docusaurus/module-type-aliases": "2.0.0-beta.21",
-    "@openzeppelin/contracts": "^4.8.0",
+    "@openzeppelin/contracts": "^4.9.2",
     "@tsconfig/docusaurus": "1.0.2",
     "@types/react": "17.0.3",
     "@types/react-helmet": "6.1.1",
