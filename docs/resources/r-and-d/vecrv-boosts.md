@@ -1,6 +1,6 @@
 # veCRV Boosts (deprecated)
 
-> **This page is outdated since yveCRV was deprecated in favour of yCRV. Check the new yCRV [page](https://docs.yearn.finance/getting-started/products/ycrv/overview).**
+> **This page is outdated since yveCRV was deprecated in favour of yCRV. Check the new yCRV [page](https://docs.yearn.fi/getting-started/products/ycrv/overview).**
 
 Almost everything that yVaults interact with is available to the public. So how is Yearn able to offer users better yield than they'd be able to achieve on their own?
 
@@ -43,7 +43,7 @@ Yearn utilizes the [Iron Bank (C.R.E.A.M. Finance)](https://docs.ib.xyz/) to acc
 
 ![](https://i.imgur.com/WJIjOKv.png)
 
-Some strategies also implement [flash loans](https://docs.yearn.finance/resources/defi-glossary#flash-loan), which is typically a back-end service that requires development experience to take advantage of.
+Some strategies also implement [flash loans](https://docs.yearn.fi/resources/defi-glossary#flash-loan), which is typically a back-end service that requires development experience to take advantage of.
 
 ## Partnerships
 

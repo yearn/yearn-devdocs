@@ -1,6 +1,6 @@
 # Yearn's Partner Tracker
 
-Yearn's Partner Tracker is an implementation of [Delegated Deposit](https://docs.yearn.finance/partners/integration_guide#delegated-deposit):
+Yearn's Partner Tracker is an implementation of [Delegated Deposit](https://docs.yearn.fi/partners/integration_guide#delegated-deposit):
 
 - Contract Source Code: https://github.com/yearn/yearn-partner-tracker
 
@@ -10,6 +10,7 @@ Yearn's Partner Tracker is an implementation of [Delegated Deposit](https://docs
 | Optimism (10)    | [0x7E08735690028cdF3D81e7165493F1C34065AbA2](https://optimistic.etherscan.io/address/0x7E08735690028cdF3D81e7165493F1C34065AbA2) |
 | Fantom (250)     | [0x086865B2983320b36C42E48086DaDc786c9Ac73B](https://ftmscan.com/address/0x086865B2983320b36C42E48086DaDc786c9Ac73B)             |
 | Arbitrum (42161) | [0x0e5b46E4b2a05fd53F5a4cD974eb98a9a613bcb7](https://arbiscan.io/address/0x0e5b46E4b2a05fd53F5a4cD974eb98a9a613bcb7)             |
+| Base (8453)      | [0xD0F08E42A40569fF83D28AA783a5b6537462667c](https://basescan.org/address/0xD0F08E42A40569fF83D28AA783a5b6537462667c)            |
 
 ## Functionality
 
@@ -81,7 +82,7 @@ She specifies her own address as the `partnerId` argument, the address of `Vault
 When deposits happen, the `YearnPartnerTracker` contract emits the `ReferredBalanceIncreased` event. Partners and other interested parties can use this event to track changes to referred balances. The event contains the following information:
 
 ```
-    event ReferredBalanceIncreased(
+event ReferredBalanceIncreased(
     address indexed partnerId,
     address indexed vault,
     address indexed depositor,
