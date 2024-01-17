@@ -39,7 +39,7 @@ Although harvests will be permissionless for this specific group of vaults, Year
 
 ### Calling Harvest
 
-To call the `harvest()` function on a Yearn strategy, you need to interact with the keeper contract found at [keeper.factory.ychad.eth](https://etherscan.io/address/keeper.factory.ychad.eth#writeContract) using the strategy address. Ensure you're calling `harvest()` on the correct contract, **you MUST use the strategy address, NOT the vault address**.
+To call the `harvest()` function on a Yearn strategy, you need to interact with the keeper contract found at [keeper.factory.ychad.eth](https://etherscan.io/address/keeper.factory.ychad.eth#writeContract) using the strategy address. Ensure you're calling `harvest()` on the correct contract: **You MUST use the strategy address, NOT the vault address**.
 
 If you're unsure how to find the strategy address, the best method is to visit the Yearn vault's detail page and look under the "Strategies" section. This section provides information on the debt ratios and the addresses for all strategies attached to the vault.
 
