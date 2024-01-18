@@ -1,3 +1,3 @@
 module.exports = {
-  mySidebar: ['index', 'multisig', 'fuzzing'],
+  mySidebar: ['index', 'multisig', 'testing'],
 }
