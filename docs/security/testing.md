@@ -1,4 +1,4 @@
-# Fuzzing and Invariant Testing 
+# Testing
 
 It is best practice for smart contracts planned to be deployed to production to be thoroughly tested. This is especially true for smart contracts that handle user funds. A good functioning test suite is highly encouraged before sending your smart contract for security review or audits.
 
