@@ -145,3 +145,13 @@ html[data-theme="dark"] .wireImg2 {
     border: none;
   }
 }
+
+/* Assuming this is added to a file like src/css/custom.css */
+.sidebar .menu__link[href$="separator"] {
+  pointer-events: none; /* Disables clicking */
+  cursor: default;
+  text-decoration: none;
+  color: transparent; /* Hides the text */
+  margin: 8px 0; /* Adjust spacing as needed */
+  border-bottom: 1px solid #ddd; /* Creates a horizontal line */
+}
