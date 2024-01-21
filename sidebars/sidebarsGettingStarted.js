@@ -14,15 +14,7 @@ module.exports = {
             'products/yvaults/vaults-and-strategies',
             'products/yvaults/vault-tokens',
             'products/yvaults/vault-factory',
-          ],
-        },
-        {
-          type: 'category',
-          label: 'yCRV',
-          items: [
-            'products/ycrv/overview',
-            'products/ycrv/guide',
-            'products/ycrv/faq',
+            'products/yvaults/v3',
           ],
         },
         {
@@ -32,7 +24,20 @@ module.exports = {
             'products/yeth/overview',
           ],
         },
-         {
+        {
+          type: 'category',
+          label: 'yLockers',
+          items: [
+            'products/ylockers/overview',
+            'products/ylockers/ycrv/overview',
+            'products/ylockers/ycrv/faq',
+            'products/ylockers/ycrv/guide',            
+            'products/ylockers/yprisma/overview',
+            'products/ylockers/yprisma/farming',
+            
+          ],
+        },
+        {
           type: 'category',
           label: 'yBribe',
           items: [
