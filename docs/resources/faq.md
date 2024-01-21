@@ -60,10 +60,6 @@
 
 - [Strategies](https://docs.yearn.fi/getting-started/products/yvaults/vaults-and-strategies)
 
-#### Where can I find strategy descriptions?
-
-- [Yearn State of the Vaults](https://vaults.yearn.fi/)
-
 #### Where can I find current strategy contracts?
 
 - [yearn.watch](https://yearn.watch/)
@@ -116,7 +112,7 @@
 
 #### I deposited into a vault, but the vault token isn't showing in my wallet? How do I make it appear?
 
-- On the [yearn.fi](https://yearn.fi) user interface, click the name of the vault that you deposited in. This will take you to to the Etherscan page for the vault. Click on the "Tracker" link in the "More Info" box to find the vault token page. Copy the address from there and follow your wallet's instructions on [adding a custom token](https://docs.yearn.fi/getting-started/guides/how-to-add-a-custom-token-to-metamask)
+- On the [yearn.fi](https://yearn.fi) user interface, click the name of the vault that you deposited in. This will take you to the Etherscan page for the vault. Click on the "Tracker" link in the "More Info" box to find the vault token page. Copy the address from there and follow your wallet's instructions on [adding a custom token](https://docs.yearn.fi/getting-started/guides/how-to-add-a-custom-token-to-metamask)
 - Alternatively, most vault tokens are supported on [Zapper.fi](https://zapper.fi) shortly after their release.
 
 #### I'm getting an error that says "SafeERC20: low-level call failed". How do I resolve this?
@@ -168,7 +164,7 @@
 
 #### Media Resources
 
-- Can be found in the Discord under [\#media-resources](https://discord.gg/pp3JKTVwtF)
+- [Yearn Press Kit](https://presskit.yearn.fi/)
 
 #### Use Yearn Data 
 

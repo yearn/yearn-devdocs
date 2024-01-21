@@ -3,19 +3,19 @@ export default [
     title: 'Learn',
     rows: [
       {
-        title: 'Use Yearn',
-        description: 'Learn how to use Yearn user interface step by step.',
-        to: './getting-started/using-yearn',
+        title: 'Introduction',
+        description: 'Getting started: What is Yearn?',
+        to: './getting-started/intro',
       },
       {
         title: 'Vaults & Strategies',
         description: 'An overview on how Yearn Vaults and its strategies work.',
-        to: './getting-started/products/yvaults/overview',
+        to: './developers/v3/overview',
       },
       {
-        title: 'Partnership Program',
-        description: `Yearn's partnership program incentivize builders to easily integrate yield into their products and services.`,
-        to: './partners/introduction',
+        title: 'Yearn Risk Scores',
+        description: 'Learn about the Yearn risk framework for assessing DeFi yield strategies.',
+        to: './resources/risks/risk-score',
       },
     ],
   },
@@ -25,17 +25,17 @@ export default [
       {
         title: 'New Strategies',
         description: 'Get started building with vaults and strategies.',
-        to: './developers/v2/getting-started',
+        to: './developers/v3/strategy_writing_guide',
       },
       {
-        title: 'Yearn SDK',
-        description: 'Learn about the Yearn stack and how to use the SDK as an aggregator of many data sources.',
-        to: './vaults/yearn-sdk/yearn-stack',
+        title: 'Yearn Data',
+        description: 'Learn about the Yearn data services like yDaemon and the subgraphs',
+        to: './developers/v2/yearn-data',
       },
       {
-        title: 'Smart Contracts',
-        description: 'Find references to our smart contracts and several utilities part of the Yearn architecture.',
-        to: './vaults/smart-contracts/vault',
+        title: 'veYFI',
+        description: 'Participate in Yearn governance and learn how boosted yield works.',
+        to: './contributing/governance/veyfi',
       },
     ],
   }
