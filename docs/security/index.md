@@ -19,7 +19,7 @@ Other public reports can be found under [yearn-security/audits](https://github.c
 
 ## Security assumption
 
-Yearn as a protocol hinges on the critical assumption that the `Governance` role is honest. This role is currently controlled by a [6 of 9 Gnosis Safe multisig](https://gov.yearn.finance/t/yip-62-change-two-multisig-signers/10758).
+Yearn as a protocol hinges on the critical assumption that the `Governance` role is honest. This role is currently controlled by a [6 of 9 Gnosis Safe multisig](https://gov.yearn.fi/t/yip-62-change-two-multisig-signers/10758).
 
 A compromised or malicious Governance can cause catastrophic damage across the entire protocol.
 
@@ -27,7 +27,7 @@ It is a conscious design decision that this role is not behind a time lock. Prio
 
 Trusting `Governance` to be honest is a prerequisite to trusting Yearn's vaults.
 
-Modifications to these design decisions can be proposed in the forum through [Yearn's governance process](https://gov.yearn.finance/t/yip-61-governance-2-0/10460).
+Modifications to these design decisions can be proposed in the forum through [Yearn's governance process](https://gov.yearn.fi/t/yip-61-governance-2-0/10460).
 
 
 ## Testing

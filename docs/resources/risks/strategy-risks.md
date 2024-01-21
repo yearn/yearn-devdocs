@@ -30,7 +30,7 @@ In most cases the liquidity mined token is exchanged for the Want token on an AM
 |                  | Liquidity of liquidity mined token on AMM is reduced or removed                          |
 | Operational Risk | Delays or inability to withdraw liquidity in an emergency                                |
 
-The [Safe Farming Committee](https://gov.yearn.finance/t/introducing-yearn-safe-farming-committee/10533) decides which protocols are secure.
+The [Safe Farming Committee](https://gov.yearn.fi/t/introducing-yearn-safe-farming-committee/10533) decides which protocols are secure.
 
 ## Trading Fees
 
