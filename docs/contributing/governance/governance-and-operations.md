@@ -2,7 +2,7 @@
 
 ---
 
-Since [YIP-61: Governance 2.0](https://gov.yearn.finance/t/yip-61-governance-2-0/10460) passed on April 25th, 2021, yearn began the transition into a **multi-DAO** structure, managed by **constrained delegation**. This approach allows protocol development not to be stiffened by bureaucracy while maintaining a sufficient level of decentralization.
+Since [YIP-61: Governance 2.0](https://gov.yearn.fi/t/yip-61-governance-2-0/10460) passed on April 25th, 2021, yearn began the transition into a **multi-DAO** structure, managed by **constrained delegation**. This approach allows protocol development not to be stiffened by bureaucracy while maintaining a sufficient level of decentralization.
 
 Multi-DAO refers to the fluid number of decentralized autonomous organizations (DAOs) that contribute to the protocol in some unique way. These independent groups consist of YFI holders, yTeams and the Multisig.
 
@@ -19,7 +19,7 @@ A simplified flow of governance would look like this:
     3. yTx creates a delegated transaction and send it to the Multisig
     4. Multisig executes or vetos the transaction
 
-With [veYFI](https://docs.yearn.finance/contributing/governance/veyfi) launch, governance moved from using YFI to veYFI as voting power.
+With [veYFI](https://docs.yearn.fi/contributing/governance/veyfi) launch, governance moved from using YFI to veYFI as voting power.
 
 ## DAO Responsibilities
 
@@ -27,7 +27,7 @@ With [veYFI](https://docs.yearn.finance/contributing/governance/veyfi) launch, g
 
 ### Token Holders
 
-[YFI](https://docs.yearn.finance/contributing/governance/yfi) token-holders duty is to create and vote for proposals that improve the protocol.
+[YFI](https://docs.yearn.fi/contributing/governance/yfi) token-holders duty is to create and vote for proposals that improve the protocol.
 
 
 | Proposals                        | Descriptions                                                                                          |
@@ -81,7 +81,7 @@ Each yTeam is assigned specific decision-making powers, defined by YIP-61:
 
 ### Multisig
 
-Decisions issued by yTeams will be executed on-chain by the Multisig until a more decentralized system is approved for implementation. In the meantime, the [Multisig](https://docs.yearn.finance/resources/faq#who-is-on-the-multisig) controls the following:
+Decisions issued by yTeams will be executed on-chain by the Multisig until a more decentralized system is approved for implementation. In the meantime, the [Multisig](https://docs.yearn.fi/resources/faq#who-is-on-the-multisig) controls the following:
 
 | Power               | Description                                                                                                                                           |
 | ------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- |

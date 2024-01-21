@@ -1,8 +1,8 @@
-# Interface Guide
+# yCRV Interface Guide
 
 DeFi can look complicated, but like any new technology, the best way to get comfortable with it… is to use it. This short guide will take you through the steps to start earning that sweet sweet yield with yCRV. Are you ready anon? Let’s go.
 
-You'll need a browser [wallet](https://finematics.com/top-3-defi-wallets-for-2021/) and some [ETH](https://consensys.net/blog/metamask/how-to-use-the-browser-buy-eth-and-send-transactions-on-metamask-mobile/) in it to pay for gas fees. You'll also need some CRV in your wallet which can be bought at your favorite exchange like CowSwap, Uniswap, Binance, FTX.
+You'll need a browser [wallet](https://finematics.com/top-3-defi-wallets-for-2021/) and some [ETH](https://consensys.net/blog/metamask/how-to-use-the-browser-buy-eth-and-send-transactions-on-metamask-mobile/) in it to pay for gas fees. You'll also need some CRV in your wallet which can be bought at your favorite exchange like CowSwap, Uniswap, Binance.
 
 So, with Eth and CRV loaded up, let's find out how to start earning supercharged yields.
 
@@ -59,7 +59,7 @@ yCRV and its ecosystem tokens are a redesign of our previous yveCRV and yvBOOST 
 
 ## How to withdraw lp-yCRV
 
-If you want to exit from lp-yCRV use this URL: https://yearn.finance/#/vault/0xc97232527B62eFb0D8ed38CF3EA103A6CcA4037e
+If you want to exit from lp-yCRV use this URL: https://yearn.fi/#/vault/0xc97232527B62eFb0D8ed38CF3EA103A6CcA4037e
 
 We are working on implementing this operation in yCRV front end, but currently it's only available in the above link, follow the image below for reference:
 

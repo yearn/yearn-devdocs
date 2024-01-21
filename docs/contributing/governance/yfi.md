@@ -23,11 +23,11 @@ When the YFI token contract was deployed, users of various DeFi protocols were a
 
 YFI was designed with a minting function built in. Originally, this function was solely controlled by Andre Cronje, but shortly after the token emissions began, that control was handed to a multisig wallet. 
 
-Because the intention behind YFI was to completely decentralize control, there were no concrete plans for emissions after the initial 30,000 YFI were distributed. [YIP-1](https://yips.yearn.finance/YIPS/yip-1) approved a weekly distribution of YFI, but the execution of that proposal required a second decision about how to distribute, which did not come to fruition.
+Because the intention behind YFI was to completely decentralize control, there were no concrete plans for emissions after the initial 30,000 YFI were distributed. [YIP-1](https://yips.yearn.fi/YIPS/yip-1) approved a weekly distribution of YFI, but the execution of that proposal required a second decision about how to distribute, which did not come to fruition.
 
 ### Phasing out YFI staking revenue
 
-Starting with [YIP-36](https://yips.yearn.finance/YIPS/yip-36), a portion of staking rewards were redirected to the multisig wallet in order to fund operational expenses. When the multisig wallet had a buffer of $500,000, rewards were distributed to token holders. 
+Starting with [YIP-36](https://yips.yearn.fi/YIPS/yip-36), a portion of staking rewards were redirected to the multisig wallet in order to fund operational expenses. When the multisig wallet had a buffer of $500,000, rewards were distributed to token holders. 
 
 [YIP-56](https://snapshot.org/#/yearn/proposal/Qmb6gBzjvgLMazSrQQGVcjutLNdkVyM2Lh6yckMzdoaHWZ) disbanded the staking system all-together and opted for a buyback system. This directed more capital to Yearn's treasury while benefiting token holders by taking YFI off of the open market. With this, the YFI Governance Vault was retired, and holders were allowed to participate in governance while holding YFI elsewhere.
 
@@ -48,4 +48,4 @@ YDPs are proposals that change where any discrete decision-making power is deleg
 
 ## veYFI
 
-With [veYFI](https://docs.yearn.finance/contributing/governance/veyfi) launch, governance changed from using YFI to veYFI as voting power.
+With [veYFI](https://docs.yearn.fi/contributing/governance/veyfi) launch, governance changed from using YFI to veYFI as voting power.
