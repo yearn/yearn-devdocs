@@ -10,7 +10,7 @@ The following is a set of guidelines for contributing to Yearn's Dev Docs, which
 - [Yearn Finance on GitHub](https://github.com/yearn/)
 - [Twitter](https://twitter.com/iearnfinance)
 - [Discord](https://discord.gg/yearn/)
-- [Discourse](https://gov.yearn.finance/)
+- [Discourse](https://gov.yearn.fi/)
 
 ## High Level Contributing Workflow
 
