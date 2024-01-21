@@ -4,7 +4,7 @@ It is a standard on Defi Space to estimate returns through [APY](https://www.inv
 
 ## Non-curve assets
 
-The estimated returns are displayed on yearn.finance this way:
+The estimated returns are displayed on yearn.fi this way:
 
 ![image](https://lh3.googleusercontent.com/z2zbme8yXIquVgZjFqSFyz5RmRmxBX2-LEjBvCjSSdBeBYUC9HnfWrnJD5KDYjw4O_Do9wc8lVis0z01rG8HD8YLdvuQ3N9Yzy3hFArQ5DV5I76jgrPPCtUdKDF86933YRARcUOfoXOYPStetw)
 
@@ -24,7 +24,7 @@ The file that contains the calculation for the most recent version of the yVault
 
 ## Curve assets
 
-The estimated returns are displayed on yearn.finance this way:
+The estimated returns are displayed on yearn.fi this way:
 
 ![image](https://lh3.googleusercontent.com/dvUnhactHIG6KEFHTpw77axZfgEldRjsmYd-qv5sYbx1_wp_A_Pjy_0f-ZzmFa-GxqkLjcjUZqhSfOtmA9ajqbPf_L7urk0SiQmRLXNQSYZ3mHhp_bMZTJKcK0_z9tsRZHsaZ4n_6nbEaISMtA)
 
@@ -46,7 +46,7 @@ The file that contains the calculation for the most recent version of the yVault
 
 ### Notes
 
-- When the active strategy of a yVault uses Convex Finance, and the streaming of the rewards is frozen at Convex, Yearn.finance Net APY will show 0% until the streaming is resumed.
+- When the active strategy of a yVault uses Convex Finance, and the streaming of the rewards is frozen at Convex, yearn.fi Net APY will show 0% until the streaming is resumed.
 
 ![image](https://i.imgur.com/H4VRhz8.png)
 

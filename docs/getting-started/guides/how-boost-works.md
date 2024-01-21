@@ -1,6 +1,6 @@
 # How Yearn Boosts Yield
 
-This is an overview of how Yearn investment strategies takes advantage of CRV vote locking on Curve Finance in order to increase yield.
+This is an overview of how Yearn investment strategies take advantage of CRV vote locking on Curve Finance in order to increase yield.
 
 ## CRV vote locking
 
@@ -38,7 +38,7 @@ The actual boost multiplier is determined by a formula that depends on the curre
 
 A "Yearn boost" tool displaying Yearn's current active and potential boost is available [here](https://crv.ape.tax/).
 
-See the [Curve Guide](https://resources.curve.fi/guides/boosting-your-crv-rewards) for more details on the formula and its calculation.
+See the [Curve Guide](https://resources.curve.fi/reward-gauges/boosting-your-crv-rewards/) for more details on the formula and its calculation.
 
 ## The yveCRV yVault
 
@@ -110,10 +110,10 @@ Yearn’s work to automate the yield generation and rebalancing of your crypto a
 
 ## More information
 
-- [curve.fi](https://www.curve.fi/usecrv) webpage
-- Curve [Guide](https://resources.curve.fi/guides/staking-your-crv) for staking CRV
-- Curve [Guide](https://resources.curve.fi/guides/boosting-your-crv-rewards) for vote locking
-- Curve [FAQ](https://resources.curve.fi/faq/vote-locking-boost)
+- [curve.fi](https://www.curve.fi/) webpage
+- Curve [Guide](https://resources.curve.fi/crv-token/staking-your-crv/) for staking CRV
+- Curve [Guide](https://resources.curve.fi/reward-gauges/boosting-your-crv-rewards/) for vote locking
+- Curve [FAQ](https://resources.curve.fi/governance/vote-locking-boost)
 - deFinn [Infographic](https://gateway.pinata.cloud/ipfs/QmY8BZjN6oT4rrgveSqHjygcQmWitoMQk5B3moqFA6K8ea) on CRV Voting Boost and formula
 - Boost [calculator](https://dao.curve.fi/minter/calc)
 - Yearn CurveDAO proxy strategy [diagram](https://twitter.com/bantg/status/1308680661801340929)
