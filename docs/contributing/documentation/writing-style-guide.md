@@ -57,7 +57,7 @@ As such, Writers should focus on communicating concepts as clearly and succinctl
 - Exclamation points.
 - Footnotes.
 - References to deprecated names for Yearn Components.
-  - **Examples:** yyCRV or yUSD instead of yvCurve-Y (see: [Yearn Naming Conventions](https://docs.yearn.finance/developers/v2/naming-convention))
+  - **Examples:** yyCRV or yUSD instead of yvCurve-Y (see: [Yearn Naming Conventions](https://docs.yearn.fi/developers/v2/naming-convention))
 - Parentheses for stating additional information
   - **Incorrect:** Development Grants are larger sized ($5,000 to $50,000) grants aimed at individuals or teams building projects around vaults and the broader Yearn ecosystem.
   - **Correct:** Development Grants are generally larger sized grants, ranging from $5,000 to $50,000, aimed at individuals or teams building projects around vaults and the broader Yearn ecosystem.
@@ -120,7 +120,7 @@ The examples below use dollars, but the same rules apply to all global currencie
 
 #### Yearn Products
 
-Please see [Yearn Naming Conventions](https://docs.yearn.finance/developers/v2/naming-convention).
+Please see [Yearn Naming Conventions](https://docs.yearn.fi/developers/v2/naming-convention).
 
 #### Yearn
 
@@ -176,8 +176,8 @@ When bulleted and numbered lists contain complete sentences, capitalize the firs
 
 - Use [absolute links](https://docs.microsoft.com/en-us/contribute/how-to-write-links) and standard web URLs when referencing external resources.
 - Create descriptive hyperlinks and avoid generic language.
-  - **Correct - Descriptive:** Learn more at [Yearn Documentation](https://docs.yearn.finance/)
-  - **Incorrect - Generic:** Learn more [here](https://docs.yearn.finance/).
+  - **Correct - Descriptive:** Learn more at [Yearn Documentation](https://docs.yearn.fi/)
+  - **Incorrect - Generic:** Learn more [here](https://docs.yearn.fi/).
 - Include a `.`outside the link for sentences that end with a link.
 - When creating links for parallel translated documents, make sure to update relative links to reflect the correct heading.
 
@@ -256,7 +256,7 @@ Review the respective Contribute.md for each repository where pertinent before s
 
 #### Contributor Tools
 
-- The [Contributor Tools Guide](https://docs.yearn.finance/contributing/contributor-tools) guide introduces the tools regularly used by Yearn contributors.
+- The [Contributor Tools Guide](https://docs.yearn.fi/contributing/contributor-tools) guide introduces the tools regularly used by Yearn contributors.
 
 ### Express Interest
 
