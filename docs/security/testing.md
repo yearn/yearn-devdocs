@@ -4,7 +4,7 @@ It is best practice for smart contracts planned to be deployed to production to 
 
 ## Best Practices
 
-- Test coverage of 100% is not required, but it is encouraged.The more coverage, the more confidence in the code.
+- Test coverage of 100% is not required, but it is encouraged. The more coverage, the more confidence in the code.
 - Unit tests should be written for all state-changing functions, view functions, and modifiers. Using mocks and stubs is recommended for faster testing.
 - Integration tests should be written for all functions interacting with other contracts and main use cases covering the user interactions with the smart contract. Should include tests for all possible failure scenarios.
 - It is recommended to have complete testing coverage on the failure scenarios of your smart contracts. As a rule of thumb the failure scenarios should have more tests than the happy paths.
