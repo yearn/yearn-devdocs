@@ -39,8 +39,15 @@ Although harvests will be permissionless for this specific group of vaults, Year
 
 ### Calling Harvest
 
-To call harvest, use the harvest() function on the keeper found at [keeper.factory.ychad.eth](https://etherscan.io/address/keeper.factory.ychad.eth#writeContract). Simply enter the strategy address from the factory vault you wish to call harvest on and click “write.”
+To call the `harvest()` function on a Yearn strategy, you need to interact with the keeper contract found at [keeper.factory.ychad.eth](https://etherscan.io/address/keeper.factory.ychad.eth#writeContract) using the strategy address. Ensure you're calling `harvest()` on the correct contract: **You MUST use the strategy address, NOT the vault address**.
 
+If you're unsure how to find the strategy address, the best method is to visit the Yearn vault's detail page and look under the "Strategies" section. This section provides information on the debt ratios and the addresses for all strategies attached to the vault.
+
+For example, if you're interested in the vault at address `0xFfA0F0616229eE2aC08FA4C358D23b18D980134B` you can see the list of strategies addresses at [yearn.fi/vaults/1/0xFfA0F0616229eE2aC08FA4C358D23b18D980134B?tab=strategies](https://yearn.fi/vaults/1/0xFfA0F0616229eE2aC08FA4C358D23b18D980134B?tab=strategies):
+
+![Strategy Address Location](https://i.imgur.com/LO6E8hw.png)
+
+Once you have the correct strategy address, go to the keeper contract on Etherscan, connect your wallet, enter the strategy address into the `harvest()` function, and execute the transaction by clicking “Write”.
 
 ## Curve LP Tokens
 
