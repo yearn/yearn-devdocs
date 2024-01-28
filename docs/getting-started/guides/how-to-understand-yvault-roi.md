@@ -87,7 +87,7 @@ $$F = I * P$$
 
 Now, we want to calculate the increment of $F$ which would be our return.
 
-Since $I$ is constant, and only $P$ changes, if we know $P$ at a future date, we can calulate our return.
+Since $I$ is constant, and only $P$ changes, if we know $P$ at a future date, we can calculate our return.
 
 In order to get the formula for a line having two points we have to do some math:
 
@@ -157,6 +157,5 @@ If you would like to make a crude estimation on how returns may look like in a y
 
 The community has been actively creating tools and guides on this topic.
 
-- [https://github.com/Zer0dot/yearn_roi/blob/master/yearn_vaults_ROI_calc.ipynb](https://github.com/Zer0dot/yearn_roi/blob/master/yearn_vaults_ROI_calc.ipynb) provides a mathematical explanation of how ROI is calculated with some caveats. \(This repository is no longer being maintained\).
 - [Statistics FAQ](https://docs.yearn.fi/resources/faq#where-can-i-find-strategy-descriptions)
 - [How Yearn shows APY in the v3 interface](https://medium.com/iearn/how-yearn-calculates-estimated-returns-apy-b4fd5b687bf9)
