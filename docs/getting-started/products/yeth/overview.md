@@ -20,6 +20,14 @@ Users stake their yETH to mint st-yETH, accrue yield, and later unstake st-yETH 
 
 By bundling LSTs, st-yETH aims to generate the best risk-adjusted yield from ETH staking. Through protocol governance, st-yETH users can readjust pool weights to maximize yield while mitigating catastrophic scenarios where one or several LSTs in the yETH composition suffer adverse events like de-pegging or security incidents.
 
+### st-yETH user vote weight
+
+Each user has an internal vote weight that increases asymptotically to the user's share count. After `t` seconds, their vote weight is `s * t / (t + t_half)` where `s` is the number of shares and `t_half` is the voting half-time.
+
+The voting half-time determines the time it takes until half the voting weight is reached.
+
+The user's external vote weight equals the internal vote weight at the end of the previous week.
+
 ## Pool Weights for each LST
 
 In yETH, each Liquid Staking Derivative (LST) has an assigned weight representing its proportion in the pool. The weight management system ensures that the pool remains diversified and balanced. As an LST performs well or gains popularity, its weight in the pool may increase, attracting more liquidity and providing better returns. Conversely, if an LST underperforms or faces issues, its weight may decrease, reducing its impact on the overall pool performance. This dynamic adjustment helps maintain an optimal risk-adjusted yield for yETH users.
