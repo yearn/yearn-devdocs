@@ -24,7 +24,7 @@ By bundling LSTs, st-yETH aims to generate the best risk-adjusted yield from ETH
 
 Each user has an internal vote weight that increases asymptotically to the user's share count. After `t` seconds, their vote weight is `s * t / (t + t_half)` where `s` is the number of shares and `t_half` is the voting half-time.
 
-The voting half-time determines the time it takes until half the voting weight is reached.
+The voting half-time determines the time it takes until half the voting weight is reached. You can find the current voting half-time here: https://etherscan.io/address/0x583019fF0f430721aDa9cfb4fac8F06cA104d0B4#readContract#F20
 
 The user's external vote weight equals the internal vote weight at the end of the previous week.
 
