@@ -41,16 +41,13 @@ Some vaults do implement strategies that will be less liquid and integrators sho
 
 What you see on-chain is what you get. For real-time protocol data see:
 
-* [yearn vaults descriptions](https://vaults.yearn.fi/)
 * [seafood.yearn.watch](https://seafood.yearn.watch/)
-* [yearn at dune analytics](https://dune.com/projects/yearn)
 * [diving into yearn metrics](https://medium.com/iearn/diving-into-yearn-metrics-8c3fb0520927)
 
 ## Projects Using yvTokens as Collateral
 
 * Alchemix: https://alchemix.fi/
 * Abracadabra: https://abracadabra.money/
-* Element: https://www.element.fi/
 * Gearbox: https://gearbox.fi/
 * QiDao: https://app.mai.finance/
 * Ribbon: https://www.ribbon.finance/
