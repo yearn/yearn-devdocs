@@ -35,7 +35,7 @@ V3 yvTokens are [ERC-4626](https://eips.ethereum.org/EIPS/eip-4626) compatible, 
 
 In most Yearn vaults strategies that lock tokens are kept to a minimum amount of time. To learn more about strategy and fund allocation visit [seafood.yearn.watch](https://seafood.yearn.watch/) for a look into what's going on right now.
 
-Some vaults do implement stratgies that will be less liquid and integrators should be aware of the stated goals of the vault they are integrating before hand.
+Some vaults do implement strategies that will be less liquid and integrators should be aware of the stated goals of the vault they are integrating before hand.
 
 ### They’re Transparent
 
@@ -65,7 +65,7 @@ Critical to the safety of integrating yvTokens is the ability of an attacker to 
 
 Beginning in API version 0.4.4, Yearn vaults introduced a feature called “Airdrop Protection”, which prevents pricePerShare changes when tokens are transferred directly to the vault contract. This practice is continued into V3 on both the multi strategy and single strategy vaults.
 
-While the airdrop protection limits the majority of pricePerShare concerns, both Yearn v2 and v3 vaults follow similar rounding practices from common vault standards that can lead to PPS inflation attacks seen in other protocols recently through "sleath donations".
+While the airdrop protection limits the majority of pricePerShare concerns, both Yearn v2 and v3 vaults follow similar rounding practices from common vault standards that can lead to PPS inflation attacks seen in other protocols recently through "stealth donations".
 
 [Read More](https://www.euler.finance/blog/exchange-rate-manipulation-in-erc4626-vaults) about known issues with vault exchange rate manipulation.
 
@@ -77,7 +77,7 @@ Out of an abundance of caution anyone using a Yearn vault as collateral should b
 
 - A vault is empty or almost empty
 - A vault is held almost entirely by one entity
-- The majority of outstanding vault shares can be flashloaned or borrowed
+- The majority of outstanding vault shares can be flash loaned or borrowed
 - The amount available to borrow is priced purely by the current `pricePerShare` with no extra checks
 
 ## Suggestions
@@ -90,7 +90,7 @@ Out of an abundance of caution anyone using a Yearn vault as collateral should b
 ### Vault Tokens with API Version >= v0.4.4 and all V3 vaults.
 
 - Limit use of vaults that have 0 or almost 0 assets.
-- Do not allow vaults to be flashloaned or borrowed.
+- Do not allow vaults to be flash loaned or borrowed.
 - Limit use of vaults who have one majority owner of the shares.
 - Be mindful that PricePerShare may be subject to significant change within a single block. Treat the pricePerShare of the vault as you would other touch values.
 
