@@ -65,7 +65,9 @@ Critical to the safety of integrating yvTokens is the ability of an attacker to 
 
 Beginning in API version 0.4.4, Yearn vaults introduced a feature called “Airdrop Protection”, which prevents pricePerShare changes when tokens are transferred directly to the vault contract. This practice is continued into V3 on both the multi strategy and single strategy vaults.
 
-Both Yearn v2 and v3 vaults follow similar rounding practices from common vault standards that can lead to PPS inflation attacks seen in other protocols if measures are not put into place.
+While the airdrop protection limits the majority of pricePerShare concerns, both Yearn v2 and v3 vaults follow similar rounding practices from common vault standards that can lead to PPS inflation attacks seen in other protocols recently through "sleath donations".
+
+[Read More](https://www.euler.finance/blog/exchange-rate-manipulation-in-erc4626-vaults) about known issues with vault exchange rate manipulation.
 
 It is important to note that, as of now, it seems effects of these type of attacks are only meaningful when vaults are almost or entirely empty of assets.
 
