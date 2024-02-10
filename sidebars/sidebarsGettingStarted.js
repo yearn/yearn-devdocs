@@ -14,16 +14,16 @@ module.exports = {
             'products/yvaults/vault-tokens',
             {
               type: 'category',
-              label: 'yVaults Version 2',
+              label: 'yVaults Version 3',
               items: [
-                'products/yvaults/vault-factory',
+                'products/yvaults/v3',
               ],
             },
             {
               type: 'category',
-              label: 'yVaults Version 3',
+              label: 'yVaults Version 2',
               items: [
-                'products/yvaults/v3',
+                'products/yvaults/vault-factory',
               ],
             },
           ],
