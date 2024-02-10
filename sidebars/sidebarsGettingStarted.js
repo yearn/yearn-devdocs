@@ -12,8 +12,20 @@ module.exports = {
           items: [
             'products/yvaults/overview',
             'products/yvaults/vault-tokens',
-            'products/yvaults/vault-factory',
-            'products/yvaults/v3',
+            {
+              type: 'category',
+              label: 'yVaults Version 2',
+              items: [
+                'products/yvaults/vault-factory',
+              ],
+            },
+            {
+              type: 'category',
+              label: 'yVaults Version 3',
+              items: [
+                'products/yvaults/v3',
+              ],
+            },
           ],
         },
         {

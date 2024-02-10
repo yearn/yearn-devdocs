@@ -11,7 +11,7 @@ If your yVault generates profit, the share price of your yVault tokens will incr
 
 Once a user's liquidity is withdrawn from the yVault, their yVault Token will be burned. yVault Tokens are [ERC-20](https://ethereum.org/en/developers/docs/standards/tokens/erc-20/), meaning they can be transferred and traded as any other common Ethereum token.
 
-The vault tokens have evolved between v1, v2, and v3, here are a couple of main differences between them:
+The vault tokens have evolved between v1, v2, and v3, here are a couple of main differences:
 
 ## V1 yVault Tokens
 
