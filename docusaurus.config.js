@@ -49,7 +49,7 @@ module.exports = {
           label: 'Introduction',
         },
         {
-          to: 'developers/v2/getting-started',
+          to: 'developers/v3/overview',
           label: 'Develop',
         },
         {
