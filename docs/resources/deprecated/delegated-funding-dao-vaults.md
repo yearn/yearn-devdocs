@@ -1,5 +1,5 @@
 ---
-description: In development
+status: On Hold (No Active Development or R&D)
 ---
 
 # Delegated Funding DAO Vaults
