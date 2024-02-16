@@ -9,6 +9,4 @@ The team recommendations to make requests are:
 - When coordinating efforts with others, apply as a team (not as separate individuals)
 - Shorter timeframes of 1 to 3 months may have better rates of approval
 
-All Yearn payments streams can be visualized at our [LlamaPay Streams Dashboard](https://llamapay.io/streams?chainId=1&address=ychad.eth)
-
 ### [Send a budget request on GitHub](https://github.com/yearn/budget/issues/new/choose)
