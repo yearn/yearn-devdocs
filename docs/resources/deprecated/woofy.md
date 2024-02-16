@@ -1,3 +1,7 @@
+---
+Status: Deprecated
+---
+
 # Woofy
 
 The WOOFY token is the blue dog companion token of YFI. Utilizing special Woof technology, it allows two-way conversion between the two tokens, allowing holders to be exposed to YFI in a fluffier package.
