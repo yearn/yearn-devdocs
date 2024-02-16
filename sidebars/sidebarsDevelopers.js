@@ -5,9 +5,9 @@ module.exports = {
       label: 'yVaults Version 3',
       items: [
         'v3/overview',
-        'v3/strategy_writing_guide',
         'v3/protocol_fees',
         'v3/vault_management',
+        'v3/strategy_writing_guide',
       ],
     },
     {
