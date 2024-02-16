@@ -108,11 +108,6 @@ Both of these Yearn vaults reward CRV stakers with a share of the CRV locked by 
 
 Yearn’s work to automate the yield generation and rebalancing of your crypto assets is especially true in the case of your CRV holdings, and Yearn’s yveCRV or yvBOOST offers a powerful, compounding, “set-and-forget” place to stake your CRV!
 
-## Yearn veTokens Holdings
-
-- veYFI: https://yearn.vision/?orgId=1&refresh=5m&viewPanel=53
-- veCRV: https://yearn.vision/d/Qu4WGIwnz/vecrv?orgId=1
-
 ## More information
 
 - [curve.fi](https://www.curve.fi/) webpage
