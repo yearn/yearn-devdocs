@@ -1,4 +1,4 @@
-# yPRISMA
+# Overview
 
 Claim and deposit at [yprisma.yearn.fi](https://yprisma.yearn.fi)
 
