@@ -32,7 +32,7 @@ module.exports = {
           type: 'category',
           label: 'veYFI',
           items: [
-            '../contributing/governance/veyfi',,
+            'products/veyfi',
           ],
         },
         {
