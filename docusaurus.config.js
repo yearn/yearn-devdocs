@@ -86,28 +86,31 @@ module.exports = {
       style: 'light',
       links: [
         {
-          title: 'Developers',
-          items: [
-            {
-              label: '#strategies - Discord',
-              href: 'https://discord.gg/b8ENPNqG5c',
-            },
-          ],
-        },
-        {
           title: 'GitHub',
           items: [
             {
-              label: 'tokenized-strategy',
+              label: 'V3 Vaults',
+              href: 'https://github.com/yearn/yearn-vaults-v3',
+            },
+            {
+              label: 'V3 Strategy Mix',
               href: 'https://github.com/yearn/tokenized-strategys',
             },
             {
-              label: 'foundry-tokenized--strategy-mix',
+              label: 'V3 Strategy Mix: Foundry',
               href: 'https://github.com/yearn/tokenized-strategy-foundry-mix',
             },
             {
-              label: 'apeworx-tokenized-strategy-mix',
+              label: 'V3 Strategy Mix: Ape',
               href: 'https://github.com/yearn/tokenized-strategy-ape-mix',
+            },
+            {
+              label: 'V2 Vaults',
+              href: 'https://github.com/yearn/yearn-vaults',
+            },
+            {
+              label: 'V2 Strategy Mix',
+              href: 'https://github.com/yearn/brownie-strategy-mix',
             },
             {
               label: 'yearn-security',
