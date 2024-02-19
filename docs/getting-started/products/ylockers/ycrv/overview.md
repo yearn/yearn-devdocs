@@ -25,7 +25,7 @@ Both operations mint yCRV to the user at a 1:1 rate. Users migrating from yvBOOS
 Yearn passes all benefits of its veCRV position on to yCRV users who hold one of its **activated-tokens:**
 
 - [**st-yCRV (Staking Rewards):**](#staked-ycrv) [yVault](https://medium.com/iearn/yearn-finance-explained-what-are-vaults-and-strategies-96970560432) that receives admin fees and bribes from locked CRV.
-- [**lp-yCRV (Liquidity Pool Rewards):**](#lpd-ycrvcrv) yVault for CRV/yCRV LP tokens, autocompounds emissions and fees.
+- [**lp-yCRV (Liquidity Pool Rewards):**](#lpd-ycrvcrv) yVault for CRV LP tokens, autocompounds emissions and fees.
 
 > Note: a third activated token, vl-yCRV, was planned but not rolled out due to a lack of demand.
 
@@ -46,7 +46,7 @@ Under the hood, st-yCRV is a Yearn v2 vault, allowing users to sit back, relax a
 
 ![](https://i.imgur.com/3JNhzWR.png)
 
-Liquidity Pool'd yCRV provides liquidity to the new CRV/yCRV pool on Curve, and lp-yCRV holders receive this LP fees and emissions. When you zap to this token, under the hood, you are entering an LP position in the yCRV/CRV pool and depositing the LP tokens into the lp-yCRV yVault.
+Liquidity Pool'd yCRV provides liquidity to the new CRV pool on Curve, and lp-yCRV holders receive this LP fees and emissions. When you zap to this token, under the hood, you are entering an LP position in the yCRV/CRV pool and depositing the LP tokens into the lp-yCRV yVault.
 
 This is also a Yearn v2 vault with a strategy that deposits all CRV emissions generated back into the pool to grow the position. Like st-yCRV this is designed to be a set and forget token that auto harvests and auto compound rewards.
 
@@ -54,7 +54,7 @@ Yearn will mark 1 veCRV worth of voting power for every 1 yCRV in this position 
 
 ## How yveCRV and yvBOOST functionality was migrated to yCRV
 
-yveCRV and yvBOOST are being deprecated, and there is a migration path available to users. The functionality of both was integrated into [st-yCRV](#staked-ycrv) so if you are looking for the same benefits check the [guide](https://docs.yearn.fi/getting-started/products/ycrv/guide) on how to migrate from the legacy tokens using yearn's UI
+yveCRV and yvBOOST are being deprecated, and there is a migration path available to users. The functionality of both was integrated into [st-yCRV](#staked-ycrv) so if you are looking for the same benefits check the [guide](https://docs.yearn.fi/getting-started/products/ylockers/ycrv/guide) on how to migrate from the legacy tokens using yearn's UI
 
 ![](https://i.imgur.com/Htl3AgP.png)
 
