@@ -8,7 +8,7 @@ Contract Address: [`0x90c1f9220d90d3966fbee24045edd73e1d588ad5`](https://ethersc
 
 Governance Forum Thread: https://gov.yearn.fi/t/yip-65-evolving-yfi-tokenomics
 
-## Overview
+## veYFI Overview
 
 - Receives bought-back YFI as reward.
 - Locking is similar to the ve-style program of Curve.
