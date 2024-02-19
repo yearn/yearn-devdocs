@@ -1,7 +1,7 @@
 # Launch and Migration FAQ
 
 ### When will yCRV launch?
-Contracts are live, you can find relevant addresses [here](https://docs.yearn.fi/getting-started/products/ycrv/overview#addresses).
+Contracts are live, you can find relevant addresses [here](https://docs.yearn.fi/getting-started/products/ylockers/ycrv/overview#addresses).
 
 ### Should I migrate now from yveCRV and yvBOOST?
 Yes! Incentives have moved to the new system. yveCRV and yvBOOST will no longer receive yield.
