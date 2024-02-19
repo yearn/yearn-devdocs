@@ -89,10 +89,6 @@ module.exports = {
           title: 'Developers',
           items: [
             {
-              label: 'Open Issues',
-              href: 'https://contribute.yearn.rocks/',
-            },
-            {
               label: '#strategies - Discord',
               href: 'https://discord.gg/b8ENPNqG5c',
             },
@@ -102,8 +98,8 @@ module.exports = {
           title: 'GitHub',
           items: [
             {
-              label: 'yearn-vaults',
-              href: 'https://github.com/yearn/yearn-vaults',
+              label: 'tokenized-strategy',
+              href: 'https://github.com/yearn/tokenized-strategys',
             },
             {
               label: 'foundry-tokenized--strategy-mix',
@@ -112,14 +108,6 @@ module.exports = {
             {
               label: 'apeworx-tokenized-strategy-mix',
               href: 'https://github.com/yearn/tokenized-strategy-ape-mix',
-            },
-            {
-              label: 'yearn-watch',
-              href: 'https://github.com/yearn/yearn-watch',
-            },
-            {
-              label: 'yearn-finance-v3',
-              href: 'https://github.com/yearn/yearn-finance-v3',
             },
             {
               label: 'yearn-security',
@@ -135,20 +123,36 @@ module.exports = {
           title: 'Ecosystem',
           items: [
             {
-              label: 'Vaults',
+              label: 'V3 Vaults',
+              href: 'https://yearn.fi/v3',
+            },
+            {
+              label: 'V2 Vaults',
               href: 'https://yearn.fi/vaults',
+            },
+            {
+              label: 'Juiced Vaults',
+              href: 'https://juiced.yearn.fi/',
+            },
+            {
+              label: 'veYFI',
+              href: 'https://veyfi.yearn.fi/',
             },
             {
               label: 'yETH',
               href: 'https://yeth.yearn.fi/',
             },
             {
-              label: 'YFI Stats',
-              href: 'https://www.yfistats.com/',
+              label: 'yCRV',
+              href: 'https://ycrv.yearn.fi/',
             },
             {
-              label: 'Bowswap',
-              href: 'https://bowswap.finance/',
+              label: 'yPrisma',
+              href: 'https://yprisma.yearn.fi/',
+            },
+            {
+              label: 'yBribe',
+              href: 'https://ybribe.yearn.fi/',
             },
           ],
         },
