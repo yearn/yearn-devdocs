@@ -1,4 +1,4 @@
-# veYFI
+# Overview
 
 veYFI incorporates [YIP-56: Buyback and Build](https://gov.yearn.fi/t/yip-56-buyback-and-build/8929) funds into YFI tokenomics. Users can lock YFI tokens and receive veYFI, which allows them to boost vault rewards and vote on where bought-back YFI will be sent.
 
@@ -90,7 +90,7 @@ dYFI (previously specified as oYFI) is a token introduced as part of Yearn's veY
 
 - Governance Forum Thread: https://gov.yearn.fi/t/yip-73-activate-veyfi-rewards-with-oyfi-gauges
 
-### Overview
+### dYFI Overview
 
 - Implements the ERC-20 standard.
 - Gives its bearer the right to redeem an equivalent YFI in exchange for ETH.
