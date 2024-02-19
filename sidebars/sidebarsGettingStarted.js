@@ -30,6 +30,13 @@ module.exports = {
         },
         {
           type: 'category',
+          label: 'veYFI',
+          items: [
+            'governance/veyfi',,
+          ],
+        },
+        {
+          type: 'category',
           label: 'yETH',
           items: [
             'products/yeth/overview',
