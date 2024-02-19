@@ -93,8 +93,8 @@ module.exports = {
               href: 'https://github.com/yearn/yearn-vaults-v3',
             },
             {
-              label: 'V3 Strategy Mix',
-              href: 'https://github.com/yearn/tokenized-strategys',
+              label: 'V3 Tokenized Strategy',
+              href: 'https://github.com/yearn/tokenized-strategy',
             },
             {
               label: 'V3 Strategy Mix: Foundry',
