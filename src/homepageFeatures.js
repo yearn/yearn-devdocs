@@ -9,11 +9,11 @@ export default [
       },
       {
         title: 'Vaults & Strategies',
-        description: 'An overview on how Yearn Vaults and its strategies work.',
+        description: 'An overview on how Yearn V3 Vaults and strategies work.',
         to: './developers/v3/overview',
       },
       {
-        title: 'Yearn Risk Scores',
+        title: 'Risk Scores',
         description: 'Learn about the Yearn risk framework for assessing DeFi yield strategies.',
         to: './resources/risks/risk-score',
       },
@@ -23,19 +23,19 @@ export default [
     title: 'Build',
     rows: [
       {
-        title: 'New Strategies',
-        description: 'Get started building with vaults and strategies.',
+        title: 'Strategies',
+        description: 'Get started building V3 strategies.',
         to: './developers/v3/strategy_writing_guide',
       },
       {
-        title: 'Yearn Data',
+        title: 'Data Services',
         description: 'Learn about the Yearn data services like yDaemon and the subgraphs',
         to: './developers/v2/yearn-data',
       },
       {
         title: 'veYFI',
         description: 'Participate in Yearn governance and learn how boosted yield works.',
-        to: './contributing/governance/veyfi',
+        to: './getting-started/products/veyfi',
       },
     ],
   }
