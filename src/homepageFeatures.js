@@ -9,7 +9,7 @@ export default [
       },
       {
         title: 'Vaults & Strategies',
-        description: 'An overview on how Yearn V3 Vaults and strategies work.',
+        description: 'An overview on how Yearn vaults and strategies work.',
         to: './developers/v3/overview',
       },
       {
@@ -23,14 +23,14 @@ export default [
     title: 'Build',
     rows: [
       {
+        title: 'Vaults',
+        description: 'Get started building V3 vaults.',
+        to: './developers/v3/vault_management',
+      },
+      {
         title: 'Strategies',
         description: 'Get started building V3 strategies.',
         to: './developers/v3/strategy_writing_guide',
-      },
-      {
-        title: 'Data Services',
-        description: 'Learn about the Yearn data services like yDaemon and the subgraphs',
-        to: './developers/v2/yearn-data',
       },
       {
         title: 'veYFI',
