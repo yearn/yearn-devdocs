@@ -1,8 +1,8 @@
 ---
-description: Deprecated
+Status: Deprecated
 ---
 
-# yEarn (deprecated)
+# yEarn
 
 Earn is a lending aggregator that strives to attain the highest yield for supported coins \(DAI, USDC, USDT, TUSD, sUSD, or wBTC\) at all times. It does this by programmatically shifting these coins between several lending protocols \([AAVE](https://aave.com), [dYdX](https://dydx.exchange/), and [Compound](https://compound.finance)\) operating on the Ethereum blockchain.
 

@@ -11,10 +11,28 @@ module.exports = {
           label: 'yVaults',
           items: [
             'products/yvaults/overview',
-            'products/yvaults/vaults-and-strategies',
             'products/yvaults/vault-tokens',
-            'products/yvaults/vault-factory',
-            'products/yvaults/v3',
+            {
+              type: 'category',
+              label: 'yVaults Version 3',
+              items: [
+                'products/yvaults/v3',
+              ],
+            },
+            {
+              type: 'category',
+              label: 'yVaults Version 2',
+              items: [
+                'products/yvaults/vault-factory',
+              ],
+            },
+          ],
+        },
+        {
+          type: 'category',
+          label: 'veYFI',
+          items: [
+            'products/veyfi',
           ],
         },
         {
@@ -29,12 +47,23 @@ module.exports = {
           label: 'yLockers',
           items: [
             'products/ylockers/overview',
-            'products/ylockers/ycrv/overview',
-            'products/ylockers/ycrv/faq',
-            'products/ylockers/ycrv/guide',            
-            'products/ylockers/yprisma/overview',
-            'products/ylockers/yprisma/farming',
-            
+            {
+              type: 'category',
+              label: 'yCRV',
+              items: [
+                'products/ylockers/ycrv/overview',
+                'products/ylockers/ycrv/faq',
+                'products/ylockers/ycrv/guide'
+              ],
+            },
+            {
+              type: 'category',
+              label: 'yPRISMA',
+              items: [
+                'products/ylockers/yprisma/overview',
+                'products/ylockers/yprisma/farming'
+              ],
+            },
           ],
         },
         {
@@ -46,7 +75,6 @@ module.exports = {
             'products/ybribe/faq',
           ],
         },
-        'products/woofy',
       ],
     },
     {
