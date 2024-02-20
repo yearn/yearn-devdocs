@@ -121,7 +121,7 @@
 
 #### I'm getting an error that says "ALERT: Transaction Error. Exception thrown in contract code." What does that mean?
 
-- There may be a bug in the contract that you are interacting with. bring this up with the team of [Discord](https://discord.gg/yearn).
+- There may be a bug in the contract that you are interacting with. bring this up with the team of [Discord](https://discord.gg/yearnfi).
 
 #### I paid gas for a deposit, but it didn't go through, why is that?
 

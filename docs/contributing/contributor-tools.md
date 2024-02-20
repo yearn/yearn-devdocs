@@ -10,7 +10,7 @@ Yearn contributors work with tools geared towards promoting open-source feedback
 
 ### Discord
 
-Various Yearn teams (documentation, development, etc.) host AMAs, ideation, discussions, and follow-ups on Yearn's Discord Channel, an open-source platform geared towards improving team communication. The [Yearn Discord](https://discord.gg/yearn/) lists all channels and users.
+Various Yearn teams (documentation, development, etc.) host AMAs, ideation, discussions, and follow-ups on Yearn's Discord Channel, an open-source platform geared towards improving team communication. The [Yearn Discord](https://discord.gg/yearnfi/) lists all channels and users.
 
 Start participating in public discussions by joining the recommended channels below.
 

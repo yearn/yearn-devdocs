@@ -10,7 +10,7 @@ Help build the future of finance, shape your skills, and grow the Yearn ecosyste
 
 ### Have an idea?
 
-We are always open to new suggestions or better ways of doing things. If you have an idea feel free to use the appropriate channel on [Discord](https://discord.gg/yearn), [Reddit](https://www.reddit.com/r/yearn_finance/), make a post on the governance [forum](https://gov.yearn.fi/c/general-chat/7), or consider adding to the [Pool of Ideas](https://yearnfinance.notion.site/Pool-of-Ideas-d75383ade9154d8bb6163388c6c2b39b). If the idea is thorough enough, make a post in the [Proposals](https://gov.yearn.fi/c/proposals/5) section on the governance forum. Be sure to follow the Proposal [Guidelines](https://gov.yearn.fi/t/proposal-how-to/106) and check previous [YIPs](https://yips.yearn.fi/all-yip) for guidance.
+We are always open to new suggestions or better ways of doing things. If you have an idea feel free to use the appropriate channel on [Discord](https://discord.gg/yearnfi), [Reddit](https://www.reddit.com/r/yearn_finance/), make a post on the governance [forum](https://gov.yearn.fi/c/general-chat/7), or consider adding to the [Pool of Ideas](https://yearnfinance.notion.site/Pool-of-Ideas-d75383ade9154d8bb6163388c6c2b39b). If the idea is thorough enough, make a post in the [Proposals](https://gov.yearn.fi/c/proposals/5) section on the governance forum. Be sure to follow the Proposal [Guidelines](https://gov.yearn.fi/t/proposal-how-to/106) and check previous [YIPs](https://yips.yearn.fi/all-yip) for guidance.
 
 ### Ready to contribute?
 
