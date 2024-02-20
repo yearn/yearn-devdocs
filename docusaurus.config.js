@@ -184,7 +184,7 @@ module.exports = {
             },
             {
               label: 'Snapshot voting',
-              href: 'https://snapshot.org/#/ybaby.eth',
+              href: 'https://snapshot.org/#/veyfi.eth',
             },
           ],
         },
