@@ -183,7 +183,7 @@ module.exports = {
               href: 'https://gov.yearn.fi',
             },
             {
-              label: 'Snapshot voting',
+              label: 'Snapshot Voting',
               href: 'https://snapshot.org/#/veyfi.eth',
             },
           ],
