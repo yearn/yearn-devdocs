@@ -3,8 +3,6 @@
 This is a collection of resources that aim to be an introduction to how yVaults V3 works.
 
 ## Introduction
- 
-The architecture of V3 is an improved version of V2, with increased customization and features. For a complete intro guide of V2 see [here](https://docs.yearn.fi/developers/v2/additional-resources).
 
 Yearns V3 system is designed to be an un-opinionated and customizable infrastructure for anyone to easily build on, making generating yield safely and efficiently as easy as possible for all parties involved.
 
