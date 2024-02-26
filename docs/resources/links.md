@@ -4,7 +4,7 @@
 
 ### Community
 
-- [Discord](https://discord.gg/yearn)
+- [Discord](https://discord.gg/yearnfi)
 - [Reddit](https://www.reddit.com/r/yearn_finance/)
 - [Github](https://github.com/yearn)
 - [Telegram](https://t.me/yearnfinance)

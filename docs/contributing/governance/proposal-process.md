@@ -9,7 +9,7 @@
 Discussion regarding changes in the protocol happens on a variety of platforms, such as:
 
 - [Governance Forum](https://gov.yearn.fi/)
-- [Discord](https://discord.gg/yearn)
+- [Discord](https://discord.gg/yearnfi)
 - [Telegram]
 
 Getting as much feedback as possible from the various communication channels is recommended before introducing a formal proposal. The governance forum and Discord server have dedicated channels for specific topics.

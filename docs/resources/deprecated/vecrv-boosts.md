@@ -1,4 +1,8 @@
-# veCRV Boosts (deprecated)
+---
+Status: Deprecated
+---
+
+# veCRV Boosts
 
 > **This page is outdated since yveCRV was deprecated in favour of yCRV. Check the new yCRV [page](https://docs.yearn.fi/getting-started/products/ycrv/overview).**
 

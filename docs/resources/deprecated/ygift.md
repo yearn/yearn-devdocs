@@ -1,3 +1,7 @@
+---
+Status: Deprecated
+---
+
 # yGift
 
 Brighten someone's day by sending a virtual gift. yGift is an NFT (Non-Fungible Token) that can be used to reward someone for their work, or to simply share some love.

@@ -145,7 +145,7 @@ Follow these steps to create a new vault with the UI:
 
 <img src="https://i.imgur.com/l7Z7oYm.png" />
 
-4. Sign the transaction and the vault will be created
+4. Sign the transaction and the vault will be created (the signing interface is specific to your wallet provider, this one is [Frame](https://frame.sh/))
 
 <img src="https://i.imgur.com/uRhX2VB.png" width="280" />
 

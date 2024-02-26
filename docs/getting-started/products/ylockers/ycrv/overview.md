@@ -1,4 +1,4 @@
-# yCRV
+# Overview
 
 ![](https://i.imgur.com/ni42qE6.png)
 
@@ -18,14 +18,14 @@ _or_
 
 - Migrate from legacy tokens [yveCRV and yvBOOST](#how-yvecrv-and-veboost-functionality-was-migrated-to-ycrv).
 
-Both operations mint yCRV to the user at a 1:1 rate. Users migrating from yvBOOST can use the zap at [y.finance](https://y.finance) to efficiently unwrap their tokens to yveCRV and migrates to yCRV in a single step. Of course, users can also choose to purchase yCRV from the new Curve factory pool [here](https://curve.fi/factory/192).
+Both operations mint yCRV to the user at a 1:1 rate. Users migrating from yvBOOST can use the zap at https://yearn.fi/ycrv to efficiently unwrap their tokens to yveCRV and migrate to yCRV in a single step. Of course, users can also choose to purchase yCRV from the new Curve factory pool: https://curve.fi/#/ethereum/pools/factory-v2-280/deposit
 
 ### 'Activated'-tokens
 
 Yearn passes all benefits of its veCRV position on to yCRV users who hold one of its **activated-tokens:**
 
 - [**st-yCRV (Staking Rewards):**](#staked-ycrv) [yVault](https://medium.com/iearn/yearn-finance-explained-what-are-vaults-and-strategies-96970560432) that receives admin fees and bribes from locked CRV.
-- [**lp-yCRV (Liquidity Pool Rewards):**](#lpd-ycrvcrv) yVault for CRV/yCRV LP tokens, autocompounds emissions and fees.
+- [**lp-yCRV (Liquidity Pool Rewards):**](#lpd-ycrvcrv) yVault for CRV LP tokens, autocompounds emissions and fees.
 
 > Note: a third activated token, vl-yCRV, was planned but not rolled out due to a lack of demand.
 
@@ -46,7 +46,7 @@ Under the hood, st-yCRV is a Yearn v2 vault, allowing users to sit back, relax a
 
 ![](https://i.imgur.com/3JNhzWR.png)
 
-Liquidity Pool'd yCRV provides liquidity to the new CRV/yCRV pool on Curve, and lp-yCRV holders receive this LP fees and emissions. When you zap to this token, under the hood, you are entering an LP position in the yCRV/CRV pool and depositing the LP tokens into the lp-yCRV yVault.
+Liquidity Pool'd yCRV provides liquidity to the new CRV pool on Curve, and lp-yCRV holders receive this LP fees and emissions. When you zap to this token, under the hood, you are entering an LP position in the yCRV/CRV pool and depositing the LP tokens into the lp-yCRV yVault.
 
 This is also a Yearn v2 vault with a strategy that deposits all CRV emissions generated back into the pool to grow the position. Like st-yCRV this is designed to be a set and forget token that auto harvests and auto compound rewards.
 
@@ -54,7 +54,7 @@ Yearn will mark 1 veCRV worth of voting power for every 1 yCRV in this position 
 
 ## How yveCRV and yvBOOST functionality was migrated to yCRV
 
-yveCRV and yvBOOST are being deprecated, and there is a migration path available to users. The functionality of both was integrated into [st-yCRV](#staked-ycrv) so if you are looking for the same benefits check the [guide](https://docs.yearn.fi/getting-started/products/ycrv/guide) on how to migrate from the legacy tokens using yearn's UI
+yveCRV and yvBOOST are being deprecated, and there is a migration path available to users. The functionality of both was integrated into [st-yCRV](#staked-ycrv) so if you are looking for the same benefits check the [guide](https://docs.yearn.fi/getting-started/products/ylockers/ycrv/guide) on how to migrate from the legacy tokens using yearn's UI
 
 ![](https://i.imgur.com/Htl3AgP.png)
 
@@ -62,11 +62,11 @@ yveCRV and yvBOOST are being deprecated, and there is a migration path available
 
 - **yCRV:** [0xFCc5c47bE19d06BF83eB04298b026F81069ff65b](https://etherscan.io/token/0xFCc5c47bE19d06BF83eB04298b026F81069ff65b)
 - **st-yCRV (vault):** [0x27B5739e22ad9033bcBf192059122d163b60349D](https://etherscan.io/token/0x27B5739e22ad9033bcBf192059122d163b60349D)
-- **lp-yCRV (DEPRECATED):** [0xc97232527B62eFb0D8ed38CF3EA103A6CcA4037e](https://etherscan.io/token/0xc97232527B62eFb0D8ed38CF3EA103A6CcA4037e)
+- **lp-yCRV (DEPRECATED, The v2 pool is more efficient and has a price oracle):** [0xc97232527B62eFb0D8ed38CF3EA103A6CcA4037e](https://etherscan.io/token/0xc97232527B62eFb0D8ed38CF3EA103A6CcA4037e)
 - **lp-yCRV v2 (vault):** [0x6E9455D109202b426169F0d8f01A3332DAE160f3](https://etherscan.io/token/0x6E9455D109202b426169F0d8f01A3332DAE160f3)
 - **CRV/yCRV Curve Pool:** [0x453D92C7d4263201C69aACfaf589Ed14202d83a4](https://etherscan.io/token/0x453D92C7d4263201C69aACfaf589Ed14202d83a4)
 - **ZapYCRV.vy :** [0x01D7f32B6E463c96c00575fA97B8224326C6A6B9](https://etherscan.io/token/0x01D7f32B6E463c96c00575fA97B8224326C6A6B9)
-- **yCRV Interface:** http://y.finance/
+- **yCRV Interface:** https://yearn.fi/ycrv
 
 ## Read More
 

@@ -1,4 +1,4 @@
-# veYFI
+# Overview
 
 veYFI incorporates [YIP-56: Buyback and Build](https://gov.yearn.fi/t/yip-56-buyback-and-build/8929) funds into YFI tokenomics. Users can lock YFI tokens and receive veYFI, which allows them to boost vault rewards and vote on where bought-back YFI will be sent.
 
@@ -8,7 +8,7 @@ Contract Address: [`0x90c1f9220d90d3966fbee24045edd73e1d588ad5`](https://ethersc
 
 Governance Forum Thread: https://gov.yearn.fi/t/yip-65-evolving-yfi-tokenomics
 
-## Overview
+## veYFI Overview
 
 - Receives bought-back YFI as reward.
 - Locking is similar to the ve-style program of Curve.
@@ -90,7 +90,7 @@ dYFI (previously specified as oYFI) is a token introduced as part of Yearn's veY
 
 - Governance Forum Thread: https://gov.yearn.fi/t/yip-73-activate-veyfi-rewards-with-oyfi-gauges
 
-### Overview
+### dYFI Overview
 
 - Implements the ERC-20 standard.
 - Gives its bearer the right to redeem an equivalent YFI in exchange for ETH.

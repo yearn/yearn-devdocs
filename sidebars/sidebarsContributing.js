@@ -6,8 +6,6 @@ module.exports = {
       type: 'category',
       label: 'Operations',
       items: [
-        'operations/osc-levels',
-        'operations/decision-making',
         'operations/budget',
       ],
     },
@@ -15,11 +13,8 @@ module.exports = {
       type: 'category',
       label: 'Governance',
       items: [
-        'governance/governance-and-operations',
         'governance/proposal-process',
-        'governance/proposal-repository',
         'governance/yfi',
-        'governance/veyfi',
       ],
     },
     {

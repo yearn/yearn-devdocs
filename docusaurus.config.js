@@ -49,7 +49,7 @@ module.exports = {
           label: 'Introduction',
         },
         {
-          to: 'developers/v2/getting-started',
+          to: 'developers/v3/overview',
           label: 'Develop',
         },
         {
@@ -86,40 +86,31 @@ module.exports = {
       style: 'light',
       links: [
         {
-          title: 'Developers',
-          items: [
-            {
-              label: 'Open Issues',
-              href: 'https://contribute.yearn.rocks/',
-            },
-            {
-              label: '#strategies - Discord',
-              href: 'https://discord.gg/b8ENPNqG5c',
-            },
-          ],
-        },
-        {
           title: 'GitHub',
           items: [
             {
-              label: 'yearn-vaults',
-              href: 'https://github.com/yearn/yearn-vaults',
+              label: 'V3 Vaults',
+              href: 'https://github.com/yearn/yearn-vaults-v3',
             },
             {
-              label: 'foundry-tokenized--strategy-mix',
+              label: 'V3 Tokenized Strategy',
+              href: 'https://github.com/yearn/tokenized-strategy',
+            },
+            {
+              label: 'V3 Strategy Mix: Foundry',
               href: 'https://github.com/yearn/tokenized-strategy-foundry-mix',
             },
             {
-              label: 'apeworx-tokenized-strategy-mix',
+              label: 'V3 Strategy Mix: Ape',
               href: 'https://github.com/yearn/tokenized-strategy-ape-mix',
             },
             {
-              label: 'yearn-watch',
-              href: 'https://github.com/yearn/yearn-watch',
+              label: 'V2 Vaults',
+              href: 'https://github.com/yearn/yearn-vaults',
             },
             {
-              label: 'yearn-finance-v3',
-              href: 'https://github.com/yearn/yearn-finance-v3',
+              label: 'V2 Strategy Mix',
+              href: 'https://github.com/yearn/brownie-strategy-mix',
             },
             {
               label: 'yearn-security',
@@ -135,20 +126,36 @@ module.exports = {
           title: 'Ecosystem',
           items: [
             {
-              label: 'Vaults',
+              label: 'V3 Vaults',
+              href: 'https://yearn.fi/v3',
+            },
+            {
+              label: 'V2 Vaults',
               href: 'https://yearn.fi/vaults',
+            },
+            {
+              label: 'Juiced Vaults',
+              href: 'https://juiced.yearn.fi/',
+            },
+            {
+              label: 'veYFI',
+              href: 'https://veyfi.yearn.fi/',
             },
             {
               label: 'yETH',
               href: 'https://yeth.yearn.fi/',
             },
             {
-              label: 'YFI Stats',
-              href: 'https://www.yfistats.com/',
+              label: 'yCRV',
+              href: 'https://ycrv.yearn.fi/',
             },
             {
-              label: 'Bowswap',
-              href: 'https://bowswap.finance/',
+              label: 'yPrisma',
+              href: 'https://yprisma.yearn.fi/',
+            },
+            {
+              label: 'yBribe',
+              href: 'https://ybribe.yearn.fi/',
             },
           ],
         },
@@ -176,8 +183,8 @@ module.exports = {
               href: 'https://gov.yearn.fi',
             },
             {
-              label: 'Snapshot voting',
-              href: 'https://snapshot.org/#/ybaby.eth',
+              label: 'Snapshot Voting',
+              href: 'https://snapshot.org/#/veyfi.eth',
             },
           ],
         },
