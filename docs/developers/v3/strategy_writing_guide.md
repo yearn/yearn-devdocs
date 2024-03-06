@@ -43,8 +43,6 @@ This increased functionality not only means strategies have a much larger potent
 - Performance Fee recipient: The address that receives the shares charged as performance fees.
 - Protocol Fee: A fee on the fees charged by strategist sent to the Yearn Treasury.
 - Profit Max Unlock Time: Time in seconds over which reported profits will unlock over.
-- `totalIdle` : The amount of loose asset sitting in a strategy.
-- `totalDebt` : The amount of deployed funds that a strategy has control over.
 - `report`: Called by management or keepers to accrue all profits or losses, charge fees, and lock profit to be distributed.
 - `tend`: Called by management or keepers between reports for any maintenance that should happen that doesn't require a full report.
 - API Version: The version that a specific Strategy is using for its logic.
@@ -76,7 +74,7 @@ ___
 
 The only default global variables from the BaseStrategy that can be accessed from storage is `asset` and `TokenizedStrategy`. 
 
-If other global variables are needed for your specific strategy, you can use the `TokenizedStrategy` variable to quickly retrieve any other needed variables, such as `totalAssets`, `totalDebt`, `isShutdown` etc.
+If other global variables are needed for your specific strategy, you can use the `TokenizedStrategy` variable to quickly retrieve any other needed variables, such as `totalAssets`, `isShutdown` etc.
 
 Example:
 
@@ -88,7 +86,7 @@ ___
     - This function is called during every deposit into your strategy to allow it to deploy the underlying asset deposited into the yield source. 
     
     **Parameters**: 
-    - `_amount`: The total amount of underlying assets currently available for the deployment strategy, including the amount deposited and previously idle funds.
+    - `_amount`: The total amount of underlying assets currently available for deployment, including the amount deposited and previously idle funds.
     
     **Returns**: NONE.
     
@@ -97,7 +95,7 @@ ___
     - This does not need to deploy the full `_amount` if the strategy doesn't want to.
     
     **Best Practice**: 
-    - Use the `_amount` parameter passed in rather than relying on .balanceOf(address(this))
+    - Override `availableDepositLimit` with any needed checks like protocol deposit limits or current status. This will alleviate the need to check any of these things during `_deployFunds` since `availableDepositLimit` is called during every deposit to check for restrictions.
     
     **Example**:
         
@@ -107,7 +105,7 @@ ___
         
 2. *_freeFunds(uint256 _amount)*
     **Purpose**: 
-    - This function is called during withdraws from your strategy if there is insufficient idle asset to service the full withdrawal. 
+    - This function is called during withdraws from your strategy if there is not sufficient idle asset to service the full withdrawal. 
     
     **Parameters**: 
     - `_amount`: The amount of the underlying asset that needs to be pulled from the yield source.
@@ -117,10 +115,11 @@ ___
     **Good to Know**: 
     - **The amount of loose assets has already been accounted for**. 
     - This function is also entirely permissionless, so swaps or lp values can be sandwiched or otherwise manipulated.
+    - Users have the ability to specify their own `maxLoss` on withdraws.
     
     **Best Practice**: 
     - Use the `_amount` parameter passed in rather than relying on .balanceOf(address(this) since idle has already been accounted for.
-    - **Any difference between the `_amount` parameter and the actual amount withdrawn will count as a loss and be passed on to the withdrawer. It may be preferred to revert for temporary issues such as liquidity constraints rather than pass on a loss**.
+    - **Any difference between the `_amount` parameter and the actual amount withdrawn will count as a loss and be passed on to the withdrawer.**
     - If your strategy is illiquid or can not always service full withdraws, you can limit the amount by overriding `availableWithdrawLimit` outlined below.
     
     **Example**:
@@ -139,8 +138,8 @@ ___
     - `_totalAssets`:  A trusted and accurate account for the total amount of 'asset' the strategy currently holds including loose funds.
     
     **Good to Know**:  
-    - This can only be called by a permissioned address so if set up correctly, it can be trusted to be through a protected relay to perform swaps, LP movements etc.
-    - It is safe to account for loose assets in this function since any reported profit is immediately locked and not subject to price-per-share manipulation.
+    - This can only be called by a permissioned address so if set up correctly, it can be trusted to perform swaps, LP movements etc.
+    - This should account for both deployed and idle assets.
 
     **Best Practice**: 
     - The returned value is used to account for all strategy profits, losses and fees so care should be taken when relying on oracle values, LP prices etc. that have the potential to be manipulated.
@@ -153,10 +152,18 @@ ___
             if(!TokenizedStrategy.isShutdown()) {
                 // Claim all rewards and sell to asset.
                 _claimAndSellRewards();
-                // Check how much loose asset we have from rewards.
-                uint256 looseAsset = asset.balanceOf(address(this));
-                // Deposit the sold amount back into the yield source.
-                yieldSource.deposit(address(asset), looseAsset);
+                
+                // Check how much we can re-deploy into the yield source.
+                uint256 toDeploy = Math.min(
+                    asset.balanceOf(address(this)), 
+                    availableDepositLimit(address(this))
+                );
+                
+                // If greater than 0.
+                if (toDeploy > 0) {
+                    // Deposit the sold amount back into the yield source.
+                    _deployFunds(toDeploy)
+                }
             }
             
             // Return full balance no matter what.
@@ -171,7 +178,7 @@ While that may be all that's necessary for some of the most straightforward stra
 
 1. *availableDepositLimit(address _owner)*
     **Purpose**:
-    - This is called during any deposits and can be used to enforce any deposit limit or white list that the strategist desires.
+    - This is called during any deposits and can be used to enforce any deposit limit or white list that the strategist desires or that the underlying protocol uses.
     
     **Parameters**:
     - `_owner`: The address receiving the shares minted during the deposit.
@@ -184,6 +191,7 @@ While that may be all that's necessary for some of the most straightforward stra
     - This does not need to consider any conversion rates from assets to shares. But you should know that any limit under uint256 max may get converted to shares and should not be high enough to overflow  on multiplication.
     
     **Best Practices**:
+    - Check all values for the protocol you are integrating with that may cause deposits to revert.
     - Make sure to implement setter functions for any deposit limit or whitelist that are enforced.
     
     **Example**:
@@ -191,6 +199,8 @@ While that may be all that's necessary for some of the most straightforward stra
         function availableDepositLimit(
             address _owner
         ) public view override returns (uint256) { 
+            if (yieldSource.isPaused()) return 0;
+            
             uint256 totalAssets = TokenizedStrategy.totalAssets();
             return totalAssets >= depositLimit ? 0 : depositLimit - totalAssets;
         }
@@ -208,12 +218,13 @@ While that may be all that's necessary for some of the most straightforward stra
     **Good to Know**:
     - This does not need to consider the balance of the _owner.
     - This can be more than the actual amount available to withdraw.
+    - **Recommended use is to have the amount returned not be close to the actual strategies totalAssets to avoid rounding issues.**
     - Defaults to max uint256.
     
     **Best Practices**:
     - This should be overridden for strategies that have illiquid, or sandwichable positions to prevent reporting incorrect losses on withdraws.
-    - This should not be used if the expectation is the strategy is always fully liquid.
-    - To just allow the idle funds to be withdrawn use `TokenizedStrategy.totalIdle()`.
+    - This should also account for any restrictions the underlying protocol may encounter.
+    - To just allow the idle funds to be withdrawn use `asset.balanceOf(address(this))`.
     - This does not need to consider conversion rates from assets to shares. But you should know that any limit under uint256 max may get converted to shares and should not be high enough to overflow  on multiplication.
         
     **Example #2**:
@@ -221,11 +232,13 @@ While that may be all that's necessary for some of the most straightforward stra
         function availableWithdrawLimit(
             address _owner
         ) public view override returns (uint256) {
-            if(positionIsLocked) {
-                return TokenizedStrategy.totalIdle();
-            } else {
-                return type(uint256).max;
+            if(positionIsLocked || yieldSource.isPaused()) {
+                return asset.balanceOf(address(this));
             }
+            
+            // Return both the loose balance and the current liqudity of the yield source.
+            return asset.balanceOf(address(this)) + asset.balanceOf(address(yieldSource));
+            
         }
 
 1. *_tend(uint256 _totalIdle)*
@@ -238,7 +251,7 @@ While that may be all that's necessary for some of the most straightforward stra
     **Returns**: NONE
     
     **Good to Know**:
-    - The strategies `totalDebt` and `totalIdle` amounts will be automatically updated after this completes based on the end state, but will keep the totalAssets the same as not to have any effect on PPS.
+    - The strategies `totalAssets` will be the exact before and after a tend as not to have any effect on PPS.
     
     **Best Practices**:
     - This can only be called by the keeper or management so it should be from a trusted source.
@@ -292,7 +305,7 @@ While that may be all that's necessary for some of the most straightforward stra
     **Good to Know**:
     - This can only be called once a strategy is shut down.
     - The `_amount` can be more than is available to pull.
-    - The totalDebt and totalIdle will be updated based on the end state after the emergencyWithdraw, keeping totalAssets the same.
+    - The totalAssets will be the same before and after this call.
     
     **Best Practices**:
     - Keep the withdrawal logic as simple as possible.
@@ -302,7 +315,7 @@ While that may be all that's necessary for some of the most straightforward stra
     
          function _emergencyWithdraw(uint256 _amount) internal override {
             _amount = min(_amount, yieldSource.balanceOf(address(this)));
-            yieldSource.withdraw(asset, _amount);
+            _freeFunds(_amount);
         }
 
 
@@ -312,7 +325,7 @@ All other functionality, such as reward selling, upgradability, etc., is up to t
 
 ### FYI
 
-The Tokenized Strategy contract manually track totalAssets using totalIdle and totalDebt. Meaning any functions that change the balance of loose and deployed asset should go through or end with one of the core functions such as report or tend so that the balances will be updated to the correct amounts and withdraws can still function.
+The Tokenized Strategy contract manually track totalAssets. Meaning the only way to update the totalAssets for either profits or losses is through a `report` call.
 
 **NOTE**: Writing to a strategy's default global storage state internally post-deployment is impossible. You must make external calls from the `management` address to configure any desired variables.
 
@@ -323,7 +336,7 @@ The symbol used for each tokenized Strategy is set automatically with a standard
 
 ## Periphery
 
-To make Strategy writing as simple as possible, a suite of optional 'Periphery' helper contracts can be inherited by your Strategy to provide standardized and tested functionality for things like swaps. A complete list of the periphery contracts can be viewed here https://github.com/yearn/tokenized-strategy-periphery.
+To make Strategy writing as simple as possible, a suite of optional 'Periphery' helper contracts can be inherited by your Strategy to provide standardized and tested functionality for things like swaps. A complete list of the periphery contracts can be viewed here https://github.com/yearn/tokenized-strategy-periphery/tree/master/src
 
 
 *All periphery contracts are optional; strategists can choose if they wish to use them.
@@ -337,9 +350,9 @@ To make reward swapping as easy and standardized as possible, multiple swapper c
 For easy integration with Vaults, front ends, debt allocators, etc. There is the option to create an [APR oracle](https://github.com/yearn/tokenized-strategy-periphery/blob/master/src/AprOracle/AprOracleBase.sol) contract for your specific strategy that should return the expected APR of the Strategy based on some given `debtChange`. 
 
 
-### [HealthCheck](https://github.com/Schlagonia/tokenized-strategy-periphery/tree/master/src/HealthCheck)
+### [HealthCheck](https://github.com/yearn/tokenized-strategy-periphery/tree/master/src/Bases/HealthCheck)
 
-To prevent automated reports from reporting losses/excessive profits that may not be accurate, a strategist can inherit and implement the [HealthCheck](https://github.com/yearn/tokenized-strategy-periphery/blob/master/src/HealthCheck/BaseHealthCheck.sol) contract. This can ensure that a keeper will not call a report that may incorrectly realize incorrect losses or excessive gains. It can cause the report to revert if the gain/loss is outside of the desired bounds and will require manual intervention to ensure the strategy is reporting correctly.
+To prevent automated reports from reporting losses/excessive profits that may not be accurate, a strategist can inherit and implement the [HealthCheck](https://github.com/yearn/tokenized-strategy-periphery/blob/master/src/Bases/HealthCheck/BaseHealthCheck.sol) contract. This can ensure that a keeper will not call a report that may incorrectly realize incorrect losses or excessive gains. It can cause the report to revert if the gain/loss is outside of the desired bounds and will require manual intervention to ensure the strategy is reporting correctly.
 
 **NOTE**: It is recommended to implement some checks in `_harvestAndReport` for leveraged or manipulatable strategies that could report incorrect losses due to unforeseen circumstances.
 
@@ -426,6 +439,6 @@ Once this is called it will stop any further deposits or mints but will not affe
 
 This can be used in an emergency or simply to retire a vault.
 
-Once a strategy is shut down management or the emergencyAdmin can also call `emergencyWithdraw(_amount)`, which will tell the strategy to withdraw a specified `_amount` from the yield source and keep it idle in the vault. This function will also do any needed updates to `totalDebt` and `totalIdle`, based on amounts withdrawn to ensure withdraws continue functioning correctly.
+Once a strategy is shut down management or the emergencyAdmin can also call `emergencyWithdraw(_amount)`, which will tell the strategy to withdraw a specified `_amount` from the yield source and keep it idle in the vault.
 
 All other emergency functionality is left up to the individual strategist.

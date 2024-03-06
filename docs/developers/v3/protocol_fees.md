@@ -27,9 +27,6 @@ You can retrieve both the default protocol fee as well as if a custom config has
     # Retrieve the default config.
     vaultFactory.default_protocol_fee_config()
     
-    # Check if there is a custom protocol fee for a vault.
-    vaultFactory.use_custom_protocol_fee(vault_address)
-    
-    # Get a custom config if applicable.
-    vaultFactory.custom_protocol_fee(vault_address)
+    # Check a specific vault current config to be used
+    vaultFactory.protocol_fee_config(vault_address)
     

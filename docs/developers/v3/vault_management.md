@@ -2,7 +2,7 @@
 
 V3 makes it as simple as possible for anyone to deploy and manage their Vaults. No longer will Yearn be the only manager of Vaults, gate-keeping who can be a debt allocator, or what strategies should be added to a vault. Now, anyone can deploy, manage, and earn fees from their vision and preferences on everything from risk profile, fee model, decentralization, etc.
 
-In V3 our "Allocator Vaults" or "Meta of Vaults" are designed to be efficient 4626 compliant debt allocators that can have many different "strategies" attached to them and will direct funds to these strategies based on the vault's management choice. The vaults are built to be "plug and play" meaning managers can simply deploy, add their strategies, and start the yield generation. But they also hold many customization factors, allowing different managers to differentiate themselves and experiment with different optionality.
+In V3 our "Allocator Vaults" or "Meta of Vaults" are designed to be efficient 4626 compliant debt allocators that can have many different "strategies" attached to them and will direct funds to these strategies based on the vault's management choice. The vaults are built to be "plug and play" meaning managers can simply deploy, add their strategies, and start the yield generation. But they also hold many customization factors, allowing different managers to differentiate themselves and experiment with different optionalities.
 
 Running your vault requires no need to know how to code. Anyone desiring to manage their strategies and allocations can simply deploy and run their vault. 
 
@@ -17,7 +17,7 @@ Running your vault requires no need to know how to code. Anyone desiring to mana
 
 ## Deployment
 
-Each release of the vaults will have its own "Vault Factory" deployed to make it as simple and trustless as possible to deploy your vault. The vault factory utilizes [ERC-5202](https://eips.ethereum.org/EIPS/eip-5202) blueprint pattern to allow anyone to trustlessly deploy their vault which is an exact copy of the previously deployed "blueprint" vault for that specific version.
+Each release of the vaults will have its own "Vault Factory" deployed to make it as simple and trustless as possible to deploy your vault. The vault factory allows anyone to trustlessly deploy their own vault which is an exact copy of the previously deployed "original" vault for that specific version.
 
 **Vaults not deployed through the factory will not be recognized as part of the Yearn ecosystem and may experience issues during runtime.
 
@@ -25,13 +25,11 @@ To deploy your vault, simply find the factory's address for the most recent rele
 
 The needed parameters are:
 
-**asset**: The ERC-20 compliant token used as the underlying asset to earn yield for the vault.
+**asset**: The address of an ERC-20 compliant token used as the underlying asset to earn yield for the vault.
 **name**: The name for your vault that will apply to the token issues to depositors.
 **symbol**: The symbol the token issued to depositors will use.
 **role_manager**: The address in charge of giving permissions to other addresses which allow access to certain permissioned functions.
 **profit_max_unlock_time**: In seconds, profits reported from strategies will be unlocked.
-
-The blueprint ERC standard lowers the gas cost compared to a traditional off-chain deployment, however, deployments of the vaults are still expected to be relatively expensive costing over 400k gas.
 
 Once deployed, you can get your vault's address from either the Factory function's return value or the `NewVault` event emitted by the factory.
 
@@ -47,11 +45,11 @@ Once deployed, additional setup steps and variables can be configured if desired
 ---
 The first is to set up the Roles for your specific vault. The vaults use a role-based system for access control to the permissioned functions. The roles are a [Vyper Enumerator](https://docs.vyperlang.org/en/stable/types.html#enums) pattern based on Pythons. 
 
-Each permissioned function in the Vaults has its own "role" that can call that specific function. For example, to call `add_strategy(new_strategy: address)` the address must have the `ADD_STRATEGY_MANAGER` role. Roles can be held by any number of addresses or by no address. There is also the option to "open" any role, meaning the function becomes permissionless. (This is not recommended for most permissioned functions and should be done carefully.)
+Each permissioned function in the Vaults has its own "role" that can call that specific function. For example, to call `add_strategy(new_strategy: address)` the address must have the `ADD_STRATEGY_MANAGER` role. Roles can be held by any number of addresses or by no address. 
 
 The same address can hold every role, each role can be held by a different address or any combination desired.
 
-The deployer of a vault will be the default holder of the `role_manager` that is in charge of assigning roles to different addresses.
+The address sent during deployment as `role_manager` is in charge of assigning roles to different addresses.
 
 A full explanation of [python enumerators](https://docs.python.org/3/howto/enum.html) is beyond the scope of this doc, but the corresponding int to each role can be viewed [here](https://github.com/yearn/yearn-vaults-v3/blob/master/tests/utils/constants.py#L12)
 
@@ -103,7 +101,9 @@ The job of a vault is to manage debt between strategies that do the yield genera
 
 A strategy can be any contract that has the needed [4626 interface](https://github.com/yearn/yearn-vaults-v3/blob/master/contracts/VaultV3.vy#L39) for the vault to interact with it. This includes Tokenized Strategies, 3rd party 4626 vaults, and other  allocator vaults.
 
-To add a strategy first call `vault.add_strategy(strategy_address)`. Each strategy gets added with a default 'max_debt' of 0. This means the MAX_DEBT_MANAGER will need to call `vault.update_max_debt_for_strategy(strategy, max_debt)`.
+To add a strategy first call `vault.add_strategy(strategy_address)`. There is an optional parameter in `add_strategy` of `add_to_queue` that defaults to True, but can be set to False if you do not want to add the strategy to the `default_queue`.
+
+Each strategy gets added with a default 'max_debt' of 0. This means the MAX_DEBT_MANAGER will need to call `vault.update_max_debt_for_strategy(strategy, max_debt)`.
 
 Once a strategy has been added and given a max_debt, the DEBT_MANAGER role can allocate funds.
 
@@ -121,6 +121,8 @@ All debt updates are denominated in the underlying asset and are restricted by t
 Debt updates will also respect the strategies specific `maxRedeem` and `maxDeposit`.
 
 To deposit or withdraw vault funds from a strategy simply call `vault.update_debt(strategy, desired_debt)` where desired debt is the end amount denominated in the underlying asset that the strategy should have after the full debt update.
+
+Debt updates also come with an optional `max_loss` parameter that is recommended to be used on debt decreases. It works just like the withdraw/redeem parameter of the same name and assures an losses realized on debt decreases are within the expected bounds.
 
 **NOTE**: If a strategy has unrealized losses you cannot lower its debt.
 
@@ -146,19 +148,19 @@ You will need to add a separate contract as the vault's 'accountant' to charge f
 
 The accountant is called by the vault during every `report` with the strategy that is reporting and the gain or loss it's reporting. The accountant will then return the total fees or refunds that should be charged by the vault during that report and paid to the accountant.
 
-Accountants can hold any logic that vault managers want to dictate fees or simply charge normal performance or management fees. A ready-to-use Generic Accountant can easily be used with any vault for those who wish just to charge standard fees.
+Accountants can hold any logic that vault managers want to dictate fees or simply charge normal performance or management fees. A ready-to-use Accountant can easily be used with any vault for those who wish just to charge standard fees.
 
-See Here: https://github.com/yearn/vault-periphery/blob/master/contracts/accountants/GenericAccountant.vy
+See Here: https://github.com/yearn/vault-periphery/blob/master/contracts/accountants/Accountant.sol
 
 #### Deposit/Withdraw Limit Modules
 
 Each vault comes with default deposit and withdraw limits that can be used for out of the box 4626 compliant functionality. However, these limits can also be completely customized for full programmability by adding a deposit_limit_module or withdraw_limit_module respectively.
 
-This modules are stand alone smart contracts similar to the accountant that if added will be used by the vault to enforce any custom deposit or withdraw limits.
+These modules are stand-alone smart contracts similar to the accountant that if added will be used by the vault to enforce any custom deposit or withdraw limits.
 
 This can be used to enforce a whitelist of depositors, minimum or maximum deposit sizes, liquidity constraints etc.
 
-**Note**: To set a deposit_limit_module the DEPOSIT_LIMIT_MANAGER will first need to set the vaults default `deposit_limit` to uint256 max. And will not be able to change the `deposit_limit` unless the deposit_limit_module is removed and set to address(0).
+**Note**: To set a deposit_limit_module the DEPOSIT_LIMIT_MANAGER will either need to use the optional `override` flag or first need to set the vaults default `deposit_limit` to uint256 max. And will not be able to change the `deposit_limit` without the same flag or unless the deposit_limit_module is removed and set to address(0).
 
 #### Default Queue
 
@@ -181,6 +183,6 @@ There are certain tokens whose native behavior makes them incompatible with bein
 A few examples of this are:
 - Rebasing Tokens
 - Fee on Transfer
-- Re-entrancy Tokens (ERC-777)
+- Reentrancy Tokens (ERC-777)
 
 Any token whose normal functionality breaks the ERC-20 standard may not be compatible with V3 vaults.
