@@ -150,7 +150,7 @@ The accountant is called by the vault during every `report` with the strategy th
 
 Accountants can hold any logic that vault managers want to dictate fees or simply charge normal performance or management fees. A ready-to-use Accountant can easily be used with any vault for those who wish just to charge standard fees.
 
-See Here: https://github.com/yearn/vault-periphery/blob/master/contracts/accountants/HealthCheckAccountant.sol
+See Here: https://github.com/yearn/vault-periphery/blob/master/contracts/accountants/Accountant.sol
 
 #### Deposit/Withdraw Limit Modules
 
