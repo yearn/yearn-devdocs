@@ -31,12 +31,11 @@ So whether you are a full-blown gas golfing expert, a degen looking to codify yo
 
 ### Core
 
-#### VERSION 3.0.1:
+#### Version 3.0.2:
+- Vault original : `0x1ab62413e0cf2eBEb73da7D40C70E7202ae14467`
+- VaultFactory : `0x444045c5C13C246e117eD36437303cac8E250aB0`
+- TokenizedStrategy : `0xBB51273D6c746910C7C06fe718f30c936170feD0`
 
-- Vault BluePrint: `0xDE992C652b266AE649FEC8048aFC35954Bee6145`
-- VaultFactory: `0xE9E8C89c8Fc7E8b8F23425688eb68987231178e5`
-- TokenizedStrategy: `0xDFC8cD9F2f2d306b7C0d109F005DF661E14f4ff2`
-
- - Periphery Address Provider: `0xB1662c1E500610F5D14B8041FD5306bbD3D8EdEe`
+- Periphery Address Provider: `0xB1662c1E500610F5D14B8041FD5306bbD3D8EdEe`
 
 **If a contract has not been deployed on a specific chain it can be done permissionlessly using the scripts in the relevant GitHub repo. Or reach out to a Yearn contributor for help.**
