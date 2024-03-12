@@ -8,7 +8,7 @@ Subgraph information is serviced by a decentralized group of server operators ca
 
 ## Ethereum
 
-- [Explorer Page](https://thegraph.com/explorer/subgraphs/5xMSe3wTNLgFQqsAc5SCVVwT4MiRb5AogJCuSN9PjzXF?view=Overview)
+- [Explorer Page](https://api.thegraph.com/subgraphs/name/messari/yearn-v2-ethereum/graphql)
 - Graphql Endpoint: `https://gateway.thegraph.com/api/{api-key}/subgraphs/id/5xMSe3wTNLgFQqsAc5SCVVwT4MiRb5AogJCuSN9PjzXF`
 
 ## Fantom
