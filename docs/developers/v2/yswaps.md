@@ -38,7 +38,7 @@ Uniswap, balancer, sushiswap, etc. These are straighforward contracts that will 
 
 #### Multicall swapper
 
-This contract will receive a bundle of transactions that are required to aquire the wanted token/tokens. This is used in specific cases where trade can not be made in a normal exchange due to liquidity issues, dex not having that token or route, needing extra steps to aquire the token such as depositing or withdrawing, and more. It is important to mention that this swapper does NOT take care of things like approvals, or transfers (important difference with `single swappers`).
+This contract will receive a bundle of transactions that are required to acquire the wanted token/tokens. This is used in specific cases where trade can not be made in a normal exchange due to liquidity issues, dex not having that token or route, needing extra steps to aquire the token such as depositing or withdrawing, and more. It is important to mention that this swapper does NOT take care of things like approvals, or transfers (important difference with `single swappers`).
 
 #### Swappers Usage
 

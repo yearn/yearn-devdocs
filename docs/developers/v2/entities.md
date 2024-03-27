@@ -431,7 +431,7 @@ Description: get specific details of Vault Day Data
 | dayReturnsGenerated       | BigInt! | The earnings generated for this vault this day                                                                                                                                              |
 | dayReturnsGeneratedUSDC   | BigInt! | The earnings generated in USDC for this vault this day. These returns are priced using the token's USDC-denominated price at the time each harvest was performed.                           |
 | tokenPriceUSDC            | BigInt! | The price of one of the vault's underlying token                                                                                                                                            |
-| blockNumber               | BigInt! | Block number the day data aggregation occured on                                                                                                                                            |
+| blockNumber               | BigInt! | Block number the day data aggregation occurred on                                                                                                                                            |
 
 # Yearn
 
