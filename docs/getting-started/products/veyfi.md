@@ -55,6 +55,9 @@ Governance Forum Thread: https://gov.yearn.fi/t/yip-65-evolving-yfi-tokenomics
 | `yG-lp-yCRVv2` | yGauge LP Yearn CRV Vault v2 | [`0x107717C98C8125A94D3d2Cc82b86a1b705f3A27C`](https://etherscan.io/address/0x107717C98C8125A94D3d2Cc82b86a1b705f3A27C) |
 | `yG-yvCurve-yETH-f` | yGauge Curve yETH Factory yVault | [`0x81d93531720d86f0491DeE7D03f30b3b5aC24e59`](https://etherscan.io/address/0x81d93531720d86f0491DeE7D03f30b3b5aC24e59) |
 | `yG-lp-yPRISMA` | yGauge LP Yearn PRISMA Vault | [`0x6130E6cD924a40b24703407F246966D7435D4998`](https://etherscan.io/address/0x6130E6cD924a40b24703407F246966D7435D4998) |
+| `yG-yvWETH-1` | yGauge WETH-1 yVault | [`0x5943F7090282Eb66575662EADf7C60a717a7cE4D`](https://etherscan.io/address/0x5943f7090282eb66575662eadf7c60a717a7ce4d) |
+| `yG-yvUSDC-1` | yGauge USDC-1 yVault | [`0x622fA41799406B120f9a40dA843D358b7b2CFEE3`](https://etherscan.io/address/0x622fa41799406b120f9a40da843d358b7b2cfee3) |
+| `yG-yvDAI-1`  | yGauge DAI-1 yVault  | [`0x128e72DfD8b00cbF9d12cB75E846AC87B83DdFc9`](https://etherscan.io/address/0x128e72DfD8b00cbF9d12cB75E846AC87B83DdFc9) |
 
 ### veYFI Reward Pool
 
