@@ -2,6 +2,7 @@ module.exports = {
   mySidebar: [
     'faq',
     'links',
+    'auctions',
     {
       type: 'category',
       label: 'Risks',
