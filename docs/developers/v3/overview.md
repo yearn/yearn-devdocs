@@ -35,7 +35,6 @@ So whether you are a full-blown gas golfing expert, a degen looking to codify yo
 - Vault original : `0x1ab62413e0cf2eBEb73da7D40C70E7202ae14467`
 - VaultFactory : `0x444045c5C13C246e117eD36437303cac8E250aB0`
 - TokenizedStrategy : `0xBB51273D6c746910C7C06fe718f30c936170feD0`
-
-- Periphery Address Provider: `0xB1662c1E500610F5D14B8041FD5306bbD3D8EdEe`
+- Protocol Address Provider: `0x1e9778aAD41Aa3E0884C276fB4C2D03C4036Aa0B`
 
 **If a contract has not been deployed on a specific chain it can be done permissionlessly using the scripts in the relevant GitHub repo. Or reach out to a Yearn contributor for help.**
