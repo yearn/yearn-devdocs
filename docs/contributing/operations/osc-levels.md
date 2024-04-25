@@ -37,6 +37,8 @@ When you take the above and apply them to teams, the specific *implementation* o
 ![](https://i.imgur.com/xibvfyM.png)
 ![](https://i.imgur.com/d8D70DT.png)
 
+[](https://docs.google.com/presentation/d/1Zey7hr5L6ecf3gvFb8h8O4bejV9MJmKiprt0VIf5H68/edit#slide=id.gb6ef2d2049_0_857)<https://docs.google.com/presentation/d/1Zey7hr5L6ecf3gvFb8h8O4bejV9MJmKiprt0VIf5H68/edit#slide=id.gb6ef2d2049_0_857>
+
 [https://docs.google.com/presentation/d/1Zey7hr5L6ecf3gvFb8h8O4bejV9MJmKiprt0VIf5H68/edit#slide=id.gb6ef2d2049_0_857](https://docs.google.com/presentation/d/1Zey7hr5L6ecf3gvFb8h8O4bejV9MJmKiprt0VIf5H68/edit#slide=id.gb6ef2d2049_0_857)
 
 ## Transitioning Levels
