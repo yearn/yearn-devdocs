@@ -29,7 +29,7 @@ Click on this button to select the network you would like to interact with:
 
 ![image](https://github.com/yearn/yearn-devdocs/assets/167110386/33e59b67-3bb6-41ae-882e-df4dadc67754)
    
-4. Your wallet will ask you to confirm the transaction. This will take about 3 minutes, but you can speed it up by [paying a higher gas fee to the network](https://blog.leverj.io/how-to-set-the-gas-limit-and-gas-price-in-metamask-1b33c38c32fd). If your transaction gets stuck, see [this guide](https://metamask.zendesk.com/hc/en-us/articles/360015489251-How-to-Speed-Up-or-Cancel-a-Pending-Transaction) on how to speed up or cancel the transaction.
+4. Your wallet will ask you to confirm the transaction. This will take about 3 minutes, but you can speed it up by [paying a higher gas fee to the network](https://blog.leverj.io/how-to-set-the-gas-limit-and-gas-price-in-metamask-1b33c38c32fd). If your transaction gets stuck, see [this guide](https://support.metamask.io/transactions-and-gas/transactions/how-to-speed-up-or-cancel-a-pending-transaction/) on how to speed up or cancel the transaction.
 
 <p align="center">
   <img width="258.75" height=" 459.75" src="https://i.imgur.com/qjryeGD.png" className="topRightImg"/>
@@ -52,13 +52,13 @@ When you're ready to withdraw:
 
 ## Tools to track your funds
 
-If you would like to see how your USD balance changes while your assets are in a vault, connect your wallet to [Zapper.fi](https://zapper.fi) or a similar portfolio-tracking product. This is also the easiest way to tell how much profit the vault has made for you.
+If you would like to see how your USD balance changes while your assets are in a vault, connect your wallet to [Zapper.xyz](https://zapper.xyz) or a similar portfolio-tracking product. This is also the easiest way to tell how much profit the vault has made for you.
 
 Your balance WILL NOT increase continuously. Profit will be distributed to your share of the vault when the harvest() function is called, which happens on a fluctuating basis.
 
 Community resources to monitor your returns:
 
-- [Zapper](https://zapper.fi/)
+- [Zapper](https://zapper.xyz/)
 - [Zerion](https://app.zerion.io/)
 - [DeBank](https://debank.com/)
  
