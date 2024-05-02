@@ -37,12 +37,15 @@ When you take the above and apply them to teams, the specific *implementation* o
 ![](https://i.imgur.com/xibvfyM.png)
 ![](https://i.imgur.com/d8D70DT.png)
 
-[](https://docs.google.com/presentation/d/1Zey7hr5L6ecf3gvFb8h8O4bejV9MJmKiprt0VIf5H68/edit#slide=id.gb6ef2d2049_0_857)<https://docs.google.com/presentation/d/1Zey7hr5L6ecf3gvFb8h8O4bejV9MJmKiprt0VIf5H68/edit#slide=id.gb6ef2d2049_0_857>
+[https://docs.google.com/presentation/d/1Zey7hr5L6ecf3gvFb8h8O4bejV9MJmKiprt0VIf5H68/edit#slide=id.gb6ef2d2049_0_857](https://docs.google.com/presentation/d/1Zey7hr5L6ecf3gvFb8h8O4bejV9MJmKiprt0VIf5H68/edit#slide=id.gb6ef2d2049_0_857)
 
 [https://docs.google.com/presentation/d/1Zey7hr5L6ecf3gvFb8h8O4bejV9MJmKiprt0VIf5H68/edit#slide=id.gb6ef2d2049_0_857](https://docs.google.com/presentation/d/1Zey7hr5L6ecf3gvFb8h8O4bejV9MJmKiprt0VIf5H68/edit#slide=id.gb6ef2d2049_0_857)
 
+<<<<<<< HEAD
 ## Transitioning Levels
 
+=======
+>>>>>>> Fix issues with existing .md files to allow upgrade to MDX 3
 ### To move to OSC II
 
 - At least two individual sponsors of OSC III or higher

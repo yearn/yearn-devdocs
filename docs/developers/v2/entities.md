@@ -29,7 +29,7 @@
 
 ### Naming Conventions
 
-#### Certain prefixes may be used to indicate a particular type of value.
+#### Certain prefixes may be used to indicate a particular type of value
 
 #### \* total - indicates this is a cumulative value (e.g. totalSharesMinted, totalGrossReturns)
 
@@ -37,9 +37,9 @@
 
 #### \* delta - indicates this value is the difference between the prior state and the current state (e.g. deltaPricePerShare)
 
-#### \* current - used exclusively in Update entities. Similar to balance, current indicates the state of a field or value at the time of the update. These values are populated in every update whether they changed or not.
+#### \* current - used exclusively in Update entities. Similar to balance, current indicates the state of a field or value at the time of the update. These values are populated in every update whether they changed or not
 
-#### \* new - used exclusively in Update entities. Fields with this prefix will only be populated if they have changed since the last Update. If there has been no change, the value will be null.
+#### \* new - used exclusively in Update entities. Fields with this prefix will only be populated if they have changed since the last Update. If there has been no change, the value will be null
 
 #### Use plurals when referring to Tokens or Shares (e.g. totalShares, balanceTokens)
 
