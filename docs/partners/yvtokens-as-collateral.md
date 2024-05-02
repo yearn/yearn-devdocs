@@ -46,13 +46,13 @@ What you see on-chain is what you get. For real-time protocol data see:
 
 ## Projects Using yvTokens as Collateral
 
-* Alchemix: https://alchemix.fi/
-* Abracadabra: https://abracadabra.money/
-* Gearbox: https://gearbox.fi/
-* QiDao: https://app.mai.finance/
-* Ribbon: https://www.ribbon.finance/
-* Sturdy: https://sturdy.finance/
-* Tempus: https://tempus.finance/
+* Alchemix: [https://alchemix.fi/](https://alchemix.fi/)
+* Abracadabra: [https://abracadabra.money/](https://abracadabra.money/)
+* Gearbox: [https://gearbox.fi/](https://gearbox.fi/)
+* QiDao: [https://app.mai.finance/](https://app.mai.finance/)
+* Ribbon: [https://www.ribbon.finance/](https://www.ribbon.finance/)
+* Sturdy: [https://sturdy.finance/](https://sturdy.finance/)
+* Tempus: [https://tempus.finance/](https://tempus.finance/)
 
 To learn more reach out through twitter, telegram or discord.
 
@@ -72,30 +72,30 @@ Out of an abundance of caution anyone using a Yearn vault as collateral should b
 
 ## Concerns
 
-- A vault is empty or almost empty
-- A vault is held almost entirely by one entity
-- The majority of outstanding vault shares can be flash loaned or borrowed
-- The amount available to borrow is priced purely by the current `pricePerShare` with no extra checks
+* A vault is empty or almost empty
+* A vault is held almost entirely by one entity
+* The majority of outstanding vault shares can be flash loaned or borrowed
+* The amount available to borrow is priced purely by the current `pricePerShare` with no extra checks
 
 ## Suggestions
 
-### Vault Tokens with API Version <= v0.4.3
+### Vault Tokens with API Version \<= v0.4.3
 
 * Not recommended for protocols without isolated lending markets and configurable borrow limits
 * Not recommended for vaults with low TVL
 
-### Vault Tokens with API Version >= v0.4.4 and all V3 vaults.
+### Vault Tokens with API Version >= v0.4.4 and all V3 vaults
 
-- Limit use of vaults that have 0 or almost 0 assets.
-- Do not allow vaults to be flash loaned or borrowed.
-- Limit use of vaults who have one majority owner of the shares.
-- Be mindful that PricePerShare may be subject to significant change within a single block. Treat the pricePerShare of the vault as you would other touch values.
+* Limit use of vaults that have 0 or almost 0 assets.
+* Do not allow vaults to be flash loaned or borrowed.
+* Limit use of vaults who have one majority owner of the shares.
+* Be mindful that PricePerShare may be subject to significant change within a single block. Treat the pricePerShare of the vault as you would other touch values.
 
 ## Hacks History
 
 The [CREAM hack in 2021](https://github.com/yearn/yearn-security/blob/master/disclosures/2021-10-27.md) proved that without proper care, an attacker could trick the lending market into thinking they have a far larger position than reality. This led to a tragic $130M loss for the protocol. Technical reference: https://mudit.blog/cream-hack-analysis/
 
-## Disclaimer:
+## Disclaimer
 
 Although this document presents some suggestions for integrating yearn vaults into your protocol it is NOT an exhaustive list and does not guarantee any outcomes or safety.
 

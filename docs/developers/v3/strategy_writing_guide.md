@@ -79,99 +79,127 @@ If other global variables are needed for your specific strategy, you can use the
 
 Example:
 
-    require(!TokenizedStrategy.isShutdown(), "strategy is shutdown");
+```markdown
+require(!TokenizedStrategy.isShutdown(), "strategy is shutdown");
+```
+
 ___
 
-1. *_deployFunds(uint256 _amount)*
-    **Purpose**:
-    - This function is called during every deposit into your strategy to allow it to deploy the underlying asset deposited into the yield source.
+### *_deployFunds(uint256_amount)*
 
-    **Parameters**:
-    - `_amount`: The total amount of underlying assets currently available for deployment, including the amount deposited and previously idle funds.
+**Purpose**:
 
-    **Returns**: NONE.
+- This function is called during every deposit into your strategy to allow it to deploy the underlying asset deposited into the yield source.
 
-    **Good to Know**:
-    - This function is permissionless, so swaps or LP movements can be sandwiched or manipulated.
-    - This does not need to deploy the full `_amount` if the strategy doesn't want to.
+**Parameters**:
 
-    **Best Practice**:
-    - Override `availableDepositLimit` with any needed checks like protocol deposit limits or current status. This will alleviate the need to check any of these things during `_deployFunds` since `availableDepositLimit` is called during every deposit to check for restrictions.
+- `_amount`: The total amount of underlying assets currently available for deployment, including the amount deposited and previously idle funds.
 
-    **Example**:
+**Returns**: NONE.
 
-        function _deployFunds(uint256 _amount) internal override \{
-            yieldSource.deposit(address(asset), _amount);
+**Good to Know**:
+
+- This function is permissionless, so swaps or LP movements can be sandwiched or manipulated.
+- This does not need to deploy the full `_amount` if the strategy doesn't want to.
+
+**Best Practice**:
+
+- Override `availableDepositLimit` with any needed checks like protocol deposit limits or current status. This will alleviate the need to check any of these things during `_deployFunds` since `availableDepositLimit` is called during every deposit to check for restrictions.
+
+**Example**:
+
+```markdown
+function _deployFunds(uint256 _amount) internal override \{
+    yieldSource.deposit(address(asset), _amount);
+}
+```
+
+___
+
+### *_freeFunds(uint256_amount)*
+
+**Purpose**:
+
+- This function is called during withdraws from your strategy if there is not sufficient idle asset to service the full withdrawal.
+
+**Parameters**:
+
+- `_amount`: The amount of the underlying asset that needs to be pulled from the yield source.
+
+**Returns**: NONE.
+
+**Good to Know**:
+
+- **The amount of loose assets has already been accounted for**.
+- This function is also entirely permissionless, so swaps or lp values can be sandwiched or otherwise manipulated.
+- Users have the ability to specify their own `maxLoss` on withdraws.
+
+**Best Practice**:
+
+- Use the `_amount` parameter passed in rather than relying on .balanceOf(address(this) since idle has already been accounted for.
+- **Any difference between the `_amount` parameter and the actual amount withdrawn will count as a loss and be passed on to the withdrawer.**
+- If your strategy is illiquid or can not always service full withdraws, you can limit the amount by overriding `availableWithdrawLimit` outlined below.
+
+**Example**:
+
+```markdown
+function _freeFunds(uint256_amount) internal override {
+    yieldSource.withdraw(address(asset), _amount);
+}
+```
+
+___
+
+### *_harvestAndReport()*
+
+**Purpose**:
+
+- Called during every report. This should harvest and sell any rewards, reinvest any proceeds, perform any position maintenance and return a full accounting of a trusted amount denominated in the underlying asset the strategy holds.
+
+**Parameters**: NONE
+
+**Returns**:
+
+- `_totalAssets`:  A trusted and accurate account for the total amount of 'asset' the strategy currently holds including loose funds.
+
+**Good to Know**:  
+
+- This can only be called by a permissioned address so if set up correctly, it can be trusted to perform swaps, LP movements etc.
+- This should account for both deployed and idle assets.
+
+**Best Practice**:
+
+- The returned value is used to account for all strategy profits, losses and fees so care should be taken when relying on oracle values, LP prices etc. that have the potential to be manipulated.
+- This can still be called after a strategy has been shut down so you may want to check if the strategy is shut down before performing certain functions like re-deploying loose funds.
+
+**Example**:
+
+```markdown
+function _harvestAndReport() internal override returns (uint256 _totalAssets) {
+    // Only harvest and redeploy if the strategy is not shutdown.
+    if(!TokenizedStrategy.isShutdown()) {
+        // Claim all rewards and sell to asset.
+        _claimAndSellRewards();
+        
+        // Check how much we can re-deploy into the yield source.
+        uint256 toDeploy = Math.min(
+            asset.balanceOf(address(this)), 
+            availableDepositLimit(address(this))
+        );
+        
+        // If greater than 0.
+        if (toDeploy > 0) {
+            // Deposit the sold amount back into the yield source.
+            _deployFunds(toDeploy)
         }
-
-2. *_freeFunds(uint256 _amount)*
-    **Purpose**:
-    - This function is called during withdraws from your strategy if there is not sufficient idle asset to service the full withdrawal.
-
-    **Parameters**:
-    - `_amount`: The amount of the underlying asset that needs to be pulled from the yield source.
-
-    **Returns**: NONE.
-
-    **Good to Know**:
-    - **The amount of loose assets has already been accounted for**.
-    - This function is also entirely permissionless, so swaps or lp values can be sandwiched or otherwise manipulated.
-    - Users have the ability to specify their own `maxLoss` on withdraws.
-
-    **Best Practice**:
-    - Use the `_amount` parameter passed in rather than relying on .balanceOf(address(this) since idle has already been accounted for.
-    - **Any difference between the `_amount` parameter and the actual amount withdrawn will count as a loss and be passed on to the withdrawer.**
-    - If your strategy is illiquid or can not always service full withdraws, you can limit the amount by overriding `availableWithdrawLimit` outlined below.
-
-    **Example**:
-
-    ```markdown
-    function _freeFunds(uint256_amount) internal override {
-        yieldSource.withdraw(address(asset), _amount);
     }
-    ```
+    
+    // Return full balance no matter what.
+    _totalAssets = yieldSource.balanceOf(address(this)) + asset.balanceOf(address(this));
+}
+```
 
-3. *_harvestAndReport()*
-    **Purpose**:
-    - Called during every report. This should harvest and sell any rewards, reinvest any proceeds, perform any position maintenance and return a full accounting of a trusted amount denominated in the underlying asset the strategy holds.
-
-    **Parameters**: NONE
-
-    **Returns**:
-    - `_totalAssets`:  A trusted and accurate account for the total amount of 'asset' the strategy currently holds including loose funds.
-
-    **Good to Know**:  
-    - This can only be called by a permissioned address so if set up correctly, it can be trusted to perform swaps, LP movements etc.
-    - This should account for both deployed and idle assets.
-
-    **Best Practice**:
-    - The returned value is used to account for all strategy profits, losses and fees so care should be taken when relying on oracle values, LP prices etc. that have the potential to be manipulated.
-    - This can still be called after a strategy has been shut down so you may want to check if the strategy is shut down before performing certain functions like re-deploying loose funds.
-
-    **Example**:
-
-        function _harvestAndReport() internal override returns (uint256 _totalAssets) {
-            // Only harvest and redeploy if the strategy is not shutdown.
-            if(!TokenizedStrategy.isShutdown()) {
-                // Claim all rewards and sell to asset.
-                _claimAndSellRewards();
-                
-                // Check how much we can re-deploy into the yield source.
-                uint256 toDeploy = Math.min(
-                    asset.balanceOf(address(this)), 
-                    availableDepositLimit(address(this))
-                );
-                
-                // If greater than 0.
-                if (toDeploy > 0) {
-                    // Deposit the sold amount back into the yield source.
-                    _deployFunds(toDeploy)
-                }
-            }
-            
-            // Return full balance no matter what.
-            _totalAssets = yieldSource.balanceOf(address(this)) + asset.balanceOf(address(this));
-        }
+___
 
 ### Optional Functions
 
@@ -179,36 +207,45 @@ Simply overriding those three functions will make your strategy a fully function
 
 While that may be all that's necessary for some of the most straightforward strategies, most strategists may want to add more customization or complexity to their strategy. There are five more optional functions that can be overridden by a strategist if desired to continue to build out their Tokenized Strategy.
 
-1. *availableDepositLimit(address _owner)*
-    **Purpose**:
-    - This is called during any deposits and can be used to enforce any deposit limit or white list that the strategist desires or that the underlying protocol uses.
+### *availableDepositLimit(address _owner)*
 
-    **Parameters**:
-    - `_owner`: The address receiving the shares minted during the deposit.
+**Purpose**:
 
-    **Returns**:
-    - The limit if any that should be enforced on the deposit.
+- This is called during any deposits and can be used to enforce any deposit limit or white list that the strategist desires or that the underlying protocol uses.
 
-    **Good to Know**:
-    - This will default to return uint256 max.
-    - This does not need to consider any conversion rates from assets to shares. But you should know that any limit under uint256 max may get converted to shares and should not be high enough to overflow  on multiplication.
+**Parameters**:
 
-    **Best Practices**:
-    - Check all values for the protocol you are integrating with that may cause deposits to revert.
-    - Make sure to implement setter functions for any deposit limit or whitelist that are enforced.
+- `_owner`: The address receiving the shares minted during the deposit.
 
-    **Example**:
+**Returns**:
 
-        function availableDepositLimit(
-            address _owner
-        ) public view override returns (uint256) { 
-            if (yieldSource.isPaused()) return 0;
-            
-            uint256 totalAssets = TokenizedStrategy.totalAssets();
-            return totalAssets >= depositLimit ? 0 : depositLimit - totalAssets;
-        }
+- The limit if any that should be enforced on the deposit.
+
+**Good to Know**:
+
+- This will default to return uint256 max.
+- This does not need to consider any conversion rates from assets to shares. But you should know that any limit under uint256 max may get converted to shares and should not be high enough to overflow  on multiplication.
+
+**Best Practices**:
+
+- Check all values for the protocol you are integrating with that may cause deposits to revert.
+- Make sure to implement setter functions for any deposit limit or whitelist that are enforced.
+
+**Example**:
+
+```markdown
+function availableDepositLimit(
+    address _owner
+) public view override returns (uint256) { 
+    if (yieldSource.isPaused()) return 0;
+    
+    uint256 totalAssets = TokenizedStrategy.totalAssets();
+    return totalAssets >= depositLimit ? 0 : depositLimit - totalAssets;
+}
+```
 
 1. *availableWithdrawLimit(address _owner)*
+
     **Purpose**:
     - This is called during every withdraw and can be used to enforce any withdraw limit the strategist desires.
 
@@ -232,19 +269,22 @@ While that may be all that's necessary for some of the most straightforward stra
 
     **Example #2**:
 
-        function availableWithdrawLimit(
-            address _owner
-        ) public view override returns (uint256) {
-            if(positionIsLocked || yieldSource.isPaused()) {
-                return asset.balanceOf(address(this));
-            }
-            
-            // Return both the loose balance and the current liqudity of the yield source.
-            return asset.balanceOf(address(this)) + asset.balanceOf(address(yieldSource));
-            
+    ```markdown
+    function availableWithdrawLimit(
+        address _owner
+    ) public view override returns (uint256) {
+        if(positionIsLocked || yieldSource.isPaused()) {
+            return asset.balanceOf(address(this));
         }
+        
+        // Return both the loose balance and the current liqudity of the yield source.
+        return asset.balanceOf(address(this)) + asset.balanceOf(address(yieldSource));
+        
+    }
+    ```
 
 1. *_tend(uint256 _totalIdle)*
+
     **Purpose**:
     - This would get called during a `tend` call and can be used if a strategy needs to perform any maintenance or other actions that don't require a full report. If used the strategy should also implement a `_tendTrigger` that keepers can monitor to know when it should be called.
 
@@ -263,15 +303,18 @@ While that may be all that's necessary for some of the most straightforward stra
 
     **Example**:
 
-        function _tend(uint256 _totalIdle) internal override {
-            if (currentLTV() < targetLTV()) {
-                _leverUp(_totalIdle);
-            } else if (currentLTV > warningLTV()) {
-                _leverDown(_totalIdle);
-            }
+    ```markdown
+    function _tend(uint256 _totalIdle) internal override {
+        if (currentLTV() < targetLTV()) {
+            _leverUp(_totalIdle);
+        } else if (currentLTV > warningLTV()) {
+            _leverDown(_totalIdle);
         }
+    }
+    ```
 
 1. *_tendTrigger()*
+
     **Purpose**:
     - Should return whether or not a keeper should call `tend` on the strategy. This should be implemented if tend is needed to be used.
 
@@ -288,13 +331,15 @@ While that may be all that's necessary for some of the most straightforward stra
 
     **Example**:
 
-        function _tendTrigger() public view override returns (bool) {
-            if (currentLTV() > warningLTV()) {
-                return true;
-            } else if (currentLTV() < lowerBoundLTV()) {
-                return isBaseFeeAcceptable() ? true : false;
-            }
+    ```markdown
+    function _tendTrigger() public view override returns (bool) {
+        if (currentLTV() > warningLTV()) {
+            return true;
+        } else if (currentLTV() < lowerBoundLTV()) {
+            return isBaseFeeAcceptable() ? true : false;
         }
+    }
+    ```
 
 1. *_emergencyWithdraw(uint256 _amount)*
     **Purpose**:
@@ -316,12 +361,15 @@ While that may be all that's necessary for some of the most straightforward stra
 
     **Example**:
 
-         function _emergencyWithdraw(uint256 _amount) internal override {
-            _amount = min(_amount, yieldSource.balanceOf(address(this)));
-            _freeFunds(_amount);
-        }
+    ```markdown
+        function _emergencyWithdraw(uint256 _amount) internal override {
+        _amount = min(_amount, yieldSource.balanceOf(address(this)));
+        _freeFunds(_amount);
+    }
+    ````
 
----
+___
+
 All other functionality, such as reward selling, upgradability, etc., is up to the strategist to determine what best fits their vision. Due to the ability of strategies to stand alone from a Vault, it is expected and encouraged for strategists to experiment with more complex, risky, or previously unfeasible Strategies.
 
 ### FYI
@@ -336,7 +384,7 @@ The symbol used for each tokenized Strategy is set automatically with a standard
 
 ## Periphery
 
-To make Strategy writing as simple as possible, a suite of optional 'Periphery' helper contracts can be inherited by your Strategy to provide standardized and tested functionality for things like swaps. A complete list of the periphery contracts can be viewed here <https://github.com/yearn/tokenized-strategy-periphery/tree/master/src>
+To make Strategy writing as simple as possible, a suite of optional 'Periphery' helper contracts can be inherited by your Strategy to provide standardized and tested functionality for things like swaps. A complete list of the periphery contracts can be viewed [here](https://github.com/yearn/tokenized-strategy-periphery/tree/master/src)
 
 *All periphery contracts are optional; strategists can choose if they wish to use them.
 
@@ -366,13 +414,17 @@ Due to the nature of the BaseStrategy utilizing an external contract for most of
 
 Foundry Example:
 
-    Strategy _strategy = new Strategy(asset, name);
-    IStrategyInterface strategy =  IStrategyInterface(address(_strategy));
+```markdown
+Strategy _strategy = new Strategy(asset, name);
+IStrategyInterface strategy =  IStrategyInterface(address(_strategy));
+```
 
 Ape Example:
 
-    strategy = management.deploy(project.Strategy, asset, name)
-    strategy =  project.IStrategyInterface.at(strategy.address)
+```markdown
+strategy = management.deploy(project.Strategy, asset, name)
+strategy =  project.IStrategyInterface.at(strategy.address)
+```
 
 Due to the permissionless nature of the Tokenized Strategies, all tests are written without integration with any allocator vault funding it. While those tests can be added, all V3 vaults utilize the ERC-4626 standard for deposit/withdraw and accounting, so they can be plugged in easily to any number of different vaults with the same `asset.`
 
@@ -382,7 +434,7 @@ Building a factory that can be deployed once is recommended for strategies that 
 
 **Cloning is not recommended for Tokenized Strategies.**
 
-#### Contract Verification
+### Contract Verification
 
 Once the Strategy is deployed and verified, you must also verify the TokenizedStrategy functions. To do this, navigate to the /#code page on Etherscan.
 
