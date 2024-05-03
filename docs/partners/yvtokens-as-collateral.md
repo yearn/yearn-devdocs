@@ -46,13 +46,13 @@ What you see on-chain is what you get. For real-time protocol data see:
 
 ## Projects Using yvTokens as Collateral
 
-* Alchemix: [https://alchemix.fi/](https://alchemix.fi/)
-* Abracadabra: [https://abracadabra.money/](https://abracadabra.money/)
-* Gearbox: [https://gearbox.fi/](https://gearbox.fi/)
-* QiDao: [https://app.mai.finance/](https://app.mai.finance/)
-* Ribbon: [https://www.ribbon.finance/](https://www.ribbon.finance/)
-* Sturdy: [https://sturdy.finance/](https://sturdy.finance/)
-* Tempus: [https://tempus.finance/](https://tempus.finance/)
+* Alchemix: https://alchemix.fi/
+* Abracadabra: https://abracadabra.money/
+* Gearbox: https://gearbox.fi/
+* QiDao: https://app.mai.finance/
+* Ribbon: https://www.ribbon.finance/
+* Sturdy: https://sturdy.finance/
+* Tempus: https://tempus.finance/
 
 To learn more reach out through twitter, telegram or discord.
 
