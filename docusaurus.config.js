@@ -1,10 +1,7 @@
 // @ts-check
-// import type { DocusaurusConfig } from '@docusaurus/types'
+/** @type {import('@docusaurus/types').Config} */
 import math from 'remark-math'
 import katex from 'rehype-katex'
-
-// const math = require('remark-math')
-// const katex = require('rehype-katex')
 
 export default {
   title: 'yearn.fi',
