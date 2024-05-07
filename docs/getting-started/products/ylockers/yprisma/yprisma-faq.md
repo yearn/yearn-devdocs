@@ -19,7 +19,7 @@ That's totally up to you and depends on your personal situation and preferences.
   * Direct stakers receive their yield in stablecoins making them less exposed to the price fluctuations of the underlying governance token and the yPRISMA peg.
   * Vault depositors are "all in" on yPRISMA.
 * **Gas Fees:**
-  * Direct stakers must manually claim their mkUSD stablecoin rewards - which requires gas and can be expensive.
+  * Direct stakers must manually claim their mkUSD stablecoin rewards. Although earned rewards automatically accumulate and earn interest, this requires at least one additional transaction and can be expensive, depending on gas pricing and network congestion.
   * Vault depositors have their mkUSD stablecoin rewards claimed, swapped and reinvested into the yv-yPRISMA vault each week. And Yearn covers the gas.
 * **Composability:**
   * Direct stakers do not receive a receipt token in their wallet.
@@ -29,7 +29,7 @@ That's totally up to you and depends on your personal situation and preferences.
 
 No. User voting is not part of the yLockers system, instead...
 
-* Gauge voting is automated to optimize for the maximum weekly bribe yield.
+* Gauge voting is automated to optimize for the maximum weekly vote incentive yield.
 * Governance voting is handled by a team of core contributors on behalf of veYFI holders.
 
 ## Why is the yPRISMA peg currently below 1:1?
@@ -51,13 +51,17 @@ When you stake yPRISMA, a 10% performance fee is applied. Yield accumulates in t
 The yield for yPRISMA stakers comes from two main sources:
 
 * Protocol Fees: Fees generated from the Prisma protocol
-* Bribes: Incentives provided for voting power
+* Vote incentives: Incentives provided for voting power
 
 All these yields are claimed to the yPRISMA fee receiver at 0x76DF88Aa8711822472Cb40Ed8c972A461A20ecdc
 
-At the beginning of each week, the collected yield is converted to mkUSD (Prisma Stablecoin), deposited into the yvmkUSD-A vault, and then distributed to stakers. This process occurs once per week, and the yield is streamed evenly over the entire week.
+At the beginning of each week, the collected yield is converted to mkUSD (Prisma Stablecoin), deposited into the yvmkUSD-A vault, and then distributed to stakers. This process occurs once per week, and the yield is claimable at the start of the following week.
 
-## Why would I claim my emissions as yPRISMA?
+## Converting native Prisma farming rewards to yPRISMA
+
+If you use Prisma Finance directly, the Rewards are paid in locked vePRISMA. You can accept these rewards as vePRISMA or as yPRISMA.
+
+### Why would I claim my Prisma protocol emissions as yPRISMA?
 
 There are several key reasons to claim your emissions as yPRISMA instead of locking yourself.
 
@@ -65,7 +69,7 @@ There are several key reasons to claim your emissions as yPRISMA instead of lock
 1. yPRISMA is minted 1:1 against your max locked claim amount.
 1. yPRISMA is fully transferrable and can be swaped on DEXes like Curve, or staked for benefits in the ecosystem.
 
-## How can I claim my emissions as yPRISMA?
+### How can I claim my Prisma protocol emissions as yPRISMA?
 
 1. Browse to https://app.prismafinance.com/rewards
 1. Select "Lock All"

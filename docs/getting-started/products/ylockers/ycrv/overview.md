@@ -24,7 +24,7 @@ Both operations mint yCRV to the user at a 1:1 rate. Users migrating from yvBOOS
 
 Yearn passes all benefits of its veCRV position on to yCRV users who hold one of its **activated-tokens:**
 
-- [**st-yCRV (Staking Rewards):**](#staked-ycrv) [yVault](https://medium.com/iearn/yearn-finance-explained-what-are-vaults-and-strategies-96970560432) that receives admin fees and bribes from locked CRV.
+- [**st-yCRV (Staking Rewards):**](#staked-ycrv) [yVault](https://medium.com/iearn/yearn-finance-explained-what-are-vaults-and-strategies-96970560432) that receives admin fees and vote incentives from locked CRV.
 - [**lp-yCRV (Liquidity Pool Rewards):**](#lpd-ycrvcrv) yVault for CRV LP tokens, autocompounds emissions and fees.
 
 > Note: a third activated token, vl-yCRV, was planned but not rolled out due to a lack of demand.
@@ -38,9 +38,9 @@ Yearn passes all benefits of its veCRV position on to yCRV users who hold one of
 Staked yCRV is designed to be a 'set and forget' yield-optimized position for yCRV users. The source of yield comes from two primary places:
 
 - **Admin Fees:** Every week, veCRV holders earn weekly "admin fees" from Curve protocol. Staked yCRV is where 100% of admin fees earned by Yearn's veCRV position are sent and auto-compounded into more yCRV.
-- **Bribes:** For all the yCRV within st-yCRV, 1 veCRV worth of vote power will be used to vote in favor of the Curve gauge which optimizes bribe revenue for st-yCRV users. Bribes (or misc. revenue) collected from these votes will be allocated as supplemental yield to st-yCRV users.
+- **Vote Incentives:** For all the yCRV within st-yCRV, 1 veCRV worth of vote power will be used to vote in favor of the Curve gauge which optimizes vote incentive revenue for st-yCRV users. Vote incentives (or misc. revenue) collected from these votes will be allocated as supplemental yield to st-yCRV users.
 
-Under the hood, st-yCRV is a Yearn v2 vault, allowing users to sit back, relax and have their underlying token compounded by a strategy that sells 3CRV and some claimed bribes into yCRV.
+Under the hood, st-yCRV is a Yearn v2 vault, allowing users to sit back, relax and have their underlying token compounded by a strategy that sells 3CRV and some claimed vote incentives into yCRV.
 
 ## LP'd yCRV/CRV
 

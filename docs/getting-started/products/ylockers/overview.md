@@ -24,13 +24,13 @@ The benefit of doing this is to provide the end user with a fully transferrable 
 Within the yLockers ecosystem, there are two distinct ways to earn yield:
 
 1. Deposit your yLocker tokens into YBS (earn stablecoins)
-2. Deposit your yLocker tokens into the V3 Auto-Compounder (earn yLocker tokens)
+2. Deposit your yLocker tokens into the Auto-Compounder Vault (earn yLocker tokens)
 
 ___
 
 ### Option 1: Deposit yLocker Tokens into YBS
 
-Each week, Yearn's yLockers earn revenue from protocol fees and bribes. This revenue is converted into ecosystem stablecoins (mkUSD for yPrisma or crvUSD for yCRV) and distributed to yLocker stakers at the start of the week via the `YearnBoostedStaker`(YBS), a new contract which was launched in Spring 2024 following the passing of [YIP-77](https://snapshot.org/#/veyfi.eth/proposal/0xe79fb2ef4f21ef1e9cc30dd1522c9751c74b631c4782bccbbeb25185d4ddae1d).
+Each week, Yearn's yLockers earn revenue from protocol fees and vote incentives. This revenue is converted into ecosystem stablecoins (mkUSD for yPrisma or crvUSD for yCRV) and distributed to yLocker stakers at the start of the week via the `YearnBoostedStaker`(YBS), a new contract which was launched in Spring 2024 following the passing of [YIP-77](https://snapshot.org/#/veyfi.eth/proposal/0xe79fb2ef4f21ef1e9cc30dd1522c9751c74b631c4782bccbbeb25185d4ddae1d).
 
 To begin earning your share, all you need to do is stake your respective yLocker tokens in the staking contract. Take a look at the interface guides for your desired yLocker to get started. Want to learn how it all works under the hood? Read on Anon!
 
@@ -42,9 +42,9 @@ You'll reach max boost and achieve the maximum staking APR less than four weeks 
 
 To calculate your boost, the staking contract maintains a weight for every deposit (which is a function of the amount of yLocker tokens you have staked and the duration since it was staked).
 
-Your stake weight starts at 50 points with your initial deposit, and increases by 50 points each week (at 00:00:00 UTC, Thursday) until the maximum weight is reached after 4 weeks.
+For security purposes, the rewards contract is designed to ignore staked amounts that have not yet reached a level of 1x boost (those in their first week). After the first week, Your stake weight will increase from 0 to 100 points, and increases by 50 points each week (at 00:00:00 UTC, Thursday) until the maximum weight is reached after 4 weeks.
 
-**Let’s demonstrate with an example of how the weights work**
+#### Let’s demonstrate with an example of how the weights work
 
 In this example…
 
@@ -70,17 +70,15 @@ Your total weight is equal to the sum of each of your deposit’s weight. And th
 
 ### Rewards and Claiming
 
-Each week, Yearn claims its share of protocol fees and vote-maximized bribes. These are swapped for ecosystem stablecoins, wrapped as a yield-bearing Yearn V3 vault token, and deposited directly into the reward distributor contract.
+Each week, Yearn claims its share of protocol fees and vote-maximized vote incentives. These are swapped for ecosystem stablecoins, wrapped as a yield-bearing Yearn V3 vault token, and deposited directly into the reward distributor contract.
 
 yLocker stakers are entitled to the following rewards:
 
 * 100% of their share of protocol fees
-* 90% of their share of gauge votes will be used to earn vote-maximized bribes
+* 90% of their share of gauge votes will be used to earn vote-maximized vote incentives
   * *(the other 10% votes to support yLocker token liquidity)*
 
 Your rewards accrue week over week and are never lost if unclaimed. In fact, they begin earning you additional stablecoin yield from the moment we receive them! When claimed, Yearn V3 vault tokens will be received directly to your wallet.
-
-To reward early adopters, yLocker stakers may receive additional rewards during the launch phase.
 
 > ⚠️ **Important:** Yearn vaults can use multiple strategies to generate yield and may be exposed to more than one DeFi protocol. For more information on the various layers of smart contract risk involved, please refer to our [risk documentation](https://docs.yearn.fi/resources/risks/protocol-risks).
 
@@ -96,7 +94,7 @@ You can also make partial withdrawals. If you have multiple amounts actively gro
 
 ___
 
-### Option 2: Deposit your yLocker tokens into the V3 Auto-Compounder
+### Option 2: Deposit your yLocker tokens into the Auto-Compounder Vault
 
 Too busy to deal with staking, weights, and manual claims? Just want more yLocker tokens and the highest APYs? Then the simple yLocker auto-compounding vaults are for you!
 

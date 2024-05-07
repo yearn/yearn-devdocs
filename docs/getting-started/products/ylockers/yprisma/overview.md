@@ -14,13 +14,6 @@ Governance for Prisma is controlled by vePRISMA, a locked token position that gr
 
 Because all PRISMA emissions come as locked vePRISMA, it is often inconvenient for users who want to avoid managing their position or want to cash out. yPRISMA aims to offer users a tokenized version of this position, giving them instant liquidity and auto-managing governance participation to maximize yield.
 
-With built-in boost delegation coming soon, users who hold yPRISMA will be able to boost their yields on any of their positions within the Prisma ecosystem, including:
-
-- Prisma Vaults (CDPs)
-- Stability Pool
-- Curve / Convex Farming
-- Yearn vault farming (coming soon!)
-
 ## Earn Yield on yPRISMA
 
 Yearn has 2 ways to earn yield on your yPRISMA; depositing to the `YearnBoostedStaker` contract to earn mkUSD or depositing to the yPRISMA Auto-Compounder V3 vault to earn more yPRISMA. The intricacies and details are documented [here](../overview#earning-yield-with-ylockers). Once you know which path you want to take, you can follow the step by step guide [here](yprisma-guide.md).
@@ -58,5 +51,6 @@ Yearn has 2 ways to earn yield on your yPRISMA; depositing to the `YearnBoostedS
 
 ## Read More
 
+- [Upcoming yPRISMA YBS Staking Launch: All You Need to Know](https://blog.yearn.fi/ybs-yprisma-launch)
 - [yPRISMA Roadmap](https://medium.com/iearn/yprisma-roadmap-8fb3e2376594)
 - [Introduction to Yearn PRISMA Incentives Farming and FAQ](https://docs.yearn.finance/getting-started/products/ylockers/yprisma/farming)
