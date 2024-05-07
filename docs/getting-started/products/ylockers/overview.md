@@ -48,7 +48,7 @@ Your stake weight starts at 50 points with your initial deposit, and increases b
 
 In this example…
 
-* YearnBoostedStaker is deployed with maxGrowthWeeks = 4
+* YearnBoostedStaker is deployed with `maxGrowthWeeks` = 4
 * You stake 100 yLocker tokens
 
 On deposit, your initial weight will be 50. At 00:00:00 UTC the following Thursday, your weight will increase to 100, then 150, then 200, and finally 250 (on the fourth Thursday following your deposit).
@@ -62,7 +62,7 @@ On deposit, your initial weight will be 50. At 00:00:00 UTC the following Thursd
 | 4 (final growth week)               | 100        | 250       | 2.5x      |
 | 5 ...n                 | 100        | 250       | 2.5x      |
 
-To keep it simple, the example above does not address what happens if you make a withdrawal or a second deposit. If, for example, you deposit 100 Ylocker tokens every week for four weeks, you will then have four independent weight groups travelling through the system.
+To keep it simple, the example above does not address what happens if you make a withdrawal or a second deposit. If, for example, you deposit 100 yLocker tokens every week for four weeks, you will then have four independent weight groups traveling through the system.
 
 A withdraw will always retrieve yLocker tokens from your most recent (least weighted) deposit, leaving the higher weighted yLocker tokens to continue along.
 

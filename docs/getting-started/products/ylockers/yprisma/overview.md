@@ -35,7 +35,7 @@ Yearn has 2 ways to earn yield on your yPRISMA; depositing to the `YearnBoostedS
 
 ## Addresses
 
-##### Core Protocol
+### Core Protocol
 
 | Name                                             | Address                                                                                                                 |
 |--------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------|
@@ -45,11 +45,11 @@ Yearn has 2 ways to earn yield on your yPRISMA; depositing to the `YearnBoostedS
 | yvyPRISMA Vault/Token | [`TBC`](add link) |
 | yvmkUSD-A Vault/Token | [`0x04AeBe2e4301CdF5E9c57B01eBdfe4Ac4B48DD13`](https://etherscan.io/address/0x04AeBe2e4301CdF5E9c57B01eBdfe4Ac4B48DD13) |
 
-##### Staking Farms
+### Expired Farms and Contracts
 
 | Name                                             | Address |
 |--------------------------------------------------|------------------------------------------------------------|
-| yPRISMA Staking (yvmkUSD-A rewards)       |       [`0xE3EE395C9067dD15C492Ca950B101a7d6c85b5Fc`](https://etherscan.io/address/0xE3EE395C9067dD15C492Ca950B101a7d6c85b5Fc) |
+| *yPRISMA Staking (yvmkUSD-A rewards)       |       [`0xE3EE395C9067dD15C492Ca950B101a7d6c85b5Fc`](https://etherscan.io/address/0xE3EE395C9067dD15C492Ca950B101a7d6c85b5Fc) |
 | *yPRISMA Staking (wstETH rewards)          |       [`0x774a55C3Eeb79929fD445Ae97191228Ab39c4d0f`](https://etherscan.io/address/0x774a55C3Eeb79929fD445Ae97191228Ab39c4d0f) |
 | *yPRISMA Staking (dYFI rewards)            |       [`0x93283184650f4d3B4253ABd00978176732118428`](https://etherscan.io/address/0x93283184650f4d3B4253ABd00978176732118428) |
 | *yPRISMA LP Staking (yPRISMA rewards)                        |       [`0x6806D62AAdF2Ee97cd4BCE46BF5fCD89766EF246`](https://etherscan.io/address/0x6806D62AAdF2Ee97cd4BCE46BF5fCD89766EF246) |
