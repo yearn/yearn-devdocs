@@ -8,7 +8,7 @@ The new Ylockers ecosystem is rolling out on May 9th, 2024 with the launch of th
 
 yLockers are a category of assets built by Yearn designed to tokenize locked governance positions in external DeFi protocols. This asset type is often called a "Liquid Locker".
 
-To achieve this, Yearn has deployed a system of smart contracts that allows users to permissionlessly max-lock their governance tokens to a central Yearn in exchange for a yLocker token (e.g., yCRV, yPRISMA, etc.) at a rate of 1:1.
+To achieve this, Yearn has deployed a system of smart contracts that allows users to permissionlessly max-lock their governance tokens to Yearn in exchange for a yLocker token (e.g., yCRV, yPRISMA, etc.) at a rate of 1:1.
 
 The benefit of doing this is to provide the end user with a fully transferrable and liquid token that can still receive a share of governance benefits like yield or voting power depending on the protocol. No longer is there a need to lock up your asset value for up to 4 full years!
 
@@ -42,7 +42,7 @@ You'll reach max boost and achieve the maximum staking APR less than four weeks 
 
 To calculate your boost, the staking contract maintains a weight for every deposit (which is a function of the amount of yLocker tokens you have staked and the duration since it was staked).
 
-For security purposes, the rewards contract is designed to ignore staked amounts that have not yet reached a level of 1x boost (those in their first week). After the first week, Your stake weight will increase from 0 to 100 points, and increases by 50 points each week (at 00:00:00 UTC, Thursday) until the maximum weight is reached after 4 weeks.
+ Stake weight increases by 50 points each week (at 00:00:00 UTC, Thursday) until the maximum weight is reached after 4 weeks. For security purposes, the rewards contract is designed to ignore staked amounts that have not yet reached a level of 1x boost (those in their first week). After the first week and once the stake weight has reached 100 points, rewards become claimable.
 
 #### Let’s demonstrate with an example of how the weights work
 

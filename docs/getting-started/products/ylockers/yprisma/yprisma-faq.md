@@ -16,7 +16,7 @@ That's totally up to you and depends on your personal situation and preferences.
   * Direct stakers will need to wait four weeks before their yPRISMA is max boosted and earning the maximum staking APR displayed.
   * Vault depositors join a single shared boost position, but this is unlikely to reach the maximum and will adjust up and down as other users deposit and withdraw.
 * **Rewards:**
-  * Direct stakers receive their yield in stablecoins making them less exposed to the price fluctuations of the underlying governance token and the yPRISMA peg.
+  * Direct stakers receive their yield in stablecoins, making them less exposed to the price fluctuations of the underlying governance token and the yPRISMA peg.
   * Vault depositors are "all in" on yPRISMA.
 * **Gas Fees:**
   * Direct stakers must manually claim their mkUSD stablecoin rewards. Although earned rewards automatically accumulate and earn interest, this requires at least one additional transaction and can be expensive, depending on gas pricing and network congestion.
