@@ -1,21 +1,16 @@
-module.exports = {
+export default {
   mySidebar: [
     'contribute',
     'contributor-tools',
     {
       type: 'category',
       label: 'Operations',
-      items: [
-        'operations/budget',
-      ],
+      items: ['operations/budget'],
     },
     {
       type: 'category',
       label: 'Governance',
-      items: [
-        'governance/proposal-process',
-        'governance/yfi',
-      ],
+      items: ['governance/proposal-process', 'governance/yfi'],
     },
     {
       type: 'category',

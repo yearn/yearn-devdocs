@@ -1,6 +1,6 @@
 TODO: 'after upgrade to v3, change to: export default { mySidebar: ... }'
 
-module.exports = {
+export default {
   mySidebar: [
     'index',
     {

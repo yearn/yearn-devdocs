@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   mySidebar: [
     {
       type: 'category',
@@ -41,11 +41,7 @@ module.exports = {
             {
               type: 'category',
               label: 'Subgraph',
-              items: [
-                'v2/subgraph-info',
-                'v2/entities',
-                'v2/queries',
-              ],
+              items: ['v2/subgraph-info', 'v2/entities', 'v2/queries'],
             },
             'v2/yearn-lens',
             'v2/yearn-api',

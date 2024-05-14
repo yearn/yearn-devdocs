@@ -1,3 +1,3 @@
-module.exports = {
+export default {
   mySidebar: ['index', 'multisig', 'testing'],
 }

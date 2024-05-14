@@ -1,13 +1,11 @@
-module.exports = {
+export default {
   mySidebar: [
     'introduction',
     'integration_guide',
     {
       type: 'category',
       label: 'Templates',
-      items: [,
-        'partner-tracker',
-      ],
+      items: [, 'partner-tracker'],
     },
     'submit_pr',
     'yvtokens-as-collateral',
