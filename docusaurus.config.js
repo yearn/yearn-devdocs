@@ -200,10 +200,8 @@ export default {
       '@docusaurus/preset-classic',
       {
         docs: {
-          path: 'docs',
           remarkPlugins: [math],
           rehypePlugins: [katex],
-          routeBasePath: 'docs',
           sidebarPath: './sidebars/sidebars.js',
           editUrl:
             'https://github.com/yearn/yearn-devdocs/edit/master/website/',
