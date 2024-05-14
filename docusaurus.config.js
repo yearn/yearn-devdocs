@@ -207,7 +207,6 @@ export default {
           sidebarPath: require.resolve('./sidebars/sidebars.js'),
           editUrl:
             'https://github.com/yearn/yearn-devdocs/edit/master/website/',
-          includeCurrentVersion: false,
           breadcrumbs: false,
         },
         theme: {
@@ -298,6 +297,20 @@ export default {
         sidebarPath: require.resolve('./sidebars/sidebarsSecurity.js'),
         showLastUpdateTime: true,
         breadcrumbs: false,
+      },
+    ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'smart-contracts',
+        path: 'docs/smart-contracts',
+        routeBasePath: 'smart-contracts',
+        sidebarPath: require.resolve('./sidebars/sidebarsSmartContracts.js'),
+        showLastUpdateTime: true,
+        sidebarCollapsed: true,
+        breadcrumbs: false,
+        remarkPlugins: [math],
+        rehypePlugins: [katex],
       },
     ],
   ],
