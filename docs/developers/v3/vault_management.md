@@ -4,7 +4,7 @@ No longer will Yearn be the only manager of Vaults! V3 Vaults make it as simple 
 
 V3 "Allocator Vaults" are meta-vaults that are designed to be efficient, 4626-compliant debt allocators that can have many different "strategies" attached to them and will direct funds to these strategies based on the vault's management choice. The vaults are built to be "plug and play", allowing managers to deploy, add their strategies, and immediately start yield generation. If you want to go beyond the default settings, vaults can also be customized to allow managers to differentiate themselves and experiment with different parameters.
 
-Running a vault doesn't require knowing how to code. Anyone desiring to manage their strategies and allocations can simply deploy and run their vault.
+<!-- Running a vault doesn't require knowing how to code. Anyone desiring to manage their strategies and allocations can simply deploy and run their vault. -->
 
 ## Definitions
 
@@ -16,25 +16,23 @@ Running a vault doesn't require knowing how to code. Anyone desiring to manage t
 
 ## Deployment
 
-Each release of the vaults will have its own "Vault Factory" deployed to make it as simple and trustless as possible to deploy your vault. The vault factory allows anyone to trustlessly deploy their own vault which is an exact copy of the previously deployed "original" vault for that specific version.
+Each release of the V3 vault contracts will have its own "Vault Factory" contract deployed, in order to make it as simple and trustless as possible to deploy a vault. All vaults deployed with the factory contracts are exact copies of the previously deployed "original" vault for that specific version.
 
-**Vaults not deployed through the factory will not be recognized as part of the Yearn ecosystem and may experience issues during runtime.
-
-To deploy your vault, simply find the factory's address for the most recent release [here](https://docs.yearn.fi/developers/v3/overview) and call `Factory.deploy_new_vault(params)`.
+To deploy a new vault, call `deploy_new_vault()`, with the required parameters passed in, on the desired Vault Factory Contract. You can find the factory address for the most recent release [here](https://docs.yearn.fi/developers/v3/overview#contract-addresses).
 
 The needed parameters are:
 
-- **asset**: The address of an ERC-20 compliant token used as the underlying asset to earn yield for the vault.
-- **name**: The name for your vault that will apply to the token issues to depositors.
-- **symbol**: The symbol the token issued to depositors will use.
-- **role_manager**: The address in charge of giving permissions to other addresses which allow access to certain permissioned functions.
-- **profit_max_unlock_time**: In seconds, profits reported from strategies will be unlocked.
+- **asset**: The `address` of an ERC-20 compliant token used as the underlying asset to earn yield for the vault.
+- **name**: The name ('string') for your vault that will apply to the token issues to depositors.
+- **symbol**: The symbol ('string') the token issued to depositors will use.
+- **role_manager**: The `address` in charge of giving permissions to other addresses which allow access to certain permissioned functions.
+- **profit_max_unlock_time**: `uint256` number in seconds in which profits reported from strategies will be unlocked.
 
-Once deployed, you can get your vault's address from either the Factory function's return value or the `NewVault` event emitted by the factory.
+Once deployed, you can get your vault's address from either the Factory function's return value or the `NewVault` event emitted by the factory. The vault should be automatically verified when deployed. However, if it is not you can follow the [verification steps](https://etherscan.io/verifyContract) on Etherscan using the [VaultV3.vy](https://github.com/yearn/yearn-vaults-v3/blob/master/contracts/VaultV3.vy) for your specific API Version.
 
-The vault should be automatically verified when deployed. However, if it is not you can follow the [verification steps](https://etherscan.io/verifyContract) on Etherscan using the [VaultV3.vy](https://github.com/yearn/yearn-vaults-v3/blob/master/contracts/VaultV3.vy) for your specific API Version.
+**⚠️ Important**: Vaults not deployed through the factory will not be recognized as part of the Yearn ecosystem and may experience issues during runtime.
 
-**NOTE**: The vault factory utilizes [create2](https://eips.ethereum.org/EIPS/eip-1014) opcode to deploy vaults to deterministic addresses. This means the same address can not deploy two vaults with the same default parameters for 'asset', 'name' and 'symbol'.
+**:information_source: Note**: The vault factory utilizes [create2](https://eips.ethereum.org/EIPS/eip-1014) opcode to deploy vaults to deterministic addresses. This means the same address can not deploy two vaults with the same default parameters for 'asset', 'name' and 'symbol'.
 
 ## Setup
 
