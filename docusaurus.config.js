@@ -1,5 +1,3 @@
-// @ts-check
-/** @type {import('@docusaurus/types').Config} */
 import math from 'remark-math'
 import katex from 'rehype-katex'
 
@@ -232,7 +230,7 @@ export default {
         routeBasePath: 'developers',
         sidebarPath: './sidebars/sidebarsDevelopers.js',
         showLastUpdateTime: true,
-        sidebarCollapsed: false,
+        sidebarCollapsed: true,
         breadcrumbs: false,
       },
     ],
@@ -258,7 +256,7 @@ export default {
         routeBasePath: 'partners',
         sidebarPath: './sidebars/sidebarsPartners.js',
         showLastUpdateTime: true,
-        sidebarCollapsed: false,
+        sidebarCollapsed: true,
         breadcrumbs: false,
       },
     ],
@@ -270,7 +268,7 @@ export default {
         routeBasePath: 'contributing',
         sidebarPath: './sidebars/sidebarsContributing.js',
         showLastUpdateTime: true,
-        sidebarCollapsed: false,
+        sidebarCollapsed: true,
         breadcrumbs: false,
         remarkPlugins: [math],
         rehypePlugins: [katex],
@@ -284,7 +282,7 @@ export default {
         routeBasePath: 'resources',
         sidebarPath: './sidebars/sidebarsResources.js',
         showLastUpdateTime: true,
-        sidebarCollapsed: false,
+        sidebarCollapsed: true,
         breadcrumbs: false,
       },
     ],
@@ -296,6 +294,7 @@ export default {
         routeBasePath: 'security',
         sidebarPath: './sidebars/sidebarsSecurity.js',
         showLastUpdateTime: true,
+        sidebarCollapsed: true,
         breadcrumbs: false,
       },
     ],
