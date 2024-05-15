@@ -33,8 +33,8 @@ module.exports = {
       },
       {
         name: 'git-url',
-        content: 'https://github.com/yearn/yearn-devdocs'
-      }
+        content: 'https://github.com/yearn/yearn-devdocs',
+      },
     ],
     navbar: {
       hideOnScroll: true,
@@ -68,14 +68,14 @@ module.exports = {
           to: 'security/',
           label: 'Security',
         },
-        {
-          type: 'docsVersionDropdown',
-          dropdownItemsBefore: [],
-          position: 'right',
-          // Do not add the link active class when browsing docs.
-          dropdownActiveClassDisabled: true,
-          docsPluginId: 'default',
-        },
+        // {
+        //   type: 'docsVersionDropdown',
+        //   dropdownItemsBefore: [],
+        //   position: 'right',
+        //   // Do not add the link active class when browsing docs.
+        //   dropdownActiveClassDisabled: true,
+        //   docsPluginId: 'default',
+        // },
         {
           type: 'search',
           position: 'right',
