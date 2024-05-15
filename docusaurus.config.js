@@ -196,14 +196,14 @@ module.exports = {
       '@docusaurus/preset-classic',
       {
         docs: {
-          path: 'docs',
+          path: 'vaults',
           remarkPlugins: [math],
           rehypePlugins: [katex],
-          routeBasePath: 'docs',
+          routeBasePath: 'vaults',
           sidebarPath: require.resolve('./sidebars/sidebars.js'),
           editUrl:
             'https://github.com/yearn/yearn-devdocs/edit/master/website/',
-          // includeCurrentVersion: false,
+          includeCurrentVersion: false,
           breadcrumbs: false,
         },
         theme: {
