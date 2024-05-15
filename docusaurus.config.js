@@ -53,7 +53,7 @@ module.exports = {
           label: 'Develop',
         },
         {
-          to: '/vaults/smart-contracts/BaseStrategy',
+          to: 'smart-contracts',
           label: 'Smart Contracts',
         },
         {
@@ -294,6 +294,20 @@ module.exports = {
         sidebarPath: require.resolve('./sidebars/sidebarsSecurity.js'),
         showLastUpdateTime: true,
         breadcrumbs: false,
+      },
+    ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'smart-contracts',
+        path: 'docs/smart-contracts',
+        routeBasePath: 'smart-contracts',
+        sidebarPath: require.resolve('./sidebars/sidebarsSmartContracts.js'),
+        showLastUpdateTime: true,
+        sidebarCollapsed: true,
+        breadcrumbs: false,
+        remarkPlugins: [math],
+        rehypePlugins: [katex],
       },
     ],
   ],
