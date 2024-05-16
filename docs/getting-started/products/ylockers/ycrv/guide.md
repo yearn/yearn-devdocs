@@ -24,7 +24,7 @@ So, with Eth and CRV loaded up, let's find out how to start earning supercharged
 As yCRV is the base-token and carries no native yield or voting power, you'll likely want to position yourself into one of the three activated-tokens.
 
 1) Go to [yCRV interface](http://y.finance/) and decide which token you want to zap to. You can zap from either CRV or yCRV:
-    - [**st-yCRV (Staking Rewards):**](#staked-ycrv) [yVault](https://medium.com/iearn/yearn-finance-explained-what-are-vaults-and-strategies-96970560432) that receives admin fees and bribes from locked CRV.
+    - [**st-yCRV (Staking Rewards):**](#staked-ycrv) [yVault](https://medium.com/iearn/yearn-finance-explained-what-are-vaults-and-strategies-96970560432) that receives admin fees and vote incentives from locked CRV.
     - [**lp-yCRV (Liquidity Pool Rewards):**](#lpd-ycrvcrv) yVault for CRV/yCRV LP tokens, autocompounds emissions and fees.
     - [**vl-yCRV (Curve Gauges Voting Power):**](#voting-with-ycrv) Vote power mechanism to vote on Curve gauge weights. 
 ![](https://i.imgur.com/rpLcCwg.png)
