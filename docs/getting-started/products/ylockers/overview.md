@@ -2,7 +2,7 @@
 
 :::info
 
-The new Ylockers ecosystem is rolling out on May 9th, 2024 with the launch of the *YearnBoostedStaker* (YBS) contract and a new V3 Auto-Compounder vault. These new contracts will be available for yPRISMA initially and then be rolled out for yCRV a month later on June 6th. Before June 6th, yCRV will continue to operate with the existing st-yCRV and lp-yCRV V2 vaults.
+The new Ylockers ecosystem is rolling out on May 16th, 2024 with the launch of the *YearnBoostedStaker* (YBS) contract and a new V3 Auto-Compounder vault. These new contracts will be available for yPRISMA initially and then be rolled out for yCRV a month later on June 6th. Before June 6th, yCRV will continue to operate with the existing st-yCRV and lp-yCRV V2 vaults.
 
 :::
 
@@ -106,4 +106,5 @@ The vault charges a 10% performance fee.
 
 ## Deployment Addresses
 
-* YearnBoostedStaker: TBC
+* yLockers Registry: [0x262be1d31d0754399d8d5dc63B99c22146E9f738](https://etherscan.io/address/0x262be1d31d0754399d8d5dc63B99c22146E9f738)
+* Or See individual yLocker pages for their specific deployed contracts
