@@ -1,10 +1,10 @@
 # Deploying and Managing a V3 Vault
 
-V3 makes it as simple as possible for anyone to deploy and manage their Vaults. No longer will Yearn be the only manager of Vaults, gate-keeping who can be a debt allocator, or what strategies should be added to a vault. Now, anyone can deploy, manage, and earn fees from their vision and preferences on everything from risk profile, fee model, decentralization, etc.
+No longer will Yearn be the only manager of Vaults! V3 Vaults make it as simple as possible for anyone to deploy and manage Yearn Vaults. Now, anyone with a vision for a new vault can deploy and manage one, setting their preferences for risk profiles, fee models, decentralization, and more.
 
-In V3 our "Allocator Vaults" or "Meta of Vaults" are designed to be efficient 4626 compliant debt allocators that can have many different "strategies" attached to them and will direct funds to these strategies based on the vault's management choice. The vaults are built to be "plug and play" meaning managers can simply deploy, add their strategies, and start the yield generation. But they also hold many customization factors, allowing different managers to differentiate themselves and experiment with different optionalities.
+V3 "Allocator Vaults" are meta-vaults that are designed to be efficient, 4626-compliant debt allocators that can have many different "strategies" attached to them and will direct funds to these strategies based on the vault's management choice. The vaults are built to be "plug and play", allowing managers to deploy, add their strategies, and immediately start yield generation. If you want to go beyond the default settings, vaults can also be customized to allow managers to differentiate themselves and experiment with different parameters.
 
-Running your vault requires no need to know how to code. Anyone desiring to manage their strategies and allocations can simply deploy and run their vault. 
+Running a vault doesn't require knowing how to code. Anyone desiring to manage their strategies and allocations can simply deploy and run their vault.
 
 ## Definitions
 
@@ -13,7 +13,6 @@ Running your vault requires no need to know how to code. Anyone desiring to mana
 - **strategy**: Any ERC-4626 compliant contract that can be added to an allocator vault that earns yield on an underlying asset.
 - **debt**: The amount of the underlying asset that an allocator vault has sent to a strategy to earn yield.
 - **report**: The function where a vault accounts for any profits or losses a strategy has accrued, charges applicable fees, and locks profit to be distributed to depositors.
-
 
 ## Deployment
 
@@ -25,11 +24,11 @@ To deploy your vault, simply find the factory's address for the most recent rele
 
 The needed parameters are:
 
-**asset**: The address of an ERC-20 compliant token used as the underlying asset to earn yield for the vault.
-**name**: The name for your vault that will apply to the token issues to depositors.
-**symbol**: The symbol the token issued to depositors will use.
-**role_manager**: The address in charge of giving permissions to other addresses which allow access to certain permissioned functions.
-**profit_max_unlock_time**: In seconds, profits reported from strategies will be unlocked.
+- **asset**: The address of an ERC-20 compliant token used as the underlying asset to earn yield for the vault.
+- **name**: The name for your vault that will apply to the token issues to depositors.
+- **symbol**: The symbol the token issued to depositors will use.
+- **role_manager**: The address in charge of giving permissions to other addresses which allow access to certain permissioned functions.
+- **profit_max_unlock_time**: In seconds, profits reported from strategies will be unlocked.
 
 Once deployed, you can get your vault's address from either the Factory function's return value or the `NewVault` event emitted by the factory.
 
@@ -42,10 +41,11 @@ The vault should be automatically verified when deployed. However, if it is not 
 Once deployed, additional setup steps and variables can be configured if desired.
 
 #### Roles
----
-The first is to set up the Roles for your specific vault. The vaults use a role-based system for access control to the permissioned functions. The roles are a [Vyper Enumerator](https://docs.vyperlang.org/en/stable/types.html#enums) pattern based on Pythons. 
 
-Each permissioned function in the Vaults has its own "role" that can call that specific function. For example, to call `add_strategy(new_strategy: address)` the address must have the `ADD_STRATEGY_MANAGER` role. Roles can be held by any number of addresses or by no address. 
+---
+The first is to set up the Roles for your specific vault. The vaults use a role-based system for access control to the permissioned functions. The roles are a [Vyper Enumerator](https://docs.vyperlang.org/en/stable/types.html#enums) pattern based on Pythons.
+
+Each permissioned function in the Vaults has its own "role" that can call that specific function. For example, to call `add_strategy(new_strategy: address)` the address must have the `ADD_STRATEGY_MANAGER` role. Roles can be held by any number of addresses or by no address.
 
 The same address can hold every role, each role can be held by a different address or any combination desired.
 
@@ -76,28 +76,29 @@ Example:
     
     # Set `account` to hold no roles
     vault.set_role(account, 0)
-    
 
 NOTE: The vault `role_manager` can not call any permissioned function by default, and would have to give itself any roles that it should have.
 
 #### Deposit Limit
+
 ---
 Each vault will default to have a deposit limit set to 0. Which means all deposits will revert.
 
 Once ready, the address with the DEPOSIT_LIMIT_MANAGER will need to either set a deposit_limit > 0 or add a deposit_limit_module.
 
-
 #### Miscellaneous
+
 ---
 There are other options that a vault manager can set that are not necessary for the vault to function but may be desired for further customization.
 
-**minimum_total_idle**: An amount specified in the underlying asset that the vault will force to remain free in the vault during debt updates to make servicing withdraws cheaper.
-**profit_max_unlock_time**: The time in which profits reported by the strategies will be distributed to depositors. This can be adjusted to match the current report cycle of the vault's strategies to create a continuous stream of APY paid out to depositors.
+- **minimum_total_idle**: An amount specified in the underlying asset that the vault will force to remain free in the vault during debt updates to make servicing withdraws cheaper.
+- **profit_max_unlock_time**: The time in which profits reported by the strategies will be distributed to depositors. This can be adjusted to match the current report cycle of the vault's strategies to create a continuous stream of APY paid out to depositors.
 
 ## Running the Vault
 
 #### Strategy Management
-The job of a vault is to manage debt between strategies that do the yield generation. 3 roles control what strategies are added to the vault, ADD_STRATEGY_MANAGER, REVOKE_STRATEGY_MANAGER, and FORCE_REVOKE_MANAGER. 
+
+The job of a vault is to manage debt between strategies that do the yield generation. 3 roles control what strategies are added to the vault, ADD_STRATEGY_MANAGER, REVOKE_STRATEGY_MANAGER, and FORCE_REVOKE_MANAGER.
 
 A strategy can be any contract that has the needed [4626 interface](https://github.com/yearn/yearn-vaults-v3/blob/master/contracts/VaultV3.vy#L39) for the vault to interact with it. This includes Tokenized Strategies, 3rd party 4626 vaults, and other  allocator vaults.
 
@@ -112,6 +113,7 @@ To remove a strategy, first remove all the debt from the strategy and then call 
 If a strategy has issues and cannot pay all of its debt back `vault.force_revoke_strategy(strategy)` can be used to forcefully remove the strategy.
 
 NOTE: Forcefully removing a strategy that still has debt will cause a loss to be recorded and a reduction of Price Per Share.
+
 #### Debt Updates
 
 The DEBT_MANAGER role is in charge of allocating funds between the strategies added to a vault.
@@ -172,7 +174,7 @@ If a different ordering is desired or management wants to remove a certain strat
 
 Where `new_default_queue` is an array of strategies with a max length of 10, in which all strategies are currently active in the vault.
 
-The vaults QUEUE_MANAGER can also choose to not allow custom queues to be passed into the vault on withdraws at any time by turning on the 'use_default_queue' flag by calling, `vault.set_use_default_queue(True)`. 
+The vaults QUEUE_MANAGER can also choose to not allow custom queues to be passed into the vault on withdraws at any time by turning on the 'use_default_queue' flag by calling, `vault.set_use_default_queue(True)`.
 
 ## Good to Know
 
@@ -181,6 +183,7 @@ The vaults QUEUE_MANAGER can also choose to not allow custom queues to be passed
 There are certain tokens whose native behavior makes them incompatible with being the underlying asset of a vault and should be avoided.
 
 A few examples of this are:
+
 - Rebasing Tokens
 - Fee on Transfer
 - Reentrancy Tokens (ERC-777)
