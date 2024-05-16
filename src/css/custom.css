@@ -4,7 +4,7 @@
  * bundles Infima by default. Infima is a CSS framework designed to
  * work well for content-centric websites.
  */
-@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&display=swap');
 /* You can override the default Infima variables here. */
 
 :root {
@@ -18,10 +18,10 @@
   --ifm-code-font-size: 95%;
 }
 .body {
-  font-family: "Roboto", serif;
+  font-family: 'Roboto', serif;
 }
 
-html[data-theme="dark"] {
+html[data-theme='dark'] {
   background-color: #18191a;
 }
 
@@ -29,29 +29,29 @@ html[data-theme="dark"] {
   width: 240px;
 }
 
-html[data-theme="dark"] .DocSearch {
+html[data-theme='dark'] .DocSearch {
   background-color: var(--ifm-background-color);
   border: solid 2px var(--ifm-color-emphasis-300);
   color: var(--ifm-color-emphasis-300);
 }
-html[data-theme="dark"] .DocSearch-Search-Icon {
+html[data-theme='dark'] .DocSearch-Search-Icon {
   color: var(--ifm-color-emphasis-300);
 }
 
-html[data-theme="dark"] .DocSearch:hover {
+html[data-theme='dark'] .DocSearch:hover {
   border: solid 1px rgba(194, 194, 194, 0.363);
 }
 
-html[data-theme="light"] .DocSearch {
+html[data-theme='light'] .DocSearch {
   background-color: var(--ifm-background-color);
   border: solid 2px var(--ifm-color-emphasis-500);
   color: var(--ifm-color-emphasis-500);
 }
-html[data-theme="light"] .DocSearch-Search-Icon {
+html[data-theme='light'] .DocSearch-Search-Icon {
   color: var(--ifm-color-emphasis-500);
 }
 
-html[data-theme="light"] .DocSearch:hover {
+html[data-theme='light'] .DocSearch:hover {
   border: solid 1px rgba(128, 128, 128, 0.521);
 }
 .navbar {
@@ -75,10 +75,10 @@ html[data-theme="light"] .DocSearch:hover {
 /* .navbar__item .dropdown__menu li:first-child {
   display: none;
 } */
-html[data-theme="dark"] .navbar {
+html[data-theme='dark'] .navbar {
   background-color: var(--ifm-background-color);
 }
-html[data-theme="dark"] .react-toggle-thumb {
+html[data-theme='dark'] .react-toggle-thumb {
   background-color: var(--ifm-background-color);
 }
 
@@ -94,8 +94,13 @@ html[data-theme="dark"] .react-toggle-thumb {
 }
 .footer__title,
 .footer__item {
-  font-family: "Roboto Slab", "Roboto", serif;
+  font-family: 'Roboto Slab', 'Roboto', serif;
 }
+
+img {
+  height: auto;
+}
+
 @media screen and (max-width: 1082px) {
   .DocSearch {
     width: inherit;
@@ -122,32 +127,32 @@ html[data-theme="dark"] .react-toggle-thumb {
   margin-bottom: 1rem;
 }
 
-html[data-theme="dark"] .wireImg {
+html[data-theme='dark'] .wireImg {
   background: radial-gradient(ellipse at right, #aaa, transparent),
     radial-gradient(ellipse at left, #aaa, transparent);
 }
-html[data-theme="dark"] .wireImg2 {
+html[data-theme='dark'] .wireImg2 {
   background: radial-gradient(ellipse at right, #333, transparent),
     radial-gradient(ellipse at left, #333, transparent);
 }
 
 @media screen and (min-width: 751px) and (max-width: 1082px) {
-  html[data-theme="dark"] .DocSearch {
+  html[data-theme='dark'] .DocSearch {
     border: none;
   }
-  html[data-theme="dark"] .DocSearch:hover {
+  html[data-theme='dark'] .DocSearch:hover {
     border: none;
   }
-  html[data-theme="light"] .DocSearch {
+  html[data-theme='light'] .DocSearch {
     border: none;
   }
-  html[data-theme="light"] .DocSearch:hover {
+  html[data-theme='light'] .DocSearch:hover {
     border: none;
   }
 }
 
 /* Assuming this is added to a file like src/css/custom.css */
-.sidebar .menu__link[href$="separator"] {
+.sidebar .menu__link[href$='separator'] {
   pointer-events: none; /* Disables clicking */
   cursor: default;
   text-decoration: none;

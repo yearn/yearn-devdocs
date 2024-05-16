@@ -16,11 +16,11 @@ If you are a user in the yCRV ecosystem you may migrate your position by withdra
 
 The yPRISMA ecosystem aims to deliver a user experience similar to yCRV, which passes all protocol yield earned by Yearn's position along to users.
 
-A staking contract is available on the yPRISMA [website](https://yprisma.yearn.fi/), allowing users to stake their yPRISMA to earn protocol fees and bribes.
+A staking contract is available on the yPRISMA [website](https://yprisma.yearn.fi/), allowing users to stake their yPRISMA to earn protocol fees and vote incentives.
 
 ## Can yPRISMA users vote in Primsa?
 
-Weekly incentive voting is automated to optimize for the maximum weekly bribe yield.
+Weekly incentive voting is automated to optimize for the maximum weekly vote incentive yield.
 
 There is active research on Prisma governance proposals to determine how to pass Yearn's voting power along to yPRISMA users.
 
@@ -53,7 +53,7 @@ When you stake yPRISMA, a performance fee is applied to the yield collected over
 The yield for yPRISMA stakers comes from several sources:
 
 - **Protocol Fees**: Fees generated from the Prisma protocol.
-- **Bribes**: Incentives provided for voting power.
+- **Vote Incentives**: Incentives provided for voting power.
 - **Boost Rental Fees**: Fees from users renting boost from Yearn's vePRISMA.
 
 All these yields are claimed to the yPRISMA fee receiver at [`0x76DF88Aa8711822472Cb40Ed8c972A461A20ecdc`](https://etherscan.io/address/0x76DF88Aa8711822472Cb40Ed8c972A461A20ecdc).
