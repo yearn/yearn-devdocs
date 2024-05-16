@@ -23,6 +23,8 @@ Yearn has 2 ways to earn yield on your yPRISMA; depositing to the `YearnBoostedS
 ## Links
 
 - [yPRISMA UI](https://yprisma.yearn.fi/)
+- [UI Source Code](https://github.com/MarcoWorms/ylockers-ui)
+- [Yearn Boosted Staker Source Code](https://github.com/yearn/yearn-boosted-staker)
 - [PRISMA.lol - Liquid Lockers Tracker](https://www.prisma.lol/)
 - [yLockers Discord Channel](https://discord.com/channels/734804446353031319/1186417376275730552)
 
