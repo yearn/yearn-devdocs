@@ -68,14 +68,6 @@ module.exports = {
           to: 'security/',
           label: 'Security',
         },
-        // {
-        //   type: 'docsVersionDropdown',
-        //   dropdownItemsBefore: [],
-        //   position: 'right',
-        //   // Do not add the link active class when browsing docs.
-        //   dropdownActiveClassDisabled: true,
-        //   docsPluginId: 'default',
-        // },
         {
           type: 'search',
           position: 'right',
@@ -196,14 +188,13 @@ module.exports = {
       '@docusaurus/preset-classic',
       {
         docs: {
-          path: 'vaults',
+          path: 'docs/getting-started',
+          routeBasePath: 'getting-started',
+          sidebarPath: require.resolve('./sidebars/sidebars.js'),
           remarkPlugins: [math],
           rehypePlugins: [katex],
-          routeBasePath: 'vaults',
-          sidebarPath: require.resolve('./sidebars/sidebars.js'),
           editUrl:
             'https://github.com/yearn/yearn-devdocs/edit/master/website/',
-          includeCurrentVersion: false,
           breadcrumbs: false,
         },
         theme: {
@@ -231,20 +222,6 @@ module.exports = {
         showLastUpdateTime: true,
         sidebarCollapsed: false,
         breadcrumbs: false,
-      },
-    ],
-    [
-      '@docusaurus/plugin-content-docs',
-      {
-        id: 'getting-started',
-        path: 'docs/getting-started',
-        routeBasePath: 'getting-started',
-        sidebarPath: require.resolve('./sidebars/sidebarsGettingStarted.js'),
-        showLastUpdateTime: true,
-        sidebarCollapsed: false,
-        breadcrumbs: false,
-        remarkPlugins: [math],
-        rehypePlugins: [katex],
       },
     ],
     [
