@@ -1,6 +1,6 @@
 # Deploying a Vault and Strategy V2
 
-**Note**: This [private repo](https://github.com/yearn/chief-multisig-officer) is encouraged to create multiple scripts for governance and dev multisig execution of complex transactions.
+**Note**: This [private repo](https://github.com/yearn/chief-multisig-officer) :warning: **broken link** :warning: is encouraged to create multiple scripts for governance and dev multisig execution of complex transactions.
 
 ## Requirements
 
@@ -21,11 +21,11 @@ The below instructions show some python commands that assume you are using the b
    - Set Treasury (`treasury.ychad.eth`) as the rewards address.
    - Set Core Dev multisig (`dev.ychad.eth`) as guardian.
    - Set Strategist multisig (`brain.ychad.eth`) as management.
-   - Set name and symbol for vault or use suggested as default (can be changed on-chain later, but please check out our [naming conventions](https://docs.yearn.fi/developers/v2/naming-convention)). 
+   - Set name and symbol for vault or use suggested as default (can be changed on-chain later, but please check out our [naming conventions](https://docs.yearn.fi/developers/v2/naming-convention)).
 8. Confirm the Parameters are correct and press `y` and ENTER to deploy the vault.
 9. Check new vault has ABI setup on Etherscan (Some vault versions from older releases may have verification issues with Vyper and proxy detection on Etherscan, consider using later releases >0.3.5 to ensure verification works).
 
-10. Set deposit limit according to the table [below](#Limits-per-Stage)
+10. Set deposit limit according to the table [below](#limits-per-stage)
 
    ```python
    vault.setDepositLimit(limit)
@@ -96,7 +96,7 @@ vault.setGovernance(ychad.eth)
 
    - `health_check` = `0xddcea799ff1699e98edf118e0629a974df7df012`
 
-**NOTE**: see section on [ health check ](#health-checks) for more details.
+**NOTE**: see section on [health check](#health-checks) for more details.
 
 1. Set rewards:
 
@@ -136,7 +136,7 @@ vault.setGovernance(ychad.eth)
 In addition to the two strategist reviews, a Core Developer has to review the strategy before going into production.
 
 1. Create an [issue](https://github.com/yearn/yearn-finance-v3/issues) in yearn's web repo to ensure that the new vault won't create any problems with the API and that all necessary token/vault metadata is ready. Additionally, if this vault needs to go in the "labs" category, it must be manually added to the website.
-2. Increase deposit limit according to the table [below](#Limits-per-Stage)
+2. Increase deposit limit according to the table [below](#limits-per-stage)
 3. Set management fee to production level:
 
    ```python
