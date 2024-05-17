@@ -17,19 +17,19 @@ module.exports = {
     algolia: {
       apiKey: process.env.ALGOLIA_API_KEY || 'UNKNOWN',
       indexName: process.env.ALGOLIA_INDEX_NAME || 'UNKNOWN',
-      appId: process.env.ALGOLIA_APP_ID || 'UNKNOWN',
+      appId: process.env.ALGOLIA_APP_ID || 'UNKNOWN'
     },
     colorMode: {
       defaultMode: 'light',
       disableSwitch: false,
-      respectPrefersColorScheme: true,
+      respectPrefersColorScheme: true
     },
     image: 'img/YFILogoGradient.jpg',
     metadata: [
       {
         name: 'twitter:card',
         content:
-          'Yearn Finance is a suite of products in Decentralized Finance (DeFi) that provides lending aggregation, yield generation, and insurance on the Ethereum blockchain.',
+          'Yearn Finance is a suite of products in Decentralized Finance (DeFi) that provides lending aggregation, yield generation, and insurance on the Ethereum blockchain.'
       },
       {
         name: 'git-url',
@@ -41,32 +41,32 @@ module.exports = {
       title: 'Yearn Finance',
       logo: {
         alt: 'YFI Logo',
-        src: 'img/logo.svg',
+        src: 'img/logo.svg'
       },
       items: [
         {
           to: 'getting-started/intro',
-          label: 'Introduction',
+          label: 'Introduction'
         },
         {
-          to: 'developers/v3/overview',
-          label: 'Develop',
+          to: 'developers/building-on-yearn',
+          label: 'Develop'
         },
         {
           to: '/vaults/smart-contracts/BaseStrategy',
-          label: 'Smart Contracts',
+          label: 'Smart Contracts'
         },
         {
           to: 'contributing/contribute',
-          label: 'Contribute',
+          label: 'Contribute'
         },
         {
           to: 'resources/faq',
-          label: 'Resources',
+          label: 'Resources'
         },
         {
           to: 'security/',
-          label: 'Security',
+          label: 'Security'
         },
         {
           type: 'docsVersionDropdown',
@@ -74,13 +74,13 @@ module.exports = {
           position: 'right',
           // Do not add the link active class when browsing docs.
           dropdownActiveClassDisabled: true,
-          docsPluginId: 'default',
+          docsPluginId: 'default'
         },
         {
           type: 'search',
-          position: 'right',
-        },
-      ],
+          position: 'right'
+        }
+      ]
     },
     footer: {
       style: 'light',
@@ -90,106 +90,106 @@ module.exports = {
           items: [
             {
               label: 'V3 Vaults',
-              href: 'https://github.com/yearn/yearn-vaults-v3',
+              href: 'https://github.com/yearn/yearn-vaults-v3'
             },
             {
               label: 'V3 Tokenized Strategy',
-              href: 'https://github.com/yearn/tokenized-strategy',
+              href: 'https://github.com/yearn/tokenized-strategy'
             },
             {
               label: 'V3 Strategy Mix: Foundry',
-              href: 'https://github.com/yearn/tokenized-strategy-foundry-mix',
+              href: 'https://github.com/yearn/tokenized-strategy-foundry-mix'
             },
             {
               label: 'V3 Strategy Mix: Ape',
-              href: 'https://github.com/yearn/tokenized-strategy-ape-mix',
+              href: 'https://github.com/yearn/tokenized-strategy-ape-mix'
             },
             {
               label: 'V2 Vaults',
-              href: 'https://github.com/yearn/yearn-vaults',
+              href: 'https://github.com/yearn/yearn-vaults'
             },
             {
               label: 'V2 Strategy Mix',
-              href: 'https://github.com/yearn/brownie-strategy-mix',
+              href: 'https://github.com/yearn/brownie-strategy-mix'
             },
             {
               label: 'yearn-security',
-              href: 'https://github.com/yearn/yearn-security',
+              href: 'https://github.com/yearn/yearn-security'
             },
             {
               label: 'yearn-devdocs',
-              href: 'https://github.com/yearn/yearn-devdocs',
-            },
-          ],
+              href: 'https://github.com/yearn/yearn-devdocs'
+            }
+          ]
         },
         {
           title: 'Ecosystem',
           items: [
             {
               label: 'V3 Vaults',
-              href: 'https://yearn.fi/v3',
+              href: 'https://yearn.fi/v3'
             },
             {
               label: 'V2 Vaults',
-              href: 'https://yearn.fi/vaults',
+              href: 'https://yearn.fi/vaults'
             },
             {
               label: 'Juiced Vaults',
-              href: 'https://juiced.yearn.fi/',
+              href: 'https://juiced.yearn.fi/'
             },
             {
               label: 'veYFI',
-              href: 'https://veyfi.yearn.fi/',
+              href: 'https://veyfi.yearn.fi/'
             },
             {
               label: 'yETH',
-              href: 'https://yeth.yearn.fi/',
+              href: 'https://yeth.yearn.fi/'
             },
             {
               label: 'yCRV',
-              href: 'https://ycrv.yearn.fi/',
+              href: 'https://ycrv.yearn.fi/'
             },
             {
               label: 'yPrisma',
-              href: 'https://yprisma.yearn.fi/',
+              href: 'https://yprisma.yearn.fi/'
             },
             {
               label: 'yBribe',
-              href: 'https://ybribe.yearn.fi/',
-            },
-          ],
+              href: 'https://ybribe.yearn.fi/'
+            }
+          ]
         },
         {
           title: 'Community',
           items: [
             {
               label: 'Discord',
-              href: 'https://discord.gg/b8ENPNqG5c',
+              href: 'https://discord.gg/b8ENPNqG5c'
             },
             {
               label: 'Twitter',
-              href: 'https://x.com/yearnfi',
+              href: 'https://x.com/yearnfi'
             },
             {
               label: 'Telegram',
-              href: 'https://t.me/yearnfinance/',
+              href: 'https://t.me/yearnfinance/'
             },
             {
               label: 'Medium',
-              href: 'https://medium.com/iearn',
+              href: 'https://medium.com/iearn'
             },
             {
               label: 'Forum',
-              href: 'https://gov.yearn.fi',
+              href: 'https://gov.yearn.fi'
             },
             {
               label: 'Snapshot Voting',
-              href: 'https://snapshot.org/#/veyfi.eth',
-            },
-          ],
-        },
-      ],
-    },
+              href: 'https://snapshot.org/#/veyfi.eth'
+            }
+          ]
+        }
+      ]
+    }
   },
   presets: [
     [
@@ -204,21 +204,21 @@ module.exports = {
           editUrl:
             'https://github.com/yearn/yearn-devdocs/edit/master/website/',
           includeCurrentVersion: false,
-          breadcrumbs: false,
+          breadcrumbs: false
         },
         theme: {
-          customCss: require.resolve('./src/css/custom.css'),
-        },
-      },
-    ],
+          customCss: require.resolve('./src/css/custom.css')
+        }
+      }
+    ]
   ],
   stylesheets: [
     {
       href: 'https://cdn.jsdelivr.net/npm/katex@0.13.24/dist/katex.min.css',
       integrity:
         'sha384-odtC+0UGzzFL/6PNoE8rX/SPcQDXBJ+uRepguP4QkPCm2LBxH3FA3y+fKSiJ+AmM',
-      crossorigin: 'anonymous',
-    },
+      crossorigin: 'anonymous'
+    }
   ],
   plugins: [
     [
@@ -229,9 +229,9 @@ module.exports = {
         routeBasePath: 'developers',
         sidebarPath: require.resolve('./sidebars/sidebarsDevelopers.js'),
         showLastUpdateTime: true,
-        sidebarCollapsed: false,
-        breadcrumbs: false,
-      },
+        sidebarCollapsed: true,
+        breadcrumbs: false
+      }
     ],
     [
       '@docusaurus/plugin-content-docs',
@@ -244,8 +244,8 @@ module.exports = {
         sidebarCollapsed: false,
         breadcrumbs: false,
         remarkPlugins: [math],
-        rehypePlugins: [katex],
-      },
+        rehypePlugins: [katex]
+      }
     ],
     [
       '@docusaurus/plugin-content-docs',
@@ -256,8 +256,8 @@ module.exports = {
         sidebarPath: require.resolve('./sidebars/sidebarsPartners.js'),
         showLastUpdateTime: true,
         sidebarCollapsed: false,
-        breadcrumbs: false,
-      },
+        breadcrumbs: false
+      }
     ],
     [
       '@docusaurus/plugin-content-docs',
@@ -270,8 +270,8 @@ module.exports = {
         sidebarCollapsed: false,
         breadcrumbs: false,
         remarkPlugins: [math],
-        rehypePlugins: [katex],
-      },
+        rehypePlugins: [katex]
+      }
     ],
     [
       '@docusaurus/plugin-content-docs',
@@ -282,8 +282,8 @@ module.exports = {
         sidebarPath: require.resolve('./sidebars/sidebarsResources.js'),
         showLastUpdateTime: true,
         sidebarCollapsed: false,
-        breadcrumbs: false,
-      },
+        breadcrumbs: false
+      }
     ],
     [
       '@docusaurus/plugin-content-docs',
@@ -293,8 +293,8 @@ module.exports = {
         routeBasePath: 'security',
         sidebarPath: require.resolve('./sidebars/sidebarsSecurity.js'),
         showLastUpdateTime: true,
-        breadcrumbs: false,
-      },
-    ],
-  ],
+        breadcrumbs: false
+      }
+    ]
+  ]
 }
