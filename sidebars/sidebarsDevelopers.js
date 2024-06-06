@@ -5,6 +5,8 @@ module.exports = {
       label: 'yVaults Version 3',
       items: [
         'v3/overview',
+        'v3/Integrating_v3',
+        'v3/periphery',
         'v3/protocol_fees',
         'v3/vault_management',
         'v3/strategy_writing_guide',
@@ -41,11 +43,7 @@ module.exports = {
             {
               type: 'category',
               label: 'Subgraph',
-              items: [
-                'v2/subgraph-info',
-                'v2/entities',
-                'v2/queries',
-              ],
+              items: ['v2/subgraph-info', 'v2/entities', 'v2/queries'],
             },
             'v2/yearn-lens',
             'v2/yearn-api',
