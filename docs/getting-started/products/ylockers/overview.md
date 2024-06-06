@@ -55,7 +55,7 @@ On deposit, your initial weight will be 50. At 00:00:00 UTC the following Thursd
 
 | week             | balance | weight | boost |
 | ---------------- | ------- | ------ | ----- |
-| 0 (deposit week) | 100     | 50     | 0.5x  |
+| 0 (deposit week) | 100     | 50     | 0x  |
 | 1                | 100        | 100       | 1.0x      |
 | 2                | 100        | 150       | 1.5x      |
 | 3                | 100        | 200       | 2.0x      |
