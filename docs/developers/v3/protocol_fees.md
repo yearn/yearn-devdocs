@@ -1,6 +1,6 @@
 # Protocol Fees
 
-The V3 system sees the introduction of "Protocol Fees" to the stack: a percentage charged each time a V3 vault or strategy "reports".
+The V3 system sees the introduction of "Protocol Fees" to the stack, a percentage charged each time a V3 vault or strategy "reports".
 
 Protocol fees give the managers of vaults and strategies complete control over the fees charged while rewarding Yearn for supplying the infrastructure those vaults are built on.
 
