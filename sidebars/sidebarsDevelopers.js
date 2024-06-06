@@ -31,7 +31,7 @@ module.exports = {
         {
           type: 'link',
           label: 'Smart Contracts',
-          href: '/vaults/smart-contracts/BaseStrategy',
+          href: '../../smart-contracts',
         },
         {
           type: 'category',
@@ -41,11 +41,7 @@ module.exports = {
             {
               type: 'category',
               label: 'Subgraph',
-              items: [
-                'v2/subgraph-info',
-                'v2/entities',
-                'v2/queries',
-              ],
+              items: ['v2/subgraph-info', 'v2/entities', 'v2/queries'],
             },
             'v2/yearn-lens',
             'v2/yearn-api',
