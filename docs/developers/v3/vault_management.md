@@ -25,11 +25,11 @@ To deploy your vault, simply find the factory's address for the most recent rele
 
 The needed parameters are:
 
-**asset**: The address of an ERC-20 compliant token used as the underlying asset to earn yield for the vault.
-**name**: The name for your vault that will apply to the token issues to depositors.
-**symbol**: The symbol the token issued to depositors will use.
-**role_manager**: The address in charge of giving permissions to other addresses which allow access to certain permissioned functions.
-**profit_max_unlock_time**: In seconds, profits reported from strategies will be unlocked.
+- **asset**: The address of an ERC-20 compliant token used as the underlying asset to earn yield for the vault.
+- **name**: The name for your vault that will apply to the token issues to depositors.
+- **symbol**: The symbol the token issued to depositors will use.
+- **role_manager**: The address in charge of giving permissions to other addresses which allow access to certain permissioned functions.
+- **profit_max_unlock_time**: In seconds, profits reported from strategies will be unlocked.
 
 Once deployed, you can get your vault's address from either the Factory function's return value or the `NewVault` event emitted by the factory.
 
@@ -91,8 +91,8 @@ Once ready, the address with the DEPOSIT_LIMIT_MANAGER will need to either set a
 ---
 There are other options that a vault manager can set that are not necessary for the vault to function but may be desired for further customization.
 
-**minimum_total_idle**: An amount specified in the underlying asset that the vault will force to remain free in the vault during debt updates to make servicing withdraws cheaper.
-**profit_max_unlock_time**: The time in which profits reported by the strategies will be distributed to depositors. This can be adjusted to match the current report cycle of the vault's strategies to create a continuous stream of APY paid out to depositors.
+- **minimum_total_idle**: An amount specified in the underlying asset that the vault will force to remain free in the vault during debt updates to make servicing withdraws cheaper.
+- **profit_max_unlock_time**: The time in which profits reported by the strategies will be distributed to depositors. This can be adjusted to match the current report cycle of the vault's strategies to create a continuous stream of APY paid out to depositors.
 
 ## Running the Vault
 
@@ -101,7 +101,7 @@ The job of a vault is to manage debt between strategies that do the yield genera
 
 A strategy can be any contract that has the needed [4626 interface](https://github.com/yearn/yearn-vaults-v3/blob/master/contracts/VaultV3.vy#L39) for the vault to interact with it. This includes Tokenized Strategies, 3rd party 4626 vaults, and other  allocator vaults.
 
-To add a strategy first call `vault.add_strategy(strategy_address)`. There is an optional parameter in `add_strategy` of `add_to_queue` that defaults to True, but can be set to False if you do not want to add the strategy to the `default_queue`.
+To add a strategy first call `vault.add_strategy(strategy_address)`. 
 
 Each strategy gets added with a default 'max_debt' of 0. This means the MAX_DEBT_MANAGER will need to call `vault.update_max_debt_for_strategy(strategy, max_debt)`.
 
@@ -122,7 +122,7 @@ Debt updates will also respect the strategies specific `maxRedeem` and `maxDepos
 
 To deposit or withdraw vault funds from a strategy simply call `vault.update_debt(strategy, desired_debt)` where desired debt is the end amount denominated in the underlying asset that the strategy should have after the full debt update.
 
-Debt updates also come with an optional `max_loss` parameter that is recommended to be used on debt decreases. It works just like the withdraw/redeem parameter of the same name and assures an losses realized on debt decreases are within the expected bounds.
+Debt updates also come with an optional `max_loss` parameter that is recommended to be used on debt decreases. It works just like the withdraw/redeem parameter of the same name and assures any losses realized on debt decreases are within the expected bounds.
 
 **NOTE**: If a strategy has unrealized losses you cannot lower its debt.
 
@@ -165,6 +165,8 @@ This can be used to enforce a whitelist of depositors, minimum or maximum deposi
 #### Default Queue
 
 Each vault has a `default_queue` based on the strategies added and removed from the vault. The `default_queue` is used to service withdraws when no custom queue is passed. This queue is simply ordered by the time when strategies were added: where the oldest strategy is at the beginning of the queue.
+
+There is an optional parameter in `add_strategy` of `add_to_queue` that defaults to True, but can be set to False if you do not want to add the strategy to the `default_queue`.
 
 If a different ordering is desired or management wants to remove a certain strategy from the default queue, the QUEUE_MANAGER role can set a new queue.
 
