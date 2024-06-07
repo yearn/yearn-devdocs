@@ -26,6 +26,6 @@ The vault tokens have evolved between v1, v2, and v3, here are a couple of main 
 ## V3 yVault Tokens
 
 - All V3 vaults are [ERC-4626](https://ethereum.org/en/developers/docs/standards/tokens/erc-4626/) compliant.
-- Vaults can be either multi-strategy or single strategy (Tokenized Strategy).
-- Multi strategy vaults tokens are still prefixed with `yv` and appended with a ["category"](insert link), so a v3 vault for USDC gives the user `yvUSDC-1`.
-- Single strategy vaults are prefixed with `ys`, so a V3 single strategy vault gives the user `ysUSDC`.
+- Vaults can be either multi-strategy or single-strategy (Tokenized Strategy).
+- Multi-strategy vaults tokens are prefixed with `yv` and appended with a ["category"](insert link), so a v3 vault for USDC with a category type of `1` gives the user `yvUSDC-1`.
+- Single strategy vaults are prefixed with `ys`, so a v3 single strategy vault gives the user `ysUSDC`.
