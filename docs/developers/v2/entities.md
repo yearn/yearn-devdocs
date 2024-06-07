@@ -1,3 +1,5 @@
+<!-- markdownlint-disable MD026 -->
+
 # Subgraph Entities
 
 - [`Transaction`](#transaction)
@@ -324,7 +326,7 @@ Description: get specific details of the Strategy
 | inQueue              | Boolean!                             | Defines whether this strategy is within the vault queue                                                                                                         |
 | vault                | Vault!                               | The Vault                                                                                                                                                       |
 | clonedFrom           | Strategy                             | Strategy reference used to clone this strategy.                                                                                                                 |
-| debtLimit            | BigInt!                              | Defines the maximum borrow amount. In strategies <v0.3.5 it is debtRatio.                                                                                       |
+| debtLimit            | BigInt!                              | Defines the maximum borrow amount. In strategies \<v0.3.5 it is debtRatio.                                                                                       |
 | minDebtPerHarvest    | BigInt!                              | Lower limit on the increase of debt since last harvest.                                                                                                         |
 | maxDebtPerHarvest    | BigInt!                              | Upper limit on the increase of debt since last harvest.                                                                                                         |
 | rateLimit            | BigInt!                              | It is the current rate limit. It increases/decreases per block. This field is currently only populated on strategy create                                       |
