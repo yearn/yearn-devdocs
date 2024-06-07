@@ -1,9 +1,9 @@
 // @ts-check
-/** @type {import('@docusaurus/types').DocusaurusConfig} */
-const math = require('remark-math')
-const katex = require('rehype-katex')
+/** @type {import('@docusaurus/types').Config} */
+import math from 'remark-math'
+import katex from 'rehype-katex'
 
-module.exports = {
+export default {
   title: 'yearn.fi',
   tagline: 'DeFi made simple',
   url: 'https://docs.yearn.fi',
@@ -33,8 +33,8 @@ module.exports = {
       },
       {
         name: 'git-url',
-        content: 'https://github.com/yearn/yearn-devdocs'
-      }
+        content: 'https://github.com/yearn/yearn-devdocs',
+      },
     ],
     navbar: {
       hideOnScroll: true,
