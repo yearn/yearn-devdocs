@@ -10,7 +10,7 @@ All V3 vaults, whether multi-strategy or single-strategy, are fully [ERC-4626](h
 
 Deposits follow the standard 4626 flow. It is recommended to use [`deposit`](https://eips.ethereum.org/EIPS/eip-4626#deposit) over [`mint`](https://eips.ethereum.org/EIPS/eip-4626#mint) when depositing to a Yearn vault.
 
-```markdown
+```markdown title="Example:"
 token.approve(vault, amount)
 
 vault.deposit(amount, receiver)
@@ -39,7 +39,7 @@ There is a `maxLoss` parameter for both `withdraw` and `redeem` that is denomina
 
 :::
 
-```markdown
+```markdown title="Example:"
 balance = vault.balanceOf(user)
 
 vault.redeem(balance, receiver, user, maxLoss)
@@ -55,7 +55,7 @@ vault.redeem(balance, receiver, user, maxLoss)
 
 Multi-strategy vaults also have an optional `strategies` parameter which takes an array (max length of 10) of ordered strategy addresses to withdraw from. This will override the vaults `default_queue` if the [`use_default_queue`](https://github.com/yearn/yearn-vaults-v3/blob/9fbc614bbce9d7cbad42e284a15f0f43cf1a673f/contracts/VaultV3.vy#L216C1-L216C18) flag is `False`.
 
-```markdown
+```markdown title="Example:"
 strategies = [compoundLender, aaveLender]
 
 balance = vault.balanceOf(user)
@@ -69,7 +69,7 @@ The max amount that a vault will allow an address to redeem/withdraw can be retu
 
 Generic pricing of vault tokens can be done using the standard 4626 [`convertToShares`](https://eips.ethereum.org/EIPS/eip-4626#converttoshares) and [`convertToAssets`](https://eips.ethereum.org/EIPS/eip-4626#converttoassets) functions.
 
-While Yearn takes great care to try and prevent manipulation of the conversion functions, it is important to know that are some security considerations if using these functions on chain as part of another protocol. Please read more in [Yearn vaults as collateral](https://docs.yearn.fi/partners/yvtokens-as-collateral#overview-of-yearn-vaults-as-collateral)
+While Yearn takes great care to try and prevent manipulation of the conversion functions, it is important to know that are some security considerations if using these functions on chain as part of another protocol. Please read more in [Yearn vaults as collateral](/partners/yvtokens-as-collateral#overview-of-yearn-vaults-as-collateral)
 
 V3 vaults also contain the legacy `pricePerShare` function from the V2 Vaults implementation. However, this is intended as a simple off-chain helper and should not be used for on chain integrations due to precision loss.
 
