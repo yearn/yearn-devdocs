@@ -14,7 +14,7 @@ The most significant update to Yearn V3 from V2 was the introduction of "Tokeniz
 ## Get started
 
 - [Integrating V3](/developers/v3/integrating_v3)
-- [Periphery Contracts](/devlopers/v3/periphery)
+- [Periphery Contracts](/developers/v3/periphery)
 - [Protocol Fees](/developers/v3/protocol_fees)
 - [Deploying and managing a V3 Vault](/developers/v3/vault_management)
 - [Building your own V3 Strategy](/developers/v3/strategy_writing_guide)

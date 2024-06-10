@@ -1,6 +1,6 @@
 # Periphery
 
-Yearn V3 is built to be modular and customizable by anyone wishing to run their own vault. In order to do this the core code has been left as un-opinionated as possible while allowing it to be customized through the use of optional "Periphery" contracts or "modules". 
+Yearn V3 is built to be modular and customizable by anyone wishing to run their own vault. In order to do this the core code has been left as un-opinionated as possible while allowing it to be customized through the use of optional "Periphery" contracts or "modules".
 
 This is a non-exhaustive list of the current periphery contracts developed or deployed in order to assist those wishing to deploy/manage their own V3 vaults.
 
@@ -11,7 +11,7 @@ TokenizedStrategy Periphery: https://github.com/yearn/tokenized-strategy-periphe
 
 The deployed address of most periphery contracts or their corresponding factories can be found on chain from the Protocol Address provider: `0x1e9778aAD41Aa3E0884C276fB4C2D03C4036Aa0B`
 
-The Yearn specific periphery contracts can be retrieved from that chains [Role Manager](link)
+The Yearn specific periphery contracts can be retrieved from that chain's [Role Manager](/developers/v3/periphery#role-manager)
 
 ## Vault Periphery
 
@@ -24,6 +24,7 @@ https://github.com/yearn/vault-periphery/blob/master/contracts/registry/ReleaseR
 Yearn controlled registry to track any new versions of V3 released on that specific chain.
 
 Each time a new Version of the [Vault Factory](https://github.com/yearn/yearn-vaults-v3/blob/master/contracts/VaultFactory.vy) is deployed it will get added to the Release Registry.
+
 ### Registry
 
 https://github.com/yearn/vault-periphery/blob/master/contracts/registry/Registry.sol
