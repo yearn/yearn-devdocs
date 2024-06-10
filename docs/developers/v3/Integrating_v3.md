@@ -89,9 +89,13 @@ Retrieve all of the endorsed vaults on a specific chain.
 
 Manages all of the multi-strategy vaults on a chain, and holds the `role_manager` position for those vaults.
 
+All the other periphery contracts and Yearn multisigs can be retrieved from the Role manager as well using the getter functions, such as `getBrain()`, `getRegistry()`, `getDebtAllocator(vault)`.
+
 - `getAllVaults()` Returns and array for all multi-strategy vaults the contract is the role manager for.
 - [`getVault(asset, apiVersion, category)`](https://github.com/yearn/vault-periphery/blob/26c43a917202aeacafa3e5f0d9d2f562aaa3d1ab/contracts/Managers/RoleManager.sol#L718C14-L718C22) Returns the vault if any based on the inputs.
 
-*NOTE: `category` refers to the number that is appended to the vaults name and symbol that dictates what type of vault it is. For example, `1` vaults are the lowest risk and most similar to the V2 style vaults.
+#### Category
 
-All the other periphery contracts and Yearn multisigs can be retrieved from the Role manager as well using the getter functions, such as `getBrain()`, `getRegistry()`, `getDebtAllocator(vault)`.
+V3 introduces the concept of "categories" for vaults. This is because there will now potentially be multiple multi strategy vaults per underlying asset with the `category` signalling the difference.
+
+A vault `category` is appended to the vaults name and symbol that dictates what type of vault it is. For example, `1` vaults are the lowest risk and most similar to the V2 style vaults.

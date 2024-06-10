@@ -6,10 +6,10 @@ module.exports = {
       items: [
         'v3/overview',
         'v3/Integrating_v3',
+        'v3/strategy_writing_guide',
+        'v3/vault_management',
         'v3/periphery',
         'v3/protocol_fees',
-        'v3/vault_management',
-        'v3/strategy_writing_guide',
       ],
     },
     {
