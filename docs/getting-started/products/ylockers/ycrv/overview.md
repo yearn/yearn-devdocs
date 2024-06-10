@@ -2,11 +2,25 @@
 
 ![](https://i.imgur.com/ni42qE6.png)
 
-## What is yCRV
+## What is yCRV?
 
-yCRV is Yearn's new and improved veCRV wrapper system designed to tokenize the different benefits of Yearn's veCRV position. This system is composed of a [`base-token`](#base-token) called yCRV as well as 3 derivative tokens called [`activated tokens`](#activated-tokens).
+yCRV is Yearn's veCRV yLocker product. It is designed to tokenize the different benefits of a veCRV position in a simple, user-friendly way. Let's review the basics of liquid locker tokens like yCRV:
 
-### Base-token
+- They represent 1 veCRV max-locked to Yearn
+- They are not redeemable for the underlying locked CRV
+- They have no transfer restrictions and thus can always be swapped in DEX pools
+
+For more information about Yearn's Liquid Lockers, read the overview [here](../overview.md).
+
+## Get yCRV
+
+yCRV is a wrapped version of CRV. But unlike other wrapped tokens like WETH, it cannot be unwrapped as it is forever max-locked into the veCRV system. Unlike veCRV, it can be swapped on DEXes.
+
+If you have CRV tokens, you can convert them to yCRV either by minting yCRV at a 1:1 rate at https://ycrv.yearn.fi/app/get. You can also buy yCRV
+
+## Earn Yield on yCRV
+
+Each week, Yearn's veCRV position earns revenue from protocol fees and bribes. This is converted to crvUSD stablecoin and distributed to yCRV stakers at the start of the week.
 
 yCRV is the base-token, which carries no native rewards, but lets users easily enter into the other 'activated' tokens that do.
 
