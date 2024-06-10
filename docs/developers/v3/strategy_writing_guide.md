@@ -77,9 +77,7 @@ The only default global variables from the BaseStrategy that can be accessed fro
 
 If other global variables are needed for your specific strategy, you can use the `TokenizedStrategy` variable to quickly retrieve any other needed variables, such as `totalAssets`, `isShutdown` etc.
 
-Example:
-
-```markdown
+```solidity title="Example"
 require(!TokenizedStrategy.isShutdown(), "strategy is shutdown");
 ```
 
@@ -106,9 +104,7 @@ ___
 
 - Override `availableDepositLimit` with any needed checks like protocol deposit limits or current status. This will alleviate the need to check any of these things during `_deployFunds` since `availableDepositLimit` is called during every deposit to check for restrictions.
 
-**Example**:
-
-```markdown
+```solidity title="_deployFunds() Example"
 function _deployFunds(uint256 _amount) internal override \{
     yieldSource.deposit(address(asset), _amount);
 }
@@ -140,9 +136,7 @@ ___
 - **Any difference between the `_amount` parameter and the actual amount withdrawn will count as a loss and be passed on to the withdrawer.**
 - If your strategy is illiquid or can not always service full withdraws, you can limit the amount by overriding `availableWithdrawLimit` outlined below.
 
-**Example**:
-
-```markdown
+```solidity title="_freeFunds() Example"
 function _freeFunds(uint256_amount) internal override {
     yieldSource.withdraw(address(asset), _amount);
 }
@@ -172,9 +166,7 @@ ___
 - The returned value is used to account for all strategy profits, losses and fees so care should be taken when relying on oracle values, LP prices etc. that have the potential to be manipulated.
 - This can still be called after a strategy has been shut down so you may want to check if the strategy is shut down before performing certain functions like re-deploying loose funds.
 
-**Example**:
-
-```markdown
+```solidity title="_harvestAndReport() Example"
 function _harvestAndReport() internal override returns (uint256 _totalAssets) {
     // Only harvest and redeploy if the strategy is not shutdown.
     if(!TokenizedStrategy.isShutdown()) {
@@ -231,9 +223,7 @@ While that may be all that's necessary for some of the most straightforward stra
 - Check all values for the protocol you are integrating with that may cause deposits to revert.
 - Make sure to implement setter functions for any deposit limit or whitelist that are enforced.
 
-**Example**:
-
-```markdown
+```solidity title="availableDepositLimit() Example"
 function availableDepositLimit(
     address _owner
 ) public view override returns (uint256) { 
@@ -267,9 +257,7 @@ function availableDepositLimit(
     - To just allow the idle funds to be withdrawn use `asset.balanceOf(address(this))`.
     - This does not need to consider conversion rates from assets to shares. But you should know that any limit under uint256 max may get converted to shares and should not be high enough to overflow  on multiplication.
 
-    **Example #2**:
-
-    ```markdown
+    ```solidity title="availableWithdrawLimit() Example"
     function availableWithdrawLimit(
         address _owner
     ) public view override returns (uint256) {
@@ -278,8 +266,7 @@ function availableDepositLimit(
         }
         
         // Return both the loose balance and the current liqudity of the yield source.
-        return asset.balanceOf(address(this)) + asset.balanceOf(address(yieldSource));
-        
+        return asset.balanceOf(address(this)) + asset.balanceOf(address(yieldSource));   
     }
     ```
 
@@ -303,7 +290,7 @@ function availableDepositLimit(
 
     **Example**:
 
-    ```markdown
+    ```solidity title="_tend() Example"
     function _tend(uint256 _totalIdle) internal override {
         if (currentLTV() < targetLTV()) {
             _leverUp(_totalIdle);
@@ -331,7 +318,7 @@ function availableDepositLimit(
 
     **Example**:
 
-    ```markdown
+    ```solidity title="_tendTrigger() Example"
     function _tendTrigger() public view override returns (bool) {
         if (currentLTV() > warningLTV()) {
             return true;
@@ -361,7 +348,7 @@ function availableDepositLimit(
 
     **Example**:
 
-    ```markdown
+    ```solidity title="_emergencyWithdraw() Example"
         function _emergencyWithdraw(uint256 _amount) internal override {
         _amount = min(_amount, yieldSource.balanceOf(address(this)));
         _freeFunds(_amount);
@@ -412,16 +399,12 @@ The expected behavior is that strategies report profits/losses on a schedule bas
 
 Due to the nature of the BaseStrategy utilizing an external contract for most of its logic, the default interface for any strategy will not allow proper testing of all functions. Testing of your Strategy should utilize the pre-built [IStrategyInterface](https://github.com/yearn/tokenized-strategy-foundry-mix/blob/master/src/interfaces/IStrategyInterface.sol) to cast any deployed strategy through for testing, as seen in the testing setups in each mix. You can add any external functions you add for your specific strategy to this interface to test all functions with one variable.
 
-Foundry Example:
-
-```markdown
+```solidity title="Foundry Example"
 Strategy _strategy = new Strategy(asset, name);
 IStrategyInterface strategy =  IStrategyInterface(address(_strategy));
 ```
 
-Ape Example:
-
-```markdown
+```solidity title="Ape Example"
 strategy = management.deploy(project.Strategy, asset, name)
 strategy =  project.IStrategyInterface.at(strategy.address)
 ```

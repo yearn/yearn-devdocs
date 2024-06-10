@@ -40,9 +40,8 @@ The vault should be automatically verified when deployed. However, if it is not 
 
 Once deployed, additional setup steps and variables can be configured if desired.
 
-#### Roles
+### Roles
 
----
 The first is to set up the Roles for your specific vault. The vaults use a role-based system for access control to the permissioned functions. The roles are a [Vyper Enumerator](https://docs.vyperlang.org/en/stable/types.html#enums) pattern based on Pythons.
 
 Each permissioned function in the Vaults has its own "role" that can call that specific function. For example, to call `add_strategy(new_strategy: address)` the address must have the `ADD_STRATEGY_MANAGER` role. Roles can be held by any number of addresses or by no address.
@@ -57,39 +56,36 @@ To give an account a specific role you can simply call `vault.set_role(account, 
 
 The role manager can also use `vault.add_role(account, role_to_add)` to only add 1 new role to the existing roles that account already has. Or `vault.remove_role(account, role_to_remove)` to remove just one role without overriding the full bitmap.
 
-```markdown title="Example:"
+```solidity title="Examples"
+# Set `account` to be the ADD_STRATEGY_MANAGER
+vault.set_role(account, 1)
 
-    # Set `account` to be the ADD_STRATEGY_MANAGER
-    vault.set_role(account, 1)
-    
-    # Set `account` to be both the ADD_STRATEGY_MANAGER and REVOKE_STRATEGY_MANAGER
-    vault.set_role(account, 3)
-    
-    # Add the REPORTING_MANAGER role to the accounts already held roles.
-    vault.add_role(account, 32)
-    
-    # Remove just the REVOKE_STRATEGY_MANAGER role.
-    vault.remove_role(account, 2)
-    
-    # Set `account` to hold every role
-    vault.set_role(account, 16383)
-    
-    # Set `account` to hold no roles
-    vault.set_role(account, 0)
+# Set `account` to be both the ADD_STRATEGY_MANAGER and REVOKE_STRATEGY_MANAGER
+vault.set_role(account, 3)
+
+# Add the REPORTING_MANAGER role to the accounts already held roles.
+vault.add_role(account, 32)
+
+# Remove just the REVOKE_STRATEGY_MANAGER role.
+vault.remove_role(account, 2)
+
+# Set `account` to hold every role
+vault.set_role(account, 16383)
+
+# Set `account` to hold no roles
+vault.set_role(account, 0)
 ```
 
 NOTE: The vault `role_manager` can not call any permissioned function by default, and would have to give itself any roles that it should have.
 
-#### Deposit Limit
+### Deposit Limit
 
----
 Each vault will default to have a deposit limit set to 0. Which means all deposits will revert.
 
 Once ready, the address with the DEPOSIT_LIMIT_MANAGER will need to either set a deposit_limit > 0 or add a deposit_limit_module.
 
-#### Miscellaneous
+### Miscellaneous
 
----
 There are other options that a vault manager can set that are not necessary for the vault to function but may be desired for further customization.
 
 - **minimum_total_idle**: An amount specified in the underlying asset that the vault will force to remain free in the vault during debt updates to make servicing withdraws cheaper.
@@ -97,7 +93,7 @@ There are other options that a vault manager can set that are not necessary for 
 
 ## Running the Vault
 
-#### Strategy Management
+### Strategy Management
 
 The job of a vault is to manage debt between strategies that do the yield generation. 3 roles control what strategies are added to the vault, ADD_STRATEGY_MANAGER, REVOKE_STRATEGY_MANAGER, and FORCE_REVOKE_MANAGER.
 
@@ -115,7 +111,7 @@ If a strategy has issues and cannot pay all of its debt back `vault.force_revoke
 
 NOTE: Forcefully removing a strategy that still has debt will cause a loss to be recorded and a reduction of Price Per Share.
 
-#### Debt Updates
+### Debt Updates
 
 The DEBT_MANAGER role is in charge of allocating funds between the strategies added to a vault.
 
@@ -131,7 +127,7 @@ Debt updates also come with an optional `max_loss` parameter that is recommended
 
 **NOTE**: It is recommended to report a strategy's gain before withdrawing 100% of debt from the strategy.
 
-#### Reporting
+### Reporting
 
 To properly record any profits/losses from a strategy, charge fees, and lock profits for distribution to depositors, the REPORTING_MANAGER will need to "report" for each strategy via `vault.process_report(strategy)`.
 
@@ -143,7 +139,7 @@ NOTE: To charge fees you will need first to have added an 'accountant' to your v
 
 ## Customization
 
-#### Accountant
+### Accountant
 
 You will need to add a separate contract as the vault's 'accountant' to charge fees.
 

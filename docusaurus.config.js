@@ -14,6 +14,9 @@ export default {
   organizationName: 'yearn', // Usually your GitHub org/user name.
   projectName: 'yearn-devdocs', // Usually your repo name.
   themeConfig: {
+    prism: {
+      additionalLanguages: ['solidity'],
+    },
     algolia: {
       apiKey: process.env.ALGOLIA_API_KEY || 'UNKNOWN',
       indexName: process.env.ALGOLIA_INDEX_NAME || 'UNKNOWN',
