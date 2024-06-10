@@ -4,7 +4,7 @@ V3 makes it as simple as possible for anyone to deploy and manage their Vaults. 
 
 In V3 our "Allocator Vaults" or "Meta of Vaults" are designed to be efficient 4626 compliant debt allocators that can have many different "strategies" attached to them and will direct funds to these strategies based on the vault's management choice. The vaults are built to be "plug and play" meaning managers can simply deploy, add their strategies, and start the yield generation. But they also hold many customization factors, allowing different managers to differentiate themselves and experiment with different optionality.
 
-Running your vault requires no need to know how to code. Anyone desiring to manage their strategies and allocations can simply deploy and run their vault. 
+Running your vault requires no need to know how to code. Anyone desiring to manage their strategies and allocations can simply deploy and run their vault.
 
 ## Definitions
 
@@ -14,14 +14,13 @@ Running your vault requires no need to know how to code. Anyone desiring to mana
 - **debt**: The amount of the underlying asset that an allocator vault has sent to a strategy to earn yield.
 - **report**: The function where a vault accounts for any profits or losses a strategy has accrued, charges applicable fees, and locks profit to be distributed to depositors.
 
-
 ## Deployment
 
 Each release of the vaults will have its own "Vault Factory" deployed to make it as simple and trustless as possible to deploy your vault. The vault factory allows anyone to trustlessly deploy their own vault which is an exact copy of the previously deployed "original" vault for that specific version.
 
 **Vaults not deployed through the factory will not be recognized as part of the Yearn ecosystem and may experience issues during runtime.
 
-To deploy your vault, simply find the factory's address for the most recent release [here](https://docs.yearn.fi/developers/v3/overview) and call `Factory.deploy_new_vault(params)`.
+To deploy your vault, simply find the factory's address for the most recent release [here](/developers/v3/overview) and call `Factory.deploy_new_vault(params)`.
 
 The needed parameters are:
 
@@ -42,10 +41,11 @@ The vault should be automatically verified when deployed. However, if it is not 
 Once deployed, additional setup steps and variables can be configured if desired.
 
 #### Roles
----
-The first is to set up the Roles for your specific vault. The vaults use a role-based system for access control to the permissioned functions. The roles are a [Vyper Enumerator](https://docs.vyperlang.org/en/stable/types.html#enums) pattern based on Pythons. 
 
-Each permissioned function in the Vaults has its own "role" that can call that specific function. For example, to call `add_strategy(new_strategy: address)` the address must have the `ADD_STRATEGY_MANAGER` role. Roles can be held by any number of addresses or by no address. 
+---
+The first is to set up the Roles for your specific vault. The vaults use a role-based system for access control to the permissioned functions. The roles are a [Vyper Enumerator](https://docs.vyperlang.org/en/stable/types.html#enums) pattern based on Pythons.
+
+Each permissioned function in the Vaults has its own "role" that can call that specific function. For example, to call `add_strategy(new_strategy: address)` the address must have the `ADD_STRATEGY_MANAGER` role. Roles can be held by any number of addresses or by no address.
 
 The same address can hold every role, each role can be held by a different address or any combination desired.
 
@@ -57,7 +57,7 @@ To give an account a specific role you can simply call `vault.set_role(account, 
 
 The role manager can also use `vault.add_role(account, role_to_add)` to only add 1 new role to the existing roles that account already has. Or `vault.remove_role(account, role_to_remove)` to remove just one role without overriding the full bitmap.
 
-Example:
+```markdown title="Example:"
 
     # Set `account` to be the ADD_STRATEGY_MANAGER
     vault.set_role(account, 1)
@@ -76,18 +76,19 @@ Example:
     
     # Set `account` to hold no roles
     vault.set_role(account, 0)
-    
+```
 
 NOTE: The vault `role_manager` can not call any permissioned function by default, and would have to give itself any roles that it should have.
 
 #### Deposit Limit
+
 ---
 Each vault will default to have a deposit limit set to 0. Which means all deposits will revert.
 
 Once ready, the address with the DEPOSIT_LIMIT_MANAGER will need to either set a deposit_limit > 0 or add a deposit_limit_module.
 
-
 #### Miscellaneous
+
 ---
 There are other options that a vault manager can set that are not necessary for the vault to function but may be desired for further customization.
 
@@ -97,11 +98,12 @@ There are other options that a vault manager can set that are not necessary for 
 ## Running the Vault
 
 #### Strategy Management
-The job of a vault is to manage debt between strategies that do the yield generation. 3 roles control what strategies are added to the vault, ADD_STRATEGY_MANAGER, REVOKE_STRATEGY_MANAGER, and FORCE_REVOKE_MANAGER. 
+
+The job of a vault is to manage debt between strategies that do the yield generation. 3 roles control what strategies are added to the vault, ADD_STRATEGY_MANAGER, REVOKE_STRATEGY_MANAGER, and FORCE_REVOKE_MANAGER.
 
 A strategy can be any contract that has the needed [4626 interface](https://github.com/yearn/yearn-vaults-v3/blob/master/contracts/VaultV3.vy#L39) for the vault to interact with it. This includes Tokenized Strategies, 3rd party 4626 vaults, and other  allocator vaults.
 
-To add a strategy first call `vault.add_strategy(strategy_address)`. 
+To add a strategy first call `vault.add_strategy(strategy_address)`.
 
 Each strategy gets added with a default 'max_debt' of 0. This means the MAX_DEBT_MANAGER will need to call `vault.update_max_debt_for_strategy(strategy, max_debt)`.
 
@@ -112,6 +114,7 @@ To remove a strategy, first remove all the debt from the strategy and then call 
 If a strategy has issues and cannot pay all of its debt back `vault.force_revoke_strategy(strategy)` can be used to forcefully remove the strategy.
 
 NOTE: Forcefully removing a strategy that still has debt will cause a loss to be recorded and a reduction of Price Per Share.
+
 #### Debt Updates
 
 The DEBT_MANAGER role is in charge of allocating funds between the strategies added to a vault.
@@ -174,7 +177,7 @@ If a different ordering is desired or management wants to remove a certain strat
 
 Where `new_default_queue` is an array of strategies with a max length of 10, in which all strategies are currently active in the vault.
 
-The vaults QUEUE_MANAGER can also choose to not allow custom queues to be passed into the vault on withdraws at any time by turning on the 'use_default_queue' flag by calling, `vault.set_use_default_queue(True)`. 
+The vaults QUEUE_MANAGER can also choose to not allow custom queues to be passed into the vault on withdraws at any time by turning on the 'use_default_queue' flag by calling, `vault.set_use_default_queue(True)`.
 
 ## Good to Know
 
@@ -183,6 +186,7 @@ The vaults QUEUE_MANAGER can also choose to not allow custom queues to be passed
 There are certain tokens whose native behavior makes them incompatible with being the underlying asset of a vault and should be avoided.
 
 A few examples of this are:
+
 - Rebasing Tokens
 - Fee on Transfer
 - Reentrancy Tokens (ERC-777)

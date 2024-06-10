@@ -14,7 +14,7 @@ The most significant update to Yearn V3 from V2 was the introduction of "Tokeniz
 ## Get started
 
 - [Integrating V3](/developers/v3/integrating_v3)
-- [Periphery Contracts](/devlopers/v3/periphery)
+- [Periphery Contracts](/developers/v3/periphery)
 - [Protocol Fees](/developers/v3/protocol_fees)
 - [Deploying and managing a V3 Vault](/developers/v3/vault_management)
 - [Building your own V3 Strategy](/developers/v3/strategy_writing_guide)
@@ -29,22 +29,22 @@ Deployments are done using create2 factories and should be stable across all EVM
 
 :::
 
-- Protocol Address Provider: `0x1e9778aAD41Aa3E0884C276fB4C2D03C4036Aa0B`
+### Protocol Address Provider
 
-**Note**: All other generic Periphery contracts and factories can be retrieved on chain from the Address Provider
+All generic periphery contracts and factories can be retrieved on chain from the Address Provider: [`0x1e9778aAD41Aa3E0884C276fB4C2D03C4036Aa0B`](https://etherscan.io/address/0x1e9778aAD41Aa3E0884C276fB4C2D03C4036Aa0B#readContract)
 
 ### Version 3.0.2
 
-- Vault original : `0x1ab62413e0cf2eBEb73da7D40C70E7202ae14467`
-- VaultFactory : `0x444045c5C13C246e117eD36437303cac8E250aB0`
-- TokenizedStrategy : `0xBB51273D6c746910C7C06fe718f30c936170feD0`
+- Vault original : [`0x1ab62413e0cf2eBEb73da7D40C70E7202ae14467`](https://etherscan.io/address/0x1ab62413e0cf2eBEb73da7D40C70E7202ae14467#readContract)
+- VaultFactory : [`0x444045c5C13C246e117eD36437303cac8E250aB0`](https://etherscan.io/address/0x444045c5C13C246e117eD36437303cac8E250aB0#readContract)
+- TokenizedStrategy : [`0xBB51273D6c746910C7C06fe718f30c936170feD0`](https://etherscan.io/address/0xBB51273D6c746910C7C06fe718f30c936170feD0#readContract)
 
 ### Version 3.0.1
 
-- Vault BluePrint: `0xDE992C652b266AE649FEC8048aFC35954Bee6145`
-- VaultFactory: `0xE9E8C89c8Fc7E8b8F23425688eb68987231178e5`
-- TokenizedStrategy: `0xDFC8cD9F2f2d306b7C0d109F005DF661E14f4ff2`
+- Vault ERC-5202 BluePrint: [`0xDE992C652b266AE649FEC8048aFC35954Bee6145`](https://etherscan.io/address/0xDE992C652b266AE649FEC8048aFC35954Bee6145#readContract)
+- VaultFactory: [`0xE9E8C89c8Fc7E8b8F23425688eb68987231178e5`](https://etherscan.io/address/0xE9E8C89c8Fc7E8b8F23425688eb68987231178e5#readContract)
+- TokenizedStrategy: [`0xDFC8cD9F2f2d306b7C0d109F005DF661E14f4ff2`](https://etherscan.io/address/0xDFC8cD9F2f2d306b7C0d109F005DF661E14f4ff2#readContract)
 
-For Yearn specific implementation addresses check [Contract Addresses](https://docs.yearn.fi/getting-started/products/addresses)
+For Yearn specific implementation addresses check [Contract Addresses](/getting-started/products/addresses)
 
 **If a contract has not been deployed on a specific chain it can be done permissionlessly using the scripts in the relevant GitHub repo. Or reach out to a Yearn contributor for help.**
