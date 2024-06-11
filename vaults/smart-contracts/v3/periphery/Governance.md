@@ -1,5 +1,5 @@
 # Governance
-[Git Source](https://github.com/yearn/tokenized-strategy-periphery/blob/aa404867f4e02afd209e27f2544a6ac0e1f4fb89/src/utils/Governance.sol)
+[Git Source](https://github.com/yearn/tokenized-strategy-periphery/blob/master/src/utils/Governance.sol)
 
 
 ## State Variables
@@ -63,7 +63,7 @@ event GovernanceTransferred(address indexed previousGovernance, address indexed 
 ```
 
 # Governance2Step
-[Git Source](https://github.com/yearn/tokenized-strategy-periphery/blob/aa404867f4e02afd209e27f2544a6ac0e1f4fb89/src/utils/Governance2Step.sol)
+[Git Source](https://github.com/yearn/tokenized-strategy-periphery/blob/master/src/utils/Governance2Step.sol)
 
 **Inherits:**
 Governance

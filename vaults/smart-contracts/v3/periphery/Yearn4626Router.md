@@ -1,5 +1,5 @@
 # Yearn4626Router
-[Git Source](https://github.com/yearn/Yearn-ERC4626-Router/blob/68165774ec8858b43db24620756402def14b7ec1/src/Yearn4626Router.sol)
+[Git Source](https://github.com/yearn/Yearn-ERC4626-Router/blob/master/src/Yearn4626Router.sol)
 
 
 Router that is meant to be used with Yearn V3 vaults and strategies

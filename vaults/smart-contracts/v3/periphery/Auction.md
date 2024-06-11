@@ -1,5 +1,5 @@
 # Auction
-[Git Source](https://github.com/Schlagonia/tokenized-strategy-periphery/blob/aa404867f4e02afd209e27f2544a6ac0e1f4fb89/src/Auctions/Auction.sol)
+[Git Source](https://github.com/yearn/tokenized-strategy-periphery/blob/master/src/Auctions/Auction.sol)
 
 **Inherits:**
 [Governance](/Governance), ReentrancyGuard
