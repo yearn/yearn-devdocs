@@ -54,7 +54,7 @@ constructor(address _governance) Governance(_governance);
 Get the current APR a strategy is earning.
 
 *Will revert if an oracle has not been set for that strategy.
-This will be different than the {getExpectedApr()} which returns
+This will be different than the [getExpectedApr](#getexpectedapr) which returns
 the current APR based off of previously reported profits that
 are currently unlocking.
 This will return the APR the strategy is currently earning that

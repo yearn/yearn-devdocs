@@ -552,7 +552,7 @@ function previewRedeem(uint256 shares) external view returns (uint256);
 
 Total number of underlying assets that can
 be deposited by `_owner` into the strategy, where `owner`
-corresponds to the receiver of a [deposit](/src/TokenizedStrategy.sol/contract.TokenizedStrategy.md#deposit) call.
+corresponds to the receiver of a [deposit](#deposit) call.
 
 
 ```solidity
@@ -575,7 +575,7 @@ function maxDeposit(address owner) external view returns (uint256);
 
 Total number of shares that can be minted by `owner`
 into the strategy, where `_owner` corresponds to the receiver
-of a [mint](/src/TokenizedStrategy.sol/contract.TokenizedStrategy.md#mint) call.
+of a [mint](#mint) call.
 
 
 ```solidity
@@ -598,7 +598,7 @@ function maxMint(address owner) external view returns (uint256);
 
 Total number of underlying assets that can be
 withdrawn from the strategy by `owner`, where `owner`
-corresponds to the msg.sender of a [redeem](/src/TokenizedStrategy.sol/contract.TokenizedStrategy.md#redeem) call.
+corresponds to the msg.sender of a [redeem](#redeem) call.
 
 
 ```solidity
@@ -621,7 +621,7 @@ function maxWithdraw(address owner) external view returns (uint256);
 
 Total number of strategy shares that can be
 redeemed from the strategy by `owner`, where `owner`
-corresponds to the msg.sender of a [redeem](/src/TokenizedStrategy.sol/contract.TokenizedStrategy.md#redeem) call.
+corresponds to the msg.sender of a [redeem](#redeem) call.
 
 
 ```solidity
@@ -642,7 +642,7 @@ function maxRedeem(address owner) external view returns (uint256);
 
 ### _totalAssets
 
-*Internal implementation of [totalAssets](/src/TokenizedStrategy.sol/contract.TokenizedStrategy.md#totalassets).*
+*Internal implementation of [totalAssets](#totalassets).*
 
 
 ```solidity
@@ -651,7 +651,7 @@ function _totalAssets(StrategyData storage S) internal view returns (uint256);
 
 ### _totalSupply
 
-*Internal implementation of [totalSupply](/src/TokenizedStrategy.sol/contract.TokenizedStrategy.md#totalsupply).*
+*Internal implementation of [totalSupply](#totalsupply).*
 
 
 ```solidity
@@ -660,7 +660,7 @@ function _totalSupply(StrategyData storage S) internal view returns (uint256);
 
 ### _convertToShares
 
-*Internal implementation of [convertToShares](/src/TokenizedStrategy.sol/contract.TokenizedStrategy.md#converttoshares).*
+*Internal implementation of [convertToShares](#converttoshares).*
 
 
 ```solidity
@@ -672,7 +672,7 @@ function _convertToShares(StrategyData storage S, uint256 assets, Math.Rounding 
 
 ### _convertToAssets
 
-*Internal implementation of [convertToAssets](/src/TokenizedStrategy.sol/contract.TokenizedStrategy.md#converttoassets).*
+*Internal implementation of [convertToAssets](#converttoassets).*
 
 
 ```solidity
@@ -684,7 +684,7 @@ function _convertToAssets(StrategyData storage S, uint256 shares, Math.Rounding 
 
 ### _maxDeposit
 
-*Internal implementation of [maxDeposit](/src/TokenizedStrategy.sol/contract.TokenizedStrategy.md#maxdeposit).*
+*Internal implementation of [maxDeposit](#maxdeposit).*
 
 
 ```solidity
@@ -693,7 +693,7 @@ function _maxDeposit(StrategyData storage S, address owner) internal view return
 
 ### _maxMint
 
-*Internal implementation of [maxMint](/src/TokenizedStrategy.sol/contract.TokenizedStrategy.md#maxmint).*
+*Internal implementation of [maxMint](#maxmint).*
 
 
 ```solidity
@@ -702,7 +702,7 @@ function _maxMint(StrategyData storage S, address owner) internal view returns (
 
 ### _maxWithdraw
 
-*Internal implementation of [maxWithdraw](/src/TokenizedStrategy.sol/contract.TokenizedStrategy.md#maxwithdraw).*
+*Internal implementation of [maxWithdraw](#maxwithdraw).*
 
 
 ```solidity
@@ -711,7 +711,7 @@ function _maxWithdraw(StrategyData storage S, address owner) internal view retur
 
 ### _maxRedeem
 
-*Internal implementation of [maxRedeem](/src/TokenizedStrategy.sol/contract.TokenizedStrategy.md#maxredeem).*
+*Internal implementation of [maxRedeem](#maxredeem).*
 
 
 ```solidity
@@ -720,7 +720,7 @@ function _maxRedeem(StrategyData storage S, address owner) internal view returns
 
 ### _deposit
 
-*Function to be called during [deposit](/src/TokenizedStrategy.sol/contract.TokenizedStrategy.md#deposit) and {mint}.
+*Function to be called during [deposit](#deposit) and [mint](#mint).
 This function handles all logic including transfers,
 minting and accounting.
 We do all external calls before updating any internal
@@ -734,7 +734,7 @@ function _deposit(StrategyData storage S, address receiver, uint256 assets, uint
 
 ### _withdraw
 
-*To be called during [redeem](/src/TokenizedStrategy.sol/contract.TokenizedStrategy.md#redeem) and {withdraw}.
+*To be called during [redeem](#redeem) and [withdraw](#withdraw).
 This will handle all logic, transfers and accounting
 in order to service the withdraw request.
 If we are not able to withdraw the full amount needed, it will
@@ -841,9 +841,9 @@ function tend() external nonReentrant onlyKeepers;
 Used to shutdown the strategy preventing any further deposits.
 
 *Can only be called by the current `management` or `emergencyAdmin`.
-This will stop any new [deposit](/src/TokenizedStrategy.sol/contract.TokenizedStrategy.md#deposit) or {mint} calls but will
-not prevent {withdraw} or {redeem}. It will also still allow for
-{tend} and {report} so that management can report any last losses
+This will stop any new [deposit](#deposit) or [mint](#mint) calls but will
+not prevent [withdraw](#withdraw) or [redeem](#redeem). It will also still allow for
+[tend](#tend) and [report](#report) so that management can report any last losses
 in an emergency as well as provide any maintenance to allow for full
 withdraw.
 This is a one way switch and can never be set back once shutdown.*
@@ -858,10 +858,10 @@ function shutdownStrategy() external onlyEmergencyAuthorized;
 To manually withdraw funds from the yield source after a
 strategy has been shutdown.
 
-*This can only be called post [shutdownStrategy](/src/TokenizedStrategy.sol/contract.TokenizedStrategy.md#shutdownstrategy).
+*This can only be called post [shutdownStrategy](#shutdownstrategy).
 This will never cause a change in PPS. Total assets will
 be the same before and after.
-A strategist will need to override the {_emergencyWithdraw} function
+A strategist will need to override the `_emergencyWithdraw` function
 in their strategy for this to work.*
 
 
@@ -1096,7 +1096,7 @@ function isShutdown() external view returns (bool);
 Step one of two to set a new address to be in charge of the strategy.
 
 *Can only be called by the current `management`. The address is
-set to pending management and will then have to call [acceptManagement](/src/TokenizedStrategy.sol/contract.TokenizedStrategy.md#acceptmanagement)
+set to pending management and will then have to call [acceptManagement](#acceptmanagement)
 in order for the 'management' to officially change.
 Cannot set `management` to address(0).*
 
@@ -1288,7 +1288,7 @@ function balanceOf(address account) external view returns (uint256);
 
 ### _balanceOf
 
-*Internal implementation of [balanceOf](/src/TokenizedStrategy.sol/contract.TokenizedStrategy.md#balanceof).*
+*Internal implementation of [balanceOf](#balanceof).*
 
 
 ```solidity
@@ -1326,9 +1326,9 @@ function transfer(address to, uint256 amount) external returns (bool);
 ### allowance
 
 Returns the remaining number of tokens that `spender` will be
-allowed to spend on behalf of `owner` through [transferFrom](/src/TokenizedStrategy.sol/contract.TokenizedStrategy.md#transferfrom). This is
+allowed to spend on behalf of `owner` through [transferFrom](#transferfrom). This is
 zero by default.
-This value changes when {approve} or {transferFrom} are called.
+This value changes when [approve](#approve) or [transferFrom](#transferFrom) are called.
 
 
 ```solidity
@@ -1350,7 +1350,7 @@ function allowance(address owner, address spender) external view returns (uint25
 
 ### _allowance
 
-*Internal implementation of [allowance](/src/TokenizedStrategy.sol/contract.TokenizedStrategy.md#allowance).*
+*Internal implementation of [allowance](#allowance).*
 
 
 ```solidity
@@ -1372,7 +1372,7 @@ transaction ordering. One possible solution to mitigate this race
 condition is to first reduce the spender's allowance to 0 and set the
 desired value afterwards:
 https://github.com/ethereum/EIPs/issues/20#issuecomment-263524729
-Emits an [Approval](/src/TokenizedStrategy.sol/contract.TokenizedStrategy.md#approval) event.*
+Emits an [Approval](#approval) event.*
 
 
 ```solidity
@@ -1399,7 +1399,7 @@ allowance mechanism. `amount` is then deducted from the caller's
 allowance.
 
 *
-Emits an [Approval](/src/TokenizedStrategy.sol/contract.TokenizedStrategy.md#approval) event indicating the updated allowance. This is not
+Emits an [Approval](#approval) event indicating the updated allowance. This is not
 required by the EIP.
 NOTE: Does not update the allowance if the current allowance
 is the maximum `uint256`.
@@ -1409,7 +1409,7 @@ Requirements:
 - `from` must have a balance of at least `amount`.
 - the caller must have allowance for ``from``'s tokens of at least
 `amount`.
-Emits a {Transfer} event.*
+Emits a Transfer event.*
 
 
 ```solidity
@@ -1433,9 +1433,9 @@ function transferFrom(address from, address to, uint256 amount) external returns
 ### _transfer
 
 *Moves `amount` of tokens from `from` to `to`.
-This internal function is equivalent to [transfer](/src/TokenizedStrategy.sol/contract.TokenizedStrategy.md#transfer), and can be used to
+This internal function is equivalent to [transfer](#transfer), and can be used to
 e.g. implement automatic token fees, slashing mechanisms, etc.
-Emits a {Transfer} event.
+Emits a `Transfer` event.
 Requirements:
 - `from` cannot be the zero address.
 - `to` cannot be the zero address.
@@ -1451,7 +1451,7 @@ function _transfer(StrategyData storage S, address from, address to, uint256 amo
 
 *Creates `amount` tokens and assigns them to `account`, increasing
 the total supply.
-Emits a [Transfer](/src/TokenizedStrategy.sol/contract.TokenizedStrategy.md#transfer) event with `from` set to the zero address.
+Emits a [Transfer](#transfer) event with `from` set to the zero address.
 Requirements:
 - `account` cannot be the zero address.*
 
@@ -1464,7 +1464,7 @@ function _mint(StrategyData storage S, address account, uint256 amount) internal
 
 *Destroys `amount` tokens from `account`, reducing the
 total supply.
-Emits a [Transfer](/src/TokenizedStrategy.sol/contract.TokenizedStrategy.md#transfer) event with `to` set to the zero address.
+Emits a [Transfer](#transfer) event with `to` set to the zero address.
 Requirements:
 - `account` cannot be the zero address.
 - `account` must have at least `amount` tokens.*
@@ -1479,7 +1479,7 @@ function _burn(StrategyData storage S, address account, uint256 amount) internal
 *Sets `amount` as the allowance of `spender` over the `owner` s tokens.
 This internal function is equivalent to `approve`, and can be used to
 e.g. set automatic allowances for certain subsystems, etc.
-Emits an [Approval](/src/TokenizedStrategy.sol/contract.TokenizedStrategy.md#approval) event.
+Emits an [Approval](#approval) event.
 Requirements:
 - `owner` cannot be the zero address.
 - `spender` cannot be the zero address.*
@@ -1494,7 +1494,7 @@ function _approve(StrategyData storage S, address owner, address spender, uint25
 *Updates `owner` s allowance for `spender` based on spent `amount`.
 Does not update the allowance amount in case of infinite allowance.
 Revert if not enough allowance is available.
-Might emit an [Approval](/src/TokenizedStrategy.sol/contract.TokenizedStrategy.md#approval) event.*
+Might emit an [Approval](#approval) event.*
 
 
 ```solidity
@@ -1504,9 +1504,9 @@ function _spendAllowance(StrategyData storage S, address owner, address spender,
 ### nonces
 
 Returns the current nonce for `owner`. This value must be
-included whenever a signature is generated for [permit](/src/TokenizedStrategy.sol/contract.TokenizedStrategy.md#permit).
+included whenever a signature is generated for [permit](#permit).
 
-*Every successful call to [permit](/src/TokenizedStrategy.sol/contract.TokenizedStrategy.md#permit) increases ``owner``'s nonce by one. This
+*Every successful call to [permit](#permit) increases ``owner``'s nonce by one. This
 prevents a signature from being used multiple times.*
 
 
@@ -1533,7 +1533,7 @@ given ``owner``'s signed approval.
 
 *IMPORTANT: The same issues [IERC20-approve](/lib/erc4626-tests/ERC4626.prop.sol/interface.IERC20.md#approve) has related to transaction
 ordering also apply here.
-Emits an {Approval} event.
+Emits an Approval event.
 Requirements:
 - `spender` cannot be the zero address.
 - `deadline` must be a timestamp in the future.
@@ -1553,7 +1553,7 @@ function permit(address owner, address spender, uint256 value, uint256 deadline,
 ### DOMAIN_SEPARATOR
 
 Returns the domain separator used in the encoding of the signature
-for [permit](/src/TokenizedStrategy.sol/contract.TokenizedStrategy.md#permit), as defined by {EIP712}.
+for [permit](#permit), as defined by {EIP712}.
 
 *This checks that the current chain id is the same as when the contract
 was deployed to prevent replay attacks. If false it will calculate a new
@@ -1567,13 +1567,13 @@ function DOMAIN_SEPARATOR() public view returns (bytes32);
 
 |Name|Type|Description|
 |----|----|-----------|
-|`<none>`|`bytes32`|. The domain separator that will be used for any [permit](/src/TokenizedStrategy.sol/contract.TokenizedStrategy.md#permit) calls.|
+|`<none>`|`bytes32`|. The domain separator that will be used for any [permit](#permit) calls.|
 
 
 ### _computeDomainSeparator
 
 *Calculates and returns the domain separator to be used in any
-permit functions for the strategies [permit](/src/TokenizedStrategy.sol/contract.TokenizedStrategy.md#permit) calls.
+permit functions for the strategies [permit](#permit) calls.
 This will be used at the initialization of each new strategies storage.
 It would then be used in the future in the case of any forks in which
 the current chain id is not the same as the original.*
@@ -1685,7 +1685,7 @@ event UpdatePendingManagement(address indexed newPendingManagement);
 
 ### Approval
 Emitted when the allowance of a `spender` for an `owner` is set by
-a call to [approve](/src/TokenizedStrategy.sol/contract.TokenizedStrategy.md#approve). `value` is the new allowance.
+a call to [approve](#approve). `value` is the new allowance.
 
 
 ```solidity
