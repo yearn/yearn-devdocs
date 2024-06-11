@@ -1531,9 +1531,6 @@ function nonces(address _owner) external view returns (uint256);
 Sets `value` as the allowance of `spender` over ``owner``'s tokens,
 given ``owner``'s signed approval.
 
-*IMPORTANT: The same issues [IERC20-approve](/lib/erc4626-tests/ERC4626.prop.sol/interface.IERC20.md#approve) has related to transaction
-ordering also apply here.
-
 Emits an Approval event.
 
 Requirements:
@@ -1543,8 +1540,7 @@ Requirements:
 over the EIP712-formatted function arguments.
 - the signature must use ``owner``'s current nonce (see [`nonces`](#nonces)).
 For more information on the signature format, see the
-https://eips.ethereum.org/EIPS/eip-2612#specification[relevant EIP
-section].*
+https://eips.ethereum.org/EIPS/eip-2612#specification.
 
 
 ```solidity
