@@ -1533,7 +1533,9 @@ given ``owner``'s signed approval.
 
 *IMPORTANT: The same issues [IERC20-approve](/lib/erc4626-tests/ERC4626.prop.sol/interface.IERC20.md#approve) has related to transaction
 ordering also apply here.
+
 Emits an Approval event.
+
 Requirements:
 - `spender` cannot be the zero address.
 - `deadline` must be a timestamp in the future.
