@@ -1,5 +1,5 @@
 # TokenizedStrategy
-[Git Source](https://github.com/yearn/yearn-base-strategy/blob/cf791a6f2d360e5c33866c9f0de10e83085920e9/src/TokenizedStrategy.sol)
+[Git Source](https://github.com/yearn/tokenized-strategy/blob/v3.0.2-1/src/TokenizedStrategy.sol)
 
 **Author:**
 yearn.finance
@@ -1531,18 +1531,16 @@ function nonces(address _owner) external view returns (uint256);
 Sets `value` as the allowance of `spender` over ``owner``'s tokens,
 given ``owner``'s signed approval.
 
-*IMPORTANT: The same issues [IERC20-approve](/lib/erc4626-tests/ERC4626.prop.sol/interface.IERC20.md#approve) has related to transaction
-ordering also apply here.
 Emits an Approval event.
+
 Requirements:
 - `spender` cannot be the zero address.
 - `deadline` must be a timestamp in the future.
 - `v`, `r` and `s` must be a valid `secp256k1` signature from `owner`
 over the EIP712-formatted function arguments.
-- the signature must use ``owner``'s current nonce (see {nonces}).
+- the signature must use ``owner``'s current nonce (see [`nonces`](#nonces)).
 For more information on the signature format, see the
-https://eips.ethereum.org/EIPS/eip-2612#specification[relevant EIP
-section].*
+https://eips.ethereum.org/EIPS/eip-2612#specification.
 
 
 ```solidity

@@ -1,8 +1,8 @@
 # AprOracle
-[Git Source](https://github.com/yearn/tokenized-strategy-periphery/blob/aa404867f4e02afd209e27f2544a6ac0e1f4fb89/src/AprOracle/AprOracle.sol)
+[Git Source](https://github.com/yearn/tokenized-strategy-periphery/blob/master/src/AprOracle/AprOracle.sol)
 
 **Inherits:**
-[Governance](/Governance.md)
+[Governance](/Governance)
 
 **Author:**
 Yearn.finance
