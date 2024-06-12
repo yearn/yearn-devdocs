@@ -1,6 +1,6 @@
 # Clonable
 
-[Git Source](https://github.com/yearn/tokenized-strategy-periphery/blob/aa404867f4e02afd209e27f2544a6ac0e1f4fb89/src/utils/Clonable.sol)
+[Git Source](https://github.com/yearn/tokenized-strategy-periphery/blob/naster/src/utils/Clonable.sol)
 
 ## State Variables
 

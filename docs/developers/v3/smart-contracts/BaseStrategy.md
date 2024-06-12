@@ -1,6 +1,6 @@
 # BaseStrategy
 
-[Git Source](https://github.com/yearn/yearn-base-strategy/blob/cf791a6f2d360e5c33866c9f0de10e83085920e9/src/BaseStrategy.sol)
+[Git Source](https://github.com/yearn/tokenized-strategy/blob/v3.0.2-1/src/BaseStrategy.sol)
 
 **Author:**
 yearn.finance

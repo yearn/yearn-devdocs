@@ -1,9 +1,9 @@
 # CommonReportTrigger
 
-[Git Source](https://github.com/yearn/tokenized-strategy-periphery/blob/aa404867f4e02afd209e27f2544a6ac0e1f4fb89/src/ReportTrigger/CommonReportTrigger.sol)
+[Git Source](https://github.com/yearn/tokenized-strategy-periphery/blob/master/src/ReportTrigger/CommonReportTrigger.sol)
 
 **Inherits:**
-[Governance](/Governance)
+[Governance](./Governance)
 
 **Author:**
 Yearn.finance

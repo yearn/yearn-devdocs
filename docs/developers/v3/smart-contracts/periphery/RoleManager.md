@@ -3,7 +3,7 @@
 [Git Source](https://github.com/yearn/vault-periphery/blob/master/contracts/Managers/RoleManager.sol)
 
 **Inherits:**
-[Governance2Step](/src/utils/Governance2Step.sol/contract.Governance2Step.md)
+[Governance2Step](./Governance2Step)
 
 ## State Variables
 
