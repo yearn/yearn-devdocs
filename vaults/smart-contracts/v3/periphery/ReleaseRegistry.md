@@ -2,7 +2,7 @@
 [Git Source](https://github.com/yearn/vault-periphery/blob/master/contracts/registry/ReleaseRegistry.sol)
 
 **Inherits:**
-[Governance](/src/utils/Governance.sol/contract.Governance.md)
+[Governance](/Governance)
 
 **Author:**
 yearn.finance
