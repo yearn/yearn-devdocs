@@ -1,22 +1,22 @@
 # AccountantFactory
+
 [Git Source](https://github.com/yearn/vault-periphery/blob/master/contracts/accountants/AccountantFactory.sol)
 
 *A factory contract for deploying Accountant contracts*
 
-
 ## State Variables
+
 ### defaultConfig
 
 ```solidity
 Accountant.Fee public defaultConfig;
 ```
 
-
 ## Functions
+
 ### constructor
 
 *Constructor initializes the default configuration*
-
 
 ```solidity
 constructor();
@@ -26,25 +26,24 @@ constructor();
 
 *Deploys a new Accountant contract with default configuration*
 
-
 ```solidity
 function newAccountant() external returns (address);
 ```
+
 **Returns**
 
 |Name|Type|Description|
 |----|----|-----------|
 |`<none>`|`address`|_newAccountant The address of the newly deployed Accountant contract|
 
-
 ### newAccountant
 
 *Deploys a new Accountant contract with specified fee manager and recipient*
 
-
 ```solidity
 function newAccountant(address feeManager, address feeRecipient) external returns (address);
 ```
+
 **Parameters**
 
 |Name|Type|Description|
@@ -58,11 +57,9 @@ function newAccountant(address feeManager, address feeRecipient) external return
 |----|----|-----------|
 |`<none>`|`address`|_newAccountant The address of the newly deployed Accountant contract|
 
-
 ### newAccountant
 
 *Deploys a new Accountant contract with specified fee configurations*
-
 
 ```solidity
 function newAccountant(
@@ -74,6 +71,7 @@ function newAccountant(
     uint16 defaultMaxLoss
 ) external returns (address);
 ```
+
 **Parameters**
 
 |Name|Type|Description|
@@ -91,11 +89,9 @@ function newAccountant(
 |----|----|-----------|
 |`<none>`|`address`|_newAccountant The address of the newly deployed Accountant contract|
 
-
 ### newAccountant
 
 *Deploys a new Accountant contract with specified fee configurations and addresses*
-
 
 ```solidity
 function newAccountant(
@@ -109,6 +105,7 @@ function newAccountant(
     uint16 defaultMaxLoss
 ) public returns (address _newAccountant);
 ```
+
 **Parameters**
 
 |Name|Type|Description|
@@ -128,11 +125,10 @@ function newAccountant(
 |----|----|-----------|
 |`_newAccountant`|`address`|The address of the newly deployed Accountant contract|
 
-
 ## Events
+
 ### NewAccountant
 
 ```solidity
 event NewAccountant(address indexed newAccountant);
 ```
-

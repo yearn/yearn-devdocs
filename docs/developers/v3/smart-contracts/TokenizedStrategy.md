@@ -1,4 +1,5 @@
 # TokenizedStrategy
+
 [Git Source](https://github.com/yearn/tokenized-strategy/blob/v3.0.2-1/src/TokenizedStrategy.sol)
 
 **Author:**
@@ -15,27 +16,26 @@ A strategist only needs to override a few simple functions that are
 focused entirely on the strategy specific needs to easily and cheaply
 deploy their own permissionless 4626 compliant vault.
 
-
 ## State Variables
-### API_VERSION
-API version this TokenizedStrategy implements.
 
+### API_VERSION
+
+API version this TokenizedStrategy implements.
 
 ```solidity
 string internal constant API_VERSION = "3.0.2";
 ```
 
-
 ### MAX_FEE
-Maximum in Basis Points the Performance Fee can be set to.
 
+Maximum in Basis Points the Performance Fee can be set to.
 
 ```solidity
 uint16 public constant MAX_FEE = 5_000;
 ```
 
-
 ### BASE_STRATEGY_STORAGE
+
 *Custom storage slot that will be used to store the
 `StrategyData` struct that holds each strategies
 specific storage variables.
@@ -48,26 +48,23 @@ storage slot that will allow for strategists to use any
 amount of storage in their strategy without worrying
 about collisions.*
 
-
 ```solidity
 bytes32 internal constant BASE_STRATEGY_STORAGE = bytes32(uint256(keccak256("yearn.base.strategy.storage")) - 1);
 ```
 
-
 ### FACTORY
-Address of the previously deployed Vault factory that the
 
+Address of the previously deployed Vault factory that the
 
 ```solidity
 address public immutable FACTORY;
 ```
 
-
 ## Functions
+
 ### onlyManagement
 
 *Require that the call is coming from the strategies management.*
-
 
 ```solidity
 modifier onlyManagement();
@@ -78,7 +75,6 @@ modifier onlyManagement();
 *Require that the call is coming from either the strategies
 management or the keeper.*
 
-
 ```solidity
 modifier onlyKeepers();
 ```
@@ -88,7 +84,6 @@ modifier onlyKeepers();
 *Require that the call is coming from either the strategies
 management or the emergencyAdmin.*
 
-
 ```solidity
 modifier onlyEmergencyAuthorized();
 ```
@@ -97,7 +92,6 @@ modifier onlyEmergencyAuthorized();
 
 *Prevents a contract from calling itself, directly or indirectly.
 Placed over all state changing functions for increased safety.*
-
 
 ```solidity
 modifier nonReentrant();
@@ -111,16 +105,15 @@ Require a caller is `management`.
 When the Strategy calls this the msg.sender would be the
 address of the strategy so we need to specify the sender.*
 
-
 ```solidity
 function requireManagement(address _sender) public view;
 ```
+
 **Parameters**
 
 |Name|Type|Description|
 |----|----|-----------|
 |`_sender`|`address`|The original msg.sender.|
-
 
 ### requireKeeperOrManagement
 
@@ -130,16 +123,15 @@ Require a caller is the `keeper` or `management`.
 When the Strategy calls this the msg.sender would be the
 address of the strategy so we need to specify the sender.*
 
-
 ```solidity
 function requireKeeperOrManagement(address _sender) public view;
 ```
+
 **Parameters**
 
 |Name|Type|Description|
 |----|----|-----------|
 |`_sender`|`address`|The original msg.sender.|
-
 
 ### requireEmergencyAuthorized
 
@@ -149,16 +141,15 @@ Require a caller is the `management` or `emergencyAdmin`.
 When the Strategy calls this the msg.sender would be the
 address of the strategy so we need to specify the sender.*
 
-
 ```solidity
 function requireEmergencyAuthorized(address _sender) public view;
 ```
+
 **Parameters**
 
 |Name|Type|Description|
 |----|----|-----------|
 |`_sender`|`address`|The original msg.sender.|
-
 
 ### _strategyStorage
 
@@ -167,7 +158,6 @@ specific `StrategyData` struct is stored for both read
 and write operations.
 This loads just the slot location, not the full struct
 so it can be used in a gas efficient manner.*
-
 
 ```solidity
 function _strategyStorage() internal pure returns (StrategyData storage S);
@@ -185,7 +175,6 @@ through external calls from `management`.
 The function will also emit an event that off chain indexers can
 look for to track any new deployments using this TokenizedStrategy.*
 
-
 ```solidity
 function initialize(
     address _asset,
@@ -195,6 +184,7 @@ function initialize(
     address _keeper
 ) external;
 ```
+
 **Parameters**
 
 |Name|Type|Description|
@@ -205,16 +195,15 @@ function initialize(
 |`_performanceFeeRecipient`|`address`|Address to receive performance fees.|
 |`_keeper`|`address`|Address to set as strategies `keeper`.|
 
-
 ### deposit
 
 Mints `shares` of strategy shares to `receiver` by
 depositing exactly `assets` of underlying tokens.
 
-
 ```solidity
 function deposit(uint256 assets, address receiver) external nonReentrant returns (uint256 shares);
 ```
+
 **Parameters**
 
 |Name|Type|Description|
@@ -228,16 +217,15 @@ function deposit(uint256 assets, address receiver) external nonReentrant returns
 |----|----|-----------|
 |`shares`|`uint256`|The actual amount of shares issued.|
 
-
 ### mint
 
 Mints exactly `shares` of strategy shares to
 `receiver` by depositing `assets` of underlying tokens.
 
-
 ```solidity
 function mint(uint256 shares, address receiver) external nonReentrant returns (uint256 assets);
 ```
+
 **Parameters**
 
 |Name|Type|Description|
@@ -251,7 +239,6 @@ function mint(uint256 shares, address receiver) external nonReentrant returns (u
 |----|----|-----------|
 |`assets`|`uint256`|The actual amount of asset deposited.|
 
-
 ### withdraw
 
 Withdraws exactly `assets` from `owners` shares and sends
@@ -259,10 +246,10 @@ the underlying tokens to `receiver`.
 
 *This will default to not allowing any loss to be taken.*
 
-
 ```solidity
 function withdraw(uint256 assets, address receiver, address owner) external returns (uint256 shares);
 ```
+
 **Parameters**
 
 |Name|Type|Description|
@@ -277,7 +264,6 @@ function withdraw(uint256 assets, address receiver, address owner) external retu
 |----|----|-----------|
 |`shares`|`uint256`|The actual amount of shares burnt.|
 
-
 ### withdraw
 
 Withdraws `assets` from `owners` shares and sends
@@ -285,13 +271,13 @@ the underlying tokens to `receiver`.
 
 *This includes an added parameter to allow for losses.*
 
-
 ```solidity
 function withdraw(uint256 assets, address receiver, address owner, uint256 maxLoss)
     public
     nonReentrant
     returns (uint256 shares);
 ```
+
 **Parameters**
 
 |Name|Type|Description|
@@ -307,7 +293,6 @@ function withdraw(uint256 assets, address receiver, address owner, uint256 maxLo
 |----|----|-----------|
 |`shares`|`uint256`|The actual amount of shares burnt.|
 
-
 ### redeem
 
 Redeems exactly `shares` from `owner` and
@@ -315,10 +300,10 @@ sends `assets` of underlying tokens to `receiver`.
 
 *This will default to allowing any loss passed to be realized.*
 
-
 ```solidity
 function redeem(uint256 shares, address receiver, address owner) external returns (uint256);
 ```
+
 **Parameters**
 
 |Name|Type|Description|
@@ -333,7 +318,6 @@ function redeem(uint256 shares, address receiver, address owner) external return
 |----|----|-----------|
 |`<none>`|`uint256`|assets The actual amount of underlying withdrawn.|
 
-
 ### redeem
 
 Redeems exactly `shares` from `owner` and
@@ -341,13 +325,13 @@ sends `assets` of underlying tokens to `receiver`.
 
 *This includes an added parameter to allow for losses.*
 
-
 ```solidity
 function redeem(uint256 shares, address receiver, address owner, uint256 maxLoss)
     public
     nonReentrant
     returns (uint256);
 ```
+
 **Parameters**
 
 |Name|Type|Description|
@@ -363,23 +347,21 @@ function redeem(uint256 shares, address receiver, address owner, uint256 maxLoss
 |----|----|-----------|
 |`<none>`|`uint256`|. The actual amount of underlying withdrawn.|
 
-
 ### totalAssets
 
 Get the total amount of assets this strategy holds
 as of the last report.
 We manually track `totalAssets` to avoid any PPS manipulation.
 
-
 ```solidity
 function totalAssets() external view returns (uint256);
 ```
+
 **Returns**
 
 |Name|Type|Description|
 |----|----|-----------|
 |`<none>`|`uint256`|. Total assets the strategy holds.|
-
 
 ### totalSupply
 
@@ -389,16 +371,15 @@ counted towards the full supply until they are unlocked.
 As more shares slowly unlock the totalSupply will decrease
 causing the PPS of the strategy to increase.
 
-
 ```solidity
 function totalSupply() external view returns (uint256);
 ```
+
 **Returns**
 
 |Name|Type|Description|
 |----|----|-----------|
 |`<none>`|`uint256`|. Total amount of shares outstanding.|
-
 
 ### convertToShares
 
@@ -406,10 +387,10 @@ The amount of shares that the strategy would
 exchange for the amount of assets provided, in an
 ideal scenario where all the conditions are met.
 
-
 ```solidity
 function convertToShares(uint256 assets) external view returns (uint256);
 ```
+
 **Parameters**
 
 |Name|Type|Description|
@@ -422,17 +403,16 @@ function convertToShares(uint256 assets) external view returns (uint256);
 |----|----|-----------|
 |`<none>`|`uint256`|. Expected shares that `assets` represents.|
 
-
 ### convertToAssets
 
 The amount of assets that the strategy would
 exchange for the amount of shares provided, in an
 ideal scenario where all the conditions are met.
 
-
 ```solidity
 function convertToAssets(uint256 shares) external view returns (uint256);
 ```
+
 **Parameters**
 
 |Name|Type|Description|
@@ -445,7 +425,6 @@ function convertToAssets(uint256 shares) external view returns (uint256);
 |----|----|-----------|
 |`<none>`|`uint256`|. Expected amount of `asset` the shares represents.|
 
-
 ### previewDeposit
 
 Allows an on-chain or off-chain user to simulate
@@ -454,10 +433,10 @@ current on-chain conditions.
 
 *This will round down.*
 
-
 ```solidity
 function previewDeposit(uint256 assets) external view returns (uint256);
 ```
+
 **Parameters**
 
 |Name|Type|Description|
@@ -470,7 +449,6 @@ function previewDeposit(uint256 assets) external view returns (uint256);
 |----|----|-----------|
 |`<none>`|`uint256`|. Expected shares that would be issued.|
 
-
 ### previewMint
 
 Allows an on-chain or off-chain user to simulate
@@ -480,10 +458,10 @@ current on-chain conditions.
 *This is used instead of convertToAssets so that it can
 round up for safer mints.*
 
-
 ```solidity
 function previewMint(uint256 shares) external view returns (uint256);
 ```
+
 **Parameters**
 
 |Name|Type|Description|
@@ -496,7 +474,6 @@ function previewMint(uint256 shares) external view returns (uint256);
 |----|----|-----------|
 |`<none>`|`uint256`|. The needed amount of `asset` for the mint.|
 
-
 ### previewWithdraw
 
 Allows an on-chain or off-chain user to simulate
@@ -506,10 +483,10 @@ given current on-chain conditions.
 *This is used instead of convertToShares so that it can
 round up for safer withdraws.*
 
-
 ```solidity
 function previewWithdraw(uint256 assets) external view returns (uint256);
 ```
+
 **Parameters**
 
 |Name|Type|Description|
@@ -522,7 +499,6 @@ function previewWithdraw(uint256 assets) external view returns (uint256);
 |----|----|-----------|
 |`<none>`|`uint256`|. The amount of shares that would be burnt.|
 
-
 ### previewRedeem
 
 Allows an on-chain or off-chain user to simulate
@@ -531,10 +507,10 @@ given current on-chain conditions.
 
 *This will round down.*
 
-
 ```solidity
 function previewRedeem(uint256 shares) external view returns (uint256);
 ```
+
 **Parameters**
 
 |Name|Type|Description|
@@ -547,17 +523,16 @@ function previewRedeem(uint256 shares) external view returns (uint256);
 |----|----|-----------|
 |`<none>`|`uint256`|. The amount of `asset` that would be returned.|
 
-
 ### maxDeposit
 
 Total number of underlying assets that can
 be deposited by `_owner` into the strategy, where `owner`
 corresponds to the receiver of a [deposit](#deposit) call.
 
-
 ```solidity
 function maxDeposit(address owner) external view returns (uint256);
 ```
+
 **Parameters**
 
 |Name|Type|Description|
@@ -570,17 +545,16 @@ function maxDeposit(address owner) external view returns (uint256);
 |----|----|-----------|
 |`<none>`|`uint256`|. The max that `owner` can deposit in `asset`.|
 
-
 ### maxMint
 
 Total number of shares that can be minted by `owner`
 into the strategy, where `_owner` corresponds to the receiver
 of a [mint](#mint) call.
 
-
 ```solidity
 function maxMint(address owner) external view returns (uint256);
 ```
+
 **Parameters**
 
 |Name|Type|Description|
@@ -593,17 +567,16 @@ function maxMint(address owner) external view returns (uint256);
 |----|----|-----------|
 |`<none>`|`uint256`|_maxMint The max that `owner` can mint in shares.|
 
-
 ### maxWithdraw
 
 Total number of underlying assets that can be
 withdrawn from the strategy by `owner`, where `owner`
 corresponds to the msg.sender of a [redeem](#redeem) call.
 
-
 ```solidity
 function maxWithdraw(address owner) external view returns (uint256);
 ```
+
 **Parameters**
 
 |Name|Type|Description|
@@ -616,17 +589,16 @@ function maxWithdraw(address owner) external view returns (uint256);
 |----|----|-----------|
 |`<none>`|`uint256`|_maxWithdraw Max amount of `asset` that can be withdrawn.|
 
-
 ### maxRedeem
 
 Total number of strategy shares that can be
 redeemed from the strategy by `owner`, where `owner`
 corresponds to the msg.sender of a [redeem](#redeem) call.
 
-
 ```solidity
 function maxRedeem(address owner) external view returns (uint256);
 ```
+
 **Parameters**
 
 |Name|Type|Description|
@@ -639,11 +611,9 @@ function maxRedeem(address owner) external view returns (uint256);
 |----|----|-----------|
 |`<none>`|`uint256`|_maxRedeem Max amount of shares that can be redeemed.|
 
-
 ### _totalAssets
 
 *Internal implementation of [totalAssets](#totalassets).*
-
 
 ```solidity
 function _totalAssets(StrategyData storage S) internal view returns (uint256);
@@ -653,7 +623,6 @@ function _totalAssets(StrategyData storage S) internal view returns (uint256);
 
 *Internal implementation of [totalSupply](#totalsupply).*
 
-
 ```solidity
 function _totalSupply(StrategyData storage S) internal view returns (uint256);
 ```
@@ -661,7 +630,6 @@ function _totalSupply(StrategyData storage S) internal view returns (uint256);
 ### _convertToShares
 
 *Internal implementation of [convertToShares](#converttoshares).*
-
 
 ```solidity
 function _convertToShares(StrategyData storage S, uint256 assets, Math.Rounding _rounding)
@@ -674,7 +642,6 @@ function _convertToShares(StrategyData storage S, uint256 assets, Math.Rounding 
 
 *Internal implementation of [convertToAssets](#converttoassets).*
 
-
 ```solidity
 function _convertToAssets(StrategyData storage S, uint256 shares, Math.Rounding _rounding)
     internal
@@ -686,7 +653,6 @@ function _convertToAssets(StrategyData storage S, uint256 shares, Math.Rounding 
 
 *Internal implementation of [maxDeposit](#maxdeposit).*
 
-
 ```solidity
 function _maxDeposit(StrategyData storage S, address owner) internal view returns (uint256);
 ```
@@ -694,7 +660,6 @@ function _maxDeposit(StrategyData storage S, address owner) internal view return
 ### _maxMint
 
 *Internal implementation of [maxMint](#maxmint).*
-
 
 ```solidity
 function _maxMint(StrategyData storage S, address owner) internal view returns (uint256 maxMint_);
@@ -704,7 +669,6 @@ function _maxMint(StrategyData storage S, address owner) internal view returns (
 
 *Internal implementation of [maxWithdraw](#maxwithdraw).*
 
-
 ```solidity
 function _maxWithdraw(StrategyData storage S, address owner) internal view returns (uint256 maxWithdraw_);
 ```
@@ -712,7 +676,6 @@ function _maxWithdraw(StrategyData storage S, address owner) internal view retur
 ### _maxRedeem
 
 *Internal implementation of [maxRedeem](#maxredeem).*
-
 
 ```solidity
 function _maxRedeem(StrategyData storage S, address owner) internal view returns (uint256 maxRedeem_);
@@ -727,7 +690,6 @@ We do all external calls before updating any internal
 values to prevent view reentrancy issues from the token
 transfers or the _deployFunds() calls.*
 
-
 ```solidity
 function _deposit(StrategyData storage S, address receiver, uint256 assets, uint256 shares) internal;
 ```
@@ -739,7 +701,6 @@ This will handle all logic, transfers and accounting
 in order to service the withdraw request.
 If we are not able to withdraw the full amount needed, it will
 be counted as a loss and passed on to the user.*
-
 
 ```solidity
 function _withdraw(
@@ -770,10 +731,10 @@ Will then recalculate the new time to unlock profits over and the
 rate based on a weighted average of any remaining time from the
 last report and the new amount of shares to be locked.*
 
-
 ```solidity
 function report() external nonReentrant onlyKeepers returns (uint256 profit, uint256 loss);
 ```
+
 **Returns**
 
 |Name|Type|Description|
@@ -781,21 +742,19 @@ function report() external nonReentrant onlyKeepers returns (uint256 profit, uin
 |`profit`|`uint256`|The notional amount of gain if any since the last report in terms of `asset`.|
 |`loss`|`uint256`|The notional amount of loss if any since the last report in terms of `asset`.|
 
-
 ### unlockedShares
 
 Get how many shares have been unlocked since last report.
 
-
 ```solidity
 function unlockedShares() external view returns (uint256);
 ```
+
 **Returns**
 
 |Name|Type|Description|
 |----|----|-----------|
 |`<none>`|`uint256`|. The amount of shares that have unlocked.|
-
 
 ### _unlockedShares
 
@@ -804,16 +763,15 @@ report have since unlocked.
 If the `fullProfitUnlockDate` has passed the full strategy's balance will
 count as unlocked.*
 
-
 ```solidity
 function _unlockedShares(StrategyData storage S) internal view returns (uint256 unlocked);
 ```
+
 **Returns**
 
 |Name|Type|Description|
 |----|----|-----------|
 |`unlocked`|`uint256`|The amount of shares that have unlocked.|
-
 
 ### tend
 
@@ -831,7 +789,6 @@ This will not cause any change in PPS. Total assets will
 be the same before and after.
 A report() call will be needed to record any profits or losses.*
 
-
 ```solidity
 function tend() external nonReentrant onlyKeepers;
 ```
@@ -848,7 +805,6 @@ in an emergency as well as provide any maintenance to allow for full
 withdraw.
 This is a one way switch and can never be set back once shutdown.*
 
-
 ```solidity
 function shutdownStrategy() external onlyEmergencyAuthorized;
 ```
@@ -864,152 +820,142 @@ be the same before and after.
 A strategist will need to override the `_emergencyWithdraw` function
 in their strategy for this to work.*
 
-
 ```solidity
 function emergencyWithdraw(uint256 amount) external nonReentrant onlyEmergencyAuthorized;
 ```
+
 **Parameters**
 
 |Name|Type|Description|
 |----|----|-----------|
 |`amount`|`uint256`|The amount of asset to attempt to free.|
 
-
 ### asset
 
 Get the underlying asset for the strategy.
 
-
 ```solidity
 function asset() external view returns (address);
 ```
+
 **Returns**
 
 |Name|Type|Description|
 |----|----|-----------|
 |`<none>`|`address`|. The underlying asset.|
 
-
 ### apiVersion
 
 Get the API version for this TokenizedStrategy.
 
-
 ```solidity
 function apiVersion() external pure returns (string memory);
 ```
+
 **Returns**
 
 |Name|Type|Description|
 |----|----|-----------|
 |`<none>`|`string`|. The API version for this TokenizedStrategy|
 
-
 ### management
 
 Get the current address that controls the strategy.
 
-
 ```solidity
 function management() external view returns (address);
 ```
+
 **Returns**
 
 |Name|Type|Description|
 |----|----|-----------|
 |`<none>`|`address`|. Address of management|
 
-
 ### pendingManagement
 
 Get the current pending management address if any.
 
-
 ```solidity
 function pendingManagement() external view returns (address);
 ```
+
 **Returns**
 
 |Name|Type|Description|
 |----|----|-----------|
 |`<none>`|`address`|. Address of pendingManagement|
 
-
 ### keeper
 
 Get the current address that can call tend and report.
 
-
 ```solidity
 function keeper() external view returns (address);
 ```
+
 **Returns**
 
 |Name|Type|Description|
 |----|----|-----------|
 |`<none>`|`address`|. Address of the keeper|
 
-
 ### emergencyAdmin
 
 Get the current address that can shutdown and emergency withdraw.
 
-
 ```solidity
 function emergencyAdmin() external view returns (address);
 ```
+
 **Returns**
 
 |Name|Type|Description|
 |----|----|-----------|
 |`<none>`|`address`|. Address of the emergencyAdmin|
 
-
 ### performanceFee
 
 Get the current performance fee charged on profits.
 denominated in Basis Points where 10_000 == 100%
 
-
 ```solidity
 function performanceFee() external view returns (uint16);
 ```
+
 **Returns**
 
 |Name|Type|Description|
 |----|----|-----------|
 |`<none>`|`uint16`|. Current performance fee.|
 
-
 ### performanceFeeRecipient
 
 Get the current address that receives the performance fees.
 
-
 ```solidity
 function performanceFeeRecipient() external view returns (address);
 ```
+
 **Returns**
 
 |Name|Type|Description|
 |----|----|-----------|
 |`<none>`|`address`|. Address of performanceFeeRecipient|
 
-
 ### fullProfitUnlockDate
 
 Gets the timestamp at which all profits will be unlocked.
 
-
 ```solidity
 function fullProfitUnlockDate() external view returns (uint256);
 ```
+
 **Returns**
 
 |Name|Type|Description|
 |----|----|-----------|
 |`<none>`|`uint256`|. The full profit unlocking timestamp|
-
 
 ### profitUnlockingRate
 
@@ -1017,46 +963,43 @@ The per second rate at which profits are unlocking.
 
 *This is denominated in EXTENDED_BPS decimals.*
 
-
 ```solidity
 function profitUnlockingRate() external view returns (uint256);
 ```
+
 **Returns**
 
 |Name|Type|Description|
 |----|----|-----------|
 |`<none>`|`uint256`|. The current profit unlocking rate.|
 
-
 ### profitMaxUnlockTime
 
 Gets the current time profits are set to unlock over.
 
-
 ```solidity
 function profitMaxUnlockTime() external view returns (uint256);
 ```
+
 **Returns**
 
 |Name|Type|Description|
 |----|----|-----------|
 |`<none>`|`uint256`|. The current profit max unlock time.|
 
-
 ### lastReport
 
 The timestamp of the last time protocol fees were charged.
 
-
 ```solidity
 function lastReport() external view returns (uint256);
 ```
+
 **Returns**
 
 |Name|Type|Description|
 |----|----|-----------|
 |`<none>`|`uint256`|. The last report.|
-
 
 ### pricePerShare
 
@@ -1065,31 +1008,29 @@ Get the price per share.
 *This value offers limited precision. Integrations that require
 exact precision should use convertToAssets or convertToShares instead.*
 
-
 ```solidity
 function pricePerShare() external view returns (uint256);
 ```
+
 **Returns**
 
 |Name|Type|Description|
 |----|----|-----------|
 |`<none>`|`uint256`|. The price per share.|
 
-
 ### isShutdown
 
 To check if the strategy has been shutdown.
 
-
 ```solidity
 function isShutdown() external view returns (bool);
 ```
+
 **Returns**
 
 |Name|Type|Description|
 |----|----|-----------|
 |`<none>`|`bool`|. Whether or not the strategy is shutdown.|
-
 
 ### setPendingManagement
 
@@ -1100,23 +1041,21 @@ set to pending management and will then have to call [acceptManagement](#acceptm
 in order for the 'management' to officially change.
 Cannot set `management` to address(0).*
 
-
 ```solidity
 function setPendingManagement(address _management) external onlyManagement;
 ```
+
 **Parameters**
 
 |Name|Type|Description|
 |----|----|-----------|
 |`_management`|`address`|New address to set `pendingManagement` to.|
 
-
 ### acceptManagement
 
 Step two of two to set a new 'management' of the strategy.
 
 *Can only be called by the current `pendingManagement`.*
-
 
 ```solidity
 function acceptManagement() external;
@@ -1128,16 +1067,15 @@ Sets a new address to be in charge of tend and reports.
 
 *Can only be called by the current `management`.*
 
-
 ```solidity
 function setKeeper(address _keeper) external onlyManagement;
 ```
+
 **Parameters**
 
 |Name|Type|Description|
 |----|----|-----------|
 |`_keeper`|`address`|New address to set `keeper` to.|
-
 
 ### setEmergencyAdmin
 
@@ -1145,16 +1083,15 @@ Sets a new address to be able to shutdown the strategy.
 
 *Can only be called by the current `management`.*
 
-
 ```solidity
 function setEmergencyAdmin(address _emergencyAdmin) external onlyManagement;
 ```
+
 **Parameters**
 
 |Name|Type|Description|
 |----|----|-----------|
 |`_emergencyAdmin`|`address`|New address to set `emergencyAdmin` to.|
-
 
 ### setPerformanceFee
 
@@ -1164,16 +1101,15 @@ Sets the performance fee to be charged on reported gains.
 Denominated in Basis Points. So 100% == 10_000.
 Cannot set greater than to MAX_FEE.*
 
-
 ```solidity
 function setPerformanceFee(uint16 _performanceFee) external onlyManagement;
 ```
+
 **Parameters**
 
 |Name|Type|Description|
 |----|----|-----------|
 |`_performanceFee`|`uint16`|New performance fee.|
-
 
 ### setPerformanceFeeRecipient
 
@@ -1182,16 +1118,15 @@ Sets a new address to receive performance fees.
 *Can only be called by the current `management`.
 Cannot set to address(0).*
 
-
 ```solidity
 function setPerformanceFeeRecipient(address _performanceFeeRecipient) external onlyManagement;
 ```
+
 **Parameters**
 
 |Name|Type|Description|
 |----|----|-----------|
 |`_performanceFeeRecipient`|`address`|New address to set `management` to.|
-
 
 ### setProfitMaxUnlockTime
 
@@ -1204,31 +1139,29 @@ to be unlocked instantly and should be done with care.
 `profitMaxUnlockTime` is stored as a uint32 for packing but can
 be passed in as uint256 for simplicity.*
 
-
 ```solidity
 function setProfitMaxUnlockTime(uint256 _profitMaxUnlockTime) external onlyManagement;
 ```
+
 **Parameters**
 
 |Name|Type|Description|
 |----|----|-----------|
 |`_profitMaxUnlockTime`|`uint256`|New `profitMaxUnlockTime`.|
 
-
 ### name
 
 Returns the name of the token.
 
-
 ```solidity
 function name() external view returns (string memory);
 ```
+
 **Returns**
 
 |Name|Type|Description|
 |----|----|-----------|
 |`<none>`|`string`|. The name the strategy is using for its token.|
-
 
 ### symbol
 
@@ -1236,31 +1169,29 @@ Returns the symbol of the strategies token.
 
 *Will be 'ys + asset symbol'.*
 
-
 ```solidity
 function symbol() external view returns (string memory);
 ```
+
 **Returns**
 
 |Name|Type|Description|
 |----|----|-----------|
 |`<none>`|`string`|. The symbol the strategy is using for its tokens.|
 
-
 ### decimals
 
 Returns the number of decimals used to get its user representation.
 
-
 ```solidity
 function decimals() external view returns (uint8);
 ```
+
 **Returns**
 
 |Name|Type|Description|
 |----|----|-----------|
 |`<none>`|`uint8`|. The decimals used for the strategy and `asset`.|
-
 
 ### balanceOf
 
@@ -1269,10 +1200,10 @@ Returns the current balance for a given '_account'.
 *If the '_account` is the strategy then this will subtract
 the amount of shares that have been unlocked since the last profit first.*
 
-
 ```solidity
 function balanceOf(address account) external view returns (uint256);
 ```
+
 **Parameters**
 
 |Name|Type|Description|
@@ -1285,11 +1216,9 @@ function balanceOf(address account) external view returns (uint256);
 |----|----|-----------|
 |`<none>`|`uint256`|. The current balance in y shares of the '_account'.|
 
-
 ### _balanceOf
 
 *Internal implementation of [balanceOf](#balanceof).*
-
 
 ```solidity
 function _balanceOf(StrategyData storage S, address account) internal view returns (uint256);
@@ -1300,15 +1229,17 @@ function _balanceOf(StrategyData storage S, address account) internal view retur
 Transfer '_amount` of shares from `msg.sender` to `to`.
 
 *
-Requirements:
-- `to` cannot be the zero address.
-- `to` cannot be the address of the strategy.
-- the caller must have a balance of at least `_amount`.*
 
+Requirements:
+
+* `to` cannot be the zero address.
+* `to` cannot be the address of the strategy.
+* the caller must have a balance of at least `_amount`.*
 
 ```solidity
 function transfer(address to, uint256 amount) external returns (bool);
 ```
+
 **Parameters**
 
 |Name|Type|Description|
@@ -1322,18 +1253,17 @@ function transfer(address to, uint256 amount) external returns (bool);
 |----|----|-----------|
 |`<none>`|`bool`|. a boolean value indicating whether the operation succeeded.|
 
-
 ### allowance
 
 Returns the remaining number of tokens that `spender` will be
 allowed to spend on behalf of `owner` through [transferFrom](#transferfrom). This is
 zero by default.
-This value changes when [approve](#approve) or [transferFrom](#transferFrom) are called.
-
+This value changes when [approve](#approve) or [transferFrom](#transferfrom) are called.
 
 ```solidity
 function allowance(address owner, address spender) external view returns (uint256);
 ```
+
 **Parameters**
 
 |Name|Type|Description|
@@ -1347,11 +1277,9 @@ function allowance(address owner, address spender) external view returns (uint25
 |----|----|-----------|
 |`<none>`|`uint256`|. The remaining amount of shares of `owner` that could be moved by `spender`.|
 
-
 ### _allowance
 
 *Internal implementation of [allowance](#allowance).*
-
 
 ```solidity
 function _allowance(StrategyData storage S, address owner, address spender) internal view returns (uint256);
@@ -1362,10 +1290,12 @@ function _allowance(StrategyData storage S, address owner, address spender) inte
 Sets `amount` as the allowance of `spender` over the caller's tokens.
 
 *
+
 NOTE: If `amount` is the maximum `uint256`, the allowance is not updated on
 `transferFrom`. This is semantically equivalent to an infinite approval.
 Requirements:
-- `spender` cannot be the zero address.
+
+* `spender` cannot be the zero address.
 IMPORTANT: Beware that changing an allowance with this method brings the risk
 that someone may use both the old and the new allowance by unfortunate
 transaction ordering. One possible solution to mitigate this race
@@ -1374,10 +1304,10 @@ desired value afterwards:
 https://github.com/ethereum/EIPs/issues/20#issuecomment-263524729
 Emits an [Approval](#approval) event.*
 
-
 ```solidity
 function approve(address spender, uint256 amount) external returns (bool);
 ```
+
 **Parameters**
 
 |Name|Type|Description|
@@ -1391,7 +1321,6 @@ function approve(address spender, uint256 amount) external returns (bool);
 |----|----|-----------|
 |`<none>`|`bool`|. a boolean value indicating whether the operation succeeded.|
 
-
 ### transferFrom
 
 `amount` tokens from `from` to `to` using the
@@ -1399,22 +1328,24 @@ allowance mechanism. `amount` is then deducted from the caller's
 allowance.
 
 *
+
 Emits an [Approval](#approval) event indicating the updated allowance. This is not
 required by the EIP.
 NOTE: Does not update the allowance if the current allowance
 is the maximum `uint256`.
 Requirements:
-- `from` and `to` cannot be the zero address.
-- `to` cannot be the address of the strategy.
-- `from` must have a balance of at least `amount`.
-- the caller must have allowance for ``from``'s tokens of at least
+
+* `from` and `to` cannot be the zero address.
+* `to` cannot be the address of the strategy.
+* `from` must have a balance of at least `amount`.
+* the caller must have allowance for ``from``'s tokens of at least
 `amount`.
 Emits a Transfer event.*
-
 
 ```solidity
 function transferFrom(address from, address to, uint256 amount) external returns (bool);
 ```
+
 **Parameters**
 
 |Name|Type|Description|
@@ -1429,7 +1360,6 @@ function transferFrom(address from, address to, uint256 amount) external returns
 |----|----|-----------|
 |`<none>`|`bool`|. a boolean value indicating whether the operation succeeded.|
 
-
 ### _transfer
 
 *Moves `amount` of tokens from `from` to `to`.
@@ -1437,11 +1367,11 @@ This internal function is equivalent to [transfer](#transfer), and can be used t
 e.g. implement automatic token fees, slashing mechanisms, etc.
 Emits a `Transfer` event.
 Requirements:
-- `from` cannot be the zero address.
-- `to` cannot be the zero address.
-- `to` cannot be the strategies address
-- `from` must have a balance of at least `amount`.*
 
+* `from` cannot be the zero address.
+* `to` cannot be the zero address.
+* `to` cannot be the strategies address
+* `from` must have a balance of at least `amount`.*
 
 ```solidity
 function _transfer(StrategyData storage S, address from, address to, uint256 amount) internal;
@@ -1453,8 +1383,8 @@ function _transfer(StrategyData storage S, address from, address to, uint256 amo
 the total supply.
 Emits a [Transfer](#transfer) event with `from` set to the zero address.
 Requirements:
-- `account` cannot be the zero address.*
 
+* `account` cannot be the zero address.*
 
 ```solidity
 function _mint(StrategyData storage S, address account, uint256 amount) internal;
@@ -1466,9 +1396,9 @@ function _mint(StrategyData storage S, address account, uint256 amount) internal
 total supply.
 Emits a [Transfer](#transfer) event with `to` set to the zero address.
 Requirements:
-- `account` cannot be the zero address.
-- `account` must have at least `amount` tokens.*
 
+* `account` cannot be the zero address.
+* `account` must have at least `amount` tokens.*
 
 ```solidity
 function _burn(StrategyData storage S, address account, uint256 amount) internal;
@@ -1481,9 +1411,9 @@ This internal function is equivalent to `approve`, and can be used to
 e.g. set automatic allowances for certain subsystems, etc.
 Emits an [Approval](#approval) event.
 Requirements:
-- `owner` cannot be the zero address.
-- `spender` cannot be the zero address.*
 
+* `owner` cannot be the zero address.
+* `spender` cannot be the zero address.*
 
 ```solidity
 function _approve(StrategyData storage S, address owner, address spender, uint256 amount) internal;
@@ -1495,7 +1425,6 @@ function _approve(StrategyData storage S, address owner, address spender, uint25
 Does not update the allowance amount in case of infinite allowance.
 Revert if not enough allowance is available.
 Might emit an [Approval](#approval) event.*
-
 
 ```solidity
 function _spendAllowance(StrategyData storage S, address owner, address spender, uint256 amount) internal;
@@ -1509,10 +1438,10 @@ included whenever a signature is generated for [permit](#permit).
 *Every successful call to [permit](#permit) increases ``owner``'s nonce by one. This
 prevents a signature from being used multiple times.*
 
-
 ```solidity
 function nonces(address _owner) external view returns (uint256);
 ```
+
 **Parameters**
 
 |Name|Type|Description|
@@ -1525,23 +1454,22 @@ function nonces(address _owner) external view returns (uint256);
 |----|----|-----------|
 |`<none>`|`uint256`|. the current nonce for the account.|
 
-
 ### permit
 
 Sets `value` as the allowance of `spender` over ``owner``'s tokens,
 given ``owner``'s signed approval.
 
+*IMPORTANT: The same issues [IERC20-approve](/lib/erc4626-tests/ERC4626.prop.sol/interface.IERC20.md#approve) has related to transaction
+ordering also apply here.
 Emits an Approval event.
-
 Requirements:
-- `spender` cannot be the zero address.
-- `deadline` must be a timestamp in the future.
-- `v`, `r` and `s` must be a valid `secp256k1` signature from `owner`
-over the EIP712-formatted function arguments.
-- the signature must use ``owner``'s current nonce (see [`nonces`](#nonces)).
-For more information on the signature format, see the
-https://eips.ethereum.org/EIPS/eip-2612#specification.
 
+* `spender` cannot be the zero address.
+* `deadline` must be a timestamp in the future.
+* `v`, `r` and `s` must be a valid `secp256k1` signature from `owner`
+over the EIP712-formatted function arguments.
+* the signature must use ``owner``'s current nonce (see [`nonces`](#nonces)).
+For more information on the signature format, see https://eips.ethereum.org/EIPS/eip-2612#specification.*
 
 ```solidity
 function permit(address owner, address spender, uint256 value, uint256 deadline, uint8 v, bytes32 r, bytes32 s)
@@ -1551,22 +1479,21 @@ function permit(address owner, address spender, uint256 value, uint256 deadline,
 ### DOMAIN_SEPARATOR
 
 Returns the domain separator used in the encoding of the signature
-for [permit](#permit), as defined by {EIP712}.
+for [permit](#permit), as defined by `EIP712`.
 
 *This checks that the current chain id is the same as when the contract
 was deployed to prevent replay attacks. If false it will calculate a new
 domain separator based on the new chain id.*
 
-
 ```solidity
 function DOMAIN_SEPARATOR() public view returns (bytes32);
 ```
+
 **Returns**
 
 |Name|Type|Description|
 |----|----|-----------|
 |`<none>`|`bytes32`|. The domain separator that will be used for any [permit](#permit) calls.|
-
 
 ### _computeDomainSeparator
 
@@ -1575,7 +1502,6 @@ permit functions for the strategies [permit](#permit) calls.
 This will be used at the initialization of each new strategies storage.
 It would then be used in the future in the case of any forks in which
 the current chain id is not the same as the original.*
-
 
 ```solidity
 function _computeDomainSeparator(StrategyData storage S) internal view returns (bytes32);
@@ -1586,140 +1512,142 @@ function _computeDomainSeparator(StrategyData storage S) internal view returns (
 *On contract creation we set `asset` for this contract to address(1).
 This prevents it from ever being initialized in the future.*
 
-
 ```solidity
 constructor(address _factory);
 ```
+
 **Parameters**
 
 |Name|Type|Description|
 |----|----|-----------|
 |`_factory`|`address`|Address of the factory of the same version for protocol fees.|
 
-
 ## Events
-### StrategyShutdown
-Emitted when a strategy is shutdown.
 
+### StrategyShutdown
+
+Emitted when a strategy is shutdown.
 
 ```solidity
 event StrategyShutdown();
 ```
 
 ### NewTokenizedStrategy
+
 Emitted on the initialization of any new `strategy` that uses `asset`
 with this specific `apiVersion`.
-
 
 ```solidity
 event NewTokenizedStrategy(address indexed strategy, address indexed asset, string apiVersion);
 ```
 
 ### Reported
+
 Emitted when the strategy reports `profit` or `loss` and
 `performanceFees` and `protocolFees` are paid out.
-
 
 ```solidity
 event Reported(uint256 profit, uint256 loss, uint256 protocolFees, uint256 performanceFees);
 ```
 
 ### UpdatePerformanceFeeRecipient
+
 Emitted when the 'performanceFeeRecipient' address is
 updated to 'newPerformanceFeeRecipient'.
-
 
 ```solidity
 event UpdatePerformanceFeeRecipient(address indexed newPerformanceFeeRecipient);
 ```
 
 ### UpdateKeeper
-Emitted when the 'keeper' address is updated to 'newKeeper'.
 
+Emitted when the 'keeper' address is updated to 'newKeeper'.
 
 ```solidity
 event UpdateKeeper(address indexed newKeeper);
 ```
 
 ### UpdatePerformanceFee
-Emitted when the 'performanceFee' is updated to 'newPerformanceFee'.
 
+Emitted when the 'performanceFee' is updated to 'newPerformanceFee'.
 
 ```solidity
 event UpdatePerformanceFee(uint16 newPerformanceFee);
 ```
 
 ### UpdateManagement
-Emitted when the 'management' address is updated to 'newManagement'.
 
+Emitted when the 'management' address is updated to 'newManagement'.
 
 ```solidity
 event UpdateManagement(address indexed newManagement);
 ```
 
 ### UpdateEmergencyAdmin
-Emitted when the 'emergencyAdmin' address is updated to 'newEmergencyAdmin'.
 
+Emitted when the 'emergencyAdmin' address is updated to 'newEmergencyAdmin'.
 
 ```solidity
 event UpdateEmergencyAdmin(address indexed newEmergencyAdmin);
 ```
 
 ### UpdateProfitMaxUnlockTime
-Emitted when the 'profitMaxUnlockTime' is updated to 'newProfitMaxUnlockTime'.
 
+Emitted when the 'profitMaxUnlockTime' is updated to 'newProfitMaxUnlockTime'.
 
 ```solidity
 event UpdateProfitMaxUnlockTime(uint256 newProfitMaxUnlockTime);
 ```
 
 ### UpdatePendingManagement
-Emitted when the 'pendingManagement' address is updated to 'newPendingManagement'.
 
+Emitted when the 'pendingManagement' address is updated to 'newPendingManagement'.
 
 ```solidity
 event UpdatePendingManagement(address indexed newPendingManagement);
 ```
 
 ### Approval
+
 Emitted when the allowance of a `spender` for an `owner` is set by
 a call to [approve](#approve). `value` is the new allowance.
-
 
 ```solidity
 event Approval(address indexed owner, address indexed spender, uint256 value);
 ```
 
 ### Transfer
+
 Emitted when `value` tokens are moved from one account (`from`) to
 another (`to`).
 Note that `value` may be zero.
-
 
 ```solidity
 event Transfer(address indexed from, address indexed to, uint256 value);
 ```
 
 ### Deposit
+
 Emitted when the `caller` has exchanged `assets` for `shares`,
 and transferred those `shares` to `owner`.
-
 
 ```solidity
 event Deposit(address indexed caller, address indexed owner, uint256 assets, uint256 shares);
 ```
 
 ### Withdraw
+
 Emitted when the `caller` has exchanged `owner`s `shares` for `assets`,
 and transferred those `assets` to `receiver`.
-
 
 ```solidity
 event Withdraw(address indexed caller, address indexed receiver, address indexed owner, uint256 assets, uint256 shares);
 ```
 
 ## Structs
+
 ### StrategyData
+
 *The struct that will hold all the storage data for each strategy
 that uses this implementation.
 This replaces all state variables for a traditional contract. This
@@ -1730,7 +1658,6 @@ times the custom storage slots need to be loaded during complex functions.
 Loading the corresponding storage slot for the struct does not
 load any of the contents of the struct into memory. So the size
 will not increase memory related gas usage.*
-
 
 ```solidity
 struct StrategyData {
@@ -1758,4 +1685,3 @@ struct StrategyData {
     bool shutdown;
 }
 ```
-

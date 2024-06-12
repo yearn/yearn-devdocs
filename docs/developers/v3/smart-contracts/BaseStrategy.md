@@ -1,9 +1,9 @@
 # BaseStrategy
+
 [Git Source](https://github.com/yearn/tokenized-strategy/blob/v3.0.2-1/src/BaseStrategy.sol)
 
 **Author:**
 yearn.finance
-
 
 BaseStrategy implements all of the required functionality to
 seamlessly integrate with the `TokenizedStrategy` implementation contract
@@ -27,9 +27,10 @@ variables as they need with no concern of collisions. All global variables
 can be viewed within the Strategy by a simple call using the
 `TokenizedStrategy` variable. IE: TokenizedStrategy.globalVariable();.
 
-
 ## State Variables
+
 ### tokenizedStrategyAddress
+
 *This is the address of the TokenizedStrategy implementation
 contract that will be used by all strategies to handle the
 accounting, logic, storage etc.
@@ -39,23 +40,21 @@ through the fallback function, which will delegateCall this address.
 This address should be the same for every strategy, never be adjusted
 and always be checked before any integration with the Strategy.*
 
-
 ```solidity
 address public constant tokenizedStrategyAddress = 0x2e234DAe75C793f67A35089C9d99245E1C58470b;
 ```
 
-
 ### asset
+
 *Underlying asset the Strategy is earning yield on.
 Stored here for cheap retrievals within the strategy.*
-
 
 ```solidity
 ERC20 internal immutable asset;
 ```
 
-
 ### TokenizedStrategy
+
 *This variable is set to address(this) during initialization of each strategy.
 This can be used to retrieve storage data within the strategy
 contract as if it were a linked library.
@@ -64,18 +63,16 @@ Using address(this) will mean any calls using this variable will lead
 to a call to itself. Which will hit the fallback function and
 delegateCall that to the actual TokenizedStrategy.*
 
-
 ```solidity
 ITokenizedStrategy internal immutable TokenizedStrategy;
 ```
 
-
 ## Functions
+
 ### onlySelf
 
 *Used on TokenizedStrategy callback functions to make sure it is post
 a delegateCall from this address to the TokenizedStrategy.*
-
 
 ```solidity
 modifier onlySelf();
@@ -84,7 +81,6 @@ modifier onlySelf();
 ### onlyManagement
 
 *Use to assure that the call is coming from the strategies management.*
-
 
 ```solidity
 modifier onlyManagement();
@@ -95,7 +91,6 @@ modifier onlyManagement();
 *Use to assure that the call is coming from either the strategies
 management or the keeper.*
 
-
 ```solidity
 modifier onlyKeepers();
 ```
@@ -105,7 +100,6 @@ modifier onlyKeepers();
 *Use to assure that the call is coming from either the strategies
 management or the emergency admin.*
 
-
 ```solidity
 modifier onlyEmergencyAuthorized();
 ```
@@ -113,7 +107,6 @@ modifier onlyEmergencyAuthorized();
 ### _onlySelf
 
 *Require that the msg.sender is this address.*
-
 
 ```solidity
 function _onlySelf() internal view;
@@ -127,17 +120,16 @@ internal view calls to the implementation. As well as
 initializing the default storage variables based on the
 parameters and using the deployer for the permissioned roles.
 
-
 ```solidity
 constructor(address _asset, string memory _name);
 ```
+
 **Parameters**
 
 |Name|Type|Description|
 |----|----|-----------|
 |`_asset`|`address`|Address of the underlying asset.|
 |`_name`|`string`|Name the strategy will use.|
-
 
 ### _deployFunds
 
@@ -147,16 +139,15 @@ call. Meaning that unless a whitelist is implemented it will
 be entirely permissionless and thus can be sandwiched or otherwise
 manipulated.*
 
-
 ```solidity
 function _deployFunds(uint256 _amount) internal virtual;
 ```
+
 **Parameters**
 
 |Name|Type|Description|
 |----|----|-----------|
 |`_amount`|`uint256`|The amount of 'asset' that the strategy can attempt to deposit in the yield source.|
-
 
 ### _freeFunds
 
@@ -174,16 +165,15 @@ counted as a loss and passed on to the withdrawer. This means
 care should be taken in times of illiquidity. It may be better to revert
 if withdraws are simply illiquid so not to realize incorrect losses.*
 
-
 ```solidity
 function _freeFunds(uint256 _amount) internal virtual;
 ```
+
 **Parameters**
 
 |Name|Type|Description|
 |----|----|-----------|
 |`_amount`|`uint256`||
-
 
 ### _harvestAndReport
 
@@ -201,16 +191,15 @@ This can still be called post a shutdown, a strategist can check
 `TokenizedStrategy.isShutdown()` to decide if funds should be
 redeployed or simply realize any profits/losses.*
 
-
 ```solidity
 function _harvestAndReport() internal virtual returns (uint256 _totalAssets);
 ```
+
 **Returns**
 
 |Name|Type|Description|
 |----|----|-----------|
 |`_totalAssets`|`uint256`|A trusted and accurate account for the total amount of 'asset' the strategy currently holds including idle funds.|
-
 
 ### _tend
 
@@ -227,48 +216,45 @@ sandwiched can use the tend when a certain threshold
 of idle to totalAssets has been reached.
 This will have no effect on PPS of the strategy till report() is called.*
 
-
 ```solidity
 function _tend(uint256 _totalIdle) internal virtual;
 ```
+
 **Parameters**
 
 |Name|Type|Description|
 |----|----|-----------|
 |`_totalIdle`|`uint256`|The current amount of idle funds that are available to deploy.|
 
-
 ### _tendTrigger
 
 *Optional trigger to override if tend() will be used by the strategy.
 This must be implemented if the strategy hopes to invoke _tend().*
 
-
 ```solidity
 function _tendTrigger() internal view virtual returns (bool);
 ```
+
 **Returns**
 
 |Name|Type|Description|
 |----|----|-----------|
 |`<none>`|`bool`|. Should return true if tend() should be called by keeper or false if not.|
 
-
 ### tendTrigger
 
 Returns if tend() should be called by a keeper.
 
-
 ```solidity
 function tendTrigger() external view virtual returns (bool, bytes memory);
 ```
+
 **Returns**
 
 |Name|Type|Description|
 |----|----|-----------|
 |`<none>`|`bool`|. Should return true if tend() should be called by keeper or false if not.|
 |`<none>`|`bytes`|. Calldata for the tend call.|
-
 
 ### availableDepositLimit
 
@@ -287,10 +273,10 @@ amounts may be converted to shares. So it is recommended to keep
 custom amounts low enough as not to cause overflow when multiplied
 by `totalSupply`.*
 
-
 ```solidity
 function availableDepositLimit(address) public view virtual returns (uint256);
 ```
+
 **Parameters**
 
 |Name|Type|Description|
@@ -302,7 +288,6 @@ function availableDepositLimit(address) public view virtual returns (uint256);
 |Name|Type|Description|
 |----|----|-----------|
 |`<none>`|`uint256`|. The available amount the `_owner` can deposit in terms of `asset`|
-
 
 ### availableWithdrawLimit
 
@@ -318,10 +303,10 @@ return TokenIzedStrategy.totalIdle();
 This does not need to take into account the `_owner`'s share balance
 or conversion rates from shares to assets.*
 
-
 ```solidity
 function availableWithdrawLimit(address) public view virtual returns (uint256);
 ```
+
 **Parameters**
 
 |Name|Type|Description|
@@ -334,7 +319,6 @@ function availableWithdrawLimit(address) public view virtual returns (uint256);
 |----|----|-----------|
 |`<none>`|`uint256`|. The available amount that can be withdrawn in terms of `asset`|
 
-
 ### _emergencyWithdraw
 
 *Optional function for a strategist to override that will
@@ -345,23 +329,26 @@ be more than is currently deployed.
 NOTE: This will not realize any profits or losses. A separate
 `report` will be needed in order to record any profit/loss. If
 a report may need to be called after a shutdown it is important
-to check if the strategy is shutdown during [_harvestAndReport](#_harvestAndReport)
+to check if the strategy is shutdown during [_harvestAndReport](#_harvestandreport)
 so that it does not simply re-deploy all funds that had been freed.
-EX:
+
+```markdown title="Example"
 if(freeAsset > 0 && !TokenizedStrategy.isShutdown()) {
 depositFunds...
-}*
+}
+```
 
+*
 
 ```solidity
 function _emergencyWithdraw(uint256 _amount) internal virtual;
 ```
+
 **Parameters**
 
 |Name|Type|Description|
 |----|----|-----------|
 |`_amount`|`uint256`|The amount of asset to attempt to free.|
-
 
 ### deployFunds
 
@@ -374,16 +361,15 @@ delegateCall to the TokenizedStrategy msg.sender == address(this).
 Unless a whitelist is implemented this will be entirely permissionless
 and thus can be sandwiched or otherwise manipulated.*
 
-
 ```solidity
 function deployFunds(uint256 _amount) external virtual onlySelf;
 ```
+
 **Parameters**
 
 |Name|Type|Description|
 |----|----|-----------|
 |`_amount`|`uint256`|The amount of 'asset' that the strategy can attempt to deposit in the yield source.|
-
 
 ### freeFunds
 
@@ -394,16 +380,15 @@ or redeem to free the needed funds to service the withdraw.
 This can only be called after a 'withdraw' or 'redeem' delegateCall
 to the TokenizedStrategy so msg.sender == address(this).*
 
-
 ```solidity
 function freeFunds(uint256 _amount) external virtual onlySelf;
 ```
+
 **Parameters**
 
 |Name|Type|Description|
 |----|----|-----------|
 |`_amount`|`uint256`|The amount of 'asset' that the strategy should attempt to free up.|
-
 
 ### harvestAndReport
 
@@ -415,16 +400,15 @@ get an accurate accounting of assets the strategy controls.
 This can only be called after a report() delegateCall to the
 TokenizedStrategy so msg.sender == address(this).*
 
-
 ```solidity
 function harvestAndReport() external virtual onlySelf returns (uint256);
 ```
+
 **Returns**
 
 |Name|Type|Description|
 |----|----|-----------|
 |`<none>`|`uint256`|. A trusted and accurate account for the total amount of 'asset' the strategy currently holds including idle funds.|
-
 
 ### tendThis
 
@@ -436,16 +420,15 @@ so msg.sender == address(this).
 We name the function `tendThis` so that `tend` calls are forwarded to
 the TokenizedStrategy.*
 
-
 ```solidity
 function tendThis(uint256 _totalIdle) external virtual onlySelf;
 ```
+
 **Parameters**
 
 |Name|Type|Description|
 |----|----|-----------|
 |`_totalIdle`|`uint256`|The amount of current idle funds that can be deployed during the tend|
-
 
 ### shutdownWithdraw
 
@@ -457,16 +440,15 @@ the TokenizedStrategy so msg.sender == address(this).
 We name the function `shutdownWithdraw` so that `emergencyWithdraw`
 calls are forwarded to the TokenizedStrategy.*
 
-
 ```solidity
 function shutdownWithdraw(uint256 _amount) external virtual onlySelf;
 ```
+
 **Parameters**
 
 |Name|Type|Description|
 |----|----|-----------|
 |`_amount`|`uint256`|The amount of asset to attempt to free.|
-
 
 ### _delegateCall
 
@@ -476,10 +458,10 @@ This is used to setup the initial storage of the strategy, and
 can be used by strategist to forward any other call to the
 TokenizedStrategy implementation.*
 
-
 ```solidity
 function _delegateCall(bytes memory _calldata) internal returns (bytes memory);
 ```
+
 **Parameters**
 
 |Name|Type|Description|
@@ -492,7 +474,6 @@ function _delegateCall(bytes memory _calldata) internal returns (bytes memory);
 |----|----|-----------|
 |`<none>`|`bytes`|. The return value if the call was successful in bytes.|
 
-
 ### fallback
 
 *Execute a function on the TokenizedStrategy and return any value.
@@ -502,8 +483,6 @@ this contract.
 It will delegatecall the TokenizedStrategy implementation with the exact
 calldata and return any relevant values.*
 
-
 ```solidity
 fallback() external;
 ```
-

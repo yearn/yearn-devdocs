@@ -1,12 +1,12 @@
 # Registry
+
 [Git Source](https://github.com/yearn/vault-periphery/blob/master/contracts/registry/Registry.sol)
 
 **Inherits:**
-[Governance](/Governance.md)
+[Governance](./Governance)
 
 **Author:**
 yearn.finance
-
 
 Serves as an on chain registry to track any Yearn
 vaults and strategies that a certain party wants to
@@ -14,14 +14,13 @@ endorse.
 Can also be used to deploy new vaults of any specific
 API version.
 
-
 ## State Variables
+
 ### releaseRegistry
 
 ```solidity
 address public immutable releaseRegistry;
 ```
-
 
 ### MULTI_STRATEGY_TYPE
 
@@ -29,13 +28,11 @@ address public immutable releaseRegistry;
 uint256 public constant MULTI_STRATEGY_TYPE = 1;
 ```
 
-
 ### SINGLE_STRATEGY_TYPE
 
 ```solidity
 uint256 public constant SINGLE_STRATEGY_TYPE = 2;
 ```
-
 
 ### name
 
@@ -43,13 +40,11 @@ uint256 public constant SINGLE_STRATEGY_TYPE = 2;
 string public name;
 ```
 
-
 ### taggers
 
 ```solidity
 mapping(address => bool) public taggers;
 ```
-
 
 ### endorsers
 
@@ -57,13 +52,11 @@ mapping(address => bool) public taggers;
 mapping(address => bool) public endorsers;
 ```
 
-
 ### vaultInfo
 
 ```solidity
 mapping(address => Info) public vaultInfo;
 ```
-
 
 ### assetIsUsed
 
@@ -71,13 +64,11 @@ mapping(address => Info) public vaultInfo;
 mapping(address => bool) public assetIsUsed;
 ```
 
-
 ### _endorsedVaults
 
 ```solidity
 mapping(address => address[]) internal _endorsedVaults;
 ```
-
 
 ### assets
 
@@ -85,12 +76,11 @@ mapping(address => address[]) internal _endorsedVaults;
 address[] public assets;
 ```
 
-
 ## Functions
+
 ### onlyEndorsers
 
 Can only be gov or an `endorser`.
-
 
 ```solidity
 modifier onlyEndorsers();
@@ -100,7 +90,6 @@ modifier onlyEndorsers();
 
 Can only be gov or a `tagger`.
 
-
 ```solidity
 modifier onlyTaggers();
 ```
@@ -108,7 +97,6 @@ modifier onlyTaggers();
 ### _isEndorser
 
 Check is gov or an `endorser`.
-
 
 ```solidity
 function _isEndorser() internal view;
@@ -118,17 +106,16 @@ function _isEndorser() internal view;
 
 Check is gov or a `tagger`.
 
-
 ```solidity
 function _isTagger() internal view;
 ```
 
 ### constructor
 
-
 ```solidity
 constructor(address _governance, string memory _name, address _releaseRegistry) Governance(_governance);
 ```
+
 **Parameters**
 
 |Name|Type|Description|
@@ -137,60 +124,56 @@ constructor(address _governance, string memory _name, address _releaseRegistry) 
 |`_name`|`string`|The custom string for this custom registry to be called.|
 |`_releaseRegistry`|`address`|The Permissionless releaseRegistry to deploy vaults through.|
 
-
 ### numAssets
 
 Returns the total number of assets being used as the underlying.
 
-
 ```solidity
 function numAssets() external view virtual returns (uint256);
 ```
+
 **Returns**
 
 |Name|Type|Description|
 |----|----|-----------|
 |`<none>`|`uint256`|The amount of assets.|
 
-
 ### getAssets
 
 Get the full array of tokens being used.
 
-
 ```solidity
 function getAssets() external view virtual returns (address[] memory);
 ```
+
 **Returns**
 
 |Name|Type|Description|
 |----|----|-----------|
 |`<none>`|`address[]`|The full array of underlying tokens being used/.|
 
-
 ### numEndorsedVaults
 
 The amount of endorsed vaults for a specific token.
 
-
 ```solidity
 function numEndorsedVaults(address _asset) public view virtual returns (uint256);
 ```
+
 **Returns**
 
 |Name|Type|Description|
 |----|----|-----------|
 |`<none>`|`uint256`|The amount of endorsed vaults.|
 
-
 ### getEndorsedVaults
 
 Get the array of vaults endorsed for an `_asset`.
 
-
 ```solidity
 function getEndorsedVaults(address _asset) external view virtual returns (address[] memory);
 ```
+
 **Parameters**
 
 |Name|Type|Description|
@@ -203,7 +186,6 @@ function getEndorsedVaults(address _asset) external view virtual returns (addres
 |----|----|-----------|
 |`<none>`|`address[]`|The endorsed vaults.|
 
-
 ### getAllEndorsedVaults
 
 Get all endorsed vaults deployed using the Registry.
@@ -213,16 +195,15 @@ separated by their underlying asset.
 This is only meant for off chain viewing and should not be used during any
 on chain tx's.*
 
-
 ```solidity
 function getAllEndorsedVaults() external view virtual returns (address[][] memory allEndorsedVaults);
 ```
+
 **Returns**
 
 |Name|Type|Description|
 |----|----|-----------|
 |`allEndorsedVaults`|`address[][]`|A nested array containing all vaults.|
-
 
 ### isEndorsed
 
@@ -231,10 +212,10 @@ Check if a vault is endorsed in this registry.
 *This will check if the `asset` variable in the struct has been
 set for an easy external view check.*
 
-
 ```solidity
 function isEndorsed(address _vault) external view virtual returns (bool);
 ```
+
 **Parameters**
 
 |Name|Type|Description|
@@ -247,18 +228,16 @@ function isEndorsed(address _vault) external view virtual returns (bool);
 |----|----|-----------|
 |`<none>`|`bool`|. The vaults endorsement status.|
 
-
 ### newEndorsedVault
-
 
 Create and endorse a new multi strategy "Allocator"
 vault and endorse it in this registry.
 
 *
+
 Throws if caller isn't `owner`.
 Throws if no releases are registered yet.
 Emits a `NewEndorsedVault` event.*
-
 
 ```solidity
 function newEndorsedVault(
@@ -269,6 +248,7 @@ function newEndorsedVault(
     uint256 _profitMaxUnlockTime
 ) public virtual returns (address _vault);
 ```
+
 **Parameters**
 
 |Name|Type|Description|
@@ -285,18 +265,16 @@ function newEndorsedVault(
 |----|----|-----------|
 |`_vault`|`address`|address of the newly-deployed vault|
 
-
 ### newEndorsedVault
-
 
 Create and endorse a new multi strategy "Allocator"
 vault and endorse it in this registry.
 
 *
+
 Throws if caller isn't `owner`.
 Throws if no releases are registered yet.
 Emits a `NewEndorsedVault` event.*
-
 
 ```solidity
 function newEndorsedVault(
@@ -308,6 +286,7 @@ function newEndorsedVault(
     uint256 _releaseDelta
 ) public virtual onlyEndorsers returns (address _vault);
 ```
+
 **Parameters**
 
 |Name|Type|Description|
@@ -325,7 +304,6 @@ function newEndorsedVault(
 |----|----|-----------|
 |`_vault`|`address`|address of the newly-deployed vault|
 
-
 ### endorseMultiStrategyVault
 
 Endorse an already deployed multi strategy vault.
@@ -333,16 +311,15 @@ Endorse an already deployed multi strategy vault.
 *To be used with default values for `_releaseDelta`, `_vaultType`
 and `_deploymentTimestamp`.*
 
-
 ```solidity
 function endorseMultiStrategyVault(address _vault) external virtual;
 ```
+
 **Parameters**
 
 |Name|Type|Description|
 |----|----|-----------|
 |`_vault`|`address`|Address of the vault to endorse.|
-
 
 ### endorseSingleStrategyVault
 
@@ -351,28 +328,26 @@ Endorse an already deployed Single Strategy vault.
 *To be used with default values for `_releaseDelta`, `_vaultType`
 and `_deploymentTimestamp`.*
 
-
 ```solidity
 function endorseSingleStrategyVault(address _vault) external virtual;
 ```
+
 **Parameters**
 
 |Name|Type|Description|
 |----|----|-----------|
 |`_vault`|`address`|Address of the vault to endorse.|
 
-
 ### endorseVault
-
 
 Adds an existing vault to the list of "endorsed" vaults for that asset.
 
 *
+
 Throws if caller isn't `owner`.
 Throws if no releases are registered yet.
 Throws if `vault`'s api version does not match the release specified.
 Emits a `NewEndorsedVault` event.*
-
 
 ```solidity
 function endorseVault(address _vault, uint256 _releaseDelta, uint256 _vaultType, uint256 _deploymentTimestamp)
@@ -380,6 +355,7 @@ function endorseVault(address _vault, uint256 _releaseDelta, uint256 _vaultType,
     virtual
     onlyEndorsers;
 ```
+
 **Parameters**
 
 |Name|Type|Description|
@@ -389,14 +365,12 @@ function endorseVault(address _vault, uint256 _releaseDelta, uint256 _vaultType,
 |`_vaultType`|`uint256`|Type of vault to endorse.|
 |`_deploymentTimestamp`|`uint256`|The timestamp of when the vault was deployed for FE use.|
 
-
 ### _registerVault
 
 *Function used to register a newly deployed or added vault.
 This well set all of the values for the vault in the `vaultInfo`
 mapping as well as add the vault and the underlying asset to any
 relevant arrays for tracking.*
-
 
 ```solidity
 function _registerVault(
@@ -416,17 +390,16 @@ Tag a vault with a specific string.
 on chain if desired to arbitrarily classify any vaults.
 i.e. Certain ratings ("A") / Vault status ("Shutdown") etc.*
 
-
 ```solidity
 function tagVault(address _vault, string memory _tag) external virtual onlyTaggers;
 ```
+
 **Parameters**
 
 |Name|Type|Description|
 |----|----|-----------|
 |`_vault`|`address`|Address of the vault or strategy to tag.|
 |`_tag`|`string`|The string to tag the vault or strategy with.|
-
 
 ### removeVault
 
@@ -437,16 +410,15 @@ to not have to iterate over the full array.
 NOTE: This will not remove the asset from the `assets` array
 if it is no longer in use and will have to be done manually.*
 
-
 ```solidity
 function removeVault(address _vault) external virtual onlyEndorsers;
 ```
+
 **Parameters**
 
 |Name|Type|Description|
 |----|----|-----------|
 |`_vault`|`address`|Address of the vault to remove.|
-
 
 ### removeAsset
 
@@ -455,10 +427,10 @@ Removes a specific `_asset` at `_index` from `assets`.
 *Can be used if an asset is no longer in use after a vault or
 strategy has also been removed.*
 
-
 ```solidity
 function removeAsset(address _asset, uint256 _index) external virtual onlyEndorsers;
 ```
+
 **Parameters**
 
 |Name|Type|Description|
@@ -466,15 +438,14 @@ function removeAsset(address _asset, uint256 _index) external virtual onlyEndors
 |`_asset`|`address`|The asset to remove from the array.|
 |`_index`|`uint256`|The index it sits at.|
 
-
 ### setEndorser
 
 Set a new address to be able to endorse or remove an existing endorser.
 
-
 ```solidity
 function setEndorser(address _account, bool _canEndorse) external virtual onlyGovernance;
 ```
+
 **Parameters**
 
 |Name|Type|Description|
@@ -482,15 +453,14 @@ function setEndorser(address _account, bool _canEndorse) external virtual onlyGo
 |`_account`|`address`|The address to set.|
 |`_canEndorse`|`bool`|Bool if the `_account` can or cannot endorse.|
 
-
 ### setTagger
 
 Set a new address to be able to tag a vault.
 
-
 ```solidity
 function setTagger(address _account, bool _canTag) external virtual onlyGovernance;
 ```
+
 **Parameters**
 
 |Name|Type|Description|
@@ -498,49 +468,50 @@ function setTagger(address _account, bool _canTag) external virtual onlyGovernan
 |`_account`|`address`|The address to set.|
 |`_canTag`|`bool`|Bool if the `_account` can or cannot tag.|
 
-
 ## Events
-### NewEndorsedVault
-Emitted when a new vault is deployed or added.
 
+### NewEndorsedVault
+
+Emitted when a new vault is deployed or added.
 
 ```solidity
 event NewEndorsedVault(address indexed vault, address indexed asset, uint256 releaseVersion, uint256 vaultType);
 ```
 
 ### RemovedVault
-Emitted when a vault is removed.
 
+Emitted when a vault is removed.
 
 ```solidity
 event RemovedVault(address indexed vault, address indexed asset, uint256 releaseVersion, uint256 vaultType);
 ```
 
 ### VaultTagged
-Emitted when a vault is tagged which a string.
 
+Emitted when a vault is tagged which a string.
 
 ```solidity
 event VaultTagged(address indexed vault);
 ```
 
 ### UpdateTagger
-Emitted when gov adds ore removes a `tagger`.
 
+Emitted when gov adds ore removes a `tagger`.
 
 ```solidity
 event UpdateTagger(address indexed account, bool status);
 ```
 
 ### UpdateEndorser
-Emitted when gov adds ore removes a `endorser`.
 
+Emitted when gov adds ore removes a `endorser`.
 
 ```solidity
 event UpdateEndorser(address indexed account, bool status);
 ```
 
 ## Structs
+
 ### Info
 
 ```solidity
@@ -553,4 +524,3 @@ struct Info {
     string tag;
 }
 ```
-
