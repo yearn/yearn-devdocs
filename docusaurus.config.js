@@ -13,6 +13,10 @@ export default {
   favicon: 'img/favicon.ico',
   organizationName: 'yearn', // Usually your GitHub org/user name.
   projectName: 'yearn-devdocs', // Usually your repo name.
+  markdown: {
+    mermaid: true,
+  },
+  themes: ['@docusaurus/theme-mermaid'],
   themeConfig: {
     algolia: {
       apiKey: process.env.ALGOLIA_API_KEY || 'UNKNOWN',
