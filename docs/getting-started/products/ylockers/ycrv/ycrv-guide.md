@@ -32,7 +32,7 @@ There's also a "Learn More" tab to the right of those 4 options and a helpful da
 
 ### 1. Stake
 
-First, you'll need some yCRV. You can mint or buy yCRV with CRV via the zapper on the "Get yCRV" tab. Alternatively, yCRV can be purchased directly through the following platforms:
+First, you'll need some yCRV. You can mint or buy yCRV with CRV via the zapper on the [Get yCRV](#4-get-ycrv) tab. Alternatively, yCRV can be purchased directly through the following platforms:
 
 * [Curve Finance](https://curve.fi/#/ethereum/swap?from=0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee&to=0xfcc5c47be19d06bf83eb04298b026f81069ff65b) - The primary liquidity source for yCRV
 * [CowSwap](https://swap.cow.fi/#/1/swap/ETH/YCRV) - DEX aggregators like CowSwap should also work well
@@ -99,6 +99,8 @@ You'll need to approve the vault contract to allow it to access your yCRV and th
 And that's it. There's nothing more for you to do.
 
 You'll receive "yvyCRV" vault tokens to your wallet, which are like a deposit receipt. They represent your share of the yCRV yVault. As the vault earns yield, the price of your vault tokens will increase as there is more underlying yCRV in the vault for you to redeem upon withdrawal.
+
+⚠️Note: you can also buy yvyCRV directly on your favorite dex aggregator like Cowswap
 
 ### 2. Withdraw
 
