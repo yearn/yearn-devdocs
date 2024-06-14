@@ -89,7 +89,7 @@ Retrieve all of the endorsed vaults on a specific chain.
 
 Manages all of the multi-strategy vaults on a chain, and holds the `role_manager` position for those vaults.
 
-All the other periphery contracts and Yearn multisigs can be retrieved from the Role manager as well using the getter functions, such as `getBrain()`, `getRegistry()`, `getDebtAllocator(vault)`.
+All the other periphery contracts and Yearn multisigs can be retrieved from the Role manager as well using the getter functions, such as `getBrain()`/`getPositionHolder(keccak256("Brain"))`, `getRegistry()`/`getPositionHolder(keccak256("Registry"))`, `getDebtAllocator(vault)`, .
 
 - [`getAllVaults()`](/vaults/smart-contracts/v3/periphery/RoleManager#getallvaults) Returns and array for all multi-strategy vaults the contract is the role manager for.
 - [`getVault(asset, apiVersion, category)`](/vaults/smart-contracts/v3/periphery/RoleManager#getvault) Returns the vault if any based on the inputs.

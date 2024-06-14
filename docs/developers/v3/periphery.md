@@ -76,3 +76,5 @@ https://github.com/yearn/vault-periphery/blob/master/contracts/Managers/RoleMana
 The Role Manager is used to hold the `role_manager` position in Yearns multi strategy vaults and make deployments simpler. All role configuration and periphery contracts are set up during the vaults deployment.
 
 Yearn specific periphery contracts can also all be retrieved on chain from the Role Manager on that chain.
+
+For Yearn specific implementation addresses check [Contract Addresses](/getting-started/products/addresses)
