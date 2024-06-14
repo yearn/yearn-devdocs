@@ -36,6 +36,7 @@ Yearn has 2 ways to earn yield on your yPRISMA; depositing to the `YearnBoostedS
 |--------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------|
 | YearnBoostedStaker                               | [0xF4C6e0E006F164535508787873d86b84fe901975](https://etherscan.io/address/0xF4C6e0E006F164535508787873d86b84fe901975) |
 | Rewards Distributor                              | [0xc480b481dD194EAc469EC9c4484D23d54B868EDD](https://etherscan.io/address/0xc480b481dD194EAc469EC9c4484D23d54B868EDD) |
+| yPRISMA Fee Receiver                             | [0x76DF88Aa8711822472Cb40Ed8c972A461A20ecdc](https://etherscan.io/address/0x76DF88Aa8711822472Cb40Ed8c972A461A20ecdc) |
 | Boosted Staker Utilities                         | [0xf04037D102b64E365eF6Eb81937bDf59B31fE5B8](https://etherscan.io/address/0xf04037D102b64E365eF6Eb81937bDf59B31fE5B8) |
 | PRISMA                                           | [0xdA47862a83dac0c112BA89c6abC2159b95afd71C](https://etherscan.io/address/0xdA47862a83dac0c112BA89c6abC2159b95afd71C) |
 | yPRISMA                                          | [0xe3668873d944e4a949da05fc8bde419eff543882](https://etherscan.io/address/0xe3668873d944e4a949da05fc8bde419eff543882) |

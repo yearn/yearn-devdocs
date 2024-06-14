@@ -44,8 +44,8 @@ module.exports = {
               label: 'yCRV',
               items: [
                 'products/ylockers/ycrv/overview',
-                'products/ylockers/ycrv/guide',
-                'products/ylockers/ycrv/faq',
+                'products/ylockers/ycrv/ycrv-guide',
+                'products/ylockers/ycrv/ycrv-faq',
               ],
             },
             {
