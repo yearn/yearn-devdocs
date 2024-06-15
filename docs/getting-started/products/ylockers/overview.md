@@ -2,7 +2,7 @@
 
 :::info
 
-The new Ylockers ecosystem is rolling out on May 16th, 2024 with the launch of the *YearnBoostedStaker* (YBS) contract and a new V3 Auto-Compounder vault. These new contracts will be available for yPRISMA initially and then be rolled out for yCRV a month later on June 6th. Before June 6th, yCRV will continue to operate with the existing st-yCRV and lp-yCRV V2 vaults.
+The new Ylockers ecosystem has rolled out as of June 6th, 2024 with the launch of the *YearnBoostedStaker* (YBS) contract and a new V3 Auto-Compounder vault. These new contracts are now available for yPRISMA and yCRV.
 
 :::
 
