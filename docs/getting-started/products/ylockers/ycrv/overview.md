@@ -9,7 +9,7 @@ yCRV is Yearn's veCRV yLocker product. It is designed to tokenize the different 
 - They are not redeemable for the underlying locked CRV
 - They have no transfer restrictions and thus can always be swapped in DEX pools
 
-yCRV allows Yearn to use your CRV tokens optimally within the Curve ecosystem to boost yields across all products and earn rewards from admin fees and voter incentives. Depositing to yCRV also allows Yearn to uses the locked CRV to actively participate in Curve governance.
+yCRV allows Yearn to use your CRV tokens optimally within the Curve ecosystem to boost yields across all products and earn rewards from admin fees and voter incentives. Depositing to yCRV also allows Yearn to use the locked CRV to actively participate in Curve governance.
 
 For more information about Yearn's Liquid Lockers, read the overview [here](../overview.md).
 
