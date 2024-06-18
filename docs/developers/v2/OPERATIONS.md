@@ -1,4 +1,10 @@
-# Operations procedures
+# Migration/Shutdown Procedures
+
+:::warning
+
+This is a technical guide. If there is an emergency, please also follow the [Emergency Procedures for Yearn Finance](EMERGENCY) guide.
+
+:::
 
 ## Revoking a strategy with normal migration
 

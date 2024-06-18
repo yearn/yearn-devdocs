@@ -1,4 +1,4 @@
-# Getting Started with Vaults and Strategies
+# Getting Started with V2 Vaults
 
 ## Requirements
 
