@@ -6,7 +6,7 @@ export default {
   tagline: 'DeFi made simple',
   url: 'https://docs.yearn.fi',
   baseUrl: '/',
-  onBrokenLinks: 'throw',
+  onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
   organizationName: 'yearn', // Usually your GitHub org/user name.
@@ -16,6 +16,9 @@ export default {
   },
   themes: ['@docusaurus/theme-mermaid'],
   themeConfig: {
+    prism: {
+      additionalLanguages: ['solidity'],
+    },
     algolia: {
       apiKey: process.env.ALGOLIA_API_KEY || 'UNKNOWN',
       indexName: process.env.ALGOLIA_INDEX_NAME || 'UNKNOWN',

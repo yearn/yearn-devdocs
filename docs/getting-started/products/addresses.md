@@ -31,18 +31,18 @@
 | Core Dev multisig      | dev.ychad.eth         | [0x846e211e8ba920B353FB717631C015cf04061Cc9](https://etherscan.io/address/0x846e211e8ba920B353FB717631C015cf04061Cc9) |
 | Treasury               | treasury.ychad.eth    | [0x93A62dA5a14C80f265DAbC077fCEE437B1a0Efde](https://etherscan.io/address/0x93A62dA5a14C80f265DAbC077fCEE437B1a0Efde) |
 | Health Check           | health.ychad.eth      | [0xDDCea799fF1699e98EDF118e0629A974Df7DF012](https://etherscan.io/address/0xDDCea799fF1699e98EDF118e0629A974Df7DF012) |
+| V3 Registry            |                       | [0xff31A1B020c868F6eA3f61Eb953344920EeCA3af](https://etherscan.com/address/0xff31A1B020c868F6eA3f61Eb953344920EeCA3af)|
+| Role Manager           |                       | [0xb3bd6B2E61753C311EFbCF0111f75D29706D9a41](https://etherscan.com/address/0xb3bd6B2E61753C311EFbCF0111f75D29706D9a41)|
+| Debt Allocator Factory |                       | [0xfCF8c7C43dedd567083B422d6770F23B78D15BDe](https://etherscan.com/address/0xfCF8c7C43dedd567083B422d6770F23B78D15BDe)|
+| Accountant             |                       | [0x5A74Cb32D36f2f517DB6f7b0A0591e09b22cDE69](https://etherscan.com/address/0x5A74Cb32D36f2f517DB6f7b0A0591e09b22cDE69)|
 
-## Polygon Contracts for yVaults V3
+## Polygon Contracts
 
 | Identity               | Address                                    |
 | ---------------------- | ------------------------------------------ |
-| TokenizedStrategy      | [0xDFC8cD9F2f2d306b7C0d109F005DF661E14f4ff2](https://polygonscan.com/address/0xDFC8cD9F2f2d306b7C0d109F005DF661E14f4ff2) |
 | pChad Multisig         | [0xC4ad0000E223E398DC329235e6C497Db5470B626](https://polygonscan.com/address/0xC4ad0000E223E398DC329235e6C497Db5470B626) |
 | Strategist Multisig    | [0x16388000546eDed4D476bd2A4A374B5a16125Bc1](https://polygonscan.com/address/0x16388000546eDed4D476bd2A4A374B5a16125Bc1) |
-| V3 Registry            | [0xfF5e3A7C4cBfA9Dd361385c24C3a0A4eE63CE500](https://polygonscan.com/address/0xfF5e3A7C4cBfA9Dd361385c24C3a0A4eE63CE500) |
-| Release Registry       | [0x990089173D5d5287c344092Be0bB37950A67d17B](https://polygonscan.com/address/0x990089173D5d5287c344092Be0bB37950A67d17B) |
-| Vault Blueprint        | [0xDE992C652b266AE649FEC8048aFC35954Bee6145](https://polygonscan.com/address/0xDE992C652b266AE649FEC8048aFC35954Bee6145) |
-| Vault Factory          | [0xE9E8C89c8Fc7E8b8F23425688eb68987231178e5](https://polygonscan.com/address/0xE9E8C89c8Fc7E8b8F23425688eb68987231178e5) |
+| V3 Registry            | [0xff31A1B020c868F6eA3f61Eb953344920EeCA3af](https://polygonscan.com/address/0xff31A1B020c868F6eA3f61Eb953344920EeCA3af) |
 
 ## Fantom Contracts
 
@@ -63,6 +63,7 @@
 | Governance multisig    | [0xb6bc033D34733329971B938fEf32faD7e98E56aD](https://arbiscan.io/address/0xb6bc033D34733329971B938fEf32faD7e98E56aD) |
 | Treasury               | [0x1DEb47dCC9a35AD454Bf7f0fCDb03c09792C08c1](https://arbiscan.io/address/0x1DEb47dCC9a35AD454Bf7f0fCDb03c09792C08c1) |
 | Health Check           | [0x32059ccE723b4DD15dD5cb2a5187f814e6c470bC](https://arbiscan.io/address/0x32059ccE723b4DD15dD5cb2a5187f814e6c470bC) |
+| V3 Registry            | [0xff31A1B020c868F6eA3f61Eb953344920EeCA3af](https://polygonscan.com/address/0xff31A1B020c868F6eA3f61Eb953344920EeCA3af) |
 
 ## Optimism Contracts
 
@@ -76,6 +77,17 @@
 | Governance multisig    | [0xF5d9D6133b698cE29567a90Ab35CfB874204B3A7](https://optimistic.etherscan.io/address/0xF5d9D6133b698cE29567a90Ab35CfB874204B3A7) |
 | Treasury               | [0x84654e35E504452769757AAe5a8C7C6599cBf954](https://optimistic.etherscan.io/address/0x84654e35E504452769757AAe5a8C7C6599cBf954) |
 | Health Check           | [0x3d8F58774611676fd196D26149C71a9142C45296](https://optimistic.etherscan.io/address/0x3d8F58774611676fd196D26149C71a9142C45296) |
+
+## V3 Contracts (stable across chains)
+
+| Identity               | Address                                    |
+| ---------------------- | ------------------------------------------ |
+| V3 Registry            | [0xff31A1B020c868F6eA3f61Eb953344920EeCA3af](https://etherscan.com/address/0xff31A1B020c868F6eA3f61Eb953344920EeCA3af) |
+| Release Registry       | [0x990089173D5d5287c344092Be0bB37950A67d17B](https://etherscan.com/address/0x990089173D5d5287c344092Be0bB37950A67d17B) |
+| Report Trigger         | [0xD98C652f02E7B987e0C258a43BCa9999DF5078cF](https://etherscan.com/address/0xD98C652f02E7B987e0C258a43BCa9999DF5078cF) |
+| APR Oracle             | [0x27aD2fFc74F74Ed27e1C0A19F1858dD0963277aE](https://etherscan.com/address/0x27aD2fFc74F74Ed27e1C0A19F1858dD0963277aE) |
+| 4626 Router            | [0x1112dbCF805682e828606f74AB717abf4b4FD8DE](https://etherscan.com/address/0x1112dbCF805682e828606f74AB717abf4b4FD8DE) |
+| Protocol Address Provider| [0x1e9778aAD41Aa3E0884C276fB4C2D03C4036Aa0B](https://etherscan.com/address/0x1e9778aAD41Aa3E0884C276fB4C2D03C4036Aa0B) |
 
 # Deployed Lens Contracts
 
