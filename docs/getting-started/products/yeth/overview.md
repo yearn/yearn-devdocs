@@ -1,6 +1,5 @@
-# Overview
 
-## yETH
+# yETH
 
 yETH is a user-governed liquidity pool token consisting of various Ethereum Liquid Staking Derivatives (LSTs).
 
@@ -158,7 +157,7 @@ yETH earns APY through various sources:
 - Buying LSTs at a discount
 - Whitelisting fees
 
-However, there are also deductions such as Beacon Chain slashings and a 10% Yearn performance fee on profits. 
+However, there are also deductions such as Beacon Chain slashings and a 10% Yearn performance fee on profits.
 
 Please note that yield is paid out one week after it is generated. The yield generated in week N is streamed out in week N+1.
 

@@ -1,6 +1,4 @@
-# Overview
-
-&nbsp;
+# yVaults
 
 ## What are yVaults?
 
@@ -10,7 +8,7 @@
 
 ## yVault Fee Structure
 
-**Performance Fee**: Deducted from yield earned every time a vault harvests a strategy. 
+**Performance Fee**: Deducted from yield earned every time a vault harvests a strategy.
 
 **Management Fee**: Flat rate taken from vault deposits over a year. The fee is extracted by minting new shares of the vault, thereby diluting vault participants. This is done at the time of harvest, and calculated based on time since the previous harvest.
 

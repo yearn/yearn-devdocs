@@ -9,41 +9,66 @@ export default {
         {
           type: 'category',
           label: 'yVaults',
+          link: {
+            type: 'doc',
+            id: 'products/yvaults/overview',
+          },
           items: [
-            'products/yvaults/overview',
+            {
+              type: 'category',
+              label: 'yVaults v3',
+              link: {
+                type: 'doc',
+                id: 'products/yvaults/v3',
+              },
+              items: [],
+            },
+            {
+              type: 'category',
+              label: 'yVaults v2',
+              link: {
+                type: 'doc',
+                id: 'products/yvaults/vault-factory',
+              },
+              items: [],
+            },
             'products/yvaults/vault-tokens',
-            {
-              type: 'category',
-              label: 'yVaults Version 3',
-              items: ['products/yvaults/v3'],
-            },
-            {
-              type: 'category',
-              label: 'yVaults Version 2',
-              items: ['products/yvaults/vault-factory'],
-            },
           ],
         },
         {
           type: 'category',
           label: 'veYFI',
-          items: ['products/veyfi'],
+          link: {
+            type: 'doc',
+            id: 'products/veyfi',
+          },
+          items: [],
         },
         {
           type: 'category',
           label: 'yETH',
-          items: ['products/yeth/overview'],
+          link: {
+            type: 'doc',
+            id: 'products/yeth/overview',
+          },
+          items: [],
         },
         {
           type: 'category',
           label: 'yLockers',
+          link: {
+            type: 'doc',
+            id: 'products/ylockers/overview',
+          },
           items: [
-            'products/ylockers/overview',
             {
               type: 'category',
               label: 'yCRV',
+              link: {
+                type: 'doc',
+                id: 'products/ylockers/ycrv/overview',
+              },
               items: [
-                'products/ylockers/ycrv/overview',
                 'products/ylockers/ycrv/ycrv-guide',
                 'products/ylockers/ycrv/ycrv-faq',
               ],
@@ -51,8 +76,11 @@ export default {
             {
               type: 'category',
               label: 'yPRISMA',
+              link: {
+                type: 'doc',
+                id: 'products/ylockers/yprisma/overview',
+              },
               items: [
-                'products/ylockers/yprisma/overview',
                 'products/ylockers/yprisma/yprisma-guide',
                 'products/ylockers/yprisma/yprisma-faq',
               ],
