@@ -1,4 +1,4 @@
-# Deploying and Managing a V3 Vault
+# Deploying and Managing V3 Vaults
 
 V3 makes it as simple as possible for anyone to deploy and manage their Vaults. No longer will Yearn be the only manager of Vaults, gate-keeping who can be a debt allocator, or what strategies should be added to a vault. Now, anyone can deploy, manage, and earn fees from their vision and preferences on everything from risk profile, fee model, decentralization, etc.
 
