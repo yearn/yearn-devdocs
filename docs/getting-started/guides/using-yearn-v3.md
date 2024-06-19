@@ -1,49 +1,54 @@
-# Using Yearn
+# Using Yearn's V3 Vaults
 
-Thanks to a feature called 'zap', depositing into any vault with almost any token is effortless.
+So you want to deposit into on of Yearn's V3 Vaults? You are in the right spot. Keep reading for a full walkthrough on how to use them.
 
-Here's how it works:
+## Connect your Wallet
 
 First, **Connect your wallet** using the button at the top right corner. Multiple wallets are supported, but most people use [MetaMask](https://metamask.io/), which can be downloaded for free as a Chrome extension or through the Apple and Android app stores. Make sure that your wallet is connected to the Ethereum network.
 
-![image](https://github.com/yearn/yearn-devdocs/assets/167110386/33f03d9c-76fc-4433-9e16-c3c573484596)
+![image](/img/guides/using-yearn/v3/image1.png)
 
-## Yearn is multi-chain
+## Navigating to the V3 Vaults
 
-Our V3 vaults are currently on Ethereum, Arbitrum, and Polygon with more to come.
+There is a big button, anon!
 
-![image](https://github.com/yearn/yearn-devdocs/assets/167110386/d5d9731e-360a-47cf-ae21-664e0489d3c5)
+![image](/img/guides/using-yearn/v3/image2.png)
 
-Click on this button to select the network you would like to interact with:
+Our V3 vaults are currently on Ethereum, Arbitrum, and Polygon with more to come. Click on this button to select the network you would like to interact with:
 
-![image](https://github.com/yearn/yearn-devdocs/assets/167110386/0f8aa890-5383-4ef0-9569-b764c4474894)
+![image](/img/guides/using-yearn/v3/image3.png)
 
-## If you **already have the required token** for the vault that you would like to deposit in:
+## Depositing
 
-1. Select the vault that you would like to deposit into.
+1. Select the vault that you would like to deposit into. We will choose DAI for this walkthrough
+
+![image](/img/guides/using-yearn/v3/image3_5.png)
+
 2. Enter the amount of tokens you want to deposit into the vault. If you are depositing ETH, ensure you have enough ETH left over to pay for future transactions you might need to make.
 
-![image](https://github.com/yearn/yearn-devdocs/assets/167110386/b5ff55a0-5b26-4c44-b149-d73c10906198)
+![image](/img/guides/using-yearn/v3/image4.png)
 
 3. Click the 'Approve' or 'Deposit' button, depending on if you have previously approved.
 
-![image](https://github.com/yearn/yearn-devdocs/assets/167110386/33e59b67-3bb6-41ae-882e-df4dadc67754)
-   
-4. Your wallet will ask you to confirm the transaction. This will take about 3 minutes, but you can speed it up by [paying a higher gas fee to the network](https://blog.leverj.io/how-to-set-the-gas-limit-and-gas-price-in-metamask-1b33c38c32fd). If your transaction gets stuck, see [this guide](https://support.metamask.io/transactions-and-gas/transactions/how-to-speed-up-or-cancel-a-pending-transaction/) on how to speed up or cancel the transaction.
+![image](/img/guides/using-yearn/v3/image5.png)
+
+4. Your wallet will ask you to confirm the transaction. It should confirm within a minute, but if your transaction gets stuck, see [this guide](https://support.metamask.io/transactions-and-gas/transactions/how-to-speed-up-or-cancel-a-pending-transaction/) on how to speed up or cancel the transaction.
 
 <p align="center">
-  <img width="258.75" height=" 459.75" src="https://i.imgur.com/qjryeGD.png" className="topRightImg"/>
+  <img width="258.75" height=" 459.75" src="/img/guides/using-yearn/v3/image6.png" className="topRightImg"/>
 </p>
 
 5. When your transaction succeeds, you will see your deposited balance in the vault's interface, which should appear at the top of the vault list.
 
-![image](https://github.com/yearn/yearn-devdocs/assets/167110386/29708ae3-96be-482f-ba8b-b902ea9016fa)
+![image](/img/guides/using-yearn/v3/image7.png)
+
+## Withdrawing
 
 When you're ready to withdraw:
 
 1. Select the vault that you would like to withdraw from. Click the "Withdraw" tab.
 
-![image](https://github.com/yearn/yearn-devdocs/assets/167110386/dc1d7ebf-3f4f-47b8-9435-c74a0641ecd1)
+![image](/img/guides/using-yearn/v3/image8.png)
 
 2. Enter the amount you want to withdraw, or click 'Max' to withdraw the entire balance.
 3. Click 'Withdraw'
@@ -61,4 +66,3 @@ Community resources to monitor your returns:
 - [Zapper](https://zapper.xyz/)
 - [Zerion](https://app.zerion.io/)
 - [DeBank](https://debank.com/)
- 

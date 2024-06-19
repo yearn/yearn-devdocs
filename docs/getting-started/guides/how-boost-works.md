@@ -1,5 +1,11 @@
 # How Yearn Boosts Yield
 
+:::info
+
+While the general information below about how Yearn boosts yields within the Curve ecosystem is still accurate, yveCRV and yvBOOST have both been migrated to the yCRV liquid locker. You can read about yCRV [here](../products/ylockers/ycrv/overview).
+
+:::
+
 This is an overview of how Yearn investment strategies take advantage of CRV vote locking on Curve Finance in order to increase yield.
 
 ## CRV vote locking
@@ -76,7 +82,7 @@ This is a “set-and-forget” vault where your CRV tokens grow exponentially, h
 
 Now you might be wondering how one would extract any gains made from your CRV tokens in the vault, when as mentioned earlier, any CRV deposited into either the yveCRV or the yvBOOST are locked. While you cannot withdraw from the yveCRV vault, you can actually swap both of these vault tokens on Sushiswap. This is because Yearn and its users provide liquidity on Sushiswap to allow swapping of your yveCRV and yvBOOST tokens for ETH (or anything, really).
 
-#### A little alpha.
+#### A little alpha
 
 Yearn buys yvBOOST from the market, unwraps it into yveCRV, and donates that yveCRV into the yvBOOST vault, increasing the underlying value of yvBOOST.
 
