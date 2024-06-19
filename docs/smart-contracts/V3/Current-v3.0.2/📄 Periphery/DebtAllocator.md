@@ -1,4 +1,4 @@
-# DebtAllocator
+# DebtAllocator.sol
 
 [Git Source](https://github.com/yearn/vault-periphery/blob/master/contracts/debtAllocators/DebtAllocator.sol)
 

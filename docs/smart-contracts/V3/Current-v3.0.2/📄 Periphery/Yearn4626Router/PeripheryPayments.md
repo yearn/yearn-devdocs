@@ -1,5 +1,5 @@
 
-# PeripheryPayments
+# PeripheryPayments.sol
 
 Immutable state used by periphery contracts
 Largely Forked from https://github.com/Uniswap/v3-periphery/blob/main/contracts/base/PeripheryPayments.sol

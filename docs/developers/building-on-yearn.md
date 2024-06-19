@@ -1,6 +1,6 @@
 # Building on Yearn
 
-Welcome! This is the spot to be for all things related to building products on, for, and with Yearn. If you are looking for more general information about Yearn and it's products, check out the [Getting Started](../getting-started/intro.md) section of the docs. If you are looking to build, read on!
+Welcome! This is the spot to be for all things related to building products on, for, and with Yearn. If you are looking for more general information about Yearn and it's products, check out the [Getting Started](../getting-started/intro) section of the docs. If you are looking to build, read on!
 
 ## Core Tools
 
@@ -51,7 +51,7 @@ this section needs updating
 
 You can test Yearn vaults without spending cryptoassets on the available testnet for each network.
 
-To get started, head to the yearn testnet client which is available at: <https://hack.yearn.fi/>
+To get started, head to the yearn testnet client which is available at: https://hack.yearn.fi/
 
 Make sure to switch your wallet provider to the appropriate testnet network in order to use the protocol testnet without incurring costs on the mainnet network.
 
@@ -61,21 +61,21 @@ Testing is possible through Ethereum Rinkeby
 
 ### Steps to test
 
-- Go to <https://hack.yearn.fi/>
+- Go to https://hack.yearn.fi/
 - Switch to the testnet you wish to utilize over your wallet provider
 - Make sure to have the native asset for the specific network
-- Get some tokens from the test client faucet (Ethereum Rinkeby <https://faucet.rinkeby.io/>)
+- Get some tokens from the test client faucet (Ethereum Rinkeby https://faucet.rinkeby.io/)
 
 Make sure to select the correct market in the top right corner. You can find this on the left side of the address. Select the token you need and submit the faucet transaction but be mindful to make sure that you have certain amount of the native asset of the testnet you wish to transact on.
 
 #### Additional Resources
 
-- Workshop: Building and Integrating with Yearn Vaults: <https://www.youtube.com/watch?v=urC35PMbpJ4>
+- Workshop: Building and Integrating with Yearn Vaults: https://www.youtube.com/watch?v=urC35PMbpJ4
 --> Learn how to leverage the power of Yearn by creating a money-making integration on top of v2 vaults by taking advantage of the brand new EIP-4626: Tokenized Vault Standard! This workshop will guide you through creating a B2B/business router for yearn v2 vaults, which complies with the new EIP-4626. You'll be able to choose from multiple fee strategies for your users to maximize your profit.
 
-- Smart Contract parameters: <https://docs.yearn.fi/vaults/smart-contracts/vault>
-- <https://hackmd.io/t8HlcedLQeCu2l7RG-5Vbw?view>
-- <https://twitter.com/storming0x/status/1436851219864059906?s=20>
+- Smart Contract parameters: https://docs.yearn.fi/vaults/smart-contracts/vault
+- https://hackmd.io/t8HlcedLQeCu2l7RG-5Vbw?view
+- https://twitter.com/storming0x/status/1436851219864059906?s=20
 
 ## Data Analysis
 
@@ -95,7 +95,7 @@ Two common tools for on-chain data analysis are:
   - contract_strategy
   - v2_deployments
 
-Fiddle with them all at <https://dune.com/queries/625814>
+Fiddle with them all at https://dune.com/queries/625814
 
 2. **The Graph**- Query contract data with GQL using the Yearn subgraphs
 
@@ -105,8 +105,8 @@ GraphQL is the underlying query language used in The Graph.
 
 What is the difference between standard RESTFUL API calls and GraphQL calls? The difference is that traditional APIs require the developers to create specific endpoints for users that return specific data. If the user requires more information, they may need to make multiple API calls, sometimes hundreds of API calls, to get the information they require. With The Graph (which uses GraphQL), only one call is needed to a subgraph, as long as the developer has created a flexible schema.
 
-- <https://thegraph.com/hosted-service/subgraph/rareweasel/yearn-vaults-v2-mainnet>
-- <https://api.thegraph.com/subgraphs/name/rareweasel/yearn-vaults-v2-mainnet/graphql>
+- https://thegraph.com/hosted-service/subgraph/rareweasel/yearn-vaults-v2-mainnet
+- https://api.thegraph.com/subgraphs/name/rareweasel/yearn-vaults-v2-mainnet/graphql
 
 ## Some of the research questions that we are interested in
 
@@ -126,7 +126,7 @@ More details on these topics can be seen in our issues tab.
 ### Data Sources
 
 [**Yearn SDK**](https://github.com/yearn/yearn-sdk) [[Docs](https://yearn.github.io/yearn-sdk/)]
-<https://docs.yearn.fi/vaults/yearn-sdk/yearn-stack>
+https://docs.yearn.fi/vaults/yearn-sdk/yearn-stack
 If you are not sure about which service you should first look into, Yearn SDK can provide you with addresses of contracts and endpoints of yearn’s services.
 
 [**Yearn API**](https://github.com/yearn/yearn-caching-api) [[Docs](https://docs.yearn.fi/vaults/yearn-api)]
@@ -182,6 +182,6 @@ Here are some guidelines on how to maximize your chances of 'winning':
 
 ## Resources
 
-Yearn GitHub Organization: <https://github.com/yearn/>
+Yearn GitHub Organization: https://github.com/yearn/
 
-Yearn V2 Documentation: <https://github.com/yearn/yearn-vaults>
+Yearn V2 Documentation: https://github.com/yearn/yearn-vaults

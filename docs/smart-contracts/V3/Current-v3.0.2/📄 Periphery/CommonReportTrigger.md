@@ -1,4 +1,4 @@
-# CommonReportTrigger
+# CommonReportTrigger.sol
 
 [Git Source](https://github.com/yearn/tokenized-strategy-periphery/blob/master/src/ReportTrigger/CommonReportTrigger.sol)
 

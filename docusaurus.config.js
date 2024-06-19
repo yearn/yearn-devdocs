@@ -16,6 +16,11 @@ export default {
   },
   themes: ['@docusaurus/theme-mermaid'],
   themeConfig: {
+    docs: {
+      sidebar: {
+        autoCollapseCategories: true,
+      },
+    },
     prism: {
       additionalLanguages: ['solidity'],
     },
@@ -51,16 +56,16 @@ export default {
       items: [
         {
           to: 'getting-started/intro',
-          label: 'Introduction',
+          label: 'User Docs',
         },
         {
-          to: 'developers/v3/overview',
-          label: 'Develop',
+          to: 'developers/building-on-yearn',
+          label: 'Developer Docs',
         },
-        {
-          to: 'smart-contracts',
-          label: 'Smart Contracts',
-        },
+        // {
+        //   to: 'smart-contracts',
+        //   label: 'Smart Contracts',
+        // },
         {
           to: 'contributing/contribute',
           label: 'Contribute',

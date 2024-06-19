@@ -1,4 +1,4 @@
-# Yearn4626Router
+# Yearn4626Router.sol
 
 [Git Source](https://github.com/yearn/Yearn-ERC4626-Router/blob/master/src/Yearn4626Router.sol)
 

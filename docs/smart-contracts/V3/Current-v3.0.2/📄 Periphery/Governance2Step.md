@@ -1,4 +1,4 @@
-# Governance2Step
+# Governance2Step.sol
 
 [Git Source](https://github.com/yearn/tokenized-strategy-periphery/blob/master/src/utils/Governance2Step.sol)
 

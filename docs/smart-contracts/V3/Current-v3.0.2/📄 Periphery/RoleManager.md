@@ -1,4 +1,4 @@
-# RoleManager
+# RoleManager.sol
 
 [Git Source](https://github.com/yearn/vault-periphery/blob/master/contracts/Managers/RoleManager.sol)
 

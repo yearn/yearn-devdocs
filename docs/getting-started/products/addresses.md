@@ -1,4 +1,4 @@
-# Tokens & Contracts Addresses
+# Token & Contract Addresses
 
 ## Ethereum Tokens
 

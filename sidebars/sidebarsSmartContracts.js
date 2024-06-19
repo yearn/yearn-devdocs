@@ -28,5 +28,10 @@ export default {
     'yearn-lens/yearn-lens',
     'yearn-sdk/yearn-stack',
     'yearn-api',
+    {
+      type: 'link',
+      label: 'Developer Docs →',
+      href: '/developers/building-on-yearn',
+    },
   ],
 }

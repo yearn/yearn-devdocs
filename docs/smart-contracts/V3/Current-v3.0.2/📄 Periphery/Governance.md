@@ -1,4 +1,4 @@
-# Governance
+# Governance.sol
 
 [Git Source](https://github.com/yearn/tokenized-strategy-periphery/blob/master/src/utils/Governance.sol)
 

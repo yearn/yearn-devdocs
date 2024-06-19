@@ -1,4 +1,4 @@
-# TokenizedStrategy
+# TokenizedStrategy.sol
 
 [Git Source](https://github.com/yearn/tokenized-strategy/blob/v3.0.2-1/src/TokenizedStrategy.sol)
 

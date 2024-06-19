@@ -1,4 +1,4 @@
-# Using Yearn
+# Getting Started
 
 Thanks to a feature called 'zap', depositing into any vault with almost any token is effortless.
 
@@ -16,7 +16,7 @@ Click on this button to select the network you would like to interact with:
 
 ![image](https://github.com/yearn/yearn-devdocs/assets/7863230/5a2d63ad-6a67-4622-b8d7-c44021efdfb5)
 
-## If you **already have the required token** for the vault that you would like to deposit in:
+## If you **already have the required token** for the vault that you would like to deposit in
 
 1. Select the vault that you would like to deposit into.
 2. Enter the amount of tokens you want to deposit into the vault. If you are depositing ETH, ensure you have enough ETH left over to pay for future transactions you might need to make.
@@ -45,7 +45,7 @@ When you're ready to withdraw:
 4. Your wallet will ask you to confirm the transaction. See step 4 above for more details.
 5. When your transaction succeeds, the tokens will show up in your wallet again.
 
-## If you **don't have the required token** for the vault that you would like to deposit in:
+## If you **don't have the required token** for the vault that you would like to deposit in
 
 Yearn provides a zapping feature so you can deposit any token into any vault (zapping fees are explicit in the UI):
 
@@ -76,4 +76,3 @@ Community resources to monitor your returns:
 - [Zapper](https://zapper.fi/)
 - [Zerion](https://app.zerion.io/)
 - [DeBank](https://debank.com/)
- 

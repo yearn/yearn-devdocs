@@ -110,5 +110,7 @@ export default {
       ],
     },
     'products/addresses',
+    { type: 'link', label: 'Smart Contracts →', href: '/smart-contracts' },
+    { type: 'link', label: 'Security →', href: '/security' },
   ],
 }

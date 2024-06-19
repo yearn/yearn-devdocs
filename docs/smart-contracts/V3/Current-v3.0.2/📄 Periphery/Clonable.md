@@ -1,4 +1,4 @@
-# Clonable
+# Clonable.sol
 
 [Git Source](https://github.com/yearn/tokenized-strategy-periphery/blob/naster/src/utils/Clonable.sol)
 

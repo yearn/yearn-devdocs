@@ -1,4 +1,4 @@
-# AccountantFactory
+# AccountantFactory.sol
 
 [Git Source](https://github.com/yearn/vault-periphery/blob/master/contracts/accountants/AccountantFactory.sol)
 
