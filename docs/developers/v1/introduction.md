@@ -4,6 +4,12 @@ description: This documentation only covers v1 vaults.
 
 # v1 Vaults Overview
 
+:::warning
+
+This document describes the original implementation of Yearn's Vault and Governance systems. It gives a good sense of the bones of Yearn and is a place to build your intuitions about how things work. These contracts are all mostly deprecated or superseded at this point, so if you are looking for information on actual implementations or to better understand particulars of the current vaults, please review those specific docs.
+
+:::
+
 This document gives a _generalized and high level overview_ of how the protocol and its actors, smart contracts, and other services interact with each other. The aim is to build intuition about how Yearn products work.
 
 :::info

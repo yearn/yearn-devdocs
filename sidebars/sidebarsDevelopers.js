@@ -3,38 +3,57 @@ export default {
     'building-on-yearn',
     {
       type: 'category',
-      label: 'yVaults Version 3',
-      link: {
-        type: 'doc',
-        id: 'v3/overview',
-      },
+      label: 'yVaults',
+      // link: {
+      //   type: 'doc',
+      //   id: 'v1/introduction',
+      // },
       items: [
-        'v3/Integrating_v3',
-        'v3/strategy_writing_guide',
-        'v3/vault_management',
-        'v3/periphery',
-        'v3/protocol_fees',
         {
-          type: 'link',
-          label: 'Smart Contracts →',
-          href: '/smart-contracts/V3/Current-v3.0.2/BaseStrategy',
+          type: 'category',
+          label: 'yVaults Version 3',
+          link: {
+            type: 'doc',
+            id: 'v3/overview',
+          },
+          items: [
+            'v3/Integrating_v3',
+            'v3/strategy_writing_guide',
+            'v3/vault_management',
+            'v3/periphery',
+            'v3/protocol_fees',
+            {
+              type: 'link',
+              label: 'Smart Contracts →',
+              href: '/smart-contracts/V3/Current-v3.0.2/BaseStrategy',
+            },
+          ],
         },
-      ],
-    },
-    {
-      type: 'category',
-      label: 'yVaults Version 2',
-      items: [
-        'v2/getting-started',
-        'v2/DEPLOYMENT',
-        'v2/SPECIFICATION',
-        'v2/OPERATIONS',
-        'v2/additional-resources',
-
         {
-          type: 'link',
-          label: 'Smart Contracts →',
-          href: '/smart-contracts/V2/Current-v0.4.6/BaseStrategy',
+          type: 'category',
+          label: 'yVaults Version 2',
+          items: [
+            'v2/getting-started',
+            'v2/DEPLOYMENT',
+            'v2/SPECIFICATION',
+            'v2/OPERATIONS',
+            'v2/additional-resources',
+
+            {
+              type: 'link',
+              label: 'Smart Contracts →',
+              href: '/smart-contracts/V2/Current-v0.4.6/BaseStrategy',
+            },
+          ],
+        },
+        {
+          type: 'category',
+          label: 'yVaults Version 1',
+          link: {
+            type: 'doc',
+            id: 'v1/introduction',
+          },
+          items: ['v1/interfaces'],
         },
       ],
     },

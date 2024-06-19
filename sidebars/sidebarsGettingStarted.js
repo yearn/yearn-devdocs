@@ -33,6 +33,11 @@ export default {
               items: [],
             },
             'products/yvaults/vault-tokens',
+            {
+              type: 'link',
+              label: 'yVaults Dev Docs →',
+              href: '../../../developers/v1/introduction',
+            },
           ],
         },
         {

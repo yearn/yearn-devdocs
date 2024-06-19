@@ -1459,7 +1459,7 @@ function nonces(address _owner) external view returns (uint256);
 Sets `value` as the allowance of `spender` over ``owner``'s tokens,
 given ``owner``'s signed approval.
 
-*IMPORTANT: The same issues [IERC20-approve](/lib/erc4626-tests/ERC4626.prop.sol/interface.IERC20.md#approve) has related to transaction
+*IMPORTANT: The same issues IERC20-approve has related to transaction
 ordering also apply here.
 Emits an Approval event.
 Requirements:
