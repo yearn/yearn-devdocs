@@ -1,9 +1,9 @@
 // @ts-check
-/** @type {import('@docusaurus/types').DocusaurusConfig} */
-const math = require('remark-math')
-const katex = require('rehype-katex')
+/** @type {import('@docusaurus/types').Config} */
+import math from 'remark-math'
+import katex from 'rehype-katex'
 
-module.exports = {
+export default {
   title: 'yearn.fi',
   tagline: 'DeFi made simple',
   url: 'https://docs.yearn.fi',
@@ -13,6 +13,10 @@ module.exports = {
   favicon: 'img/favicon.ico',
   organizationName: 'yearn', // Usually your GitHub org/user name.
   projectName: 'yearn-devdocs', // Usually your repo name.
+  markdown: {
+    mermaid: true,
+  },
+  themes: ['@docusaurus/theme-mermaid'],
   themeConfig: {
     algolia: {
       apiKey: process.env.ALGOLIA_API_KEY || 'UNKNOWN',
@@ -33,8 +37,8 @@ module.exports = {
       },
       {
         name: 'git-url',
-        content: 'https://github.com/yearn/yearn-devdocs'
-      }
+        content: 'https://github.com/yearn/yearn-devdocs',
+      },
     ],
     navbar: {
       hideOnScroll: true,
