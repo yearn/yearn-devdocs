@@ -21,7 +21,7 @@ performance_fees = total_fees - protocol_fees = 18
 
 You can retrieve both the default protocol fee as well as if a custom config has been set for a specific vault or strategy using the Vault Factory that corresponds to that vault's API.
 
-```solidity title="Examples"
+``` solidity title="Examples"
 # Retrieve the default config.
 vaultFactory.default_protocol_fee_config()
 

@@ -33,7 +33,7 @@ Stores the endorsed multi strategy and single strategy vaults. Can also deploy n
 
 - `newEndorsedVault(...)` Deploy and endorse a new multi strategy vault.
 
-Deploy a custom Registry using the [RegistryFactory](/smart-contracts/v3/Current-v3.0.2/periphery/RegistryFactory)
+Deploy a custom Registry using the [RegistryFactory](/vaults/smart-contracts/v3/periphery/RegistryFactory.md)
 
 ### Accountant
 
