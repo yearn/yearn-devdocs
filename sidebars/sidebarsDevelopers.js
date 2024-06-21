@@ -53,12 +53,13 @@ export default {
             type: 'doc',
             id: 'v1/introduction',
           },
-          items: ['v1/interfaces'],
-        },
-        {
-          type: 'link',
-          label: 'Smart Contracts',
-          href: '/vaults/smart-contracts/BaseStrategy',
+          items: [
+            {
+              type: 'link',
+              label: 'Smart Contracts →',
+              href: '/smart-contracts/V1/interfaces',
+            },
+          ],
         },
       ],
     },
