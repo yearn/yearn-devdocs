@@ -18,7 +18,7 @@ There is a big button Anon!
 
 ![image](/img/guides/using-yearn/v2/image2.png)
 
-Our v2 Vaults are currently on Ethereum, Fantom, Arbitrum, and Optimism with more to come. Click on this button to select the network you would like to interact with:
+Our v2 Vaults are currently on Ethereum, Fantom, Arbitrum, base, and Optimism with more to come. Click on this button to select the network you would like to interact with:
 
 ![image](/img/guides/using-yearn/v2/image3.png)
 
