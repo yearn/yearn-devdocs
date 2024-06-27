@@ -1,7 +1,6 @@
 export default {
   gettingStarted: [
     'intro',
-    'using-yearn',
     {
       type: 'category',
       label: 'Products',
@@ -107,6 +106,8 @@ export default {
       type: 'category',
       label: 'Guides',
       items: [
+        'guides/using-yearn-v3',
+        'guides/using-yearn-v2',
         'guides/how-boost-works',
         'guides/how-to-add-a-custom-token-to-metamask',
         'guides/how-to-understand-yvault-roi',
