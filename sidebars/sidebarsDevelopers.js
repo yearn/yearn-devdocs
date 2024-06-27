@@ -1,5 +1,5 @@
 export default {
-  mySidebar: [
+  developers: [
     'building-on-yearn',
     {
       type: 'category',

@@ -1,7 +1,5 @@
-TODO: 'after upgrade to v3, change to: export default { mySidebar: ... }'
-
 export default {
-  mySidebar: [
+  smartContracts: [
     'index',
     {
       type: 'category',

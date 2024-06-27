@@ -1,5 +1,5 @@
 export default {
-  mySidebar: [
+  gettingStarted: [
     'intro',
     'using-yearn',
     {
@@ -115,6 +115,11 @@ export default {
       ],
     },
     'products/addresses',
+    {
+      type: 'link',
+      label: 'Understanding Risks →',
+      href: '/security/risks/risk-score',
+    },
     { type: 'link', label: 'Smart Contracts →', href: '/smart-contracts' },
     { type: 'link', label: 'Security →', href: '/security' },
   ],

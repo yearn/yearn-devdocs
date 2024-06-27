@@ -1,5 +1,5 @@
 export default {
-  mySidebar: [
+  contributing: [
     'contribute',
     'contributor-tools',
     {

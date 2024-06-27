@@ -10,7 +10,7 @@ export default function Home() {
   return (
     <Layout
       title={`${siteConfig.title} Docs`}
-      description="Yearn Finance is a suite of products in Decentralized Finance (DeFi) that provides lending aggregation, yield generation, and insurance on the Ethereum blockchain."
+      description="Yearn is a decentralized suite of products helping individuals, DAOs, and other protocols earn yield on their digital assets."
     >
       <main>
         <div className={styles.container}>

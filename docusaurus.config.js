@@ -58,10 +58,21 @@ export default {
           to: 'getting-started/intro',
           label: 'User Docs',
         },
+        // {
+        //   type: 'docSidebar',
+        //   sidebarId: 'gettingStarted',
+        //   label: 'User Docs',
+        // },
         {
           to: 'developers/building-on-yearn',
           label: 'Developer Docs',
         },
+        // {
+        //   type: 'docSidebar',
+        //   sidebarId: 'developers',
+        //   label: 'Developer Docs',
+        //   docsPluginID: 'developers',
+        // },
         // {
         //   to: 'smart-contracts',
         //   label: 'Smart Contracts',
