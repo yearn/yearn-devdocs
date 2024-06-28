@@ -57,22 +57,13 @@ export default {
         {
           to: 'getting-started/intro',
           label: 'User Docs',
+          activeBasePath: '/getting-started',
         },
-        // {
-        //   type: 'docSidebar',
-        //   sidebarId: 'gettingStarted',
-        //   label: 'User Docs',
-        // },
         {
           to: 'developers/building-on-yearn',
           label: 'Developer Docs',
+          activeBasePath: '/developers',
         },
-        // {
-        //   type: 'docSidebar',
-        //   sidebarId: 'developers',
-        //   label: 'Developer Docs',
-        //   docsPluginID: 'developers',
-        // },
         // {
         //   to: 'smart-contracts',
         //   label: 'Smart Contracts',
@@ -80,14 +71,17 @@ export default {
         {
           to: 'contributing/contribute',
           label: 'Contribute',
+          activeBasePath: '/contribute',
         },
         {
           to: 'resources/faq',
           label: 'Resources',
+          activeBasePath: '/resources',
         },
         {
           to: 'security/',
           label: 'Security',
+          activeBasePath: '/security',
         },
         // {
         //   type: 'docsVersionDropdown',
