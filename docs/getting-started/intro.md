@@ -1,4 +1,6 @@
-# Welcome to Yearn
+# What is Yearn?
+
+![image](/img/intro/blueknight.jpg)
 
 Yearn Finance is DeFi’s premier yield aggregator. Giving individuals, DAOs and other protocols a way to deposit digital assets and receive yield.
 

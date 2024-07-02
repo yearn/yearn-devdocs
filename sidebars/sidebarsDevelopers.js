@@ -72,6 +72,11 @@ export default {
       },
       items: [
         {
+          type: 'link',
+          label: 'yDaemon',
+          href: 'https://ydaemon.yearn.farm/docs/intro',
+        },
+        {
           type: 'category',
           label: 'Subgraph',
           link: {
@@ -81,6 +86,7 @@ export default {
           items: ['data-services/entities', 'data-services/queries'],
         },
         'data-services/yearn-lens',
+        'data-services/yearn-stack',
         'data-services/yearn-api',
       ],
     },

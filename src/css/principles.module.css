@@ -1,0 +1,34 @@
+/**
+ * CSS files with the .module.css suffix will be treated as CSS modules
+ * and scoped locally.
+ */
+
+.card {
+  display: flex;
+  flex-direction: row;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  height: 100%;
+  padding: 5px;
+}
+
+.text {
+  font-family: 'Roboto Slab', 'Roboto', serif;
+  display: flex;
+  min-width: 500px;
+  max-width: 700px;
+  min-height: 210px;
+  padding: 1.3rem;
+  margin: 1rem;
+  flex-direction: column;
+  justify-content: top;
+  border: 0px solid;
+  border-radius: 0px;
+  color: #888;
+}
+.text h2 {
+  font-family: 'Roboto Slab', 'Roboto', serif;
+  font-weight: 400;
+  font-size: 1.7rem;
+}

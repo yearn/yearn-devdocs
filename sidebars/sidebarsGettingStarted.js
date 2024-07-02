@@ -1,6 +1,21 @@
 export default {
   gettingStarted: [
-    'intro',
+    {
+      type: 'category',
+      label: 'What is Yearn?',
+      link: {
+        type: 'doc',
+        id: 'intro',
+      },
+      items: [
+        'yearn-principles',
+        {
+          type: 'link',
+          label: 'The Blue Pill',
+          href: 'https://yfistory.org/thebluepill',
+        },
+      ],
+    },
     {
       type: 'category',
       label: 'Products',
@@ -119,7 +134,7 @@ export default {
     {
       type: 'link',
       label: 'Understanding Risks →',
-      href: '/security/risks/risk-score',
+      href: '/security/risks/risk-overview',
     },
     { type: 'link', label: 'Smart Contracts →', href: '/smart-contracts' },
     { type: 'link', label: 'Security →', href: '/security' },

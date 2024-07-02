@@ -1,7 +1,11 @@
 ---
-sidebar_label: Intro
+sidebar_label: Introduction
 ---
 
 # Smart Contracts
 
-General Information about the smart contracts and how they are organized.
+:::info
+
+This page needs to be completed with general information about the Yearn smart contracts
+
+:::
