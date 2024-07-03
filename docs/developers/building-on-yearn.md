@@ -1,5 +1,11 @@
 # Building on Yearn
 
+:::warning
+
+this page needs to be updated. It may contain out of date information. Please refer to specific sections for the most recent information.
+
+:::
+
 Welcome! This is the spot to be for all things related to building products on, for, and with Yearn. If you are looking for more general information about Yearn and it's products, check out the [Getting Started](../getting-started/intro) section of the docs. If you are looking to build, read on!
 
 ## Core Tools

@@ -6,17 +6,17 @@
 
 ### yVaults
 
-#### What is a Vault?
+~~#### What is a Vault?~~
 
-- [yVaults](https://docs.yearn.fi/getting-started/products/yvaults/overview#what-are-yvaults)
+~~- [yVaults](https://docs.yearn.fi/getting-started/products/yvaults/overview#what-are-yvaults)~~
 
-#### How is vault growth calculated?
+~~#### How is vault growth calculated?~~
 
-- [Vault Returns](https://docs.yearn.fi/getting-started/guides/how-to-understand-yvault-roi#roi-calculation)
+~~- [Vault Returns](https://docs.yearn.fi/getting-started/guides/how-to-understand-yvault-roi#roi-calculation)~~
 
-#### How can I deposit?
+~~#### How can I deposit?~~
 
-- [yVaults](https://docs.yearn.fi/getting-started/using-yearn)
+~~- [yVaults](https://docs.yearn.fi/getting-started/using-yearn)~~
 
 #### What are the implications of depositing or withdrawing with an asset that isn't native to the vault?
 
@@ -166,7 +166,7 @@
 
 - [Yearn Press Kit](https://presskit.yearn.fi/)
 
-#### Use Yearn Data 
+#### Use Yearn Data
 
 - [Yearn Vision and Watch Guide](https://medium.com/iearn/diving-into-yearn-metrics-8c3fb0520927)
 - [Yearn Subgraph Guide](https://medium.com/iearn/subgraphs-explained-yearning-for-data-4e90d18e33e)

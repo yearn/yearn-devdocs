@@ -48,6 +48,11 @@ export default {
             },
             'products/yvaults/vault-tokens',
             {
+              type: 'doc',
+              id: 'products/yvaults/yvaults-faq',
+              label: 'yVaults FAQ',
+            },
+            {
               type: 'link',
               label: 'yVaults Dev Docs →',
               href: '../../../developers/v1/introduction',
@@ -70,7 +75,13 @@ export default {
             type: 'doc',
             id: 'products/yeth/overview',
           },
-          items: [],
+          items: [
+            {
+              type: 'doc',
+              id: 'products/yeth/yeth-faq',
+              label: 'yETH FAQ',
+            },
+          ],
         },
         {
           type: 'category',

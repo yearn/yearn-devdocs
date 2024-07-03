@@ -61,6 +61,7 @@ export default {
             },
           ],
         },
+        'v2/naming-convention',
       ],
     },
     {
@@ -103,9 +104,9 @@ export default {
       type: 'category',
       label: 'Other Products',
       items: [
+        'wallet-integrations',
         'v2/yswaps',
         'auctions',
-        'v2/naming-convention',
         'v2/ledger-plugin',
       ],
     },
