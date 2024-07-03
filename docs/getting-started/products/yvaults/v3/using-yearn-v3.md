@@ -1,4 +1,4 @@
-# Using Yearn's V3 Vaults
+# v3 Vaults Interface Guide
 
 So you want to deposit into on of Yearn's V3 Vaults? You are in the right spot. Keep reading for a full walkthrough on how to use them.
 

@@ -10,6 +10,14 @@ At its core, WOOFY solves two problems: YFI not being dog themed, and the price 
 
 **1 YFI = 1,000,000 WOOFY**. YFI and WOOFY can always be exchanged with one another at that fixed rate using either the [WOOFY Ethereum contract](https://etherscan.io/address/0xd0660cd418a64a1d44e9214ad8e459324d8157f1#code), or the [Woofy website](https://woofy.finance/).
 
+## Contract Addresses
+
+| Chain                  | Address                                    |
+| ---------------------- | ------------------------------------------ |
+| Ethereum                  | [0xd0660cd418a64a1d44e9214ad8e459324d8157f1](https://etherscan.io/token/0xd0660cd418a64a1d44e9214ad8e459324d8157f1) |
+| Fantom                  | [0xd0660cd418a64a1d44e9214ad8e459324d8157f1](https://ftmscan.com/token/0xd0660cd418a64a1d44e9214ad8e459324d8157f1) |
+| Polygon                  | [0xd0660cd418a64a1d44e9214ad8e459324d8157f1](https://polygonscan.com/token/0xd0660cd418a64a1d44e9214ad8e459324d8157f1) |
+
 ## How to Woof and Unwoof
 
 ![](https://i.imgur.com/HqfCYZX.png)
@@ -20,7 +28,7 @@ At its core, WOOFY solves two problems: YFI not being dog themed, and the price 
 
 - **Step 1**: Visit https://woofy.finance
 - **Step 2**: Select 'Woof' above the swap interface
-- **Step 3**: Enter the amount of YFI you would like to convert 
+- **Step 3**: Enter the amount of YFI you would like to convert
 - **Step 4**: Approve the YFI
 - **Step 5**: Click 'Woof' below the swap interface
 
@@ -28,7 +36,7 @@ At its core, WOOFY solves two problems: YFI not being dog themed, and the price 
 
 - **Step 1**: Visit https://woofy.finance
 - **Step 2**: Select 'Unwoof' above the swap interface
-- **Step 3**: Enter the amount of WOOFY you would like to convert 
+- **Step 3**: Enter the amount of WOOFY you would like to convert
 - **Step 4**: Click 'Unwoof' below the swap interface
 
 If it's your first time holding either token after the exchange, make sure to click 'Add Token' above the token's logo so that it will appear in your wallet.

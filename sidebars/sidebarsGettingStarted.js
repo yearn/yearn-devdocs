@@ -33,18 +33,18 @@ export default {
               label: 'yVaults v3',
               link: {
                 type: 'doc',
-                id: 'products/yvaults/v3',
+                id: 'products/yvaults/v3/v3',
               },
-              items: [],
+              items: ['products/yvaults/v3/using-yearn-v3'],
             },
             {
               type: 'category',
               label: 'yVaults v2',
               link: {
                 type: 'doc',
-                id: 'products/yvaults/vault-factory',
+                id: 'products/yvaults/v2/v2',
               },
-              items: [],
+              items: ['products/yvaults/v2/using-yearn-v2'],
             },
             'products/yvaults/vault-tokens',
             {
@@ -101,6 +101,11 @@ export default {
               items: [
                 'products/ylockers/ycrv/ycrv-guide',
                 'products/ylockers/ycrv/ycrv-faq',
+                {
+                  type: 'link',
+                  label: 'yCRV Contract Addresses →',
+                  href: '/developers/addresses/ycrv-contracts',
+                },
               ],
             },
             {
@@ -113,6 +118,11 @@ export default {
               items: [
                 'products/ylockers/yprisma/yprisma-guide',
                 'products/ylockers/yprisma/yprisma-faq',
+                {
+                  type: 'link',
+                  label: 'yPRISMA Contract Addresses →',
+                  href: '/developers/addresses/yprisma-contracts',
+                },
               ],
             },
           ],
@@ -131,9 +141,21 @@ export default {
     {
       type: 'category',
       label: 'Guides',
+      link: {
+        type: 'doc',
+        id: 'guides/index',
+      },
       items: [
-        'guides/using-yearn-v3',
-        'guides/using-yearn-v2',
+        {
+          type: 'ref',
+          label: 'v3 Vaults Interface Guide →',
+          id: 'products/yvaults/v3/using-yearn-v3',
+        },
+        {
+          type: 'ref',
+          label: 'v2 Vaults Interface Guide →',
+          id: 'products/yvaults/v2/using-yearn-v2',
+        },
         'guides/how-boost-works',
         'guides/how-to-add-a-custom-token-to-metamask',
         'guides/how-to-understand-yvault-roi',
@@ -141,7 +163,11 @@ export default {
         'guides/how-to-understand-strategies-descriptions',
       ],
     },
-    'products/addresses',
+    {
+      type: 'link',
+      label: 'Token and Contract Addresses →',
+      href: '/developers/addresses',
+    },
     {
       type: 'link',
       label: 'Understanding Risks →',

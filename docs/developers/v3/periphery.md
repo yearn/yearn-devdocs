@@ -11,7 +11,7 @@ TokenizedStrategy Periphery: https://github.com/yearn/tokenized-strategy-periphe
 
 The deployed address of most periphery contracts or their corresponding factories can be found on chain from the Protocol Address provider: `0x1e9778aAD41Aa3E0884C276fB4C2D03C4036Aa0B`
 
-The Yearn specific periphery contracts can be retrieved from that chains [Role Manager](/getting-started/products/addresses#ethereum-contracts)
+The Yearn specific periphery contracts can be retrieved from that chains [Role Manager](../addresses)
 
 ## Vault Periphery
 
@@ -77,4 +77,4 @@ The Role Manager is used to hold the `role_manager` position in Yearns multi str
 
 Yearn specific periphery contracts can also all be retrieved on chain from the Role Manager on that chain.
 
-For Yearn specific implementation addresses check [Contract Addresses](/getting-started/products/addresses)
+For Yearn specific implementation addresses check [Contract Addresses](../addresses)

@@ -1,7 +1,3 @@
----
-
----
-
 # Frequently Asked Questions
 
 ### How does yETH earn APY?

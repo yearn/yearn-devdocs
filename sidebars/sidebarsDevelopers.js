@@ -11,7 +11,7 @@ export default {
       items: [
         {
           type: 'category',
-          label: 'yVaults Version 3',
+          label: 'yVaults v3',
           link: {
             type: 'doc',
             id: 'v3/overview',
@@ -31,7 +31,7 @@ export default {
         },
         {
           type: 'category',
-          label: 'yVaults Version 2',
+          label: 'yVaults v2',
           items: [
             'v2/getting-started',
             'v2/DEPLOYMENT',
@@ -48,7 +48,7 @@ export default {
         },
         {
           type: 'category',
-          label: 'yVaults Version 1',
+          label: 'yVaults v1',
           link: {
             type: 'doc',
             id: 'v1/introduction',
@@ -108,6 +108,46 @@ export default {
         'v2/yswaps',
         'auctions',
         'v2/ledger-plugin',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Token and Contract Addresses',
+      link: {
+        type: 'doc',
+        id: 'addresses/index',
+      },
+      items: [
+        {
+          type: 'doc',
+          label: 'General',
+          id: 'addresses/core-contracts',
+        },
+        {
+          type: 'doc',
+          label: 'yVaults v3',
+          id: 'addresses/v3-contracts',
+        },
+        {
+          type: 'doc',
+          label: 'yVaults v2',
+          id: 'addresses/v2-contracts',
+        },
+        {
+          type: 'doc',
+          label: 'yCRV',
+          id: 'addresses/ycrv-contracts',
+        },
+        {
+          type: 'doc',
+          label: 'yPRISMA',
+          id: 'addresses/yprisma-contracts',
+        },
+        {
+          type: 'doc',
+          label: 'Lens',
+          id: 'addresses/lens-contracts',
+        },
       ],
     },
     { type: 'link', label: 'Smart Contracts →', href: '/smart-contracts' },

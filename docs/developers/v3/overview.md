@@ -52,6 +52,6 @@ All generic periphery contracts and factories can be retrieved on chain from the
 
 For more information on the periphery contracts visit the [Periphery](/developers/v3/periphery) section.
 
-For Yearn specific implementation addresses check [Contract Addresses](/getting-started/products/addresses)
+For Yearn specific implementation addresses check [Contract Addresses](../addresses)
 
 **If a contract has not been deployed on a specific chain it can be done permissionlessly using the scripts in the relevant GitHub repo. Or reach out to a Yearn contributor for help.**

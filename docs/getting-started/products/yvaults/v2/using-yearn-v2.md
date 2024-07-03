@@ -1,4 +1,4 @@
-# Using Yearn's V2 Vaults
+# v2 Vaults Interface Guide
 
 So you want to deposit into on of Yearn's V2 Vaults? Great! You are in the right spot.
 
