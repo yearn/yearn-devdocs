@@ -1,6 +1,7 @@
 # yPRISMA FAQ
 
-## Where can I buy yPRISMA?
+<!-- markdownlint-disable MD001 -->
+### Where can I buy yPRISMA?
 
 yPRISMA can be purchased through the following platforms:
 
@@ -8,7 +9,7 @@ yPRISMA can be purchased through the following platforms:
 * [Curve Finance](https://curve.fi/#/ethereum/swap?from=0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee&to=0xe3668873d944e4a949da05fc8bde419eff543882) - The primary liquidity source for yPRISMA
 * [CowSwap](https://swap.cow.fi/#/1/swap/ETH/YPRISMA) - DEX aggregators like CowSwap should also work well
 
-## Should I stake my yPRISMA directly or auto-compound it in the vault?
+### Should I stake my yPRISMA directly or auto-compound it in the vault?
 
 That's totally up to you and depends on your personal situation and preferences. Here are a few things to consider:
 
@@ -25,28 +26,28 @@ That's totally up to you and depends on your personal situation and preferences.
   * Direct stakers do not receive a receipt token in their wallet.
   * Vault depositors receive back a yv-yPRISMA token into their wallet which has the potential to be accepted as collateral across DeFi.
 
-## Can yPRISMA users vote with their yPRISMA?
+### Can yPRISMA users vote with their yPRISMA?
 
 No. User voting is not part of the yLockers system, instead...
 
 * Gauge voting is automated to optimize for the maximum weekly vote incentive yield.
 * Governance voting is handled by a team of core contributors on behalf of veYFI holders.
 
-## Why is the yPRISMA peg currently below 1:1?
+### Why is the yPRISMA peg currently below 1:1?
 
 It is normal for a yToken such as yPRISMA (or any liquid locker token) to trade at a discount to the governance token it is built upon. The strength of the peg is dependent on the supply and demand of each yToken.
 
 Each yLocker has been designed to create an attractive yToken that offers value to users and provides incentives to attract liquidity. However, we cannot control the market price of our yTokens.
 
-## What is yvmkUSD-A?
+### What is yvmkUSD-A?
 
 yvmkUSD-A is a Yearn V3 vault that allows yield to auto-compound. Currently, there is no active strategy for compounding, but a strategy is nearly completed and will undergo reviews soon.
 
-## What are the fees associated with yPRISMA?
+### What are the fees associated with yPRISMA?
 
 When you stake yPRISMA, a 10% performance fee is applied. Yield accumulates in the receiver contract throughout the week. The yield is distributed once per week, at which point 10% is sent to the Yearn treasury.
 
-## Where does the yield come from and how does it flow?
+### Where does the yield come from and how does it flow?
 
 The yield for yPRISMA stakers comes from two main sources:
 

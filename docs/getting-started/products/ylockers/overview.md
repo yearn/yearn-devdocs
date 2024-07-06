@@ -6,7 +6,7 @@ The new Ylockers ecosystem has rolled out as of June 6th, 2024 with the launch o
 
 :::
 
-yLockers are a category of assets built by Yearn designed to tokenize locked governance positions in external DeFi protocols. This asset type is often called a "Liquid Locker".
+yLockers are a category of assets built by Yearn designed to tokenize locked governance positions in external DeFi protocols based on [Curve's vote escrow (ve) model](https://resources.curve.fi/crv-token/vecrv/). This asset type is often called a "Liquid Locker".
 
 To achieve this, Yearn has deployed a system of smart contracts that allows users to permissionlessly max-lock their governance tokens to Yearn in exchange for a yLocker token (e.g., yCRV, yPRISMA, etc.) at a rate of 1:1.
 
