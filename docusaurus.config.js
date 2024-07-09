@@ -438,20 +438,20 @@ export default {
         breadcrumbs: false,
       },
     ],
-    [
-      '@docusaurus/plugin-content-docs',
-      {
-        id: 'smart-contracts',
-        path: 'docs/smart-contracts',
-        routeBasePath: 'smart-contracts',
-        sidebarPath: './sidebars/sidebarsSmartContracts.js',
-        showLastUpdateTime: true,
-        sidebarCollapsed: true,
-        breadcrumbs: false,
-        remarkPlugins: [math],
-        rehypePlugins: [katex],
-      },
-    ],
+    // [
+    //   '@docusaurus/plugin-content-docs',
+    //   {
+    //     id: 'smart-contracts',
+    //     path: 'docs/smart-contracts',
+    //     routeBasePath: 'smart-contracts',
+    //     sidebarPath: './sidebars/sidebarsSmartContracts.js',
+    //     showLastUpdateTime: true,
+    //     sidebarCollapsed: true,
+    //     breadcrumbs: false,
+    //     remarkPlugins: [math],
+    //     rehypePlugins: [katex],
+    //   },
+    // ],
     // [
     //   '@docusaurus/plugin-content-docs',
     //   {
