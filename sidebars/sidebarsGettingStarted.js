@@ -35,7 +35,18 @@ export default {
                 type: 'doc',
                 id: 'products/yvaults/v3/v3',
               },
-              items: ['products/yvaults/v3/using-yearn-v3'],
+              items: [
+                {
+                  type: 'link',
+                  label: 'v3 Vaults Interface Guide →',
+                  href: '../../../guides/interface-guides/using-yearn-v3', //this breaks if you don't use relative links here
+                },
+                {
+                  type: 'link',
+                  label: 'v3 Vaults dApp',
+                  href: 'https://yearn.fi/v3',
+                },
+              ],
             },
             {
               type: 'category',
@@ -44,7 +55,18 @@ export default {
                 type: 'doc',
                 id: 'products/yvaults/v2/v2',
               },
-              items: ['products/yvaults/v2/using-yearn-v2'],
+              items: [
+                {
+                  type: 'link',
+                  label: 'v2 Vaults Interface Guide →',
+                  href: '../../../guides/interface-guides/using-yearn-v2', //this breaks if you don't use relative links here
+                },
+                {
+                  type: 'link',
+                  label: 'v2 Vaults dApp',
+                  href: 'https://yearn.fi/vaults',
+                },
+              ],
             },
             'products/yvaults/vault-tokens',
             {
@@ -66,7 +88,13 @@ export default {
             type: 'doc',
             id: 'products/veyfi',
           },
-          items: [],
+          items: [
+            {
+              type: 'link',
+              label: 'veYFI dApp',
+              href: 'https://veyfi.yearn.fi/',
+            },
+          ],
         },
         {
           type: 'category',
@@ -80,6 +108,11 @@ export default {
               type: 'doc',
               id: 'products/yeth/yeth-faq',
               label: 'yETH FAQ',
+            },
+            {
+              type: 'link',
+              label: 'yETH dApp',
+              href: 'https://yeth.yearn.fi/',
             },
           ],
         },
@@ -99,12 +132,21 @@ export default {
                 id: 'products/ylockers/ycrv/overview',
               },
               items: [
-                'products/ylockers/ycrv/ycrv-guide',
                 'products/ylockers/ycrv/ycrv-faq',
+                {
+                  type: 'link',
+                  label: 'yCRV Interface Guide →',
+                  href: '../../../guides/interface-guides/ycrv-guide', //this breaks if you don't use relative links here
+                },
                 {
                   type: 'link',
                   label: 'yCRV Contract Addresses →',
                   href: '/developers/addresses/ycrv-contracts',
+                },
+                {
+                  type: 'link',
+                  label: 'yCRV dApp',
+                  href: 'https://ycrv.yearn.fi/',
                 },
               ],
             },
@@ -116,12 +158,21 @@ export default {
                 id: 'products/ylockers/yprisma/overview',
               },
               items: [
-                'products/ylockers/yprisma/yprisma-guide',
                 'products/ylockers/yprisma/yprisma-faq',
+                {
+                  type: 'link',
+                  label: 'yPRISMA Interface Guide →',
+                  href: '../../../guides/interface-guides/yprisma-guide', //this breaks if you don't use relative links here
+                },
                 {
                   type: 'link',
                   label: 'yPRISMA Contract Addresses →',
                   href: '/developers/addresses/yprisma-contracts',
+                },
+                {
+                  type: 'link',
+                  label: 'yPRISMA dApp',
+                  href: 'https://yprisma.yearn.fi/',
                 },
               ],
             },
@@ -141,26 +192,36 @@ export default {
     {
       type: 'category',
       label: 'Guides',
-      link: {
-        type: 'doc',
-        id: 'guides/index',
-      },
       items: [
         {
-          type: 'ref',
-          label: 'v3 Vaults Interface Guide →',
-          id: 'products/yvaults/v3/using-yearn-v3',
+          type: 'category',
+          label: 'Using Yearn',
+          link: {
+            type: 'doc',
+            id: 'guides/interface-guides/index',
+          },
+          items: [
+            'guides/interface-guides/using-yearn-v3',
+            'guides/interface-guides/using-yearn-v2',
+            'guides/interface-guides/ycrv-guide',
+            'guides/interface-guides/yprisma-guide',
+            'guides/interface-guides/how-to-add-a-custom-token-to-metamask',
+          ],
         },
         {
-          type: 'ref',
-          label: 'v2 Vaults Interface Guide →',
-          id: 'products/yvaults/v2/using-yearn-v2',
+          type: 'category',
+          label: 'Understanding Yearn',
+          link: {
+            type: 'doc',
+            id: 'guides/concept-explainers/index',
+          },
+          items: [
+            'guides/concept-explainers/how-boost-works',
+            'guides/concept-explainers/how-to-understand-yvault-roi',
+            'guides/concept-explainers/how-apy-works',
+            'guides/concept-explainers/how-to-understand-strategies-descriptions',
+          ],
         },
-        'guides/how-boost-works',
-        'guides/how-to-add-a-custom-token-to-metamask',
-        'guides/how-to-understand-yvault-roi',
-        'guides/how-apy-works',
-        'guides/how-to-understand-strategies-descriptions',
       ],
     },
     {

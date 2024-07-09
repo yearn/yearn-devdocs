@@ -1,5 +1,7 @@
 # yPRISMA Overview
 
+![banner](/img/yprisma-banner1.png)
+
 Claim and deposit at [yprisma.yearn.fi](https://yprisma.yearn.fi)
 
 ## What is yPRISMA?
@@ -16,7 +18,7 @@ Because all PRISMA emissions come as locked vePRISMA, it is often inconvenient f
 
 ## Earn Yield on yPRISMA
 
-Yearn has 2 ways to earn yield on your yPRISMA; depositing to the `YearnBoostedStaker` contract to earn mkUSD or depositing to the yPRISMA Auto-Compounder V3 vault to earn more yPRISMA. The intricacies and details are documented [here](../overview#earning-yield-with-ylockers). Once you know which path you want to take, you can follow the step by step guide [here](yprisma-guide.md).
+Yearn has 2 ways to earn yield on your yPRISMA; depositing to the `YearnBoostedStaker` contract to earn mkUSD or depositing to the yPRISMA Auto-Compounder V3 vault to earn more yPRISMA. The intricacies and details are documented [here](../overview#earning-yield-with-ylockers). Once you know which path you want to take, you can follow the step by step guide [here](../../../guides/yprisma-guide).
 
 **More questions Anon? Head over to the [FAQ](yprisma-faq.md).**
 
