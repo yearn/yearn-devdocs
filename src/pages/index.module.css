@@ -85,10 +85,6 @@ html[data-theme='dark'] .card:before {
   box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-html[data-theme='dark'] .card:hover::after {
-  background: rgb(115, 180, 255, 0.5); /* Lighten on hover */
-}
-
 .text {
   padding: 1.3rem;
   margin: 0 1rem;
