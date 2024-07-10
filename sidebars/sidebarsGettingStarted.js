@@ -232,9 +232,13 @@ export default {
     {
       type: 'link',
       label: 'Understanding Risks →',
-      href: '/security/risks/risk-overview',
+      href: '/developers/security/risks/risk-overview',
     },
-    { type: 'link', label: 'Smart Contracts →', href: '/smart-contracts' },
-    { type: 'link', label: 'Security →', href: '/security' },
+    {
+      type: 'link',
+      label: 'Smart Contracts →',
+      href: '/developers/smart-contracts/',
+    },
+    { type: 'link', label: 'Security →', href: '/developers/security' },
   ],
 }

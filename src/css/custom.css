@@ -8,7 +8,7 @@
 /* You can override the default Infima variables here. */
 
 :root {
-  --ifm-color-primary: #007bff;
+  --ifm-color-primary: rgb(0, 123, 255);
   --ifm-color-primary-dark: rgb(0, 106, 227);
   --ifm-color-primary-darker: rgb(0, 86, 227);
   --ifm-color-primary-darkest: rgb(0, 66, 227);
@@ -18,6 +18,9 @@
   --ifm-code-font-size: 95%;
   --ifm-toc-border-color: transparent;
   --ifm-menu-color-background-active: transparent;
+}
+html[data-theme='dark'] {
+  --ifm-toc-border-color: transparent;
 }
 
 .menu__list-item-collapsible--active {
@@ -41,6 +44,12 @@
 
 .row {
   padding: 0 var(--ifm-navbar-item-padding-horizontal);
+}
+
+@media (min-width: 997px) {
+  .docSidebarContainer {
+    border-right: none;
+  }
 }
 
 html[data-theme='dark'] {

@@ -1,5 +1,7 @@
 # Building on Yearn
 
+![image](/img/intro/pixie-wide.jpg)
+
 :::warning
 
 this page needs to be updated. It may contain out of date information. Please refer to specific sections for the most recent information.

@@ -159,6 +159,10 @@ export default {
     {
       type: 'category',
       label: 'Smart Contracts',
+      link: {
+        type: 'doc',
+        id: 'smart-contracts/index',
+      },
       items: [
         {
           type: 'category',

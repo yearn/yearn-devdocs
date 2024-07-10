@@ -1,6 +1,6 @@
 # Contribute
 
----
+![image](/img/DAO/here-we-are-cropped.jpg)
 
 ## Yearn Contributors
 
@@ -123,6 +123,7 @@ This is complementary to the above, but it's not directly related to creating st
 - [Trackavault](https://trackavault.com/) - Track V2 Vaults
 
 ### Legacy Products and Websites
+
 - [v1 yearn.fi](https://v1.yearn.fi), [Github](https://github.com/yearn/iearn-finance)
 - [v2 yearn.fi](https://v2.yearn.fi), [Github](https://github.com/yearn/yearn-finance)
 - [Yearn Borrow](https://yborrow.finance/), [Github](https://github.com/yearn/iborrow-finance)
