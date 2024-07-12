@@ -49,7 +49,7 @@ Some possible non-standard uses of an accountant could be:
 - Setting up a Junior Tranche
 - Tiered fees based on % returns or TVL
 
-To deploy a generic account use the [Accountant Factory](/vaults/smart-contracts/v3/periphery/AccountantFactory) and then call [`set_accountant`](https://github.com/yearn/yearn-vaults-v3/blob/9fbc614bbce9d7cbad42e284a15f0f43cf1a673f/contracts/VaultV3.vy#L1342) on the vault.
+To deploy a generic account use the [Accountant Factory](smart-contracts/periphery/AccountantFactory) and then call [`set_accountant`](https://github.com/yearn/yearn-vaults-v3/blob/9fbc614bbce9d7cbad42e284a15f0f43cf1a673f/contracts/VaultV3.vy#L1342) on the vault.
 
 ### Debt Allocator
 
