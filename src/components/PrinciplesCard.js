@@ -8,9 +8,7 @@ export default function PrinciplesCard({ cardData }) {
         <h2 style={{ color: cardData.titleColor }}>{cardData.title}</h2>
         <h3>{cardData.description}</h3>
       </div>
-      <div className={styles.image}>
-        <img src={cardData.image} alt={cardData.alt} />
-      </div>
+      <img src={cardData.image} alt={cardData.alt} className={styles.image} />
     </div>
   )
 }

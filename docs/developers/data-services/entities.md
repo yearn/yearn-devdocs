@@ -1,6 +1,5 @@
-<!-- markdownlint-disable MD026 -->
-
 # Subgraph Entities
+<!-- markdownlint-disable MD026 -->
 
 - [`Transaction`](#transaction)
 - [`Token`](#token)

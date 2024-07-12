@@ -17,8 +17,14 @@ export default {
       ],
     },
     {
+      type: 'html',
+      value: '<hr/>',
+      className: 'divider',
+    },
+    {
       type: 'category',
       label: 'Products',
+      collapsed: false,
       items: [
         {
           type: 'category',
@@ -178,16 +184,21 @@ export default {
             },
           ],
         },
-        {
-          type: 'category',
-          label: 'yBribe',
-          items: [
-            'products/ybribe/overview',
-            'products/ybribe/guide',
-            'products/ybribe/faq',
-          ],
-        },
+        // {
+        //   type: 'category',
+        //   label: 'yBribe',
+        //   items: [
+        //     'products/ybribe/overview',
+        //     'products/ybribe/guide',
+        //     'products/ybribe/faq',
+        //   ],
+        // },
       ],
+    },
+    {
+      type: 'html',
+      value: '<hr/>',
+      className: 'divider',
     },
     {
       type: 'category',
@@ -223,6 +234,11 @@ export default {
           ],
         },
       ],
+    },
+    {
+      type: 'html',
+      value: '<hr/>',
+      className: 'divider',
     },
     {
       type: 'link',

@@ -90,7 +90,6 @@ export default {
         },
         'data-services/yearn-lens',
         'data-services/yearn-stack',
-        'data-services/yearn-api',
       ],
     },
     // Front End Development
