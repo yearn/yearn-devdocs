@@ -48,15 +48,26 @@ module.exports = {
         {
           type: 'category',
           label: 'Yearn Data Services',
+          link: {
+            type: 'doc',
+            id: 'v2/yearn-data',
+          },
           items: [
-            'v2/yearn-data',
+            {
+              type: 'link',
+              label: 'yDaemon',
+              href: 'https://ydaemon.yearn.farm/docs/intro',
+            },
             {
               type: 'category',
-              label: 'Subgraph',
-              items: ['v2/subgraph-info', 'v2/entities', 'v2/queries'],
+              label: 'Subgraphs',
+              link: {
+                type: 'doc',
+                id: 'v2/subgraph-info',
+              },
+              items: ['v2/entities', 'v2/queries'],
             },
             'v2/yearn-lens',
-            'v2/yearn-api',
           ],
         },
         'v2/hacking-with-yearn',
