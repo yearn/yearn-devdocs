@@ -136,9 +136,9 @@ html[data-theme='light'] .DocSearch:hover {
   min-width: var(--doc-sidebar-width);
   margin: 0;
 }
-@media screen and (max-width: 1050px) {
+@media screen and (max-width: 1075px) {
   .navbar__items .navbar__brand {
-    min-width: calc(var(--doc-sidebar-width) - (1050px - 100vw));
+    min-width: calc(var(--doc-sidebar-width) - (1075px - 100vw));
   }
 }
 .navbar__items .navbar__item:last-child {
@@ -147,6 +147,7 @@ html[data-theme='light'] .DocSearch:hover {
 .navbar__item {
   margin-right: 0.43em;
   font-weight: 400;
+  padding-right: 0;
 }
 html[data-theme='dark'] .navbar {
   background-color: var(--ifm-background-color);

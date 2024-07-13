@@ -2,28 +2,11 @@ export default {
   gettingStarted: [
     {
       type: 'category',
-      label: 'What is Yearn?',
+      label: 'Products',
       link: {
         type: 'doc',
         id: 'intro',
       },
-      items: [
-        'yearn-principles',
-        {
-          type: 'link',
-          label: 'The Blue Pill',
-          href: 'https://yfistory.org/thebluepill',
-        },
-      ],
-    },
-    {
-      type: 'html',
-      value: '<hr/>',
-      className: 'divider',
-    },
-    {
-      type: 'category',
-      label: 'Products',
       collapsed: false,
       items: [
         {
@@ -87,38 +70,44 @@ export default {
             },
           ],
         },
+        // {
+        //   type: 'category',
+        //   label: 'veYFI',
+        //   link: {
+        //     type: 'doc',
+        //     id: 'products/veyfi',
+        //   },
+        //   items: [
+        //     {
+        //       type: 'link',
+        //       label: 'veYFI dApp',
+        //       href: 'https://veyfi.yearn.fi/',
+        //     },
+        //   ],
+        // },
         {
           type: 'category',
-          label: 'veYFI',
-          link: {
-            type: 'doc',
-            id: 'products/veyfi',
-          },
+          label: 'yPools',
           items: [
             {
-              type: 'link',
-              label: 'veYFI dApp',
-              href: 'https://veyfi.yearn.fi/',
-            },
-          ],
-        },
-        {
-          type: 'category',
-          label: 'yETH',
-          link: {
-            type: 'doc',
-            id: 'products/yeth/overview',
-          },
-          items: [
-            {
-              type: 'doc',
-              id: 'products/yeth/yeth-faq',
-              label: 'yETH FAQ',
-            },
-            {
-              type: 'link',
-              label: 'yETH dApp',
-              href: 'https://yeth.yearn.fi/',
+              type: 'category',
+              label: 'yETH',
+              link: {
+                type: 'doc',
+                id: 'products/ypools/yeth/overview',
+              },
+              items: [
+                {
+                  type: 'doc',
+                  id: 'products/ypools/yeth/yeth-faq',
+                  label: 'yETH FAQ',
+                },
+                {
+                  type: 'link',
+                  label: 'yETH dApp',
+                  href: 'https://yeth.yearn.fi/',
+                },
+              ],
             },
           ],
         },
@@ -193,6 +182,32 @@ export default {
         //     'products/ybribe/faq',
         //   ],
         // },
+      ],
+    },
+    {
+      type: 'html',
+      value: '<hr/>',
+      className: 'divider',
+    },
+    {
+      type: 'category',
+      label: 'About Yearn',
+      // link: {
+      //   type: 'doc',
+      //   id: 'intro',
+      // },
+      items: [
+        'yearn-principles',
+        {
+          type: 'link',
+          label: 'The Blue Pill',
+          href: 'https://yfistory.org/thebluepill',
+        },
+        {
+          type: 'link',
+          label: 'DAO Docs →',
+          href: '/contributing/contribute',
+        },
       ],
     },
     {

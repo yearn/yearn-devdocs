@@ -10,7 +10,25 @@ export default {
     {
       type: 'category',
       label: 'Governance',
-      items: ['governance/proposal-process', 'governance/yfi'],
+      items: [
+        'governance/proposal-process',
+        'governance/yfi',
+        {
+          type: 'category',
+          label: 'veYFI',
+          link: {
+            type: 'doc',
+            id: 'governance/veyfi',
+          },
+          items: [
+            {
+              type: 'link',
+              label: 'veYFI dApp',
+              href: 'https://veyfi.yearn.fi/',
+            },
+          ],
+        },
+      ],
     },
     {
       type: 'category',

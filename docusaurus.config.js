@@ -101,6 +101,11 @@ export default {
         //   docsPluginId: 'default',
         // },
         {
+          label: 'Blog',
+          position: 'right',
+          href: 'https://blog.yearn.fi',
+        },
+        {
           type: 'dropdown',
           label: 'Community',
           position: 'right',
