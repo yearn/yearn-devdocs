@@ -36,7 +36,7 @@ https://thegraph.com/docs/en/arbitrum/l2-transfer-tools-guide/
 ### V2 Vaults Subgraph
 
 - [Explorer Page](https://thegraph.com/explorer/subgraphs/G3JZhmKKHC4mydRzD6kSz5fCWve5WDYYCyTFSJyv3SD5?view=Query&chain=arbitrum-one)
-- Graphql Endpoint: https://gateway-arbitrum.network.thegraph.com/api/{api-key}/subgraphs/id/G3JZhmKKHC4mydRzD6kSz5fCWve5WDYYCyTFSJyv3SD5
+- Graphql Endpoint: `https://gateway-arbitrum.network.thegraph.com/api/{api-key}/subgraphs/id/G3JZhmKKHC4mydRzD6kSz5fCWve5WDYYCyTFSJyv3SD5`
 - [Code Repo](https://github.com/yearn/yearn-vaults-v2-subgraph)
 
 ## Optimism
