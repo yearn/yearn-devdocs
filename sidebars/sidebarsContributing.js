@@ -1,5 +1,6 @@
 export default {
   contributing: [
+    'introduction',
     'contribute',
     'contributor-tools',
     {

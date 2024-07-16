@@ -77,7 +77,7 @@ export default {
         //   label: 'Smart Contracts',
         // },
         {
-          to: 'contributing/contribute',
+          to: 'contributing/introduction',
           label: 'DAO Docs',
           activeBasePath: '/contributing',
           position: 'left',
