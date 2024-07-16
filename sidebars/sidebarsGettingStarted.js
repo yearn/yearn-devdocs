@@ -2,7 +2,7 @@ export default {
   gettingStarted: [
     {
       type: 'category',
-      label: 'Products',
+      label: 'Yearn Products',
       link: {
         type: 'doc',
         id: 'intro',
@@ -66,7 +66,7 @@ export default {
             {
               type: 'link',
               label: 'yVaults Dev Docs →',
-              href: '../../../developers/v1/introduction',
+              href: '/developers/v1/introduction',
             },
           ],
         },
