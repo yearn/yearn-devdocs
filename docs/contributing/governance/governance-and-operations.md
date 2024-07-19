@@ -1,6 +1,10 @@
 # Governance and Operations
 
----
+:::warning
+
+This page was removed in a prior update. Why? It seems very useful to understand how Yearn (should) work. What is current? What is not?
+
+:::
 
 Since [YIP-61: Governance 2.0](https://gov.yearn.fi/t/yip-61-governance-2-0/10460) passed on April 25th, 2021, yearn began the transition into a **multi-DAO** structure, managed by **constrained delegation**. This approach allows protocol development not to be stiffened by bureaucracy while maintaining a sufficient level of decentralization.
 
@@ -28,7 +32,6 @@ With [veYFI](https://docs.yearn.fi/contributing/governance/veyfi) launch, govern
 ### Token Holders
 
 [YFI](https://docs.yearn.fi/contributing/governance/yfi) token-holders duty is to create and vote for proposals that improve the protocol.
-
 
 | Proposals                        | Descriptions                                                                                          |
 | -------------------------------- | ----------------------------------------------------------------------------------------------------- |

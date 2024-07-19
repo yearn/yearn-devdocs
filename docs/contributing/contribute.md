@@ -1,5 +1,11 @@
 # Contribute
 
+:::warning
+
+This page is derived from https://hackmd.io/Cq6OF2amQ_ypTHvivJ7H0Q?view and doesn't really fit how things are done currently.
+
+:::
+
 ![image](/img/DAO/here-we-are-cropped.jpg)
 
 ## Yearn Contributors
@@ -10,13 +16,33 @@ Help build the future of finance, shape your skills, and grow the Yearn ecosyste
 
 ### Have an idea?
 
+:::warning
+
+TODO: Remove `reddit` and `pool of ideas` links as they aren't good ways to contribute
+
+Ideas are a dime a dozen. Execution is necessary. Is there a process that promotes ideas AND encourages execution?
+
+:::
+
 We are always open to new suggestions or better ways of doing things. If you have an idea feel free to use the appropriate channel on [Discord](https://discord.gg/yearn), [Reddit](https://www.reddit.com/r/yearn_finance/), make a post on the governance [forum](https://gov.yearn.fi/c/general-chat/7), or consider adding to the [Pool of Ideas](https://yearnfinance.notion.site/Pool-of-Ideas-d75383ade9154d8bb6163388c6c2b39b). If the idea is thorough enough, make a post in the [Proposals](https://gov.yearn.fi/c/proposals/5) section on the governance forum. Be sure to follow the Proposal [Guidelines](https://gov.yearn.fi/t/proposal-how-to/106) and check previous [YIPs](https://yips.yearn.fi/all-yip) for guidance.
 
 ### Ready to contribute?
 
+:::warning
+
+most of these issues and repos are stale. Do teams want to open up contributions and how do they want to do it?
+
+:::
+
 Check out our [list of open Github issues here](https://contribute.yearn.rocks/).
 
 ### File a Bug
+
+:::warning
+
+General Resources section is a graveyard. Probably better to direct to discord or immunify. Can keep option to search repos.
+
+:::
 
 If a Yearn product isn't working, please visit the appropriate Github repository listed under [General Resources](#general-resources) — or search in the [Yearn Github Repositories](https://github.com/yearn/) — to see if the issue already exists.
 
@@ -28,9 +54,24 @@ If the issue already exists, you can signal your support by adding a thumbs up t
 
 ### Leave Feedback
 
+:::warning
+
+I guess this still works, but discord seems better to actually have a comment seen by someone.
+
+:::
+
 Use the [Feedback](https://gov.yearn.fi/c/feedback/2) section of the governance forum to provide feedback.
 
 ### Write Documentation
+
+:::warning
+
+move this to the Documentation pages and link to those pages with a little blurb.
+
+- Project board is stale (2022)
+- Discord Documentation channel is archived
+
+:::
 
 The Yearn ecosystem is expanding and, as a result, so is the need for documentation. You can find the "official" Yearn Documentation [here](https://docs.yearn.fi/) — which provides high-level overviews _and_ technical documentation.
 
@@ -45,6 +86,14 @@ Last but not least, join the #documentation channel in [Discord](https://discord
 If this sounds confusing, please let us know what we can clear up. In the meantime: You can begin contributing to our HackMD docs immediately via the Github issues — we'll guide you through the rest.
 
 ### Build
+
+:::warning
+
+send readers straight to the dev docs section of this site!
+
+check if there is useful info here that isn't in the dev docs.
+
+:::
 
 #### Developers
 
@@ -61,6 +110,12 @@ If you're wondering how **strategies** work, please check out [Yearn Vaults v2 I
 If you want to integrate with Yearn, please visit our [Integration Guide](https://docs.yearn.fi/partners/integration_guide) and check out our [Vault API Documentation](https://docs.yearn.fi/vaults/smart-contracts/VaultAPI).
 
 #### Designers
+
+:::warning
+
+is there a need for this or is this all MOM?
+
+:::
 
 We invite designers, animators, artists, and more to share your skills with the Yearn ecosystem! If you're interested in creating graphics that describe Yearn's systems, creating video explainers, fixing Yearn's UI/UX, or any other combination of things — hop into the #ui-ux channel or #media-resources channels in [Discord](https://discord.gg/H8AVhpz63R).
 
@@ -117,12 +172,24 @@ This is complementary to the above, but it's not directly related to creating st
 
 #### Contributors Websites
 
+:::warning
+
+These are all ded🩻 or stale🍞 (substack)
+
+:::
+
 - [yCosystem (Yearn Community Aggregator)](https://ycosystem.info/) - Repository Of Yearn Links
 - [YFI Address Stats](https://www.yfistats.com/) - Yearn Financial Information
 - [Yearn Newsletter](https://yearn.substack.com/) - Weekly YFI newsletter
 - [Trackavault](https://trackavault.com/) - Track V2 Vaults
 
 ### Legacy Products and Websites
+
+:::warning
+
+These are all ded🩻. Can keep the githubs maybe?
+
+:::
 
 - [v1 yearn.fi](https://v1.yearn.fi), [Github](https://github.com/yearn/iearn-finance)
 - [v2 yearn.fi](https://v2.yearn.fi), [Github](https://github.com/yearn/yearn-finance)

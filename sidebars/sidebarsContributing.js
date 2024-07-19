@@ -13,6 +13,7 @@ export default {
       label: 'Governance',
       items: [
         'governance/proposal-process',
+        'governance/governance-and-operations',
         'governance/yfi',
         {
           type: 'category',

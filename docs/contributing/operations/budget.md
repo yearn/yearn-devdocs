@@ -1,5 +1,11 @@
 # Budget
 
+:::warning
+
+This is not the current process. needs updating to reflect current and future plans.
+
+:::
+
 Yearn works with project-based budget requests, which focus on transparency and accountability. This system is in constant evolution, feedbacks are welcome!
 
 Budget requests are approved by the yBudget team and require a 3/5 consensus
