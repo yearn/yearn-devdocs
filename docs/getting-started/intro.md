@@ -24,4 +24,4 @@ yLockers are yVault products built to get the most out of DeFi protocol governan
 
 <PrettyLink>[Don't know what that means? Check out the yLockers Docs](products/ylockers/overview.md)</PrettyLink>
 <PrettyLink>[Yearn yCRV dApp](https://ycrv.yearn.fi/)</PrettyLink>
-<PrettyLink>[Yearn yCRV dApp](https://yprisma.yearn.fi/)</PrettyLink>
+<PrettyLink>[Yearn yPRISMA dApp](https://yprisma.yearn.fi/)</PrettyLink>
