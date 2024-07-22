@@ -1,4 +1,4 @@
-# Yearn System Specification
+# Yearn V2 Vault System Specification
 
 ## Definitions
 

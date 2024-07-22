@@ -1,10 +1,8 @@
-// @ts-check
-/** @type {import('@docusaurus/types').Config} */
 import math from 'remark-math'
 import katex from 'rehype-katex'
 
 export default {
-  title: 'yearn.fi',
+  title: 'Yearn Docs',
   tagline: 'DeFi made simple',
   url: 'https://docs.yearn.fi',
   baseUrl: '/',
@@ -18,6 +16,11 @@ export default {
   },
   themes: ['@docusaurus/theme-mermaid'],
   themeConfig: {
+    docs: {
+      sidebar: {
+        autoCollapseCategories: true,
+      },
+    },
     prism: {
       additionalLanguages: ['solidity'],
     },
@@ -44,130 +47,68 @@ export default {
       },
     ],
     navbar: {
-      hideOnScroll: true,
+      hideOnScroll: false,
       title: 'Yearn Finance',
       logo: {
         alt: 'YFI Logo',
         src: 'img/logo.svg',
       },
       items: [
+        // {
+        //   to: 'testing/folder1/doc1',
+        //   label: 'testing',
+        // },
         {
-          to: 'getting-started/intro',
-          label: 'Introduction',
+          type: 'doc',
+          position: 'left',
+          docId: 'intro',
+          label: 'User Docs',
+          // activeBasePath: '/getting-started',
+          // to: 'getting-started/intro',
         },
         {
-          to: 'developers/v3/overview',
-          label: 'Develop',
+          to: 'developers/building-on-yearn',
+          label: 'Dev Docs',
+          activeBasePath: '/developers',
+          position: 'left',
         },
+        // {
+        //   to: 'smart-contracts',
+        //   label: 'Smart Contracts',
+        // },
         {
-          to: '/vaults/smart-contracts/BaseStrategy',
-          label: 'Smart Contracts',
+          to: 'contributing/introduction',
+          label: 'DAO Docs',
+          activeBasePath: '/contributing',
+          position: 'left',
         },
+        // {
+        //   to: 'resources/faq',
+        //   label: 'Resources',
+        //   activeBasePath: '/resources',
+        // },
+        // {
+        //   to: 'security/',
+        //   label: 'Security',
+        //   activeBasePath: '/security',
+        // },
+        // {
+        //   type: 'docsVersionDropdown',
+        //   dropdownItemsBefore: [],
+        //   position: 'right',
+        //   // Do not add the link active class when browsing docs.
+        //   dropdownActiveClassDisabled: true,
+        //   docsPluginId: 'default',
+        // },
         {
-          to: 'contributing/contribute',
-          label: 'Contribute',
-        },
-        {
-          to: 'resources/faq',
-          label: 'Resources',
-        },
-        {
-          to: 'security/',
-          label: 'Security',
-        },
-        {
-          type: 'docsVersionDropdown',
-          dropdownItemsBefore: [],
+          label: 'Blog',
           position: 'right',
-          // Do not add the link active class when browsing docs.
-          dropdownActiveClassDisabled: true,
-          docsPluginId: 'default',
+          href: 'https://blog.yearn.fi',
         },
         {
-          type: 'search',
+          type: 'dropdown',
+          label: 'Community',
           position: 'right',
-        },
-      ],
-    },
-    footer: {
-      style: 'light',
-      links: [
-        {
-          title: 'GitHub',
-          items: [
-            {
-              label: 'V3 Vaults',
-              href: 'https://github.com/yearn/yearn-vaults-v3',
-            },
-            {
-              label: 'V3 Tokenized Strategy',
-              href: 'https://github.com/yearn/tokenized-strategy',
-            },
-            {
-              label: 'V3 Strategy Mix: Foundry',
-              href: 'https://github.com/yearn/tokenized-strategy-foundry-mix',
-            },
-            {
-              label: 'V3 Strategy Mix: Ape',
-              href: 'https://github.com/yearn/tokenized-strategy-ape-mix',
-            },
-            {
-              label: 'V2 Vaults',
-              href: 'https://github.com/yearn/yearn-vaults',
-            },
-            {
-              label: 'V2 Strategy Mix',
-              href: 'https://github.com/yearn/brownie-strategy-mix',
-            },
-            {
-              label: 'yearn-security',
-              href: 'https://github.com/yearn/yearn-security',
-            },
-            {
-              label: 'yearn-devdocs',
-              href: 'https://github.com/yearn/yearn-devdocs',
-            },
-          ],
-        },
-        {
-          title: 'Ecosystem',
-          items: [
-            {
-              label: 'V3 Vaults',
-              href: 'https://yearn.fi/v3',
-            },
-            {
-              label: 'V2 Vaults',
-              href: 'https://yearn.fi/vaults',
-            },
-            {
-              label: 'Juiced Vaults',
-              href: 'https://juiced.yearn.fi/',
-            },
-            {
-              label: 'veYFI',
-              href: 'https://veyfi.yearn.fi/',
-            },
-            {
-              label: 'yETH',
-              href: 'https://yeth.yearn.fi/',
-            },
-            {
-              label: 'yCRV',
-              href: 'https://ycrv.yearn.fi/',
-            },
-            {
-              label: 'yPrisma',
-              href: 'https://yprisma.yearn.fi/',
-            },
-            {
-              label: 'yBribe',
-              href: 'https://ybribe.yearn.fi/',
-            },
-          ],
-        },
-        {
-          title: 'Community',
           items: [
             {
               label: 'Discord',
@@ -186,7 +127,7 @@ export default {
               href: 'https://medium.com/iearn',
             },
             {
-              label: 'Forum',
+              label: 'Governance Forum',
               href: 'https://gov.yearn.fi',
             },
             {
@@ -195,26 +136,224 @@ export default {
             },
           ],
         },
+        {
+          href: 'https://github.com/yearn',
+          position: 'right',
+          className: 'header-github-link',
+          'aria-label': 'GitHub repository',
+        },
+        {
+          href: 'https://yearn.fi',
+          position: 'right',
+          className: 'header-yearn-link',
+          'aria-label': 'yearn.fi',
+        },
+        {
+          type: 'search',
+          position: 'right',
+        },
+
+        // {
+        //   type: 'dropdown',
+        //   label: 'GitHub',
+        //   position: 'right',
+        //   items: [
+        //     {
+        //       label: 'V3 Vaults',
+        //       href: 'https://github.com/yearn/yearn-vaults-v3',
+        //     },
+        //     {
+        //       label: 'V3 Tokenized Strategy',
+        //       href: 'https://github.com/yearn/tokenized-strategy',
+        //     },
+        //     {
+        //       label: 'V3 Strategy Mix: Foundry',
+        //       href: 'https://github.com/yearn/tokenized-strategy-foundry-mix',
+        //     },
+        //     {
+        //       label: 'V3 Strategy Mix: Ape',
+        //       href: 'https://github.com/yearn/tokenized-strategy-ape-mix',
+        //     },
+        //     {
+        //       label: 'V2 Vaults',
+        //       href: 'https://github.com/yearn/yearn-vaults',
+        //     },
+        //     {
+        //       label: 'V2 Strategy Mix',
+        //       href: 'https://github.com/yearn/brownie-strategy-mix',
+        //     },
+        //     {
+        //       label: 'yearn-security',
+        //       href: 'https://github.com/yearn/yearn-security',
+        //     },
+        //     {
+        //       label: 'yearn-devdocs',
+        //       href: 'https://github.com/yearn/yearn-devdocs',
+        //     },
+        //   ],
+        // },
+        // {
+        //   type: 'dropdown',
+        //   label: 'Ecosystem',
+        //   position: 'right',
+        //   items: [
+        //     {
+        //       label: 'V3 Vaults',
+        //       href: 'https://yearn.fi/v3',
+        //     },
+        //     {
+        //       label: 'V2 Vaults',
+        //       href: 'https://yearn.fi/vaults',
+        //     },
+        //     {
+        //       label: 'Juiced Vaults',
+        //       href: 'https://juiced.yearn.fi/',
+        //     },
+        //     {
+        //       label: 'veYFI',
+        //       href: 'https://veyfi.yearn.fi/',
+        //     },
+        //     {
+        //       label: 'yETH',
+        //       href: 'https://yeth.yearn.fi/',
+        //     },
+        //     {
+        //       label: 'yCRV',
+        //       href: 'https://ycrv.yearn.fi/',
+        //     },
+        //     {
+        //       label: 'yPrisma',
+        //       href: 'https://yprisma.yearn.fi/',
+        //     },
+        //   ],
+        // },
       ],
     },
+    // footer: {
+    //   style: 'light',
+    //   links: [
+    //     {
+    //       title: 'GitHub',
+    //       items: [
+    //         {
+    //           label: 'V3 Vaults',
+    //           href: 'https://github.com/yearn/yearn-vaults-v3',
+    //         },
+    //         {
+    //           label: 'V3 Tokenized Strategy',
+    //           href: 'https://github.com/yearn/tokenized-strategy',
+    //         },
+    //         {
+    //           label: 'V3 Strategy Mix: Foundry',
+    //           href: 'https://github.com/yearn/tokenized-strategy-foundry-mix',
+    //         },
+    //         {
+    //           label: 'V3 Strategy Mix: Ape',
+    //           href: 'https://github.com/yearn/tokenized-strategy-ape-mix',
+    //         },
+    //         {
+    //           label: 'V2 Vaults',
+    //           href: 'https://github.com/yearn/yearn-vaults',
+    //         },
+    //         {
+    //           label: 'V2 Strategy Mix',
+    //           href: 'https://github.com/yearn/brownie-strategy-mix',
+    //         },
+    //         {
+    //           label: 'yearn-security',
+    //           href: 'https://github.com/yearn/yearn-security',
+    //         },
+    //         {
+    //           label: 'yearn-devdocs',
+    //           href: 'https://github.com/yearn/yearn-devdocs',
+    //         },
+    //       ],
+    //     },
+    //     {
+    //       title: 'Ecosystem',
+    //       items: [
+    //         {
+    //           label: 'V3 Vaults',
+    //           href: 'https://yearn.fi/v3',
+    //         },
+    //         {
+    //           label: 'V2 Vaults',
+    //           href: 'https://yearn.fi/vaults',
+    //         },
+    //         {
+    //           label: 'Juiced Vaults',
+    //           href: 'https://juiced.yearn.fi/',
+    //         },
+    //         {
+    //           label: 'veYFI',
+    //           href: 'https://veyfi.yearn.fi/',
+    //         },
+    //         {
+    //           label: 'yETH',
+    //           href: 'https://yeth.yearn.fi/',
+    //         },
+    //         {
+    //           label: 'yCRV',
+    //           href: 'https://ycrv.yearn.fi/',
+    //         },
+    //         {
+    //           label: 'yPrisma',
+    //           href: 'https://yprisma.yearn.fi/',
+    //         },
+    //         {
+    //           label: 'yBribe',
+    //           href: 'https://ybribe.yearn.fi/',
+    //         },
+    //       ],
+    //     },
+    //     {
+    //       title: 'Community',
+    //       items: [
+    //         {
+    //           label: 'Discord',
+    //           href: 'https://discord.gg/b8ENPNqG5c',
+    //         },
+    //         {
+    //           label: 'Twitter',
+    //           href: 'https://x.com/yearnfi',
+    //         },
+    //         {
+    //           label: 'Telegram',
+    //           href: 'https://t.me/yearnfinance/',
+    //         },
+    //         {
+    //           label: 'Medium',
+    //           href: 'https://medium.com/iearn',
+    //         },
+    //         {
+    //           label: 'Forum',
+    //           href: 'https://gov.yearn.fi',
+    //         },
+    //         {
+    //           label: 'Snapshot Voting',
+    //           href: 'https://snapshot.org/#/veyfi.eth',
+    //         },
+    //       ],
+    //     },
+    //   ],
+    // },
   },
   presets: [
     [
       '@docusaurus/preset-classic',
       {
         docs: {
-          path: 'vaults',
+          path: 'docs/getting-started',
           remarkPlugins: [math],
           rehypePlugins: [katex],
-          routeBasePath: 'vaults',
-          sidebarPath: require.resolve('./sidebars/sidebars.js'),
+          routeBasePath: 'getting-started',
+          sidebarPath: './sidebars/sidebarsGettingStarted.js',
           editUrl:
             'https://github.com/yearn/yearn-devdocs/edit/master/website/',
-          includeCurrentVersion: false,
           breadcrumbs: false,
         },
         theme: {
-          customCss: require.resolve('./src/css/custom.css'),
+          customCss: './src/css/custom.css',
         },
       },
     ],
@@ -234,35 +373,35 @@ export default {
         id: 'developers',
         path: 'docs/developers',
         routeBasePath: 'developers',
-        sidebarPath: require.resolve('./sidebars/sidebarsDevelopers.js'),
+        sidebarPath: './sidebars/sidebarsDevelopers.js',
         showLastUpdateTime: true,
-        sidebarCollapsed: false,
+        sidebarCollapsed: true,
         breadcrumbs: false,
       },
     ],
-    [
-      '@docusaurus/plugin-content-docs',
-      {
-        id: 'getting-started',
-        path: 'docs/getting-started',
-        routeBasePath: 'getting-started',
-        sidebarPath: require.resolve('./sidebars/sidebarsGettingStarted.js'),
-        showLastUpdateTime: true,
-        sidebarCollapsed: false,
-        breadcrumbs: false,
-        remarkPlugins: [math],
-        rehypePlugins: [katex],
-      },
-    ],
+    // [
+    //   '@docusaurus/plugin-content-docs',
+    //   {
+    //     id: 'getting-started',
+    //     path: 'docs/getting-started',
+    //     routeBasePath: 'getting-started',
+    //     sidebarPath: './sidebars/sidebarsGettingStarted.js',
+    //     showLastUpdateTime: true,
+    //     sidebarCollapsed: false,
+    //     breadcrumbs: false,
+    //     remarkPlugins: [math],
+    //     rehypePlugins: [katex],
+    //   },
+    // ],
     [
       '@docusaurus/plugin-content-docs',
       {
         id: 'partners',
         path: 'docs/partners',
         routeBasePath: 'partners',
-        sidebarPath: require.resolve('./sidebars/sidebarsPartners.js'),
+        sidebarPath: './sidebars/sidebarsPartners.js',
         showLastUpdateTime: true,
-        sidebarCollapsed: false,
+        sidebarCollapsed: true,
         breadcrumbs: false,
       },
     ],
@@ -272,9 +411,9 @@ export default {
         id: 'contributing',
         path: 'docs/contributing',
         routeBasePath: 'contributing',
-        sidebarPath: require.resolve('./sidebars/sidebarsContributing.js'),
+        sidebarPath: './sidebars/sidebarsContributing.js',
         showLastUpdateTime: true,
-        sidebarCollapsed: false,
+        sidebarCollapsed: true,
         breadcrumbs: false,
         remarkPlugins: [math],
         rehypePlugins: [katex],
@@ -286,9 +425,9 @@ export default {
         id: 'resources',
         path: 'docs/resources',
         routeBasePath: 'resources',
-        sidebarPath: require.resolve('./sidebars/sidebarsResources.js'),
+        sidebarPath: './sidebars/sidebarsResources.js',
         showLastUpdateTime: true,
-        sidebarCollapsed: false,
+        sidebarCollapsed: true,
         breadcrumbs: false,
       },
     ],
@@ -298,10 +437,39 @@ export default {
         id: 'security',
         path: 'docs/security',
         routeBasePath: 'security',
-        sidebarPath: require.resolve('./sidebars/sidebarsSecurity.js'),
+        sidebarPath: './sidebars/sidebarsSecurity.js',
         showLastUpdateTime: true,
+        sidebarCollapsed: true,
         breadcrumbs: false,
       },
     ],
+    // [
+    //   '@docusaurus/plugin-content-docs',
+    //   {
+    //     id: 'smart-contracts',
+    //     path: 'docs/smart-contracts',
+    //     routeBasePath: 'smart-contracts',
+    //     sidebarPath: './sidebars/sidebarsSmartContracts.js',
+    //     showLastUpdateTime: true,
+    //     sidebarCollapsed: true,
+    //     breadcrumbs: false,
+    //     remarkPlugins: [math],
+    //     rehypePlugins: [katex],
+    //   },
+    // ],
+    // [
+    //   '@docusaurus/plugin-content-docs',
+    //   {
+    //     id: 'testing',
+    //     path: 'docs/testing',
+    //     routeBasePath: 'testing',
+    //     sidebarPath: './sidebars/sidebars.js',
+    //     showLastUpdateTime: true,
+    //     sidebarCollapsed: true,
+    //     breadcrumbs: false,
+    //     remarkPlugins: [math],
+    //     rehypePlugins: [katex],
+    //   },
+    // ],
   ],
 }

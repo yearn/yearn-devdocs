@@ -42,7 +42,7 @@
     ]
   },
   "devDependencies": {
-    "@docusaurus/module-type-aliases": "^3.2.1",
+    "@docusaurus/module-type-aliases": "3.2.1",
     "@openzeppelin/contracts": "^4.8.0",
     "@tsconfig/docusaurus": "1.0.2",
     "@types/react": "18.3.1",

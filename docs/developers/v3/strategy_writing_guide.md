@@ -1,4 +1,4 @@
-# Guide to creating V3 "Tokenized Strategies"
+# Creating V3 "Tokenized Strategies"
 
 ## Overview
 

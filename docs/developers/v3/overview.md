@@ -1,4 +1,4 @@
-# Overview
+# yVaults v3
 
 Yearn's V3 system is a decentralized suite of yield-generating products built to fit any need. It is designed to be un-opinionated and customizable infrastructure for the world to build on, making yield generation as safe, efficient, and easy as possible for all parties. Anyone can deploy a strategy or manage a vault. So whether you are a gas golfing expert, a degen looking to codify your personal yield farming strategy, or just an average crypto user looking to earn passive yield on your magical internet tokens, V3 is for you.
 
@@ -52,6 +52,6 @@ All generic periphery contracts and factories can be retrieved on chain from the
 
 For more information on the periphery contracts visit the [Periphery](/developers/v3/periphery) section.
 
-For Yearn specific implementation addresses check [Contract Addresses](/getting-started/products/addresses)
+For Yearn specific implementation addresses check [Contract Addresses](../addresses)
 
 **If a contract has not been deployed on a specific chain it can be done permissionlessly using the scripts in the relevant GitHub repo. Or reach out to a Yearn contributor for help.**

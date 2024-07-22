@@ -1,6 +1,6 @@
-# Deploying and Managing a V3 Vault
+# Deploying and Managing V3 Vaults
 
-V3 makes it as simple as possible for anyone to deploy and manage their Vaults. No longer will Yearn be the only manager of Vaults, gate-keeping who can be a debt allocator, or what strategies should be added to a vault. Now, anyone can deploy, manage, and earn fees from their vision and preferences on everything from risk profile, fee model, decentralization, etc.
+No longer will Yearn be the only manager of Vaults! V3 Vaults make it as simple as possible for anyone to deploy and manage Yearn Vaults. Now, anyone with a vision for a new vault can deploy and manage one, setting their preferences for risk profiles, fee models, decentralization, and more.
 
 In V3 our "Allocator Vaults" or "Meta of Vaults" are designed to be efficient 4626 compliant debt allocators that can have many different "strategies" attached to them and will direct funds to these strategies based on the vault's management choice. The vaults are built to be "plug and play" meaning managers can simply deploy, add their strategies, and start the yield generation. But they also hold many customization factors, allowing different managers to differentiate themselves and experiment with different optionality.
 
@@ -16,7 +16,7 @@ Running your vault requires no need to know how to code. Anyone desiring to mana
 
 ## Deployment
 
-Each release of the vaults will have its own "Vault Factory" deployed to make it as simple and trustless as possible to deploy your vault. The vault factory allows anyone to trustlessly deploy their own vault which is an exact copy of the previously deployed "original" vault for that specific version.
+Each release of the V3 vault contracts will have its own "Vault Factory" contract deployed, in order to make it as simple and trustless as possible to deploy a vault. All vaults deployed with the factory contracts are exact copies of the previously deployed "original" vault for that specific version.
 
 **Vaults not deployed through the factory will not be recognized as part of the Yearn ecosystem and may experience issues during runtime.
 

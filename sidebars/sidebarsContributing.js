@@ -1,13 +1,12 @@
-module.exports = {
-  mySidebar: [
+export default {
+  contributing: [
+    'introduction',
     'contribute',
     'contributor-tools',
     {
       type: 'category',
       label: 'Operations',
-      items: [
-        'operations/budget',
-      ],
+      items: ['operations/budget'],
     },
     {
       type: 'category',
@@ -15,6 +14,21 @@ module.exports = {
       items: [
         'governance/proposal-process',
         'governance/yfi',
+        {
+          type: 'category',
+          label: 'veYFI',
+          link: {
+            type: 'doc',
+            id: 'governance/veyfi',
+          },
+          items: [
+            {
+              type: 'link',
+              label: 'veYFI dApp',
+              href: 'https://veyfi.yearn.fi/',
+            },
+          ],
+        },
       ],
     },
     {

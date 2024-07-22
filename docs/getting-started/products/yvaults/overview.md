@@ -1,6 +1,4 @@
-# Overview
-
-&nbsp;
+# yVaults
 
 ## What are yVaults?
 
@@ -10,7 +8,7 @@
 
 ## yVault Fee Structure
 
-**Performance Fee**: Deducted from yield earned every time a vault harvests a strategy. 
+**Performance Fee**: Deducted from yield earned every time a vault harvests a strategy.
 
 **Management Fee**: Flat rate taken from vault deposits over a year. The fee is extracted by minting new shares of the vault, thereby diluting vault participants. This is done at the time of harvest, and calculated based on time since the previous harvest.
 
@@ -23,7 +21,7 @@ The old structure used before the changes brought by [YIP-69](https://gov.yearn.
 | Management Fee  | 0%  |
 | Performance Fee | 20% |
 
-On the [yearn.fi](https://yearn.fi/) user interface, yield is displayed as net APY. This means that both fees and compounding returns are taken into consideration in the rates presented. Since harvests don't occur on a set basis, yield is usually estimated based on historical data. For more information, see [How to Understand yVault ROI](https://docs.yearn.fi/getting-started/guides/how-to-understand-yvault-roi)
+On the [yearn.fi](https://yearn.fi/) user interface, yield is displayed as net APY. This means that both fees and compounding returns are taken into consideration in the rates presented. Since harvests don't occur on a set basis, yield is usually estimated based on historical data. For more information, see [How to Understand yVault ROI](../../guides/)
 
 - For vaults deployed by the vault [factory](https://docs.yearn.fi/getting-started/products/yvaults/vault-factory) the performance fee is 10% instead of 20%.
 
