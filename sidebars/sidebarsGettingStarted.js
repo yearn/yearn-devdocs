@@ -45,6 +45,7 @@ export default {
                 id: 'products/yvaults/v2/v2',
               },
               items: [
+                'products/yvaults/v2/vault-factory',
                 {
                   type: 'link',
                   label: 'v2 Vaults Interface Guide →',
