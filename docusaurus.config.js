@@ -351,6 +351,10 @@ export default {
           editUrl:
             'https://github.com/yearn/yearn-devdocs/edit/master/website/',
           breadcrumbs: false,
+          admonitions: {
+            keywords: ['yearn-info'],
+            extendDefaults: true,
+          },
         },
         theme: {
           customCss: './src/css/custom.css',

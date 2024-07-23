@@ -162,6 +162,14 @@ html[data-theme='dark'] .react-toggle-thumb {
   --ifm-alert-border-color: grey;
 }
 
+.customDetails h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-bottom: 0;
+}
+
 .docusaurus-highlight-code-line {
   background-color: rgb(72, 77, 91);
   display: block;
