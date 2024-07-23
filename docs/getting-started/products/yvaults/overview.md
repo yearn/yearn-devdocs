@@ -2,7 +2,7 @@
 
 ## What are yVaults?
 
-[yVaults](https://yearn.fi/vaults) are like savings accounts for your crypto assets. They accept your deposit, then route it through strategies which seek out the highest yield available in DeFi.
+yVaults are like savings accounts for your crypto assets. They accept a deposit and then route it through strategies which seek out the best yields available in DeFi.
 
 ![image](https://github.com/yearn/yearn-devdocs/assets/7863230/af161f3d-ed71-4010-84ba-e1bfab66d782)
 
