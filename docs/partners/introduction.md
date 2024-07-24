@@ -20,7 +20,7 @@ We offer profit shares based on yield generated across all vaults. We are curren
 Profit-sharing is paid out in the native token of the vaults that partners are utilizing.
 
 Yearn partner's profit works like this:
-* Yearn fees for a vault can be checked at [yearn.watch](https://yearn.watch).
+* Yearn fees for a vault can be checked at [yearn.fi](https://yearn.fi).
     * Management fee (if applied) is charged yearly from the vault's TVL
     * Performance fee is charged from the vault's strategies harvest profits
     * For example, checking DAI vault fees at yearn watch: ![](https://i.imgur.com/Ok6hfVJ.png)

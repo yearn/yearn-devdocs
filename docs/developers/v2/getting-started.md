@@ -36,7 +36,7 @@ When the strategy has more than 3M-10M in TVL, it should improve it's risk score
 [Risk-score](https://docs.yearn.fi/resources/risks/risk-score) dimension: 1=best, 5=worst.
 
 1. Improve risk score in dimensions like external audit, additional security reviews
-[Internal Risk Dashboard](https://yearn.watch/risk)
+[Internal Risk Dashboard](https://seafood.yearn.watch/risk)
 2. A required way to improve team knowledge score is to create a committee of 3 people with deep knowledge monitoring the strategy 24/7
 
 When it's passed 50M in TVL

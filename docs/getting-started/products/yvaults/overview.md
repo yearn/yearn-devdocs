@@ -34,15 +34,8 @@ yVaults have 2 potential fees that can be charged on deposited funds:
 
 Prior to [YIP-69](https://gov.yearn.fi/t/yip-69-reduce-and-cap-fees-through-yrates/12588), vaults had 20% performance fees and 2% management fees, but this has changed and yVaults now have a dynamic fee structure.
 
-Single asset vaults generally have no management fee. Fee values for all yVaults can be checked in real-time at [yearn.watch](https://yearn.watch/)
+Single asset vaults generally have no management fee. Fee values for all yVaults can be checked in real-time at [yearn.fi](https://yearn.fi/)
 
-*Example YFI yVault fee structure at the time of writing:*  
-
-| Fee Type        | Value   |
-|-----------------|-----|
-| Management Fee  | 0%  |
-| Performance Fee | 20% |
-
-On the [yearn.fi](https://yearn.fi/) user interface, yield is displayed as net APY. This means that both fees and compounding returns are taken into consideration in the rates presented. Since harvests don't occur on a set basis, yield is usually estimated based on historical data. For more information, see [How to Understand yVault ROI](../../guides/concept-explainers/how-apy-works)
+- On the [yearn.fi](https://yearn.fi/) user interface, yield is displayed as net APY. This means that both fees and compounding returns are taken into consideration in the rates presented. Since harvests don't occur on a set basis, yield is usually estimated based on historical data. For more information, see [How to Understand yVault ROI](../../guides/concept-explainers/how-apy-works)
 
 - For vaults deployed by the vault [factory](./v2/vault-factory) the performance fee is 10% instead of 20%.
