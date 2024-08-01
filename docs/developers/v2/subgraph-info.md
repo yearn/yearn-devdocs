@@ -10,64 +10,56 @@ Subgraph information is serviced by a decentralized group of server operators ca
 
 ### V2 Vaults Subgraph
 
+#### Yearn Built Subgraph
+
+- [Explorer Page](https://thegraph.com/explorer/subgraphs/5xMSe3wTNLgFQqsAc5SCVVwT4MiRb5AogJCuSN9PjzXF?view=Query&chain=mainnet)
+- GraphQl Endpoint: `https://gateway.thegraph.com/api/{api-key}/subgraphs/id/5xMSe3wTNLgFQqsAc5SCVVwT4MiRb5AogJCuSN9PjzXF`
+- [Code Repo](https://github.com/yearn/yearn-vaults-v2-subgraph?tab=readme-ov-file)
+
+#### Messari Mainnet Subgraph
+
 - [Explorer Page](https://thegraph.com/explorer/subgraphs/FDLuaz69DbMADuBjJDEcLnTuPnjhZqNbFVrkNiBLGkEg?view=Query&chain=arbitrum-one)
 - Graphql Endpoint: `https://gateway-arbitrum.network.thegraph.com/api/{api-key}/subgraphs/id/FDLuaz69DbMADuBjJDEcLnTuPnjhZqNbFVrkNiBLGkEg`
-
-## Fantom
-
-### V2 Vaults Subgraph
-
-:::warning
-
-This subgraph needs to be migrated to the decentralized service.
-
-https://thegraph.com/docs/en/sunrise/#upgrading-subgraphs-to-the-graph-network
-
-https://thegraph.com/docs/en/arbitrum/l2-transfer-tools-guide/
-
-:::
-
-- [Explorer Page](https://thegraph.com/hosted-service/subgraph/yearn/yearn-vaults-v2-fantom)
-- Graphql Endpoint: https://api.thegraph.com/subgraphs/name/yearn/yearn-vaults-v2-fantom
-- [Code Repo](https://github.com/yearn/yearn-vaults-v2-subgraph)
 
 ## Arbitrum
 
 ### V2 Vaults Subgraph
 
+#### Messari Arbitrum Subgraph
+
 - [Explorer Page](https://thegraph.com/explorer/subgraphs/G3JZhmKKHC4mydRzD6kSz5fCWve5WDYYCyTFSJyv3SD5?view=Query&chain=arbitrum-one)
 - Graphql Endpoint: `https://gateway-arbitrum.network.thegraph.com/api/{api-key}/subgraphs/id/G3JZhmKKHC4mydRzD6kSz5fCWve5WDYYCyTFSJyv3SD5`
 - [Code Repo](https://github.com/yearn/yearn-vaults-v2-subgraph)
+
+---
+
+:::warning
+
+This following subgraphs needs to be migrated to the decentralized service.
+
+https://thegraph.com/docs/en/sunrise/#upgrading-subgraphs-to-the-graph-network
+
+https://thegraph.com/docs/en/arbitrum/l2-transfer-tools-guide/
+
+:::
 
 ## Optimism
 
 ### V2 Vaults Subgraph
 
-:::warning
-
-This subgraph needs to be migrated to the decentralized service.
-
-https://thegraph.com/docs/en/sunrise/#upgrading-subgraphs-to-the-graph-network
-
-https://thegraph.com/docs/en/arbitrum/l2-transfer-tools-guide/
-
-:::
-
 - [Explorer Page](https://thegraph.com/hosted-service/subgraph/yearn/yearn-vaults-v2-optimism)
 - Graphql Endpoint: https://thegraph.com/hosted-service/subgraph/yearn/yearn-vaults-v2-optimism
 - [Code Repo](https://github.com/yearn/yearn-vaults-v2-subgraph)
 
+## Fantom
+
+### V2 Vaults Subgraph
+
+- [Explorer Page](https://thegraph.com/hosted-service/subgraph/yearn/yearn-vaults-v2-fantom)
+- Graphql Endpoint: https://api.thegraph.com/subgraphs/name/yearn/yearn-vaults-v2-fantom
+- [Code Repo](https://github.com/yearn/yearn-vaults-v2-subgraph)
+
 ## Bribe v3
-
-:::warning
-
-This subgraph needs to be migrated to the decentralized service.
-
-https://thegraph.com/docs/en/sunrise/#upgrading-subgraphs-to-the-graph-network
-
-https://thegraph.com/docs/en/arbitrum/l2-transfer-tools-guide/
-
-:::
 
 - [Explorer Page](https://thegraph.com/hosted-service/subgraph/rareweasel/yearn-bribe-v3)
 - Graphql Endpoint: - https://api.thegraph.com/subgraphs/name/rareweasel/yearn-bribe-v3
