@@ -83,5 +83,10 @@ module.exports = {
       ],
     },
     'products/addresses',
+    {
+      type: 'link',
+      label: 'Smart Contracts →',
+      href: '/developers/smart-contracts/',
+    },
   ],
 }
