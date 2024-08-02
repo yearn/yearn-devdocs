@@ -16,17 +16,30 @@
   --ifm-color-primary-lighter: rgb(52, 142, 245);
   --ifm-color-primary-lightest: rgb(52, 142, 245);
   --ifm-code-font-size: 95%;
-}
-.body {
-  font-family: 'Roboto', serif;
+  --ifm-toc-border-color: transparent;
+  --ifm-menu-color-background-active: transparent;
 }
 
 html[data-theme='dark'] {
+  --ifm-toc-border-color: transparent;
   background-color: #18191a;
 }
 
+.menu__list-item-collapsible--active {
+  background-color: var(--ifm-menu-color-background-active);
+}
+
+#__docusaurus {
+  max-width: 1300px;
+  margin: auto;
+}
+
+.row {
+  padding: 0 var(--ifm-navbar-item-padding-horizontal);
+}
+
 .DocSearch {
-  width: 240px;
+  width: 160px;
 }
 
 html[data-theme='dark'] .DocSearch {
@@ -119,6 +132,7 @@ img {
 
 .footer {
   padding-top: 4rem;
+  background-color: inherit;
 }
 .footer__title {
   font-size: 1.28rem;
@@ -151,12 +165,14 @@ html[data-theme='dark'] .wireImg2 {
   }
 }
 
-/* Assuming this is added to a file like src/css/custom.css */
-.sidebar .menu__link[href$='separator'] {
-  pointer-events: none; /* Disables clicking */
-  cursor: default;
-  text-decoration: none;
-  color: transparent; /* Hides the text */
-  margin: 8px 0; /* Adjust spacing as needed */
-  border-bottom: 1px solid #ddd; /* Creates a horizontal line */
+/*--- SIDEBAR DIVIDER ---*/
+/* dividers should be added in the sidebars file like this:
+    {
+      type: 'html',
+      value: '<hr/>',
+      className: 'divider',
+    },
+*/
+.divider {
+  --ifm-hr-margin-vertical: 10px;
 }
