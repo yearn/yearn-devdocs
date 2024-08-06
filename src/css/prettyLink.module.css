@@ -6,7 +6,7 @@
     var(--ifm-color-primary-darkest),
     var(--ifm-color-primary-lightest)
   );
-  font-weight: 600;
+  font-weight: 400;
   border-radius: 5px;
   color: #fff;
   text-decoration: none;

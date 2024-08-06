@@ -14,6 +14,7 @@ export default {
   markdown: {
     mermaid: true,
   },
+  scripts: ['/js/overrideScroll.js'],
   themes: ['@docusaurus/theme-mermaid'],
   themeConfig: {
     docs: {
@@ -48,7 +49,7 @@ export default {
     ],
     navbar: {
       hideOnScroll: false,
-      title: 'Yearn Finance',
+      // title: 'Yearn Finance',
       logo: {
         alt: 'YFI Logo',
         src: 'img/logo.svg',
