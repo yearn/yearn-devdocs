@@ -4,6 +4,7 @@ module.exports = {
     {
       type: 'category',
       label: 'Products',
+      collapsed: false,
       items: [
         {
           type: 'category',
