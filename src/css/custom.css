@@ -41,7 +41,6 @@ html[data-theme='dark'] {
 .DocSearch {
   width: 160px;
 }
-
 html[data-theme='dark'] .DocSearch {
   background-color: var(--ifm-background-color);
   border: solid 2px var(--ifm-color-emphasis-300);
@@ -50,11 +49,9 @@ html[data-theme='dark'] .DocSearch {
 html[data-theme='dark'] .DocSearch-Search-Icon {
   color: var(--ifm-color-emphasis-300);
 }
-
 html[data-theme='dark'] .DocSearch:hover {
   border: solid 1px rgba(194, 194, 194, 0.363);
 }
-
 html[data-theme='light'] .DocSearch {
   background-color: var(--ifm-background-color);
   border: solid 2px var(--ifm-color-emphasis-500);
@@ -63,10 +60,16 @@ html[data-theme='light'] .DocSearch {
 html[data-theme='light'] .DocSearch-Search-Icon {
   color: var(--ifm-color-emphasis-500);
 }
-
 html[data-theme='light'] .DocSearch:hover {
   border: solid 1px rgba(128, 128, 128, 0.521);
 }
+@media screen and (max-width: 1082px) {
+  .DocSearch {
+    width: inherit;
+  }
+}
+
+/*navbar*/
 .navbar {
   box-shadow: none;
 }
@@ -95,6 +98,12 @@ html[data-theme='dark'] .react-toggle-thumb {
   background-color: var(--ifm-background-color);
 }
 
+/*detail-component*/
+.customDetails {
+  background-color: transparent;
+  --ifm-alert-border-color: grey;
+}
+
 .docusaurus-highlight-code-line {
   background-color: rgb(72, 77, 91);
   display: block;
@@ -112,12 +121,6 @@ html[data-theme='dark'] .react-toggle-thumb {
 
 img {
   height: auto;
-}
-
-@media screen and (max-width: 1082px) {
-  .DocSearch {
-    width: inherit;
-  }
 }
 
 .topRightImg {

@@ -1,32 +1,66 @@
-# Subgraph Introduction
+# Subgraphs
 
 The Graph Network is a decentralized indexing protocol for organizing blockchain data. Applications use GraphQL to query open APIs called subgraphs, to retrieve data that is indexed on the network. With The Graph, developers can build serverless applications that run entirely on public infrastructure.
 
 Yearn maintains subgraphs for each network we have yVaults on: Ethereum, Fantom, Arbitrum, and Optimism which index and organize data from Yearn smart contracts.
 
-Subgraph information is serviced by a decentralized group of server operators called Indexers. Some subgraphs are decentralized and some run on a hosted service, Yearn currently uses both. 
+Subgraph information is serviced by a decentralized group of server operators called Indexers.
 
 ## Ethereum
 
-- [Explorer Page](https://api.thegraph.com/subgraphs/name/messari/yearn-v2-ethereum/graphql)
-- Graphql Endpoint: `https://gateway.thegraph.com/api/{api-key}/subgraphs/id/5xMSe3wTNLgFQqsAc5SCVVwT4MiRb5AogJCuSN9PjzXF`
+### V2 Vaults Subgraph
 
-## Fantom
-- [Explorer Page](https://thegraph.com/hosted-service/subgraph/yearn/yearn-vaults-v2-fantom)
-- Graphql Endpoint: https://api.thegraph.com/subgraphs/name/yearn/yearn-vaults-v2-fantom
-- [Code Repo](https://github.com/yearn/yearn-vaults-v2-subgraph)
+#### Yearn Built Subgraph
+
+- [Explorer Page](https://thegraph.com/explorer/subgraphs/5xMSe3wTNLgFQqsAc5SCVVwT4MiRb5AogJCuSN9PjzXF?view=Query&chain=mainnet)
+- GraphQl Endpoint: `https://gateway.thegraph.com/api/{api-key}/subgraphs/id/5xMSe3wTNLgFQqsAc5SCVVwT4MiRb5AogJCuSN9PjzXF`
+- [Code Repo](https://github.com/yearn/yearn-vaults-v2-subgraph?tab=readme-ov-file)
+
+#### Messari Mainnet Subgraph
+
+- [Explorer Page](https://thegraph.com/explorer/subgraphs/FDLuaz69DbMADuBjJDEcLnTuPnjhZqNbFVrkNiBLGkEg?view=Query&chain=arbitrum-one)
+- Graphql Endpoint: `https://gateway-arbitrum.network.thegraph.com/api/{api-key}/subgraphs/id/FDLuaz69DbMADuBjJDEcLnTuPnjhZqNbFVrkNiBLGkEg`
 
 ## Arbitrum
-- [Explorer Page](https://thegraph.com/hosted-service/subgraph/yearn/yearn-vaults-v2-arbitrum)
-- Graphql Endpoint: https://thegraph.com/hosted-service/subgraph/yearn/yearn-vaults-v2-arbitrum
+
+### V2 Vaults Subgraph
+
+#### Messari Arbitrum Subgraph
+
+- [Explorer Page](https://thegraph.com/explorer/subgraphs/G3JZhmKKHC4mydRzD6kSz5fCWve5WDYYCyTFSJyv3SD5?view=Query&chain=arbitrum-one)
+- Graphql Endpoint: `https://gateway-arbitrum.network.thegraph.com/api/{api-key}/subgraphs/id/G3JZhmKKHC4mydRzD6kSz5fCWve5WDYYCyTFSJyv3SD5`
 - [Code Repo](https://github.com/yearn/yearn-vaults-v2-subgraph)
 
+---
+
+:::warning
+
+This following subgraphs needs to be migrated to the decentralized service.
+
+https://thegraph.com/docs/en/sunrise/#upgrading-subgraphs-to-the-graph-network
+
+https://thegraph.com/docs/en/arbitrum/l2-transfer-tools-guide/
+
+:::
+
 ## Optimism
+
+### V2 Vaults Subgraph
+
 - [Explorer Page](https://thegraph.com/hosted-service/subgraph/yearn/yearn-vaults-v2-optimism)
 - Graphql Endpoint: https://thegraph.com/hosted-service/subgraph/yearn/yearn-vaults-v2-optimism
 - [Code Repo](https://github.com/yearn/yearn-vaults-v2-subgraph)
 
+## Fantom
+
+### V2 Vaults Subgraph
+
+- [Explorer Page](https://thegraph.com/hosted-service/subgraph/yearn/yearn-vaults-v2-fantom)
+- Graphql Endpoint: https://api.thegraph.com/subgraphs/name/yearn/yearn-vaults-v2-fantom
+- [Code Repo](https://github.com/yearn/yearn-vaults-v2-subgraph)
+
 ## Bribe v3
+
 - [Explorer Page](https://thegraph.com/hosted-service/subgraph/rareweasel/yearn-bribe-v3)
 - Graphql Endpoint: - https://api.thegraph.com/subgraphs/name/rareweasel/yearn-bribe-v3
 - [Code Repo](https://github.com/yearn/yearn-ybribe-subgraph)
