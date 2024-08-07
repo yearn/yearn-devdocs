@@ -75,7 +75,7 @@ The above Gauges can be verified using the [YFI Gauge Registry](https://ethersca
 
 ### veYFI Reward Pool
 
-- Users who lock veYFI can claim accumulated fees from the veYFI reward pool. The reward pool gets fees two ways: YFI from the veYFI early exit fee and the non-distributed gauge rewards due to a lack of full boost.
+- Users who lock YFI for veYFI can claim accumulated fees from the veYFI reward pool. The reward pool gets fees two ways: YFI from the veYFI early exit fee and the non-distributed gauge rewards due to a lack of full boost.
 
 ## Addresses
 
