@@ -232,7 +232,7 @@ export default {
         id: 'developers',
         path: 'docs/developers',
         routeBasePath: 'developers',
-        sidebarPath: './sidebars/sidebarsDevelopers.js',
+        sidebarPath: './sidebars/sidebarsDeveloperDocs.js',
         showLastUpdateTime: true,
         sidebarCollapsed: true,
         breadcrumbs: false,
