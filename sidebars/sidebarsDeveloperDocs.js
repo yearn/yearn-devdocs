@@ -1,46 +1,90 @@
-module.exports = {
-  mySidebar: [
+export default {
+  developers: [
     {
       type: 'category',
-      label: 'yVaults Version 3',
+      label: 'Building on Yearn',
+      link: {
+        type: 'doc',
+        id: 'building-on-yearn',
+      },
+      collapsed: true,
       items: [
-        'v3/overview',
-        'v3/Integrating_v3',
-        'v3/strategy_writing_guide',
-        'v3/vault_management',
-        'v3/periphery',
-        'v3/protocol_fees',
-      ],
-    },
-    {
-      type: 'category',
-      label: 'yVaults Version 2',
-      items: [
-        'v2/getting-started',
-        'v2/additional-resources',
+        // yVaults
         {
           type: 'category',
-          label: 'Procedures',
+          label: 'yVaults',
+          // link: {
+          //   type: 'doc',
+          //   id: 'v1/introduction',
+          // },
           items: [
-            'v2/SPECIFICATION',
-            'v2/DEPLOYMENT',
-            'v2/OPERATIONS',
-            'v2/EMERGENCY',
+            {
+              type: 'category',
+              label: 'yVaults v3',
+              link: {
+                type: 'doc',
+                id: 'v3/overview',
+              },
+              items: [
+                'v3/Integrating_v3',
+                'v3/strategy_writing_guide',
+                'v3/vault_management',
+                'v3/periphery',
+                'v3/protocol_fees',
+                {
+                  type: 'link',
+                  label: 'v3 Contract Addresses →',
+                  href: '../../developers/addresses/v3-contracts', //this breaks if you don't use relative links here
+                },
+                {
+                  type: 'link',
+                  label: 'Smart Contracts →',
+                  href: '../../developers/smart-contracts/V3/Current-v3.0.2/BaseStrategy', //this breaks if you don't use relative links here
+                },
+              ],
+            },
+            {
+              type: 'category',
+              label: 'yVaults v2',
+              items: [
+                'v2/getting-started',
+                'v2/DEPLOYMENT',
+                'v2/SPECIFICATION',
+                'v2/OPERATIONS',
+                'v2/additional-resources',
+
+                {
+                  type: 'link',
+                  label: 'Smart Contracts →',
+                  href: '/smart-contracts/V2/Current-v0.4.6/BaseStrategy',
+                },
+              ],
+            },
+            {
+              type: 'category',
+              label: 'yVaults v1',
+              link: {
+                type: 'doc',
+                id: 'v1/introduction',
+              },
+              items: [
+                {
+                  type: 'link',
+                  label: 'Smart Contracts →',
+                  href: '/smart-contracts/V1/interfaces',
+                },
+              ],
+            },
             'v2/naming-convention',
-            'v2/ledger-plugin',
           ],
         },
-        {
-          type: 'link',
-          label: 'Smart Contracts',
-          href: '/vaults/smart-contracts/BaseStrategy',
-        },
+        // Yearn Data Services
         {
           type: 'category',
           label: 'Yearn Data Services',
           link: {
             type: 'doc',
-            id: 'v2/yearn-data',
+            id: 'data-services/yearn-data',
           },
           items: [
             {
@@ -50,19 +94,37 @@ module.exports = {
             },
             {
               type: 'category',
-              label: 'Subgraphs',
+              label: 'Subgraph',
               link: {
                 type: 'doc',
-                id: 'v2/subgraph-info',
+                id: 'data-services/subgraph-info',
               },
-              items: ['v2/entities', 'v2/queries'],
+              items: ['data-services/entities', 'data-services/queries'],
             },
-            'v2/yearn-lens',
+            'data-services/yearn-lens',
           ],
         },
-        'v2/hacking-with-yearn',
-        'v2/fork-yearn-ui',
-        'v2/yswaps',
+        // Front End Development
+        {
+          type: 'category',
+          label: 'Front End Development',
+          link: {
+            type: 'doc',
+            id: 'front-end-development',
+          },
+          items: ['data-services/yearn-stack', 'v2/fork-yearn-ui'],
+        },
+        // Other Stuff
+        {
+          type: 'category',
+          label: 'Other Stuff',
+          items: [
+            // 'wallet-integrations',
+            'v2/yswaps',
+            'auctions',
+            'v2/ledger-plugin',
+          ],
+        },
       ],
     },
     {
@@ -70,6 +132,53 @@ module.exports = {
       value: '<hr/>',
       className: 'divider',
     },
+    // Token and Contract Addresses
+    {
+      type: 'category',
+      label: 'Token and Contract Addresses',
+      link: {
+        type: 'doc',
+        id: 'addresses/index',
+      },
+      items: [
+        {
+          type: 'doc',
+          label: 'General',
+          id: 'addresses/core-contracts',
+        },
+        {
+          type: 'doc',
+          label: 'yVaults v3',
+          id: 'addresses/v3-contracts',
+        },
+        {
+          type: 'doc',
+          label: 'yVaults v2',
+          id: 'addresses/v2-contracts',
+        },
+        {
+          type: 'doc',
+          label: 'yCRV',
+          id: 'addresses/ycrv-contracts',
+        },
+        {
+          type: 'doc',
+          label: 'yPRISMA',
+          id: 'addresses/yprisma-contracts',
+        },
+        {
+          type: 'doc',
+          label: 'Lens',
+          id: 'addresses/lens-contracts',
+        },
+      ],
+    },
+    {
+      type: 'html',
+      value: '<hr/>',
+      className: 'divider',
+    },
+    // Smart Contracts
     {
       type: 'category',
       label: 'Smart Contracts',
@@ -111,12 +220,44 @@ module.exports = {
             },
           ],
         },
-        // TODO add back when yearn data services updated
-        // {
-        //   type: 'link',
-        //   label: 'Yearn Lens →',
-        //   href: '../../data-services/yearn-lens#contracts',
-        // },
+        {
+          type: 'link',
+          label: 'Yearn Lens →',
+          href: '../../data-services/yearn-lens#contracts',
+        },
+      ],
+    },
+    {
+      type: 'html',
+      value: '<hr/>',
+      className: 'divider',
+    },
+    //Security
+    {
+      type: 'category',
+      label: 'Security',
+      link: {
+        type: 'doc',
+        id: 'security/index',
+      },
+      items: [
+        'security/multisig',
+        {
+          type: 'category',
+          label: 'Risks',
+          // link: {
+          //   type: 'doc',
+          //   id: 'security/risks/risk-overview',
+          // },
+          items: [
+            'security/risks/risk-score',
+            'security/risks/protocol-risks',
+            'security/risks/strategy-risks',
+            'security/risks/vault-risks',
+          ],
+        },
+        'security/testing',
+        'security/EMERGENCY',
       ],
     },
   ],

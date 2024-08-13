@@ -57,7 +57,7 @@ export default {
           activeBasePath: '/getting-started',
         },
         {
-          to: 'developers/v3/overview',
+          to: 'developers/building-on-yearn',
           label: 'Develop',
           activeBasePath: '/developers',
         },
