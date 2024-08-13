@@ -75,11 +75,11 @@ export default {
           label: 'Resources',
           activeBasePath: '/resources',
         },
-        {
-          to: 'security/',
-          label: 'Security',
-          activeBasePath: '/security',
-        },
+        // {
+        //   to: 'security/',
+        //   label: 'Security',
+        //   activeBasePath: '/security',
+        // },
         {
           type: 'search',
           position: 'right',
@@ -204,7 +204,7 @@ export default {
           remarkPlugins: [math],
           rehypePlugins: [katex],
           routeBasePath: 'getting-started',
-          sidebarPath: './sidebars/sidebarsGettingStarted.js',
+          sidebarPath: './sidebars/sidebarsUserDocs.js',
           editUrl:
             'https://github.com/yearn/yearn-devdocs/edit/master/website/',
           // includeCurrentVersion: false,
@@ -276,17 +276,17 @@ export default {
         breadcrumbs: false,
       },
     ],
-    [
-      '@docusaurus/plugin-content-docs',
-      {
-        id: 'security',
-        path: 'docs/security',
-        routeBasePath: 'security',
-        sidebarPath: './sidebars/sidebarsSecurity.js',
-        showLastUpdateTime: true,
-        sidebarCollapsed: true,
-        breadcrumbs: false,
-      },
-    ],
+    // [
+    //   '@docusaurus/plugin-content-docs',
+    //   {
+    //     id: 'security',
+    //     path: 'docs/security',
+    //     routeBasePath: 'security',
+    //     sidebarPath: './sidebars/sidebarsSecurity.js',
+    //     showLastUpdateTime: true,
+    //     sidebarCollapsed: true,
+    //     breadcrumbs: false,
+    //   },
+    // ],
   ],
 }

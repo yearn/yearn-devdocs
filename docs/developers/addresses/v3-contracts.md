@@ -22,9 +22,13 @@ Deployments are done using create2 factories and should be stable across all EVM
 - VaultFactory: [`0xE9E8C89c8Fc7E8b8F23425688eb68987231178e5`](https://etherscan.io/address/0xE9E8C89c8Fc7E8b8F23425688eb68987231178e5#readContract)
 - TokenizedStrategy: [`0xDFC8cD9F2f2d306b7C0d109F005DF661E14f4ff2`](https://etherscan.io/address/0xDFC8cD9F2f2d306b7C0d109F005DF661E14f4ff2#readContract)
 
-## Vault System Contracts
+## Periphery Contracts
 
 A list of the deployed v3 yVault system contracts. To find individual vaults, use the [V3 Registry](https://etherscan.io/address/0xff31a1b020c868f6ea3f61eb953344920eeca3af#readContract) or refer to https://yearn.fi
+
+### Protocol Address Provider
+
+All generic periphery contracts and factories can be retrieved on chain from the Address Provider: [`0x1e9778aAD41Aa3E0884C276fB4C2D03C4036Aa0B`](https://etherscan.io/address/0x1e9778aAD41Aa3E0884C276fB4C2D03C4036Aa0B#readContract)
 
 | Identity               | Address                                    |
 | ---------------------- | ------------------------------------------ |
@@ -34,9 +38,5 @@ A list of the deployed v3 yVault system contracts. To find individual vaults, us
 | APR Oracle             | [0x27aD2fFc74F74Ed27e1C0A19F1858dD0963277aE](https://etherscan.com/address/0x27aD2fFc74F74Ed27e1C0A19F1858dD0963277aE) |
 | 4626 Router            | [0x1112dbCF805682e828606f74AB717abf4b4FD8DE](https://etherscan.com/address/0x1112dbCF805682e828606f74AB717abf4b4FD8DE) |
 | Protocol Address Provider| [0x1e9778aAD41Aa3E0884C276fB4C2D03C4036Aa0B](https://etherscan.com/address/0x1e9778aAD41Aa3E0884C276fB4C2D03C4036Aa0B) |
-
-### Protocol Address Provider
-
-All generic periphery contracts and factories can be retrieved on chain from the Address Provider: [`0x1e9778aAD41Aa3E0884C276fB4C2D03C4036Aa0B`](https://etherscan.io/address/0x1e9778aAD41Aa3E0884C276fB4C2D03C4036Aa0B#readContract)
 
 For more information on the periphery contracts visit the [Periphery](/developers/v3/periphery) section.

@@ -1,5 +1,5 @@
 module.exports = {
-  mySidebar: [
+  userDocsSidebar: [
     'intro',
     {
       type: 'category',
@@ -83,11 +83,26 @@ module.exports = {
         'guides/how-to-understand-strategies-descriptions',
       ],
     },
-    'products/addresses',
+    {
+      type: 'html',
+      value: '<hr/>',
+      className: 'divider',
+    },
+    {
+      type: 'link',
+      label: 'Token and Contract Addresses →',
+      href: '/developers/addresses',
+    },
+    // {
+    //   type: 'link',
+    //   label: 'Understanding Risks →',
+    //   href: '/developers/security/risks/risk-overview',
+    // },
     {
       type: 'link',
       label: 'Smart Contracts →',
       href: '/developers/smart-contracts/',
     },
+    { type: 'link', label: 'Security →', href: '/developers/security' },
   ],
 }
