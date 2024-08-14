@@ -26,16 +26,6 @@ module.exports = {
         },
         {
           type: 'category',
-          label: 'veYFI',
-          items: ['products/veyfi'],
-        },
-        {
-          type: 'category',
-          label: 'yETH',
-          items: ['products/yeth/overview'],
-        },
-        {
-          type: 'category',
           label: 'yLockers',
           items: [
             'products/ylockers/overview',
@@ -61,12 +51,27 @@ module.exports = {
         },
         {
           type: 'category',
+          label: 'yETH',
+          items: ['products/yeth/overview'],
+        },
+        {
+          type: 'category',
+          label: 'veYFI',
+          items: ['products/veyfi'],
+        },
+        {
+          type: 'category',
           label: 'yBribe',
           items: [
             'products/ybribe/overview',
             'products/ybribe/guide',
             'products/ybribe/faq',
           ],
+        },
+        {
+          type: 'link',
+          label: 'Deprecated Projects →',
+          href: '/resources/deprecated',
         },
       ],
     },
