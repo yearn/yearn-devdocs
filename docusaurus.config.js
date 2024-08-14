@@ -53,12 +53,12 @@ export default {
       items: [
         {
           to: 'getting-started/intro',
-          label: 'Introduction',
+          label: 'User Docs',
           activeBasePath: '/getting-started',
         },
         {
           to: 'developers/building-on-yearn',
-          label: 'Develop',
+          label: 'Developer Docs',
           activeBasePath: '/developers',
         },
         // {
@@ -67,7 +67,7 @@ export default {
         // },
         {
           to: 'contributing/contribute',
-          label: 'Contribute',
+          label: 'Contributor Docs',
           activeBasePath: '/contributing',
         },
         {
