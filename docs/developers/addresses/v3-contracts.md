@@ -8,6 +8,8 @@ Core contracts are the base generic contracts that can be used by anyone who wan
 
 Deployments are done using create2 factories and should be stable across all EVM chains the protocol has been deployed on.
 
+If a contract has not been deployed on a specific chain it can be done permissionlessly using the scripts in the relevant GitHub repo. Or reach out to a Yearn contributor for help.
+
 :::
 
 ### Version 3.0.2
