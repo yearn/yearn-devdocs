@@ -18,6 +18,11 @@ export default {
   },
   themes: ['@docusaurus/theme-mermaid'],
   themeConfig: {
+    docs: {
+      sidebar: {
+        autoCollapseCategories: true,
+      },
+    },
     prism: {
       additionalLanguages: ['solidity'],
     },
