@@ -32,13 +32,16 @@ A list of the deployed v3 yVault system contracts. To find individual vaults, us
 
 All generic periphery contracts and factories can be retrieved on chain from the Address Provider: [`0x1e9778aAD41Aa3E0884C276fB4C2D03C4036Aa0B`](https://etherscan.io/address/0x1e9778aAD41Aa3E0884C276fB4C2D03C4036Aa0B#readContract)
 
-| Identity               | Address                                    |
-| ---------------------- | ------------------------------------------ |
-| V3 Registry            | [0xff31A1B020c868F6eA3f61Eb953344920EeCA3af](https://etherscan.com/address/0xff31A1B020c868F6eA3f61Eb953344920EeCA3af) |
-| Release Registry       | [0x990089173D5d5287c344092Be0bB37950A67d17B](https://etherscan.com/address/0x990089173D5d5287c344092Be0bB37950A67d17B) |
-| Report Trigger         | [0xD98C652f02E7B987e0C258a43BCa9999DF5078cF](https://etherscan.com/address/0xD98C652f02E7B987e0C258a43BCa9999DF5078cF) |
-| APR Oracle             | [0x27aD2fFc74F74Ed27e1C0A19F1858dD0963277aE](https://etherscan.com/address/0x27aD2fFc74F74Ed27e1C0A19F1858dD0963277aE) |
-| 4626 Router            | [0x1112dbCF805682e828606f74AB717abf4b4FD8DE](https://etherscan.com/address/0x1112dbCF805682e828606f74AB717abf4b4FD8DE) |
-| Protocol Address Provider| [0x1e9778aAD41Aa3E0884C276fB4C2D03C4036Aa0B](https://etherscan.com/address/0x1e9778aAD41Aa3E0884C276fB4C2D03C4036Aa0B) |
+| Identity                 | Address                                    |
+| ----------------------   | ------------------------------------------ |
+| V3 Registry              | [0xff31A1B020c868F6eA3f61Eb953344920EeCA3af](https://etherscan.io/address/0xff31A1B020c868F6eA3f61Eb953344920EeCA3af) |
+| Release Registry         | [0x990089173D5d5287c344092Be0bB37950A67d17B](https://etherscan.io/address/0x990089173D5d5287c344092Be0bB37950A67d17B) |
+| Role Manager             | [0xb3bd6B2E61753C311EFbCF0111f75D29706D9a41](https://etherscan.io/address/0xb3bd6B2E61753C311EFbCF0111f75D29706D9a41) |
+| Debt Allocator Factory   | [0xfCF8c7C43dedd567083B422d6770F23B78D15BDe](https://etherscan.io/address/0xfCF8c7C43dedd567083B422d6770F23B78D15BDe) |
+| Accountant               | [0x5A74Cb32D36f2f517DB6f7b0A0591e09b22cDE69](https://etherscan.io/address/0x5A74Cb32D36f2f517DB6f7b0A0591e09b22cDE69) |
+| Report Trigger           | [0xD98C652f02E7B987e0C258a43BCa9999DF5078cF](https://etherscan.io/address/0xD98C652f02E7B987e0C258a43BCa9999DF5078cF) |
+| APR Oracle               | [0x27aD2fFc74F74Ed27e1C0A19F1858dD0963277aE](https://etherscan.io/address/0x27aD2fFc74F74Ed27e1C0A19F1858dD0963277aE) |
+| 4626 Router              | [0x1112dbCF805682e828606f74AB717abf4b4FD8DE](https://etherscan.io/address/0x1112dbCF805682e828606f74AB717abf4b4FD8DE) |
+| Protocol Address Provider| [0x1e9778aAD41Aa3E0884C276fB4C2D03C4036Aa0B](https://etherscan.io/address/0x1e9778aAD41Aa3E0884C276fB4C2D03C4036Aa0B) |
 
 For more information on the periphery contracts visit the [Periphery](/developers/v3/periphery) section.
