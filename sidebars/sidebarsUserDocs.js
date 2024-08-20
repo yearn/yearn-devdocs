@@ -1,5 +1,5 @@
 module.exports = {
-  mySidebar: [
+  userDocsSidebar: [
     'intro',
     {
       type: 'category',
@@ -23,16 +23,6 @@ module.exports = {
               items: ['products/yvaults/vault-factory'],
             },
           ],
-        },
-        {
-          type: 'category',
-          label: 'veYFI',
-          items: ['products/veyfi'],
-        },
-        {
-          type: 'category',
-          label: 'yETH',
-          items: ['products/yeth/overview'],
         },
         {
           type: 'category',
@@ -61,12 +51,27 @@ module.exports = {
         },
         {
           type: 'category',
+          label: 'yETH',
+          items: ['products/yeth/overview'],
+        },
+        {
+          type: 'category',
+          label: 'veYFI',
+          items: ['products/veyfi'],
+        },
+        {
+          type: 'category',
           label: 'yBribe',
           items: [
             'products/ybribe/overview',
             'products/ybribe/guide',
             'products/ybribe/faq',
           ],
+        },
+        {
+          type: 'link',
+          label: 'Deprecated Projects →',
+          href: '/resources/deprecated',
         },
       ],
     },
@@ -83,11 +88,26 @@ module.exports = {
         'guides/how-to-understand-strategies-descriptions',
       ],
     },
-    'products/addresses',
+    {
+      type: 'html',
+      value: '<hr/>',
+      className: 'divider',
+    },
+    {
+      type: 'link',
+      label: 'Token and Contract Addresses →',
+      href: '/developers/addresses',
+    },
+    // {
+    //   type: 'link',
+    //   label: 'Understanding Risks →',
+    //   href: '/developers/security/risks/risk-overview',
+    // },
     {
       type: 'link',
       label: 'Smart Contracts →',
       href: '/developers/smart-contracts/',
     },
+    { type: 'link', label: 'Security →', href: '/developers/security' },
   ],
 }

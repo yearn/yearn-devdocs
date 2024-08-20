@@ -18,6 +18,11 @@ export default {
   },
   themes: ['@docusaurus/theme-mermaid'],
   themeConfig: {
+    docs: {
+      sidebar: {
+        autoCollapseCategories: true,
+      },
+    },
     prism: {
       additionalLanguages: ['solidity'],
     },
@@ -53,12 +58,12 @@ export default {
       items: [
         {
           to: 'getting-started/intro',
-          label: 'Introduction',
+          label: 'User Docs',
           activeBasePath: '/getting-started',
         },
         {
-          to: 'developers/v3/overview',
-          label: 'Develop',
+          to: 'developers/building-on-yearn',
+          label: 'Developer Docs',
           activeBasePath: '/developers',
         },
         // {
@@ -67,7 +72,7 @@ export default {
         // },
         {
           to: 'contributing/contribute',
-          label: 'Contribute',
+          label: 'Contributor Docs',
           activeBasePath: '/contributing',
         },
         {
@@ -75,11 +80,11 @@ export default {
           label: 'Resources',
           activeBasePath: '/resources',
         },
-        {
-          to: 'security/',
-          label: 'Security',
-          activeBasePath: '/security',
-        },
+        // {
+        //   to: 'security/',
+        //   label: 'Security',
+        //   activeBasePath: '/security',
+        // },
         {
           type: 'search',
           position: 'right',
@@ -204,7 +209,7 @@ export default {
           remarkPlugins: [math],
           rehypePlugins: [katex],
           routeBasePath: 'getting-started',
-          sidebarPath: './sidebars/sidebarsGettingStarted.js',
+          sidebarPath: './sidebars/sidebarsUserDocs.js',
           editUrl:
             'https://github.com/yearn/yearn-devdocs/edit/master/website/',
           // includeCurrentVersion: false,
@@ -232,7 +237,7 @@ export default {
         id: 'developers',
         path: 'docs/developers',
         routeBasePath: 'developers',
-        sidebarPath: './sidebars/sidebarsDevelopers.js',
+        sidebarPath: './sidebars/sidebarsDeveloperDocs.js',
         showLastUpdateTime: true,
         sidebarCollapsed: true,
         breadcrumbs: false,
@@ -276,17 +281,17 @@ export default {
         breadcrumbs: false,
       },
     ],
-    [
-      '@docusaurus/plugin-content-docs',
-      {
-        id: 'security',
-        path: 'docs/security',
-        routeBasePath: 'security',
-        sidebarPath: './sidebars/sidebarsSecurity.js',
-        showLastUpdateTime: true,
-        sidebarCollapsed: true,
-        breadcrumbs: false,
-      },
-    ],
+    // [
+    //   '@docusaurus/plugin-content-docs',
+    //   {
+    //     id: 'security',
+    //     path: 'docs/security',
+    //     routeBasePath: 'security',
+    //     sidebarPath: './sidebars/sidebarsSecurity.js',
+    //     showLastUpdateTime: true,
+    //     sidebarCollapsed: true,
+    //     breadcrumbs: false,
+    //   },
+    // ],
   ],
 }
