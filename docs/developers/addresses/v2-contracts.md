@@ -12,7 +12,6 @@ A list of the deployed v2 yVault system contracts. To find individual vaults, us
 | Release Registry       |  release.registry.ychad.eth   | [0x7cb5abeb0de8f6f46a27329b9ef54ce10e47f1e2](https://etherscan.io/address/0x7cb5abeb0de8f6f46a27329b9ef54ce10e47f1e2) |
 | Health Check           | health.ychad.eth | [0xDDCea799fF1699e98EDF118e0629A974Df7DF012](https://etherscan.io/address/0xDDCea799fF1699e98EDF118e0629A974Df7DF012) |
 | Curve LP Factory       |                  |[0x21b1FC8A52f179757bf555346130bF27c0C2A17A](https://etherscan.io/address/0x21b1FC8A52f179757bf555346130bF27c0C2A17A) |
-| Balancer LP Factory       |               |[0x06393857db733b76dd3ec91f3681ce85db275438](https://etherscan.io/address/0x06393857db733b76dd3ec91f3681ce85db275438) |
 | Multisigs              |                  | See [here](core-contracts#ethereum-contracts). |
 
 ## Optimism V2 Contracts
