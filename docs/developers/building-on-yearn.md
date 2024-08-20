@@ -1,6 +1,6 @@
 # Building on Yearn
 
-![image](/img/intro/pixie-wide.jpg)
+![image](/img/intro/pixie-wide-no-logo.jpg)
 
 :::warning
 
