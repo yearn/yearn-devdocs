@@ -50,7 +50,6 @@ export default {
     ],
     navbar: {
       hideOnScroll: false,
-      // title: 'Yearn Finance',
       logo: {
         alt: 'YFI Logo',
         src: 'img/logo.svg',
@@ -66,25 +65,11 @@ export default {
           label: 'Dev Docs',
           activeBasePath: '/developers',
         },
-        // {
-        //   to: '/vaults/smart-contracts/BaseStrategy',
-        //   label: 'Smart Contracts',
-        // },
         {
           to: 'contributing/contribute',
           label: 'DAO Docs',
           activeBasePath: '/contributing',
         },
-        // {
-        //   to: 'resources/faq',
-        //   label: 'Resources',
-        //   activeBasePath: '/resources',
-        // },
-        // {
-        //   to: 'security/',
-        //   label: 'Security',
-        //   activeBasePath: '/security',
-        // },
         {
           label: 'Blog',
           position: 'right',
@@ -139,114 +124,6 @@ export default {
         },
       ],
     },
-    // footer: {
-    //   style: 'light',
-    //   links: [
-    //     {
-    //       title: 'GitHub',
-    //       items: [
-    //         {
-    //           label: 'V3 Vaults',
-    //           href: 'https://github.com/yearn/yearn-vaults-v3',
-    //         },
-    //         {
-    //           label: 'V3 Tokenized Strategy',
-    //           href: 'https://github.com/yearn/tokenized-strategy',
-    //         },
-    //         {
-    //           label: 'V3 Strategy Mix: Foundry',
-    //           href: 'https://github.com/yearn/tokenized-strategy-foundry-mix',
-    //         },
-    //         {
-    //           label: 'V3 Strategy Mix: Ape',
-    //           href: 'https://github.com/yearn/tokenized-strategy-ape-mix',
-    //         },
-    //         {
-    //           label: 'V2 Vaults',
-    //           href: 'https://github.com/yearn/yearn-vaults',
-    //         },
-    //         {
-    //           label: 'V2 Strategy Mix',
-    //           href: 'https://github.com/yearn/brownie-strategy-mix',
-    //         },
-    //         {
-    //           label: 'yearn-security',
-    //           href: 'https://github.com/yearn/yearn-security',
-    //         },
-    //         {
-    //           label: 'yearn-devdocs',
-    //           href: 'https://github.com/yearn/yearn-devdocs',
-    //         },
-    //       ],
-    //     },
-    //     {
-    //       title: 'Ecosystem',
-    //       items: [
-    //         {
-    //           label: 'V3 Vaults',
-    //           href: 'https://yearn.fi/v3',
-    //         },
-    //         {
-    //           label: 'V2 Vaults',
-    //           href: 'https://yearn.fi/vaults',
-    //         },
-    //         {
-    //           label: 'Juiced Vaults',
-    //           href: 'https://juiced.yearn.fi/',
-    //         },
-    //         {
-    //           label: 'veYFI',
-    //           href: 'https://veyfi.yearn.fi/',
-    //         },
-    //         {
-    //           label: 'yETH',
-    //           href: 'https://yeth.yearn.fi/',
-    //         },
-    //         {
-    //           label: 'yCRV',
-    //           href: 'https://ycrv.yearn.fi/',
-    //         },
-    //         {
-    //           label: 'yPrisma',
-    //           href: 'https://yprisma.yearn.fi/',
-    //         },
-    //         {
-    //           label: 'yBribe',
-    //           href: 'https://ybribe.yearn.fi/',
-    //         },
-    //       ],
-    //     },
-    //     {
-    //       title: 'Community',
-    //       items: [
-    //         {
-    //           label: 'Discord',
-    //           href: 'https://discord.gg/b8ENPNqG5c',
-    //         },
-    //         {
-    //           label: 'Twitter',
-    //           href: 'https://x.com/yearnfi',
-    //         },
-    //         {
-    //           label: 'Telegram',
-    //           href: 'https://t.me/yearnfinance/',
-    //         },
-    //         {
-    //           label: 'Medium',
-    //           href: 'https://medium.com/iearn',
-    //         },
-    //         {
-    //           label: 'Forum',
-    //           href: 'https://gov.yearn.fi',
-    //         },
-    //         {
-    //           label: 'Snapshot Voting',
-    //           href: 'https://snapshot.org/#/veyfi.eth',
-    //         },
-    //       ],
-    //     },
-    //   ],
-    // },
   },
   presets: [
     [
@@ -260,7 +137,6 @@ export default {
           sidebarPath: './sidebars/sidebarsUserDocs.js',
           editUrl:
             'https://github.com/yearn/yearn-devdocs/edit/master/website/',
-          // includeCurrentVersion: false,
           sidebarCollapsed: true,
           breadcrumbs: false,
         },
@@ -294,18 +170,6 @@ export default {
     [
       '@docusaurus/plugin-content-docs',
       {
-        id: 'partners',
-        path: 'docs/partners',
-        routeBasePath: 'partners',
-        sidebarPath: './sidebars/sidebarsPartners.js',
-        showLastUpdateTime: true,
-        sidebarCollapsed: true,
-        breadcrumbs: false,
-      },
-    ],
-    [
-      '@docusaurus/plugin-content-docs',
-      {
         id: 'contributing',
         path: 'docs/contributing',
         routeBasePath: 'contributing',
@@ -329,17 +193,5 @@ export default {
         breadcrumbs: false,
       },
     ],
-    // [
-    //   '@docusaurus/plugin-content-docs',
-    //   {
-    //     id: 'security',
-    //     path: 'docs/security',
-    //     routeBasePath: 'security',
-    //     sidebarPath: './sidebars/sidebarsSecurity.js',
-    //     showLastUpdateTime: true,
-    //     sidebarCollapsed: true,
-    //     breadcrumbs: false,
-    //   },
-    // ],
   ],
 }

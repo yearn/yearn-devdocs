@@ -136,8 +136,6 @@ html[data-theme='light'] .DocSearch:hover {
 }
 .navbar__items .navbar__brand {
   margin: 0;
-  /* margin-right: auto;
-  min-width: 137px; */
 }
 @media screen and (max-width: 1075px) {
   .navbar__items .navbar__brand {
@@ -153,9 +151,6 @@ html[data-theme='light'] .DocSearch:hover {
   padding-right: 0;
   font-size: 14px;
 }
-/* .navbar__item .dropdown__menu li:first-child {
-  display: none;
-} */
 html[data-theme='dark'] .navbar {
   background-color: var(--ifm-background-color);
 }
@@ -229,28 +224,3 @@ img {
   object-fit: cover;
   object-position: 0% 100%;
 }
-
-/* ---FOOTER--- */
-/* .footer__title,
-.footer__item {
-  font-family: 'Roboto Slab', 'Roboto', serif;
-} */
-/* .footer {
-  padding-top: 4rem;
-  background-color: inherit;
-}
-.footer__title {
-  font-size: 1.28rem;
-}
-.footer__item {
-  margin-bottom: 1rem;
-} */
-
-/* html[data-theme='dark'] .wireImg {
-  background: radial-gradient(ellipse at right, #aaa, transparent),
-    radial-gradient(ellipse at left, #aaa, transparent);
-}
-html[data-theme='dark'] .wireImg2 {
-  background: radial-gradient(ellipse at right, #333, transparent),
-    radial-gradient(ellipse at left, #333, transparent);
-} */
