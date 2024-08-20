@@ -1,4 +1,4 @@
-# Budget
+# Budget Process
 
 :::warning
 

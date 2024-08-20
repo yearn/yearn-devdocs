@@ -272,5 +272,10 @@ export default {
       href: '/developers/smart-contracts/',
     },
     { type: 'link', label: 'Security →', href: '/developers/security' },
+    {
+      type: 'link',
+      label: 'Deprecated Projects →',
+      href: '/resources/deprecated',
+    },
   ],
 }

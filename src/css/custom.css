@@ -31,7 +31,7 @@ html[data-theme='dark'] {
   background-color: var(--ifm-menu-color-background-active);
 }
 .menu__link {
-  font-size: 14px;
+  font-size: 15px;
 }
 /* .menu__list-item-collapsible {
   flex-direction: row-reverse;

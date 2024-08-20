@@ -424,13 +424,25 @@ export default {
         rehypePlugins: [katex],
       },
     ],
+    // [
+    //   '@docusaurus/plugin-content-docs',
+    //   {
+    //     id: 'resources',
+    //     path: 'docs/resources',
+    //     routeBasePath: 'resources',
+    //     sidebarPath: './sidebars/sidebarsResources.js',
+    //     showLastUpdateTime: true,
+    //     sidebarCollapsed: true,
+    //     breadcrumbs: false,
+    //   },
+    // ],
     [
       '@docusaurus/plugin-content-docs',
       {
-        id: 'resources',
+        id: 'deprecated',
         path: 'docs/resources',
         routeBasePath: 'resources',
-        sidebarPath: './sidebars/sidebarsResources.js',
+        sidebarPath: './sidebars/sidebarsDeprecated.js',
         showLastUpdateTime: true,
         sidebarCollapsed: true,
         breadcrumbs: false,

@@ -18,7 +18,7 @@ Contracts that I believe may be removed are crossed out. This should be double c
 | Fantom                 | [0x29b0Da86e484E1C0029B56e817912d778aC0EC69](https://ftmscan.com/token/0x29b0Da86e484E1C0029B56e817912d778aC0EC69) |
 | Polygon                | [0xda537104d6a5edd53c6fbba9a898708e465260b6](https://polygonscan.com/token/0xda537104d6a5edd53c6fbba9a898708e465260b6) |
 
-Looking for the Woofy token addresses? Find them [here](/docs/resources/deprecated/woofy)
+Looking for the Woofy token addresses? Find them [here](/resources/deprecated/woofy)
 
 ## Ethereum Contracts
 

@@ -15,7 +15,7 @@ Yearn Vaults (aka yVaults) are capital pools that automatically generate yield b
 
 yPools are user-governed liquidity pools of different crypto-assets. They are risk adjusted baskets of community chosen derivatives of the base asset that earn yield from those underlying derivatives. The first yPool is yETH, which is a collection of different liquid staked version of ETH.
 
-<PrettyLink>[Don't know what that means? Check out the yETH Docs](products/yPools/yETH/overview.md)</PrettyLink>
+<PrettyLink>[Don't know what that means? Check out the yETH Docs](products/ypools/yeth/overview.md)</PrettyLink>
 <PrettyLink>[Yearn yETH dApp](https://yearn.fi/yeth)</PrettyLink>
 
 ## yLockers
