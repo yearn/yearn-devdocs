@@ -23,6 +23,7 @@
   --ifm-navbar-height: 5rem;
   /* --ifm-menu-link-sublist-icon: url('/img/icons/dropdown-svgrepo-com.svg'); */
 }
+
 html[data-theme='dark'] {
   --ifm-toc-border-color: transparent;
 }
