@@ -15,7 +15,7 @@
 }
 
 .text {
-  font-family: 'Roboto Slab', 'Roboto', serif;
+  font-family: 'Aeonik', 'Roboto Slab', 'Roboto', serif;
   display: flex;
   /* min-width: 500px; */
   max-width: 700px;
@@ -30,7 +30,7 @@
   flex: 2;
 }
 .text h2 {
-  font-family: 'Roboto Slab', 'Roboto', serif;
+  font-family: 'Aeonik', 'Roboto Slab', 'Roboto', serif;
   font-weight: 400;
   font-size: 1.7rem;
 }

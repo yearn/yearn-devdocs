@@ -45,6 +45,7 @@ export default {
                 id: 'products/yvaults/v2/v2',
               },
               items: [
+                'products/yvaults/v2/vault-factory',
                 {
                   type: 'link',
                   label: 'v2 Vaults Interface Guide →',
@@ -271,5 +272,10 @@ export default {
       href: '/developers/smart-contracts/',
     },
     { type: 'link', label: 'Security →', href: '/developers/security' },
+    {
+      type: 'link',
+      label: 'Deprecated Projects →',
+      href: '/resources/deprecated',
+    },
   ],
 }

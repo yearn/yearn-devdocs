@@ -27,14 +27,16 @@
 
 ### Vaults Detail Reference
 
-- [yVaults v2 Strategies](https://yearn.watch/)
+~~- [yVaults v2 Strategies](https://yearn.watch/)~~
+
 - [yVaults v2 Details](https://seafood.yearn.watch)
 - [Risk Dashboard](https://seafood.yearn.watch/risk)
 - [Yearn Lens](https://github.com/yearn/yearn-lens)
 
 ### Statistics
 
-- [Yearn Dashboard](https://yearn.vision)
+- [General Dune Dashboard](https://dune.com/zootrop/yearn-vaults)
+- [Arbitrum Dune Dashboard](https://dune.com/zootrop/yearn-ltipp-dashboard)
 - [Yearn API](https://ydaemon.yearn.fi/1/vaults/all)
 - [Yearn on Token Terminal](https://www.tokenterminal.com/terminal/projects/yearn-finance)
 

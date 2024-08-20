@@ -33,8 +33,13 @@ export default {
                 'v3/protocol_fees',
                 {
                   type: 'link',
+                  label: 'v3 Contract Addresses →',
+                  href: '../../developers/addresses/v3-contracts', //this breaks if you don't use relative links here
+                },
+                {
+                  type: 'link',
                   label: 'Smart Contracts →',
-                  href: '/smart-contracts/V3/Current-v3.0.2/BaseStrategy',
+                  href: '../../developers/smart-contracts/V3/Current-v3.0.2/BaseStrategy', //this breaks if you don't use relative links here
                 },
               ],
             },

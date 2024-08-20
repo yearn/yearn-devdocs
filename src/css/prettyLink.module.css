@@ -6,12 +6,12 @@
     var(--ifm-color-primary-darkest),
     var(--ifm-color-primary-lightest)
   );
-  font-weight: 600;
+  font-weight: 400;
   border-radius: 5px;
   color: #fff;
   text-decoration: none;
   padding: 0.5rem 0;
-  margin: 0.25rem 0;
+  margin: 0.5rem 0;
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Add box shadow */
   position: relative;
 }

@@ -17,7 +17,7 @@ export default [
         title: 'Build the future of finance.',
         description: 'Everything you need to build on Yearn',
         to: './developers/building-on-yearn',
-        bannerImage: '/img/intro/pixie-banner-grad.png',
+        bannerImage: '/img/intro/pixie-banner-grad-flower.png',
       },
     ],
   },

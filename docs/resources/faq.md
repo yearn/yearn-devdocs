@@ -62,7 +62,7 @@
 
 #### Where can I find current strategy contracts?
 
-- [yearn.watch](https://yearn.watch/)
+- [yearn.fi](https://yearn.fi/)
 
 #### Does anyone monitor strategy performance?
 
@@ -78,7 +78,7 @@
 
 #### How do I check which strategy my funds are in?
 
-- On [yearn.watch](https://yearn.watch), find your vault and click on the name. Click on the 'Allocation' tab to see what strategies are being utilized by the vaults. The debt percent allocation reflects the percent of vault funds allocated to each strategy.
+- On [yearn.fi](https://yearn.fi), find your vault and click on the name. If a v3 vault, Click on the 'Vaults' tab to see what strategies are being utilized by the vaults. For v2, click on the 'Strategies'tab. The debt percent allocation reflects the percent of vault funds allocated to each strategy.
 
 ## Governance
 

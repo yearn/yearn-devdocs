@@ -6,22 +6,31 @@ export default {
     {
       type: 'category',
       label: 'Operations',
-      items: ['operations/budget'],
+      items: [
+        'operations/budget',
+        {
+          type: 'link',
+          href: 'https://github.com/yearn/budget/issues',
+          label: 'Budget Requests',
+        },
+      ],
     },
     {
       type: 'category',
       label: 'Governance',
       items: [
         'governance/proposal-process',
+        'governance/governance-and-operations',
         'governance/yfi',
         {
           type: 'category',
           label: 'veYFI',
           link: {
             type: 'doc',
-            id: 'governance/veyfi',
+            id: 'governance/veYFI-intro',
           },
           items: [
+            'governance/veyfi',
             {
               type: 'link',
               label: 'veYFI dApp',

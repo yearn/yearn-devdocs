@@ -18,7 +18,7 @@ Contracts that I believe may be removed are crossed out. This should be double c
 | Fantom                 | [0x29b0Da86e484E1C0029B56e817912d778aC0EC69](https://ftmscan.com/token/0x29b0Da86e484E1C0029B56e817912d778aC0EC69) |
 | Polygon                | [0xda537104d6a5edd53c6fbba9a898708e465260b6](https://polygonscan.com/token/0xda537104d6a5edd53c6fbba9a898708e465260b6) |
 
-Looking for the Woofy token addresses? Find them [here](/docs/resources/deprecated/woofy)
+Looking for the Woofy token addresses? Find them [here](/resources/deprecated/woofy)
 
 ## Ethereum Contracts
 
@@ -30,10 +30,10 @@ Looking for the Woofy token addresses? Find them [here](/docs/resources/deprecat
 | Treasury               | treasury.ychad.eth    | [0x93A62dA5a14C80f265DAbC077fCEE437B1a0Efde](https://etherscan.io/address/0x93A62dA5a14C80f265DAbC077fCEE437B1a0Efde) |
 | ~~V2 Registry~~           | v2.registry.ychad.eth | [0x50c1a2eA0a861A967D9d0FFE2AE4012c2E053804](https://etherscan.io/address/0x50c1a2eA0a861A967D9d0FFE2AE4012c2E053804) |
 | ~~Health Check~~         | health.ychad.eth      | [0xDDCea799fF1699e98EDF118e0629A974Df7DF012](https://etherscan.io/address/0xDDCea799fF1699e98EDF118e0629A974Df7DF012) |
-| ~~V3 Registry~~         |                       | [0xff31A1B020c868F6eA3f61Eb953344920EeCA3af](https://etherscan.com/address/0xff31A1B020c868F6eA3f61Eb953344920EeCA3af)|
-| ~~Role Manager~~          |                       | [0xb3bd6B2E61753C311EFbCF0111f75D29706D9a41](https://etherscan.com/address/0xb3bd6B2E61753C311EFbCF0111f75D29706D9a41)|
-| ~~Debt Allocator Factory~~ |                       | [0xfCF8c7C43dedd567083B422d6770F23B78D15BDe](https://etherscan.com/address/0xfCF8c7C43dedd567083B422d6770F23B78D15BDe)|
-| ~~Accountant~~            |                       | [0x5A74Cb32D36f2f517DB6f7b0A0591e09b22cDE69](https://etherscan.com/address/0x5A74Cb32D36f2f517DB6f7b0A0591e09b22cDE69)|
+| ~~V3 Registry~~         |                       | [0xff31A1B020c868F6eA3f61Eb953344920EeCA3af](https://etherscan.io/address/0xff31A1B020c868F6eA3f61Eb953344920EeCA3af)|
+| ~~Role Manager~~          |                       | [0xb3bd6B2E61753C311EFbCF0111f75D29706D9a41](https://etherscan.io/address/0xb3bd6B2E61753C311EFbCF0111f75D29706D9a41)|
+| ~~Debt Allocator Factory~~ |                       | [0xfCF8c7C43dedd567083B422d6770F23B78D15BDe](https://etherscan.io/address/0xfCF8c7C43dedd567083B422d6770F23B78D15BDe)|
+| ~~Accountant~~            |                       | [0x5A74Cb32D36f2f517DB6f7b0A0591e09b22cDE69](https://etherscan.io/address/0x5A74Cb32D36f2f517DB6f7b0A0591e09b22cDE69)|
 
 ## Polygon Contracts
 

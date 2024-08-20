@@ -14,6 +14,7 @@ export default {
   markdown: {
     mermaid: true,
   },
+  scripts: ['/js/overrideScroll.js'],
   themes: ['@docusaurus/theme-mermaid'],
   themeConfig: {
     docs: {
@@ -48,7 +49,7 @@ export default {
     ],
     navbar: {
       hideOnScroll: false,
-      title: 'Yearn Finance',
+      // title: 'Yearn Finance',
       logo: {
         alt: 'YFI Logo',
         src: 'img/logo.svg',
@@ -351,6 +352,10 @@ export default {
           editUrl:
             'https://github.com/yearn/yearn-devdocs/edit/master/website/',
           breadcrumbs: false,
+          admonitions: {
+            keywords: ['yearn-info'],
+            extendDefaults: true,
+          },
         },
         theme: {
           customCss: './src/css/custom.css',
@@ -419,13 +424,25 @@ export default {
         rehypePlugins: [katex],
       },
     ],
+    // [
+    //   '@docusaurus/plugin-content-docs',
+    //   {
+    //     id: 'resources',
+    //     path: 'docs/resources',
+    //     routeBasePath: 'resources',
+    //     sidebarPath: './sidebars/sidebarsResources.js',
+    //     showLastUpdateTime: true,
+    //     sidebarCollapsed: true,
+    //     breadcrumbs: false,
+    //   },
+    // ],
     [
       '@docusaurus/plugin-content-docs',
       {
-        id: 'resources',
+        id: 'deprecated',
         path: 'docs/resources',
         routeBasePath: 'resources',
-        sidebarPath: './sidebars/sidebarsResources.js',
+        sidebarPath: './sidebars/sidebarsDeprecated.js',
         showLastUpdateTime: true,
         sidebarCollapsed: true,
         breadcrumbs: false,

@@ -16,6 +16,23 @@ The most significant update to Yearn V3 from V2 was the introduction of "Tokeniz
 
 - [Vault Factory](https://github.com/yearn/yearn-vaults-v3/blob/master/contracts/VaultFactory.vy): A factory contract deployed by Yearn Governance that anyone can use to easily and trustlessly deploy new Allocator Vaults. Each Allocator Vault release will have its own factory.
 
+## Periphery Contracts
+
+V3 incorporates periphery contracts, which are extensible code blocks that can be attached to a yVault or work alongside it to extend functionality over and beyond core base logic. They are not required but can facilitate building around yVaults.
+
+A few examples of periphery contracts used in V3 are:
+
+- **4626 Router**: Wrapper that handles deposits and withdrawals to/from all vaults and strategies.
+- **Registry**: Handles adding and tracking strategies and vaults.
+- **Debt Allocator**: Can efficiently allocate debt to different strategies. Added to a Allocator Vault for the best yield opportunities.
+- **Accountant**: Handles changing fees for vault operations.
+- **Deposit/Withdraw Limit Modules**: Allows dynamic control over a vaults deposit or withdraw limits for full customization.
+- **Swappers**: Pre-built contracts for strategies to inherit to easily implement their desired swap logic.
+- **APR Oracles**: Retrieve the expected current APY on-chain for different vaults or strategies to properly allocate debt.
+- And any others you can come up with!
+
+To read more about the periphery contracts or where to find the curren versions click [here](/developers/v3/periphery)
+
 ## Get started
 
 - [Integrating V3](/developers/v3/integrating_v3)
@@ -24,34 +41,16 @@ The most significant update to Yearn V3 from V2 was the introduction of "Tokeniz
 - [Periphery Contracts](/developers/v3/periphery)
 - [Protocol Fees](/developers/v3/protocol_fees)
 
-## Core Contract Addresses
-
-Core contracts are the base generic contracts that can be used by anyone wanting to build on vaults V3.
-
-:::note
-
-Deployments are done using create2 factories and should be stable across all EVM chains the protocol has been deployed on.
-
-:::
-
-### Version 3.0.2
-
-- Vault original : [`0x1ab62413e0cf2eBEb73da7D40C70E7202ae14467`](https://etherscan.io/address/0x1ab62413e0cf2eBEb73da7D40C70E7202ae14467#readContract)
-- VaultFactory : [`0x444045c5C13C246e117eD36437303cac8E250aB0`](https://etherscan.io/address/0x444045c5C13C246e117eD36437303cac8E250aB0#readContract)
-- TokenizedStrategy : [`0xBB51273D6c746910C7C06fe718f30c936170feD0`](https://etherscan.io/address/0xBB51273D6c746910C7C06fe718f30c936170feD0#readContract)
-
-### Version 3.0.1
-
-- Vault ERC-5202 BluePrint: [`0xDE992C652b266AE649FEC8048aFC35954Bee6145`](https://etherscan.io/address/0xDE992C652b266AE649FEC8048aFC35954Bee6145#readContract)
-- VaultFactory: [`0xE9E8C89c8Fc7E8b8F23425688eb68987231178e5`](https://etherscan.io/address/0xE9E8C89c8Fc7E8b8F23425688eb68987231178e5#readContract)
-- TokenizedStrategy: [`0xDFC8cD9F2f2d306b7C0d109F005DF661E14f4ff2`](https://etherscan.io/address/0xDFC8cD9F2f2d306b7C0d109F005DF661E14f4ff2#readContract)
-
-### Protocol Address Provider
-
-All generic periphery contracts and factories can be retrieved on chain from the Address Provider: [`0x1e9778aAD41Aa3E0884C276fB4C2D03C4036Aa0B`](https://etherscan.io/address/0x1e9778aAD41Aa3E0884C276fB4C2D03C4036Aa0B#readContract)
-
-For more information on the periphery contracts visit the [Periphery](/developers/v3/periphery) section.
-
 For Yearn specific implementation addresses check [Contract Addresses](../addresses)
 
 **If a contract has not been deployed on a specific chain it can be done permissionlessly using the scripts in the relevant GitHub repo. Or reach out to a Yearn contributor for help.**
+
+## Additional Links
+
+<PrettyLink>[yVaults v3 GitHub Repo](https://github.com/yearn/yearn-vaults-v3)</PrettyLink>
+<PrettyLink>[VaultV3 Specification](https://github.com/yearn/yearn-vaults-v3/blob/master/TECH_SPEC.md)</PrettyLink>
+<PrettyLink>[Tokenized Strategy GitHub Repo](https://github.com/yearn/tokenized-strategy)</PrettyLink>
+<PrettyLink>[Tokenized Strategy Specification](https://github.com/yearn/tokenized-strategy/blob/master/SPECIFICATION.md)</PrettyLink>
+<PrettyLink>[V3 Design Article](https://medium.com/iearn/yearnv3-motivation-and-design-107840cb4844)</PrettyLink>
+<PrettyLink>[ERC4626 Info](https://erc4626.info/)</PrettyLink>
+<PrettyLink>[ERC4626 EIP](https://eips.ethereum.org/EIPS/eip-4626)</PrettyLink>

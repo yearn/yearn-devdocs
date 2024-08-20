@@ -19,14 +19,14 @@ Are `strategist multi-sigs` part of the v2 system or should those live in multi-
 | ---------------------- | --------------------- | ------------------------------------------ |
 | V2 Registry            | v2.registry.ychad.eth | [0x50c1a2eA0a861A967D9d0FFE2AE4012c2E053804](https://etherscan.io/address/0x50c1a2eA0a861A967D9d0FFE2AE4012c2E053804) |
 | Health Check           | health.ychad.eth      | [0xDDCea799fF1699e98EDF118e0629A974Df7DF012](https://etherscan.io/address/0xDDCea799fF1699e98EDF118e0629A974Df7DF012) |
-| Role Manager           |                       | [0xb3bd6B2E61753C311EFbCF0111f75D29706D9a41](https://etherscan.com/address/0xb3bd6B2E61753C311EFbCF0111f75D29706D9a41)|
-| Debt Allocator Factory |                       | [0xfCF8c7C43dedd567083B422d6770F23B78D15BDe](https://etherscan.com/address/0xfCF8c7C43dedd567083B422d6770F23B78D15BDe)|
-| Accountant             |                       | [0x5A74Cb32D36f2f517DB6f7b0A0591e09b22cDE69](https://etherscan.com/address/0x5A74Cb32D36f2f517DB6f7b0A0591e09b22cDE69)|
+| Role Manager           |                       | [0xb3bd6B2E61753C311EFbCF0111f75D29706D9a41](https://etherscan.io/address/0xb3bd6B2E61753C311EFbCF0111f75D29706D9a41)|
+| Debt Allocator Factory |                       | [0xfCF8c7C43dedd567083B422d6770F23B78D15BDe](https://etherscan.io/address/0xfCF8c7C43dedd567083B422d6770F23B78D15BDe)|
+| Accountant             |                       | [0x5A74Cb32D36f2f517DB6f7b0A0591e09b22cDE69](https://etherscan.io/address/0x5A74Cb32D36f2f517DB6f7b0A0591e09b22cDE69)|
 | ~~Yearn multisig (daddy)~~ | ychad.eth             | [0xFEB4acf3df3cDEA7399794D0869ef76A6EfAff52](https://etherscan.io/address/0xFEB4acf3df3cDEA7399794D0869ef76A6EfAff52) |
 | ~~Strategist multisig~~   | brain.ychad.eth       | [0x16388463d60FFE0661Cf7F1f31a7D658aC790ff7](https://etherscan.io/address/0x16388463d60FFE0661Cf7F1f31a7D658aC790ff7) |
 | ~~Core Dev multisig~~     | dev.ychad.eth         | [0x846e211e8ba920B353FB717631C015cf04061Cc9](https://etherscan.io/address/0x846e211e8ba920B353FB717631C015cf04061Cc9) |
 | ~~Treasury~~               | treasury.ychad.eth    | [0x93A62dA5a14C80f265DAbC077fCEE437B1a0Efde](https://etherscan.io/address/0x93A62dA5a14C80f265DAbC077fCEE437B1a0Efde) |
-| ~~V3 Registry~~          |                       | [0xff31A1B020c868F6eA3f61Eb953344920EeCA3af](https://etherscan.com/address/0xff31A1B020c868F6eA3f61Eb953344920EeCA3af)|
+| ~~V3 Registry~~          |                       | [0xff31A1B020c868F6eA3f61Eb953344920EeCA3af](https://etherscan.io/address/0xff31A1B020c868F6eA3f61Eb953344920EeCA3af)|
 
 ## Polygon Contracts
 

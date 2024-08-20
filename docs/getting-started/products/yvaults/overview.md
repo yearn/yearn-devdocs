@@ -1,37 +1,41 @@
 # yVaults
 
-## What are yVaults?
+:::yearn-info[WHAT IS A yVAULT ANYWAY?]
 
-[yVaults](https://yearn.fi/vaults) are like savings accounts for your crypto assets. They accept your deposit, then route it through strategies which seek out the highest yield available in DeFi.
+Yearn Vaults are like crypto savings accounts in cyberspace. You deposit your assets, and Yearn's smart contracts put them to work within the DeFi ecosystem, returning the earned yield back to you.
 
-![image](https://github.com/yearn/yearn-devdocs/assets/7863230/af161f3d-ed71-4010-84ba-e1bfab66d782)
+However, unlike a bank account - none of this takes place behind closed doors (no offense to doors). Decentralised Finance uses public blockchains, meaning you are in control of your assets and can see where they are at all times. Nothing is hidden and everything is auditable by anyone, at any time.
+
+With the advent of v3, Vaults can now be made out of a single strategy for your assets, or a collection of multiple strategies which balance your funds between them. Users now have more control over where they want their funds to go and a wider range of risk appetites.
+
+Go you!
+
+:::
+
+<PrettyLink>[Still Confused? Click here for an ELI-5 explainer](yvaults-faq#yvaults-eli-5)</PrettyLink>
+
+## yVault Types
+
+Over the years, Yearn has developed 3 versions of the yVault products: v1, v2, and v3. Super creative, we know!
+
+- [**v1 yVaults**](../../../developers/v1/introduction) are the OG vaults and are mostly phased out (*deprecated* in developer-speak).
+
+- [**v2 yVaults**](./v2) are the reliable, workhorse vaults that you know and love. They started out focused on the Curve ecosystem and are still used when creating vaults for Curve pools.
+
+- [**v3 yVaults**](./v3) are the new cool vaults on the block. They are designed to interoperate using the ERC-4626 standard and have a number of new features to make them safer and easier to use and create.
 
 ## yVault Fee Structure
 
-**Performance Fee**: Deducted from yield earned every time a vault harvests a strategy.
+yVaults have 2 potential fees that can be charged on deposited funds:
 
-**Management Fee**: Flat rate taken from vault deposits over a year. The fee is extracted by minting new shares of the vault, thereby diluting vault participants. This is done at the time of harvest, and calculated based on time since the previous harvest.
+**Performance Fees**: These are deducted from yield earned every time a vault harvests a strategy.
 
-The old structure used before the changes brought by [YIP-69](https://gov.yearn.fi/t/yip-69-reduce-and-cap-fees-through-yrates/12588) was 20% performance fees and 2% management fees, but this has changed and vaults now have a dynamic fee structure. Single asset vaults have no management fee. Fee values for all yVaults can be checked in real-time at [yearn.watch](https://yearn.watch/)
+**Management Fees**: These are flat rate fees taken from vault deposits over a year. The fee is extracted by minting new shares of the vault, thereby diluting vault participants. This is done at the time of harvest, and calculated based on time since the previous harvest.
 
-*Example YFI yVault fee structure at the time of writing:*  
+Prior to [YIP-69](https://gov.yearn.fi/t/yip-69-reduce-and-cap-fees-through-yrates/12588), vaults had 20% performance fees and 2% management fees, but this has changed and yVaults now have a dynamic fee structure.
 
-| Fee Type        | Value   |
-|-----------------|-----|
-| Management Fee  | 0%  |
-| Performance Fee | 20% |
+Single asset vaults generally have no management fee. Fee values for all yVaults can be checked in real-time at [yearn.fi](https://yearn.fi/)
 
-On the [yearn.fi](https://yearn.fi/) user interface, yield is displayed as net APY. This means that both fees and compounding returns are taken into consideration in the rates presented. Since harvests don't occur on a set basis, yield is usually estimated based on historical data. For more information, see [How to Understand yVault ROI](../../guides/)
+- On the [yearn.fi](https://yearn.fi/) user interface, yield is displayed as net APY. This means that both fees and compounding returns are taken into consideration in the rates presented. Since harvests don't occur on a set basis, yield is usually estimated based on historical data. For more information, see [How to Understand yVault ROI](../../guides/concept-explainers/how-apy-works)
 
-- For vaults deployed by the vault [factory](https://docs.yearn.fi/getting-started/products/yvaults/vault-factory) the performance fee is 10% instead of 20%.
-
-## v2 yVault Improvements
-
-- **Up to 20 strategies per vault:** This will increase the flexibility to manage capital efficiently during different market scenarios. Each strategy has a capital cap. This is useful to avoid over-allocating funds to a strategy that cannot increase APY anymore.
-- **Strategist and Guardian are the new Controllers:** The Controller concept is not available in V2 yVaults and has been replaced by a Guardian and the Strategy creator \(strategist\). These 2 actors oversee strategy performance and are empowered to take action to improve capital management or act on critical situations.
-- **Automated vault housekeeping \(Keep3r network\):** `harvest()` and `earn()` calls are now automated through the Keep3r bots network. These 2 function calls are used to purchase new underlying collateral by selling the earned tokens while moving the profits back to the vault and later into strategies. The keep3r network takes the heavy lifting of doing these calls and running with the gas costs in exchange for keep3r tokens. This approach unloads humans from these housekeeping tasks.
-- **No Withdrawal Fee**: The one-time fee charged on balance upon withdrawal has been turned off for all vaults and only existed in the v1 iteration.
-
-## v3 yVaults
-
-The newest version of yVaults are EIP-4626 compatible and allow for tokenized strategies, read more: https://docs.yearn.fi/getting-started/products/yvaults/v3
+- For vaults deployed by the vault [factory](./v2/vault-factory) the performance fee is 10% instead of 20%.
