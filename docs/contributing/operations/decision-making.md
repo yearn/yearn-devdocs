@@ -1,5 +1,5 @@
 # Decision-Making Processes
----
+
 ## Types of Decisions
 
 

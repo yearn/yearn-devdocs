@@ -1,5 +1,5 @@
 # Writing Style Guide
----
+
 The Yearn Community Writing Style Guide summarizes the standards and best practices **writers** should follow when contributing to Yearn Documentation resources.
 
 ## Writing Intent and Tone
@@ -159,7 +159,7 @@ When bulleted and numbered lists contain complete sentences, capitalize the firs
   - **Incorrect:** `*`
 - Alphabetize lists of names unless there is a clear priority at work.
 - Do not use ordered (numbered) lists unless order matters.
-- Ordered list items should use the `1. ` repeated.
+- Ordered list items should use the `1.` repeated.
   - Markdown will automatically generate numbers.
 
 **Example:**
