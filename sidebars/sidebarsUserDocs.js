@@ -1,28 +1,57 @@
 module.exports = {
   userDocsSidebar: [
-    'intro',
     {
       type: 'category',
-      label: 'Products',
-      collapsed: false,
+      label: 'Yearn Products',
+      link: {
+        type: 'doc',
+        id: 'intro',
+      },
       items: [
         {
           type: 'category',
           label: 'yVaults',
+          link: {
+            type: 'doc',
+            id: 'products/yvaults/overview',
+          },
           items: [
-            'products/yvaults/overview',
+            {
+              type: 'category',
+              label: 'yVaults v3',
+              items: [
+                'products/yvaults/v3',
+                {
+                  type: 'link',
+                  label: 'v3 Vaults dApp',
+                  href: 'https://yearn.fi/v3',
+                },
+              ],
+            },
+            {
+              type: 'category',
+              label: 'yVaults v2',
+              items: [
+                'products/yvaults/vault-factory',
+                {
+                  type: 'link',
+                  label: 'v2 Vaults dApp',
+                  href: 'https://yearn.fi/vaults',
+                },
+              ],
+            },
             'products/yvaults/vault-tokens',
             {
-              type: 'category',
-              label: 'yVaults Version 3',
-              items: ['products/yvaults/v3'],
-            },
-            {
-              type: 'category',
-              label: 'yVaults Version 2',
-              items: ['products/yvaults/vault-factory'],
+              type: 'link',
+              label: 'yVaults Dev Docs →',
+              href: '/developers/v1/introduction',
             },
           ],
+        },
+        {
+          type: 'category',
+          label: 'yPools',
+          items: ['products/ypools/yeth/overview'],
         },
         {
           type: 'category',
@@ -51,29 +80,45 @@ module.exports = {
         },
         {
           type: 'category',
-          label: 'yETH',
-          items: ['products/yeth/overview'],
-        },
-        {
-          type: 'category',
           label: 'veYFI',
-          items: ['products/veyfi'],
+          link: {
+            type: 'doc',
+            id: 'products/veyfi',
+          },
+          items: [],
         },
+      ],
+    },
+    {
+      type: 'html',
+      value: '<hr/>',
+      className: 'divider',
+    },
+    {
+      type: 'category',
+      label: 'About Yearn',
+      // link: {
+      //   type: 'doc',
+      //   id: 'intro',
+      // },
+      items: [
+        'yearn-principles',
         {
-          type: 'category',
-          label: 'yBribe',
-          items: [
-            'products/ybribe/overview',
-            'products/ybribe/guide',
-            'products/ybribe/faq',
-          ],
+          type: 'link',
+          label: 'The Blue Pill',
+          href: 'https://yfistory.org/thebluepill',
         },
         {
           type: 'link',
-          label: 'Deprecated Projects →',
-          href: '/resources/deprecated',
+          label: 'DAO Docs →',
+          href: '/contributing/contribute',
         },
       ],
+    },
+    {
+      type: 'html',
+      value: '<hr/>',
+      className: 'divider',
     },
     {
       type: 'category',
@@ -109,5 +154,10 @@ module.exports = {
       href: '/developers/smart-contracts/',
     },
     { type: 'link', label: 'Security →', href: '/developers/security' },
+    {
+      type: 'link',
+      label: 'Deprecated Projects →',
+      href: '/resources/deprecated',
+    },
   ],
 }
