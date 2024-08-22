@@ -1,6 +1,6 @@
 # Building on Yearn
 
-![image](/img/intro/pixie-wide.jpg)
+![image](/img/landing-page/pixie-wide-no-logo.jpg)
 
 Welcome! This is the spot to be for all things related to building products on, for, and with Yearn. If you are looking for more general information about Yearn and it's products, check out the [Getting Started](../getting-started/intro) section of the docs. If you are looking to build, read on!
 

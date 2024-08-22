@@ -4,7 +4,7 @@ import math from 'remark-math'
 import katex from 'rehype-katex'
 
 export default {
-  title: 'yearn.fi',
+  title: 'Yearn Docs',
   tagline: 'DeFi made simple',
   url: 'https://docs.yearn.fi',
   baseUrl: '/',
