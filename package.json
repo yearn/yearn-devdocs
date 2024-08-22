@@ -16,9 +16,9 @@
     "make-vyper-doc": "vydoc -i ../yearn-vaults/contracts/ -o docs/v2/smart-contracts -t ./templates/contract.ejs"
   },
   "dependencies": {
-    "@docusaurus/core": "3.4.0",
-    "@docusaurus/preset-classic": "3.4.0",
-    "@docusaurus/theme-mermaid": "3.4.0",
+    "@docusaurus/core": "3.5.2",
+    "@docusaurus/preset-classic": "3.5.2",
+    "@docusaurus/theme-mermaid": "3.5.2",
     "@mdx-js/react": "^3.0.1",
     "clsx": "1.1.1",
     "hast-util-is-element": "1.1.0",
@@ -42,7 +42,7 @@
     ]
   },
   "devDependencies": {
-    "@docusaurus/module-type-aliases": "3.4.0",
+    "@docusaurus/module-type-aliases": "3.5.2",
     "@openzeppelin/contracts": "^4.8.0",
     "@tsconfig/docusaurus": "1.0.2",
     "@types/react": "18.3.1",
