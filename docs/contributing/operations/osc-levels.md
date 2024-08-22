@@ -1,7 +1,5 @@
 # OSC Levels
 
----
-
 ### **O**pen **S**ource **C**ontributor Levels
 
 ## Motivation

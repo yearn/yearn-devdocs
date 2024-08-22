@@ -1,7 +1,5 @@
 # Contribute
 
----
-
 ## Yearn Contributors
 
 Help build the future of finance, shape your skills, and grow the Yearn ecosystem. Before joining our community, take some time to understand the philosophy behind Yearn through the [The Bluepill](https://yfistory.org/thebluepill) and [Yearn Manifesto](https://gov.yearn.fi/t/how-we-think-about-yearn/7137).
@@ -123,6 +121,7 @@ This is complementary to the above, but it's not directly related to creating st
 - [Trackavault](https://trackavault.com/) - Track V2 Vaults
 
 ### Legacy Products and Websites
+
 - [v1 yearn.fi](https://v1.yearn.fi), [Github](https://github.com/yearn/iearn-finance)
 - [v2 yearn.fi](https://v2.yearn.fi), [Github](https://github.com/yearn/yearn-finance)
 - [Yearn Borrow](https://yborrow.finance/), [Github](https://github.com/yearn/iborrow-finance)
