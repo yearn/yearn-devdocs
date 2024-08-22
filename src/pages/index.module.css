@@ -21,7 +21,6 @@
 }
 
 .card {
-  /* --title-bottom: calc(var(--ifm-heading-margin-bottom) / 2); */
   --title-bottom: 50px;
   font-family: 'Roboto Slab', 'Roboto', serif;
   display: flex;
@@ -56,7 +55,6 @@
   position: absolute;
   display: block;
   right: 50%;
-  /* top: calc(100% - var(--title-bottom)); */
   bottom: var(--title-bottom);
   z-index: 1;
 }
@@ -117,25 +115,6 @@ html[data-theme='dark'] .card:before {
 html[data-theme='dark'] .title {
   color: var(--ifm-background-color);
 }
-
-/* html[data-theme='light'] .card {
-  background-color: #ececec;
-  color: #888;
-}
-html[data-theme='light'] .card h2 {
-  color: #000;
-}
-html[data-theme='light'] .card:hover {
-  color: #9bbcfd;
-  background-color: #0657f9;
-}
-html[data-theme='light'] .card:hover h2 {
-  color: white;
-}
-
-html[data-theme='light'] .title {
-  color: inherit;
-} */
 
 @media screen and (max-width: 1082px) {
   .row {

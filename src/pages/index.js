@@ -9,7 +9,7 @@ export default function Home() {
   const { siteConfig } = useDocusaurusContext()
   return (
     <Layout
-      title={`${siteConfig.title} Docs`}
+      // title={`${siteConfig.title} Docs`}
       description="Yearn Finance is a suite of products in Decentralized Finance (DeFi) that provides lending aggregation, yield generation, and insurance on the Ethereum blockchain."
     >
       <main>
