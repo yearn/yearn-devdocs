@@ -1,7 +1,5 @@
 # Proposal Process
 
----
-
 [veYFI](https://docs.yearn.fi/contributing/governance/veyfi) token holders control the Yearn ecosystem through off-chain proposals and votes via [Snapshot](https://snapshot.org/#/ybaby.eth). Proposals that generate majority support (>50% of the vote) are implemented by a 9-member multi-signature wallet, and 6 out of 9 wallet signers must sign for a change to be implemented. The [members of the multi-signature wallet](https://docs.yearn.fi/resources/faq#who-is-on-the-multisig) were voted in by YFI holders and are subject to change from future governance votes.
 
 ## Discussion

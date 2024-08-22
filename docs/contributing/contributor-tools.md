@@ -1,7 +1,5 @@
 # Contributor Tools
 
----
-
 This Guide introduces the tools used by the Yearn Community team and its contributors.
 
 Yearn contributors work with tools geared towards promoting open-source feedback, communication, transparency, and clarity. While there is no sophisticated software stack, contributors should be comfortable with the more heavily used tools and how they function within Yearn contribution workflows.
@@ -54,7 +52,6 @@ Many Yearn Doc contributors prepare their long-form documentation in [HackMD](ht
 **Pro Tip:**
 Install the HackMD Google Chrome [extension](https://chrome.google.com/webstore/detail/hackmd-it/cnephjboabhkldgfpdokefccdofncdjh?hl=en) to make searching easier.
 
-
 ### Google Docs
 
 Google Docs is a collaborative writing platform, with features like suggestion editing and version naming. Docs simplify feedback and review and are easy to share between team members and contributors.
@@ -88,7 +85,7 @@ Yearn documents hosted on GitHub are written in Markdown, a plaintext formatting
   - [Markdown Syntax Guide](https://guides.github.com/features/mastering-markdown/)
   - [Practice Communicating Using Markdown](https://lab.github.com/githubtraining/communicating-using-markdown)
 
-The markdown files are compiled with [Docusaurus](https://docusaurus.io) to bring you the styled documentation UI you see here. 
+The markdown files are compiled with [Docusaurus](https://docusaurus.io) to bring you the styled documentation UI you see here.
 
 ### VSCode
 
