@@ -2,7 +2,7 @@ import React from 'react'
 import Layout from '@theme/Layout'
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext'
 import styles from './index.module.css'
-import HomepageFeatures from '../components/HomepageFeatures'
+import HomepageBanners from '../components/HomepageBanners'
 import homepageFeatures from '../homepageFeatures'
 
 export default function Home() {
@@ -15,7 +15,7 @@ export default function Home() {
       <main>
         <div className={styles.container}>
           <div className={styles.row}>
-            <HomepageFeatures columns={homepageFeatures} />
+            <HomepageBanners columns={homepageFeatures} />
           </div>
         </div>
       </main>

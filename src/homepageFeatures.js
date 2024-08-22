@@ -1,42 +1,35 @@
 export default [
   {
-    title: 'Learn',
+    title: 'User Docs',
     rows: [
       {
-        title: 'Introduction',
-        description: 'Getting started: What is Yearn?',
+        title: 'Start your Yearn journey.',
+        description: 'Everything you need to use Yearn',
         to: './getting-started/intro',
-      },
-      {
-        title: 'Vaults & Strategies',
-        description: 'An overview on how Yearn vaults and strategies work.',
-        to: './developers/v3/overview',
-      },
-      {
-        title: 'Risk Scores',
-        description: 'Learn about the Yearn risk framework for assessing DeFi yield strategies.',
-        to: './resources/risks/risk-score',
+        bannerImage: '/img/landing-page/alice-banner-2.png',
       },
     ],
   },
   {
-    title: 'Build',
+    title: 'Dev Docs',
     rows: [
       {
-        title: 'Vaults',
-        description: 'Get started building V3 vaults.',
-        to: './developers/v3/vault_management',
-      },
-      {
-        title: 'Strategies',
-        description: 'Get started building V3 strategies.',
-        to: './developers/v3/strategy_writing_guide',
-      },
-      {
-        title: 'veYFI',
-        description: 'Participate in Yearn governance and learn how boosted yield works.',
-        to: './getting-started/products/veyfi',
+        title: 'Build the future of finance.',
+        description: 'Everything you need to build on Yearn',
+        to: './developers/building-on-yearn',
+        bannerImage: '/img/landing-page/pixie-banner-grad-flower.png',
       },
     ],
-  }
+  },
+  {
+    title: 'DAO Docs',
+    rows: [
+      {
+        title: 'Tame the decentralized beast.',
+        description: 'Everything you need to govern Yearn',
+        to: './contributing/contribute',
+        bannerImage: '/img/landing-page/witchy-banner-grad2.png',
+      },
+    ],
+  },
 ]
