@@ -15,11 +15,19 @@ module.exports = {
             {
               type: 'category',
               label: 'yVaults Version 3',
-              items: ['products/yvaults/v3'],
+              link: {
+                type: 'doc',
+                id: 'products/yvaults/v3',
+              },
+              items: [],
             },
             {
               type: 'category',
               label: 'yVaults Version 2',
+              link: {
+                type: 'doc',
+                id: 'products/yvaults/v2',
+              },
               items: ['products/yvaults/vault-factory'],
             },
           ],
