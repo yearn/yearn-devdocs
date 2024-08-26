@@ -1,7 +1,5 @@
 # How to Understand yveCRV
 
-***useless change***
-
 On February 6th 2021 Yearn Finance launched its latest product, yveCRV.
 
 ## Why is it called yveCRV?
