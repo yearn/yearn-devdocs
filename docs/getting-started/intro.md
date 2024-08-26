@@ -4,7 +4,7 @@ Yearn Finance is DeFi’s premier yield aggregator. Giving individuals, DAOs and
 
 The protocol is maintained by various independent developers and is governed by YFI holders. You can find brief descriptions of Yearn's core products, the governance process, and links to active communication channels below.
 
-- https://yearn.fi/
+<PrettyLink>https://yearn.fi/</PrettyLink>
 
 ## yVaults
 
