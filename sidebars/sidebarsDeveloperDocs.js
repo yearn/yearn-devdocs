@@ -1,3 +1,7 @@
+// NOTICE: don't use relative links in this file when setting hrefs, as they append to the current URL, which may not be what you expect.
+// GOOD: href: '/developers/smart-contracts/V1/interfaces',
+// BAD: href: './smart-contracts/V1/interfaces',
+
 export default {
   developers: [
     {
@@ -34,12 +38,12 @@ export default {
                 {
                   type: 'link',
                   label: 'v3 Contract Addresses →',
-                  href: '../../developers/addresses/v3-contracts', //this breaks if you don't use relative links here
+                  href: '/developers/addresses/v3-contracts',
                 },
                 {
                   type: 'link',
                   label: 'Smart Contracts →',
-                  href: '../../developers/smart-contracts/V3/Current-v3.0.2/BaseStrategy', //this breaks if you don't use relative links here
+                  href: '/developers/smart-contracts/V3/Current-v3.0.2/BaseStrategy',
                 },
               ],
             },
@@ -56,7 +60,7 @@ export default {
                 {
                   type: 'link',
                   label: 'Smart Contracts →',
-                  href: '/smart-contracts/V2/Current-v0.4.6/BaseStrategy',
+                  href: '/developers/smart-contracts/V2/Current-v0.4.6/BaseStrategy',
                 },
               ],
             },
@@ -71,7 +75,7 @@ export default {
                 {
                   type: 'link',
                   label: 'Smart Contracts →',
-                  href: '/smart-contracts/V1/interfaces',
+                  href: '/developers/smart-contracts/V1/interfaces',
                 },
               ],
             },
@@ -223,7 +227,7 @@ export default {
         {
           type: 'link',
           label: 'Yearn Lens →',
-          href: '../../data-services/yearn-lens#contracts',
+          href: '/developers/data-services/yearn-lens#contracts',
         },
       ],
     },
