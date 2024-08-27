@@ -245,10 +245,10 @@ export default {
         {
           type: 'category',
           label: 'Risks',
-          // link: {
-          //   type: 'doc',
-          //   id: 'security/risks/risk-overview',
-          // },
+          link: {
+            type: 'doc',
+            id: 'security/risks/index',
+          },
           items: [
             'security/risks/risk-score',
             'security/risks/protocol-risks',
