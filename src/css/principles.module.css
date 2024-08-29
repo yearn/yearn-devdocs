@@ -34,6 +34,9 @@
   font-weight: 400;
   font-size: 1.7rem;
 }
+html[data-theme='dark'] .text {
+  color: #cfcfcf;
+}
 
 .image {
   display: flex;
