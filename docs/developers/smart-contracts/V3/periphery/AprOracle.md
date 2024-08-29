@@ -3,7 +3,7 @@
 [Git Source](https://github.com/yearn/tokenized-strategy-periphery/blob/master/src/AprOracle/AprOracle.sol)
 
 **Inherits:**
-[Governance](/Governance)
+[Governance](./Governance)
 
 **Author:**
 Yearn.finance
