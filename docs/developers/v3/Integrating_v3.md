@@ -16,7 +16,7 @@ token.approve(vault, amount)
 vault.deposit(amount, receiver)
 ```
 
-There is also a [4626 Router](/vaults/smart-contracts/v3/periphery/Yearn4626Router) available to make multi-step user flows easier.
+There is also a [4626 Router](/developers/smart-contracts/v3/periphery/Yearn4626Router) available to make multi-step user flows easier.
 
 The max amount that a vault will accept from an address can be returned using the [`maxDeposit`](https://eips.ethereum.org/EIPS/eip-4626#maxdeposit) function.
 
@@ -83,7 +83,7 @@ Retrieve all of the endorsed vaults on a specific chain.
 
 - `getAllEndorsedVaults()` Returns a nested array sorted by vaults `asset` of all endorsed vaults in that registry.
 - `getEndorsedVaults(address _asset)` Returns and array of all endorsed vaults for that asset
-- `vaultInfo(address _vault)` Return the [`Info`](/vaults/smart-contracts/v3/periphery/Registry#structs) struct for an endorsed vault that includes its underlying asset, release version, deployment timestamp, vault 'type' (i.e. multi-strategy or single-strategy) and any tag.
+- `vaultInfo(address _vault)` Return the [`Info`](/developers/smart-contracts/v3/periphery/Registry#structs) struct for an endorsed vault that includes its underlying asset, release version, deployment timestamp, vault 'type' (i.e. multi-strategy or single-strategy) and any tag.
 
 ### Role Manager
 
@@ -91,8 +91,8 @@ Manages all of the multi-strategy vaults on a chain, and holds the `role_manager
 
 All the other periphery contracts and Yearn multisigs can be retrieved from the Role manager as well using the getter functions, such as `getBrain()`/`getPositionHolder(keccak256("Brain"))`, `getRegistry()`/`getPositionHolder(keccak256("Registry"))`, `getDebtAllocator(vault)`, .
 
-- [`getAllVaults()`](/vaults/smart-contracts/v3/periphery/RoleManager#getallvaults) Returns and array for all multi-strategy vaults the contract is the role manager for.
-- [`getVault(asset, apiVersion, category)`](/vaults/smart-contracts/v3/periphery/RoleManager#getvault) Returns the vault if any based on the inputs.
+- [`getAllVaults()`](/developers/smart-contracts/v3/periphery/RoleManager#getallvaults) Returns and array for all multi-strategy vaults the contract is the role manager for.
+- [`getVault(asset, apiVersion, category)`](/developers/smart-contracts/v3/periphery/RoleManager#getvault) Returns the vault if any based on the inputs.
 
 #### Category
 
