@@ -75,7 +75,7 @@ export default {
                 {
                   type: 'link',
                   label: 'Smart Contracts →',
-                  href: 'smart-contracts/V1/interfaces',
+                  href: '/developers/smart-contracts/V1/interfaces',
                 },
               ],
             },
