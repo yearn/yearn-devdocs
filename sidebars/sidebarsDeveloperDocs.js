@@ -158,6 +158,11 @@ export default {
         },
         {
           type: 'doc',
+          label: 'veYFI',
+          id: 'addresses/veyfi-contracts',
+        },
+        {
+          type: 'doc',
           label: 'yCRV',
           id: 'addresses/ycrv-contracts',
         },

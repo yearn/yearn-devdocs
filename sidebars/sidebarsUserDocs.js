@@ -56,17 +56,17 @@ module.exports = {
         },
         {
           type: 'category',
-          label: 'veYFI',
-          items: ['products/veyfi'],
-        },
-        {
-          type: 'category',
           label: 'yBribe',
           items: [
             'products/ybribe/overview',
             'products/ybribe/guide',
             'products/ybribe/faq',
           ],
+        },
+        {
+          type: 'link',
+          label: 'veYFI →',
+          href: '/contributing/governance/veyfi-intro',
         },
         {
           type: 'link',

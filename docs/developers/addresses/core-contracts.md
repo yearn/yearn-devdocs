@@ -14,6 +14,12 @@ A list of all the current Yearn token addresses, multisigs, and treasuries on va
 
 Looking for the Woofy token addresses? Find them [here](/resources/deprecated/woofy)
 
+## veYFI
+
+| Chain          | Address                                    |
+| ---------------| ------------------------------------------ |
+| Ethereum       | [`0x90c1f9220d90d3966fbee24045edd73e1d588ad5`](https://etherscan.io/address/0x90c1f9220d90d3966fbee24045edd73e1d588ad5) |
+
 ## Ethereum Contracts
 
 | Identity               | ENS                   | Address                                    |
