@@ -196,5 +196,17 @@ export default {
         breadcrumbs: false,
       },
     ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'partners',
+        path: 'docs/partners',
+        routeBasePath: 'partners',
+        sidebarPath: './sidebars/sidebarsPartners.js',
+        showLastUpdateTime: true,
+        sidebarCollapsed: true,
+        breadcrumbs: false,
+      },
+    ],
   ],
 }

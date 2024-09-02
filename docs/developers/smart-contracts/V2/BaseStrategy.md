@@ -1,28 +1,32 @@
-
-
-
+# BaseStrategy.sol
 
 ## Functions
+
 ### apiVersion
+
 ```solidity
   function apiVersion(
   ) public returns (string)
 ```
+
 Used to track which version of `StrategyAPI` this Strategy
  implements.
 
 The Strategy's version must match the Vault's `API_VERSION`.
 
+#### Return Values
 
-#### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
 |`A`|  | string which holds the current API version of this contract.
+
 ### name
+
 ```solidity
   function name(
   ) external returns (string)
 ```
+
 This Strategy's name.
 
 @dev
@@ -30,17 +34,19 @@ This Strategy's name.
  `StrategySomethingOrOtherV1`. However, "API Version" is managed by
  `apiVersion()` function above.
 
+#### Return Values
 
-
-#### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
 |`This`|  | Strategy's name.
+
 ### delegatedAssets
+
 ```solidity
   function delegatedAssets(
   ) external returns (uint256)
 ```
+
 The amount (priced in want) of the total assets managed by this strategy should not count
  towards Yearn's TVL calculations.
 
@@ -56,81 +62,64 @@ The amount (priced in want) of the total assets managed by this strategy should 
  The amount of assets this strategy manages that should not be included in Yearn's Total Value
  Locked (TVL) calculation across it's ecosystem.
 
-
-
 ### _onlyAuthorized
+
 ```solidity
   function _onlyAuthorized(
   ) internal
 ```
 
-
-
-
 ### _onlyEmergencyAuthorized
+
 ```solidity
   function _onlyEmergencyAuthorized(
   ) internal
 ```
 
-
-
-
 ### _onlyStrategist
+
 ```solidity
   function _onlyStrategist(
   ) internal
 ```
 
-
-
-
 ### _onlyGovernance
+
 ```solidity
   function _onlyGovernance(
   ) internal
 ```
 
-
-
-
 ### _onlyRewarder
+
 ```solidity
   function _onlyRewarder(
   ) internal
 ```
 
-
-
-
 ### _onlyKeepers
+
 ```solidity
   function _onlyKeepers(
   ) internal
 ```
 
-
-
-
 ### _onlyVaultManagers
+
 ```solidity
   function _onlyVaultManagers(
   ) internal
 ```
 
-
-
-
 ### constructor
+
 ```solidity
   function constructor(
   ) internal
 ```
 
-
-
-
 ### _initialize
+
 ```solidity
   function _initialize(
     address _vault,
@@ -139,61 +128,63 @@ The amount (priced in want) of the total assets managed by this strategy should 
     address _keeper
   ) internal
 ```
+
 Initializes the Strategy, this is called only once, when the
  contract is deployed.
 
 `_vault` should implement `VaultAPI`.
 
-#### Parameters:
+#### Parameters
+
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
 |`_vault` | address | The address of the Vault responsible for this Strategy.
 |`_strategist` | address | The address to assign as `strategist`.
 The strategist is able to change the reward address
 |`_rewards` | address |  The address to use for pulling rewards.
-|`_keeper` | address | The adddress of the _keeper. _keeper
+|`_keeper` | address | The adddress of the _keeper._keeper
 can harvest and tend a strategy.
 
 ### setHealthCheck
+
 ```solidity
   function setHealthCheck(
   ) external
 ```
 
-
-
-
 ### setDoHealthCheck
+
 ```solidity
   function setDoHealthCheck(
   ) external
 ```
 
-
-
-
 ### setStrategist
+
 ```solidity
   function setStrategist(
     address _strategist
   ) external
 ```
+
 Used to change `strategist`.
 
  This may only be called by governance or the existing strategist.
 
+#### Parameters
 
-#### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
 |`_strategist` | address | The new address to assign as `strategist`.
 
 ### setKeeper
+
 ```solidity
   function setKeeper(
     address _keeper
   ) external
 ```
+
 Used to change `keeper`.
 
  `keeper` is the only address that may call `tend()` or `harvest()`,
@@ -204,35 +195,39 @@ Used to change `keeper`.
 
  This may only be called by governance or the strategist.
 
+#### Parameters
 
-#### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
 |`_keeper` | address | The new address to assign as `keeper`.
 
 ### setRewards
+
 ```solidity
   function setRewards(
     address _rewards
   ) external
 ```
+
 Used to change `rewards`. EOA or smart contract which has the permission
  to pull rewards from the vault.
 
  This may only be called by the strategist.
 
+#### Parameters
 
-#### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
 |`_rewards` | address | The address to use for pulling rewards.
 
 ### setMinReportDelay
+
 ```solidity
   function setMinReportDelay(
     uint256 _delay
   ) external
 ```
+
 Used to change `minReportDelay`. `minReportDelay` is the minimum number
  of blocks that should pass for `harvest()` to be called.
 
@@ -242,18 +237,20 @@ Used to change `minReportDelay`. `minReportDelay` is the minimum number
 
  This may only be called by governance or the strategist.
 
+#### Parameters
 
-#### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
 |`_delay` | uint256 | The minimum number of seconds to wait between harvests.
 
 ### setMaxReportDelay
+
 ```solidity
   function setMaxReportDelay(
     uint256 _delay
   ) external
 ```
+
 Used to change `maxReportDelay`. `maxReportDelay` is the maximum number
  of blocks that should pass for `harvest()` to be called.
 
@@ -263,99 +260,109 @@ Used to change `maxReportDelay`. `maxReportDelay` is the maximum number
 
  This may only be called by governance or the strategist.
 
+#### Parameters
 
-#### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
 |`_delay` | uint256 | The maximum number of seconds to wait between harvests.
 
 ### setCreditThreshold
+
 ```solidity
   function setCreditThreshold(
     uint256 _creditThreshold
   ) external
 ```
+
 Used to ensure that any significant credit a strategy has from the
  vault will be automatically harvested.
 
  This may only be called by governance or management.
 
+#### Parameters
 
-#### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
 |`_creditThreshold` | uint256 | The number of want tokens that will
  automatically trigger a harvest.
 
 ### setForceHarvestTriggerOnce
+
 ```solidity
   function setForceHarvestTriggerOnce(
     bool _forceHarvestTriggerOnce
   ) external
 ```
+
 Used to automatically trigger a harvest by our keepers. Can be
  useful if gas prices are too high now, and we want to harvest
  later once prices have lowered.
 
  This may only be called by governance or management.
 
+#### Parameters
 
-#### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
 |`_forceHarvestTriggerOnce` | bool | Value of true tells keepers to harvest
  our strategy
 
 ### setBaseFeeOracle
+
 ```solidity
   function setBaseFeeOracle(
     address _baseFeeOracle
   ) external
 ```
+
 Used to set our baseFeeOracle, which checks the network's current base
  fee price to determine whether it is an optimal time to harvest or tend.
 
  This may only be called by governance or management.
 
+#### Parameters
 
-#### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
 |`_baseFeeOracle` | address | Address of our baseFeeOracle
 
 ### setMetadataURI
+
 ```solidity
   function setMetadataURI(
     string _metadataURI
   ) external
 ```
+
 Used to change `metadataURI`. `metadataURI` is used to store the URI
 of the file describing the strategy.
 
  This may only be called by governance or the strategist.
 
+#### Parameters
 
-#### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
 |`_metadataURI` | string | The URI that describe the strategy.
 
 ### governance
+
 ```solidity
   function governance(
   ) internal returns (address)
 ```
+
 Resolve governance address from Vault contract, used to make assertions
 on protected functions in the Strategy.
 
-
-
 ### ethToWant
+
 ```solidity
   function ethToWant(
     uint256 _amtInWei
   ) public returns (uint256)
 ```
+
 Provide an accurate conversion from `_amtInWei` (denominated in wei)
  to `want` (using the native decimal characteristics of `want`).
 
@@ -366,23 +373,25 @@ Provide an accurate conversion from `_amtInWei` (denominated in wei)
      given 1e17 wei (0.1 ETH) as input, and want is USDC (6 decimals),
      with USDC/ETH = 1800, this should give back 1800000000 (180 USDC)
 
+#### Parameters
 
-
-#### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
 |`_amtInWei` | uint256 | The amount (in wei/1e-18 ETH) to convert to `want`
 
-#### Return Values:
+#### Return Values
+
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
 |`The`| uint256 | amount in `want` of `_amtInEth` converted to `want`
 
 ### estimatedTotalAssets
+
 ```solidity
   function estimatedTotalAssets(
   ) public returns (uint256)
 ```
+
 Provide an accurate estimate for the total amount of assets
  (principle + return) that this Strategy is currently managing,
  denominated in terms of `want` tokens.
@@ -405,26 +414,26 @@ Provide an accurate estimate for the total amount of assets
  higher than the total debt of the Strategy and higher than its expected
  value to be "safe".
 
+#### Return Values
 
-
-#### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
 |`The`|  | estimated total assets in this Strategy.
+
 ### isActive
+
 ```solidity
   function isActive(
   ) public returns (bool)
 ```
 
-
-
-
 ### prepareReturn
+
 ```solidity
   function prepareReturn(
   ) internal returns (uint256 _profit, uint256 _loss, uint256 _debtPayment)
 ```
+
 Perform any Strategy unwinding or other calls necessary to capture the
 "free return" this Strategy has generated since the last time its core
 position(s) were adjusted. Examples include unwrapping extra rewards.
@@ -448,13 +457,13 @@ NOTE: `_debtPayment` should be less than or equal to `_debtOutstanding`.
 
 See `vault.debtOutstanding()`.
 
-
-
 ### adjustPosition
+
 ```solidity
   function adjustPosition(
   ) internal
 ```
+
 Perform any adjustments to the core position(s) of this Strategy given
 what change the Vault made in the "investable capital" available to the
 Strategy. Note that all "free capital" in the Strategy after the report
@@ -463,13 +472,13 @@ could be 0, and you should handle that scenario accordingly.
 
 See comments regarding `_debtOutstanding` on `prepareReturn()`.
 
-
-
 ### liquidatePosition
+
 ```solidity
   function liquidatePosition(
   ) internal returns (uint256 _liquidatedAmount, uint256 _loss)
 ```
+
 Liquidate up to `_amountNeeded` of `want` of this strategy's positions,
 irregardless of slippage. Any excess will be re-invested with `adjustPosition()`.
 This function should return the amount of `want` tokens made available by the
@@ -479,25 +488,25 @@ difference is due to a realized loss, or if there is some other sitution at play
 
 NOTE: The invariant `_liquidatedAmount + _loss <= _amountNeeded` should always be maintained
 
-
-
 ### liquidateAllPositions
+
 ```solidity
   function liquidateAllPositions(
   ) internal returns (uint256 _amountFreed)
 ```
+
 Liquidate everything and returns the amount that got freed.
 This function is used during emergency exit instead of `prepareReturn()` to
 liquidate all of the Strategy's positions back to the Vault.
 
-
-
 ### tendTrigger
+
 ```solidity
   function tendTrigger(
     uint256 callCostInWei
   ) public returns (bool)
 ```
+
 Provide a signal to the keeper that `tend()` should be called. The
  keeper will provide the estimated gas cost that they would pay to call
  `tend()`, and this function should use that estimate to make a
@@ -513,21 +522,25 @@ Provide a signal to the keeper that `tend()` should be called. The
  This call and `harvestTrigger()` should never return `true` at the same
  time.
 
+#### Parameters
 
-#### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
 |`callCostInWei` | uint256 | The keeper's estimated gas cost to call `tend()` (in wei).
 
-#### Return Values:
+#### Return Values
+
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
 |`if`| uint256 | `tend()` should be called, `false` otherwise.
+
 ### tend
+
 ```solidity
   function tend(
   ) external
 ```
+
 Adjust the Strategy's position. The purpose of tending isn't to
  realize gains, but to maximize yield by reinvesting any returns.
 
@@ -535,14 +548,14 @@ Adjust the Strategy's position. The purpose of tending isn't to
 
  This may only be called by governance, the strategist, or the keeper.
 
-
-
 ### harvestTrigger
+
 ```solidity
   function harvestTrigger(
     uint256 callCostInWei
   ) public returns (bool)
 ```
+
 Provide a signal to the keeper that `harvest()` should be called. The
  keeper will provide the estimated gas cost that they would pay to call
  `harvest()`, and this function should use that estimate to make a
@@ -576,35 +589,41 @@ Provide a signal to the keeper that `harvest()` should be called. The
  or via an integration with the Keep3r network (e.g.
  https://github.com/Macarse/GenericKeep3rV2/blob/master/contracts/keep3r/GenericKeep3rV2.sol).
 
+#### Parameters
 
-#### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
 |`callCostInWei` | uint256 | The keeper's estimated gas cost to call `harvest()` (in wei).
 
-#### Return Values:
+#### Return Values
+
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
 |`if`| uint256 | `harvest()` should be called, `false` otherwise.
+
 ### isBaseFeeAcceptable
+
 ```solidity
   function isBaseFeeAcceptable(
   ) public returns (bool)
 ```
+
 Check if the current network base fee is below our external target. If
  not, then harvestTrigger will return false.
 
+#### Return Values
 
-
-#### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
 |`if`|  | `harvest()` should be allowed, `false` otherwise.
+
 ### harvest
+
 ```solidity
   function harvest(
   ) external
 ```
+
 Harvests the Strategy, recognizing any profits or losses and adjusting
  the Strategy's position.
 
@@ -621,45 +640,49 @@ Harvests the Strategy, recognizing any profits or losses and adjusting
  called to report to the Vault on the Strategy's position, especially if
  any losses have occurred.
 
-
-
 ### withdraw
+
 ```solidity
   function withdraw(
     uint256 _amountNeeded
   ) external returns (uint256 _loss)
 ```
+
 Withdraws `_amountNeeded` to `vault`.
 
  This may only be called by the Vault.
 
+#### Parameters
 
-#### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
 |`_amountNeeded` | uint256 | How much `want` to withdraw.
 
-#### Return Values:
+#### Return Values
+
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
 |`_loss`| uint256 | Any realized losses
+
 ### prepareMigration
+
 ```solidity
   function prepareMigration(
   ) internal
 ```
+
 Do anything necessary to prepare this Strategy for migration, such as
 transferring any reserve or LP tokens, CDPs, or other tokens or stores of
 value.
 
-
-
 ### migrate
+
 ```solidity
   function migrate(
     address _newStrategy
   ) external
 ```
+
 Transfers all `want` from this Strategy to `_newStrategy`.
 
  This may only be called by the Vault.
@@ -670,17 +693,19 @@ The new Strategy's Vault must be the same as this Strategy's Vault.
 the assets are migrated to the new address, which should have never
 interacted with the vault before.
 
+#### Parameters
 
-#### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
 |`_newStrategy` | address | The Strategy to migrate to.
 
 ### setEmergencyExit
+
 ```solidity
   function setEmergencyExit(
   ) external
 ```
+
 Activates emergency exit. Once activated, the Strategy will exit its
  position upon the next harvest, depositing all funds into the Vault as
  quickly as is reasonable given on-chain conditions.
@@ -690,13 +715,13 @@ Activates emergency exit. Once activated, the Strategy will exit its
 @dev
  See `vault.setEmergencyShutdown()` and `harvest()` for further details.
 
-
-
 ### protectedTokens
+
 ```solidity
   function protectedTokens(
   ) internal returns (address[])
 ```
+
 Override this to add all tokens/tokenized positions this contract
 manages on a *persistent* basis (e.g. not just for swapping back to
 want ephemerally).
@@ -704,6 +729,7 @@ want ephemerally).
 NOTE: Do *not* include `want`, already included in `sweep` below.
 
 Example:
+
 ```
    function protectedTokens() internal override view returns (address[] memory) {
      address[] memory protected = new address[](3);
@@ -714,14 +740,14 @@ Example:
    }
 ```
 
-
-
 ### sweep
+
 ```solidity
   function sweep(
     address _token
   ) external
 ```
+
 Removes tokens from this Strategy that are not the type of tokens
  managed by this Strategy. This may be used in case of accidentally
  sending the wrong kind of token to this Strategy.
@@ -737,115 +763,101 @@ Removes tokens from this Strategy that are not the type of tokens
  Implement `protectedTokens()` to specify any additional tokens that
  should be protected from sweeping in addition to `want`.
 
+#### Parameters
 
-#### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
 |`_token` | address | The token to transfer out of this vault.
 
 ## Events
+
 ### Harvested
+
 ```solidity
   event Harvested(
   )
 ```
 
-
-
 ### UpdatedStrategist
+
 ```solidity
   event UpdatedStrategist(
   )
 ```
 
-
-
 ### UpdatedKeeper
+
 ```solidity
   event UpdatedKeeper(
   )
 ```
 
-
-
 ### UpdatedRewards
+
 ```solidity
   event UpdatedRewards(
   )
 ```
 
-
-
 ### UpdatedMinReportDelay
+
 ```solidity
   event UpdatedMinReportDelay(
   )
 ```
 
-
-
 ### UpdatedMaxReportDelay
+
 ```solidity
   event UpdatedMaxReportDelay(
   )
 ```
 
-
-
 ### UpdatedBaseFeeOracle
+
 ```solidity
   event UpdatedBaseFeeOracle(
   )
 ```
 
-
-
 ### UpdatedCreditThreshold
+
 ```solidity
   event UpdatedCreditThreshold(
   )
 ```
 
-
-
 ### ForcedHarvestTrigger
+
 ```solidity
   event ForcedHarvestTrigger(
   )
 ```
 
-
-
 ### EmergencyExitEnabled
+
 ```solidity
   event EmergencyExitEnabled(
   )
 ```
 
-
-
 ### UpdatedMetadataURI
+
 ```solidity
   event UpdatedMetadataURI(
   )
 ```
 
-
-
 ### SetHealthCheck
+
 ```solidity
   event SetHealthCheck(
   )
 ```
 
-
-
 ### SetDoHealthCheck
+
 ```solidity
   event SetDoHealthCheck(
   )
 ```
-
-
-
-
