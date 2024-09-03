@@ -9,9 +9,11 @@ module.exports = {
         {
           type: 'category',
           label: 'yVaults',
+          link: {
+            type: 'doc',
+            id: 'products/yvaults/overview',
+          },
           items: [
-            'products/yvaults/overview',
-            'products/yvaults/vault-tokens',
             {
               type: 'category',
               label: 'yVaults Version 3',
@@ -19,7 +21,18 @@ module.exports = {
                 type: 'doc',
                 id: 'products/yvaults/v3',
               },
-              items: [],
+              items: [
+                {
+                  type: 'link',
+                  label: 'v3 Vaults Interface Guide →',
+                  href: 'guides/using-yearn-v3', //this breaks if you don't use relative links here
+                },
+                {
+                  type: 'link',
+                  label: 'v3 Vaults dApp',
+                  href: 'https://yearn.fi/v3',
+                },
+              ],
             },
             {
               type: 'category',
@@ -28,8 +41,21 @@ module.exports = {
                 type: 'doc',
                 id: 'products/yvaults/v2',
               },
-              items: ['products/yvaults/vault-factory'],
+              items: [
+                'products/yvaults/vault-factory',
+                {
+                  type: 'link',
+                  label: 'v2 Vaults Interface Guide →',
+                  href: 'guides/using-yearn-v2', //this breaks if you don't use relative links here
+                },
+                {
+                  type: 'link',
+                  label: 'v2 Vaults dApp',
+                  href: 'https://yearn.fi/vaults',
+                },
+              ],
             },
+            'products/yvaults/vault-tokens',
           ],
         },
         {
