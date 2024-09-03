@@ -42,7 +42,6 @@ module.exports = {
                 id: 'products/yvaults/v2',
               },
               items: [
-                'products/yvaults/vault-factory',
                 {
                   type: 'link',
                   label: 'v2 Vaults Interface Guide →',
@@ -56,6 +55,11 @@ module.exports = {
               ],
             },
             'products/yvaults/vault-tokens',
+            {
+              type: 'link',
+              label: 'yVaults Dev Docs →',
+              href: '/developers/v1/introduction',
+            },
           ],
         },
         {
