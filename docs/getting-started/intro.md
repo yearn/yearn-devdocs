@@ -4,7 +4,7 @@ Yearn Finance is DeFi’s premier yield aggregator. Giving individuals, DAOs and
 
 The protocol is maintained by various independent developers and is governed by YFI holders. You can find brief descriptions of Yearn's core products, the governance process, and links to active communication channels below.
 
-- https://yearn.fi/
+<PrettyLink>https://yearn.fi/</PrettyLink>
 
 ## yVaults
 
@@ -16,7 +16,7 @@ Yearn Vaults (or yVaults) are capital pools that automatically generate yield ba
 
 ## Governance
 
-The Yearn ecosystem is controlled by YFI token holders who submit and vote on off-chain proposals that govern the ecosystem. Proposals that generate majority support \(&gt;50% of the vote\) are implemented by a 9-member multi-signature wallet. Changes must be signed by 6 out of the 9 wallet signers to be implemented. The members of the multi-signature wallet were voted in by YFI holders and are subject to change from future governance votes. Please refer to the [multisig documentation](/security/multisig) for the list of multisig signers. For more info about the governance process, please consult the [Governance FAQ](/resources/faq#governance) and [YIP-61: Governance 2.0](https://gov.yearn.fi/t/yip-61-governance-2-0/10460).
+The Yearn ecosystem is controlled by YFI token holders who submit and vote on off-chain proposals that govern the ecosystem. Proposals that generate majority support \(&gt;50% of the vote\) are implemented by a 9-member multi-signature wallet. Changes must be signed by 6 out of the 9 wallet signers to be implemented. The members of the multi-signature wallet were voted in by YFI holders and are subject to change from future governance votes. Please refer to the [multisig documentation](/developers/security/multisig) for the list of multisig signers. For more info about the governance process, please consult the [Governance FAQ](/resources/faq#governance) and [YIP-61: Governance 2.0](https://gov.yearn.fi/t/yip-61-governance-2-0/10460).
 
 ## Communication Channels
 

@@ -64,17 +64,17 @@ module.exports = {
         },
         {
           type: 'category',
-          label: 'veYFI',
-          items: ['products/veyfi'],
-        },
-        {
-          type: 'category',
           label: 'yBribe',
           items: [
             'products/ybribe/overview',
             'products/ybribe/guide',
             'products/ybribe/faq',
           ],
+        },
+        {
+          type: 'link',
+          label: 'veYFI →',
+          href: '/contributing/governance/veyfi-intro',
         },
         {
           type: 'link',
@@ -106,11 +106,11 @@ module.exports = {
       label: 'Token and Contract Addresses →',
       href: '/developers/addresses',
     },
-    // {
-    //   type: 'link',
-    //   label: 'Understanding Risks →',
-    //   href: '/developers/security/risks/risk-overview',
-    // },
+    {
+      type: 'link',
+      label: 'Understanding Risks →',
+      href: '/developers/security/risks',
+    },
     {
       type: 'link',
       label: 'Smart Contracts →',
