@@ -80,12 +80,13 @@ module.exports = {
         },
         {
           type: 'category',
-          label: 'veYFI',
-          link: {
-            type: 'doc',
-            id: 'products/veyfi',
-          },
-          items: [],
+          label: 'yETH',
+          items: ['products/yeth/overview'],
+        },
+        {
+          type: 'link',
+          label: 'veYFI →',
+          href: '/contributing/governance/veyfi-intro',
         },
       ],
     },
@@ -107,6 +108,16 @@ module.exports = {
           type: 'link',
           label: 'The Blue Pill',
           href: 'https://yfistory.org/thebluepill',
+        },
+        {
+          type: 'link',
+          label: 'veYFI →',
+          href: '/contributing/governance/veyfi-intro',
+        },
+        {
+          type: 'link',
+          label: 'veYFI →',
+          href: '/contributing/governance/veyfi-intro',
         },
         {
           type: 'link',
@@ -143,11 +154,11 @@ module.exports = {
       label: 'Token and Contract Addresses →',
       href: '/developers/addresses',
     },
-    // {
-    //   type: 'link',
-    //   label: 'Understanding Risks →',
-    //   href: '/developers/security/risks/risk-overview',
-    // },
+    {
+      type: 'link',
+      label: 'Understanding Risks →',
+      href: '/developers/security/risks',
+    },
     {
       type: 'link',
       label: 'Smart Contracts →',

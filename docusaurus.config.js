@@ -2,6 +2,7 @@
 /** @type {import('@docusaurus/types').Config} */
 import math from 'remark-math'
 import katex from 'rehype-katex'
+import { themes as prismThemes } from 'prism-react-renderer'
 
 export default {
   title: 'Yearn Docs',
@@ -25,6 +26,8 @@ export default {
     },
     prism: {
       additionalLanguages: ['solidity'],
+      theme: prismThemes.github,
+      darkTheme: prismThemes.dracula,
     },
     algolia: {
       apiKey: process.env.ALGOLIA_API_KEY || 'UNKNOWN',
@@ -188,6 +191,18 @@ export default {
         path: 'docs/resources',
         routeBasePath: 'resources',
         sidebarPath: './sidebars/sidebarsResources.js',
+        showLastUpdateTime: true,
+        sidebarCollapsed: true,
+        breadcrumbs: false,
+      },
+    ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'partners',
+        path: 'docs/partners',
+        routeBasePath: 'partners',
+        sidebarPath: './sidebars/sidebarsPartners.js',
         showLastUpdateTime: true,
         sidebarCollapsed: true,
         breadcrumbs: false,
