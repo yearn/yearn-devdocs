@@ -16,7 +16,7 @@ module.exports = {
           items: [
             {
               type: 'category',
-              label: 'yVaults Version 3',
+              label: 'yVaults v3',
               link: {
                 type: 'doc',
                 id: 'products/yvaults/v3',
@@ -36,7 +36,7 @@ module.exports = {
             },
             {
               type: 'category',
-              label: 'yVaults Version 2',
+              label: 'yVaults v2',
               link: {
                 type: 'doc',
                 id: 'products/yvaults/v2',
