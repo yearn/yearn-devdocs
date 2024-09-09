@@ -25,7 +25,7 @@ module.exports = {
                 {
                   type: 'link',
                   label: 'v3 Vaults Interface Guide →',
-                  href: 'guides/using-yearn-v3', //this breaks if you don't use relative links here
+                  href: '/getting-started/guides/using-yearn-v3', //this breaks if you don't use relative links here
                 },
                 {
                   type: 'link',
@@ -45,7 +45,7 @@ module.exports = {
                 {
                   type: 'link',
                   label: 'v2 Vaults Interface Guide →',
-                  href: 'guides/using-yearn-v2', //this breaks if you don't use relative links here
+                  href: '/getting-started/guides/using-yearn-v2', //this breaks if you don't use relative links here
                 },
                 {
                   type: 'link',
