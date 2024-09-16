@@ -56,6 +56,11 @@ module.exports = {
             },
             'products/yvaults/vault-tokens',
             {
+              type: 'doc',
+              id: 'products/yvaults/yvaults-faq',
+              label: 'yVaults FAQ',
+            },
+            {
               type: 'link',
               label: 'yVaults Dev Docs →',
               href: '/developers/v1/introduction',
