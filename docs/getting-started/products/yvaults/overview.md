@@ -1,5 +1,7 @@
 # yVaults
 
+:::yearn-info[WHAT IS A yVAULT ANYWAY?]
+
 Yearn Vaults are like crypto savings accounts in cyberspace. You deposit your assets, and Yearn's smart contracts put them to work within the DeFi ecosystem, returning the earned yield back to you.
 
 However, unlike a bank account - none of this takes place behind closed doors (no offense to doors). Decentralised Finance uses public blockchains, meaning you are in control of your assets and can see where they are at all times. Nothing is hidden and everything is auditable by anyone, at any time.
@@ -7,6 +9,10 @@ However, unlike a bank account - none of this takes place behind closed doors (n
 With the advent of v3, Vaults can now be made out of a single strategy for your assets, or a collection of multiple strategies which balance your funds between them. Users now have more control over where they want their funds to go and a wider range of risk appetites.
 
 Go you!
+
+:::
+
+<PrettyLink>[Still Confused? Click here for an ELI-5 explainer](yvaults-faq#yvaults-eli-5)</PrettyLink>
 
 ## yVault Types
 
