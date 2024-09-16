@@ -50,18 +50,6 @@ module.exports = {
         },
         {
           type: 'category',
-          label: 'yPools',
-          items: [
-            'products/ypools/yeth/overview',
-            {
-              type: 'link',
-              label: 'yETH dApp',
-              href: 'https://yeth.yearn.fi/',
-            },
-          ],
-        },
-        {
-          type: 'category',
           label: 'yLockers',
           link: {
             type: 'doc',
@@ -109,6 +97,32 @@ module.exports = {
                   type: 'link',
                   label: 'yPRISMA dApp',
                   href: 'https://yprisma.yearn.fi/',
+                },
+              ],
+            },
+          ],
+        },
+        {
+          type: 'category',
+          label: 'yPools',
+          items: [
+            {
+              type: 'category',
+              label: 'yETH',
+              link: {
+                type: 'doc',
+                id: 'products/ypools/yeth/overview',
+              },
+              items: [
+                {
+                  type: 'doc',
+                  id: 'products/ypools/yeth/yeth-faq',
+                  label: 'yETH FAQ',
+                },
+                {
+                  type: 'link',
+                  label: 'yETH dApp',
+                  href: 'https://yeth.yearn.fi/',
                 },
               ],
             },
