@@ -19,8 +19,16 @@ module.exports = {
             {
               type: 'category',
               label: 'yVaults v3',
+              link: {
+                type: 'doc',
+                id: 'products/yvaults/v3',
+              },
               items: [
-                'products/yvaults/v3',
+                {
+                  type: 'link',
+                  label: 'v3 Vaults Interface Guide →',
+                  href: '/getting-started/guides/using-yearn-v3', //this breaks if you don't use relative links here
+                },
                 {
                   type: 'link',
                   label: 'v3 Vaults dApp',
@@ -31,8 +39,16 @@ module.exports = {
             {
               type: 'category',
               label: 'yVaults v2',
+              link: {
+                type: 'doc',
+                id: 'products/yvaults/v2',
+              },
               items: [
-                'products/yvaults/vault-factory',
+                {
+                  type: 'link',
+                  label: 'v2 Vaults Interface Guide →',
+                  href: '/getting-started/guides/using-yearn-v2', //this breaks if you don't use relative links here
+                },
                 {
                   type: 'link',
                   label: 'v2 Vaults dApp',
@@ -45,18 +61,6 @@ module.exports = {
               type: 'link',
               label: 'yVaults Dev Docs →',
               href: '/developers/v1/introduction',
-            },
-          ],
-        },
-        {
-          type: 'category',
-          label: 'yPools',
-          items: [
-            'products/ypools/yeth/overview',
-            {
-              type: 'link',
-              label: 'yETH dApp',
-              href: 'https://yeth.yearn.fi/',
             },
           ],
         },

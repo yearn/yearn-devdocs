@@ -1,4 +1,4 @@
-# Overview
+# yVaults v3
 
 Yearn's V3 system is a decentralized suite of yield-generating products built to fit any need. It is designed to be un-opinionated and customizable infrastructure for the world to build on, making yield generation as safe, efficient, and easy as possible for all parties. Anyone can deploy a strategy or manage a vault. So whether you are a gas golfing expert, a degen looking to codify your personal yield farming strategy, or just an average crypto user looking to earn passive yield on your magical internet tokens, V3 is for you.
 
@@ -15,6 +15,23 @@ The most significant update to Yearn V3 from V2 was the introduction of "Tokeniz
 - [TokenizedStrategy](https://github.com/yearn/tokenized-strategy/blob/master/src/TokenizedStrategy.sol) A technical implementation of a Strategy that is also a stand-alone ERC-4626 compliant Vault. These are the yield generators in the V3 ecosystem. This pattern can be used so that either Allocator Vaults or individual users can deposit directly into and receive shares in return.
 
 - [Vault Factory](https://github.com/yearn/yearn-vaults-v3/blob/master/contracts/VaultFactory.vy): A factory contract deployed by Yearn Governance that anyone can use to easily and trustlessly deploy new Allocator Vaults. Each Allocator Vault release will have its own factory.
+
+## Periphery Contracts
+
+V3 incorporates periphery contracts, which are extensible code blocks that can be attached to a yVault or work alongside it to extend functionality over and beyond core base logic. They are not required but can facilitate building around yVaults.
+
+A few examples of periphery contracts used in V3 are:
+
+- **4626 Router**: Wrapper that handles deposits and withdrawals to/from all vaults and strategies.
+- **Registry**: Handles adding and tracking strategies and vaults.
+- **Debt Allocator**: Can efficiently allocate debt to different strategies. Added to a Allocator Vault for the best yield opportunities.
+- **Accountant**: Handles changing fees for vault operations.
+- **Deposit/Withdraw Limit Modules**: Allows dynamic control over a vaults deposit or withdraw limits for full customization.
+- **Swappers**: Pre-built contracts for strategies to inherit to easily implement their desired swap logic.
+- **APR Oracles**: Retrieve the expected current APY on-chain for different vaults or strategies to properly allocate debt.
+- And any others you can come up with!
+
+To read more about the periphery contracts or where to find the curren versions click [here](./periphery.md)
 
 ## Get started
 
