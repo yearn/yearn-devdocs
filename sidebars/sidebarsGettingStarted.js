@@ -28,7 +28,7 @@ export default {
                 {
                   type: 'link',
                   label: 'v3 Vaults Interface Guide →',
-                  href: '../../../guides/interface-guides/using-yearn-v3', //this breaks if you don't use relative links here
+                  href: 'guides/interface-guides/using-yearn-v3', //this breaks if you don't use relative links here
                 },
                 {
                   type: 'link',
@@ -49,7 +49,7 @@ export default {
                 {
                   type: 'link',
                   label: 'v2 Vaults Interface Guide →',
-                  href: '../../../guides/interface-guides/using-yearn-v2', //this breaks if you don't use relative links here
+                  href: 'guides/using-yearn-v2', //this breaks if you don't use relative links here
                 },
                 {
                   type: 'link',
@@ -132,7 +132,7 @@ export default {
                 {
                   type: 'link',
                   label: 'yCRV Interface Guide →',
-                  href: '../../../guides/interface-guides/ycrv-guide', //this breaks if you don't use relative links here
+                  href: 'guides/interface-guides/ycrv-guide', //this breaks if you don't use relative links here
                 },
                 {
                   type: 'link',
@@ -158,7 +158,7 @@ export default {
                 {
                   type: 'link',
                   label: 'yPRISMA Interface Guide →',
-                  href: '../../../guides/interface-guides/yprisma-guide', //this breaks if you don't use relative links here
+                  href: 'guides/interface-guides/yprisma-guide', //this breaks if you don't use relative links here
                 },
                 {
                   type: 'link',

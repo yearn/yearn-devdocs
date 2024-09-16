@@ -28,30 +28,6 @@ html[data-theme='dark'] {
   --ifm-toc-border-color: transparent;
 }
 
-.menu__list-item-collapsible--active {
-  background-color: var(--ifm-menu-color-background-active);
-}
-.menu__link {
-  font-size: 15px;
-}
-/* .menu__list-item-collapsible {
-  flex-direction: row-reverse;
-} */
-.menu__caret:before {
-  background: var(--ifm-menu-link-sublist-icon) 50% / 1.5rem 1.5rem;
-}
-
-.menu__link--sublist-caret::after {
-  background: var(--ifm-menu-link-sublist-icon) 50% / 1.5rem 1.5rem;
-}
-.menu__list-item--collapsed .menu__link--sublist:after {
-  background: var(--ifm-menu-link-sublist-icon) 50% / 1.5rem 1.5rem;
-}
-/*
-.menu__list-item--collapsed .menu__caret:before {
-  transform: rotateZ(-90deg);
-} */
-
 #__docusaurus {
   max-width: 1300px;
   margin: auto;
@@ -186,6 +162,31 @@ html[data-theme='dark'] .navbar {
 html[data-theme='dark'] .react-toggle-thumb {
   background-color: var(--ifm-background-color);
 }
+
+/* ---SIDEBAR--- */
+.menu__list-item-collapsible--active {
+  background-color: var(--ifm-menu-color-background-active);
+}
+.menu__link {
+  font-size: 15px;
+}
+/* .menu__list-item-collapsible {
+  flex-direction: row-reverse;
+} */
+.menu__caret:before {
+  background: var(--ifm-menu-link-sublist-icon) 50% / 1.5rem 1.5rem;
+}
+
+.menu__link--sublist-caret::after {
+  background: var(--ifm-menu-link-sublist-icon) 50% / 1.5rem 1.5rem;
+}
+.menu__list-item--collapsed .menu__link--sublist:after {
+  background: var(--ifm-menu-link-sublist-icon) 50% / 1.5rem 1.5rem;
+}
+/*
+.menu__list-item--collapsed .menu__caret:before {
+  transform: rotateZ(-90deg);
+} */
 
 /*---DETAIL COMPONENT (dropdown)---*/
 .customDetails {
