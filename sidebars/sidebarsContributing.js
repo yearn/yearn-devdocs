@@ -1,5 +1,6 @@
 module.exports = {
   mySidebar: [
+    'introduction',
     'contribute',
     'contributor-tools',
     {
