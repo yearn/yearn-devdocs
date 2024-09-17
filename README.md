@@ -120,3 +120,47 @@ npm run docusaurus docs:version 0.4.5
 ```
 
 If you are developing in Solidity and Foundry you can use `[forge-doc](https://book.getfoundry.sh/reference/forge/forge-doc)`
+
+### Custom Elements
+
+#### Detail Element
+
+This is a Detail element that contains other text inside. If you format the summary section as shown it renders markdown correctly.
+
+```
+<details className="customDetails">
+
+  <summary>
+  
+  ## Title Here
+  
+  </summary>
+
+### Subtitles as needed
+
+content here
+
+</details>
+```
+
+There is also a "customFaqDetails" css class that removes the borders.
+
+#### PrettyLink
+
+The PrettyLink element makes your links into button-like elements with subtle animation and yearn styling. These links will fill the full width of the markdown document. Can be used with naked links or with markdown style links.
+
+```
+<PrettyLink>[your link name](your-link-url)</PrettyLink>
+```
+
+#### Yearn Admonition
+
+There is a custom informational Yearn-styled admonition that can be used like any other admonition.
+
+```
+:::yearn-info[title-goes-here]
+
+text content
+
+:::
+```

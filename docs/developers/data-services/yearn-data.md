@@ -36,8 +36,13 @@ Yearn Lens is a collection of smart contracts that collect data about V2 Yearn v
 
 ---
 
-<details className="customDetails">
-  <summary><h2>Deprecated Data Services</h2></summary>
+<details className="customFaqDetails">
+
+  <summary>
+  
+## Deprecated Data Services
+  
+  </summary>
 
 ### Yearn Exporter - No longer supported
 
