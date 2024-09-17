@@ -1,5 +1,7 @@
 # yPRISMA Overview
 
+![image](/img/product-pages/yprisma-banner.png)
+
 Claim and deposit at [yprisma.yearn.fi](https://yprisma.yearn.fi)
 
 ## What is yPRISMA?

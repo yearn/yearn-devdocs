@@ -1,6 +1,8 @@
 
 # yCRV Overview
 
+![image](/img/product-pages/ycrv-banner.png)
+
 ## What is yCRV?
 
 yCRV is Yearn's veCRV yLocker product. It is designed to tokenize the different benefits of a [veCRV position](https://resources.curve.fi/crv-token/vecrv/) in a simple, user-friendly way. Let's review the basics of liquid locker tokens like yCRV:
