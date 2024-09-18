@@ -16,6 +16,8 @@ The most significant update to Yearn V3 from V2 was the introduction of "Tokeniz
 
 - [Vault Factory](https://github.com/yearn/yearn-vaults-v3/blob/master/contracts/VaultFactory.vy): A factory contract deployed by Yearn Governance that anyone can use to easily and trustlessly deploy new Allocator Vaults. Each Allocator Vault release will have its own factory.
 
+![image](/img/diagrams/yvaults-v3-more-detail.png)
+
 ## Periphery Contracts
 
 V3 incorporates periphery contracts, which are extensible code blocks that can be attached to a yVault or work alongside it to extend functionality over and beyond core base logic. They are not required but can facilitate building around yVaults.
