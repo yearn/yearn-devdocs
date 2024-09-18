@@ -18,7 +18,7 @@ export default function LayoutWrapper(props) {
             padding: '5px',
           }}
         >
-          Branch: {branchName}
+          {branchName}
         </div>
       )}
       <Layout {...props} />
