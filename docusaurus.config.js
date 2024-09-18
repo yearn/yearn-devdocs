@@ -1,5 +1,9 @@
 import math from 'remark-math'
 import katex from 'rehype-katex'
+import { themes as prismThemes } from 'prism-react-renderer'
+
+const branchName = process.env.BRANCH_NAME || 'unknown'
+const isDev = process.env.IS_DEV === 'true'
 
 export default {
   title: 'Yearn Docs',
@@ -14,7 +18,10 @@ export default {
   markdown: {
     mermaid: true,
   },
-  scripts: ['/js/overrideScroll.js'],
+  customFields: {
+    branchName,
+    isDev,
+  },
   themes: ['@docusaurus/theme-mermaid'],
   themeConfig: {
     docs: {
