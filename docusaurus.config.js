@@ -4,6 +4,9 @@ import math from 'remark-math'
 import katex from 'rehype-katex'
 import { themes as prismThemes } from 'prism-react-renderer'
 
+const branchName = process.env.BRANCH_NAME || 'unknown'
+const isDev = process.env.IS_DEV === 'true'
+
 export default {
   title: 'Yearn Docs',
   tagline: 'DeFi made simple',
@@ -16,6 +19,10 @@ export default {
   projectName: 'yearn-devdocs', // Usually your repo name.
   markdown: {
     mermaid: true,
+  },
+  customFields: {
+    branchName,
+    isDev,
   },
   themes: ['@docusaurus/theme-mermaid'],
   themeConfig: {

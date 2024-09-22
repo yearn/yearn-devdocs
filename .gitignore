@@ -21,6 +21,8 @@ yarn-error.log*
 
 .markdownlint.json
 
+.branch-name
+
 # Use yarn.lock
 package-lock.json
 
