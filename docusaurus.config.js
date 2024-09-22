@@ -76,7 +76,7 @@ export default {
           activeBasePath: '/developers',
         },
         {
-          to: 'contributing/contribute',
+          to: 'contributing/introduction',
           label: 'DAO Docs',
           activeBasePath: '/contributing',
         },

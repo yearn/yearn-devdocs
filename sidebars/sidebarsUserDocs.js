@@ -1,66 +1,131 @@
 module.exports = {
   userDocsSidebar: [
-    'intro',
     {
       type: 'category',
-      label: 'Products',
-      collapsed: false,
+      label: 'Yearn Products',
+      link: {
+        type: 'doc',
+        id: 'intro',
+      },
       items: [
         {
           type: 'category',
           label: 'yVaults',
+          link: {
+            type: 'doc',
+            id: 'products/yvaults/overview',
+          },
           items: [
-            'products/yvaults/overview',
-            'products/yvaults/vault-tokens',
             {
               type: 'category',
-              label: 'yVaults Version 3',
-              items: ['products/yvaults/v3'],
+              label: 'yVaults v3',
+              items: [
+                'products/yvaults/v3',
+                {
+                  type: 'link',
+                  label: 'v3 Vaults dApp',
+                  href: 'https://yearn.fi/v3',
+                },
+              ],
             },
             {
               type: 'category',
-              label: 'yVaults Version 2',
-              items: ['products/yvaults/vault-factory'],
+              label: 'yVaults v2',
+              items: [
+                'products/yvaults/vault-factory',
+                {
+                  type: 'link',
+                  label: 'v2 Vaults dApp',
+                  href: 'https://yearn.fi/vaults',
+                },
+              ],
+            },
+            'products/yvaults/vault-tokens',
+            {
+              type: 'link',
+              label: 'yVaults Dev Docs →',
+              href: '/developers/v1/introduction',
             },
           ],
         },
         {
           type: 'category',
           label: 'yLockers',
+          link: {
+            type: 'doc',
+            id: 'products/ylockers/overview',
+          },
           items: [
-            'products/ylockers/overview',
             {
               type: 'category',
               label: 'yCRV',
+              link: {
+                type: 'doc',
+                id: 'products/ylockers/ycrv/overview',
+              },
               items: [
-                'products/ylockers/ycrv/overview',
                 'products/ylockers/ycrv/ycrv-guide',
                 'products/ylockers/ycrv/ycrv-faq',
+                {
+                  type: 'link',
+                  label: 'yCRV Contract Addresses →',
+                  href: '/developers/addresses/ycrv-contracts',
+                },
+                {
+                  type: 'link',
+                  label: 'yCRV dApp',
+                  href: 'https://ycrv.yearn.fi/',
+                },
               ],
             },
             {
               type: 'category',
               label: 'yPRISMA',
+              link: {
+                type: 'doc',
+                id: 'products/ylockers/yprisma/overview',
+              },
               items: [
-                'products/ylockers/yprisma/overview',
                 'products/ylockers/yprisma/yprisma-guide',
                 'products/ylockers/yprisma/yprisma-faq',
+                {
+                  type: 'link',
+                  label: 'yPRISMA Contract Addresses →',
+                  href: '/developers/addresses/yprisma-contracts',
+                },
+                {
+                  type: 'link',
+                  label: 'yPRISMA dApp',
+                  href: 'https://yprisma.yearn.fi/',
+                },
               ],
             },
           ],
         },
         {
           type: 'category',
-          label: 'yETH',
-          items: ['products/yeth/overview'],
-        },
-        {
-          type: 'category',
-          label: 'yBribe',
+          label: 'yPools',
           items: [
-            'products/ybribe/overview',
-            'products/ybribe/guide',
-            'products/ybribe/faq',
+            {
+              type: 'category',
+              label: 'yETH',
+              link: {
+                type: 'doc',
+                id: 'products/ypools/yeth/overview',
+              },
+              items: [
+                {
+                  type: 'doc',
+                  id: 'products/ypools/yeth/yeth-faq',
+                  label: 'yETH FAQ',
+                },
+                {
+                  type: 'link',
+                  label: 'yETH dApp',
+                  href: 'https://yeth.yearn.fi/',
+                },
+              ],
+            },
           ],
         },
         {
@@ -68,12 +133,38 @@ module.exports = {
           label: 'veYFI →',
           href: '/contributing/governance/veyfi-intro',
         },
+      ],
+    },
+    {
+      type: 'html',
+      value: '<hr/>',
+      className: 'divider',
+    },
+    {
+      type: 'category',
+      label: 'About Yearn',
+      // link: {
+      //   type: 'doc',
+      //   id: 'intro',
+      // },
+      items: [
+        'yearn-principles',
         {
           type: 'link',
-          label: 'Deprecated Projects →',
-          href: '/resources/deprecated',
+          label: 'The Blue Pill',
+          href: 'https://yfistory.org/thebluepill',
+        },
+        {
+          type: 'link',
+          label: 'DAO Docs →',
+          href: '/contributing/introduction',
         },
       ],
+    },
+    {
+      type: 'html',
+      value: '<hr/>',
+      className: 'divider',
     },
     {
       type: 'category',
@@ -109,5 +200,10 @@ module.exports = {
       href: '/developers/smart-contracts/',
     },
     { type: 'link', label: 'Security →', href: '/developers/security' },
+    {
+      type: 'link',
+      label: 'Deprecated Projects →',
+      href: '/resources/deprecated',
+    },
   ],
 }
