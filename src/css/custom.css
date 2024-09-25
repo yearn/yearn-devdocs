@@ -5,8 +5,9 @@
  * work well for content-centric websites.
  */
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&display=swap');
-/* You can override the default Infima variables here. */
+@import url('/static/fonts/fonts.css');
 
+/* You can override the default Infima variables here. */
 :root {
   --ifm-color-primary: #007bff;
   --ifm-color-primary-dark: rgb(0, 106, 227);
@@ -19,6 +20,7 @@
   --ifm-toc-border-color: transparent;
   --ifm-menu-color-background-active: transparent;
   --ifm-navbar-height: 5rem;
+  --ifm-font-family-base: 'Aeonik', 'Roboto', serif;
 }
 
 html[data-theme='dark'] {
@@ -26,6 +28,10 @@ html[data-theme='dark'] {
   /* background-color: #18191a; */
 }
 
+.body {
+  font-family: 'Aeonik', 'Roboto', serif;
+  overflow: scroll;
+}
 .body class data-rh {
   overflow: scroll;
 }
