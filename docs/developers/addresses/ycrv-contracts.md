@@ -22,3 +22,5 @@ A list of deployed yCRV contracts.
 | lp-yCRV v1 (DEPRECATED) | [0xc97232527B62eFb0D8ed38CF3EA103A6CcA4037e](https://etherscan.io/address/0xc97232527B62eFb0D8ed38CF3EA103A6CcA4037e#code) |
 | old CRV/yCRV Curve Pool (DEPRECATED) | [0x453D92C7d4263201C69aACfaf589Ed14202d83a4](https://etherscan.io/address/0x453D92C7d4263201C69aACfaf589Ed14202d83a4#code) |
 | ZapYCRV.vy | [0x01D7f32B6E463c96c00575fA97B8224326C6A6B9](https://etherscan.io/address/0x01D7f32B6E463c96c00575fA97B8224326C6A6B9#code) |
+
+<PrettyLink>[yCRV Docs](/getting-started/products/ylockers/ycrv/overview)</PrettyLink>

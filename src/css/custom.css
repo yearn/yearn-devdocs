@@ -208,10 +208,6 @@ h6 {
   padding: 0 var(--ifm-pre-padding);
 }
 
-.main-wrapper {
-  margin-bottom: 5rem;
-}
-
 img {
   height: auto;
 }

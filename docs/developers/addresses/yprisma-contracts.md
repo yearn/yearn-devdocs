@@ -26,3 +26,5 @@ A list of deployed yPrisma contracts.
 | *yPRISMA LP Staking (yPRISMA rewards)            | [0x6806D62AAdF2Ee97cd4BCE46BF5fCD89766EF246](https://etherscan.io/address/0x6806D62AAdF2Ee97cd4BCE46BF5fCD89766EF246) |
 | *yCRV Staking (yPRISMA rewards)                  | [0x84c94d739e075b3C7431bdb1A005F0412DF828a5](https://etherscan.io/address/0x84c94d739e075b3C7431bdb1A005F0412DF828a5) |
 **expired*
+
+<PrettyLink>[yPRISMA Docs](/getting-started/products/ylockers/yprisma/overview)</PrettyLink>
