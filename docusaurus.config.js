@@ -149,6 +149,10 @@ export default {
             'https://github.com/yearn/yearn-devdocs/edit/master/website/',
           sidebarCollapsed: true,
           breadcrumbs: false,
+          admonitions: {
+            keywords: ['yearn-info'],
+            extendDefaults: true,
+          },
         },
         theme: {
           customCss: './src/css/custom.css',

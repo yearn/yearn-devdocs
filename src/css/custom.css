@@ -207,12 +207,31 @@ h6 {
   margin-bottom: 0;
 }
 
+.customFaqDetails {
+  background-color: transparent;
+  --ifm-alert-border-color: grey;
+  border: none !important;
+  box-shadow: none;
+}
+
 .docusaurus-highlight-code-line {
   background-color: rgb(72, 77, 91);
   display: block;
   margin: 0 calc(-1 * var(--ifm-pre-padding));
   padding: 0 var(--ifm-pre-padding);
 }
+
+.collapsibleContent_node_modules-\@docusaurus-theme-common-lib-components-Details-styles-module {
+  margin-top: 0px !important;
+  border-top: none !important;
+  padding-top: 0px !important;
+}
+
+.details_node_modules-\@docusaurus-theme-classic-lib-theme-Details-styles-module {
+  margin: 0px !important;
+}
+
+/*---IMG stuff---*/
 
 img {
   height: auto;

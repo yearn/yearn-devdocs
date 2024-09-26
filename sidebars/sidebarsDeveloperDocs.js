@@ -53,6 +53,7 @@ export default {
               items: [
                 'v2/getting-started',
                 'v2/DEPLOYMENT',
+                'v2/vault-factory',
                 'v2/SPECIFICATION',
                 'v2/OPERATIONS',
                 'v2/additional-resources',
