@@ -4,7 +4,7 @@
 
 Yearn Vaults are like crypto savings accounts in cyberspace. You deposit your assets, and Yearn's smart contracts put them to work within the DeFi ecosystem, returning the earned yield back to you.
 
-However, unlike a bank account - none of this takes place behind closed doors (no offense to doors). Decentralised Finance uses public blockchains, meaning you are in control of your assets and can see where they are at all times. Nothing is hidden and everything is auditable by anyone, at any time.
+However, unlike a bank account - none of this takes place behind closed doors (no offense to doors). Decentralized Finance uses public blockchains, meaning you are in control of your assets and can see where they are at all times. Nothing is hidden and everything is auditable by anyone, at any time.
 
 With the advent of v3, Vaults can now be made out of a single strategy for your assets, or a collection of multiple strategies which balance your funds between them. Users now have more control over where they want their funds to go and a wider range of risk appetites.
 
@@ -20,9 +20,9 @@ Over the years, Yearn has developed 3 versions of the yVault products: v1, v2, a
 
 - [**v1 yVaults**](../../../developers/v1/introduction) are the OG vaults and are mostly phased out (*deprecated* in developer-speak).
 
-- [**v2 yVaults**](./v2) are the reliable, workhorse vaults that you know and love. They started out focused on the Curve ecosystem and are still used when creating vaults for Curve pools.
+- [**v2 yVaults**](./v2) are the reliable, workhorse vaults that you know and love. They started focused on the Curve ecosystem and are still used when creating vaults for Curve pools.
 
-- [**v3 yVaults**](./v3) are the new cool vaults on the block. They are designed to interoperate using the ERC-4626 standard and have a number of new features to make them safer and easier to use and create.
+- [**v3 yVaults**](./v3) are the new cool vaults on the block. They are designed to interoperate using the ERC-4626 standard and have several new features to make them safer and easier to use and create.
 
 ## yVault Fee Structure
 
