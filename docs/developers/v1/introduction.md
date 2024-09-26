@@ -6,7 +6,7 @@ description: This documentation only covers v1 vaults.
 
 :::warning
 
-This document describes the original implementation of Yearn's Vault and Governance systems. It gives a good sense of the bones of Yearn and is a place to build your intuitions about how things work. These contracts are all mostly deprecated or superseded at this point, so if you are looking for information on actual implementations or to better understand particulars of the current vaults, please review those specific docs.
+This document describes the original implementation of Yearn's Vault and Governance systems. It gives a good sense of the bones of Yearn and is a place to build your intuition about how things work. These contracts are all mostly deprecated or superseded at this point, so if you are looking for information on actual implementations or to better understand the particulars of the current vaults, please review those specific docs.
 
 :::
 
