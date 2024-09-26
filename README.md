@@ -53,7 +53,7 @@ In the `docs` folder:
 
 #### Versioned Documentation
 
-Versioning has changed. Because Yearn supports multiple products with their own versions, versioning is now done manually using folder structure to keep things organized. There are folders for all versions of the smart contract natspec documentation in:
+Versioning has changed. Because Yearn supports multiple products with their own versions, versioning is now done manually using folder structure to keep things organized. There are folders for all versions of the smart contract [NatSpec](https://docs.soliditylang.org/en/latest/natspec-format.html) documentation in:
 
 ```
 
