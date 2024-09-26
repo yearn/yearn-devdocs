@@ -26,14 +26,14 @@ A few examples of periphery contracts used in V3 are:
 
 - **4626 Router**: Wrapper that handles deposits and withdrawals to/from all vaults and strategies.
 - **Registry**: Handles adding and tracking strategies and vaults.
-- **Debt Allocator**: Can efficiently allocate debt to different strategies. Added to a Allocator Vault for the best yield opportunities.
+- **Debt Allocator**: Can efficiently allocate debt to different strategies. Added to an Allocator Vault for the best yield opportunities.
 - **Accountant**: Handles changing fees for vault operations.
 - **Deposit/Withdraw Limit Modules**: Allows dynamic control over a vaults deposit or withdraw limits for full customization.
 - **Swappers**: Pre-built contracts for strategies to inherit to easily implement their desired swap logic.
 - **APR Oracles**: Retrieve the expected current APY on-chain for different vaults or strategies to properly allocate debt.
 - And any others you can come up with!
 
-To read more about the periphery contracts or where to find the curren versions click [here](./periphery.md)
+To read more about the periphery contracts or where to find the current versions click [here](./periphery.md)
 
 ## Get started
 
