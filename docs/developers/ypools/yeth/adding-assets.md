@@ -10,7 +10,7 @@ You will need access to the necessary governance contracts and a sufficient voti
 
 ### Step 1: Check Inclusion Vote Status
 
-Since the adoption of [this(https://snapshot.org/#/ylsd.eth/proposal/0x139698bed7752b80a16bb6d2fc0d9e8c82b622916ded2f064022be3c46ec9bb4)] proposal, inclusion voting is off by default.
+Since the adoption of [this](https://snapshot.org/#/ylsd.eth/proposal/0x139698bed7752b80a16bb6d2fc0d9e8c82b622916ded2f064022be3c46ec9bb4) proposal, inclusion voting is off by default.
 
 ### Step 2: Enable One-Off Inclusion Vote
 
