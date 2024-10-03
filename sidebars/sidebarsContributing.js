@@ -29,7 +29,7 @@ module.exports = {
             id: 'governance/veYFI-intro',
           },
           items: [
-            'governance/veyfi',
+            'governance/veYFI-comp-summary',
             {
               type: 'link',
               label: 'Contract Addresses →',
@@ -39,6 +39,11 @@ module.exports = {
               type: 'link',
               label: 'veYFI dApp',
               href: 'https://veyfi.yearn.fi/',
+            },
+            {
+              type: 'link',
+              label: 'veYFI Snapshot Voting Page',
+              href: 'https://snapshot.org/#/veyfi.eth',
             },
           ],
         },

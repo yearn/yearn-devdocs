@@ -1,4 +1,4 @@
-# veYFI
+# veYFI Overview
 
 veYFI is a time-locked version of the YFI token that grants access to governance, yield boosts, and rewards. It is based on [Curve's vote escrow (ve) model](https://resources.curve.fi/crv-token/vecrv/) and each YFI token can be locked for up to 4 years (technically longer, but there is no added voting or earning power gained by locking for more than 4 years). The length of lock determines how much veYFI is received per locked YFI. One YFI locked for four+ years converts to one veYFI. This relationship scales linearly, so one YFI locked for two years converts to 0.5 veYFI, one year converts to 0.25 veYFI, and so forth.
 
@@ -28,7 +28,7 @@ To weigh the advantages of locking YFI for veYFI, it is important to understand 
 
 ## Lock Parameters
 
-veYFI is non-transferrable and additional YFI locked from an account that already has a veYFI balance will add to and extend that lock. veYFI that belongs to any particular address will all unlock together when a lock expires. If a veYFI position needs to be exited before a lock expires, there is an early exit fee equal to the lesser of ``75% locked amount` and `(lock time remaining / 4 years)`.
+veYFI is non-transferrable and additional YFI locked from an account that already has a veYFI balance will add to and extend that lock. veYFI that belongs to any particular address will all unlock together when a lock expires. If a veYFI position needs to be exited before a lock expires, there is an early exit fee equal to the lesser of "75% of the locked amount" or "lock time remaining / 4 years".
 
 ## Liquid Lockers
 
