@@ -267,12 +267,16 @@ For users who prefer not to manage individual locks and veYFI decay, **liquid lo
 
 ## References
 
-### Governance Proposals
+### Relevant Governance Proposals
 
 - **[YIP-56: Buyback and Build](https://gov.yearn.fi/t/yip-56-buyback-and-build/8929)**
 - **[YIP-61: Governance 2.0](https://gov.yearn.fi/t/yip-61-governance-2-0/10460)**
 - **[YIP-65: Evolving YFI Tokenomics](https://gov.yearn.fi/t/yip-65-evolving-yfi-tokenomics/11994)**
 - **[YIP-73: Activate veYFI Rewards](https://gov.yearn.fi/t/yip-73-activate-veyfi-rewards-with-oyfi-gauges/13414)**
+
+### Snapshot Voting
+
+- **[veYFI Snapshot Page](https://snapshot.org/#/veyfi.eth)**
 
 ### Contract Addresses
 

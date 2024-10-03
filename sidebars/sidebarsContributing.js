@@ -40,6 +40,11 @@ module.exports = {
               label: 'veYFI dApp',
               href: 'https://veyfi.yearn.fi/',
             },
+            {
+              type: 'link',
+              label: 'veYFI Snapshot Voting Page',
+              href: 'https://snapshot.org/#/veyfi.eth',
+            },
           ],
         },
       ],
