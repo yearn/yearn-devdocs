@@ -29,7 +29,7 @@ module.exports = {
             id: 'governance/veYFI-intro',
           },
           items: [
-            'governance/veyfi',
+            'governance/veYFI-comp-summary',
             {
               type: 'link',
               label: 'Contract Addresses →',
