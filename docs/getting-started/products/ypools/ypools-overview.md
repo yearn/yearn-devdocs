@@ -8,12 +8,12 @@ Users stake their yPool tokens to mint st-yTokens, accrue yield, and later unsta
 
 yPools are governed by their users who stake their yPool tokens. Once staked, yPool token holders can set parameters, weights and whitelist pool assets.
 
-Want to dive into the details? check out the Developer Docs:
+Want to dive into the details? Check out the Developer Docs:
 <PrettyLink>[yPools Developer Docs](/developers/ypools/ypools-overview)</PrettyLink>
 
 ## yETH
 
-The inaugural yPool is yETH, which is a basket of LSTs of Beacon Chain ETH (stETH, rETH, etc), earning Ethereum's Validator Staking rewards.
+The inaugural yPool is yETH, which is a basket of LSTs of Beacon Chain ETH (stETH, rETH, etc.), earning Ethereum's Validator Staking rewards.
 
 <PrettyLink>[yETH Docs](./yeth/overview)</PrettyLink>
 
