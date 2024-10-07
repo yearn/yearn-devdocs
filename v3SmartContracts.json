@@ -1,0 +1,28 @@
+{
+  "BaseStrategy": {},
+  "TokenizedStrategy": {},
+  "VaultFactory": {},
+  "VaultV3": {},
+  "Periphery": {
+    "AprOracle": {},
+    "Accountant": {},
+    "RegistryFactory": {},
+    "Governance2Step": {},
+    "ReleaseRegistry": {},
+    "Auction": {},
+    "Governance": {},
+    "DebtAllocator": {},
+    "AccountantFactory": {},
+    "RoleManager": {},
+    "CommonReportTrigger": {},
+    "Registry": {},
+    "Clonable": {},
+    "Yearn4626Router": {
+      "Multicall": {},
+      "PeripheryPayments": {},
+      "SelfPermit": {},
+      "Yearn4626Router": {},
+      "Yearn4626RouterBase": {}
+    }
+  }
+}

@@ -58,7 +58,7 @@ Versioning has changed. Because Yearn supports multiple products with their own 
 ```
 
 docs/developers/smart-contracts
-                    |---- V3 Current (v3.x.x)
+                    |---- V3 (Current) 
                     |           |--- contract 1 
                     |           |--- contract 2
                     |           |--- contract n... 
@@ -73,7 +73,7 @@ docs/developers/smart-contracts
                     |                |--- contract 2
                     |                |--- contract n... 
                     |           
-                    |---- V2 Current (v0.4.6)
+                    |---- V2 (Current) 
                     |           |--- contract 1 
                     |           |--- contract 2
                     |           |--- contract n... 
@@ -94,7 +94,7 @@ docs/developers/smart-contracts
 
 #### Dependencies
 
-- Clone [yearn/yearn-vaults](https://github.com/yearn/yearn-vaults) in the same folder where you cloned yearn-devdocs (not inside devdocs, but besides it)
+- Clone the V2 vaults repository: [yearn/yearn-vaults](https://github.com/yearn/yearn-vaults) in the same folder where you cloned yearn-devdocs (not inside devdocs, but besides it)
 - Run the yearn-vaults [installation](https://github.com/yearn/yearn-vaults#installation), you will need to have brownie installed to run it once so it installs the required dependencies.
 - Check the vyper compiler version on the vaults repo ([here](https://github.com/yearn/yearn-vaults/blob/master/contracts/Vault.vy#L1)) and update the `~/.vvm/vyper-X.X.X` in the end of the first command below.
 - Make sure [Vault.vy](https://github.com/yearn/yearn-vaults/blob/master/contracts/Vault.vy#L1) and [Registry.vy](https://github.com/yearn/yearn-vaults/blob/master/contracts/Registry.vy#L1) on `yearn-vaults` folder has the same compiler version on their first line. If not, bump the file with the lowest version to the current version the other uses.
@@ -115,11 +115,68 @@ To generate API documentation and coin a new release, do the following.
 ```
 
 npx vydoc -i ../yearn-vaults/contracts/ -o ./vaults/smart-contracts -t ./templates/contract.ejs -c ~/.vvm/vyper-0.3.3
-npx solidity-docgen@0.5.17 --solc-module solc --templates=templates --helpers=helpers/solidityHelpers.js -i ../yearn-vaults/contracts/ -o ./docs/developers/smart-contracts/V2
+npx solidity-docgen@0.5.17 --solc-module solc --templates=templates --helpers=helpers/solidityHelpers.js -i ../yearn-vaults/contracts/ -o ./docs/developers/smart-contracts/v2
 npm run docusaurus docs:version 0.4.5
 ```
 
 If you are developing in Solidity and Foundry you can use `[forge-doc](https://book.getfoundry.sh/reference/forge/forge-doc)`
+
+### Generating V3 Smart Contract Documentation
+
+create virtual environment and initialize
+
+install correct python
+
+script outline
+
+prompt for new version number.
+
+get names of existing v3 files in current `docs/developers/smart-contracts/V3` directory:
+
+```bash
+find docs/developers/smart-contracts/V3 -type f \
+  -not -path "*/deprecated/*" \
+  -not -name "index.md" \
+  -print | sed 's/\.md$//' | awk -F/ '{print $NF}' > v3SmartContracts.txt
+```
+
+create a new folder for the old version docs in `docs/developers/smart-contracts/V3/deprecated/` with the old version number (i.e. `version-3.0.1`) and copy current files into it.
+
+``` bash
+mkdir docs/developers/smart-contracts/V3/deprecated/version-#.#.#
+rsync -av --remove-source-files --exclude 'deprecated' --exclude 'index.md' docs/developers/smart-contracts/V3/ docs/developers/smart-contracts/V3/deprecated/version-#.#.#/
+```
+
+rewrite index.md file in current file with new version number.
+
+```markdown
+# V3 yVault Smart Contracts
+
+:::info
+
+**Current v3 yVault API version is ${version-number}**
+
+older versions will be located in the "deprecated" Folder if they exist.
+
+:::
+
+<!-- mdx code block -->
+import DocCardList from '@theme/DocCardList';
+
+<DocCardList />
+<!-- mdx code block -->
+```
+
+create vyper docs
+NOTE: your vyper version must match the smart contracts.
+
+```bash
+npx vydoc \
+  -i ../yearn-vaults-v3/contracts/ \
+  -o ./docs/developers/smart-contracts/v3/ \
+  -t ./templates/contract.ejs \
+  -c $(which vyper)
+```
 
 ### Custom Elements
 
