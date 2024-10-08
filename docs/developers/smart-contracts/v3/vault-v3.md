@@ -110,7 +110,7 @@ function set_auto_allocate(bool)
 
 Set new value for `auto_allocate`
 
-*If `True` every {deposit} and {mint} call will try and allocate the deposited amount to the strategy at position 0 of the `default_queue` atomically. NOTE: An empty `default_queue` will cause deposits to fail.*
+*If `True` every `deposit` and `mint` call will try and allocate the deposited amount to the strategy at position 0 of the `default_queue` atomically. NOTE: An empty `default_queue` will cause deposits to fail.*
 
 #### Parameters
 

@@ -1,7 +1,24 @@
+<% 
+function extractParamTypes(methodName) {
+  const paramTypes = {};
+  const match = methodName.match(/\(([^)]+)\)/);
+  if (match) {
+    const params = match[1].split(',');
+    params.forEach((param, index) => {
+      const [type, name] = param.trim().split(' ');
+      paramTypes[name || `param${index + 1}`] = type;
+    });
+  }
+  return paramTypes;
+}
+%>
 # <%= fileName %>
+vyper: `<%- data.compilerVersion %>`
+<%- data.author ? `author: \`${data.author}\`` : '' %>
+<%- data.license ? `license: \`${data.license}\`` : '' %>
 
 <% if (data.title) { %>
-**<%- data.title %>**
+## <%- data.title %>**
 <% } %>
 
 <% if (data.details) { %>
@@ -15,44 +32,58 @@
 ## Functions
 
 <% for (const [methodName, method] of Object.entries(data.methods)) { %>
-
+    <% console.log(method.returns); %>
+<% const paramTypes = extractParamTypes(methodName); %>
 ### <%= methodName.replace(/\(.*/, '') %>
-```solidity
-function <%= methodName %>
-```
-
 <% if (method.notice) { %>
 <%= method.notice %>    
 <% } %>
 <% if (method.details) { %>
 *<%= method.details %>*
 <% } %>
+```solidity
+function <%= methodName %>
+```
 <% if (method.params) { %>
 #### Parameters:
+
 | Name                           | Type          | Description                                    |
-| :----------------------------- | :------------ | :--------------------------------------------- |
-<% for (const [field, description, type] of Object.entries(method.params)) { -%>
-|  * <%- field %> * |  * <%- type %> * |  * <%- description %> * |
+| :----------------------------- | :------------ | :--------------------------------------------- |<%
+  const paramNames = Object.keys(method.params);
+  const paramDescriptions = Object.values(method.params);
+  const paramTypeKeys = Object.keys(paramTypes);
+  const paramTypeValues = Object.values(paramTypes);
+  for (let i = 0; i < paramNames.length; i++) {
+    const name = paramNames[i];
+    const description = paramDescriptions[i];
+    const type = paramTypes[paramTypeKeys[i]] || 'unknown';
+%>
+| <%= name %> | <%= type %> | <%= description %> |<% } %>
 <% } %>
-<% } %>
-<% if (method.returns) { %>
+
+<% if (method.returns && method.returns.length > 0) { %>
 #### Return Values:
-| Description                                                                  |
-| :--------------------------------------------------------------------------- |
-<% for (const [_, description] of Object.entries(method.returns)) { -%>
-|  * <%- description %> * |
+
+| Name | Type | Description |
+|------|------|-------------|<% method.returns.forEach(function(ret) { %>
+| <%= ret.name %> | <%= ret.type %> | <%= ret.description %> |
+<% }); %>
 <% } %>
 <% } %>
-
-
-<% } %>
-
 
 <% if (data.events.length > 0) { %>
 ## Events
-<% } %>
 <% for (let event of data.events) { %>
-**<%= event.name %>**
-
-<%= event.inputs.map(i => `* \`${i.name}\` : ${i.type}, *${i.indexed ? 'indexed': 'notIndexed'}*`).join('\n') %>
+### <%= event.name %>   
+| Name | Type | Indexed? |
+|------|------|----------| 
+<% for (let input of event.inputs) { %> | <%= input.name %> | <%= input.type %> | <%= input.indexed ? 'Yes' : 'No' %> |
 <% } %>
+<% } %>
+<% } %>
+
+
+<!-- ## ABI
+```json
+<%- data.abi %>
+``` -->
