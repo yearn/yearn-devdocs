@@ -1,4 +1,11 @@
 {
+  "Submodules": [
+    "https://github.com/yearn/yearn-vaults-v3.git",
+    "https://github.com/yearn/tokenized-strategy.git",
+    "https://github.com/yearn/tokenized-strategy-periphery.git",
+    "https://github.com/yearn/vault-periphery.git",
+    "https://github.com/yearn/Yearn-ERC4626-Router.git"
+  ],
   "BaseStrategy": {
     "type": "file",
     "git": "https://github.com/yearn/tokenized-strategy",

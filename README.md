@@ -114,8 +114,8 @@ To generate API documentation and coin a new release, do the following.
 
 ```
 
-npx vydoc -i ../yearn-vaults/contracts/ -o ./vaults/smart-contracts -t ./templates/contract.ejs -c ~/.vvm/vyper-0.3.3
-npx solidity-docgen@0.5.17 --solc-module solc --templates=templates --helpers=helpers/solidityHelpers.js -i ../yearn-vaults/contracts/ -o ./docs/developers/smart-contracts/v2
+npx vydoc -i ../yearn-vaults/contracts/ -o ./vaults/smart-contracts -t ./natspec/contract.ejs -c ~/.vvm/vyper-0.3.3
+npx solidity-docgen@0.5.17 --solc-module solc --templates=natspec --helpers=helpers/solidityHelpers.js -i ../yearn-vaults/contracts/ -o ./docs/developers/smart-contracts/v2
 npm run docusaurus docs:version 0.4.5
 ```
 
@@ -151,19 +151,14 @@ prompt for new version number.
 
 get names of existing v3 files in current `docs/developers/smart-contracts/V3` directory:
 
-```bash
-find docs/developers/smart-contracts/V3 -type f \
-  -not -path "*/deprecated/*" \
-  -not -name "index.md" \
-  -print | sed 's/\.md$//' | awk -F/ '{print $NF}' > v3SmartContracts.txt
-```
-
 create a new folder for the old version docs in `docs/developers/smart-contracts/V3/deprecated/` with the old version number (i.e. `version-3.0.1`) and copy current files into it.
 
 ``` bash
 mkdir docs/developers/smart-contracts/V3/deprecated/version-#.#.#
 rsync -av --remove-source-files --exclude 'deprecated' --exclude 'index.md' docs/developers/smart-contracts/V3/ docs/developers/smart-contracts/V3/deprecated/version-#.#.#/
 ```
+
+---
 
 rewrite index.md file in current file with new version number.
 
@@ -185,6 +180,8 @@ import DocCardList from '@theme/DocCardList';
 <!-- mdx code block -->
 ```
 
+---
+
 create vyper docs
 NOTE: your vyper version must match the smart contracts's version.
 NOTE: your solc version must match the smart contract's version. run `solc-select use <version> --always-install`
@@ -193,7 +190,7 @@ NOTE: your solc version must match the smart contract's version. run `solc-selec
 npx vydoc \
   -i ../yearn-vaults-v3/contracts/ \
   -o ./docs/developers/smart-contracts/v3/ \
-  -t ./templates/contract.ejs \
+  -t ./natspec/contract.ejs \
   -vc $(which vyper) \
   -sc $(which solc)
 ```
@@ -201,8 +198,8 @@ npx vydoc \
 ```bash
 npx vydoc \
   -i ../yearn-vaults-v3/contracts/ \
-  -o ./templates/temp \
-  -t ./templates/contract.ejs \
+  -o ./natspec/temp \
+  -t ./natspec/contract.ejs \
   -vc $(which vyper) 
   -sc $(which solc) \
 ```

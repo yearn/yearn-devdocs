@@ -1,15 +1,15 @@
-[submodule "/home/ross/code/yearn/yearn-devdocs/natspec/lib/yearn-vaults-v3"]
-	path = /home/ross/code/yearn/yearn-devdocs/natspec/lib/yearn-vaults-v3
+[submodule "natspec/lib/yearn-vaults-v3"]
+	path = natspec/lib/yearn-vaults-v3
 	url = https://github.com/yearn/yearn-vaults-v3.git
-[submodule "/home/ross/code/yearn/yearn-devdocs/natspec/lib/tokenized-strategy"]
-	path = /home/ross/code/yearn/yearn-devdocs/natspec/lib/tokenized-strategy
+[submodule "natspec/lib/tokenized-strategy"]
+	path = natspec/lib/tokenized-strategy
 	url = https://github.com/yearn/tokenized-strategy.git
-[submodule "/home/ross/code/yearn/yearn-devdocs/natspec/lib/tokenized-strategy-periphery"]
-	path = /home/ross/code/yearn/yearn-devdocs/natspec/lib/tokenized-strategy-periphery
+[submodule "natspec/lib/tokenized-strategy-periphery"]
+	path = natspec/lib/tokenized-strategy-periphery
 	url = https://github.com/yearn/tokenized-strategy-periphery.git
-[submodule "/home/ross/code/yearn/yearn-devdocs/natspec/lib/vault-periphery"]
-	path = /home/ross/code/yearn/yearn-devdocs/natspec/lib/vault-periphery
+[submodule "natspec/lib/vault-periphery"]
+	path = natspec/lib/vault-periphery
 	url = https://github.com/yearn/vault-periphery.git
-[submodule "/home/ross/code/yearn/yearn-devdocs/natspec/lib/Yearn-ERC4626-Router"]
-	path = /home/ross/code/yearn/yearn-devdocs/natspec/lib/Yearn-ERC4626-Router
+[submodule "natspec/lib/Yearn-ERC4626-Router"]
+	path = natspec/lib/Yearn-ERC4626-Router
 	url = https://github.com/yearn/Yearn-ERC4626-Router.git
