@@ -1,28 +1,122 @@
 {
-  "BaseStrategy": {},
-  "TokenizedStrategy": {},
-  "VaultFactory": {},
-  "VaultV3": {},
+  "BaseStrategy": {
+    "type": "file",
+    "git": "https://github.com/yearn/tokenized-strategy",
+    "repoLocation": "placeholder"
+  },
+  "TokenizedStrategy": {
+    "type": "file",
+    "git": "https://github.com/yearn/tokenized-strategy",
+    "repoLocation": "placeholder"
+  },
+  "VaultFactory": {
+    "type": "file",
+    "git": "https://github.com/yearn/yearn-vaults-v3",
+    "repoLocation": "placeholder"
+  },
+  "VaultV3": {
+    "type": "file",
+    "git": "https://github.com/yearn/yearn-vaults-v3",
+    "repoLocation": "placeholder"
+  },
   "Periphery": {
-    "AprOracle": {},
-    "Accountant": {},
-    "RegistryFactory": {},
-    "Governance2Step": {},
-    "ReleaseRegistry": {},
-    "Auction": {},
-    "Governance": {},
-    "DebtAllocator": {},
-    "AccountantFactory": {},
-    "RoleManager": {},
-    "CommonReportTrigger": {},
-    "Registry": {},
-    "Clonable": {},
-    "Yearn4626Router": {
-      "Multicall": {},
-      "PeripheryPayments": {},
-      "SelfPermit": {},
-      "Yearn4626Router": {},
-      "Yearn4626RouterBase": {}
+    "type": "folder",
+    "contents": {
+      "AprOracle": {
+        "type": "file",
+        "git": "https://github.com/yearn/tokenized-strategy-periphery",
+        "repoLocation": "placeholder"
+      },
+      "Accountant": {
+        "type": "file",
+        "git": "https://github.com/yearn/vault-periphery",
+        "repoLocation": "placeholder"
+      },
+      "AccountantFactory": {
+        "type": "file",
+        "git": "https://github.com/yearn/vault-periphery",
+        "repoLocation": "placeholder"
+      },
+      "Registry": {
+        "type": "file",
+        "git": "https://github.com/yearn/vault-periphery",
+        "repoLocation": "placeholder"
+      },
+      "ReleaseRegistry": {
+        "type": "file",
+        "git": "https://github.com/yearn/vault-periphery",
+        "repoLocation": "placeholder"
+      },
+      "RegistryFactory": {
+        "type": "file",
+        "git": "https://github.com/yearn/vault-periphery",
+        "repoLocation": "placeholder"
+      },
+      "Governance": {
+        "type": "file",
+        "git": "https://github.com/yearn/tokenized-strategy-periphery",
+        "repoLocation": "placeholder"
+      },
+      "Governance2Step": {
+        "type": "file",
+        "git": "https://github.com/yearn/tokenized-strategy-periphery",
+        "repoLocation": "placeholder"
+      },
+      "Auction": {
+        "type": "file",
+        "git": "https://github.com/yearn/tokenized-strategy-periphery",
+        "repoLocation": "placeholder"
+      },
+      "DebtAllocator": {
+        "type": "file",
+        "git": "https://github.com/yearn/vault-periphery",
+        "repoLocation": "placeholder"
+      },
+      "RoleManager": {
+        "type": "file",
+        "git": "https://github.com/yearn/vault-periphery",
+        "repoLocation": "placeholder"
+      },
+      "CommonReportTrigger": {
+        "type": "file",
+        "git": "https://github.com/yearn/tokenized-strategy-periphery",
+        "repoLocation": "placeholder"
+      },
+      "Clonable": {
+        "type": "file",
+        "git": "https://github.com/yearn/tokenized-strategy-periphery",
+        "repoLocation": "placeholder"
+      },
+      "Yearn4626Router": {
+        "type": "folder",
+        "contents": {
+          "Multicall": {
+            "type": "file",
+            "git": "https://github.com/yearn/Yearn-ERC4626-Router",
+            "repoLocation": "placeholder"
+          },
+          "PeripheryPayments": {
+            "type": "file",
+            "git": "https://github.com/yearn/Yearn-ERC4626-Router",
+            "repoLocation": "placeholder"
+          },
+          "SelfPermit": {
+            "type": "file",
+            "git": "https://github.com/yearn/Yearn-ERC4626-Router",
+            "repoLocation": "placeholder"
+          },
+          "Yearn4626Router": {
+            "type": "file",
+            "git": "https://github.com/yearn/Yearn-ERC4626-Router",
+            "repoLocation": "placeholder"
+          },
+          "Yearn4626RouterBase": {
+            "type": "file",
+            "git": "https://github.com/yearn/Yearn-ERC4626-Router",
+            "repoLocation": "placeholder"
+          }
+        }
+      }
     }
   }
 }

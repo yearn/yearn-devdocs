@@ -94,7 +94,7 @@ docs/developers/smart-contracts
 
 #### Dependencies
 
-- Clone the V2 vaults repository: [yearn/yearn-vaults](https://github.com/yearn/yearn-vaults) in the same folder where you cloned yearn-devdocs (not inside devdocs, but besides it)
+- Clone the V2 vaults repository: [yearn/yearn-vaults](https://github.com/yearn/yearn-vaults) in the same folder where you cloned yearn-devdocs (not inside devdocs, but beside it)
 - Run the yearn-vaults [installation](https://github.com/yearn/yearn-vaults#installation), you will need to have brownie installed to run it once so it installs the required dependencies.
 - Check the vyper compiler version on the vaults repo ([here](https://github.com/yearn/yearn-vaults/blob/master/contracts/Vault.vy#L1)) and update the `~/.vvm/vyper-X.X.X` in the end of the first command below.
 - Make sure [Vault.vy](https://github.com/yearn/yearn-vaults/blob/master/contracts/Vault.vy#L1) and [Registry.vy](https://github.com/yearn/yearn-vaults/blob/master/contracts/Registry.vy#L1) on `yearn-vaults` folder has the same compiler version on their first line. If not, bump the file with the lowest version to the current version the other uses.
@@ -123,11 +123,29 @@ If you are developing in Solidity and Foundry you can use `[forge-doc](https://b
 
 ### Generating V3 Smart Contract Documentation
 
-create virtual environment and initialize
+- Clone and install relevant repos outside of the devdocs project folder. Ideally these folders live at the same level as the devdocs folder.
 
-install correct python
+  - [yearn/yearn-vaults-v3](https://github.com/yearn/yearn-vaults-v3/tree/master)
+  - [yearn/vault-periphery](https://github.com/yearn/vault-periphery)
+  - [yearn/tokenized-strategy](https://github.com/yearn/tokenized-strategy/tree/master)
+  - [yearn/tokenized-strategy-periphery](https://github.com/yearn/tokenized-strategy-periphery/tree/master)
+  - [yearn/yearn-ERC4626-Router](https://github.com/yearn/Yearn-ERC4626-Router)
+  
+  ``` title="Folder Structure"
+    |---- Parent Directory 
+              |--- DevDocs Folder 
+              |--- yearn-vaults-v3 Folder 
+              |--- vault-periphery Folder
+              |--- tokenized-strategy Folder
+              |--- tokenized-strategy-periphery Folder
+              |--- yearn-ERC4626-Router Folder
+  ```
 
-script outline
+- create virtual environment and initialize
+
+- install correct python and vyper
+
+### script outline
 
 prompt for new version number.
 
@@ -168,15 +186,30 @@ import DocCardList from '@theme/DocCardList';
 ```
 
 create vyper docs
-NOTE: your vyper version must match the smart contracts.
+NOTE: your vyper version must match the smart contracts's version.
+NOTE: your solc version must match the smart contract's version. run `solc-select use <version> --always-install`
 
 ```bash
 npx vydoc \
   -i ../yearn-vaults-v3/contracts/ \
   -o ./docs/developers/smart-contracts/v3/ \
   -t ./templates/contract.ejs \
-  -c $(which vyper)
+  -vc $(which vyper) \
+  -sc $(which solc)
 ```
+
+```bash
+npx vydoc \
+  -i ../yearn-vaults-v3/contracts/ \
+  -o ./templates/temp \
+  -t ./templates/contract.ejs \
+  -vc $(which vyper) 
+  -sc $(which solc) \
+```
+
+Some cleanup will be required. The easiest way to do this is (in VSCode) to hover over on items flagged by the [markdownlint plugin](https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint) and select "quick fix" and then "fix all supported markdownlint violations in the document".
+
+You may still get build errors if there are characters in the natspec that MDX v3 doesn't like (like {} and <>). These will need to be removed manually or escaped out of using the '\' character. More info [here](https://docusaurus.io/docs/markdown-features/react#markdown-and-jsx-interoperability)
 
 ### Custom Elements
 

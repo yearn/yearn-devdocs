@@ -11,7 +11,7 @@ function extractParamTypes(methodName) {
   }
   return paramTypes;
 }
-%>
+%><!-- markdownlint-disable MD024 -->
 # <%= fileName %>
 vyper: `<%- data.compilerVersion %>`
 <%- data.author ? `author: \`${data.author}\`` : '' %>
@@ -32,7 +32,6 @@ vyper: `<%- data.compilerVersion %>`
 ## Functions
 
 <% for (const [methodName, method] of Object.entries(data.methods)) { %>
-    <% console.log(method.returns); %>
 <% const paramTypes = extractParamTypes(methodName); %>
 ### <%= methodName.replace(/\(.*/, '') %>
 <% if (method.notice) { %>
@@ -81,9 +80,3 @@ function <%= methodName %>
 <% } %>
 <% } %>
 <% } %>
-
-
-<!-- ## ABI
-```json
-<%- data.abi %>
-``` -->
