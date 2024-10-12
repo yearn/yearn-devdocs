@@ -200,8 +200,7 @@ npx vydoc \
   -i ../yearn-vaults-v3/contracts/ \
   -o ./natspec/temp \
   -t ./natspec/contract.ejs \
-  -vc $(which vyper) 
-  -sc $(which solc) \
+  -c $(which vyper) 
 ```
 
 Some cleanup will be required. The easiest way to do this is (in VSCode) to hover over on items flagged by the [markdownlint plugin](https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint) and select "quick fix" and then "fix all supported markdownlint violations in the document".

@@ -1,7 +1,6 @@
 {
   "name": "yearn-devdocs",
   "version": "0.4.3",
-  "type": "module",
   "scripts": {
     "docusaurus": "docusaurus",
     "get-branch-name": "git rev-parse --abbrev-ref HEAD > .branch-name",
@@ -18,7 +17,8 @@
     "make-vyper-doc": "vydoc -i ../yearn-vaults/contracts/ -o docs/v2/smart-contracts -t ./templates/contract.ejs",
     "vydoc": "npx vydoc   -i ../yearn-vaults-v3/contracts/   -o ./templates/temp   -t ./templates/contract.ejs   -c $(which vyper)",
     "gitmodule-clean": "node natspec/scripts/gitmodule-clean.js",
-    "gitmodule-install": "node natspec/scripts/gitmodule-install.js"
+    "gitmodule-install": "node natspec/scripts/gitmodule-install.js",
+    "docs-forge": "node natspec/scripts/natspec-generate.js"
   },
   "dependencies": {
     "@docusaurus/core": "3.5.2",
@@ -56,6 +56,7 @@
     "ava": "3.15.0",
     "glob": "7.1.6",
     "glob-promise": "4.1.0",
+    "markdownlint-cli": "^0.42.0",
     "ts-node": "9.1.1",
     "typescript": "5.4.5",
     "vydoc": "git+https://github.com/rossgalloway/vydoc.git"

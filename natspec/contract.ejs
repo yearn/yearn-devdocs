@@ -11,7 +11,7 @@ function extractParamTypes(methodName) {
   }
   return paramTypes;
 }
-%><!-- markdownlint-disable MD024 -->
+%>
 # <%= fileName %>
 vyper: `<%- data.compilerVersion %>`
 <%- data.author ? `author: \`${data.author}\`` : '' %>
@@ -76,7 +76,7 @@ function <%= methodName %>
 ### <%= event.name %>   
 | Name | Type | Indexed? |
 |------|------|----------| 
-<% for (let input of event.inputs) { %> | <%= input.name %> | <%= input.type %> | <%= input.indexed ? 'Yes' : 'No' %> |
+<% for (let input of event.inputs) { %>| <%= input.name %> | <%= input.type %> | <%= input.indexed ? 'Yes' : 'No' %> |
 <% } %>
 <% } %>
 <% } %>

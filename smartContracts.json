@@ -6,121 +6,123 @@
     "https://github.com/yearn/vault-periphery.git",
     "https://github.com/yearn/Yearn-ERC4626-Router.git"
   ],
-  "BaseStrategy": {
-    "type": "file",
-    "git": "https://github.com/yearn/tokenized-strategy",
-    "repoLocation": "placeholder"
-  },
-  "TokenizedStrategy": {
-    "type": "file",
-    "git": "https://github.com/yearn/tokenized-strategy",
-    "repoLocation": "placeholder"
-  },
-  "VaultFactory": {
-    "type": "file",
-    "git": "https://github.com/yearn/yearn-vaults-v3",
-    "repoLocation": "placeholder"
-  },
-  "VaultV3": {
-    "type": "file",
-    "git": "https://github.com/yearn/yearn-vaults-v3",
-    "repoLocation": "placeholder"
-  },
-  "Periphery": {
-    "type": "folder",
-    "contents": {
-      "AprOracle": {
-        "type": "file",
-        "git": "https://github.com/yearn/tokenized-strategy-periphery",
-        "repoLocation": "placeholder"
-      },
-      "Accountant": {
-        "type": "file",
-        "git": "https://github.com/yearn/vault-periphery",
-        "repoLocation": "placeholder"
-      },
-      "AccountantFactory": {
-        "type": "file",
-        "git": "https://github.com/yearn/vault-periphery",
-        "repoLocation": "placeholder"
-      },
-      "Registry": {
-        "type": "file",
-        "git": "https://github.com/yearn/vault-periphery",
-        "repoLocation": "placeholder"
-      },
-      "ReleaseRegistry": {
-        "type": "file",
-        "git": "https://github.com/yearn/vault-periphery",
-        "repoLocation": "placeholder"
-      },
-      "RegistryFactory": {
-        "type": "file",
-        "git": "https://github.com/yearn/vault-periphery",
-        "repoLocation": "placeholder"
-      },
-      "Governance": {
-        "type": "file",
-        "git": "https://github.com/yearn/tokenized-strategy-periphery",
-        "repoLocation": "placeholder"
-      },
-      "Governance2Step": {
-        "type": "file",
-        "git": "https://github.com/yearn/tokenized-strategy-periphery",
-        "repoLocation": "placeholder"
-      },
-      "Auction": {
-        "type": "file",
-        "git": "https://github.com/yearn/tokenized-strategy-periphery",
-        "repoLocation": "placeholder"
-      },
-      "DebtAllocator": {
-        "type": "file",
-        "git": "https://github.com/yearn/vault-periphery",
-        "repoLocation": "placeholder"
-      },
-      "RoleManager": {
-        "type": "file",
-        "git": "https://github.com/yearn/vault-periphery",
-        "repoLocation": "placeholder"
-      },
-      "CommonReportTrigger": {
-        "type": "file",
-        "git": "https://github.com/yearn/tokenized-strategy-periphery",
-        "repoLocation": "placeholder"
-      },
-      "Clonable": {
-        "type": "file",
-        "git": "https://github.com/yearn/tokenized-strategy-periphery",
-        "repoLocation": "placeholder"
-      },
-      "Yearn4626Router": {
-        "type": "folder",
-        "contents": {
-          "Multicall": {
-            "type": "file",
-            "git": "https://github.com/yearn/Yearn-ERC4626-Router",
-            "repoLocation": "placeholder"
-          },
-          "PeripheryPayments": {
-            "type": "file",
-            "git": "https://github.com/yearn/Yearn-ERC4626-Router",
-            "repoLocation": "placeholder"
-          },
-          "SelfPermit": {
-            "type": "file",
-            "git": "https://github.com/yearn/Yearn-ERC4626-Router",
-            "repoLocation": "placeholder"
-          },
-          "Yearn4626Router": {
-            "type": "file",
-            "git": "https://github.com/yearn/Yearn-ERC4626-Router",
-            "repoLocation": "placeholder"
-          },
-          "Yearn4626RouterBase": {
-            "type": "file",
-            "git": "https://github.com/yearn/Yearn-ERC4626-Router",
-            "repoLocation": "placeholder"
+  "v3-contracts": {
+    "BaseStrategy.sol": {
+      "type": "file",
+      "git": "https://github.com/yearn/tokenized-strategy",
+      "repoLocation": "placeholder"
+    },
+    "TokenizedStrategy.sol": {
+      "type": "file",
+      "git": "https://github.com/yearn/tokenized-strategy",
+      "repoLocation": "placeholder"
+    },
+    "VaultFactory.vy": {
+      "type": "file",
+      "git": "https://github.com/yearn/yearn-vaults-v3",
+      "repoLocation": "placeholder"
+    },
+    "VaultV3.vy": {
+      "type": "file",
+      "git": "https://github.com/yearn/yearn-vaults-v3",
+      "repoLocation": "placeholder"
+    },
+    "Periphery": {
+      "type": "folder",
+      "contents": {
+        "AprOracle.sol": {
+          "type": "file",
+          "git": "https://github.com/yearn/tokenized-strategy-periphery",
+          "repoLocation": "placeholder"
+        },
+        "Accountant.sol": {
+          "type": "file",
+          "git": "https://github.com/yearn/vault-periphery",
+          "repoLocation": "placeholder"
+        },
+        "AccountantFactory.sol": {
+          "type": "file",
+          "git": "https://github.com/yearn/vault-periphery",
+          "repoLocation": "placeholder"
+        },
+        "Registry.sol": {
+          "type": "file",
+          "git": "https://github.com/yearn/vault-periphery",
+          "repoLocation": "placeholder"
+        },
+        "ReleaseRegistry.sol": {
+          "type": "file",
+          "git": "https://github.com/yearn/vault-periphery",
+          "repoLocation": "placeholder"
+        },
+        "RegistryFactory.sol": {
+          "type": "file",
+          "git": "https://github.com/yearn/vault-periphery",
+          "repoLocation": "placeholder"
+        },
+        "Governance.sol": {
+          "type": "file",
+          "git": "https://github.com/yearn/tokenized-strategy-periphery",
+          "repoLocation": "placeholder"
+        },
+        "Governance2Step.sol": {
+          "type": "file",
+          "git": "https://github.com/yearn/tokenized-strategy-periphery",
+          "repoLocation": "placeholder"
+        },
+        "Auction.sol": {
+          "type": "file",
+          "git": "https://github.com/yearn/tokenized-strategy-periphery",
+          "repoLocation": "placeholder"
+        },
+        "DebtAllocator.sol": {
+          "type": "file",
+          "git": "https://github.com/yearn/vault-periphery",
+          "repoLocation": "placeholder"
+        },
+        "RoleManager.sol": {
+          "type": "file",
+          "git": "https://github.com/yearn/vault-periphery",
+          "repoLocation": "placeholder"
+        },
+        "CommonReportTrigger.sol": {
+          "type": "file",
+          "git": "https://github.com/yearn/tokenized-strategy-periphery",
+          "repoLocation": "placeholder"
+        },
+        "Clonable.sol": {
+          "type": "file",
+          "git": "https://github.com/yearn/tokenized-strategy-periphery",
+          "repoLocation": "placeholder"
+        },
+        "Yearn4626Router": {
+          "type": "folder",
+          "contents": {
+            "Multicall.sol": {
+              "type": "file",
+              "git": "https://github.com/yearn/Yearn-ERC4626-Router",
+              "repoLocation": "placeholder"
+            },
+            "PeripheryPayments.sol": {
+              "type": "file",
+              "git": "https://github.com/yearn/Yearn-ERC4626-Router",
+              "repoLocation": "placeholder"
+            },
+            "SelfPermit.sol": {
+              "type": "file",
+              "git": "https://github.com/yearn/Yearn-ERC4626-Router",
+              "repoLocation": "placeholder"
+            },
+            "Yearn4626Router.sol": {
+              "type": "file",
+              "git": "https://github.com/yearn/Yearn-ERC4626-Router",
+              "repoLocation": "placeholder"
+            },
+            "Yearn4626RouterBase.sol": {
+              "type": "file",
+              "git": "https://github.com/yearn/Yearn-ERC4626-Router",
+              "repoLocation": "placeholder"
+            }
           }
         }
       }
