@@ -301,16 +301,16 @@ function main() {
       lintMarkdownFiles(outputBaseDir)
       // Update the version number in index.md
       updateVersionInIndex(indexFilePath, newVersion)
-      console.log(`Updated version to: ${newVersion}`)
+      console.log(`Updated version to: ${newVersion}\n`)
+      console.log(
+        `New natspec docs for Yearn Vaults v3 version ${newVersion} generated successfully and saved to ${outputBaseDir}.`
+      )
     } catch (error) {
-      console.error('Error:', error)
+      console.error('Script Error:', error)
       revertChanges(outputBaseDir, tempFolder, currentVersion)
     } finally {
       rl.close()
       cleanUpTempFolder(tempFolder)
-      console.log(
-        `New natspec docs for Yearn Vaults v3 version ${newVersion} generated successfully and saved to ${outputBaseDir}.`
-      )
     }
   })
 }

@@ -1,8 +1,17 @@
 # Yearn Protocol Documentation Website
 
-The yearn devdocs [website](https://docs.yearn.fi/) is built using [Docusaurus](https://docusaurus.io/), a modern static website generator.
+The Yearn Docs [website](https://docs.yearn.fi/) is built using [Docusaurus](https://docusaurus.io/), a modern static website generator.
 
 ## Installation and Setup
+
+1. Fork the yearn-devdocs repository at https://github.com/yearn/yearn-devdocs
+
+2. clone your forked repo locally. Replace `<yourUserName>` with your github user name
+
+    ```bash
+    git clone https://github.com/<yourUserName>/yearn-devdocs
+    cd yearn-devdocs
+    ```
 
 ### Install project dependencies
 
@@ -216,7 +225,19 @@ python3 -m pip install -r requirements.txt
 curl -L https://foundry.paradigm.xyz | bash
 ```
 
-To generate new documentation run the v3 documentation script. You will be prompted for a new version number.
+open a new terminal window and run
+
+```bash
+foundryup
+```
+
+then re-activate your venv
+
+```bash
+source venv/bin/activate
+```
+
+You should now be ready to generate some docs! To generate new documentation run the v3 documentation script. You will be prompted for a new version number.
 
 ```bash
 yarn v3-docs
