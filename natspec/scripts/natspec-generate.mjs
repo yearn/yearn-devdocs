@@ -283,12 +283,11 @@ function main() {
     const tempFolder = path.resolve('natspec/temp')
     const outputBaseDir = path.resolve('docs/developers/smart-contracts/v3')
     const indexFilePath = path.join(outputBaseDir, 'index.md')
+    // Extract the current version number
+    const currentVersion = extractCurrentVersion(indexFilePath)
+    console.log(`Current version: ${currentVersion}`)
 
     try {
-      // Extract the current version number
-      const currentVersion = extractCurrentVersion(indexFilePath)
-      console.log(`Current version: ${currentVersion}`)
-
       // Move files and folders to the deprecated folder
       moveToDeprecated(outputBaseDir, currentVersion)
       console.log(`Moved old natspec docs to deprecated folder`)
