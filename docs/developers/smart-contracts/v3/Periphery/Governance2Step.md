@@ -4,7 +4,7 @@
 [Git Source](https://github.com/yearn/tokenized-strategy-periphery/blob/b5038c9021e11faa494b2ff9921a2fa9566f8d8b/src/utils/Governance2Step.sol)
 
 **Inherits:**
-[Governance](/src/utils/Governance.sol/contract.Governance.md)
+[Governance](Governance)
 
 ## State Variables
 

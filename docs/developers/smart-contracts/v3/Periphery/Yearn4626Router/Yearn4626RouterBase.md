@@ -4,7 +4,7 @@
 [Git Source](https://github.com/yearn/Yearn-ERC4626-Router/blob/68165774ec8858b43db24620756402def14b7ec1/src/Yearn4626RouterBase.sol)
 
 **Inherits:**
-[IYearn4626RouterBase](/src/interfaces/IYearn4626RouterBase.sol/interface.IYearn4626RouterBase.md), [SelfPermit](/src/external/SelfPermit.sol/abstract.SelfPermit.md), [Multicall](/src/external/Multicall.sol/abstract.Multicall.md), [PeripheryPayments](/src/external/PeripheryPayments.sol/abstract.PeripheryPayments.md)
+[IYearn4626RouterBase](https://github.com/yearn/Yearn-ERC4626-Router/blob/68165774ec8858b43db24620756402def14b7ec1/src/interfaces/IYearn4626RouterBase.sol), [SelfPermit](SelfPermit.md), [Multicall](Multicall.md), [PeripheryPayments](PeripheryPayments.md)
 
 ## Functions
 

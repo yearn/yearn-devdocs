@@ -4,7 +4,7 @@
 [Git Source](https://github.com/yearn/vault-periphery/blob/b3e89555affccf471504be34eed7e87cc95d0029/src/registry/ReleaseRegistry.sol)
 
 **Inherits:**
-Governance
+[Governance](Governance)
 
 **Author:**
 yearn.finance

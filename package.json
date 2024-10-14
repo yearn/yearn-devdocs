@@ -18,7 +18,7 @@
     "vydoc": "npx vydoc   -i ../yearn-vaults-v3/contracts/   -o ./templates/temp   -t ./templates/contract.ejs   -c $(which vyper)",
     "gitmodule-clean": "node natspec/scripts/gitmodule-clean.js",
     "gitmodule-install": "node natspec/scripts/gitmodule-install.js",
-    "docs-forge": "node natspec/scripts/natspec-generate.js"
+    "v3-docs": "node natspec/scripts/natspec-generate.js"
   },
   "dependencies": {
     "@docusaurus/core": "3.5.2",

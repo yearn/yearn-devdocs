@@ -4,7 +4,7 @@
 [Git Source](https://github.com/yearn/vault-periphery/blob/b3e89555affccf471504be34eed7e87cc95d0029/src/debtAllocators/DebtAllocator.sol)
 
 **Inherits:**
-Governance
+[Governance](Governance)
 
 **Author:**
 yearn.finance
@@ -338,7 +338,7 @@ function setManager(address _address, bool _allowed) external virtual onlyGovern
 |Name|Type|Description|
 |----|----|-----------|
 |`_address`|`address`|The address to set mapping for.|
-|`_allowed`|`bool`|If the address can call [update_debt](/src/debtAllocators/DebtAllocator.sol/contract.DebtAllocator.md#update_debt).|
+|`_allowed`|`bool`|If the address can call [update_debt](#update_debt).|
 
 ### setMaxDebtUpdateLoss
 
@@ -404,7 +404,7 @@ function setKeeper(address _address, bool _allowed) external virtual onlyGoverna
 |Name|Type|Description|
 |----|----|-----------|
 |`_address`|`address`|The address to set mapping for.|
-|`_allowed`|`bool`|If the address can call [update_debt](/src/debtAllocators/DebtAllocator.sol/contract.DebtAllocator.md#update_debt).|
+|`_allowed`|`bool`|If the address can call [update_debt](#update_debt).|
 
 ### getStrategyConfig
 
