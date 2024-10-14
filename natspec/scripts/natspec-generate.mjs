@@ -1,38 +1,3 @@
-/**
- * ### script outline
-
-prompt for new version number.
-
-get names of existing v3 files in current `docs/developers/smart-contracts/V3` directory:
-
-create a new folder for the old version docs in `docs/developers/smart-contracts/V3/deprecated/` with the old version number (i.e. `version-3.0.1`) and copy current files into it.
-
-``` bash
-mkdir docs/developers/smart-contracts/V3/deprecated/version-#.#.#
-rsync -av --remove-source-files --exclude 'deprecated' --exclude 'index.md' docs/developers/smart-contracts/V3/ docs/developers/smart-contracts/V3/deprecated/version-#.#.#/
-```
-create vyper docs
-NOTE: your vyper version must match the smart contracts's version.
-NOTE: your solc version must match the smart contract's version. run `solc-select use <version> --always-install`
-
-```bash
-npx vydoc \
-  -i ../yearn-vaults-v3/contracts/ \
-  -o ./docs/developers/smart-contracts/v3/ \
-  -t ./natspec/contract.ejs \
-  -vc $(which vyper) \
-  -sc $(which solc)
-```
-
-```bash
-npx vydoc \
-  -i ../yearn-vaults-v3/contracts/ \
-  -o ./natspec/temp \
-  -t ./natspec/contract.ejs \
-  -c $(which vyper) 
-```
- */
-
 import { execSync } from 'child_process'
 import path from 'path'
 import fs from 'fs'
@@ -267,12 +232,38 @@ function lintMarkdownFiles(outputBaseDir) {
 }
 
 // Function to clean up the natspec/lib/temp folder
-function cleanUpTempFolder() {
-  const tempDir = path.resolve('natspec/lib/temp')
+function cleanUpTempFolder(tempDir) {
+  console.log(`Cleaning up ${tempDir}`)
   if (fs.existsSync(tempDir)) {
     fs.rmSync(tempDir, { recursive: true, force: true })
     console.log(`Deleted ${tempDir}`)
+  } else {
+    console.log(`${tempDir} does not exist`)
   }
+}
+
+// Function to revert changes if an error occurs
+function revertChanges(outputBaseDir, tempFolder, currentVersion) {
+  console.log('Reverting changes...')
+  // Move files back from deprecated folder
+  const deprecatedDir = path.join(
+    outputBaseDir,
+    'deprecated',
+    `version-${currentVersion}`
+  )
+  if (fs.existsSync(deprecatedDir)) {
+    const entries = fs.readdirSync(deprecatedDir)
+    for (const entry of entries) {
+      const entryPath = path.join(deprecatedDir, entry)
+      const destPath = path.join(outputBaseDir, entry)
+      fs.renameSync(entryPath, destPath)
+    }
+    fs.rmdirSync(deprecatedDir)
+  }
+  // Clean up temp folder
+  updateVersionInIndex(path.join(outputBaseDir, 'index.md'), currentVersion)
+  cleanUpTempFolder(tempFolder)
+  console.log('Changes reverted.')
 }
 
 // Main function
@@ -302,9 +293,10 @@ function main() {
       moveToDeprecated(outputBaseDir, currentVersion)
       console.log(`Moved old natspec docs to deprecated folder`)
 
-      // Continue with the rest of the script
+      // Generate docs with forge and vydoc
       generateForgeDoc()
       generateVydoc()
+      // Copy documentation files to the output directory
       copyDocs(outputBaseDir, tempFolder)
       lintMarkdownFiles(outputBaseDir)
       // Update the version number in index.md
@@ -312,9 +304,10 @@ function main() {
       console.log(`Updated version to: ${newVersion}`)
     } catch (error) {
       console.error('Error:', error)
+      revertChanges(outputBaseDir, tempFolder, currentVersion)
     } finally {
       rl.close()
-      cleanUpTempFolder()
+      cleanUpTempFolder(tempFolder)
       console.log(
         `New natspec docs for Yearn Vaults v3 version ${newVersion} generated successfully and saved to ${outputBaseDir}.`
       )
