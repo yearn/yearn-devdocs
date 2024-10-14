@@ -8,30 +8,64 @@ The yearn devdocs [website](https://docs.yearn.fi/) is built using [Docusaurus](
 
 1. Install Node dependencies
 
-  ```bash
-  yarn
-  ```
+    make sure you have the most recent lts node version installed
+
+    ```bash
+    nvm install --lts
+    ```
+
+    Then install node dependencies
+
+    ```bash
+    yarn
+    ```
 
 2. Install Python/Vyper dependencies for natspec docs generation (You can skip this step if you aren't working on smart contract documentation)
 
-Create and initialize python virtual environment
+    This assumes you are using linux and will use the apt package manager.
 
-```bash
-python3 -m venv venv
-source venv/bin/activate
-```
+    2a. update the apt package manager
 
-install requirements
+    ```bash
+    sudo apt update
+    ```
 
-```bash
-python3 -m pip install -r requirements.txt
-```
+    2b. Install Python 3
 
-Install Foundry
+    ```bash
+    sudo apt install python3
+    ```
 
-``` bash
-curl -L https://foundry.paradigm.xyz | bash
-```
+    2c. Verify the installation
+
+    ```bash
+    python3 --version
+    ```
+
+    2d. Create and initialize python virtual environment
+
+    ```bash
+    python3 -m venv venv
+    source venv/bin/activate
+    ```
+
+    2e. install requirements
+
+    ```bash
+    python3 -m pip install -r requirements.txt
+    ```
+
+    2f. Install Foundry
+
+    ``` bash
+    curl -L https://foundry.paradigm.xyz | bash
+    ```
+
+    open a new terminal window and run
+
+    ```bash
+    foundryup
+    ```
 
 ## Local Development
 
@@ -195,7 +229,7 @@ This should:
 - Add the new files to `developers/smart-contracts/v3`
 - update the index.md file to reflect the new release version.
 
-The script runs a markdown linter, so the output files should be pretty clean, but they still may need some manual adjustment. You may also still get build errors if there are characters in the natspec that MDX v3 doesn't like (like {} and <>). These will need to be removed manually or escaped out of using the '\' character. More info [here](https://docusaurus.io/docs/markdown-features/react#markdown-and-jsx-interoperability).
+The script runs a markdown linter, so the output files should be pretty clean, but they still may need some manual adjustment. You may also still get build errors if there are characters in the natspec that MDX v3 doesn't like (like {} and <>). These will need to be removed manually or escaped out of using the `\` character. More info [here](https://docusaurus.io/docs/markdown-features/react#markdown-and-jsx-interoperability).
 
 There will also probably be some broken links. These are usually from the forge doc build and will reference the structure of the forge doc output. Easiest way to find these is to do a search in VSCode. I search for `(/src/` with `developers/smart-contracts/v3/*` included and `developers/smart-contracts/v3/deprecated/*` excluded. The 2 main broken links will be:
 
