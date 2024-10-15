@@ -102,6 +102,8 @@ If you are using GitHub pages for hosting, this command is a convenient way to b
 GIT_USER=<Your GitHub username> USE_SSH=true yarn deploy
 ```
 
+---
+
 ## Contribute
 
 For detailed information on the contributing workflow, please see the [Contributing Documentation](CONTRIBUTING.md).
@@ -259,6 +261,8 @@ There will also probably be some broken links. These are usually from the forge 
 - Links to other sections in the same file. These use the hash router and usually just need everything before the hash to be removed to work. i.e. `[redeem](/src/Yearn4626Router.sol/contract.Yearn4626Router.md#migrate)` -> `[redeem](#migrate)`
 
 > **⚠️ Note to Maintainers**: Consider whether inherited contracts and interfaces that are linked in included files should be added to the included files list.
+
+---
 
 ### Custom Elements
 

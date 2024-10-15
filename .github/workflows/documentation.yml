@@ -25,6 +25,7 @@ jobs:
           npm i
           fi
           npm run build
+
   gh-release:
     if: github.event_name != 'pull_request'
     runs-on: ubuntu-latest
@@ -33,9 +34,16 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: 'v20.18.0'
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.10.15'
+
       - uses: webfactory/ssh-agent@v0.5.0
         with:
           ssh-private-key: ${{ secrets.GH_PAGES_DEPLOY }}
+
       - name: Release to GitHub Pages
         env:
           USE_SSH: true
@@ -51,6 +59,7 @@ jobs:
           npm i
           fi
           npm run deploy
+
       - name: Trigger Algolia Recrawl
         run: |
           curl -H "Content-Type: application/json" \
