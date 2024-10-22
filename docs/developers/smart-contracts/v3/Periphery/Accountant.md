@@ -1,7 +1,7 @@
-<!-- markdownlint-disable MD024 MD036 -->
+<!-- markdownlint-disable MD024 MD034 MD036 -->
 # Accountant
 
-[Git Source](https://github.com/yearn/vault-periphery/blob/b3e89555affccf471504be34eed7e87cc95d0029/src/accountants/Accountant.sol)
+[Git Source](https://github.com/yearn/vault-periphery/blob/68b201f38716a8ab5aa5cedce51a90f52c89578b/src/accountants/Accountant.sol)
 
 *Will charge fees, issue refunds, and run health check on any reported
 gains or losses during a strategy's report.*

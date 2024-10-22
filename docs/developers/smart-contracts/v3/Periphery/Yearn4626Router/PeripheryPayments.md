@@ -1,4 +1,4 @@
-<!-- markdownlint-disable MD024 MD036 -->
+<!-- markdownlint-disable MD024 MD034 MD036 -->
 # PeripheryPayments
 
 [Git Source](https://github.com/yearn/Yearn-ERC4626-Router/blob/68165774ec8858b43db24620756402def14b7ec1/src/external/PeripheryPayments.sol)

@@ -1,7 +1,7 @@
-<!-- markdownlint-disable MD024 MD036 -->
+<!-- markdownlint-disable MD024 MD034 MD036 -->
 # Governance
 
-[Git Source](https://github.com/yearn/tokenized-strategy-periphery/blob/b5038c9021e11faa494b2ff9921a2fa9566f8d8b/src/utils/Governance.sol)
+[Git Source](https://github.com/yearn/tokenized-strategy-periphery/blob/f139be6286cb3d630b0bce6d6db812c709e5bb47/src/utils/Governance.sol)
 
 ## State Variables
 

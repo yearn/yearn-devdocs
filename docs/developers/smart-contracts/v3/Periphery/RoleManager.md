@@ -1,7 +1,7 @@
-<!-- markdownlint-disable MD024 MD036 -->
+<!-- markdownlint-disable MD024 MD034 MD036 -->
 # RoleManager
 
-[Git Source](https://github.com/yearn/vault-periphery/blob/b3e89555affccf471504be34eed7e87cc95d0029/src/managers/RoleManager.sol)
+[Git Source](https://github.com/yearn/vault-periphery/blob/68b201f38716a8ab5aa5cedce51a90f52c89578b/src/managers/RoleManager.sol)
 
 **Inherits:**
 [Positions](https://github.com/yearn/Yearn-ERC4626-Router/blob/68165774ec8858b43db24620756402def14b7ec1/src/external/SelfPermit.sol)
@@ -26,7 +26,7 @@ bytes32 public constant GOVERNANCE = keccak256("Governance");
 
 ### MANAGEMENT
 
-Position ID for "brain".
+Position ID for "Brain".
 
 ```solidity
 bytes32 public constant MANAGEMENT = keccak256("Management");
@@ -34,7 +34,7 @@ bytes32 public constant MANAGEMENT = keccak256("Management");
 
 ### KEEPER
 
-Position ID for "keeper".
+Position ID for "Keeper".
 
 ```solidity
 bytes32 public constant KEEPER = keccak256("Keeper");
@@ -42,7 +42,7 @@ bytes32 public constant KEEPER = keccak256("Keeper");
 
 ### REGISTRY
 
-Position ID for the Registry.
+Position ID for the "Registry".
 
 ```solidity
 bytes32 public constant REGISTRY = keccak256("Registry");
@@ -50,7 +50,7 @@ bytes32 public constant REGISTRY = keccak256("Registry");
 
 ### ACCOUNTANT
 
-Position ID for the Accountant.
+Position ID for the "Accountant".
 
 ```solidity
 bytes32 public constant ACCOUNTANT = keccak256("Accountant");
@@ -58,7 +58,7 @@ bytes32 public constant ACCOUNTANT = keccak256("Accountant");
 
 ### DEBT_ALLOCATOR
 
-Position ID for Debt Allocator
+Position ID for the "Debt Allocator".
 
 ```solidity
 bytes32 public constant DEBT_ALLOCATOR = keccak256("Debt Allocator");
@@ -66,7 +66,7 @@ bytes32 public constant DEBT_ALLOCATOR = keccak256("Debt Allocator");
 
 ### chad
 
-Immutable address that the RoleManager position
+Immutable address that the `role_manager` position
 
 ```solidity
 address public chad;
@@ -437,7 +437,7 @@ function setPositionRoles(bytes32 _position, uint256 _newRoles) external virtual
 Setter function for updating a positions holder.
 
 *Updating `Governance` requires setting `PENDING_GOVERNANCE`
-and then the pending address calling [acceptGovernance](#acceptgovernance).*
+and then the pending address calling [acceptGovernance](/src/managers/RoleManager.sol/contract.RoleManager.md#acceptgovernance).*
 
 ```solidity
 function setPositionHolder(bytes32 _position, address _newHolder) external virtual onlyPositionHolder(GOVERNANCE);
@@ -526,6 +526,49 @@ function getVault(address _asset, string memory _apiVersion, uint256 _category)
 |Name|Type|Description|
 |----|----|-----------|
 |`<none>`|`address`|The vault for the specified `_asset`, `_apiVersion` and `_category`.|
+
+### latestVault
+
+Get the latest vault for a specific asset.
+
+*This will default to using category 1.*
+
+```solidity
+function latestVault(address _asset) external view virtual returns (address);
+```
+
+**Parameters**
+
+|Name|Type|Description|
+|----|----|-----------|
+|`_asset`|`address`|The underlying asset used.|
+
+**Returns**
+
+|Name|Type|Description|
+|----|----|-----------|
+|`<none>`|`address`|_vault latest vault for the specified `_asset` if any.|
+
+### latestVault
+
+Get the latest vault for a specific asset.
+
+```solidity
+function latestVault(address _asset, uint256 _category) public view virtual returns (address _vault);
+```
+
+**Parameters**
+
+|Name|Type|Description|
+|----|----|-----------|
+|`_asset`|`address`|The underlying asset used.|
+|`_category`|`uint256`|The category of the vault.|
+
+**Returns**
+
+|Name|Type|Description|
+|----|----|-----------|
+|`_vault`|`address`|latest vault for the specified `_asset` if any.|
 
 ### isVaultsRoleManager
 

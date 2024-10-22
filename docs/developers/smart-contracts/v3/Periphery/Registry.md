@@ -1,7 +1,7 @@
-<!-- markdownlint-disable MD024 MD036 -->
+<!-- markdownlint-disable MD024 MD034 MD036 -->
 # Registry
 
-[Git Source](https://github.com/yearn/vault-periphery/blob/b3e89555affccf471504be34eed7e87cc95d0029/src/registry/Registry.sol)
+[Git Source](https://github.com/yearn/vault-periphery/blob/68b201f38716a8ab5aa5cedce51a90f52c89578b/src/registry/Registry.sol)
 
 **Inherits:**
 [Governance](Governance)
@@ -9,7 +9,7 @@
 **Author:**
 yearn.finance
 
-Serves as an on chain registry to track any Yearn
+Serves as an on chain registry to track any Yearn V3
 vaults and strategies that a certain party wants to
 endorse.
 Can also be used to deploy new vaults of any specific
@@ -39,6 +39,12 @@ uint256 public constant SINGLE_STRATEGY_TYPE = 2;
 
 ```solidity
 string public name;
+```
+
+### legacyRegistry
+
+```solidity
+address public legacyRegistry;
 ```
 
 ### taggers
@@ -228,6 +234,26 @@ function isEndorsed(address _vault) external view virtual returns (bool);
 |Name|Type|Description|
 |----|----|-----------|
 |`<none>`|`bool`|. The vaults endorsement status.|
+
+### isLegacyVault
+
+Check if a vault is endorsed in the legacy registry.
+
+```solidity
+function isLegacyVault(address _vault) public view virtual returns (bool);
+```
+
+**Parameters**
+
+|Name|Type|Description|
+|----|----|-----------|
+|`_vault`|`address`|The vault to check.|
+
+**Returns**
+
+|Name|Type|Description|
+|----|----|-----------|
+|`<none>`|`bool`|True if the vault is endorsed in the legacy registry, false otherwise.|
 
 ### newEndorsedVault
 
@@ -468,6 +494,20 @@ function setTagger(address _account, bool _canTag) external virtual onlyGovernan
 |----|----|-----------|
 |`_account`|`address`|The address to set.|
 |`_canTag`|`bool`|Bool if the `_account` can or cannot tag.|
+
+### setLegacyRegistry
+
+Set a legacy registry if one exists.
+
+```solidity
+function setLegacyRegistry(address _legacyRegistry) external virtual onlyGovernance;
+```
+
+**Parameters**
+
+|Name|Type|Description|
+|----|----|-----------|
+|`_legacyRegistry`|`address`|The address of the legacy registry.|
 
 ## Events
 

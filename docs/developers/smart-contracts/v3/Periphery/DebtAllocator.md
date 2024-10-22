@@ -1,7 +1,7 @@
-<!-- markdownlint-disable MD024 MD036 -->
+<!-- markdownlint-disable MD024 MD034 MD036 -->
 # DebtAllocator
 
-[Git Source](https://github.com/yearn/vault-periphery/blob/b3e89555affccf471504be34eed7e87cc95d0029/src/debtAllocators/DebtAllocator.sol)
+[Git Source](https://github.com/yearn/vault-periphery/blob/68b201f38716a8ab5aa5cedce51a90f52c89578b/src/debtAllocators/DebtAllocator.sol)
 
 **Inherits:**
 [Governance](Governance)
@@ -12,6 +12,9 @@ yearn.finance
 This Debt Allocator is meant to be used alongside
 Yearn V3 vaults to provide the needed triggers for a keeper
 to perform automated debt updates for the vaults strategies.
+
+*
+
 Each vault that should be managed by this allocator will
 need to be added by first setting a `minimumChange` for the
 vault, which will act as the minimum amount of funds to move that will
@@ -20,11 +23,11 @@ trigger a debt update. Then adding each strategy by setting a
 The allocator aims to allocate debt between the strategies
 based on their set target ratios. Which are denominated in basis
 points and represent the percent of total assets that specific
-strategy should hold.
+strategy should hold (i.e 1_000 == 10% of the vaults `totalAssets`).
 The trigger will attempt to allocate up to the `maxRatio` when
 the strategy has `minimumChange` amount less than the `targetRatio`.
 And will pull funds to the `targetRatio` when it has `minimumChange`
-more than its `maxRatio`.
+more than its `maxRatio`.*
 
 ## State Variables
 
@@ -338,13 +341,13 @@ function setManager(address _address, bool _allowed) external virtual onlyGovern
 |Name|Type|Description|
 |----|----|-----------|
 |`_address`|`address`|The address to set mapping for.|
-|`_allowed`|`bool`|If the address can call [update_debt](#update_debt).|
+|`_allowed`|`bool`|If the address can call [update_debt](/src/debtAllocators/DebtAllocator.sol/contract.DebtAllocator.md#update_debt).|
 
 ### setMaxDebtUpdateLoss
 
 Set the max loss in Basis points to allow on debt updates.
 
-*Withdrawing during debt updates use `redeem` which allows for 100% loss.
+*Withdrawing during debt updates use {redeem} which allows for 100% loss.
 This can be used to assure a loss is not realized on redeem outside the tolerance.*
 
 ```solidity
@@ -404,7 +407,7 @@ function setKeeper(address _address, bool _allowed) external virtual onlyGoverna
 |Name|Type|Description|
 |----|----|-----------|
 |`_address`|`address`|The address to set mapping for.|
-|`_allowed`|`bool`|If the address can call [update_debt](#update_debt).|
+|`_allowed`|`bool`|If the address can call [update_debt](/src/debtAllocators/DebtAllocator.sol/contract.DebtAllocator.md#update_debt).|
 
 ### getStrategyConfig
 
@@ -498,7 +501,7 @@ function isPaused(address _vault) public view virtual returns (bool);
 Get a strategies target debt ratio.
 
 ```solidity
-function getStrategyTargetRatio(address _vault, address _strategy) external view virtual returns (uint256);
+function getStrategyTargetRatio(address _vault, address _strategy) public view virtual returns (uint256);
 ```
 
 **Parameters**
@@ -519,7 +522,7 @@ function getStrategyTargetRatio(address _vault, address _strategy) external view
 Get a strategies max debt ratio.
 
 ```solidity
-function getStrategyMaxRatio(address _vault, address _strategy) external view virtual returns (uint256);
+function getStrategyMaxRatio(address _vault, address _strategy) public view virtual returns (uint256);
 ```
 
 **Parameters**
@@ -679,7 +682,6 @@ struct StrategyDebtInfo {
     uint256 maxDebt;
     uint256 currentIdle;
     uint256 minIdle;
-    uint256 max;
     uint256 toChange;
 }
 ```
