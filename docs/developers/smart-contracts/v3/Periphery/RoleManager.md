@@ -437,7 +437,7 @@ function setPositionRoles(bytes32 _position, uint256 _newRoles) external virtual
 Setter function for updating a positions holder.
 
 *Updating `Governance` requires setting `PENDING_GOVERNANCE`
-and then the pending address calling [acceptGovernance](/src/managers/RoleManager.sol/contract.RoleManager.md#acceptgovernance).*
+and then the pending address calling [acceptGovernance](#acceptgovernance).*
 
 ```solidity
 function setPositionHolder(bytes32 _position, address _newHolder) external virtual onlyPositionHolder(GOVERNANCE);

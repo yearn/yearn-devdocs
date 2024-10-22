@@ -116,7 +116,10 @@ function copyDocs(outputBaseDir, tempFolder, contractsToUpdate) {
   // this could fail if there are duplicate file names in nested folders.
   function buildContractPathMap(obj, currentPath, contractsToUpdate) {
     let contractPathMap = {}
-    const baseContractNames = extractBaseContractNames(contractsToUpdate)
+    let baseContractNames = []
+    if (contractsToUpdate) {
+      baseContractNames = extractBaseContractNames(contractsToUpdate)
+    }
     for (const [key, value] of Object.entries(obj)) {
       if (value.type === 'file') {
         const contractName = key
