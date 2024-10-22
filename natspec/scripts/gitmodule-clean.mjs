@@ -13,12 +13,12 @@ async function cleanSubmodules() {
     // Remove the submodule directories from the working directory
     execSync('rm -rf natspec/lib/*', { stdio: 'inherit' })
 
-    // Remove the .gitmodules file if it exists
-    try {
-      await fs.unlink('.gitmodules')
-    } catch (err) {
-      if (err.code !== 'ENOENT') throw err
-    }
+    // // Remove the .gitmodules file if it exists
+    // try {
+    //   await fs.unlink('.gitmodules')
+    // } catch (err) {
+    //   if (err.code !== 'ENOENT') throw err
+    // }
 
     // Check if there are any submodule sections in .git/config
     try {
