@@ -26,7 +26,6 @@ Yearn has implemented a sophisticated governance and rewards system centered aro
    - [Governance Proposals](#governance-proposals)
 6. [System Parameters and Governance Adjustments](#system-parameters-and-governance-adjustments)
    - [Adjustable Parameters](#adjustable-parameters)
-   - [Future Adjustments and Immutability](#future-adjustments-and-immutability)
 7. [Liquid Lockers: An Alternative Option](#liquid-lockers-an-alternative-option)
 8. [References](#references)
 
@@ -42,7 +41,7 @@ Yearn has implemented a sophisticated governance and rewards system centered aro
 
 ### Lock Duration and veYFI Balance
 
-- **Lock Period**: Users can lock their YFI tokens for any duration up to **4 years** (208 weeks). While it's technically possible to lock for longer (up to 10 years), any period beyond 4 years is purely for the convenience of not having to re-lock and does not confer additional veYFI or benefits.
+- **Lock Period**: Users can lock their YFI tokens for any duration up to **4 years** (208 weeks). While it's technically possible to lock for longer (up to 10 years), any period beyond 4 years is purely for the convenience of not having to re-lock and does not confer additional veYFI or benefits. If you set the lock time to longer than 4 years, you can always reset it to 4 years so it starts decaying.
 - **veYFI Calculation**: The amount of veYFI received is proportional to the lock duration:
 
   $$
@@ -130,7 +129,7 @@ Boost = 10 * BoostedBalance / AmountDepositedInGauge
 
 ### Protocol Incentives
 
-- **Early Exit Penalties**: Distributed among veYFI holders, providing an incentive to maintain locks.
+- **Early Exit Penalties**: YFI paid to exit early is distributed among veYFI holders, providing an incentive to maintain locks.
 - **Forfeited dYFI Rewards**: Users not achieving max boost forfeit a portion of their dYFI rewards, which are redistributed to veYFI holders.
 
 ---
@@ -234,17 +233,6 @@ Certain aspects of the veYFI and dYFI system can be modified through governance 
   - **c (Emission Scaling)**: Adjusts the emission rate of dYFI (default: 12).
 - **Liquidity Gauges**:
   - Addresses of the YFI/ETH and dYFI/ETH liquidity gauges receiving reserved emissions.
-
-### Future Adjustments and Immutability
-
-- **Initial Flexibility**:
-  - During the first **6 epochs**, certain adjustments can be made by the protocol's core contributors (referred to as "yChad") without formal governance proposals.
-- **Transition to Immutability**:
-  - The goal is to make the system fully automated and immutable within the first **12 epochs**.
-  - This involves:
-    - Automating dYFI minting and distribution.
-    - Implementing on-chain voting mechanisms.
-    - Reducing manual intervention and dependencies.
 
 ---
 
