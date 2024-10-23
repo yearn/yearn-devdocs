@@ -12,6 +12,12 @@ If a contract has not been deployed on a specific chain it can be done permissio
 
 :::
 
+### Version 3.0.3
+
+- Vault original : [`0xcA78AF7443f3F8FA0148b746Cb18FF67383CDF3f`](https://etherscan.io/address/0xcA78AF7443f3F8FA0148b746Cb18FF67383CDF3f#readContract)
+- VaultFactory : [`0x5577EdcB8A856582297CdBbB07055E6a6E38eb5f`](https://etherscan.io/address/0x5577EdcB8A856582297CdBbB07055E6a6E38eb5f#readContract)
+- TokenizedStrategy : [`0x254A93feff3BEeF9cA004E913bB5443754e8aB19`](https://etherscan.io/address/0x254A93feff3BEeF9cA004E913bB5443754e8aB19#readContract)
+
 ### Version 3.0.2
 
 - Vault original : [`0x1ab62413e0cf2eBEb73da7D40C70E7202ae14467`](https://etherscan.io/address/0x1ab62413e0cf2eBEb73da7D40C70E7202ae14467#readContract)
@@ -26,22 +32,27 @@ If a contract has not been deployed on a specific chain it can be done permissio
 
 ## Periphery Contracts
 
-A list of the deployed v3 yVault system contracts. To find individual vaults, use the [V3 Registry](https://etherscan.io/address/0xff31a1b020c868f6ea3f61eb953344920eeca3af#readContract) or refer to https://yearn.fi
+A list of the deployed v3 yVault system contracts. To find individual vaults, use the V3 Registry below or refer to https://yearn.fi
 
 ### Protocol Address Provider
 
-All generic periphery contracts and factories can be retrieved on chain from the Address Provider: [`0x1e9778aAD41Aa3E0884C276fB4C2D03C4036Aa0B`](https://etherscan.io/address/0x1e9778aAD41Aa3E0884C276fB4C2D03C4036Aa0B#readContract)
+All generic periphery contracts and factories can be retrieved on chain from the Address Provider:
 
-| Identity                 | Address                                    |
+| Protocol Address Provider   |  [0x775F09d6f3c8D2182DFA8bce8628acf51105653c](https://etherscan.io/address/0x775F09d6f3c8D2182DFA8bce8628acf51105653c) |
+| ----------------------   | ------------------------------------------ |
+| Release Registry         | [0x0377b4daDDA86C89A0091772B79ba67d0E5F7198](https://etherscan.io/address/0x0377b4daDDA86C89A0091772B79ba67d0E5F7198) |
+| Debt Allocator Factory   | [0x03D43dF6FF894C848fC6F1A0a7E8a539Ef9A4C18](https://etherscan.io/address/0x03D43dF6FF894C848fC6F1A0a7E8a539Ef9A4C18) |
+| Report Trigger           | [0xA045D4dAeA28BA7Bfe234c96eAa03daFae85A147](https://etherscan.io/address/0xA045D4dAeA28BA7Bfe234c96eAa03daFae85A147) |
+| APR Oracle               | [0x1981AD9F44F2EA9aDd2dC4AD7D075c102C70aF92](https://etherscan.io/address/0x1981AD9F44F2EA9aDd2dC4AD7D075c102C70aF92) |
+| 4626 Router              | [0x1112dbCF805682e828606f74AB717abf4b4FD8DE](https://etherscan.io/address/0x1112dbCF805682e828606f74AB717abf4b4FD8DE) |
+
+### Yearn Role Manager
+
+Yearn Specific contracts and roles can be retrieved on chain from the Role Manager:
+
+| Role Manager             | [0xb3bd6B2E61753C311EFbCF0111f75D29706D9a41](https://etherscan.io/address/0xb3bd6B2E61753C311EFbCF0111f75D29706D9a41) |
 | ----------------------   | ------------------------------------------ |
 | V3 Registry              | [0xff31A1B020c868F6eA3f61Eb953344920EeCA3af](https://etherscan.io/address/0xff31A1B020c868F6eA3f61Eb953344920EeCA3af) |
-| Release Registry         | [0x990089173D5d5287c344092Be0bB37950A67d17B](https://etherscan.io/address/0x990089173D5d5287c344092Be0bB37950A67d17B) |
-| Role Manager             | [0xb3bd6B2E61753C311EFbCF0111f75D29706D9a41](https://etherscan.io/address/0xb3bd6B2E61753C311EFbCF0111f75D29706D9a41) |
-| Debt Allocator Factory   | [0xfCF8c7C43dedd567083B422d6770F23B78D15BDe](https://etherscan.io/address/0xfCF8c7C43dedd567083B422d6770F23B78D15BDe) |
 | Accountant               | [0x5A74Cb32D36f2f517DB6f7b0A0591e09b22cDE69](https://etherscan.io/address/0x5A74Cb32D36f2f517DB6f7b0A0591e09b22cDE69) |
-| Report Trigger           | [0xD98C652f02E7B987e0C258a43BCa9999DF5078cF](https://etherscan.io/address/0xD98C652f02E7B987e0C258a43BCa9999DF5078cF) |
-| APR Oracle               | [0x27aD2fFc74F74Ed27e1C0A19F1858dD0963277aE](https://etherscan.io/address/0x27aD2fFc74F74Ed27e1C0A19F1858dD0963277aE) |
-| 4626 Router              | [0x1112dbCF805682e828606f74AB717abf4b4FD8DE](https://etherscan.io/address/0x1112dbCF805682e828606f74AB717abf4b4FD8DE) |
-| Protocol Address Provider| [0x1e9778aAD41Aa3E0884C276fB4C2D03C4036Aa0B](https://etherscan.io/address/0x1e9778aAD41Aa3E0884C276fB4C2D03C4036Aa0B) |
 
 For more information on the periphery contracts visit the [Periphery](/developers/v3/periphery) section.
