@@ -33,3 +33,9 @@ package-lock.json
 docs/developers/contracts/test
 docs/developers/contracts/IWETH.md
 docs/developers/contracts/yWETH.md
+
+natspec/lib/tokenized-strategy/*
+natspec/lib/tokenized-strategy-periphery/*
+natspec/lib/vault-periphery/*
+natspec/lib/Yearn-ERC4626-Router/*
+natspec/lib/yearn-vaults-v3/*
