@@ -4,7 +4,7 @@
 [Git Source](https://github.com/yearn/tokenized-strategy-periphery/blob/f139be6286cb3d630b0bce6d6db812c709e5bb47/src/Auctions/Auction.sol)
 
 **Inherits:**
-[Governance](Governance), ReentrancyGuard
+[Governance](https://github.com/yearn/tokenized-strategy-periphery/blob/f139be6286cb3d630b0bce6d6db812c709e5bb47/src/utils/Governance.sol), ReentrancyGuard
 
 **Author:**
 yearn.fi

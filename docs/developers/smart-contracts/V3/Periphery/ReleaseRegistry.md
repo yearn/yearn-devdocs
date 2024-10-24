@@ -4,7 +4,7 @@
 [Git Source](https://github.com/yearn/vault-periphery/blob/68b201f38716a8ab5aa5cedce51a90f52c89578b/src/registry/ReleaseRegistry.sol)
 
 **Inherits:**
-[Governance2Step](Governance2Step)
+[Governance2Step](https://github.com/yearn/tokenized-strategy-periphery/blob/master/src/utils/Governance2Step.sol)
 
 **Author:**
 yearn.finance
