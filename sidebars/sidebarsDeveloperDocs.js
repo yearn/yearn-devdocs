@@ -42,7 +42,7 @@ export default {
                 },
                 {
                   type: 'link',
-                  label: 'Smart Contracts →',
+                  label: 'Smart Contracts',
                   href: 'https://docs.yearn.fi/developers/smart-contracts/V3/',
                 },
               ],
@@ -60,7 +60,7 @@ export default {
 
                 {
                   type: 'link',
-                  label: 'Smart Contracts →',
+                  label: 'Smart Contracts',
                   href: 'https://docs.yearn.fi/developers/smart-contracts/v2/',
                 },
               ],
@@ -75,7 +75,7 @@ export default {
               items: [
                 {
                   type: 'link',
-                  label: 'Smart Contracts →',
+                  label: 'Smart Contracts',
                   href: 'https://docs.yearn.fi/developers/smart-contracts/v1/interfaces',
                 },
               ],
