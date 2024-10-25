@@ -20,7 +20,7 @@ Cryptographic membership attestations can be validated against the PGP keys in t
 | [0xf5D3dbda5F41A0E26D71B948e29522398e71cFaE](https://etherscan.io/address/0xf5D3dbda5F41A0E26D71B948e29522398e71cFaE) | 0xngmi (DefiLlama) | [Twitter](https://twitter.com/0xngmi/status/1590047391797088257) |
 | [0x1496546f89fc1605880e556c9a1d6c5e2409fb0a](https://etherscan.io/address/0x1496546f89fc1605880e556c9a1d6c5e2409fb0a) | monoloco (Yearn) | [Gist](https://gist.github.com/therealmonoloco/306ffd61c46c662bb7f8d7a09b2ffb02) |
 | [0x2B888954421b424C5D3D9Ce9bB67c9bD47537d12](https://etherscan.io/address/0x2B888954421b424C5D3D9Ce9bB67c9bD47537d12) | Lefteris Karapetsas (rotkiapp) | [Twitter](https://twitter.com/LefterisJP/status/1590083336210644992) |
-| [0xFe45baf0F18c207152A807c1b05926583CFE2e4b](https://etherscan.io/address/0xFe45baf0F18c207152A807c1b05926583CFE2e4b) | Michael Egorov (Curve) | [Twitter](add) |
+| [0xFe45baf0F18c207152A807c1b05926583CFE2e4b](https://etherscan.io/address/0xFe45baf0F18c207152A807c1b05926583CFE2e4b) | Michael Egorov (Curve) | [Twitter](https://x.com/newmichwill/status/1849912651163250755) |
 | [0x962228a90eaC69238c7D1F216d80037e61eA9255](https://etherscan.io/address/0x962228a90eaC69238c7D1F216d80037e61eA9255) | CryptoHarry (Inverse) | [Twitter](https://x.com/0xCryptoHarry/status/1848394875659776430) |
 
 ## History
