@@ -16,7 +16,7 @@ To "beat the market" you must take some risk. This is why the term *risk-free ra
 
 ## Rug Risk
 
-This is the risk that you get scammed and the money you invested is stolen or re-appropriated. Think FTX. This is where Yearn (and DeFi) really shines. Yearn Vaults are built in a way such that only you have access to the funds you deployed in a vault. The vaults collect yield and re-deposit it permissionlessly. The [Yearn Multisig](../../security/multisig) does have the power to pause or withdraw funds from strategies to protect depositors, but cannot be removed. When you deposit, you get shares of the vault that you can always use to get a proportional amount of vault assets back. Yearn or its contributors have no ability to mint new shares other than by depositing their own funds. Yearn operates not on a principle of "don't be evil", but of "can't be evil".
+This is the risk that you get scammed and the money you invested is stolen or re-appropriated. Think FTX. This is where Yearn (and DeFi) really shines. Yearn Vaults are built in a way such that only you have access to the funds you deployed in a vault. The vaults collect yield and re-deposit it permissionlessly. The [Yearn Multisig](/developers/security/multisig) does have the power to pause or withdraw funds from strategies to protect depositors, but cannot be removed. When you deposit, you get shares of the vault that you can always use to get a proportional amount of vault assets back. Yearn or its contributors have no ability to mint new shares other than by depositing their own funds. Yearn operates not on a principle of "don't be evil", but of "can't be evil".
 
 ## Bug Risk
 

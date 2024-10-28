@@ -84,7 +84,7 @@
 
 #### Who is on the multisig?
 
-- [Multisig Documentation](https://docs.yearn.fi/security/multisig)
+- [Multisig Documentation](/developers/security/multisig)
 
 #### What is a YIP?
 
@@ -166,7 +166,7 @@
 
 - [Yearn Press Kit](https://presskit.yearn.fi/)
 
-#### Use Yearn Data 
+#### Use Yearn Data
 
 - [Yearn Vision and Watch Guide](https://medium.com/iearn/diving-into-yearn-metrics-8c3fb0520927)
 - [Yearn Subgraph Guide](https://medium.com/iearn/subgraphs-explained-yearning-for-data-4e90d18e33e)
