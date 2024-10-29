@@ -1,6 +1,6 @@
 # yVaults v3 Contract Addresses
 
-:::note
+:::info
 
 Deployments are done using create2 factories and should be stable across all EVM chains the protocol has been deployed on.
 
@@ -12,9 +12,9 @@ If any of the core contracts have not been deployed on a specific chain it can b
 
 These are the deployed protocol contracts that can be used by anyone to create and manage yVaults. For Yearn implementation-specific contracts see [#Yearn Addresses](#yearn-specific-addresses)
 
-All Protocol Specific contracts can be found by starting with the `ProtocolAddressProvider` contract as the top level directory and then the `ReleaseRegistry`. The `VaultFactory` and `TokenizedStrategy` contracts can be found in the Release Registry and the Vault Original can be found in the `VaultFactory`. 
+All Protocol Specific contracts can be found by starting with the `ProtocolAddressProvider` contract as the top level directory and then the `ReleaseRegistry`. The `VaultFactory` and `TokenizedStrategy` contracts can be found in the Release Registry and the Vault Original can be found in the `VaultFactory`.
 
-The Role Manager Factory provides the easiest way to deploy and manage your own V3 vaults. More information on that [here](../v3/vault_management.md).
+The Role Manager Factory provides the easiest way to deploy and manage your own V3 vaults. More information on that [here](../v3/vault_management.md#deployment).
 
 | Contract Name   | ENS |  Contract Address |
 | ----------------------   | ------------------------------------------ | ---------------------- |
@@ -69,4 +69,3 @@ To find individual vaults, use the V3 Registry below or refer to https://yearn.f
 | Current V3 Registry      | registry.v3.ychad.eth | [0xa693365Ff5F5E65A03616FE98098318Ca80E6427](https://etherscan.io/address/0xa693365Ff5F5E65A03616FE98098318Ca80E6427) |
 | Legacy V3 Registry       |           | [0xff31A1B020c868F6eA3f61Eb953344920EeCA3af](https://etherscan.io/address/0xff31A1B020c868F6eA3f61Eb953344920EeCA3af) |
 | Accountant               | accountant.v3.ychad.eth | [0x5A74Cb32D36f2f517DB6f7b0A0591e09b22cDE69](https://etherscan.io/address/0x5A74Cb32D36f2f517DB6f7b0A0591e09b22cDE69) |
-
