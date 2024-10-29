@@ -33,6 +33,7 @@ export default {
                 'v3/Integrating_v3',
                 'v3/strategy_writing_guide',
                 'v3/vault_management',
+                'v3/vault_deployment',
                 'v3/periphery',
                 'v3/protocol_fees',
                 {
