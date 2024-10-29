@@ -4,7 +4,7 @@
 
 Deployments are done using create2 factories and should be stable across all EVM chains the protocol has been deployed on.
 
-If a contract has not been deployed on a specific chain it can be done permissionlessly using the scripts in the relevant GitHub repo. Or reach out to a Yearn contributor for help.
+If any of the core contracts have not been deployed on a specific chain it can be done permissionlessly using [this CLI tool](https://github.com/wavey0x/yearn-v3-deployer) or via the scripts in the relevant GitHub repo. If you have issues or questions, please reach out to a Yearn contributor for help.
 
 :::
 
@@ -12,12 +12,15 @@ If a contract has not been deployed on a specific chain it can be done permissio
 
 These are the deployed protocol contracts that can be used by anyone to create and manage yVaults. For Yearn implementation-specific contracts see [#Yearn Addresses](#yearn-specific-addresses)
 
-All Protocol Specific contracts can be found by starting with the `ProtocolAddressProvider` contract as the top level directory and then the `ReleaseRegistry`. The `VaultFactory` and `TokenizedStrategy` contracts can be found in the Release Registry and the Vault Original can be found in the `VaultFactory`.
+All Protocol Specific contracts can be found by starting with the `ProtocolAddressProvider` contract as the top level directory and then the `ReleaseRegistry`. The `VaultFactory` and `TokenizedStrategy` contracts can be found in the Release Registry and the Vault Original can be found in the `VaultFactory`. 
+
+The Role Manager Factory provides the easiest way to deploy and manage your own V3 vaults. More information on that [here](../v3/vault_management.md).
 
 | Contract Name   | ENS |  Contract Address |
 | ----------------------   | ------------------------------------------ | ---------------------- |
 | Protocol Address Provider   | address-provider.v3.ychad.eth | [0x775F09d6f3c8D2182DFA8bce8628acf51105653c](https://etherscan.io/address/0x775F09d6f3c8D2182DFA8bce8628acf51105653c) |
 | Release Registry            | release.registry.v3.ychad.eth | [0x0377b4daDDA86C89A0091772B79ba67d0E5F7198](https://etherscan.io/address/0x0377b4daDDA86C89A0091772B79ba67d0E5F7198) |
+| Role Manager Factory        |        | [0xca12459a931643BF28388c67639b3F352fe9e5Ce](https://etherscan.io/address/0xca12459a931643BF28388c67639b3F352fe9e5Ce) |
 
 ### Core Contract Addresses
 
@@ -48,12 +51,11 @@ All generic periphery contracts and factories can be retrieved on chain from the
 | Periphery Contract Name   | ENS |  Periphery Contract Address |
 | ----------------------   | ------------------------------------------ | ---------------------- |
 | Protocol Address Provider| address-provider.v3.ychad.eth |  [0x775F09d6f3c8D2182DFA8bce8628acf51105653c](https://etherscan.io/address/0x775F09d6f3c8D2182DFA8bce8628acf51105653c) |
-| Debt Allocator Factory   |    | [0x03D43dF6FF894C848fC6F1A0a7E8a539Ef9A4C18](https://etherscan.io/address/0x03D43dF6FF894C848fC6F1A0a7E8a539Ef9A4C18) |
-| Report Trigger           |    | [0xA045D4dAeA28BA7Bfe234c96eAa03daFae85A147](https://etherscan.io/address/0xA045D4dAeA28BA7Bfe234c96eAa03daFae85A147) |
 | APR Oracle               | apr.oracle.v3.ychad.eth | [0x1981AD9F44F2EA9aDd2dC4AD7D075c102C70aF92](https://etherscan.io/address/0x1981AD9F44F2EA9aDd2dC4AD7D075c102C70aF92) |
+| Report Trigger           |    | [0xA045D4dAeA28BA7Bfe234c96eAa03daFae85A147](https://etherscan.io/address/0xA045D4dAeA28BA7Bfe234c96eAa03daFae85A147) |
 | 4626 Router              |    | [0x1112dbCF805682e828606f74AB717abf4b4FD8DE](https://etherscan.io/address/0x1112dbCF805682e828606f74AB717abf4b4FD8DE) |
 
-For more information on the periphery contracts visit the [Periphery](/developers/v3/periphery) section.
+For a more complete list of all available periphery contracts visit the [Periphery](/developers/v3/periphery) section.
 
 ## Yearn Specific Addresses
 
@@ -64,17 +66,7 @@ To find individual vaults, use the V3 Registry below or refer to https://yearn.f
 | Contract Name | ENS | Contract Address |
 | ----------------------   | ------------------------------------------ | ---------------------- |
 | Role Manager             | role-manager.v3.ychad.eth | [0xb3bd6B2E61753C311EFbCF0111f75D29706D9a41](https://etherscan.io/address/0xb3bd6B2E61753C311EFbCF0111f75D29706D9a41) |
-| V3 Registry              | registry.v3.ychad.eth | [0xa693365Ff5F5E65A03616FE98098318Ca80E6427](https://etherscan.io/address/0xa693365Ff5F5E65A03616FE98098318Ca80E6427) |
-|                       |     |                          |
+| Current V3 Registry      | registry.v3.ychad.eth | [0xa693365Ff5F5E65A03616FE98098318Ca80E6427](https://etherscan.io/address/0xa693365Ff5F5E65A03616FE98098318Ca80E6427) |
+| Legacy V3 Registry       |           | [0xff31A1B020c868F6eA3f61Eb953344920EeCA3af](https://etherscan.io/address/0xff31A1B020c868F6eA3f61Eb953344920EeCA3af) |
 | Accountant               | accountant.v3.ychad.eth | [0x5A74Cb32D36f2f517DB6f7b0A0591e09b22cDE69](https://etherscan.io/address/0x5A74Cb32D36f2f517DB6f7b0A0591e09b22cDE69) |
-| Keeper                  |    | [0x52605BbF54845f520a3E94792d019f62407db2f8](https://etherscan.io/address/0x52605BbF54845f520a3E94792d019f62407db2f8) |
 
-<!--
-v3.registry.ychad.eth: 0xa693365Ff5F5E65A03616FE98098318Ca80E6427
-registry.v3.ychad.eth: 0xa693365Ff5F5E65A03616FE98098318Ca80E6427
-release.registry.v3.ychad.eth: 0x0377b4daDDA86C89A0091772B79ba67d0E5F7198
-role-manager.v3.ychad.eth: 0xb3bd6B2E61753C311EFbCF0111f75D29706D9a41
-accountant.v3.ychad.eth: 0x5A74Cb32D36f2f517DB6f7b0A0591e09b22cDE69
-apr.oracle.v3.ychad.eth: 0x1981AD9F44F2EA9aDd2dC4AD7D075c102C70aF92
-address-provider.v3.ychad.eth: 0x775F09d6f3c8D2182DFA8bce8628acf51105653c
--->
