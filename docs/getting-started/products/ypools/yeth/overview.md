@@ -1,5 +1,7 @@
 # yETH
 
+![image](/img/product-pages/yeth-banner3.png)
+
 yETH is a user-governed liquidity pool token consisting of various Ethereum Liquid Staking Derivatives (LSTs).
 
 The yETH protocol is an Automated Market Maker (AMM) for LSTs. Each LST in the yETH pool is priced according to the amount of [beacon chain](https://ethereum.org/en/upgrades/beacon-chain/) ETH it represents. This lets users deposit their LSTs into the pool and receive yETH tokens pegged 1:1 with beacon chain ETH. Users can also stake their yETH tokens to mint st-yETH, accrue yield, and participate in yETH governance.
