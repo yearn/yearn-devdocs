@@ -21,6 +21,8 @@ There are multiple ways to handle deployments of vaults. By far the simplest way
 
 The `RoleManagerFactory` can be used to deploy a full set of V3 periphery contracts including `Accountant`, `DebtAllocator`, `Registry` and `RoleManager` contracts and will configure them all automatically to make deployment and management as simple as possible while still allowing full customization where desired.
 
+You can find the deployed `RoleManagerFactory` contract [here](https://etherscan.io/address/0xca12459a931643BF28388c67639b3F352fe9e5Ce).
+
 You will only need three variables.
 
 1. `projectName` : The name of your project i.e. "Yearn"
@@ -57,9 +59,9 @@ address newVault = myNewRoleManager.newVault(
 
 Your new vault will now be deployed, with the Roles given out to each specified address, and Accountant hooked up to charge fees, and endorsed in your registry.
 
-To learn more about how to customize your deployment setups and using the `RoleManager` contract view the [full spec](../smart-contracts/V3/periphery/RoleManager.md)
+To learn more about how to customize your deployment setups and using the `RoleManager` contract view the [full spec](/developers/smart-contracts/V3/Periphery/RoleManager)
 
-Alternatively you can manually deploy a vault directly from the factory and do a complete custom setup by following [these instructions](./vault_deployment.md)
+Alternatively you can manually deploy a vault directly from the factory and do a complete custom setup by following [these instructions](./vault_deployment)
 
 ### Miscellaneous
 
