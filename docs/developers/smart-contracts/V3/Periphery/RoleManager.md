@@ -1,53 +1,48 @@
-# RoleManager.sol
+<!-- markdownlint-disable MD024 MD034 MD036 -->
+# RoleManager
 
-[Git Source](https://github.com/yearn/vault-periphery/blob/master/contracts/Managers/RoleManager.sol)
+[Git Source](https://github.com/yearn/vault-periphery/blob/68b201f38716a8ab5aa5cedce51a90f52c89578b/src/managers/RoleManager.sol)
 
 **Inherits:**
-[Governance2Step](./Governance2Step)
+[Positions](https://github.com/yearn/Yearn-ERC4626-Router/blob/68165774ec8858b43db24620756402def14b7ec1/src/external/SelfPermit.sol)
 
 ## State Variables
 
-### _name_
+### PENDING_GOVERNANCE
+
+Position ID for "Pending Governance".
 
 ```solidity
-bytes32 internal constant _name_ = bytes32(abi.encodePacked("Yearn V3 Vault Role Manager"));
+bytes32 public constant PENDING_GOVERNANCE = keccak256("Pending Governance");
 ```
 
-### DADDY
+### GOVERNANCE
 
-Position ID for "daddy".
+Position ID for "Governance".
 
 ```solidity
-bytes32 public constant DADDY = keccak256("Daddy");
+bytes32 public constant GOVERNANCE = keccak256("Governance");
 ```
 
-### BRAIN
+### MANAGEMENT
 
-Position ID for "brain".
+Position ID for "Brain".
 
 ```solidity
-bytes32 public constant BRAIN = keccak256("Brain");
+bytes32 public constant MANAGEMENT = keccak256("Management");
 ```
 
 ### KEEPER
 
-Position ID for "keeper".
+Position ID for "Keeper".
 
 ```solidity
 bytes32 public constant KEEPER = keccak256("Keeper");
 ```
 
-### SECURITY
-
-Position ID for "security".
-
-```solidity
-bytes32 public constant SECURITY = keccak256("Security");
-```
-
 ### REGISTRY
 
-Position ID for the Registry.
+Position ID for the "Registry".
 
 ```solidity
 bytes32 public constant REGISTRY = keccak256("Registry");
@@ -55,7 +50,7 @@ bytes32 public constant REGISTRY = keccak256("Registry");
 
 ### ACCOUNTANT
 
-Position ID for the Accountant.
+Position ID for the "Accountant".
 
 ```solidity
 bytes32 public constant ACCOUNTANT = keccak256("Accountant");
@@ -63,34 +58,18 @@ bytes32 public constant ACCOUNTANT = keccak256("Accountant");
 
 ### DEBT_ALLOCATOR
 
-Position ID for Debt Allocator
+Position ID for the "Debt Allocator".
 
 ```solidity
 bytes32 public constant DEBT_ALLOCATOR = keccak256("Debt Allocator");
 ```
 
-### STRATEGY_MANAGER
-
-Position ID for Strategy manager.
-
-```solidity
-bytes32 public constant STRATEGY_MANAGER = keccak256("Strategy Manager");
-```
-
-### ALLOCATOR_FACTORY
-
-Position ID for the Allocator Factory.
-
-```solidity
-bytes32 public constant ALLOCATOR_FACTORY = keccak256("Allocator Factory");
-```
-
 ### chad
 
-Immutable address that the RoleManager position
+Immutable address that the `role_manager` position
 
 ```solidity
-address public immutable chad;
+address public chad;
 ```
 
 ### vaults
@@ -101,20 +80,18 @@ Array storing addresses of all managed vaults.
 address[] public vaults;
 ```
 
-### defaultProfitMaxUnlock
+### projectName
+
+```solidity
+string internal projectName;
+```
+
+### defaultProfitMaxUnlockTime
 
 Default time until profits are fully unlocked for new vaults.
 
 ```solidity
-uint256 public defaultProfitMaxUnlock = 10 days;
-```
-
-### _positions
-
-Mapping of position ID to position information.
-
-```solidity
-mapping(bytes32 => Position) internal _positions;
+uint256 public defaultProfitMaxUnlockTime;
 ```
 
 ### vaultConfig
@@ -135,43 +112,36 @@ mapping(address => mapping(string => mapping(uint256 => address))) internal _ass
 
 ## Functions
 
-### onlyPositionHolder
-
-Only allow either governance or the position holder to call.
-
-```solidity
-modifier onlyPositionHolder(bytes32 _positionId);
-```
-
-### _isPositionHolder
-
-Check if the msg sender is governance or the specified position holder.
-
-```solidity
-function _isPositionHolder(bytes32 _positionId) internal view virtual;
-```
-
 ### constructor
 
 ```solidity
-constructor(
+constructor();
+```
+
+### initialize
+
+```solidity
+function initialize(
+    string calldata _projectName,
     address _governance,
-    address _daddy,
-    address _brain,
-    address _security,
+    address _management,
     address _keeper,
-    address _strategyManager,
-    address _registry
-) Governance2Step(_governance);
+    address _registry,
+    address _accountant,
+    address _debtAllocator
+) external;
 ```
 
 ### newVault
 
-Creates a new endorsed vault with default profit max
-unlock time and doesn't set the deposit limit.
+Creates a new endorsed vault with default profit max unlock time.
 
 ```solidity
-function newVault(address _asset, uint256 _category) external virtual onlyPositionHolder(DADDY) returns (address);
+function newVault(address _asset, uint256 _category, string calldata _name, string calldata _symbol)
+    external
+    virtual
+    onlyPositionHolder(GOVERNANCE)
+    returns (address);
 ```
 
 **Parameters**
@@ -180,6 +150,8 @@ function newVault(address _asset, uint256 _category) external virtual onlyPositi
 |----|----|-----------|
 |`_asset`|`address`|Address of the underlying asset.|
 |`_category`|`uint256`|Category of the vault.|
+|`_name`|`string`|Name of the vault.|
+|`_symbol`|`string`|Symbol of the vault.|
 
 **Returns**
 
@@ -192,11 +164,13 @@ function newVault(address _asset, uint256 _category) external virtual onlyPositi
 Creates a new endorsed vault with default profit max unlock time.
 
 ```solidity
-function newVault(address _asset, uint256 _category, uint256 _depositLimit)
-    external
-    virtual
-    onlyPositionHolder(DADDY)
-    returns (address);
+function newVault(
+    address _asset,
+    uint256 _category,
+    string calldata _name,
+    string calldata _symbol,
+    uint256 _depositLimit
+) external virtual onlyPositionHolder(GOVERNANCE) returns (address);
 ```
 
 **Parameters**
@@ -205,34 +179,9 @@ function newVault(address _asset, uint256 _category, uint256 _depositLimit)
 |----|----|-----------|
 |`_asset`|`address`|Address of the underlying asset.|
 |`_category`|`uint256`|Category of the vault.|
+|`_name`|`string`|Name of the vault.|
+|`_symbol`|`string`|Symbol of the vault.|
 |`_depositLimit`|`uint256`|The deposit limit to start the vault with.|
-
-**Returns**
-
-|Name|Type|Description|
-|----|----|-----------|
-|`<none>`|`address`|_vault Address of the newly created vault.|
-
-### newVault
-
-Creates a new endorsed vault.
-
-```solidity
-function newVault(address _asset, uint256 _category, uint256 _depositLimit, uint256 _profitMaxUnlockTime)
-    external
-    virtual
-    onlyPositionHolder(DADDY)
-    returns (address);
-```
-
-**Parameters**
-
-|Name|Type|Description|
-|----|----|-----------|
-|`_asset`|`address`|Address of the underlying asset.|
-|`_category`|`uint256`|Category of the vault.|
-|`_depositLimit`|`uint256`|The deposit limit to start the vault with.|
-|`_profitMaxUnlockTime`|`uint256`|Time until profits are fully unlocked.|
 
 **Returns**
 
@@ -245,7 +194,7 @@ function newVault(address _asset, uint256 _category, uint256 _depositLimit, uint
 Creates a new endorsed vault.
 
 ```solidity
-function _newVault(address _asset, uint256 _category, uint256 _depositLimit, uint256 _profitMaxUnlockTime)
+function _newVault(address _asset, uint256 _category, string memory _name, string memory _symbol, uint256 _depositLimit)
     internal
     virtual
     returns (address _vault);
@@ -257,8 +206,9 @@ function _newVault(address _asset, uint256 _category, uint256 _depositLimit, uin
 |----|----|-----------|
 |`_asset`|`address`|Address of the underlying asset.|
 |`_category`|`uint256`|Category of the vault.|
+|`_name`|`string`|Name of the vault.|
+|`_symbol`|`string`|Symbol of the vault.|
 |`_depositLimit`|`uint256`|The deposit limit to start the vault with.|
-|`_profitMaxUnlockTime`|`uint256`|Time until profits are fully unlocked.|
 
 **Returns**
 
@@ -266,31 +216,11 @@ function _newVault(address _asset, uint256 _category, uint256 _depositLimit, uin
 |----|----|-----------|
 |`_vault`|`address`|Address of the newly created vault.|
 
-### _deployAllocator
-
-_Deploys a debt allocator for the specified vault._
-
-```solidity
-function _deployAllocator(address _vault) internal virtual returns (address _debtAllocator);
-```
-
-**Parameters**
-
-|Name|Type|Description|
-|----|----|-----------|
-|`_vault`|`address`|Address of the vault.|
-
-**Returns**
-
-|Name|Type|Description|
-|----|----|-----------|
-|`_debtAllocator`|`address`|Address of the deployed debt allocator.|
-
 ### _sanctify
 
-_Assigns roles to the newly added vault.
+*Assigns roles to the newly added vault.
 This will override any previously set roles for the holders. But not effect
-the roles held by other addresses._
+the roles held by other addresses.*
 
 ```solidity
 function _sanctify(address _vault, address _debtAllocator) internal virtual;
@@ -305,10 +235,10 @@ function _sanctify(address _vault, address _debtAllocator) internal virtual;
 
 ### _setRole
 
-_Used internally to set the roles on a vault for a given position.
+*Used internally to set the roles on a vault for a given position.
 Will not set the roles if the position holder is address(0).
 This does not check that the roles are !=0 because it is expected that
-the holder will be set to 0 if the position is not being used._
+the holder will be set to 0 if the position is not being used.*
 
 ```solidity
 function _setRole(address _vault, Position memory _position) internal virtual;
@@ -323,8 +253,8 @@ function _setRole(address _vault, Position memory _position) internal virtual;
 
 ### _setAccountant
 
-_Sets the accountant on the vault and adds the vault to the accountant.
-This temporarily gives the `ACCOUNTANT_MANAGER` role to this contract._
+*Sets the accountant on the vault and adds the vault to the accountant.
+This temporarily gives the `ACCOUNTANT_MANAGER` role to this contract.*
 
 ```solidity
 function _setAccountant(address _vault) internal virtual;
@@ -338,9 +268,9 @@ function _setAccountant(address _vault) internal virtual;
 
 ### _setDepositLimit
 
-_Used to set an initial deposit limit when a new vault is deployed.
+*Used to set an initial deposit limit when a new vault is deployed.
 Any further updates to the limit will need to be done by an address that
-holds the `DEPOSIT_LIMIT_MANAGER` role._
+holds the `DEPOSIT_LIMIT_MANAGER` role.*
 
 ```solidity
 function _setDepositLimit(address _vault, uint256 _depositLimit) internal virtual;
@@ -357,8 +287,8 @@ function _setDepositLimit(address _vault, uint256 _depositLimit) internal virtua
 
 Adds a new vault to the RoleManager with the specified category.
 
-_If not already endorsed this function will endorse the vault.
-A new debt allocator will be deployed and configured._
+*If not already endorsed this function will endorse the vault.
+A new debt allocator will be deployed and configured.*
 
 ```solidity
 function addNewVault(address _vault, uint256 _category) external virtual;
@@ -375,13 +305,13 @@ function addNewVault(address _vault, uint256 _category) external virtual;
 
 Adds a new vault to the RoleManager with the specified category and debt allocator.
 
-_If not already endorsed this function will endorse the vault._
+*If not already endorsed this function will endorse the vault.*
 
 ```solidity
 function addNewVault(address _vault, uint256 _category, address _debtAllocator)
     public
     virtual
-    onlyPositionHolder(DADDY);
+    onlyPositionHolder(GOVERNANCE);
 ```
 
 **Parameters**
@@ -396,8 +326,7 @@ function addNewVault(address _vault, uint256 _category, address _debtAllocator)
 
 Update a `_vault`s debt allocator.
 
-_This will deploy a new allocator using the current
-allocator factory set._
+*This will use the default Debt Allocator currently set.*
 
 ```solidity
 function updateDebtAllocator(address _vault) external virtual returns (address _newDebtAllocator);
@@ -414,7 +343,7 @@ function updateDebtAllocator(address _vault) external virtual returns (address _
 Update a `_vault`s debt allocator to a specified `_debtAllocator`.
 
 ```solidity
-function updateDebtAllocator(address _vault, address _debtAllocator) public virtual onlyPositionHolder(BRAIN);
+function updateDebtAllocator(address _vault, address _debtAllocator) public virtual onlyPositionHolder(MANAGEMENT);
 ```
 
 **Parameters**
@@ -429,7 +358,7 @@ function updateDebtAllocator(address _vault, address _debtAllocator) public virt
 Update a `_vault`s keeper to a specified `_keeper`.
 
 ```solidity
-function updateKeeper(address _vault, address _keeper) external virtual onlyPositionHolder(BRAIN);
+function updateKeeper(address _vault, address _keeper) external virtual onlyPositionHolder(MANAGEMENT);
 ```
 
 **Parameters**
@@ -439,14 +368,26 @@ function updateKeeper(address _vault, address _keeper) external virtual onlyPosi
 |`_vault`|`address`|Address of the vault to update the keeper for.|
 |`_keeper`|`address`|Address of the new keeper.|
 
+### updateVaultName
+
+```solidity
+function updateVaultName(address _vault, string calldata _name) external onlyPositionHolder(GOVERNANCE);
+```
+
+### updateVaultSymbol
+
+```solidity
+function updateVaultSymbol(address _vault, string calldata _symbol) external onlyPositionHolder(GOVERNANCE);
+```
+
 ### removeVault
 
 Removes a vault from the RoleManager.
 
-_This will NOT un-endorse the vault from the registry._
+*This will NOT un-endorse the vault from the registry.*
 
 ```solidity
-function removeVault(address _vault) external virtual onlyPositionHolder(BRAIN);
+function removeVault(address _vault) external virtual onlyPositionHolder(MANAGEMENT);
 ```
 
 **Parameters**
@@ -459,10 +400,13 @@ function removeVault(address _vault) external virtual onlyPositionHolder(BRAIN);
 
 Removes a specific role(s) for a `_holder` from the `_vaults`.
 
-_Can be used to remove one specific role or multiple._
+*Can be used to remove one specific role or multiple.*
 
 ```solidity
-function removeRoles(address[] calldata _vaults, address _holder, uint256 _role) external virtual onlyGovernance;
+function removeRoles(address[] calldata _vaults, address _holder, uint256 _role)
+    external
+    virtual
+    onlyPositionHolder(GOVERNANCE);
 ```
 
 **Parameters**
@@ -478,7 +422,7 @@ function removeRoles(address[] calldata _vaults, address _holder, uint256 _role)
 Setter function for updating a positions roles.
 
 ```solidity
-function setPositionRoles(bytes32 _position, uint256 _newRoles) external virtual onlyGovernance;
+function setPositionRoles(bytes32 _position, uint256 _newRoles) external virtual onlyPositionHolder(GOVERNANCE);
 ```
 
 **Parameters**
@@ -492,8 +436,11 @@ function setPositionRoles(bytes32 _position, uint256 _newRoles) external virtual
 
 Setter function for updating a positions holder.
 
+*Updating `Governance` requires setting `PENDING_GOVERNANCE`
+and then the pending address calling [acceptGovernance](#acceptgovernance).*
+
 ```solidity
-function setPositionHolder(bytes32 _position, address _newHolder) external virtual onlyGovernance;
+function setPositionHolder(bytes32 _position, address _newHolder) external virtual onlyPositionHolder(GOVERNANCE);
 ```
 
 **Parameters**
@@ -503,19 +450,32 @@ function setPositionHolder(bytes32 _position, address _newHolder) external virtu
 |`_position`|`bytes32`|Identifier for the position.|
 |`_newHolder`|`address`|New address for position.|
 
-### setDefaultProfitMaxUnlock
+### setDefaultProfitMaxUnlockTime
 
 Sets the default time until profits are fully unlocked for new vaults.
 
 ```solidity
-function setDefaultProfitMaxUnlock(uint256 _newDefaultProfitMaxUnlock) external virtual onlyGovernance;
+function setDefaultProfitMaxUnlockTime(uint256 _newDefaultProfitMaxUnlockTime)
+    external
+    virtual
+    onlyPositionHolder(GOVERNANCE);
 ```
 
 **Parameters**
 
 |Name|Type|Description|
 |----|----|-----------|
-|`_newDefaultProfitMaxUnlock`|`uint256`|New value for defaultProfitMaxUnlock.|
+|`_newDefaultProfitMaxUnlockTime`|`uint256`|New value for defaultProfitMaxUnlockTime.|
+
+### acceptGovernance
+
+Accept the Governance role.
+
+*Caller must be the Pending Governance.*
+
+```solidity
+function acceptGovernance() external virtual onlyPositionHolder(PENDING_GOVERNANCE);
+```
 
 ### name
 
@@ -543,7 +503,7 @@ function getAllVaults() external view virtual returns (address[] memory);
 
 Get the vault for a specific asset, api and category.
 
-_This will return address(0) if one has not been added or deployed._
+*This will return address(0) if one has not been added or deployed.*
 
 ```solidity
 function getVault(address _asset, string memory _apiVersion, uint256 _category)
@@ -567,14 +527,57 @@ function getVault(address _asset, string memory _apiVersion, uint256 _category)
 |----|----|-----------|
 |`<none>`|`address`|The vault for the specified `_asset`, `_apiVersion` and `_category`.|
 
+### latestVault
+
+Get the latest vault for a specific asset.
+
+*This will default to using category 1.*
+
+```solidity
+function latestVault(address _asset) external view virtual returns (address);
+```
+
+**Parameters**
+
+|Name|Type|Description|
+|----|----|-----------|
+|`_asset`|`address`|The underlying asset used.|
+
+**Returns**
+
+|Name|Type|Description|
+|----|----|-----------|
+|`<none>`|`address`|_vault latest vault for the specified `_asset` if any.|
+
+### latestVault
+
+Get the latest vault for a specific asset.
+
+```solidity
+function latestVault(address _asset, uint256 _category) public view virtual returns (address _vault);
+```
+
+**Parameters**
+
+|Name|Type|Description|
+|----|----|-----------|
+|`_asset`|`address`|The underlying asset used.|
+|`_category`|`uint256`|The category of the vault.|
+
+**Returns**
+
+|Name|Type|Description|
+|----|----|-----------|
+|`_vault`|`address`|latest vault for the specified `_asset` if any.|
+
 ### isVaultsRoleManager
 
 Check if a vault is managed by this contract.
 
-_This will check if the `asset` variable in the struct has been
+*This will check if the `asset` variable in the struct has been
 set for an easy external view check.
 Does not check the vaults `role_manager` position since that can be set
-by anyone for a random vault._
+by anyone for a random vault.*
 
 ```solidity
 function isVaultsRoleManager(address _vault) external view virtual returns (bool);
@@ -596,7 +599,7 @@ function isVaultsRoleManager(address _vault) external view virtual returns (bool
 
 Get the debt allocator for a specific vault.
 
-_Will return address(0) if the vault is not managed by this contract._
+*Will return address(0) if the vault is not managed by this contract.*
 
 ```solidity
 function getDebtAllocator(address _vault) external view virtual returns (address);
@@ -618,7 +621,7 @@ function getDebtAllocator(address _vault) external view virtual returns (address
 
 Get the category for a specific vault.
 
-_Will return 0 if the vault is not managed by this contract._
+*Will return 0 if the vault is not managed by this contract.*
 
 ```solidity
 function getCategory(address _vault) external view virtual returns (uint256);
@@ -636,108 +639,47 @@ function getCategory(address _vault) external view virtual returns (uint256);
 |----|----|-----------|
 |`<none>`|`uint256`|. The category of the vault if any.|
 
-### getPosition
+### getGovernance
 
-Get the address and roles given to a specific position.
-
-```solidity
-function getPosition(bytes32 _positionId) public view virtual returns (address, uint256);
-```
-
-**Parameters**
-
-|Name|Type|Description|
-|----|----|-----------|
-|`_positionId`|`bytes32`|The position identifier.|
-
-**Returns**
-
-|Name|Type|Description|
-|----|----|-----------|
-|`<none>`|`address`|The address that holds that position.|
-|`<none>`|`uint256`|The roles given to the specified position.|
-
-### getPositionHolder
-
-Get the current address assigned to a specific position.
+Get the address assigned to the Governance position.
 
 ```solidity
-function getPositionHolder(bytes32 _positionId) public view virtual returns (address);
-```
-
-**Parameters**
-
-|Name|Type|Description|
-|----|----|-----------|
-|`_positionId`|`bytes32`|The position identifier.|
-
-**Returns**
-
-|Name|Type|Description|
-|----|----|-----------|
-|`<none>`|`address`|The current address assigned to the specified position.|
-
-### getPositionRoles
-
-Get the current roles given to a specific position ID.
-
-```solidity
-function getPositionRoles(bytes32 _positionId) public view virtual returns (uint256);
-```
-
-**Parameters**
-
-|Name|Type|Description|
-|----|----|-----------|
-|`_positionId`|`bytes32`|The position identifier.|
-
-**Returns**
-
-|Name|Type|Description|
-|----|----|-----------|
-|`<none>`|`uint256`|The current roles given to the specified position ID.|
-
-### getDaddy
-
-Get the address assigned to the Daddy position.
-
-```solidity
-function getDaddy() external view virtual returns (address);
+function getGovernance() external view virtual returns (address);
 ```
 
 **Returns**
 
 |Name|Type|Description|
 |----|----|-----------|
-|`<none>`|`address`|The address assigned to the Daddy position.|
+|`<none>`|`address`|The address assigned to the Governance position.|
 
-### getBrain
+### getPendingGovernance
 
-Get the address assigned to the Brain position.
+Get the address assigned to the Pending Governance position.
 
 ```solidity
-function getBrain() external view virtual returns (address);
+function getPendingGovernance() external view virtual returns (address);
 ```
 
 **Returns**
 
 |Name|Type|Description|
 |----|----|-----------|
-|`<none>`|`address`|The address assigned to the Brain position.|
+|`<none>`|`address`|The address assigned to the Pending Governance position.|
 
-### getSecurity
+### getManagement
 
-Get the address assigned to the Security position.
+Get the address assigned to the Management position.
 
 ```solidity
-function getSecurity() external view virtual returns (address);
+function getManagement() external view virtual returns (address);
 ```
 
 **Returns**
 
 |Name|Type|Description|
 |----|----|-----------|
-|`<none>`|`address`|The address assigned to the Security position.|
+|`<none>`|`address`|The address assigned to the Management position.|
 
 ### getKeeper
 
@@ -753,19 +695,19 @@ function getKeeper() external view virtual returns (address);
 |----|----|-----------|
 |`<none>`|`address`|The address assigned to the Keeper position.|
 
-### getStrategyManager
+### getRegistry
 
-Get the address assigned to the strategy manager.
+Get the address assigned to the Registry.
 
 ```solidity
-function getStrategyManager() external view virtual returns (address);
+function getRegistry() external view virtual returns (address);
 ```
 
 **Returns**
 
 |Name|Type|Description|
 |----|----|-----------|
-|`<none>`|`address`|The address assigned to the strategy manager.|
+|`<none>`|`address`|The address assigned to the Registry.|
 
 ### getAccountant
 
@@ -781,20 +723,6 @@ function getAccountant() external view virtual returns (address);
 |----|----|-----------|
 |`<none>`|`address`|The address assigned to the accountant.|
 
-### getRegistry
-
-Get the address assigned to the Registry.
-
-```solidity
-function getRegistry() external view virtual returns (address);
-```
-
-**Returns**
-
-|Name|Type|Description|
-|----|----|-----------|
-|`<none>`|`address`|The address assigned to the Registry.|
-
 ### getDebtAllocator
 
 Get the address assigned to be the debt allocator if any.
@@ -809,61 +737,33 @@ function getDebtAllocator() external view virtual returns (address);
 |----|----|-----------|
 |`<none>`|`address`|The address assigned to be the debt allocator if any.|
 
-### getAllocatorFactory
+### getGovernanceRoles
 
-Get the address assigned to the allocator factory.
+Get the roles given to the Governance position.
 
 ```solidity
-function getAllocatorFactory() external view virtual returns (address);
+function getGovernanceRoles() external view virtual returns (uint256);
 ```
 
 **Returns**
 
 |Name|Type|Description|
 |----|----|-----------|
-|`<none>`|`address`|The address assigned to the allocator factory.|
+|`<none>`|`uint256`|The roles given to the Governance position.|
 
-### getDaddyRoles
+### getManagementRoles
 
-Get the roles given to the Daddy position.
+Get the roles given to the Management position.
 
 ```solidity
-function getDaddyRoles() external view virtual returns (uint256);
+function getManagementRoles() external view virtual returns (uint256);
 ```
 
 **Returns**
 
 |Name|Type|Description|
 |----|----|-----------|
-|`<none>`|`uint256`|The roles given to the Daddy position.|
-
-### getBrainRoles
-
-Get the roles given to the Brain position.
-
-```solidity
-function getBrainRoles() external view virtual returns (uint256);
-```
-
-**Returns**
-
-|Name|Type|Description|
-|----|----|-----------|
-|`<none>`|`uint256`|The roles given to the Brain position.|
-
-### getSecurityRoles
-
-Get the roles given to the Security position.
-
-```solidity
-function getSecurityRoles() external view virtual returns (uint256);
-```
-
-**Returns**
-
-|Name|Type|Description|
-|----|----|-----------|
-|`<none>`|`uint256`|The roles given to the Security position.|
+|`<none>`|`uint256`|The roles given to the Management position.|
 
 ### getKeeperRoles
 
@@ -893,20 +793,6 @@ function getDebtAllocatorRoles() external view virtual returns (uint256);
 |----|----|-----------|
 |`<none>`|`uint256`|The roles given to the debt allocators.|
 
-### getStrategyManagerRoles
-
-Get the roles given to the strategy manager.
-
-```solidity
-function getStrategyManagerRoles() external view virtual returns (uint256);
-```
-
-**Returns**
-
-|Name|Type|Description|
-|----|----|-----------|
-|`<none>`|`uint256`|The roles given to the strategy manager.|
-
 ## Events
 
 ### AddedNewVault
@@ -925,14 +811,6 @@ Emitted when a vaults debt allocator is updated.
 event UpdateDebtAllocator(address indexed vault, address indexed debtAllocator);
 ```
 
-### UpdatePositionHolder
-
-Emitted when a new address is set for a position.
-
-```solidity
-event UpdatePositionHolder(bytes32 indexed position, address indexed newAddress);
-```
-
 ### RemovedVault
 
 Emitted when a vault is removed.
@@ -941,20 +819,12 @@ Emitted when a vault is removed.
 event RemovedVault(address indexed vault);
 ```
 
-### UpdatePositionRoles
+### UpdateDefaultProfitMaxUnlockTime
 
-Emitted when a new set of roles is set for a position
-
-```solidity
-event UpdatePositionRoles(bytes32 indexed position, uint256 newRoles);
-```
-
-### UpdateDefaultProfitMaxUnlock
-
-Emitted when the defaultProfitMaxUnlock variable is updated.
+Emitted when the defaultProfitMaxUnlockTime variable is updated.
 
 ```solidity
-event UpdateDefaultProfitMaxUnlock(uint256 newDefaultProfitMaxUnlock);
+event UpdateDefaultProfitMaxUnlockTime(uint256 newDefaultProfitMaxUnlockTime);
 ```
 
 ## Errors
@@ -968,17 +838,6 @@ error AlreadyDeployed(address _vault);
 ```
 
 ## Structs
-
-### Position
-
-Position struct
-
-```solidity
-struct Position {
-    address holder;
-    uint96 roles;
-}
-```
 
 ### VaultConfig
 
