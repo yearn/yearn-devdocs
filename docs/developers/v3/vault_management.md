@@ -13,21 +13,19 @@ Running your vault requires no need to know how to code. Anyone desiring to mana
 - **strategy**: Any ERC-4626 compliant contract that can be added to an allocator vault that earns yield on an underlying asset.
 - **debt**: The amount of the underlying asset that an allocator vault has sent to a strategy to earn yield.
 - **report**: The function where a vault accounts for any profits or losses a strategy has accrued, charges applicable fees, and locks profit to be distributed to depositors.
-- **role_manager**: The position given to an address in a vault that controls what other addresses have rights to call permissioned functions on the vault. 
+- **role_manager**: The position given to an address in a vault that controls what other addresses have rights to call permissioned functions on the vault.
 
 ## Deployment
 
-There are multiple ways to handle deployments of vaults. By far the simplest way to deploy your own multi strategy vaults is by utilizing the pre-built, `RoleManager` and `RoleManagerFactory` contracts.
+There are multiple ways to handle deployments of vaults. By far the simplest way to deploy your own multi-strategy vaults is by utilizing the pre-built `RoleManager` and `RoleManagerFactory` contracts.
 
-The `RoleManagerFactory` can be used to deploy a full set of V3 periphery contracts including an `Accountant`, `DebtAllocator`, `Registry` and `RoleManager` and will configure them all automatically to make deployment and management as simple as possible while still allowing full customization where desired.
+The `RoleManagerFactory` can be used to deploy a full set of V3 periphery contracts including `Accountant`, `DebtAllocator`, `Registry` and `RoleManager` contracts and will configure them all automatically to make deployment and management as simple as possible while still allowing full customization where desired.
 
-You will only need three variables. 
+You will only need three variables.
 
 1. `projectName` : The name of your project i.e. "Yearn"
 2. `governance` : The main address to be in control of the vaults and RoleManager contract. This should be a fully trusted address.
 3. `management` :  Secondary address to manage lower risk more day to day needs of the vault such as debt allocations.
-
-
 
 ```solidity
 projectName = "Project Name"     // Name of your project.
@@ -42,7 +40,7 @@ address myNewRoleManager = roleManagerFactory.newProject(
 )
 ```
 
-The `RoleManager` contract deployed will then serve as the `role_manager` position on any multi strategy vaults deployed for simple and programatic setup of your vaults.
+The `RoleManager` contract deployed will then serve as the `role_manager` position on any multi-strategy vaults deployed for simple and programmatic setup of your vaults.
 
 You can then use your new RoleManager contract to do one step deployments and setups of any new vaults.
 
@@ -54,13 +52,14 @@ address newVault = myNewRoleManager.newVault(
     vaultSymbol
 )
 ```
-`category` is used by the RoleManager to classify and store vaults which will allow multiple vault types that use the same underlying address to be deployed. The categorization can be anything a project manager desires or just set to `0` or any other constant for all. 
+
+`category` is used by the RoleManager to classify and store vaults which will allow multiple vault types that use the same underlying address to be deployed. The categorization can be anything a project manager desires or just set to `0` or any other constant for all.
 
 Your new vault will now be deployed, with the Roles given out to each specified address, and Accountant hooked up to charge fees, and endorsed in your registry.
 
-To learn more about how to customize your deployment setups and using the `RoleManager` contract view the [full spech](LINK IT)
+To learn more about how to customize your deployment setups and using the `RoleManager` contract view the [full spec](../smart-contracts/V3/periphery/RoleManager.md)
 
-Alternativily you can manually deploy a vault directly from the factory and do a complete custom setup by following [these instructions](LINK)
+Alternatively you can manually deploy a vault directly from the factory and do a complete custom setup by following [these instructions](./vault_deployment.md)
 
 ### Miscellaneous
 

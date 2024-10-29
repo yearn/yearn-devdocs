@@ -1,3 +1,11 @@
+# Manual Vault Deployment
+
+:::tip
+
+if you are looking for the simplest way to deploy your own multi-strategy vaults we recommend first reading about using the Role Manager Factory on [this page.](./vault_management.md#deployment)
+
+:::
+
 ## Definitions
 
 - **vault (allocator)**: ERC-4626 compliant contract that accepts deposits, issues shares, and allocates funds to different strategies to earn yield.
@@ -5,15 +13,19 @@
 - **strategy**: Any ERC-4626 compliant contract that can be added to an allocator vault that earns yield on an underlying asset.
 - **debt**: The amount of the underlying asset that an allocator vault has sent to a strategy to earn yield.
 - **report**: The function where a vault accounts for any profits or losses a strategy has accrued, charges applicable fees, and locks profit to be distributed to depositors.
-- **role_manager**: The position given to an address in a vault that controls what other addresses have rights to call permissioned functions on the vault. 
+- **role_manager**: The position given to an address in a vault that controls what other addresses have rights to call permissioned functions on the vault.
 
 ## Deployment
 
 Each release of the vaults will have its own "Vault Factory" deployed to make it as simple and trustless as possible to deploy your vault. The vault factory allows anyone to trustlessly deploy their own vault which is an exact copy of the previously deployed "original" vault for that specific version.
 
-**Vaults not deployed through the factory will not be recognized as part of the Yearn ecosystem and may experience issues during runtime.
+:::warning
 
-To deploy your vault directly from the factory, simply find the factory's address for the most recent release [here](/developers/v3/overview) and call `Factory.deploy_new_vault(params)`.
+Vaults not deployed through the factory will not be recognized as part of the Yearn ecosystem and may experience issues during runtime.
+
+:::
+
+To deploy your vault directly from the factory, simply find the factory's address for the most recent release [here](/developers/addresses/v3-contracts) and call `Factory.deploy_new_vault(params)`.
 
 The needed parameters are:
 
