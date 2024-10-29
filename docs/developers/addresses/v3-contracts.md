@@ -57,14 +57,14 @@ For more information on the periphery contracts visit the [Periphery](/developer
 
 ## Yearn Specific Addresses
 
-Yearn Specific contracts and roles can be retrieved on chain from the Role Manager
+Yearn Specific contracts and roles, as well as the most up to date V3 registry can be retrieved on chain from the Role Manager.
 
 To find individual vaults, use the V3 Registry below or refer to https://yearn.fi
 
 | Contract Name | Contract Address |
 | ----------------------   | ------------------------------------------ |
 | Role Manager             | [0xb3bd6B2E61753C311EFbCF0111f75D29706D9a41](https://etherscan.io/address/0xb3bd6B2E61753C311EFbCF0111f75D29706D9a41) |
-| V3 Registry              | [0xff31A1B020c868F6eA3f61Eb953344920EeCA3af](https://etherscan.io/address/0xff31A1B020c868F6eA3f61Eb953344920EeCA3af) |
+| V3 Registry              | [0xa693365Ff5F5E65A03616FE98098318Ca80E6427](https://etherscan.io/address/0xa693365Ff5F5E65A03616FE98098318Ca80E6427) |
 |                       |                           |
 | Accountant               | [0x5A74Cb32D36f2f517DB6f7b0A0591e09b22cDE69](https://etherscan.io/address/0x5A74Cb32D36f2f517DB6f7b0A0591e09b22cDE69) |
 | Keeper                  | [0x52605BbF54845f520a3E94792d019f62407db2f8](https://etherscan.io/address/0x52605BbF54845f520a3E94792d019f62407db2f8) |
