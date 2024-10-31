@@ -28,7 +28,9 @@
     "rehype-katex": "7",
     "remark-math": "6",
     "solc": "^0.8.17",
-    "solidity-docgen": "^0.5.11"
+    "solidity-docgen": "^0.5.11",
+    "viem": "^2.16.1",
+    "dotenv": "^16.4.5"
   },
   "browserslist": {
     "production": [

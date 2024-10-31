@@ -29,6 +29,7 @@ veYFI incorporates [YIP-56: Buyback and Build](https://gov.yearn.fi/t/yip-56-buy
 - The circulating supply of dYFI must not exceed the amount of YFI available to be redeemed as part of the tokenomics program.
 - The amount of ETH required for redemption is at a discount to the current spot price of YFI/ETH.
 - ETH received from dYFI redemption is redirected to automated YFI buybacks handled by an immutable smart contract that runs Dutch auctions.
+
 - Discount calculation is a function of the veYFI and YFI supply with the following formula:
   - discount = `c / (1 + a * e^k(s * x − 1))`, where:
     - **c** = `1`
@@ -36,6 +37,7 @@ veYFI incorporates [YIP-56: Buyback and Build](https://gov.yearn.fi/t/yip-56-buy
     - **k** = `4.7`
     - **s** = `configurable scaling factor` (currently set to 10)
     - **x** = `veYFI_supply / YFI_supply`
+  - The current redemption discount is: <ContractData methodName = 'discount' />
   ![image](/img/charts/dyfi-redemption-chart.png)
 
 ## Vault Gauges + Voting

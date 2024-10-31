@@ -3,9 +3,11 @@
 import math from 'remark-math'
 import katex from 'rehype-katex'
 import { themes as prismThemes } from 'prism-react-renderer'
+import 'dotenv/config'
 
 const branchName = process.env.BRANCH_NAME || 'unknown'
 const isDev = process.env.IS_DEV === 'true'
+const alchemyKey = process.env.ALCHEMY_API_KEY || 'unknown'
 
 export default {
   title: 'Yearn Docs',
@@ -23,6 +25,7 @@ export default {
   customFields: {
     branchName,
     isDev,
+    alchemyKey,
   },
   themes: ['@docusaurus/theme-mermaid'],
   themeConfig: {
