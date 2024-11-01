@@ -150,7 +150,7 @@ export default {
           sidebarCollapsed: true,
           breadcrumbs: false,
           admonitions: {
-            keywords: ['yearn-info'],
+            keywords: ['yearn'],
             extendDefaults: true,
           },
         },
@@ -179,6 +179,12 @@ export default {
         showLastUpdateTime: true,
         sidebarCollapsed: true,
         breadcrumbs: false,
+        remarkPlugins: [math],
+        rehypePlugins: [katex],
+        admonitions: {
+          keywords: ['yearn'],
+          extendDefaults: true,
+        },
       },
     ],
     [
@@ -193,6 +199,10 @@ export default {
         breadcrumbs: false,
         remarkPlugins: [math],
         rehypePlugins: [katex],
+        admonitions: {
+          keywords: ['yearn'],
+          extendDefaults: true,
+        },
       },
     ],
     [
@@ -205,6 +215,12 @@ export default {
         showLastUpdateTime: true,
         sidebarCollapsed: true,
         breadcrumbs: false,
+        remarkPlugins: [math],
+        rehypePlugins: [katex],
+        admonitions: {
+          keywords: ['yearn'],
+          extendDefaults: true,
+        },
       },
     ],
     [
@@ -217,6 +233,12 @@ export default {
         showLastUpdateTime: true,
         sidebarCollapsed: true,
         breadcrumbs: false,
+        remarkPlugins: [math],
+        rehypePlugins: [katex],
+        admonitions: {
+          keywords: ['yearn'],
+          extendDefaults: true,
+        },
       },
     ],
   ],

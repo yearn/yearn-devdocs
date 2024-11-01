@@ -30,3 +30,7 @@
 .yearnLogo {
   width: 24px;
 }
+
+.yearnBody code {
+  background-color: var(--ifm-color-primary-darker);
+}
