@@ -9,7 +9,7 @@ For the most updated contracts visit:
 Vault Periphery Repo: https://github.com/yearn/vault-periphery
 TokenizedStrategy Periphery: https://github.com/yearn/tokenized-strategy-periphery
 
-The deployed address of most periphery contracts or their corresponding factories can be found on chain from the Protocol Address provider: `0x1e9778aAD41Aa3E0884C276fB4C2D03C4036Aa0B`
+The deployed address of most periphery contracts or their corresponding factories can be found on chain from the Protocol Address provider: `0x775F09d6f3c8D2182DFA8bce8628acf51105653c`
 
 The Yearn specific periphery contracts can be retrieved from that chains [Role Manager](/getting-started/products/addresses#ethereum-contracts)
 

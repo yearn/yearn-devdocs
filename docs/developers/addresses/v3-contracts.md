@@ -1,16 +1,36 @@
 # yVaults v3 Contract Addresses
 
-## Core Contract Addresses
-
-Core contracts are the base generic contracts that can be used by anyone who wants to build on v3 yVaults .
-
-:::note
+:::info
 
 Deployments are done using create2 factories and should be stable across all EVM chains the protocol has been deployed on.
 
-If a contract has not been deployed on a specific chain it can be done permissionlessly using the scripts in the relevant GitHub repo. Or reach out to a Yearn contributor for help.
+If any of the core contracts have not been deployed on a specific chain it can be done permissionlessly using [this CLI tool](https://github.com/wavey0x/yearn-v3-deployer) or via the scripts in the relevant GitHub repo. If you have issues or questions, please reach out to a Yearn contributor for help.
 
 :::
+
+## Protocol Addresses
+
+These are the deployed protocol contracts that can be used by anyone to create and manage yVaults. For Yearn implementation-specific contracts see [#Yearn Addresses](#yearn-specific-addresses)
+
+All Protocol Specific contracts can be found by starting with the `ProtocolAddressProvider` contract as the top level directory and then the `ReleaseRegistry`. The `VaultFactory` and `TokenizedStrategy` contracts can be found in the Release Registry and the Vault Original can be found in the `VaultFactory`.
+
+The Role Manager Factory provides the easiest way to deploy and manage your own V3 vaults. More information on that [here](../v3/vault_management.md#deployment).
+
+| Contract Name   | ENS |  Contract Address |
+| ----------------------   | ------------------------------------------ | ---------------------- |
+| Protocol Address Provider   | address-provider.v3.ychad.eth | [0x775F09d6f3c8D2182DFA8bce8628acf51105653c](https://etherscan.io/address/0x775F09d6f3c8D2182DFA8bce8628acf51105653c) |
+| Release Registry            | release.registry.v3.ychad.eth | [0x0377b4daDDA86C89A0091772B79ba67d0E5F7198](https://etherscan.io/address/0x0377b4daDDA86C89A0091772B79ba67d0E5F7198) |
+| Role Manager Factory        |        | [0xca12459a931643BF28388c67639b3F352fe9e5Ce](https://etherscan.io/address/0xca12459a931643BF28388c67639b3F352fe9e5Ce) |
+
+### Core Contract Addresses
+
+Core contracts are the base generic contracts that can be used by anyone who wants to build on v3 yVaults.
+
+### Version 3.0.3
+
+- Vault original : [`0xcA78AF7443f3F8FA0148b746Cb18FF67383CDF3f`](https://etherscan.io/address/0xcA78AF7443f3F8FA0148b746Cb18FF67383CDF3f#readContract)
+- VaultFactory : [`0x5577EdcB8A856582297CdBbB07055E6a6E38eb5f`](https://etherscan.io/address/0x5577EdcB8A856582297CdBbB07055E6a6E38eb5f#readContract)
+- TokenizedStrategy : [`0x254A93feff3BEeF9cA004E913bB5443754e8aB19`](https://etherscan.io/address/0x254A93feff3BEeF9cA004E913bB5443754e8aB19#readContract)
 
 ### Version 3.0.2
 
@@ -24,24 +44,28 @@ If a contract has not been deployed on a specific chain it can be done permissio
 - VaultFactory: [`0xE9E8C89c8Fc7E8b8F23425688eb68987231178e5`](https://etherscan.io/address/0xE9E8C89c8Fc7E8b8F23425688eb68987231178e5#readContract)
 - TokenizedStrategy: [`0xDFC8cD9F2f2d306b7C0d109F005DF661E14f4ff2`](https://etherscan.io/address/0xDFC8cD9F2f2d306b7C0d109F005DF661E14f4ff2#readContract)
 
-## Periphery Contracts
+### Periphery Contracts
 
-A list of the deployed v3 yVault system contracts. To find individual vaults, use the [V3 Registry](https://etherscan.io/address/0xff31a1b020c868f6ea3f61eb953344920eeca3af#readContract) or refer to https://yearn.fi
+All generic periphery contracts and factories can be retrieved on chain from the `AddressProvider` Contract:
 
-### Protocol Address Provider
+| Periphery Contract Name   | ENS |  Periphery Contract Address |
+| ----------------------   | ------------------------------------------ | ---------------------- |
+| Protocol Address Provider| address-provider.v3.ychad.eth |  [0x775F09d6f3c8D2182DFA8bce8628acf51105653c](https://etherscan.io/address/0x775F09d6f3c8D2182DFA8bce8628acf51105653c) |
+| APR Oracle               | apr.oracle.v3.ychad.eth | [0x1981AD9F44F2EA9aDd2dC4AD7D075c102C70aF92](https://etherscan.io/address/0x1981AD9F44F2EA9aDd2dC4AD7D075c102C70aF92) |
+| Report Trigger           |    | [0xA045D4dAeA28BA7Bfe234c96eAa03daFae85A147](https://etherscan.io/address/0xA045D4dAeA28BA7Bfe234c96eAa03daFae85A147) |
+| 4626 Router              |    | [0x1112dbCF805682e828606f74AB717abf4b4FD8DE](https://etherscan.io/address/0x1112dbCF805682e828606f74AB717abf4b4FD8DE) |
 
-All generic periphery contracts and factories can be retrieved on chain from the Address Provider: [`0x1e9778aAD41Aa3E0884C276fB4C2D03C4036Aa0B`](https://etherscan.io/address/0x1e9778aAD41Aa3E0884C276fB4C2D03C4036Aa0B#readContract)
+For a more complete list of all available periphery contracts visit the [Periphery](/developers/v3/periphery) section.
 
-| Identity                 | Address                                    |
-| ----------------------   | ------------------------------------------ |
-| V3 Registry              | [0xff31A1B020c868F6eA3f61Eb953344920EeCA3af](https://etherscan.io/address/0xff31A1B020c868F6eA3f61Eb953344920EeCA3af) |
-| Release Registry         | [0x990089173D5d5287c344092Be0bB37950A67d17B](https://etherscan.io/address/0x990089173D5d5287c344092Be0bB37950A67d17B) |
-| Role Manager             | [0xb3bd6B2E61753C311EFbCF0111f75D29706D9a41](https://etherscan.io/address/0xb3bd6B2E61753C311EFbCF0111f75D29706D9a41) |
-| Debt Allocator Factory   | [0xfCF8c7C43dedd567083B422d6770F23B78D15BDe](https://etherscan.io/address/0xfCF8c7C43dedd567083B422d6770F23B78D15BDe) |
-| Accountant               | [0x5A74Cb32D36f2f517DB6f7b0A0591e09b22cDE69](https://etherscan.io/address/0x5A74Cb32D36f2f517DB6f7b0A0591e09b22cDE69) |
-| Report Trigger           | [0xD98C652f02E7B987e0C258a43BCa9999DF5078cF](https://etherscan.io/address/0xD98C652f02E7B987e0C258a43BCa9999DF5078cF) |
-| APR Oracle               | [0x27aD2fFc74F74Ed27e1C0A19F1858dD0963277aE](https://etherscan.io/address/0x27aD2fFc74F74Ed27e1C0A19F1858dD0963277aE) |
-| 4626 Router              | [0x1112dbCF805682e828606f74AB717abf4b4FD8DE](https://etherscan.io/address/0x1112dbCF805682e828606f74AB717abf4b4FD8DE) |
-| Protocol Address Provider| [0x1e9778aAD41Aa3E0884C276fB4C2D03C4036Aa0B](https://etherscan.io/address/0x1e9778aAD41Aa3E0884C276fB4C2D03C4036Aa0B) |
+## Yearn Specific Addresses
 
-For more information on the periphery contracts visit the [Periphery](/developers/v3/periphery) section.
+Yearn Specific contracts and roles, as well as the most up to date V3 registry can be retrieved on chain from the Role Manager.
+
+To find individual vaults, use the V3 Registry below or refer to https://yearn.fi
+
+| Contract Name | ENS | Contract Address |
+| ----------------------   | ------------------------------------------ | ---------------------- |
+| Role Manager             | role-manager.v3.ychad.eth | [0xb3bd6B2E61753C311EFbCF0111f75D29706D9a41](https://etherscan.io/address/0xb3bd6B2E61753C311EFbCF0111f75D29706D9a41) |
+| Current V3 Registry      | registry.v3.ychad.eth | [0xa693365Ff5F5E65A03616FE98098318Ca80E6427](https://etherscan.io/address/0xa693365Ff5F5E65A03616FE98098318Ca80E6427) |
+| Legacy V3 Registry       |           | [0xff31A1B020c868F6eA3f61Eb953344920EeCA3af](https://etherscan.io/address/0xff31A1B020c868F6eA3f61Eb953344920EeCA3af) |
+| Accountant               | accountant.v3.ychad.eth | [0x5A74Cb32D36f2f517DB6f7b0A0591e09b22cDE69](https://etherscan.io/address/0x5A74Cb32D36f2f517DB6f7b0A0591e09b22cDE69) |
