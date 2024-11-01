@@ -1,4 +1,5 @@
 export const dyfiRedemptionABI = [
+  // declare the constant
   {
     name: 'Killed',
     inputs: [{ name: 'yfi_recovered', type: 'uint256', indexed: false }],

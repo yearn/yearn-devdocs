@@ -1,3 +1,16 @@
+---
+rpcCalls:  
+  - name: 'dYFI Redemption'
+    chain: '1'
+    address: '0x7dC3A74F0684fc026f9163C6D5c3C99fda2cf60a'
+    abi: 'dyfiRedemptionABI'
+    methods:  
+      - 'discount'
+      - 'get_latest_price'
+      - name: 'eth_required'
+        args: ['1000000000000000000']
+---
+
 # Specification
 
 veYFI incorporates [YIP-56: Buyback and Build](https://gov.yearn.fi/t/yip-56-buyback-and-build/8929) funds into YFI tokenomics. Users can lock YFI tokens and receive veYFI, which allows them to boost vault rewards and vote on where bought-back YFI will be sent.
@@ -37,7 +50,16 @@ veYFI incorporates [YIP-56: Buyback and Build](https://gov.yearn.fi/t/yip-56-buy
     - **k** = `4.7`
     - **s** = `configurable scaling factor` (currently set to 10)
     - **x** = `veYFI_supply / YFI_supply`
-  - The current redemption discount is: <ContractData methodName = 'discount' />
+    <br />
+
+  :::yearn[Current On-Chain Values]
+
+  - The current redemption discount is: <ContractData contract='dYFI Redemption' methodName='discount' decimals={18} />
+  - Current Spot Price of YFI/ETH: <ContractData contract='dYFI Redemption' methodName='get_latest_price' decimals={18} />
+  - ETH required to redeem 1 dYFI: <ContractData contract='dYFI Redemption' methodName='eth_required' decimals={18} />
+
+  :::
+
   ![image](/img/charts/dyfi-redemption-chart.png)
 
 ## Vault Gauges + Voting
