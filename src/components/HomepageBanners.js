@@ -7,9 +7,14 @@ export default function HomepageBanners(props) {
     <>
       {props.columns.map((column, index) => (
         <div className={styles.banner} key={index}>
-          {column.rows.map((row) => (
+          {column.rows.map((row, rowIndex) => (
             <Link
-              style={{ textDecoration: 'none', color: 'white', height: '100%' }}
+              key={rowIndex}
+              style={{
+                textDecoration: 'none',
+                color: 'white',
+                height: '100%',
+              }}
               to={row.to}
             >
               <div

@@ -2,7 +2,7 @@ import React from 'react'
 import DefaultAdmonitionTypes from '@theme-original/Admonition/Types'
 import styles from './admonitions.module.css'
 
-function yearnAdmonition(props) {
+function yearnAdmonition({ title = 'Yearn Tip', children }) {
   return (
     <div className={styles.yearnDiv}>
       <div className={styles.yearnTitle}>
@@ -13,15 +13,11 @@ function yearnAdmonition(props) {
             className={styles.yearnLogo}
           />
         </span>
-        <h5 className={styles.yearnHeading}>{props.title}</h5>
+        <h5 className={styles.yearnHeading}>{title}</h5>
       </div>
-      <div className={styles.yearnBody}>{props.children}</div>
+      <div className={styles.yearnBody}>{children}</div>
     </div>
   )
-}
-
-yearnAdmonition.defaultProps = {
-  title: 'Yearn Tip', // Replace 'Default Title' with your desired default title
 }
 
 const AdmonitionTypes = {
@@ -29,7 +25,7 @@ const AdmonitionTypes = {
 
   // Add all your custom admonition types here...
   // You can also override the default ones if you want
-  'yearn-info': yearnAdmonition,
+  yearn: yearnAdmonition,
 }
 
 export default AdmonitionTypes
