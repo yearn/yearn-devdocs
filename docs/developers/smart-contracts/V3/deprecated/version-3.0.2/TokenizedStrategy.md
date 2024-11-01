@@ -1,7 +1,6 @@
-<!-- markdownlint-disable MD024 MD036 -->
-# TokenizedStrategy
+# TokenizedStrategy.sol
 
-[Git Source](https://github.com/yearn/tokenized-strategy/blob/e90ecb8a288340bf17f6800e7bd545f2a3f7adeb/src/TokenizedStrategy.sol)
+[Git Source](https://github.com/yearn/tokenized-strategy/blob/v3.0.2-1/src/TokenizedStrategy.sol)
 
 **Author:**
 yearn.finance
@@ -24,23 +23,7 @@ deploy their own permissionless 4626 compliant vault.
 API version this TokenizedStrategy implements.
 
 ```solidity
-string internal constant API_VERSION = "3.0.3";
-```
-
-### ENTERED
-
-Value to set the `entered` flag to during a call.
-
-```solidity
-uint8 internal constant ENTERED = 2;
-```
-
-### NOT_ENTERED
-
-Value to set the `entered` flag to at the end of the call.
-
-```solidity
-uint8 internal constant NOT_ENTERED = 1;
+string internal constant API_VERSION = "3.0.2";
 ```
 
 ### MAX_FEE
@@ -49,30 +32,6 @@ Maximum in Basis Points the Performance Fee can be set to.
 
 ```solidity
 uint16 public constant MAX_FEE = 5_000;
-```
-
-### MAX_BPS
-
-Used for fee calculations.
-
-```solidity
-uint256 internal constant MAX_BPS = 10_000;
-```
-
-### MAX_BPS_EXTENDED
-
-Used for profit unlocking rate calculations.
-
-```solidity
-uint256 internal constant MAX_BPS_EXTENDED = 1_000_000_000_000;
-```
-
-### SECONDS_PER_YEAR
-
-Seconds per year for max profit unlocking time.
-
-```solidity
-uint256 internal constant SECONDS_PER_YEAR = 31_556_952;
 ```
 
 ### BASE_STRATEGY_STORAGE
@@ -567,45 +526,46 @@ function previewRedeem(uint256 shares) external view returns (uint256);
 ### maxDeposit
 
 Total number of underlying assets that can
-be deposited into the strategy, where `receiver`
-corresponds to the receiver of the shares of a [deposit](#deposit) call.
+be deposited by `_owner` into the strategy, where `owner`
+corresponds to the receiver of a [deposit](#deposit) call.
 
 ```solidity
-function maxDeposit(address receiver) external view returns (uint256);
+function maxDeposit(address owner) external view returns (uint256);
 ```
 
 **Parameters**
 
 |Name|Type|Description|
 |----|----|-----------|
-|`receiver`|`address`|The address receiving the shares.|
+|`owner`|`address`|The address depositing.|
 
 **Returns**
 
 |Name|Type|Description|
 |----|----|-----------|
-|`<none>`|`uint256`|. The max that `receiver` can deposit in `asset`.|
+|`<none>`|`uint256`|. The max that `owner` can deposit in `asset`.|
 
 ### maxMint
 
-Total number of shares that can be minted to `receiver`
+Total number of shares that can be minted by `owner`
+into the strategy, where `_owner` corresponds to the receiver
 of a [mint](#mint) call.
 
 ```solidity
-function maxMint(address receiver) external view returns (uint256);
+function maxMint(address owner) external view returns (uint256);
 ```
 
 **Parameters**
 
 |Name|Type|Description|
 |----|----|-----------|
-|`receiver`|`address`|The address receiving the shares.|
+|`owner`|`address`|The address minting.|
 
 **Returns**
 
 |Name|Type|Description|
 |----|----|-----------|
-|`<none>`|`uint256`|_maxMint The max that `receiver` can mint in shares.|
+|`<none>`|`uint256`|_maxMint The max that `owner` can mint in shares.|
 
 ### maxWithdraw
 
@@ -629,17 +589,6 @@ function maxWithdraw(address owner) external view returns (uint256);
 |----|----|-----------|
 |`<none>`|`uint256`|_maxWithdraw Max amount of `asset` that can be withdrawn.|
 
-### maxWithdraw
-
-Variable `maxLoss` is ignored.
-
-*Accepts a `maxLoss` variable in order to match the multi
-strategy vaults ABI.*
-
-```solidity
-function maxWithdraw(address owner, uint256) external view returns (uint256);
-```
-
 ### maxRedeem
 
 Total number of strategy shares that can be
@@ -661,17 +610,6 @@ function maxRedeem(address owner) external view returns (uint256);
 |Name|Type|Description|
 |----|----|-----------|
 |`<none>`|`uint256`|_maxRedeem Max amount of shares that can be redeemed.|
-
-### maxRedeem
-
-Variable `maxLoss` is ignored.
-
-*Accepts a `maxLoss` variable in order to match the multi
-strategy vaults ABI.*
-
-```solidity
-function maxRedeem(address owner, uint256) external view returns (uint256);
-```
 
 ### _totalAssets
 
@@ -716,7 +654,7 @@ function _convertToAssets(StrategyData storage S, uint256 shares, Math.Rounding 
 *Internal implementation of [maxDeposit](#maxdeposit).*
 
 ```solidity
-function _maxDeposit(StrategyData storage S, address receiver) internal view returns (uint256);
+function _maxDeposit(StrategyData storage S, address owner) internal view returns (uint256);
 ```
 
 ### _maxMint
@@ -724,7 +662,7 @@ function _maxDeposit(StrategyData storage S, address receiver) internal view ret
 *Internal implementation of [maxMint](#maxmint).*
 
 ```solidity
-function _maxMint(StrategyData storage S, address receiver) internal view returns (uint256 maxMint_);
+function _maxMint(StrategyData storage S, address owner) internal view returns (uint256 maxMint_);
 ```
 
 ### _maxWithdraw
@@ -745,7 +683,7 @@ function _maxRedeem(StrategyData storage S, address owner) internal view returns
 
 ### _deposit
 
-*Function to be called during [deposit](#deposit) and `mint`.
+*Function to be called during [deposit](#deposit) and [mint](#mint).
 This function handles all logic including transfers,
 minting and accounting.
 We do all external calls before updating any internal
@@ -758,7 +696,7 @@ function _deposit(StrategyData storage S, address receiver, uint256 assets, uint
 
 ### _withdraw
 
-*To be called during [redeem](#redeem) and `withdraw`.
+*To be called during [redeem](#redeem) and [withdraw](#withdraw).
 This will handle all logic, transfers and accounting
 in order to service the withdraw request.
 If we are not able to withdraw the full amount needed, it will
@@ -860,9 +798,9 @@ function tend() external nonReentrant onlyKeepers;
 Used to shutdown the strategy preventing any further deposits.
 
 *Can only be called by the current `management` or `emergencyAdmin`.
-This will stop any new [deposit](#deposit) or `mint` calls but will
-not prevent `withdraw` or `redeem`. It will also still allow for
-`tend` and `report` so that management can report any last losses
+This will stop any new [deposit](#deposit) or [mint](#mint) calls but will
+not prevent [withdraw](#withdraw) or [redeem](#redeem). It will also still allow for
+[tend](#tend) and [report](#report) so that management can report any last losses
 in an emergency as well as provide any maintenance to allow for full
 withdraw.
 This is a one way switch and can never be set back once shutdown.*
@@ -1211,20 +1149,6 @@ function setProfitMaxUnlockTime(uint256 _profitMaxUnlockTime) external onlyManag
 |----|----|-----------|
 |`_profitMaxUnlockTime`|`uint256`|New `profitMaxUnlockTime`.|
 
-### setName
-
-Updates the name for the strategy.
-
-```solidity
-function setName(string calldata _name) external onlyManagement;
-```
-
-**Parameters**
-
-|Name|Type|Description|
-|----|----|-----------|
-|`_name`|`string`|The new name for the strategy.|
-
 ### name
 
 Returns the name of the token.
@@ -1334,7 +1258,7 @@ function transfer(address to, uint256 amount) external returns (bool);
 Returns the remaining number of tokens that `spender` will be
 allowed to spend on behalf of `owner` through [transferFrom](#transferfrom). This is
 zero by default.
-This value changes when `approve` or `transferFrom` are called.
+This value changes when [approve](#approve) or [transferFrom](#transferfrom) are called.
 
 ```solidity
 function allowance(address owner, address spender) external view returns (uint256);
@@ -1416,7 +1340,7 @@ Requirements:
 * `from` must have a balance of at least `amount`.
 * the caller must have allowance for ``from``'s tokens of at least
 `amount`.
-Emits a `Transfer` event.*
+Emits a Transfer event.*
 
 ```solidity
 function transferFrom(address from, address to, uint256 amount) external returns (bool);
@@ -1537,17 +1461,15 @@ given ``owner``'s signed approval.
 
 *IMPORTANT: The same issues IERC20-approve has related to transaction
 ordering also apply here.
-Emits an `Approval` event.
+Emits an Approval event.
 Requirements:
 
 * `spender` cannot be the zero address.
 * `deadline` must be a timestamp in the future.
 * `v`, `r` and `s` must be a valid `secp256k1` signature from `owner`
 over the EIP712-formatted function arguments.
-* the signature must use ``owner``'s current nonce (see `nonces`).
-For more information on the signature format, see the
-https://eips.ethereum.org/EIPS/eip-2612#specification[relevant EIP
-section].*
+* the signature must use ``owner``'s current nonce (see [`nonces`](#nonces)).
+For more information on the signature format, see https://eips.ethereum.org/EIPS/eip-2612#specification.*
 
 ```solidity
 function permit(address owner, address spender, uint256 value, uint256 deadline, uint8 v, bytes32 r, bytes32 s)
@@ -1559,6 +1481,10 @@ function permit(address owner, address spender, uint256 value, uint256 deadline,
 Returns the domain separator used in the encoding of the signature
 for [permit](#permit), as defined by `EIP712`.
 
+*This checks that the current chain id is the same as when the contract
+was deployed to prevent replay attacks. If false it will calculate a new
+domain separator based on the new chain id.*
+
 ```solidity
 function DOMAIN_SEPARATOR() public view returns (bytes32);
 ```
@@ -1568,6 +1494,18 @@ function DOMAIN_SEPARATOR() public view returns (bytes32);
 |Name|Type|Description|
 |----|----|-----------|
 |`<none>`|`bytes32`|. The domain separator that will be used for any [permit](#permit) calls.|
+
+### _computeDomainSeparator
+
+*Calculates and returns the domain separator to be used in any
+permit functions for the strategies [permit](#permit) calls.
+This will be used at the initialization of each new strategies storage.
+It would then be used in the future in the case of any forks in which
+the current chain id is not the same as the original.*
+
+```solidity
+function _computeDomainSeparator(StrategyData storage S) internal view returns (bytes32);
+```
 
 ### constructor
 
@@ -1725,8 +1663,10 @@ will not increase memory related gas usage.*
 struct StrategyData {
     ERC20 asset;
     uint8 decimals;
+    uint88 INITIAL_CHAIN_ID;
     string name;
     uint256 totalSupply;
+    bytes32 INITIAL_DOMAIN_SEPARATOR;
     mapping(address => uint256) nonces;
     mapping(address => uint256) balances;
     mapping(address => mapping(address => uint256)) allowances;
