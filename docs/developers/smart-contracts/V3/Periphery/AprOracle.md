@@ -1,9 +1,10 @@
-# AprOracle.sol
+<!-- markdownlint-disable MD024 MD034 MD036 -->
+# AprOracle
 
-[Git Source](https://github.com/yearn/tokenized-strategy-periphery/blob/master/src/AprOracle/AprOracle.sol)
+[Git Source](https://github.com/yearn/tokenized-strategy-periphery/blob/f139be6286cb3d630b0bce6d6db812c709e5bb47/src/AprOracle/AprOracle.sol)
 
 **Inherits:**
-[Governance](./Governance)
+[Governance](https://github.com/yearn/tokenized-strategy-periphery/blob/f139be6286cb3d630b0bce6d6db812c709e5bb47/src/utils/Governance.sol)
 
 **Author:**
 Yearn.finance
@@ -27,6 +28,12 @@ to change.*
 mapping(address => address) public oracles;
 ```
 
+### MAX_BPS
+
+```solidity
+uint256 internal constant MAX_BPS = 10_000;
+```
+
 ### MAX_BPS_EXTENDED
 
 ```solidity
@@ -37,6 +44,12 @@ uint256 internal constant MAX_BPS_EXTENDED = 1_000_000_000_000;
 
 ```solidity
 uint256 internal constant SECONDS_PER_YEAR = 31_556_952;
+```
+
+### LEGACY_ORACLE
+
+```solidity
+address internal constant LEGACY_ORACLE = 0x27aD2fFc74F74Ed27e1C0A19F1858dD0963277aE;
 ```
 
 ## Functions
@@ -52,7 +65,7 @@ constructor(address _governance) Governance(_governance);
 Get the current APR a strategy is earning.
 
 *Will revert if an oracle has not been set for that strategy.
-This will be different than the [getExpectedApr](#getexpectedapr) which returns
+This will be different than the `getExpectedApr()` which returns
 the current APR based off of previously reported profits that
 are currently unlocking.
 This will return the APR the strategy is currently earning that
@@ -75,34 +88,11 @@ function getStrategyApr(address _strategy, int256 _debtChange) public view virtu
 |----|----|-----------|
 |`apr`|`uint256`|The expected APR it will be earning represented as 1e18.|
 
-### weightedApr
-
-Get the current weighted APR of a strategy.
-
-*Gives the apr weighted by its `totalAssets`. This can be used
-to get the combined expected return of a collection of strategies.*
-
-```solidity
-function weightedApr(address _strategy) external view virtual returns (uint256);
-```
-
-**Parameters**
-
-|Name|Type|Description|
-|----|----|-----------|
-|`_strategy`|`address`|Address of the strategy.|
-
-**Returns**
-
-|Name|Type|Description|
-|----|----|-----------|
-|`<none>`|`uint256`|. The current weighted APR of the strategy.|
-
 ### setOracle
 
 Set a custom APR `_oracle` for a `_strategy`.
 
-*Can only be called by the oracle's `governance` or
+*Can only be called by the Apr Oracle's `governance` or
 management of the `_strategy`.
 The `_oracle` will need to implement the IOracle interface.*
 
@@ -168,3 +158,26 @@ function getExpectedApr(address _vault, int256 _delta) public view virtual retur
 |Name|Type|Description|
 |----|----|-----------|
 |`apr`|`uint256`|The expected apr expressed as 1e18.|
+
+### getWeightedAverageApr
+
+Get the current weighted average APR for a V3 vault.
+
+*This is the sum of all the current APR's of the strategies in the vault.*
+
+```solidity
+function getWeightedAverageApr(address _vault, int256 _delta) public view virtual returns (uint256);
+```
+
+**Parameters**
+
+|Name|Type|Description|
+|----|----|-----------|
+|`_vault`|`address`|The address of the vault.|
+|`_delta`|`int256`||
+
+**Returns**
+
+|Name|Type|Description|
+|----|----|-----------|
+|`<none>`|`uint256`|apr The weighted average apr expressed as 1e18.|
