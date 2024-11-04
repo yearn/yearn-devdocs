@@ -216,7 +216,7 @@ async function main() {
       }
 
       const tempFolder = path.resolve('natspec/temp')
-      const outputBaseDir = path.resolve('docs/developers/smart-contracts/v3')
+      const outputBaseDir = path.resolve('docs/developers/smart-contracts/V3')
       const indexFilePath = path.join(outputBaseDir, 'index.md')
       // Extract the current version number
       const currentVersion = extractCurrentVersion(indexFilePath)
