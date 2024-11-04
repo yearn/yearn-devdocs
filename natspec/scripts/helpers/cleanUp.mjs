@@ -28,8 +28,8 @@ export function revertChanges(outputBaseDir, tempFolder, currentVersion) {
   if (currentVersion) {
     // Move files back from deprecated folder
     const deprecatedDir = path.join(
-      outputBaseDir,
-      'deprecated',
+      path.dirname(outputBaseDir),
+      'deprecated/V3',
       `version-${currentVersion}`
     )
   }
