@@ -17,7 +17,7 @@ The Yearn Docs [website](https://docs.yearn.fi/) is built using [Docusaurus](htt
 
 1. Install Node dependencies
 
-    make sure you have the most recent lts node version installed
+    make sure you have the most recent lts node version installed. NVM is Node Version Manager and you may need to install this if you don't have it.
 
     ```bash
     nvm install --lts
@@ -31,7 +31,7 @@ The Yearn Docs [website](https://docs.yearn.fi/) is built using [Docusaurus](htt
 
 2. Install Python/Vyper dependencies for natspec docs generation (You can skip this step if you aren't working on smart contract documentation)
 
-    This assumes you are using linux and will use the apt package manager.
+    This assumes you are using linux and will use the apt package manager. If not, other OSes have their own package manager that will have Python and Vyper.
 
     2a. update the apt package manager
 
@@ -94,7 +94,7 @@ yarn build
 
 ## Deployment
 
-There is a github actions script that builds and deploys the site when a pull request is merged to the `master` branch.
+Generally you should not need to use this as there is a github actions script that builds and deploys the site when a pull request is merged to the `master` branch of the upstream Yearn Github Repo.
 
 If you are using GitHub pages for hosting, this command is a convenient way to build the website and push it to the `gh-pages` branch.
 
@@ -115,39 +115,45 @@ We have 2 types of documentation: General documentation and Natspec documentatio
 - General documentation is generated from markdown or HTML files and edited manually.
 - Natspec documentation is automatically generated from another repository's code.
 
-#### Non-versioned Documentation
+#### General Documentation
 
 This documentation is located in the `docs` folder and most content is either in the `getting-started` folder (User Docs), the `developers` folder (Dev Docs), or the `contributing` folder (DAO Docs).
 
-#### Versioned Documentation
+#### Natspec Documentation
 
-Versioning has changed. Because Yearn supports multiple products with their own versions, versioning is now done manually using folder structure (instead of native Docusaurus versioning) to keep things organized. There are folders for all versions of the smart contract [NatSpec](https://docs.soliditylang.org/en/latest/natspec-format.html) documentation in:
+⚠️ As of mid 2024, versioning has been changed!
 
-```
+Because Yearn supports multiple products with their own version numbers, versioning is now done manually using folder structure (instead of native Docusaurus versioning) to keep things organized. There are folders for all versions of the smart contract [NatSpec](https://docs.soliditylang.org/en/latest/natspec-format.html) documentation in:
+
+```plaintext
 docs/developers/smart-contracts
 ├── V3
 │   ├── Current contract 1
 │   ├── Current contract 2
-│   ├── Current contract n...
-│   └── V3 Deprecated
-│       ├── v3.x.x
-│       │   ├── contract 1
-│       │   ├── contract 2
-│       │   └── contract n...
-│       └── v3.x.x
-│           ├── contract 1
-│           ├── contract 2
-│           └── contract n...
+│   └── Current contract n...
+│
 ├── V2
 │   ├── Current contract 1
 │   ├── Current contract 2
-│   ├── Current contract n...
+│   └── Current contract n...
+│
+├── Deprecated   
+│   ├── V3 Deprecated
+│   │   ├── v3.x.x
+│   │   │   ├── contract 1
+│   │   │   ├── contract 2
+│   │   │   └── contract n...
+│   │   └── v3.x.x
+│   │       ├── contract 1
+│   │       ├── contract 2
+│   │       └── contract n...
+│   │
 │   └── V2 Deprecated
-│       ├── v0.4.5
+│       ├── v0.4.x
 │       │   ├── contract 1
 │       │   ├── contract 2
 │       │   └── contract n...
-│       └── v0.x.x
+│       └── v0.4.x
 │           ├── contract 1
 │           ├── contract 2
 │           └── contract n...
@@ -168,13 +174,11 @@ docs/developers/smart-contracts
 
 To generate API documentation and coin a new release, do the following.
 
-1. Create new folder in `docs/developers/smart-contracts/v2/deprecated` with the current version number (i.e. version-0.4.6)
+1. Create new folder in `docs/developers/smart-contracts/deprecated/V2` with the current version number (i.e. version-0.4.6)
 2. Move existing docs into newly created folder. Leave the index.md file and update the vault version called out in it to the new version number.
 3. Generate docs from contracts using vydoc or similar documentation creator.
 4. lint and clean up docs
 5. Move new generated docs into `docs/developers/smart-contracts/v2/`
-
-:warning: Here are the old instructions to create vydoc documentation. They may need updating.
 
 #### VyDoc
 
@@ -221,7 +225,7 @@ source venv/bin/activate
 python3 -m pip install -r requirements.txt
 ```
 
-4. If you havent already, install Forge.
+4. If you haven't already, install Forge.
 
 ``` bash
 curl -L https://foundry.paradigm.xyz | bash
@@ -239,18 +243,24 @@ then re-activate your venv
 source venv/bin/activate
 ```
 
-You should now be ready to generate some docs! To generate new documentation run the v3 documentation script. You will be prompted for a new version number.
+You should now be ready to generate some docs! To generate new documentation run the v3 documentation script.
 
 ```bash
 yarn v3-docs
 ```
 
-This should:
+This should generate a prompt for you to follow:
 
-- Generate documentation for the contracts listed in the `v3-contracts` object in `smartContracts.json`.
-- Move the existing "current" files into a new folder in `developers/smart-contracts/v3/deprecated` with the old version number.
-- Add the new files to `developers/smart-contracts/v3`
-- update the index.md file to reflect the new release version.
+- If you are creating docs for a new release then select "new" and enter the new version number. This will then:
+  - Generate documentation for the contracts listed in the `v3-contracts` object in `smartContracts.json`.
+  - Move the existing "current" files into a new folder in `developers/smart-contracts/deprecated/V3` with the old version number.
+  - Add the new files to `developers/smart-contracts/v3`
+  - update the index.md file to reflect the new release version.
+- If you only want to update without creating a new version, or update a few files or a certain folder, you can use the "update" option in the prompt.
+  - Then select whether you want to update all v3 files or only selected ones.
+    - If you select "files", the script will then read from the `selectedFiles` array in the `natspec-generate.mjs` script file. Edit that array to include the file names you want. (Naming should match existing files e.g. `TokenizedStrategy`).
+    - If you select "folder" then the script will read the path in the `folderToUpdate` variable. Be aware this will include all sub-folders as well.
+  - After selecting options, everything else runs the same as selecting "new" but without copying your existing files to the deprecated folder.
 
 The script runs a markdown linter, so the output files should be pretty clean, but they still may need some manual adjustment. You may also still get build errors if there are characters in the natspec that MDX v3 doesn't like (like {} and <>). These will need to be removed manually or escaped out of using the `\` character. More info [here](https://docusaurus.io/docs/markdown-features/react#markdown-and-jsx-interoperability).
 
@@ -270,7 +280,7 @@ There will also probably be some broken links. These are usually from the forge 
 
 This is a Detail element that contains other text inside. If you format the summary section as shown it renders markdown correctly.
 
-```
+```markdown
 <details className="customDetails">
 
   <summary>
@@ -292,7 +302,7 @@ There is also a "customFaqDetails" css class that removes the borders.
 
 The PrettyLink element makes your links into button-like elements with subtle animation and yearn styling. These links will fill the full width of the markdown document. Can be used with naked links or with markdown style links.
 
-```
+```markdown
 <PrettyLink>[your link name](your-link-url)</PrettyLink>
 ```
 
@@ -300,10 +310,30 @@ The PrettyLink element makes your links into button-like elements with subtle an
 
 There is a custom informational Yearn-styled admonition that can be used like any other admonition.
 
-```
-:::yearn-info[title-goes-here]
+```markdown
+:::yearn[title-goes-here]
 
 text content
 
 :::
+```
+
+If you create a new docs plugin in `docusaurus.config` you will need to initialize this admonition in that plugin instance like this:
+
+```js
+
+ plugins: [
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'new docs section',
+        //other vars
+        admonitions: {
+          keywords: ['yearn'],
+          extendDefaults: true,
+        },
+      },
+    ],
+]
+
 ```
