@@ -23,7 +23,7 @@ You can retrieve both the default protocol fee as well as if a custom config has
 
 ``` solidity title="Examples"
 # Retrieve the default config.
-vaultFactory.default_protocol_fee_config()
+vaultFactory.protocol_fee_config()
 
 # Check a specific vault current config to be used
 vaultFactory.protocol_fee_config(vault_address)
