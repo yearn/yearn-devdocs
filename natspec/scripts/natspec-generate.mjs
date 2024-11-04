@@ -66,7 +66,7 @@ function setFilesToUpdate(updateType) {
       const files = fs.readdirSync(folderToUpdate)
 
       files.forEach((file) => {
-        const filePath = path.join(dirPath, file)
+        const filePath = path.join(folderToUpdate, file)
         if (fs.statSync(filePath).isDirectory()) {
           arrayOfFiles = getAllFiles(filePath, arrayOfFiles)
         } else {
