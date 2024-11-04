@@ -43,14 +43,6 @@
           "type": "file",
           "git": "https://github.com/yearn/vault-periphery"
         },
-        "Governance.sol": {
-          "type": "file",
-          "git": "https://github.com/yearn/tokenized-strategy-periphery"
-        },
-        "Governance2Step.sol": {
-          "type": "file",
-          "git": "https://github.com/yearn/tokenized-strategy-periphery"
-        },
         "Auction.sol": {
           "type": "file",
           "git": "https://github.com/yearn/tokenized-strategy-periphery"
@@ -64,10 +56,6 @@
           "git": "https://github.com/yearn/vault-periphery"
         },
         "CommonReportTrigger.sol": {
-          "type": "file",
-          "git": "https://github.com/yearn/tokenized-strategy-periphery"
-        },
-        "Clonable.sol": {
           "type": "file",
           "git": "https://github.com/yearn/tokenized-strategy-periphery"
         },
