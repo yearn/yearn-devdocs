@@ -1,0 +1,109 @@
+{
+  "v3-contracts": {
+    "BaseStrategy.sol": {
+      "type": "file",
+      "git": "https://github.com/yearn/tokenized-strategy"
+    },
+    "TokenizedStrategy.sol": {
+      "type": "file",
+      "git": "https://github.com/yearn/tokenized-strategy"
+    },
+    "VaultFactory.vy": {
+      "type": "file",
+      "git": "https://github.com/yearn/yearn-vaults-v3"
+    },
+    "VaultV3.vy": {
+      "type": "file",
+      "git": "https://github.com/yearn/yearn-vaults-v3"
+    },
+    "Periphery": {
+      "type": "folder",
+      "contents": {
+        "AprOracle.sol": {
+          "type": "file",
+          "git": "https://github.com/yearn/tokenized-strategy-periphery"
+        },
+        "Accountant.sol": {
+          "type": "file",
+          "git": "https://github.com/yearn/vault-periphery"
+        },
+        "AccountantFactory.sol": {
+          "type": "file",
+          "git": "https://github.com/yearn/vault-periphery"
+        },
+        "Registry.sol": {
+          "type": "file",
+          "git": "https://github.com/yearn/vault-periphery"
+        },
+        "ReleaseRegistry.sol": {
+          "type": "file",
+          "git": "https://github.com/yearn/vault-periphery"
+        },
+        "RegistryFactory.sol": {
+          "type": "file",
+          "git": "https://github.com/yearn/vault-periphery"
+        },
+        "Governance.sol": {
+          "type": "file",
+          "git": "https://github.com/yearn/tokenized-strategy-periphery"
+        },
+        "Governance2Step.sol": {
+          "type": "file",
+          "git": "https://github.com/yearn/tokenized-strategy-periphery"
+        },
+        "Auction.sol": {
+          "type": "file",
+          "git": "https://github.com/yearn/tokenized-strategy-periphery"
+        },
+        "DebtAllocator.sol": {
+          "type": "file",
+          "git": "https://github.com/yearn/vault-periphery"
+        },
+        "RoleManager.sol": {
+          "type": "file",
+          "git": "https://github.com/yearn/vault-periphery"
+        },
+        "CommonReportTrigger.sol": {
+          "type": "file",
+          "git": "https://github.com/yearn/tokenized-strategy-periphery"
+        },
+        "Clonable.sol": {
+          "type": "file",
+          "git": "https://github.com/yearn/tokenized-strategy-periphery"
+        },
+        "Yearn4626Router": {
+          "type": "folder",
+          "contents": {
+            "Multicall.sol": {
+              "type": "file",
+              "git": "https://github.com/yearn/Yearn-ERC4626-Router"
+            },
+            "PeripheryPayments.sol": {
+              "type": "file",
+              "git": "https://github.com/yearn/Yearn-ERC4626-Router"
+            },
+            "SelfPermit.sol": {
+              "type": "file",
+              "git": "https://github.com/yearn/Yearn-ERC4626-Router"
+            },
+            "Yearn4626Router.sol": {
+              "type": "file",
+              "git": "https://github.com/yearn/Yearn-ERC4626-Router"
+            },
+            "Yearn4626RouterBase.sol": {
+              "type": "file",
+              "git": "https://github.com/yearn/Yearn-ERC4626-Router"
+            }
+          }
+        }
+      }
+    }
+  },
+  "Submodules": [
+    "https://github.com/yearn/yearn-vaults-v3.git",
+    "https://github.com/yearn/tokenized-strategy.git",
+    "https://github.com/yearn/tokenized-strategy-periphery.git",
+    "https://github.com/yearn/vault-periphery.git",
+    "https://github.com/yearn/Yearn-ERC4626-Router.git"
+  ]
+}
