@@ -168,9 +168,25 @@ function traverseAndCopy(baseDir, outputBaseDir, extension, contractMap) {
       // Recurse into subdirectories
       traverseAndCopy(entryPath, extension, contractMap)
     } else if (stat.isFile() && path.extname(entry) === '.md') {
-      processMarkdownFile(entry, entryPath, extension, contractMap)
+      processMarkdownFile(
+        entry,
+        entryPath,
+        extension,
+        contractMap,
+        outputBaseDir
+      )
     }
   }
+}
+
+function processMarkdownFile(
+  entry,
+  entryPath,
+  extension,
+  contractMap,
+  outputBaseDir
+) {
+  let fileBaseName = path.basename(entry, '.md')
   fileBaseName = removeForgePrefixes(fileBaseName)
 
   const contractName = fileBaseName + extension

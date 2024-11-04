@@ -1,16 +1,16 @@
 import path from 'path'
 import fs from 'fs'
 import readline from 'readline'
-import { generateForgeDoc, generateVydoc } from './helpers/generateDocs'
+import { generateForgeDoc, generateVydoc } from './helpers/generateDocs.mjs'
 import {
   copyDocs,
   extractCurrentVersion,
   updateVersionInIndex,
   lintMarkdownFiles,
   moveToDeprecated,
-} from './helpers/copyDocs'
-import { updateSubmodules } from './helpers/submodules'
-import { cleanUpTempFolder, revertChanges } from './helpers/cleanUp'
+} from './helpers/copyDocs.mjs'
+import { updateSubmodules } from './helpers/submodules.mjs'
+import { cleanUpTempFolder, revertChanges } from './helpers/cleanUp.mjs'
 
 const submodules = [
   {
@@ -157,7 +157,7 @@ async function main() {
       }
       let contractsToUpdate = null
       const tempFolder = path.resolve('natspec/temp')
-      const outputBaseDir = path.resolve('docs/developers/smart-contracts/v3')
+      const outputBaseDir = path.resolve('docs/developers/smart-contracts/V3')
       const indexFilePath = path.join(outputBaseDir, 'index.md')
       // Extract the current version number
       const currentVersion = extractCurrentVersion(indexFilePath)
