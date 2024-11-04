@@ -166,7 +166,7 @@ function traverseAndCopy(baseDir, outputBaseDir, extension, contractMap) {
     const stat = fs.statSync(entryPath)
     if (stat.isDirectory()) {
       // Recurse into subdirectories
-      traverseAndCopy(entryPath, extension, contractMap)
+      traverseAndCopy(entryPath, outputBaseDir, extension, contractMap)
     } else if (stat.isFile() && path.extname(entry) === '.md') {
       processMarkdownFile(
         entry,
