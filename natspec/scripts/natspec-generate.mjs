@@ -40,6 +40,16 @@ const submodules = [
   },
 ]
 
+const filesToUpdate = [
+  'VaultV3',
+  'VaultFactory',
+  // Add other files as needed
+]
+
+const folderToUpdate = path.resolve(
+  'docs/developers/smart-contracts/V3/Periphery' //change as needed
+)
+
 /**
  * Prompts the user to choose between updating from a folder or a list of files,
  * and returns the corresponding list of file paths.
@@ -53,10 +63,7 @@ function setFilesToUpdate(updateType) {
     let result
     if (updateType === 'folder') {
       let arrayOfFiles = []
-      const dirPath = path.resolve(
-        'docs/developers/smart-contracts/v3/Periphery'
-      )
-      const files = fs.readdirSync(dirPath)
+      const files = fs.readdirSync(folderToUpdate)
 
       files.forEach((file) => {
         const filePath = path.join(dirPath, file)
@@ -68,11 +75,6 @@ function setFilesToUpdate(updateType) {
       })
       result = arrayOfFiles
     } else if (updateType === 'files') {
-      const filesToUpdate = [
-        'yearn-vaults-v3',
-        'vault-periphery',
-        // Add other files as needed
-      ]
       result = filesToUpdate
     } else {
       reject(new Error('Invalid option'))
