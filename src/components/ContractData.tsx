@@ -3,7 +3,7 @@ import React, { useContext } from 'react'
 import { ContractDataContext } from '../context/ContractDataContext'
 import { formatUnits } from 'viem'
 
-const ContractData = ({ contract: contractName, methodName, decimals }) => {
+const ContractData = ({ contractName, methodName, decimals }) => {
   const data = useContext(ContractDataContext)
   console.log('ContractData', contractName, methodName, data)
 

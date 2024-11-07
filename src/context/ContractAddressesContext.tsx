@@ -1,19 +1,11 @@
 import React, { createContext, useState, useEffect, useContext } from 'react'
 import { PublicClientContext } from './PublicClientContext'
-import { normalize } from 'viem/ens'
-import * as constants from '../ethereum/constants'
-import {
-  getProtocolContractAddresses,
-  readReleaseRegistry,
-  readV3VaultFactory,
-} from '../ethereum/calls'
 import {
   fetchTopLevelAddressesFromENS,
   fetchAndCheckFromReleaseRegistry,
   fetchAndCheckProtocolAddresses,
   fetchAndCheckYearnV3Addresses,
 } from '../ethereum/checks'
-import { Address, PublicClient, getAddress } from 'viem'
 
 type TopLevelAddresses = {
   v3ProtocolAddressProvider: `0x${string}`
@@ -22,7 +14,6 @@ type TopLevelAddresses = {
 
 type ProtocolPeripheryAddresses = {
   router: `0x${string}`
-  keeper: `0x${string}`
   aprOracle: `0x${string}`
   releaseRegistry: `0x${string}`
   commonReportTrigger: `0x${string}`
@@ -33,7 +24,7 @@ type ReleaseRegistryAddresses = {
   latestRelease: string
   latestTokenizedStrategy: `0x${string}`
   latestFactory: `0x${string}`
-  vaultOriginal?: string
+  vaultOriginal?: `0x${string}`
 }
 
 type YearnAddresses = {
@@ -44,8 +35,15 @@ type YearnAddresses = {
   yearnRegistry: `0x${string}`
 }
 
+type ContractAddresses = {
+  topLevel: TopLevelAddresses
+  protocolPeriphery: ProtocolPeripheryAddresses
+  releaseRegistry: ReleaseRegistryAddresses
+  yearnV3: YearnAddresses
+}
+
 export const ContractAddressContext = createContext<
-  Record<string, string | undefined>
+  ContractAddresses | Record<string, string | undefined>
 >({})
 
 /**
@@ -67,7 +65,9 @@ export const ContractAddressContext = createContext<
  * ```
  */
 export const ContractAddressProvider = ({ children }) => {
-  const [addresses, setAddresses] = useState({})
+  const [addresses, setAddresses] = useState<
+    ContractAddresses | Record<string, string | undefined>
+  >({})
   const publicClient = useContext(PublicClientContext)
 
   useEffect(() => {
@@ -79,15 +79,15 @@ export const ContractAddressProvider = ({ children }) => {
         if (!topLevelContractAddresses)
           throw new Error('Failed to fetch top-level contract addresses')
 
-        const protocolAddresses = await fetchAndCheckProtocolAddresses(
+        const protocolPeripheryAddresses = await fetchAndCheckProtocolAddresses(
           topLevelContractAddresses.v3ProtocolAddressProvider,
           publicClient
         )
-        if (!protocolAddresses)
+        if (!protocolPeripheryAddresses)
           throw new Error('Failed to fetch protocol addresses')
 
         const releaseRegistryAddresses = await fetchAndCheckFromReleaseRegistry(
-          protocolAddresses.releaseRegistry,
+          protocolPeripheryAddresses.releaseRegistry,
           publicClient
         )
         if (!releaseRegistryAddresses)
@@ -100,12 +100,14 @@ export const ContractAddressProvider = ({ children }) => {
         if (!yearnV3Addresses)
           throw new Error('Failed to fetch Yearn V3 addresses')
 
-        setAddresses({
-          ...topLevelContractAddresses,
-          ...protocolAddresses,
-          ...releaseRegistryAddresses,
-          ...yearnV3Addresses,
-        })
+        const addressesData: ContractAddresses = {
+          topLevel: topLevelContractAddresses,
+          protocolPeriphery: protocolPeripheryAddresses,
+          releaseRegistry: releaseRegistryAddresses,
+          yearnV3: yearnV3Addresses,
+        }
+
+        setAddresses(addressesData)
       } catch (error) {
         console.error('Error fetching addresses:', error)
       }

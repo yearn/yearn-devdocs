@@ -31,6 +31,7 @@ const resolveAddress = async (
   // if address is undefined, use the fallback address
   if (!address) {
     address = checkedFallback
+    console.warn(`using fallback address for ${contractName}`)
   }
   // if address exists and !== fallbackAddress, warn to update the fallback address
   // TODO: if the address has changed, get the ABI from etherscan and check it against the existing ABI
@@ -39,7 +40,6 @@ const resolveAddress = async (
       `Resolved ${contractName} ENS address does not match the fallback address. Update the fallback address and check the ABI in /src/ethereum/constants.ts.`
     )
   }
-  console.log(`Resolved ${contractName} address:`, address)
   return address
 }
 
@@ -97,12 +97,13 @@ async function validateAddress(
     console.warn(
       `${contractName} Fallback address in Constants does not match Provider Contract. Update the fallback address and check the ABI in /src/ethereum/constants.ts.`
     )
-  } else {
-    console.log(
-      `Resolved ${contractName} address:`,
-      addressFromProviderContract
-    )
   }
+  // } else {
+  //   console.log(
+  //     `Resolved ${contractName} address:`,
+  //     addressFromProviderContract
+  //   )
+  // }
 }
 
 /**
@@ -185,18 +186,17 @@ export const fetchAndCheckProtocolAddresses = async (
     addresses.releaseRegistry
   )
   await validateAddress(
-
-    constants.v3Router,
+    constants.v3RouterFallback,
     'v3Router',
     addresses.router
   )
   await validateAddress(
-    constants.v3ReportTrigger,
+    constants.v3ReportTriggerFallback,
     'v3ReportTrigger',
     addresses.commonReportTrigger
   )
   await validateAddress(
-    constants.v3RoleManagerFactory,
+    constants.v3RoleManagerFactoryFallback,
     'v3RoleManagerFactory',
     addresses.roleManagerFactory
   )
@@ -207,7 +207,7 @@ type ReleaseRegistryAddresses = {
   latestRelease: string
   latestTokenizedStrategy: `0x${string}`
   latestFactory: `0x${string}`
-  vaultOriginal?: string
+  vaultOriginal?: `0x${string}`
 }
 
 /**
@@ -239,23 +239,23 @@ export const fetchAndCheckFromReleaseRegistry = async (
   )
   addresses.vaultOriginal = vaultOriginal
 
-  if (addresses.latestRelease !== constants.v3LatestRelease) {
+  if (addresses.latestRelease !== constants.v3LatestReleaseFallback) {
     console.warn(
       'Latest Release in Constants file does not match Release Registry Contract.'
     )
   }
   await validateAddress(
-    constants.v3LatestFactory,
+    constants.v3LatestFactoryFallback,
     'v3LatestFactory',
     addresses.latestFactory
   )
   await validateAddress(
-    constants.v3LatestTokenizedStrategy,
+    constants.v3LatestTokenizedStrategyFallback,
     'v3LatestTokenizedStrategy',
     addresses.latestTokenizedStrategy
   )
   await validateAddress(
-    constants.v3VaultOriginal,
+    constants.v3LatestVaultOriginalFallback,
     'v3VaultOriginal',
     addresses.vaultOriginal
   )
@@ -282,7 +282,7 @@ export const fetchAndCheckYearnV3Addresses = async (
     addresses.yearnRegistry
   )
   await validateAddress(
-    constants.yearnV3DebtAllocator,
+    constants.yearnV3DebtAllocatorFallback,
     'yearnV3DebtAllocator',
     addresses.yearnDebtAllocator
   )
