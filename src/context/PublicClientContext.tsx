@@ -1,14 +1,12 @@
 import React, { createContext, useMemo } from 'react'
-import { createPublicClient, http } from 'viem'
+import { createPublicClient, PublicClient, http } from 'viem'
 import { mainnet } from 'viem/chains'
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext'
-
-// Create a context for the public client
-export const PublicClientContext = createContext(null)
+export const PublicClientContext = createContext<PublicClient | null>(null)
 
 export const PublicClientProvider = ({ children }) => {
   const { siteConfig } = useDocusaurusContext()
-  const { alchemyKey } = siteConfig.customFields
+  const { alchemyKey } = siteConfig.customFields as { alchemyKey: string }
 
   // Create the public client using useMemo
   const publicClient = useMemo(

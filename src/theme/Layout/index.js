@@ -1,19 +1,10 @@
 import React from 'react'
 import Layout from '@theme-original/Layout'
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext'
-import { PublicClientProvider } from '@site/src/context/PublicClientContext'
-import BranchNameDisplay from '@site/src/components/BranchNameDisplay'
 
+/** This component lives right below the Root component.
+ * It loads for each plugin so each docs section will re-render this element.
+ * Edit this component if you want to change the main layout of your site
+ */
 export default function LayoutWrapper(props) {
-  const { siteConfig } = useDocusaurusContext()
-  const { isDev } = siteConfig.customFields
-
-  return (
-    <PublicClientProvider>
-      <>
-        {isDev && <BranchNameDisplay />}
-        <Layout {...props} />
-      </>
-    </PublicClientProvider>
-  )
+  return <Layout {...props} />
 }
