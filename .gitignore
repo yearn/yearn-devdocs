@@ -24,7 +24,7 @@ yarn-error.log*
 .markdownlint.json
 
 .branch-name
-github/copilot-instructions.md
+.github/copilot-instructions.md
 
 # Use yarn.lock
 package-lock.json
