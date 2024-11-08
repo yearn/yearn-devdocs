@@ -63,6 +63,7 @@ export function lintMarkdownFiles(outputBaseDir) {
  *
  * @param {string} outputBaseDir - The base directory containing the files to be moved.
  * @param {string} currentVersion - The current version string used to name the new versioned directory.
+ * @returns {string} - The path to the new versioned directory within the deprecated directory.
  */
 export function moveToDeprecated(outputBaseDir, currentVersion) {
   const deprecatedDir = path.join(path.dirname(outputBaseDir), 'deprecated/V3')
@@ -79,6 +80,7 @@ export function moveToDeprecated(outputBaseDir, currentVersion) {
       fs.renameSync(entryPath, destPath)
     }
   }
+  return newVersionDir
 }
 
 /**

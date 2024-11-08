@@ -1,5 +1,6 @@
 import path from 'path'
 import fs from 'fs'
+import { updateVersionInIndex } from './copyDocs.mjs'
 
 /**
  * Deletes the specified temporary directory if it exists.
@@ -22,17 +23,15 @@ export function cleanUpTempFolder(tempDir) {
  * @param {string} outputBaseDir - The base directory where the output files are located.
  * @param {string} tempFolder - The temporary folder to be cleaned up.
  * @param {string} currentVersion - The current version of the files to be reverted.
+ * @param {string} deprecatedDir - The deprecated folder where the files are moved
  */
-export function revertChanges(outputBaseDir, tempFolder, currentVersion) {
+export function revertChanges(
+  outputBaseDir,
+  tempFolder,
+  currentVersion,
+  deprecatedDir
+) {
   console.log('Reverting changes...')
-  if (currentVersion) {
-    // Move files back from deprecated folder
-    const deprecatedDir = path.join(
-      path.dirname(outputBaseDir),
-      'deprecated/V3',
-      `version-${currentVersion}`
-    )
-  }
   if (fs.existsSync(deprecatedDir)) {
     const entries = fs.readdirSync(deprecatedDir)
     for (const entry of entries) {
