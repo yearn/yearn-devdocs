@@ -184,7 +184,7 @@ You can make RPC calls to read contract data from on-chain sources and display t
 
 To make a blockchain call you need to structure your data in the following format:
 
-```txt
+```yml
 ---
 rpcCalls:
 
