@@ -161,15 +161,16 @@ async function main() {
       const tempFolder = path.resolve('natspec/temp')
       const outputBaseDir = path.resolve('docs/developers/smart-contracts/V3')
       const indexFilePath = path.join(outputBaseDir, 'index.md')
+
       // Extract the current version number
       const currentVersion = extractCurrentVersion(indexFilePath)
       console.log(`Current version: ${currentVersion}`)
 
-      try {
-        // Move files and folders to the deprecated folder
-        const deprecatedDir = moveToDeprecated(outputBaseDir, currentVersion)
-        console.log(`Moved old natspec docs to deprecated folder`)
+      // Move files and folders to the deprecated folder
+      const deprecatedDir = moveToDeprecated(outputBaseDir, currentVersion)
+      console.log(`Moved old natspec docs to deprecated folder`)
 
+      try {
         // Generate docs with forge and vydoc
         generateForgeDoc(submodules)
         generateVydoc(submodules)
@@ -184,7 +185,7 @@ async function main() {
         )
       } catch (error) {
         console.error('Script Error:', error)
-        revertChanges(outputBaseDir, tempFolder, currentVersion)
+        revertChanges(outputBaseDir, tempFolder, currentVersion, deprecatedDir)
       } finally {
         rl.close()
         cleanUpTempFolder(tempFolder)

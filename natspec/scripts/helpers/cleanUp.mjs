@@ -32,7 +32,9 @@ export function revertChanges(
   deprecatedDir
 ) {
   console.log('Reverting changes...')
+  console.log('DeprecatedDir: ', deprecatedDir)
   if (fs.existsSync(deprecatedDir)) {
+    console.log(`Moving files back from ${deprecatedDir} to ${outputBaseDir}`)
     const entries = fs.readdirSync(deprecatedDir)
     for (const entry of entries) {
       const entryPath = path.join(deprecatedDir, entry)
