@@ -58,6 +58,6 @@
     "glob-promise": "4.1.0",
     "ts-node": "9.1.1",
     "typescript": "5.4.5",
-    "vydoc": "git+https://github.com/yearn/vydoc.git"
+    "vydoc": "git+https://github.com/rossgalloway/vydoc.git"
   }
 }
