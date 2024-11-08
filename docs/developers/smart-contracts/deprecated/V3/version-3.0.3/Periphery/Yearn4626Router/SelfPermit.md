@@ -3,7 +3,8 @@
 
 [Git Source](https://github.com/yearn/Yearn-ERC4626-Router/blob/68165774ec8858b43db24620756402def14b7ec1/src/external/SelfPermit.sol)
 
-**Inherits:** ISelfPermit
+**Inherits:**
+[ISelfPermit](https://github.com/yearn/Yearn-ERC4626-Router/blob/68165774ec8858b43db24620756402def14b7ec1/src/external/interfaces/ISelfPermit.sol)
 
 Functionality to call permit on any EIP-2612-compliant token for use in the route
 

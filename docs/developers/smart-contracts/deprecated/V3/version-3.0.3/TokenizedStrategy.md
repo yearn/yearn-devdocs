@@ -1,7 +1,7 @@
-<!-- markdownlint-disable MD024 MD034 MD036 -->
+<!-- markdownlint-disable MD024 MD036 -->
 # TokenizedStrategy
 
-[Git Source](https://github.com/yearn/tokenized-strategy/blob/9ef68041bd034353d39941e487499d111c3d3901/src/TokenizedStrategy.sol)
+[Git Source](https://github.com/yearn/tokenized-strategy/blob/e90ecb8a288340bf17f6800e7bd545f2a3f7adeb/src/TokenizedStrategy.sol)
 
 **Author:**
 yearn.finance
@@ -24,7 +24,7 @@ deploy their own permissionless 4626 compliant vault.
 API version this TokenizedStrategy implements.
 
 ```solidity
-string internal constant API_VERSION = "3.0.4";
+string internal constant API_VERSION = "3.0.3";
 ```
 
 ### ENTERED
@@ -1535,7 +1535,7 @@ function nonces(address _owner) external view returns (uint256);
 Sets `value` as the allowance of `spender` over ``owner``'s tokens,
 given ``owner``'s signed approval.
 
-*IMPORTANT: The same issues `IERC20-approve` has related to transaction
+*IMPORTANT: The same issues IERC20-approve has related to transaction
 ordering also apply here.
 Emits an `Approval` event.
 Requirements:

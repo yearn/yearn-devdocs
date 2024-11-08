@@ -1,7 +1,7 @@
 <!-- markdownlint-disable MD024 MD034 MD036 -->
 # AccountantFactory
 
-[Git Source](https://github.com/yearn/vault-periphery/blob/516f95edcd36e28b714b52408c05009b430900e3/src/accountants/AccountantFactory.sol)
+[Git Source](https://github.com/yearn/vault-periphery/blob/68b201f38716a8ab5aa5cedce51a90f52c89578b/src/accountants/AccountantFactory.sol)
 
 *A factory contract for deploying Accountant contracts*
 

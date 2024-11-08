@@ -23,6 +23,11 @@ The Yearn Docs [website](https://docs.yearn.fi/) is built using [Docusaurus](htt
     nvm install --lts
     ```
 
+    ```bash
+    nvm use --lts
+
+    ```
+
     Then install node dependencies
 
     ```bash
@@ -262,15 +267,9 @@ This should generate a prompt for you to follow:
     - If you select "folder" then the script will read the path in the `folderToUpdate` variable. Be aware this will include all sub-folders as well.
   - After selecting options, everything else runs the same as selecting "new" but without copying your existing files to the deprecated folder.
 
-The script runs a markdown linter, so the output files should be pretty clean, but they still may need some manual adjustment. You may also still get build errors if there are characters in the natspec that MDX v3 doesn't like (like {} and <>). These will need to be removed manually or escaped out of using the `\` character. More info [here](https://docusaurus.io/docs/markdown-features/react#markdown-and-jsx-interoperability).
+The script runs a markdown linter as well as some regex to remove elements that break MDX and some broken links, so the output files should be pretty clean, but they still may need some manual adjustment. You may also still get build errors if there are characters in the natspec that MDX v3 doesn't like (like {} and <>). These will need to be removed manually or escaped out of using the `\` character. More info [here](https://docusaurus.io/docs/markdown-features/react#markdown-and-jsx-interoperability). Steps to fix these types of errors:
 
-There will also probably be some broken links. These are usually from the forge doc build and will reference the structure of the forge doc output. Easiest way to find these is to do a search in VSCode. I search for `(/src/` with `developers/smart-contracts/v3/*` included and `developers/smart-contracts/v3/deprecated/*` excluded. The 2 main broken links will be:
-
-- links to inherited contracts. If included in the markdown docs, you can re-link these to the included files. i.e. `[Governance](/src/utils/Governance.sol/contract.Governance.md)` -> `[Governance](Governance)`. If they aren't in the included files, either remove the link or link to the github.
-- Links to sections in another file. These should be relinked to the correct file if in the directory, or to the github if not included.
-- Links to other sections in the same file. These use the hash router and usually just need everything before the hash to be removed to work. i.e. `[redeem](/src/Yearn4626Router.sol/contract.Yearn4626Router.md#migrate)` -> `[redeem](#migrate)`
-
-> **⚠️ Note to Maintainers**: Consider whether inherited contracts and interfaces that are linked in included files should be added to the included files list.
+There will also probably be some broken links. These are usually from the forge doc build and will reference the structure of the forge doc output. Easiest way to find these is to do a search in VSCode. I search for `(/src/` with `developers/smart-contracts/v3/*` included and `developers/smart-contracts/v3/deprecated/*` excluded. The most common broken links will be links generated in Forge that link to other sections in the same file. These use the hash router and usually just need everything before the hash to be removed to work. i.e. `[redeem](/src/Yearn4626Router.sol/contract.Yearn4626Router.md#migrate)` -> `[redeem](#migrate)`.
 
 ---
 
