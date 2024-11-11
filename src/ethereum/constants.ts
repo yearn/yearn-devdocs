@@ -29,13 +29,13 @@ export const v3RoleManagerFactoryFallback =
   '0xca12459a931643BF28388c67639b3F352fe9e5Ce'
 
 // v3 Vault Template Addresses
-export const v3LatestReleaseFallback = '3.0.3'
+export const v3LatestReleaseFallback = '3.0.4'
 export const v3LatestTokenizedStrategyFallback =
-  '0x254A93feff3BEeF9cA004E913bB5443754e8aB19'
+  '0xD377919FA87120584B21279a491F82D5265A139c'
 export const v3LatestFactoryFallback =
-  '0x5577EdcB8A856582297CdBbB07055E6a6E38eb5f'
+  '0x770D0d1Fb036483Ed4AbB6d53c1C88fb277D812F'
 export const v3LatestVaultOriginalFallback =
-  '0xcA78AF7443f3F8FA0148b746Cb18FF67383CDF3f'
+  '0xd8063123BBA3B480569244AE66BFE72B6c84b00d'
 
 // v3 Periphery Addresses
 export const v3RouterFallback = '0x1112dbCF805682e828606f74AB717abf4b4FD8DE'

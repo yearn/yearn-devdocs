@@ -1,7 +1,7 @@
 import React, { createContext, useState, useEffect, useContext } from 'react'
 import { PublicClientContext } from '../context/PublicClientContext'
 import { normalize } from 'viem/ens'
-import * as constants from '../ethereum/constants'
+import * as constants from './constants'
 import {
   getProtocolContractAddresses,
   readReleaseRegistry,
