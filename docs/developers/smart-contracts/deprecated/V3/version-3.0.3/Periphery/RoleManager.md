@@ -1,9 +1,10 @@
 <!-- markdownlint-disable MD024 MD034 MD036 -->
 # RoleManager
 
-[Git Source](https://github.com/yearn/vault-periphery/blob/516f95edcd36e28b714b52408c05009b430900e3/src/managers/RoleManager.sol)
+[Git Source](https://github.com/yearn/vault-periphery/blob/68b201f38716a8ab5aa5cedce51a90f52c89578b/src/managers/RoleManager.sol)
 
-**Inherits:** Positions
+**Inherits:**
+[Positions](https://github.com/yearn/Yearn-ERC4626-Router/blob/68165774ec8858b43db24620756402def14b7ec1/src/external/SelfPermit.sol)
 
 ## State Variables
 
@@ -436,7 +437,7 @@ function setPositionRoles(bytes32 _position, uint256 _newRoles) external virtual
 Setter function for updating a positions holder.
 
 *Updating `Governance` requires setting `PENDING_GOVERNANCE`
-and then the pending address calling [acceptGovernance](/src/managers/RoleManager.sol/contract.RoleManager.md#acceptgovernance).*
+and then the pending address calling [acceptGovernance](#acceptgovernance).*
 
 ```solidity
 function setPositionHolder(bytes32 _position, address _newHolder) external virtual onlyPositionHolder(GOVERNANCE);

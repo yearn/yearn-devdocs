@@ -3,7 +3,8 @@
 
 [Git Source](https://github.com/yearn/Yearn-ERC4626-Router/blob/68165774ec8858b43db24620756402def14b7ec1/src/Yearn4626RouterBase.sol)
 
-**Inherits:** IYearn4626RouterBase, SelfPermit, Multicall, PeripheryPayments
+**Inherits:**
+[IYearn4626RouterBase](https://github.com/yearn/Yearn-ERC4626-Router/blob/68165774ec8858b43db24620756402def14b7ec1/src/interfaces/IYearn4626RouterBase.sol), [SelfPermit](SelfPermit.md), [Multicall](Multicall.md), [PeripheryPayments](PeripheryPayments.md)
 
 ## Functions
 

@@ -1,9 +1,10 @@
 <!-- markdownlint-disable MD024 MD034 MD036 -->
 # Registry
 
-[Git Source](https://github.com/yearn/vault-periphery/blob/516f95edcd36e28b714b52408c05009b430900e3/src/registry/Registry.sol)
+[Git Source](https://github.com/yearn/vault-periphery/blob/68b201f38716a8ab5aa5cedce51a90f52c89578b/src/registry/Registry.sol)
 
-**Inherits:** Governance
+**Inherits:**
+[Governance](https://github.com/yearn/tokenized-strategy-periphery/blob/f139be6286cb3d630b0bce6d6db812c709e5bb47/src/utils/Governance.sol)
 
 **Author:**
 yearn.finance

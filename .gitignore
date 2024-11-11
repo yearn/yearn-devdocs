@@ -1,6 +1,8 @@
 # Dependencies
 /node_modules
 /venv
+natspec/lib
+natspec/lib/*
 
 # Production
 /build

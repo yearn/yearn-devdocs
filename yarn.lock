@@ -11591,9 +11591,9 @@ vfile@^6.0.0, vfile@^6.0.1:
     unist-util-stringify-position "^4.0.0"
     vfile-message "^4.0.0"
 
-"vydoc@git+https://github.com/yearn/vydoc.git":
+"vydoc@git+https://github.com/rossgalloway/vydoc.git":
   version "0.1.0"
-  resolved "git+https://github.com/yearn/vydoc.git#05302b5a4141a6323be8d7ee852aa599bb3d7620"
+  resolved "git+https://github.com/rossgalloway/vydoc.git#f684cc32456b515c2fac191951e18934154c8a74"
   dependencies:
     chalk "^4.1.0"
     cli-progress "^3.9.0"

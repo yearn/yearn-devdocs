@@ -1,6 +1,8 @@
-<!-- markdownlint-disable MD024 MD034 MD036 -->
+<!-- markdownlint-disable MD024 MD036 -->
 
 # VaultV3.vy
+
+[Git Source](https://github.com/yearn/yearn-vaults-v3/blob/92716ed7298b2f3e5c1afc339dfe7c85868c747e/contracts/VaultV3.vy)
 
 vyper: `0.3.7`
 author: `yearn.finance`
@@ -253,9 +255,9 @@ function set_role(address,uint256)
 
 ### add_role
 
-Add a new role/s to an address.
+Add a new role to an address.
 
-*This will add a new role/s to the account without effecting any of the previously held roles.*
+*This will add a new role to the account without effecting any of the previously held roles.*
 
 ```solidity
 function add_role(address,uint256)
@@ -266,11 +268,11 @@ function add_role(address,uint256)
 | Name                           | Type          | Description                                    |
 | :----------------------------- | :------------ | :--------------------------------------------- |
 | account | address | The account to add a role to. |
-| role | uint256 | The new role/s to add to account. |
+| role | uint256 | The new role to add to account. |
 
 ### remove_role
 
-Remove a role/s from an account.
+Remove a single role from an account.
 
 *This will leave all other roles for the account unchanged.*
 
@@ -282,8 +284,8 @@ function remove_role(address,uint256)
 
 | Name                           | Type          | Description                                    |
 | :----------------------------- | :------------ | :--------------------------------------------- |
-| account | address | The account to remove a Role/s from. |
-| role | uint256 | The Role/s to remove. |
+| account | address | The account to remove a Role from. |
+| role | uint256 | The Role to remove. |
 
 ### transfer_role_manager
 
@@ -489,7 +491,7 @@ function update_debt(address,uint256)
 
 | Name | Type | Description |
 |------|------|-------------|
-| _output0 | uint256 | The new current debt of the strategy. |
+| _output0 | uint256 | The amount of debt added or removed. |
 
 ### update_debt
 
@@ -511,7 +513,7 @@ function update_debt(address,uint256,uint256)
 
 | Name | Type | Description |
 |------|------|-------------|
-| _output0 | uint256 | The new current debt of the strategy. |
+| _output0 | uint256 | The amount of debt added or removed. |
 
 ### deposit
 
@@ -1376,12 +1378,6 @@ function shutdown_vault()
 |------|------|----------|
 | account | address | Yes |
 | role | uint256 | Yes |
-
-### UpdateFutureRoleManager
-
-| Name | Type | Indexed? |
-|------|------|----------|
-| future_role_manager | address | Yes |
 
 ### UpdateRoleManager
 
