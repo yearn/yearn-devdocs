@@ -5,7 +5,6 @@ import { formatUnits } from 'viem'
 
 const ContractData = ({ contractName, methodName, decimals }) => {
   const data = useContext(ContractDataContext)
-  console.log('ContractData', contractName, methodName, data)
 
   return (
     <code>

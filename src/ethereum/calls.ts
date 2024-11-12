@@ -4,8 +4,10 @@ import {
   v3ReleaseRegistryABI,
   v3VaultFactoryABI,
   yearnV3RoleManagerABI,
+  v3VaultFactoryBlueprintABI,
 } from './ABIs'
-import * as constants from './constants' // Import fallback constants
+import * as constants from './constants'
+import { ReleaseDataMap } from './types'
 
 const useFallback = (contractName: string, fallback: string): Address => {
   console.warn(
@@ -27,32 +29,42 @@ export const getProtocolContractAddresses = async (
   const [
     v3Router,
     v3AprOracle,
-    v3ReleaseRegistry,
+    // v3ReleaseRegistry,
     v3ReportTrigger,
     v3RoleManagerFactory,
   ] = await Promise.all([
     contract.read
       .getRouter()
-      .catch(() => useFallback('v3Router', constants.v3RouterFallback)),
+      .catch(() =>
+        useFallback('v3Router', constants.v3PeripheryContracts.router)
+      ),
     contract.read
       .getAprOracle()
-      .catch(() => useFallback('v3AprOracle', constants.v3AprOracleFallback)),
-    contract.read
-      .getReleaseRegistry()
       .catch(() =>
-        useFallback('v3ReleaseRegistry', constants.v3ReleaseRegistryFallback)
+        useFallback('v3AprOracle', constants.v3PeripheryContracts.aprOracle)
       ),
+    // contract.read
+    //   .getReleaseRegistry()
+    //   .catch(() =>
+    //     useFallback(
+    //       'v3ReleaseRegistry',
+    //       constants.v3PeripheryContracts.releaseRegistry
+    //     )
+    //   ),
     contract.read
       .getCommonReportTrigger()
       .catch(() =>
-        useFallback('v3ReportTrigger', constants.v3ReportTriggerFallback)
+        useFallback(
+          'v3ReportTrigger',
+          constants.v3PeripheryContracts.commonReportTrigger
+        )
       ),
     contract.read
       .getRoleManagerFactory()
       .catch(() =>
         useFallback(
           'v3RoleManagerFactory',
-          constants.v3RoleManagerFactoryFallback
+          constants.v3PeripheryContracts.roleManagerFactory
         )
       ),
   ])
@@ -60,73 +72,67 @@ export const getProtocolContractAddresses = async (
   return {
     router: v3Router,
     aprOracle: v3AprOracle,
-    releaseRegistry: v3ReleaseRegistry,
+    // releaseRegistry: v3ReleaseRegistry,
     commonReportTrigger: v3ReportTrigger,
     roleManagerFactory: v3RoleManagerFactory,
   }
 }
 
-export const readReleaseRegistry = async (
+/**
+ * to Get v3 Templates from each release:
+ * 1. loop through the `factories` array in the `v3ReleaseRegistry` contract with `numReleases`-1 as the upper bound. save the factory address for each release.
+ * 2. For each factory, call `apiVersion` to get the release number.
+ * 3. For each factory, call `vault_original` to get the vault address.
+ * 4. Save data to a map with the release number as the key and the the vault_original and vault factory addresses as values.
+ * 5. loop through the `tokenizedStrategy` array in the `v3ReleaseRegistry` contract with `numReleases`-1 as the upper bound.
+ * save the tokenizedStrategy address for each release to the map.
+ */
+
+export const readReleaseRegistryAll = async (
   registryAddress: Address,
   publicClient: PublicClient
-) => {
+): Promise<ReleaseDataMap> => {
   const contract = getContract({
     address: registryAddress,
     abi: v3ReleaseRegistryABI,
     client: publicClient,
   })
 
-  const [latestRelease, latestTokenizedStrategy, latestFactory] =
-    await Promise.all([
-      contract.read
-        .latestRelease()
-        .catch(() =>
-          useFallback('latestV3Release', constants.v3LatestReleaseFallback)
-        ),
-      contract.read
-        .latestTokenizedStrategy()
-        .catch(() =>
-          useFallback(
-            'latestV3TokenizedStrategy',
-            constants.v3LatestTokenizedStrategyFallback
-          )
-        ),
-      contract.read
-        .latestFactory()
-        .catch(() =>
-          useFallback('latestV3Factory', constants.v3LatestFactoryFallback)
-        ),
-    ])
+  const latestRelease = await contract.read.latestRelease()
+  const numReleases = await contract.read.numReleases()
+  const releaseDataMap: ReleaseDataMap = { latestRelease }
 
-  return {
-    latestRelease,
-    latestTokenizedStrategy,
-    latestFactory,
-  }
-}
-
-export const readV3VaultFactory = async (
-  factoryAddress: Address,
-  publicClient: PublicClient
-) => {
-  const contract = getContract({
-    address: factoryAddress,
-    abi: v3VaultFactoryABI,
-    client: publicClient,
-  })
-
-  const [vault_original] = await Promise.all([
-    contract.read
+  // Loop through the `factories` array
+  for (let i = 0; i < numReleases; i++) {
+    const tokenizedStrategyAddress = await contract.read.tokenizedStrategies([
+      BigInt(i),
+    ]) // Modified to use BigInt directly
+    const factoryAddress = await contract.read.factories([BigInt(i)]) // Modified to use BigInt directly
+    const factoryContract = getContract({
+      address: factoryAddress,
+      abi: v3VaultFactoryABI,
+      client: publicClient,
+    })
+    const releaseNumber = await factoryContract.read.apiVersion()
+    const vaultAddress = await factoryContract.read
       .vault_original()
-      .catch(() =>
-        useFallback(
-          'latestV3VaultOriginal',
-          constants.v3LatestVaultOriginalFallback
-        )
-      ),
-  ])
+      .catch(async () => {
+        // Re-initialize factoryContract with v3VaultFactoryBlueprintABI if fallback occurs
+        const factoryContractWithBlueprint = getContract({
+          address: factoryAddress,
+          abi: v3VaultFactoryBlueprintABI,
+          client: publicClient,
+        })
+        return factoryContractWithBlueprint.read.vault_blueprint()
+      })
 
-  return vault_original
+    releaseDataMap[releaseNumber] = {
+      vaultOriginal: vaultAddress,
+      factory: factoryAddress,
+      tokenizedStrategy: tokenizedStrategyAddress,
+    }
+  }
+  return releaseDataMap
 }
 
 export const readYearnRoleManager = async (
@@ -151,20 +157,20 @@ export const readYearnRoleManager = async (
     contract.read
       .getAccountant()
       .catch(() =>
-        useFallback('yearnV3Accountant', constants.yearnV3AccountantFallback)
+        useFallback('yearnV3Accountant', constants.yearnV3Contracts.accountant)
       ),
     contract.read
       .getDebtAllocator()
       .catch(() =>
         useFallback(
           'yearnV3DebtAllocator',
-          constants.yearnV3DebtAllocatorFallback
+          constants.yearnV3Contracts.debtAllocator
         )
       ),
     contract.read
       .getRegistry()
       .catch(() =>
-        useFallback('yearnV3Registry', constants.yearnV3RegistryFallback)
+        useFallback('yearnV3Registry', constants.yearnV3Contracts.registry)
       ),
   ])
 

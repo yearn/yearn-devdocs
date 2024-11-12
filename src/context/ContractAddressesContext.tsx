@@ -6,41 +6,8 @@ import {
   fetchAndCheckProtocolAddresses,
   fetchAndCheckYearnV3Addresses,
 } from '../ethereum/checks'
-
-type TopLevelAddresses = {
-  v3ProtocolAddressProvider: `0x${string}`
-  v3RoleManager: `0x${string}`
-}
-
-type ProtocolPeripheryAddresses = {
-  router: `0x${string}`
-  aprOracle: `0x${string}`
-  releaseRegistry: `0x${string}`
-  commonReportTrigger: `0x${string}`
-  roleManagerFactory: `0x${string}`
-}
-
-type ReleaseRegistryAddresses = {
-  latestRelease: string
-  latestTokenizedStrategy: `0x${string}`
-  latestFactory: `0x${string}`
-  vaultOriginal?: `0x${string}`
-}
-
-type YearnAddresses = {
-  yearnBrain: `0x${string}`
-  yearnDaddy: `0x${string}`
-  yearnAccountant: `0x${string}`
-  yearnDebtAllocator: `0x${string}`
-  yearnRegistry: `0x${string}`
-}
-
-type ContractAddresses = {
-  topLevel: TopLevelAddresses
-  protocolPeriphery: ProtocolPeripheryAddresses
-  releaseRegistry: ReleaseRegistryAddresses
-  yearnV3: YearnAddresses
-}
+import { yfiContracts, veYfiContracts } from '../ethereum/constants'
+import { ContractAddresses } from '../ethereum/types'
 
 export const ContractAddressContext = createContext<
   ContractAddresses | Record<string, string | undefined>
@@ -87,7 +54,7 @@ export const ContractAddressProvider = ({ children }) => {
           throw new Error('Failed to fetch protocol addresses')
 
         const releaseRegistryAddresses = await fetchAndCheckFromReleaseRegistry(
-          protocolPeripheryAddresses.releaseRegistry,
+          topLevelContractAddresses.v3ReleaseRegistry,
           publicClient
         )
         if (!releaseRegistryAddresses)
@@ -105,6 +72,8 @@ export const ContractAddressProvider = ({ children }) => {
           protocolPeriphery: protocolPeripheryAddresses,
           releaseRegistry: releaseRegistryAddresses,
           yearnV3: yearnV3Addresses,
+          yfiTokenContracts: yfiContracts,
+          veYfiContracts: veYfiContracts,
         }
 
         setAddresses(addressesData)

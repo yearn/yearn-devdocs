@@ -48,7 +48,6 @@ export const ContractDataProvider = ({ children, contractParams }) => {
       try {
         const contractReadParams: ContractReadData[] = []
         for (const rpcCall of contractParams) {
-          console.log('fetching contract data:', rpcCall)
           if (isContractReadData(rpcCall)) {
             contractReadParams.push(rpcCall)
           } else {
@@ -57,9 +56,9 @@ export const ContractDataProvider = ({ children, contractParams }) => {
         }
         for (const contractReadCall of contractReadParams) {
           const address = contractReadCall.address
-          console.log('address: ', address)
+
           const abi = ABIs[contractReadCall.abiName]
-          console.log('abi: ', abi)
+
           if (!publicClient) {
             console.error('publicClient is null')
             return
@@ -80,7 +79,6 @@ export const ContractDataProvider = ({ children, contractParams }) => {
           })
 
           const results = await Promise.all(methodCalls) // Await all method calls
-          console.log('results: ', results)
 
           setData((prevData) => {
             const newData = { ...prevData }

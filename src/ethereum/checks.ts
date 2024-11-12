@@ -4,11 +4,11 @@ import { normalize } from 'viem/ens'
 import * as constants from './constants'
 import {
   getProtocolContractAddresses,
-  readReleaseRegistry,
-  readV3VaultFactory,
+  readReleaseRegistryAll,
   readYearnRoleManager,
 } from '../ethereum/calls'
 import { Address, PublicClient, getAddress } from 'viem'
+import { ReleaseDataMap, ReleaseData } from './types'
 
 /**
  * Resolves an ENS name to an address using the provided public client. If the ENS name cannot be resolved,
@@ -73,14 +73,14 @@ async function validateAddressWithENS(
   )
 
   // Check if the actual address matches the resolved ENS address
-  if (addressFromProviderContract !== resolvedAddress) {
+  if (getAddress(addressFromProviderContract) !== getAddress(resolvedAddress)) {
     console.warn(
       `${contractName} ENS address does not match the Protocol Address Provider Contract. Check the ENS address and check the ABI in /src/ethereum/constants.ts.`
     )
   }
 
   // Check if the actual address matches the fallback address
-  if (addressFromProviderContract !== fallbackAddress) {
+  if (getAddress(addressFromProviderContract) !== getAddress(fallbackAddress)) {
     console.warn(
       `${contractName} Fallback address in Constants does not match Protocol Address Provider Contract. Update the fallback address and check the ABI in /src/ethereum/constants.ts.`
     )
@@ -93,7 +93,7 @@ async function validateAddress(
   addressFromProviderContract
 ) {
   // Check if the actual address matches the fallback address
-  if (addressFromProviderContract !== fallbackAddress) {
+  if (getAddress(addressFromProviderContract) !== getAddress(fallbackAddress)) {
     console.warn(
       `${contractName} Fallback address in Constants does not match Provider Contract. Update the fallback address and check the ABI in /src/ethereum/constants.ts.`
     )
@@ -124,20 +124,28 @@ export const fetchTopLevelAddressesFromENS = async (publicClient) => {
 
   const v3ProtocolAddressProvider = await resolveAddress(
     publicClient,
-    constants.v3ProtocolAddressProviderENS,
-    constants.v3ProtocolAddressProviderFallback,
+    constants.v3ProtocolContracts.protocolAddressProviderENS,
+    constants.v3ProtocolContracts.protocolAddressProviderFallback,
     'v3ProtocolAddressProvider'
+  )
+
+  const v3ReleaseRegistry = await resolveAddress(
+    publicClient,
+    constants.v3ProtocolContracts.releaseRegistryENS,
+    constants.v3ProtocolContracts.releaseRegistryFallback,
+    'v3ReleaseRegistry'
   )
 
   const v3RoleManager = await resolveAddress(
     publicClient,
-    constants.v3RoleManagerENS,
-    constants.v3RoleManagerFallback,
+    constants.yearnV3RoleManager.roleManagerENS,
+    constants.yearnV3RoleManager.roleManager,
     'v3RoleManager'
   )
 
   return {
     v3ProtocolAddressProvider,
+    v3ReleaseRegistry,
     v3RoleManager,
   }
 }
@@ -173,41 +181,27 @@ export const fetchAndCheckProtocolAddresses = async (
   // check that the resolved addresses matches the constants file (and ENS where available)
   await validateAddressWithENS(
     publicClient,
-    constants.v3AprOracleENS,
-    constants.v3AprOracleFallback,
+    constants.v3PeripheryContracts.aprOracleENS,
+    constants.v3PeripheryContracts.aprOracle,
     'v3AprOracle',
     addresses.aprOracle
   )
-  await validateAddressWithENS(
-    publicClient,
-    constants.v3ReleaseRegistryENS,
-    constants.v3ReleaseRegistryFallback,
-    'v3ReleaseRegistry',
-    addresses.releaseRegistry
-  )
   await validateAddress(
-    constants.v3RouterFallback,
+    constants.v3PeripheryContracts.router,
     'v3Router',
     addresses.router
   )
   await validateAddress(
-    constants.v3ReportTriggerFallback,
+    constants.v3PeripheryContracts.commonReportTrigger,
     'v3ReportTrigger',
     addresses.commonReportTrigger
   )
   await validateAddress(
-    constants.v3RoleManagerFactoryFallback,
+    constants.v3PeripheryContracts.roleManagerFactory,
     'v3RoleManagerFactory',
     addresses.roleManagerFactory
   )
   return addresses
-}
-
-type ReleaseRegistryAddresses = {
-  latestRelease: string
-  latestTokenizedStrategy: `0x${string}`
-  latestFactory: `0x${string}`
-  vaultOriginal?: `0x${string}`
 }
 
 /**
@@ -229,36 +223,42 @@ export const fetchAndCheckFromReleaseRegistry = async (
     console.error('publicClient is null')
     return
   }
-  const addresses: ReleaseRegistryAddresses = await readReleaseRegistry(
+  const addresses: ReleaseDataMap = await readReleaseRegistryAll(
     releaseRegistry,
     publicClient
   )
-  const vaultOriginal = await readV3VaultFactory(
-    addresses.latestFactory,
-    publicClient
-  )
-  addresses.vaultOriginal = vaultOriginal
 
-  if (addresses.latestRelease !== constants.v3LatestReleaseFallback) {
+  // Compare the fetched addresses with the constants
+  if (addresses.latestRelease !== constants.v3VaultReleases.latestRelease) {
     console.warn(
       'Latest Release in Constants file does not match Release Registry Contract.'
     )
   }
-  await validateAddress(
-    constants.v3LatestFactoryFallback,
-    'v3LatestFactory',
-    addresses.latestFactory
-  )
-  await validateAddress(
-    constants.v3LatestTokenizedStrategyFallback,
-    'v3LatestTokenizedStrategy',
-    addresses.latestTokenizedStrategy
-  )
-  await validateAddress(
-    constants.v3LatestVaultOriginalFallback,
-    'v3VaultOriginal',
-    addresses.vaultOriginal
-  )
+
+  for (const releaseNumber in addresses) {
+    if (releaseNumber === 'latestRelease') continue // Skip the latestRelease key
+    const fetchedRelease = addresses[releaseNumber] as ReleaseData
+    const constantRelease = constants.v3VaultReleases[releaseNumber]
+    if (!constantRelease) {
+      console.warn(`Release ${releaseNumber} is missing in constants.`)
+      continue
+    }
+
+    if (fetchedRelease.vaultOriginal !== constantRelease.vaultOriginal) {
+      console.warn(`vaultOriginal for release ${releaseNumber} does not match.`)
+    }
+    if (fetchedRelease.factory !== constantRelease.factory) {
+      console.warn(`Factory for release ${releaseNumber} does not match.`)
+    }
+    if (
+      fetchedRelease.tokenizedStrategy !== constantRelease.tokenizedStrategy
+    ) {
+      console.warn(
+        `TokenizedStrategy for release ${releaseNumber} does not match.`
+      )
+    }
+  }
+
   return addresses
 }
 
@@ -269,20 +269,20 @@ export const fetchAndCheckYearnV3Addresses = async (
   const addresses = await readYearnRoleManager(roleManager, publicClient)
   await validateAddressWithENS(
     publicClient,
-    constants.yearnV3AccountantENS,
-    constants.yearnV3AccountantFallback,
+    constants.yearnV3Contracts.accountantENS,
+    constants.yearnV3Contracts.accountant,
     'yearnV3Accountant',
     addresses.yearnAccountant
   )
   await validateAddressWithENS(
     publicClient,
-    constants.yearnV3RegistryENS,
-    constants.yearnV3RegistryFallback,
+    constants.yearnV3Contracts.registryENS,
+    constants.yearnV3Contracts.registry,
     'yearnV3Registry',
     addresses.yearnRegistry
   )
   await validateAddress(
-    constants.yearnV3DebtAllocatorFallback,
+    constants.yearnV3Contracts.debtAllocator,
     'yearnV3DebtAllocator',
     addresses.yearnDebtAllocator
   )
