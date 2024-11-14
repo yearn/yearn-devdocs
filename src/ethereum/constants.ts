@@ -17,16 +17,16 @@ export const veYfiContracts = {
 }
 
 // Top Level V3 Protocol Registry Addresses
-export const v3ProtocolContracts = {
+export const topLevel = {
   protocolAddressProviderENS: 'address-provider.v3.ychad.eth',
-  protocolAddressProviderFallback: '0x775F09d6f3c8D2182DFA8bce8628acf51105653c',
+  protocolAddressProvider: '0x775F09d6f3c8D2182DFA8bce8628acf51105653c',
   releaseRegistryENS: 'release.registry.v3.ychad.eth',
-  releaseRegistryFallback: '0x0377b4daDDA86C89A0091772B79ba67d0E5F7198',
+  releaseRegistry: '0x0377b4daDDA86C89A0091772B79ba67d0E5F7198',
   legacyReleaseRegistry: '0x990089173D5d5287c344092Be0bB37950A67d17B',
 }
 
 // v3 Vault Template Addresses
-export const v3VaultReleases = {
+export const releaseRegistry = {
   latestRelease: '3.0.4',
   '3.0.4': {
     vaultOriginal: '0xd8063123BBA3B480569244AE66BFE72B6c84b00d',
@@ -51,7 +51,7 @@ export const v3VaultReleases = {
 }
 
 // v3 Periphery Addresses
-export const v3PeripheryContracts = {
+export const protocolPeriphery = {
   router: '0x1112dbCF805682e828606f74AB717abf4b4FD8DE',
   keeper: '0x52605BbF54845f520a3E94792d019f62407db2f8',
   aprOracleENS: 'apr.oracle.v3.ychad.eth',

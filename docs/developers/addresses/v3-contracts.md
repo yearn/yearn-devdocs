@@ -1,5 +1,7 @@
 # yVaults v3 Contract Addresses
 
+<AddressCheck />
+
 :::info
 
 Deployments are done using create2 factories and should be stable across all EVM chains the protocol has been deployed on.
@@ -16,11 +18,11 @@ All Protocol Specific contracts can be found by starting with the `ProtocolAddre
 
 The Role Manager Factory provides the easiest way to deploy and manage your own V3 vaults. More information on that [here](../v3/vault_management.md#deployment).
 
-| Contract Name   | ENS |  Contract Address |
-| ----------------------   | ------------------------------------------ | ---------------------- |
-| Protocol Address Provider   | address-provider.v3.ychad.eth | <ContractAddress contractName={['topLevel', 'v3ProtocolAddressProvider']} /> |
-| Release Registry            | release.registry.v3.ychad.eth | <ContractAddress contractName={['topLevel', 'v3ReleaseRegistry']} /> |
-| Role Manager Factory        |        | <ContractAddress contractName = {[ 'protocolPeriphery', 'roleManagerFactory']} /> |
+| Name / ENS | Contract Address |
+| ---------------- | ----------------- |
+| **Protocol Address Provider** <br/> address-provider.v3.ychad.eth | <ContractAddress contractName={['topLevel', 'protocolAddressProvider']} /> |
+| **Release Registry** <br/> release.registry.v3.ychad.eth | <ContractAddress contractName={['topLevel', 'releaseRegistry']} /> |
+| **Role Manager Factory** <br/> | <ContractAddress contractName={['protocolPeriphery', 'roleManagerFactory']} /> |
 
 ### Core Contract Addresses
 
@@ -54,12 +56,12 @@ Core contracts are the base generic contracts that can be used by anyone who wan
 
 All generic periphery contracts and factories can be retrieved on chain from the `AddressProvider` Contract:
 
-| Periphery Contract Name   | ENS |  Periphery Contract Address |
-| ----------------------   | ------------------------------------------ | ---------------------- |
-| Protocol Address Provider| address-provider.v3.ychad.eth |  <ContractAddress contractName = {['topLevel', 'v3ProtocolAddressProvider']} /> |
-| APR Oracle               | apr.oracle.v3.ychad.eth | <ContractAddress contractName = {['protocolPeriphery', 'aprOracle']} /> |
-| Report Trigger           |    | <ContractAddress contractName = {['protocolPeriphery', 'commonReportTrigger']} /> |
-| 4626 Router              |    | <ContractAddress contractName = {['protocolPeriphery', 'router']} /> |
+| Name / ENS |  Periphery Contract Address |
+| ---------------------- | ---------------------- |
+| **Protocol Address Provider** <br/> address-provider.v3.ychad.eth |  <ContractAddress contractName = {['topLevel', 'protocolAddressProvider']} /> |
+| **APR Oracle**   <br/> apr.oracle.v3.ychad.eth | <ContractAddress contractName = {['protocolPeriphery', 'aprOracle']} /> |
+| **Report Trigger**  <br/>  | <ContractAddress contractName = {['protocolPeriphery', 'commonReportTrigger']} /> |
+| **4626 Router**   <br/>  | <ContractAddress contractName = {['protocolPeriphery', 'router']} /> |
 
 For a more complete list of all available periphery contracts visit the [Periphery](/developers/v3/periphery) section.
 
@@ -69,9 +71,9 @@ Yearn Specific contracts and roles, as well as the most up to date V3 registry c
 
 To find individual vaults, use the V3 Registry below or refer to https://yearn.fi
 
-| Contract Name | ENS | Contract Address |
-| ----------------------   | ------------------------------------------ | ---------------------- |
-| Role Manager             | role-manager.v3.ychad.eth | <ContractAddress contractName = {['topLevel', 'v3RoleManager']} /> |
-| Current V3 Registry      | registry.v3.ychad.eth | <ContractAddress contractName = {['yearnV3', 'yearnRegistry']} /> |
-| Legacy V3 Registry       |           | [0xff31A1B020c868F6eA3f61Eb953344920EeCA3af](https://etherscan.io/address/0xff31A1B020c868F6eA3f61Eb953344920EeCA3af) |
-| Accountant               | accountant.v3.ychad.eth | <ContractAddress contractName = {['yearnV3', 'yearnAccountant']} /> |
+| Name / ENS | Contract Address |
+| ----------------------   | ---------------------- |
+| **Role Manager** <br/> role-manager.v3.ychad.eth | <ContractAddress contractName = {['yearnV3RoleManager', 'roleManager']} /> |
+| **Current V3 Registry** <br/> registry.v3.ychad.eth | <ContractAddress contractName = {['yearnV3Contracts', 'registry']} /> |
+| **Legacy V3 Registry** <br/> | [0xff31A1B020c868F6eA3f61Eb953344920EeCA3af](https://etherscan.io/address/0xff31A1B020c868F6eA3f61Eb953344920EeCA3af) |
+| **Accountant** <br/> accountant.v3.ychad.eth | <ContractAddress contractName = {['yearnV3Contracts', 'accountant']} /> |

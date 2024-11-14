@@ -33,44 +33,21 @@ export const getProtocolContractAddresses = async (
     v3ReportTrigger,
     v3RoleManagerFactory,
   ] = await Promise.all([
-    contract.read
-      .getRouter()
-      .catch(() => useFallback('v3Router', constants.protocolPeriphery.router)),
+    contract.read.getRouter().catch(() => console.warn('v3Router not found')),
     contract.read
       .getAprOracle()
-      .catch(() =>
-        useFallback('v3AprOracle', constants.protocolPeriphery.aprOracle)
-      ),
-    // contract.read
-    //   .getReleaseRegistry()
-    //   .catch(() =>
-    //     useFallback(
-    //       'v3ReleaseRegistry',
-    //       constants.v3PeripheryContracts.releaseRegistry
-    //     )
-    //   ),
+      .catch(() => console.warn('v3AprOracle not found')),
     contract.read
       .getCommonReportTrigger()
-      .catch(() =>
-        useFallback(
-          'v3ReportTrigger',
-          constants.protocolPeriphery.commonReportTrigger
-        )
-      ),
+      .catch(() => console.warn('v3ReportTrigger not found')),
     contract.read
       .getRoleManagerFactory()
-      .catch(() =>
-        useFallback(
-          'v3RoleManagerFactory',
-          constants.protocolPeriphery.roleManagerFactory
-        )
-      ),
+      .catch(() => console.warn('v3RoleManagerFactory not found')),
   ])
 
   return {
     router: v3Router,
     aprOracle: v3AprOracle,
-    // releaseRegistry: v3ReleaseRegistry,
     commonReportTrigger: v3ReportTrigger,
     roleManagerFactory: v3RoleManagerFactory,
   }
@@ -154,22 +131,13 @@ export const readYearnRoleManager = async (
     contract.read.getDaddy(),
     contract.read
       .getAccountant()
-      .catch(() =>
-        useFallback('yearnV3Accountant', constants.yearnV3Contracts.accountant)
-      ),
+      .catch(() => console.warn('yearnAccountant not found')),
     contract.read
       .getDebtAllocator()
-      .catch(() =>
-        useFallback(
-          'yearnV3DebtAllocator',
-          constants.yearnV3Contracts.debtAllocator
-        )
-      ),
+      .catch(() => console.warn('yearnDebtAllocator not found')),
     contract.read
       .getRegistry()
-      .catch(() =>
-        useFallback('yearnV3Registry', constants.yearnV3Contracts.registry)
-      ),
+      .catch(() => console.warn('yearnRegistry not found')),
   ])
 
   return {
