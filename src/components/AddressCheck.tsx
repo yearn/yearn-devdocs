@@ -1,7 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { ContractAddressContext } from '../context/ContractAddressesContextV2'
 import styles from '../css/AddressCheck.module.css'
-import spinnerStyle from '../css/spinner.module.css'
 
 function AddressCheck() {
   const data = useContext(ContractAddressContext)
@@ -44,6 +43,8 @@ function AddressCheck() {
       }
     }
   }
+
+  //   allChecksPassed = false // only for testing!!
 
   // Log failed checks to the console
   if (!allChecksPassed) {

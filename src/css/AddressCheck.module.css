@@ -25,6 +25,11 @@
   font-weight: 700;
   border: 1px solid rgb(75, 160, 75);
 }
+html[data-theme='dark'] .pass {
+  background-color: rgb(24, 115, 27);
+  color: white;
+  border: 1px solid rgb(75, 160, 75);
+}
 
 .fail {
   width: 100%;
@@ -33,6 +38,12 @@
   border-radius: 8px; /* Added to round the edges */
   font-weight: 700;
   border: 1px solid rgb(248, 120, 120);
+}
+
+html[data-theme='dark'] .fail {
+  background-color: rgb(114, 30, 30);
+  color: white;
+  border: 1px solid rgb(93, 0, 0);
 }
 
 .icon {
