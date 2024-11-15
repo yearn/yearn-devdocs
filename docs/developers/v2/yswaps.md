@@ -12,7 +12,7 @@ ySwaps is used to **abstract** the token trading logic from the strategies harve
 ## Glossary
 - `sms`: Strategists multisig
 - `tokenIn`:  Token we have and we want to trade/swap
-- `toeknOut`: Token we want to obtain on the swap
+- `tokenOut`: Token we want to obtain on the swap
 - `hopToken`: Token we use as a middle step between tokenIn and tokenOut
 - `tf`: Trade Factory
 
@@ -34,7 +34,7 @@ Contracts in charge of making the swaps (uniswap, balancer, sushiswap, solidly a
 
 #### Single swapper
 
-Uniswap, balancer, sushiswap, etc. These are straighforward contracts that will make a simple swap on these dexes (`token A` to `token B`). It is also worth to mention that these swappers take care of few extra stuff like: `approval needed to make the swap`, `transfering final tokens to strategy if needed`.
+Uniswap, balancer, sushiswap, etc. These are straightforward contracts that will make a simple swap on these dexes (`token A` to `token B`). It is also worth to mention that these swappers take care of few extra stuff like: `approval needed to make the swap`, `transfering final tokens to strategy if needed`.
 
 #### Multicall swapper
 

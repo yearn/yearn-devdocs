@@ -1,6 +1,7 @@
-# BaseStrategy.sol
+<!-- markdownlint-disable MD024 MD034 MD036 -->
+# BaseStrategy
 
-[Git Source](https://github.com/yearn/tokenized-strategy/blob/v3.0.2-1/src/BaseStrategy.sol)
+[Git Source](https://github.com/yearn/tokenized-strategy/blob/9ef68041bd034353d39941e487499d111c3d3901/src/BaseStrategy.sol)
 
 **Author:**
 yearn.finance
@@ -329,16 +330,14 @@ be more than is currently deployed.
 NOTE: This will not realize any profits or losses. A separate
 `report` will be needed in order to record any profit/loss. If
 a report may need to be called after a shutdown it is important
-to check if the strategy is shutdown during [_harvestAndReport](#_harvestandreport)
+to check if the strategy is shutdown during `_harvestAndReport`
 so that it does not simply re-deploy all funds that had been freed.
 
-```markdown title="Example"
+```solidity title="Example"
 if(freeAsset > 0 && !TokenizedStrategy.isShutdown()) {
 depositFunds...
 }
 ```
-
-*
 
 ```solidity
 function _emergencyWithdraw(uint256 _amount) internal virtual;

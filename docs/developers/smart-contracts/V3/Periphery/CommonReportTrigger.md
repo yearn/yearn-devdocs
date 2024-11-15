@@ -1,9 +1,9 @@
-# CommonReportTrigger.sol
+<!-- markdownlint-disable MD024 MD034 MD036 -->
+# CommonReportTrigger
 
-[Git Source](https://github.com/yearn/tokenized-strategy-periphery/blob/master/src/ReportTrigger/CommonReportTrigger.sol)
+[Git Source](https://github.com/yearn/tokenized-strategy-periphery/blob/47e243f39ea0af6568d38d6425354208999e629d/src/ReportTrigger/CommonReportTrigger.sol)
 
-**Inherits:**
-[Governance](./Governance)
+**Inherits:** Governance
 
 **Author:**
 Yearn.finance
@@ -119,7 +119,7 @@ Set a custom report trigger contract for a vaults strategy.
 custom report trigger for a specific strategy attached to the vault
 while still using this standard contract for keepers to read the
 trigger status from.
-The address calling must have the `ADD_STRATEGY_MANAGER` role on the vault.
+The address calling must have the `REPORTING_MANAGER` role on the vault.
 The custom trigger contract only needs to implement the `reportTrigger`
 function to return true or false.*
 
@@ -144,7 +144,7 @@ decrease the acceptable network base fee for a specific strategies
 trigger to return true.
 This can be used instead of a custom trigger contract.
 This will have no effect if a custom trigger is set for the strategy.
-The address calling must have the `ADD_STRATEGY_MANAGER` role on the vault.*
+The address calling must have the `REPORTING_MANAGER` role on the vault.*
 
 ```solidity
 function setCustomVaultBaseFee(address _vault, address _strategy, uint256 _baseFee) external virtual;

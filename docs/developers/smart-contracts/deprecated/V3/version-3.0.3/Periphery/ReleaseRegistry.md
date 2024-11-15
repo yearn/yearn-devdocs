@@ -1,9 +1,10 @@
-# ReleaseRegistry.sol
+<!-- markdownlint-disable MD024 MD034 MD036 -->
+# ReleaseRegistry
 
-[Git Source](https://github.com/yearn/vault-periphery/blob/master/contracts/registry/ReleaseRegistry.sol)
+[Git Source](https://github.com/yearn/vault-periphery/blob/68b201f38716a8ab5aa5cedce51a90f52c89578b/src/registry/ReleaseRegistry.sol)
 
 **Inherits:**
-[Governance](./Governance)
+[Governance2Step](https://github.com/yearn/tokenized-strategy-periphery/blob/master/src/utils/Governance2Step.sol)
 
 **Author:**
 yearn.finance
@@ -31,6 +32,12 @@ uint256 public numReleases;
 mapping(uint256 => address) public factories;
 ```
 
+### tokenizedStrategies
+
+```solidity
+mapping(uint256 => address) public tokenizedStrategies;
+```
+
 ### releaseTargets
 
 ```solidity
@@ -42,14 +49,12 @@ mapping(string => uint256) public releaseTargets;
 ### constructor
 
 ```solidity
-constructor(address _governance) Governance(_governance);
+constructor(address _governance) Governance2Step(_governance);
 ```
 
 ### latestFactory
 
 Returns the latest factory.
-
-*Throws if no releases are registered yet.*
 
 ```solidity
 function latestFactory() external view virtual returns (address);
@@ -61,11 +66,23 @@ function latestFactory() external view virtual returns (address);
 |----|----|-----------|
 |`<none>`|`address`|The address of the factory for the latest release.|
 
+### latestTokenizedStrategy
+
+Returns the latest tokenized strategy.
+
+```solidity
+function latestTokenizedStrategy() external view virtual returns (address);
+```
+
+**Returns**
+
+|Name|Type|Description|
+|----|----|-----------|
+|`<none>`|`address`|The address of the tokenized strategy for the latest release.|
+
 ### latestRelease
 
 Returns the api version of the latest release.
-
-*Throws if no releases are registered yet.*
 
 ```solidity
 function latestRelease() external view virtual returns (string memory);
@@ -85,10 +102,11 @@ Issue a new release using a deployed factory.
 target in `releaseTargets` with its associated API version.
 Throws if caller isn't `governance`.
 Throws if the api version is the same as the previous release.
+Throws if the factory does not have the same api version as the tokenized strategy.
 Emits a `NewRelease` event.*
 
 ```solidity
-function newRelease(address _factory) external virtual onlyGovernance;
+function newRelease(address _factory, address _tokenizedStrategy) external virtual onlyGovernance;
 ```
 
 **Parameters**
@@ -96,11 +114,14 @@ function newRelease(address _factory) external virtual onlyGovernance;
 |Name|Type|Description|
 |----|----|-----------|
 |`_factory`|`address`|The factory that will be used create new vaults.|
+|`_tokenizedStrategy`|`address`||
 
 ## Events
 
 ### NewRelease
 
 ```solidity
-event NewRelease(uint256 indexed releaseId, address indexed factory, string apiVersion);
+event NewRelease(
+    uint256 indexed releaseId, address indexed factory, address indexed tokenizedStrategy, string apiVersion
+);
 ```

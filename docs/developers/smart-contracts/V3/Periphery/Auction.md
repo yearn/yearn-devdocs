@@ -1,9 +1,9 @@
-# Auction.sol
+<!-- markdownlint-disable MD024 MD034 MD036 -->
+# Auction
 
-[Git Source](https://github.com/yearn/tokenized-strategy-periphery/blob/master/src/Auctions/Auction.sol)
+[Git Source](https://github.com/yearn/tokenized-strategy-periphery/blob/47e243f39ea0af6568d38d6425354208999e629d/src/Auctions/Auction.sol)
 
-**Inherits:**
-[Governance](./Governance), ReentrancyGuard
+**Inherits:** Governance, ReentrancyGuard
 
 **Author:**
 yearn.fi
