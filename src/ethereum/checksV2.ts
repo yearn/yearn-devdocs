@@ -22,7 +22,8 @@ const resolveAddress = async (
   publicClient: PublicClient,
   ensName: string,
   fallbackAddress: string,
-  contractName: string
+  contractName: string,
+  failedChecks: string[]
 ) => {
   const checkedFallback = getAddress(fallbackAddress)
   let address = await publicClient.getEnsAddress({ name: normalize(ensName) })
@@ -31,8 +32,11 @@ const resolveAddress = async (
   // if address is undefined, use the fallback address
   if (!address) {
     address = checkedFallback
-    isENSResolved = false // Modified code: Set isResolved to false if fallback is used
+    isENSResolved = false
     console.warn(`using fallback address for ${contractName}`)
+    if (!failedChecks.includes(contractName)) {
+      failedChecks.push(contractName)
+    }
   }
 
   // if address exists and !== fallbackAddress, warn to update the fallback address
@@ -43,6 +47,9 @@ const resolveAddress = async (
     console.warn(
       `Resolved ${contractName} ENS address does not match the fallback address. Update the fallback address and check the ABI in /src/ethereum/constants.ts.`
     )
+    if (!failedChecks.includes(contractName)) {
+      failedChecks.push(contractName)
+    }
   }
 
   return { address, isENSResolved }
@@ -67,14 +74,16 @@ async function validateAddressWithENS(
   ensName: string,
   fallbackAddress: string,
   contractName: string,
-  addressFromProviderContract: string
-): Promise<boolean> {
+  addressFromProviderContract: string,
+  failedChecks: string[]
+) {
   // Resolve the address from ENS
   const { address: resolvedAddress, isENSResolved } = await resolveAddress(
     publicClient,
     ensName,
     fallbackAddress,
-    contractName
+    contractName,
+    failedChecks
   )
 
   // Check if the actual address matches the resolved ENS address
@@ -84,6 +93,9 @@ async function validateAddressWithENS(
     console.warn(
       `${contractName} ENS address does not match the Protocol Address Provider Contract. Check the ENS address and check the ABI in /src/ethereum/constants.ts.`
     )
+    if (!failedChecks.includes(contractName)) {
+      failedChecks.push(contractName)
+    }
   }
 
   // Check if the actual address matches the fallback address
@@ -93,24 +105,30 @@ async function validateAddressWithENS(
     console.warn(
       `${contractName} Fallback address in Constants does not match Protocol Address Provider Contract. Update the fallback address and check the ABI in /src/ethereum/constants.ts.`
     )
+    if (!failedChecks.includes(contractName)) {
+      failedChecks.push(contractName)
+    }
   }
-
+  const matches = ensMatch && fallbackMatch && isENSResolved
   // Return true if both matches, otherwise false
-  return ensMatch && fallbackMatch && isENSResolved
+  return matches
 }
 
 async function validateAddress(
-  fallbackAddress,
-  contractName,
-  addressFromProviderContract
-): Promise<boolean> {
-  // Check if the actual address matches the fallback address
+  fallbackAddress: string,
+  contractName: string,
+  addressFromProviderContract: string,
+  failedChecks: string[]
+) {
   const match =
     getAddress(addressFromProviderContract) === getAddress(fallbackAddress)
   if (!match) {
     console.warn(
       `${contractName} Fallback address in Constants does not match Provider Contract. Update the fallback address and check the ABI in /src/ethereum/constants.ts.`
     )
+    if (!failedChecks.includes(contractName)) {
+      failedChecks.push(contractName)
+    }
   }
   return match
 }
@@ -127,7 +145,8 @@ async function validateAddress(
  */
 export const fetchTopLevelAddressesFromENS = async (
   publicClient,
-  checkFlag: boolean | undefined
+  checkFlag: boolean | undefined,
+  failedChecks: string[]
 ) => {
   if (!publicClient) {
     console.error('publicClient is null')
@@ -141,7 +160,8 @@ export const fetchTopLevelAddressesFromENS = async (
     publicClient,
     constants.topLevel.protocolAddressProviderENS,
     constants.topLevel.protocolAddressProvider,
-    'v3ProtocolAddressProvider'
+    'v3ProtocolAddressProvider',
+    failedChecks
   )
 
   const { address: v3ReleaseRegistry, isENSResolved: v3ReleaseRegistryCheck } =
@@ -149,7 +169,8 @@ export const fetchTopLevelAddressesFromENS = async (
       publicClient,
       constants.topLevel.releaseRegistryENS,
       constants.topLevel.releaseRegistry,
-      'v3ReleaseRegistry'
+      'v3ReleaseRegistry',
+      failedChecks
     )
 
   const { address: v3RoleManager, isENSResolved: v3RoleManagerCheck } =
@@ -157,7 +178,8 @@ export const fetchTopLevelAddressesFromENS = async (
       publicClient,
       constants.yearnV3RoleManager.roleManagerENS,
       constants.yearnV3RoleManager.roleManager,
-      'v3RoleManager'
+      'v3RoleManager',
+      failedChecks
     )
 
   const addresses = {
@@ -205,7 +227,8 @@ export const fetchTopLevelAddressesFromENS = async (
 export const fetchAndCheckProtocolAddresses = async (
   v3ProtocolAddressProvider: Address,
   publicClient,
-  checkFlag: boolean | undefined
+  checkFlag: boolean | undefined,
+  failedChecks: string[]
 ) => {
   if (!publicClient) {
     console.error('publicClient is null')
@@ -222,22 +245,26 @@ export const fetchAndCheckProtocolAddresses = async (
     constants.protocolPeriphery.aprOracleENS,
     constants.protocolPeriphery.aprOracle,
     'v3AprOracle',
-    addresses.aprOracle
+    addresses.aprOracle,
+    failedChecks
   )
   const routerCheck = await validateAddress(
     constants.protocolPeriphery.router,
     'v3Router',
-    addresses.router
+    addresses.router,
+    failedChecks
   )
   const reportTriggerCheck = await validateAddress(
     constants.protocolPeriphery.commonReportTrigger,
     'v3ReportTrigger',
-    addresses.commonReportTrigger
+    addresses.commonReportTrigger,
+    failedChecks
   )
   const roleManagerFactoryCheck = await validateAddress(
     constants.protocolPeriphery.roleManagerFactory,
     'v3RoleManagerFactory',
-    addresses.roleManagerFactory
+    addresses.roleManagerFactory,
+    failedChecks
   )
   if (
     !aprOracleCheck ||
@@ -263,7 +290,8 @@ export const fetchAndCheckProtocolAddresses = async (
 export const fetchAndCheckFromReleaseRegistry = async (
   releaseRegistry: Address,
   publicClient,
-  checkFlag: boolean | undefined
+  checkFlag: boolean | undefined,
+  failedChecks: string[]
 ) => {
   if (!publicClient) {
     console.error('publicClient is null')
@@ -280,6 +308,7 @@ export const fetchAndCheckFromReleaseRegistry = async (
       'Latest Release in Constants file does not match Release Registry Contract.'
     )
     hasLatestRelease = false
+    failedChecks.push('latestV3Release')
   }
   const checks = { hasLatestRelease }
 
@@ -289,6 +318,7 @@ export const fetchAndCheckFromReleaseRegistry = async (
     const constantRelease = constants.releaseRegistry[releaseNumber]
     if (!constantRelease) {
       console.warn(`Release ${releaseNumber} is missing in constants.`)
+      failedChecks.push(`V3 Release ${releaseNumber} is missing`)
       continue
     }
 
@@ -305,11 +335,13 @@ export const fetchAndCheckFromReleaseRegistry = async (
       console.warn(`vaultOriginal for release ${releaseNumber} does not match.`)
       matchResults[`is${releaseKey}VaultOriginalMatch`] = false
       checkFlag = false
+      failedChecks.push(`${releaseKey}VaultOriginal`)
     }
     if (fetchedRelease.factory !== constantRelease.factory) {
       console.warn(`Factory for release ${releaseNumber} does not match.`)
       matchResults[`is${releaseKey}FactoryMatch`] = false
       checkFlag = false
+      failedChecks.push(`${releaseKey}Factory`)
     }
     if (
       fetchedRelease.tokenizedStrategy !== constantRelease.tokenizedStrategy
@@ -319,6 +351,7 @@ export const fetchAndCheckFromReleaseRegistry = async (
       )
       matchResults[`is${releaseKey}TokenizedStrategyMatch`] = false
       checkFlag = false
+      failedChecks.push(`${releaseKey}TokenizedStrategy`)
     }
 
     Object.assign(checks, matchResults)
@@ -339,7 +372,8 @@ export const fetchAndCheckFromReleaseRegistry = async (
 export const fetchAndCheckYearnV3Addresses = async (
   roleManager: Address,
   publicClient,
-  checkFlag: boolean | undefined
+  checkFlag: boolean | undefined,
+  failedChecks: string[]
 ) => {
   const addresses = await readYearnRoleManager(roleManager, publicClient)
   const accountantCheck = await validateAddressWithENS(
@@ -347,19 +381,22 @@ export const fetchAndCheckYearnV3Addresses = async (
     constants.yearnV3Contracts.accountantENS,
     constants.yearnV3Contracts.accountant,
     'yearnV3Accountant',
-    addresses.yearnAccountant
+    addresses.yearnAccountant,
+    failedChecks
   )
   const registryCheck = await validateAddressWithENS(
     publicClient,
     constants.yearnV3Contracts.registryENS,
     constants.yearnV3Contracts.registry,
     'yearnV3Registry',
-    addresses.yearnRegistry
+    addresses.yearnRegistry,
+    failedChecks
   )
   const debtAllocatorCheck = await validateAddress(
     constants.yearnV3Contracts.debtAllocator,
     'yearnV3DebtAllocator',
-    addresses.yearnDebtAllocator
+    addresses.yearnDebtAllocator,
+    failedChecks
   )
 
   if (!accountantCheck || !registryCheck || !debtAllocatorCheck) {

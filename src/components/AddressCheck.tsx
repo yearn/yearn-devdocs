@@ -6,6 +6,8 @@ function AddressCheck() {
   const data = useContext(ContractAddressContext)
   const [loading, setLoading] = useState(true)
   const checks = data.checks
+  const failedChecks = data.checks.failedChecks
+  const allChecksPassed = data.checks.allChecksPassed
 
   useEffect(() => {
     if (checks && Object.keys(checks).length > 0) {
@@ -25,23 +27,6 @@ function AddressCheck() {
         </div>
       </div>
     )
-  }
-
-  // Initialize a variable to track if all checks are true
-  let allChecksPassed = true
-
-  // Initialize an array to store the keys of failed checks
-  const failedChecks: string[] = [] // Explicitly type the array as an array of strings
-
-  // Iterate over the checks object
-  for (const [category, checksObj] of Object.entries(checks)) {
-    // Iterate over the nested object
-    for (const [key, value] of Object.entries(checksObj)) {
-      if (!value) {
-        allChecksPassed = false // Flip to false if any check fails
-        failedChecks.push(`${category}.${key}`) // Add the key of the failed check to the array with its category
-      }
-    }
   }
 
   //   allChecksPassed = false // only for testing!!

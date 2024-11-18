@@ -1,4 +1,5 @@
 import React, { createContext, useState, useEffect, useContext } from 'react'
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext'
 import { PublicClientContext } from './PublicClientContext'
 import {
   fetchTopLevelAddressesFromENS,
@@ -43,10 +44,12 @@ export const ContractAddressProvider = ({ children }) => {
     const fetchAddresses = async () => {
       try {
         let checkFlag: boolean | undefined
+        const failedChecks: string[] = []
         checkFlag = true
         const topLevelData = await fetchTopLevelAddressesFromENS(
           publicClient,
-          checkFlag
+          checkFlag,
+          failedChecks
         )
         checkFlag = topLevelData?.checkFlag
         if (!topLevelData)
@@ -55,7 +58,8 @@ export const ContractAddressProvider = ({ children }) => {
         const protocolPeripheryData = await fetchAndCheckProtocolAddresses(
           topLevelData.addresses.v3ProtocolAddressProvider,
           publicClient,
-          checkFlag
+          checkFlag,
+          failedChecks
         )
         checkFlag = protocolPeripheryData?.checkFlag
         if (!protocolPeripheryData || !protocolPeripheryData?.addresses)
@@ -64,7 +68,8 @@ export const ContractAddressProvider = ({ children }) => {
         const releaseRegistryData = await fetchAndCheckFromReleaseRegistry(
           topLevelData.addresses.v3ReleaseRegistry,
           publicClient,
-          checkFlag
+          checkFlag,
+          failedChecks
         )
         checkFlag = releaseRegistryData?.checkFlag
         if (!releaseRegistryData)
@@ -73,7 +78,8 @@ export const ContractAddressProvider = ({ children }) => {
         const yearnV3Data = await fetchAndCheckYearnV3Addresses(
           topLevelData.addresses.v3RoleManager,
           publicClient,
-          checkFlag
+          checkFlag,
+          failedChecks
         )
         checkFlag = yearnV3Data?.checkFlag
         if (!yearnV3Data) throw new Error('Failed to fetch Yearn V3 addresses')
@@ -88,6 +94,8 @@ export const ContractAddressProvider = ({ children }) => {
         }
 
         const addressChecks = {
+          allChecksPassed: checkFlag,
+          failedChecks,
           topLevel: topLevelData.checks,
           protocolPeriphery: protocolPeripheryData.checks,
           releaseRegistry: releaseRegistryData.checks,
@@ -97,6 +105,7 @@ export const ContractAddressProvider = ({ children }) => {
           console.log('Addresses:', addressesData)
           console.log('Checks:', addressChecks)
         }
+
         setChecks(addressChecks)
         setAddresses(addressesData)
       } catch (error) {
