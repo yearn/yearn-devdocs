@@ -6,7 +6,6 @@ import {
   yearnV3RoleManagerABI,
   v3VaultFactoryBlueprintABI,
 } from './ABIs'
-import * as constants from './constants'
 import { ReleaseDataMap } from './types'
 
 const useFallback = (contractName: string, fallback: string): Address => {
