@@ -7,6 +7,8 @@
 {{/if}}
 {{#ownFunctions}}
 ### {{name}}
+{{#if natspec.userdoc}}{{formatDoc natspec.userdoc}}{{/if}}
+{{#if natspec.devdoc}}{{formatDoc natspec.devdoc}}{{/if}}
 ```solidity
   function {{name}}(
     {{#natspec.params}}
@@ -14,8 +16,6 @@
     {{/natspec.params}}
   ) {{visibility}}{{#if outputs}} returns ({{outputs}}){{/if}}
 ```
-{{#if natspec.userdoc}}{{formatDoc natspec.userdoc}}{{/if}}
-{{#if natspec.devdoc}}{{formatDoc natspec.devdoc}}{{/if}}
 {{#if natspec.params}}
 #### Parameters:
 | Name | Type | Description                                                          |

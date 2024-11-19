@@ -1,10 +1,9 @@
 <!-- markdownlint-disable MD024 MD034 MD036 -->
 # DebtAllocator
 
-[Git Source](https://github.com/yearn/vault-periphery/blob/68b201f38716a8ab5aa5cedce51a90f52c89578b/src/debtAllocators/DebtAllocator.sol)
+[Git Source](https://github.com/yearn/vault-periphery/blob/516f95edcd36e28b714b52408c05009b430900e3/src/debtAllocators/DebtAllocator.sol)
 
-**Inherits:**
-[Governance](https://github.com/yearn/tokenized-strategy-periphery/blob/f139be6286cb3d630b0bce6d6db812c709e5bb47/src/utils/Governance.sol)
+**Inherits:** Governance
 
 **Author:**
 yearn.finance
@@ -341,7 +340,7 @@ function setManager(address _address, bool _allowed) external virtual onlyGovern
 |Name|Type|Description|
 |----|----|-----------|
 |`_address`|`address`|The address to set mapping for.|
-|`_allowed`|`bool`|If the address can call [update_debt](#update_debt).|
+|`_allowed`|`bool`|If the address can call [update_debt](/src/debtAllocators/DebtAllocator.sol/contract.DebtAllocator.md#update_debt).|
 
 ### setMaxDebtUpdateLoss
 
@@ -407,7 +406,7 @@ function setKeeper(address _address, bool _allowed) external virtual onlyGoverna
 |Name|Type|Description|
 |----|----|-----------|
 |`_address`|`address`|The address to set mapping for.|
-|`_allowed`|`bool`|If the address can call [update_debt](#update_debt).|
+|`_allowed`|`bool`|If the address can call [update_debt](/src/debtAllocators/DebtAllocator.sol/contract.DebtAllocator.md#update_debt).|
 
 ### getStrategyConfig
 

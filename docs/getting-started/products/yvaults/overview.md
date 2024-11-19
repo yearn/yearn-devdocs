@@ -1,6 +1,6 @@
 # yVaults
 
-:::yearn-info[WHAT IS A yVAULT ANYWAY?]
+:::yearn[WHAT IS A yVAULT ANYWAY?]
 
 Yearn Vaults are like crypto savings accounts in cyberspace. You deposit your assets, and Yearn's smart contracts put them to work within the DeFi ecosystem, returning the earned yield back to you.
 

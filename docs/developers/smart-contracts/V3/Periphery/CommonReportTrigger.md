@@ -1,10 +1,9 @@
 <!-- markdownlint-disable MD024 MD034 MD036 -->
 # CommonReportTrigger
 
-[Git Source](https://github.com/yearn/tokenized-strategy-periphery/blob/f139be6286cb3d630b0bce6d6db812c709e5bb47/src/ReportTrigger/CommonReportTrigger.sol)
+[Git Source](https://github.com/yearn/tokenized-strategy-periphery/blob/47e243f39ea0af6568d38d6425354208999e629d/src/ReportTrigger/CommonReportTrigger.sol)
 
-**Inherits:**
-[Governance](https://github.com/yearn/tokenized-strategy-periphery/blob/f139be6286cb3d630b0bce6d6db812c709e5bb47/src/utils/Governance.sol)
+**Inherits:** Governance
 
 **Author:**
 Yearn.finance

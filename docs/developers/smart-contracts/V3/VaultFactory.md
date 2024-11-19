@@ -1,8 +1,6 @@
-<!-- markdownlint-disable MD024 MD036 -->
+<!-- markdownlint-disable MD024 MD034 MD036 -->
 
 # VaultFactory.vy
-
-[Git Source](https://github.com/yearn/yearn-vaults-v3/blob/92716ed7298b2f3e5c1afc339dfe7c85868c747e/contracts/VaultFactory.vy)
 
 vyper: `0.3.7`
 author: `yearn.finance`

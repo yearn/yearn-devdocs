@@ -26,6 +26,12 @@ The Role Manager Factory provides the easiest way to deploy and manage your own 
 
 Core contracts are the base generic contracts that can be used by anyone who wants to build on v3 yVaults.
 
+### Version 3.0.4
+
+- Vault original : [`0xd8063123BBA3B480569244AE66BFE72B6c84b00d`](https://etherscan.io/address/0xd8063123BBA3B480569244AE66BFE72B6c84b00d#readContract)
+- VaultFactory : [`0x770D0d1Fb036483Ed4AbB6d53c1C88fb277D812F`](https://etherscan.io/address/0x770D0d1Fb036483Ed4AbB6d53c1C88fb277D812F#readContract)
+- TokenizedStrategy : [`0xD377919FA87120584B21279a491F82D5265A139c`](https://etherscan.io/address/0xD377919FA87120584B21279a491F82D5265A139c#readContract)
+
 ### Version 3.0.3
 
 - Vault original : [`0xcA78AF7443f3F8FA0148b746Cb18FF67383CDF3f`](https://etherscan.io/address/0xcA78AF7443f3F8FA0148b746Cb18FF67383CDF3f#readContract)

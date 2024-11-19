@@ -15,7 +15,7 @@ Anyone can create and send a yGift. It is possible to add an image or mp4 video,
 
 ![](https://i.imgur.com/DtrbCtH.png)
 
-4. Add a receiver **ETH or ENS address**. Make sure it is the correct Ethereum wallet address, or the yGift will be lost
+4. Add a receiver **ETH or ENS addresses**. Make sure it is the correct Ethereum wallet address, or the yGift will be lost
 5. In case you want to add funds to your yGift, choose the token and amount. **Adding funds is optional**
 6. Choose a name and write a nice message for your yGift
 7. **Locking period**: Optionally set a period of days to lock tokens added to the yGift when you create it. You may send the yGift immediately and although it will be available to the recipient, **the tokens will be locked until this period ends**
@@ -32,7 +32,7 @@ After a yGift has been sent, people can add more funds to it by tipping it! Are 
 
 ![](https://i.imgur.com/7crWB2h.png)
 
-You can only tip a yGift on the **previous chosen token**. If the yGift was minted with yUSD being the token (even if initial amount was set to 0), then the tips have to be in yUSD.
+You can only tip a yGift on the **previously chosen token**. If the yGift was minted with yUSD being the token (even if initial amount was set to 0), then the tips have to be in yUSD.
 
 Tips are always **immediately available** and not subject to locking or vesting.
 

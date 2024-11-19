@@ -1,10 +1,9 @@
 <!-- markdownlint-disable MD024 MD034 MD036 -->
 # ReleaseRegistry
 
-[Git Source](https://github.com/yearn/vault-periphery/blob/68b201f38716a8ab5aa5cedce51a90f52c89578b/src/registry/ReleaseRegistry.sol)
+[Git Source](https://github.com/yearn/vault-periphery/blob/516f95edcd36e28b714b52408c05009b430900e3/src/registry/ReleaseRegistry.sol)
 
-**Inherits:**
-[Governance2Step](https://github.com/yearn/tokenized-strategy-periphery/blob/master/src/utils/Governance2Step.sol)
+**Inherits:** Governance2Step
 
 **Author:**
 yearn.finance

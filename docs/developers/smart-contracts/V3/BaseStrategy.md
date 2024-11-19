@@ -1,7 +1,7 @@
-<!-- markdownlint-disable MD024 MD036 -->
+<!-- markdownlint-disable MD024 MD034 MD036 -->
 # BaseStrategy
 
-[Git Source](https://github.com/yearn/tokenized-strategy/blob/e90ecb8a288340bf17f6800e7bd545f2a3f7adeb/src/BaseStrategy.sol)
+[Git Source](https://github.com/yearn/tokenized-strategy/blob/9ef68041bd034353d39941e487499d111c3d3901/src/BaseStrategy.sol)
 
 **Author:**
 yearn.finance
@@ -332,12 +332,11 @@ NOTE: This will not realize any profits or losses. A separate
 a report may need to be called after a shutdown it is important
 to check if the strategy is shutdown during `_harvestAndReport`
 so that it does not simply re-deploy all funds that had been freed.
-EX:
 
-```solidity
+```solidity title="Example"
 if(freeAsset > 0 && !TokenizedStrategy.isShutdown()) {
 depositFunds...
-}*
+}
 ```
 
 ```solidity

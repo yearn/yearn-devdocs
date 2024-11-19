@@ -4,7 +4,7 @@ The plugin allows you to interact with the Yearn website directly from your Ledg
 
 Every addition, deletion, and modification of a Vault should be reflected in this plugin and will require a verification by the Ledger's Team based on a new pull request on the [LedgerHQ/app-plugin-yearn](https://github.com/LedgerHQ/app-plugin-yearn) repository.
 
-This guide provides an easy step by step to add a new vault.
+This guide provides an easy step-by-step to add a new vault.
 
 ## Setup your environment 
 

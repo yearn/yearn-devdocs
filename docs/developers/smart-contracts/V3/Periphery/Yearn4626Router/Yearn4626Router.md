@@ -3,8 +3,7 @@
 
 [Git Source](https://github.com/yearn/Yearn-ERC4626-Router/blob/68165774ec8858b43db24620756402def14b7ec1/src/Yearn4626Router.sol)
 
-**Inherits:**
-[IYearn4626Router](https://github.com/yearn/Yearn-ERC4626-Router/blob/68165774ec8858b43db24620756402def14b7ec1/src/interfaces/IYearn4626Router.sol), [Yearn4626RouterBase](https://github.com/yearn/Yearn-ERC4626-Router/blob/68165774ec8858b43db24620756402def14b7ec1/src/interfaces/IYearn4626RouterBase.sol)
+**Inherits:** IYearn4626Router, Yearn4626RouterBase
 
 Router that is meant to be used with Yearn V3 vaults and strategies
 for deposits, withdraws and migrations.
@@ -68,7 +67,7 @@ function depositToVault(IYearn4626 vault, uint256 amount, address to, uint256 mi
 
 ### depositToVault
 
-See [depositToVault](https://github.com/yearn/Yearn-ERC4626-Router/blob/68165774ec8858b43db24620756402def14b7ec1/src/interfaces/IYearn4626Router.sol) in IYearn4626Router.
+See [depositToVault](#deposittovault) in IYearn4626Router.
 
 *Uses msg.sender as the default for `to`.*
 
@@ -78,7 +77,7 @@ function depositToVault(IYearn4626 vault, uint256 amount, uint256 minSharesOut) 
 
 ### depositToVault
 
-See [depositToVault](https://github.com/yearn/Yearn-ERC4626-Router/blob/68165774ec8858b43db24620756402def14b7ec1/src/interfaces/IYearn4626Router.sol) in IYearn4626Router.
+See [depositToVault](#deposittovault) in IYearn4626Router.
 
 *Uses msg.sender as the default for `to` and their full
 balance of msg.sender as `amount`.*
@@ -89,7 +88,7 @@ function depositToVault(IYearn4626 vault, uint256 minSharesOut) external payable
 
 ### depositToVault
 
-See [depositToVault](https://github.com/yearn/Yearn-ERC4626-Router/blob/68165774ec8858b43db24620756402def14b7ec1/src/interfaces/IYearn4626Router.sol) in IYearn4626Router.
+See [depositToVault](#deposittovault) in IYearn4626Router.
 
 *Uses msg.sender as the default for `to`, their full balance
 of msg.sender as `amount` and 1 Basis point for `maxLoss`.
@@ -102,7 +101,7 @@ function depositToVault(IYearn4626 vault) external payable returns (uint256);
 
 ### redeem
 
-See [redeem](https://github.com/yearn/Yearn-ERC4626-Router/blob/68165774ec8858b43db24620756402def14b7ec1/src/interfaces/IYearn4626RouterBase.sol) in IYearn4626RouterBase.
+See [redeem](#redeem) in IYearn4626RouterBase.
 
 *Uses msg.sender as `receiver`.*
 
@@ -112,7 +111,7 @@ function redeem(IYearn4626 vault, uint256 shares, uint256 maxLoss) external paya
 
 ### redeem
 
-See [redeem](https://github.com/yearn/Yearn-ERC4626-Router/blob/68165774ec8858b43db24620756402def14b7ec1/src/interfaces/IYearn4626RouterBase.sol) in IYearn4626RouterBase.
+See [redeem](#redeem) in IYearn4626RouterBase.
 
 *Uses msg.sender as `receiver` and their full balance as `shares`.*
 
@@ -122,7 +121,7 @@ function redeem(IYearn4626 vault, uint256 maxLoss) external payable returns (uin
 
 ### redeem
 
-See [redeem](https://github.com/yearn/Yearn-ERC4626-Router/blob/68165774ec8858b43db24620756402def14b7ec1/src/interfaces/IYearn4626RouterBase.sol) in IYearn4626RouterBase.
+See [redeem](#redeem) in IYearn4626RouterBase.
 
 *Uses msg.sender as `receiver`, their full balance as `shares`
 and 1 Basis Point for `maxLoss`.*
@@ -163,7 +162,7 @@ function migrate(IYearn4626 fromVault, IYearn4626 toVault, uint256 shares, addre
 
 ### migrate
 
-See [migrate](https://github.com/yearn/Yearn-ERC4626-Router/blob/68165774ec8858b43db24620756402def14b7ec1/src/interfaces/IYearn4626Router.sol) in IYearn4626Router.
+See [migrate](#migrate) in IYearn4626Router.
 
 *Uses msg.sender as `to`.*
 
@@ -176,7 +175,7 @@ function migrate(IYearn4626 fromVault, IYearn4626 toVault, uint256 shares, uint2
 
 ### migrate
 
-See [migrate](https://github.com/yearn/Yearn-ERC4626-Router/blob/68165774ec8858b43db24620756402def14b7ec1/src/interfaces/IYearn4626Router.sol) in IYearn4626Router.
+See [migrate](#migrate) in IYearn4626Router.
 
 *Uses msg.sender as `to` and their full balance for `shares`.*
 
@@ -186,7 +185,7 @@ function migrate(IYearn4626 fromVault, IYearn4626 toVault, uint256 minSharesOut)
 
 ### migrate
 
-See [migrate](https://github.com/yearn/Yearn-ERC4626-Router/blob/68165774ec8858b43db24620756402def14b7ec1/src/interfaces/IYearn4626Router.sol) in IYearn4626Router.
+See [migrate](#migrate) in IYearn4626Router.
 
 *Uses msg.sender as `to`, their full balance for `shares` and no `minamountOut`.
 NOTE: Using this will enforce no slippage checks and should be used with care.*
@@ -227,7 +226,7 @@ function migrateFromV2(IYearnV2 fromVault, IYearn4626 toVault, uint256 shares, a
 
 ### migrateFromV2
 
-See [migrateFromV2](https://github.com/yearn/Yearn-ERC4626-Router/blob/68165774ec8858b43db24620756402def14b7ec1/src/interfaces/IYearn4626Router.sol) in IYearn4626Router.
+See [migrateFromV2](#migratefromv2) in IYearn4626Router.
 
 *Uses msg.sender as `to`.*
 
@@ -240,7 +239,7 @@ function migrateFromV2(IYearnV2 fromVault, IYearn4626 toVault, uint256 shares, u
 
 ### migrateFromV2
 
-See [migrateFromV2](https://github.com/yearn/Yearn-ERC4626-Router/blob/68165774ec8858b43db24620756402def14b7ec1/src/interfaces/IYearn4626Router.sol) in IYearn4626Router.
+See [migrateFromV2](#migratefromv2) in IYearn4626Router.
 
 *Uses msg.sender as `to` and their full balance as `shares`.*
 
@@ -253,7 +252,7 @@ function migrateFromV2(IYearnV2 fromVault, IYearn4626 toVault, uint256 minShares
 
 ### migrateFromV2
 
-See [migrate](https://github.com/yearn/Yearn-ERC4626-Router/blob/68165774ec8858b43db24620756402def14b7ec1/src/interfaces/IYearn4626Router.sol) in IYearn4626Router.
+See [migrate](#migrate) in IYearn4626Router.
 
 *Uses msg.sender as `to`, their full balance for `shares` and no `minamountOut`.
 NOTE: Using this will enforce no slippage checks and should be used with care.*

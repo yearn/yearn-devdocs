@@ -3,8 +3,7 @@
 
 [Git Source](https://github.com/yearn/Yearn-ERC4626-Router/blob/68165774ec8858b43db24620756402def14b7ec1/src/external/Multicall.sol)
 
-**Inherits:**
-[IMulticall](https://github.com/yearn/Yearn-ERC4626-Router/blob/68165774ec8858b43db24620756402def14b7ec1/src/external/interfaces/IMulticall.sol)
+**Inherits:** IMulticall
 
 Enables calling multiple methods in a single call to the contract
 
