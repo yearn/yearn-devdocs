@@ -124,15 +124,15 @@ export const fetchTopLevelAddressesFromENS = async (publicClient) => {
 
   const v3ProtocolAddressProvider = await resolveAddress(
     publicClient,
-    constants.v3ProtocolContracts.protocolAddressProviderENS,
-    constants.v3ProtocolContracts.protocolAddressProviderFallback,
+    constants.topLevel.protocolAddressProviderENS,
+    constants.topLevel.protocolAddressProvider,
     'v3ProtocolAddressProvider'
   )
 
   const v3ReleaseRegistry = await resolveAddress(
     publicClient,
-    constants.v3ProtocolContracts.releaseRegistryENS,
-    constants.v3ProtocolContracts.releaseRegistryFallback,
+    constants.topLevel.releaseRegistryENS,
+    constants.topLevel.releaseRegistry,
     'v3ReleaseRegistry'
   )
 
@@ -181,23 +181,23 @@ export const fetchAndCheckProtocolAddresses = async (
   // check that the resolved addresses matches the constants file (and ENS where available)
   await validateAddressWithENS(
     publicClient,
-    constants.v3PeripheryContracts.aprOracleENS,
-    constants.v3PeripheryContracts.aprOracle,
+    constants.protocolPeriphery.aprOracleENS,
+    constants.protocolPeriphery.aprOracle,
     'v3AprOracle',
     addresses.aprOracle
   )
   await validateAddress(
-    constants.v3PeripheryContracts.router,
+    constants.protocolPeriphery.router,
     'v3Router',
     addresses.router
   )
   await validateAddress(
-    constants.v3PeripheryContracts.commonReportTrigger,
+    constants.protocolPeriphery.commonReportTrigger,
     'v3ReportTrigger',
     addresses.commonReportTrigger
   )
   await validateAddress(
-    constants.v3PeripheryContracts.roleManagerFactory,
+    constants.protocolPeriphery.roleManagerFactory,
     'v3RoleManagerFactory',
     addresses.roleManagerFactory
   )
@@ -229,7 +229,7 @@ export const fetchAndCheckFromReleaseRegistry = async (
   )
 
   // Compare the fetched addresses with the constants
-  if (addresses.latestRelease !== constants.v3VaultReleases.latestRelease) {
+  if (addresses.latestRelease !== constants.releaseRegistry.latestRelease) {
     console.warn(
       'Latest Release in Constants file does not match Release Registry Contract.'
     )
@@ -238,7 +238,7 @@ export const fetchAndCheckFromReleaseRegistry = async (
   for (const releaseNumber in addresses) {
     if (releaseNumber === 'latestRelease') continue // Skip the latestRelease key
     const fetchedRelease = addresses[releaseNumber] as ReleaseData
-    const constantRelease = constants.v3VaultReleases[releaseNumber]
+    const constantRelease = constants.releaseRegistry[releaseNumber]
     if (!constantRelease) {
       console.warn(`Release ${releaseNumber} is missing in constants.`)
       continue

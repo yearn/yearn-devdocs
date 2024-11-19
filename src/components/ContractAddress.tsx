@@ -1,9 +1,21 @@
 import React, { useContext, useState, useEffect } from 'react'
-import { ContractAddressContext } from '../context/ContractAddressesContext'
+import { ContractAddressContext } from '../context/ContractAddressesContextV2'
 
+/**
+ * Component to display a contract address with a link to Etherscan.
+ *
+ * @param {Object} props - The component props.
+ * @param {string[]} props.contractName - An array of keys to access the contract address in the context data.
+ *
+ * @returns {JSX.Element} A link to the contract address on Etherscan or a loading message.
+ *
+ * @example
+ * <ContractAddress contractName={['contracts', 'MyContract']} />
+ */
 const ContractAddress = ({ contractName }) => {
   const data = useContext(ContractAddressContext)
   const [loading, setLoading] = useState(true)
+  const addresses = data.addresses
 
   const getNestedProperty = (obj, keys) => {
     return keys.reduce((acc, key) => acc && acc[key], obj)
@@ -22,7 +34,7 @@ const ContractAddress = ({ contractName }) => {
   // Modified code: Ensure contractName is an array
   const path = Array.isArray(contractName) ? contractName : [contractName]
 
-  const address = getNestedProperty(data, path)
+  const address = getNestedProperty(addresses, path)
 
   if (!address) {
     return <span>Loading Contract Address...</span>

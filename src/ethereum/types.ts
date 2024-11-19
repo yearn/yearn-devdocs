@@ -45,17 +45,26 @@ export type ReleaseData = {
   tokenizedStrategy: string
 }
 
-// export type ReleaseRegistryAddresses = {
-//   latestRelease: string
-//   latestTokenizedStrategy: `0x${string}`
-//   latestFactory: `0x${string}`
-//   vaultOriginal?: `0x${string}`
-// }
-
 export type YearnAddresses = {
   yearnBrain: `0x${string}`
   yearnDaddy: `0x${string}`
   yearnAccountant: `0x${string}`
   yearnDebtAllocator: `0x${string}`
   yearnRegistry: `0x${string}`
+}
+
+export type AddressChecks = {
+  allChecksPassed: boolean | undefined
+  failedChecks: string[]
+  topLevel: {
+    v3ProtocolAddressProviderCheck: Promise<boolean>
+    v3ProtocolAddressProviderENSCheck: boolean
+    v3ReleaseRegistryCheck: Promise<boolean>
+    v3ReleaseRegistryENSCheck: boolean
+    v3RoleManagerCheck: Promise<boolean>
+    v3RoleManagerENSCheck: boolean
+  }
+  protocolPeriphery: { [key: string]: boolean }
+  releaseRegistry: { [key: string]: boolean }
+  yearnV3: { [key: string]: boolean }
 }
