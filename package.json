@@ -1,6 +1,7 @@
 {
   "name": "yearn-devdocs",
   "version": "0.4.3",
+  "license": "MIT",
   "scripts": {
     "docusaurus": "docusaurus",
     "get-branch-name": "git rev-parse --abbrev-ref HEAD > .branch-name",
@@ -16,9 +17,8 @@
     "make-sol-doc": "solidity-docgen --templates=templates --helpers=helpers/solidityHelpers.js -i ../yearn-vaults/contracts/ -o docs/v2/smart-contracts",
     "make-vyper-doc": "vydoc -i ../yearn-vaults/contracts/ -o docs/v2/smart-contracts -t ./templates/contract.ejs",
     "vydoc": "npx vydoc   -i ../yearn-vaults-v3/contracts/   -o ./templates/temp   -t ./templates/contract.ejs   -c $(which vyper)",
-    "gitmodule-clean": "node natspec/scripts/gitmodule-clean.mjs",
-    "gitmodule-install": "node natspec/scripts/gitmodule-install.mjs",
-    "v3-docs": "node natspec/scripts/natspec-generate.mjs"
+    "v3-docs": "node natspec/scripts/natspec-generate.mjs",
+    "runAddressCheck": "ts-node scripts/runAddressChecks.ts"
   },
   "dependencies": {
     "@docusaurus/core": "3.5.2",

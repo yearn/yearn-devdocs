@@ -7,7 +7,7 @@ import {
   fetchAndCheckFromReleaseRegistry,
   fetchAndCheckProtocolAddresses,
   fetchAndCheckYearnV3Addresses,
-} from '../src/ethereum/checksV2'
+} from '../src/ethereum/checks'
 import { yfiContracts, veYfiContracts } from '../src/ethereum/constants'
 import { ContractAddresses, AddressChecks } from '../src/ethereum/types'
 import { mainnet } from 'viem/chains'
