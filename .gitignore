@@ -1,7 +1,6 @@
 # Dependencies
 /node_modules
 /venv
-natspec/lib
 natspec/lib/*
 
 # Production
@@ -26,6 +25,7 @@ yarn-error.log*
 .markdownlint.json
 
 .branch-name
+.github/copilot-instructions.md
 
 # Use yarn.lock
 package-lock.json

@@ -1,0 +1,51 @@
+.addressCheckWrapper {
+  width: 100%;
+  padding-bottom: 1rem;
+  height: 6rem;
+}
+
+.loading {
+  background: linear-gradient(
+    to left,
+    var(--ifm-color-primary-darkest),
+    var(--ifm-color-primary-lightest)
+  );
+  color: white;
+  width: 100%;
+  padding: 1rem;
+  border-radius: 8px;
+  font-weight: 700;
+}
+
+.pass {
+  width: 100%;
+  padding: 1rem;
+  background-color: rgb(216, 255, 219);
+  border-radius: 8px; /* Added to round the edges */
+  font-weight: 700;
+  border: 1px solid rgb(75, 160, 75);
+}
+html[data-theme='dark'] .pass {
+  background-color: rgb(24, 115, 27);
+  color: white;
+  border: 1px solid rgb(75, 160, 75);
+}
+
+.fail {
+  width: 100%;
+  padding: 1rem;
+  background-color: rgb(253, 210, 210);
+  border-radius: 8px; /* Added to round the edges */
+  font-weight: 700;
+  border: 1px solid rgb(248, 120, 120);
+}
+
+html[data-theme='dark'] .fail {
+  background-color: rgb(114, 30, 30);
+  color: white;
+  border: 1px solid rgb(93, 0, 0);
+}
+
+.icon {
+  font-size: 20px;
+}

@@ -26,13 +26,15 @@
     "@docusaurus/theme-mermaid": "3.5.2",
     "@mdx-js/react": "^3.0.1",
     "clsx": "1.1.1",
+    "dotenv": "^16.4.5",
     "hast-util-is-element": "1.1.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "rehype-katex": "7",
     "remark-math": "6",
     "solc": "^0.8.17",
-    "solidity-docgen": "^0.5.11"
+    "solidity-docgen": "^0.5.11",
+    "viem": "^2.21.4"
   },
   "browserslist": {
     "production": [
