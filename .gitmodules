@@ -1,15 +1,20 @@
 [submodule "natspec/lib/yearn-vaults-v3"]
 	path = natspec/lib/yearn-vaults-v3
 	url = https://github.com/yearn/yearn-vaults-v3.git
+	ignore = dirty
 [submodule "natspec/lib/tokenized-strategy"]
 	path = natspec/lib/tokenized-strategy
 	url = https://github.com/yearn/tokenized-strategy.git
+	ignore = dirty
 [submodule "natspec/lib/tokenized-strategy-periphery"]
 	path = natspec/lib/tokenized-strategy-periphery
 	url = https://github.com/yearn/tokenized-strategy-periphery.git
+	ignore = dirty
 [submodule "natspec/lib/vault-periphery"]
 	path = natspec/lib/vault-periphery
 	url = https://github.com/yearn/vault-periphery.git
+	ignore = dirty
 [submodule "natspec/lib/Yearn-ERC4626-Router"]
 	path = natspec/lib/Yearn-ERC4626-Router
 	url = https://github.com/yearn/Yearn-ERC4626-Router.git
+	ignore = dirty
