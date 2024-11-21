@@ -34,6 +34,8 @@ jobs:
           npm run build
 
       - name: Run checks and update data
+        env:
+          ALCHEMY_API_KEY: ${{ secrets.ALCHEMY_API_KEY }}
         run: |
           ts-node scripts/runAddressChecks.ts
 
