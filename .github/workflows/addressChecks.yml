@@ -23,10 +23,13 @@ jobs:
         run: |
           if [ -e yarn.lock ]; then
             yarn install
+            yarn global add ts-node
           elif [ -e package-lock.json ]; then
             npm ci
+            npm install -g ts-node
           else
             npm install
+            npm install -g ts-node
           fi
           npm run build
 
