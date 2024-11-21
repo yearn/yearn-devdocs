@@ -10,14 +10,13 @@
   margin-right: auto;
   width: 100%;
   height: calc(100vh - var(--ifm-navbar-height));
-  padding: 5px;
 }
 
 .banner {
   display: flex;
   flex-direction: column;
   height: 100%;
-  padding: 1.3rem;
+  padding: 1.4rem;
 }
 
 .card {
@@ -108,21 +107,11 @@ html[data-theme='dark'] .card:before {
   padding-left: 1rem;
   font-size: 70px;
   color: white;
-  left: -25px;
   z-index: 3;
-}
-
-html[data-theme='dark'] .title {
-  color: var(--ifm-background-color);
 }
 
 @media screen and (max-width: 1082px) {
   .row {
     grid-template-columns: 1fr;
-  }
-
-  .card {
-    min-width: 88%;
-    margin: 0.8rem;
   }
 }
