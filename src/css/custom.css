@@ -111,26 +111,6 @@ html[data-theme='light'] .DocSearch-Search-Icon {
 html[data-theme='light'] .DocSearch:hover {
   border: solid 1px rgba(128, 128, 128, 0.521);
 }
-@media screen and (max-width: 1082px) {
-  .DocSearch {
-    width: inherit;
-  }
-}
-
-@media screen and (min-width: 751px) and (max-width: 1082px) {
-  html[data-theme='dark'] .DocSearch {
-    border: none;
-  }
-  html[data-theme='dark'] .DocSearch:hover {
-    border: none;
-  }
-  html[data-theme='light'] .DocSearch {
-    border: none;
-  }
-  html[data-theme='light'] .DocSearch:hover {
-    border: none;
-  }
-}
 
 /* ---NAVBAR--- */
 .navbar {
