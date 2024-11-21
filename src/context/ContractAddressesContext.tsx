@@ -13,7 +13,7 @@ import { ContractAddresses } from '../ethereum/types'
 export const ContractAddressContext = createContext<{
   addresses: ContractAddresses | Record<string, string | undefined>
   checks: Record<string, any>
-}>({ addresses: {}, checks: {} }) // Modified code: Updated context type
+}>({ addresses: {}, checks: {} })
 
 /**
  * Provides contract addresses to the component tree.
@@ -43,17 +43,17 @@ export const ContractAddressProvider = ({ children }) => {
   useEffect(() => {
     const fetchAddresses = async () => {
       try {
-        let checkFlag: boolean | undefined
+        let checkFlag: boolean | undefined = true
         const failedChecks: string[] = []
-        checkFlag = true
+
         const topLevelData = await fetchTopLevelAddressesFromENS(
           publicClient,
           checkFlag,
           failedChecks
         )
-        checkFlag = topLevelData?.checkFlag
         if (!topLevelData)
           throw new Error('Failed to fetch top-level contract addresses')
+        checkFlag = topLevelData.checkFlag
 
         const protocolPeripheryData = await fetchAndCheckProtocolAddresses(
           topLevelData.addresses.v3ProtocolAddressProvider,
@@ -61,9 +61,9 @@ export const ContractAddressProvider = ({ children }) => {
           checkFlag,
           failedChecks
         )
-        checkFlag = protocolPeripheryData?.checkFlag
         if (!protocolPeripheryData || !protocolPeripheryData?.addresses)
           throw new Error('Failed to fetch protocol addresses')
+        checkFlag = protocolPeripheryData.checkFlag
 
         const releaseRegistryData = await fetchAndCheckFromReleaseRegistry(
           topLevelData.addresses.v3ReleaseRegistry,
@@ -71,9 +71,9 @@ export const ContractAddressProvider = ({ children }) => {
           checkFlag,
           failedChecks
         )
-        checkFlag = releaseRegistryData?.checkFlag
         if (!releaseRegistryData)
           throw new Error('Failed to fetch release registry addresses')
+        checkFlag = releaseRegistryData?.checkFlag
 
         const yearnV3Data = await fetchAndCheckYearnV3Addresses(
           topLevelData.addresses.v3RoleManager,
@@ -81,8 +81,8 @@ export const ContractAddressProvider = ({ children }) => {
           checkFlag,
           failedChecks
         )
-        checkFlag = yearnV3Data?.checkFlag
         if (!yearnV3Data) throw new Error('Failed to fetch Yearn V3 addresses')
+        checkFlag = yearnV3Data.checkFlag
 
         const addressesData: ContractAddresses = {
           topLevel: topLevelData.addresses,

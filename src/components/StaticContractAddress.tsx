@@ -1,10 +1,7 @@
-import React, { useContext, useState, useEffect } from 'react'
-import { ContractAddressContext } from '../context/ContractAddressesContext'
+import React from 'react'
 import * as constants from '../ethereum/constants'
 
 const ContractAddress = ({ contractName }) => {
-  const data = useContext(ContractAddressContext)
-
   const getNestedProperty = (obj, keys) => {
     return keys.reduce((acc, key) => acc && acc[key], obj)
   }

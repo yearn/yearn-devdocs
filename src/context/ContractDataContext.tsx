@@ -1,16 +1,20 @@
-// src/context/ContractDataContext.tsx
-import React, { createContext, useState, useEffect, useContext } from 'react'
+import React, {
+  createContext,
+  useState,
+  useEffect,
+  useContext,
+  useMemo,
+} from 'react'
 import { PublicClientContext } from './PublicClientContext'
 import * as ABIs from '../ethereum/ABIs'
-import { createPublicClient, getContract, http, getAddress } from 'viem'
-import { mainnet } from 'viem/chains'
+import { getAddress, getContract } from 'viem'
 
-interface MethodWithArgs {
+type MethodWithArgs = {
   name: string
   args: string[]
 }
 
-interface ContractReadData {
+type ContractReadData = {
   name: string
   chain: string
   address: string
@@ -39,69 +43,102 @@ const isContractReadData = (obj: any): obj is ContractReadData => {
 
 export const ContractDataContext = createContext({})
 
+/**
+ * Fetches data from multiple contract read calls and updates the state with the results.
+ *
+ * @param {ContractReadData[]} contractReadParams - An array of contract read parameters, each containing the contract address, ABI name, and methods to call.
+ * @param {any} publicClient - The public client used to interact with the blockchain.
+ * @param {Record<string, any>} ABIs - A record of ABI names to ABI definitions.
+ * @param {(value: React.SetStateAction<{}>) => void} setData - A function to update the state with the fetched data.
+ *
+ * @returns {Promise<void>} A promise that resolves when all contract read calls have been completed and the state has been updated.
+ *
+ * @throws Will throw an error if there is an issue with fetching contract data.
+ */
+const fetchData = async (
+  contractReadParams: ContractReadData[],
+  publicClient,
+  ABIs,
+  setData: {
+    (value: React.SetStateAction<{}>): void
+    (arg0: (prevData: any) => any): void
+  }
+) => {
+  try {
+    for (const contractReadCall of contractReadParams) {
+      const address = contractReadCall.address
+      const abi = ABIs[contractReadCall.abiName]
+
+      if (!publicClient) {
+        console.error('publicClient is null')
+        return
+      }
+
+      const contract = getContract({
+        address: getAddress(address),
+        abi: abi,
+        client: publicClient,
+      })
+
+      // Dynamically call methods from contractReadCall
+      const methodCalls = contractReadCall.methods.map((method) => {
+        if (typeof method === 'string') {
+          // @ts-ignore
+          return contract.read[method]()
+        } else {
+          // @ts-ignore
+          return contract.read[method.name](method.args)
+        }
+      })
+
+      const results = await Promise.all(methodCalls) // Await all method calls
+
+      setData((prevData) => {
+        const newData = { ...prevData }
+        results.forEach((result, index) => {
+          const methodName =
+            typeof contractReadCall.methods[index] === 'string'
+              ? contractReadCall.methods[index]
+              : contractReadCall.methods[index].name
+          if (!newData[contractReadCall.name]) {
+            newData[contractReadCall.name] = {}
+          }
+          newData[contractReadCall.name][methodName] = result
+        })
+        return newData
+      })
+    }
+  } catch (error) {
+    console.error('Error fetching contract data:', error)
+  }
+}
+
+/**
+ * Provides contract data to its children components.
+ *
+ * This context provider fetches on-chain data based on the provided contract parameters
+ * and makes it available to its children components via context.
+ *
+ * @param {Object} props - The props object.
+ * @param {React.ReactNode} props.children - The child components that will have access to the contract data.
+ * @param {Array} props.contractParams - The parameters used to fetch contract data.
+ *
+ * @returns {JSX.Element} The context provider component that supplies contract data.
+ */
 export const ContractDataProvider = ({ children, contractParams }) => {
   const [data, setData] = useState({})
   const publicClient = useContext(PublicClientContext)
 
+  // Memoize contractReadParams to prevent unnecessary re-renders
+  const contractReadParams = useMemo(
+    () => contractParams.filter(isContractReadData),
+    [contractParams]
+  )
+
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const contractReadParams: ContractReadData[] = []
-        for (const rpcCall of contractParams) {
-          if (isContractReadData(rpcCall)) {
-            contractReadParams.push(rpcCall)
-          } else {
-            console.error('Invalid contract read data:', rpcCall)
-          }
-        }
-        for (const contractReadCall of contractReadParams) {
-          const address = contractReadCall.address
-
-          const abi = ABIs[contractReadCall.abiName]
-
-          if (!publicClient) {
-            console.error('publicClient is null')
-            return
-          }
-          const contract = getContract({
-            address: getAddress(address),
-            abi: abi,
-            client: publicClient,
-          })
-
-          // Dynamically call methods from contractReadCall
-          const methodCalls = contractReadCall.methods.map((method) => {
-            if (typeof method === 'string') {
-              return contract.read[method]() // Call method without arguments
-            } else {
-              return contract.read[method.name](method.args) // Call method with arguments
-            }
-          })
-
-          const results = await Promise.all(methodCalls) // Await all method calls
-
-          setData((prevData) => {
-            const newData = { ...prevData }
-            results.forEach((result, index) => {
-              const methodName =
-                typeof contractReadCall.methods[index] === 'string'
-                  ? contractReadCall.methods[index]
-                  : contractReadCall.methods[index].name
-              if (!newData[contractReadCall.name]) {
-                newData[contractReadCall.name] = {}
-              }
-              newData[contractReadCall.name][methodName] = result
-            })
-            return newData
-          })
-        }
-      } catch (error) {
-        console.error('Error fetching contract data:', error)
-      }
-    }
-
-    fetchData()
-  }, [contractParams, publicClient])
+    console.log('fetching on-chain data...')
+    fetchData(contractReadParams, publicClient, ABIs, setData)
+  }, [contractReadParams, publicClient])
 
   return (
     <ContractDataContext.Provider value={data}>

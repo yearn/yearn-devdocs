@@ -1,20 +1,14 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useContext } from 'react'
 import { ContractAddressContext } from '../context/ContractAddressesContext'
 import styles from '../css/AddressCheck.module.css'
 
 function AddressCheck() {
   const data = useContext(ContractAddressContext)
-  const [loading, setLoading] = useState(true)
   const checks = data.checks
   const failedChecks = data.checks.failedChecks
   const allChecksPassed = data.checks.allChecksPassed
 
-  useEffect(() => {
-    if (checks && Object.keys(checks).length > 0) {
-      // Check if checks object isn't empty
-      setLoading(false)
-    }
-  }, [checks])
+  const loading = !checks || Object.keys(checks).length === 0
 
   if (loading) {
     return (
@@ -28,8 +22,6 @@ function AddressCheck() {
       </div>
     )
   }
-
-  //   allChecksPassed = false // only for testing!!
 
   // Log failed checks to the console
   if (!allChecksPassed) {

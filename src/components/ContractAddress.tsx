@@ -1,4 +1,4 @@
-import React, { useContext, useState, useEffect } from 'react'
+import React, { useContext } from 'react'
 import { ContractAddressContext } from '../context/ContractAddressesContext'
 
 /**
@@ -14,18 +14,12 @@ import { ContractAddressContext } from '../context/ContractAddressesContext'
  */
 const ContractAddress = ({ contractName }) => {
   const data = useContext(ContractAddressContext)
-  const [loading, setLoading] = useState(true)
   const addresses = data.addresses
+  const loading = !data
 
   const getNestedProperty = (obj, keys) => {
     return keys.reduce((acc, key) => acc && acc[key], obj)
   }
-
-  useEffect(() => {
-    if (data) {
-      setLoading(false)
-    }
-  }, [data])
 
   if (loading) {
     return <span>Loading Contract Address...</span>
