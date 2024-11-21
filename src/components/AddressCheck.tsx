@@ -1,12 +1,15 @@
-import React, { useContext } from 'react'
-import { ContractAddressContext } from '../context/ContractAddressesContext'
+import React from 'react'
 import styles from '../css/AddressCheck.module.css'
+import fetchedAddressData from '../../scripts/fetchedAddressData.json'
 
 function AddressCheck() {
-  const data = useContext(ContractAddressContext)
-  const checks = data.checks
-  const failedChecks = data.checks.failedChecks
-  const allChecksPassed = data.checks.allChecksPassed
+  const data = fetchedAddressData
+  const lastTimeCheckedUTC = new Date(
+    data.timeLastChecked * 1000
+  ).toLocaleString('en-US', { timeZone: 'UTC' }) // modified comment
+  const checks = data.addressChecks
+  const failedChecks = checks.failedChecks
+  const allChecksPassed = checks.allChecksPassed
 
   const loading = !checks || Object.keys(checks).length === 0
 
@@ -25,7 +28,7 @@ function AddressCheck() {
 
   // Log failed checks to the console
   if (!allChecksPassed) {
-    console.log('Some checks failed:', failedChecks)
+    console.log('Some checks failed:', failedChecks) // modified comment
   }
 
   return (
@@ -33,7 +36,10 @@ function AddressCheck() {
       {allChecksPassed ? (
         <div className={styles.pass}>
           <span className={styles.icon}>✅ </span>
-          <span>Success! All Addresses on this page match on-chain data.</span>
+          <span>
+            All Addresses on this page match on-chain data. Last checked on:{' '}
+            {lastTimeCheckedUTC}
+          </span>
         </div>
       ) : (
         <div className={styles.fail}>

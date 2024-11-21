@@ -1,7 +1,6 @@
 import React from 'react'
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext'
 import { PublicClientProvider } from '@site/src/context/PublicClientContext'
-import { ContractAddressProvider } from '@site/src/context/ContractAddressesContext'
 import BranchNameDisplay from '@site/src/components/BranchNameDisplay'
 
 /** The <Root> component is rendered at the very top of the React tree, above the theme <Layout>, and never unmounts.
@@ -14,12 +13,10 @@ export default function Root({ children }) {
 
   return (
     <PublicClientProvider>
-      <ContractAddressProvider>
-        <>
-          {isDev && <BranchNameDisplay />}
-          {children}
-        </>{' '}
-      </ContractAddressProvider>
+      <>
+        {isDev && <BranchNameDisplay />}
+        {children}
+      </>{' '}
     </PublicClientProvider>
   )
 }

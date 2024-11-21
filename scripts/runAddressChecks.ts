@@ -1,4 +1,3 @@
-//TODO: change -v2 versions to be normal and delete v2
 import fs from 'fs'
 import dotenv from 'dotenv'
 import { createPublicClient, http } from 'viem'
@@ -104,10 +103,11 @@ async function runAddressCheck() {
       addressChecks: AddressChecks
     })
   }
+  const timeLastChecked = Math.floor(Date.now() / 1000) // get current time in Unix format
   console.log('writing report to scripts/fetchedAddressData.json')
   fs.writeFileSync(
     'scripts/fetchedAddressData.json',
-    JSON.stringify({ addressesData, addressChecks }, null, 2)
+    JSON.stringify({ timeLastChecked, addressesData, addressChecks }, null, 2)
   )
 }
 
