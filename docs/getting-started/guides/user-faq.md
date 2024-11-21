@@ -16,7 +16,7 @@ The default "deposit" action in yVaults with a gauge or other extra rewards is t
 
 ### Update your default deposit settings
 
-If you want to change the default deposit behavior to only deposit and not also stake the vault tokens, you can change that setting by clicking on the gear icon to the right of the tabs and uncheck "stake automatically" at the bottom of the menu that opens up.
+If you want to change the default deposit behavior to only deposit and not also stake the vault tokens, you can change that setting by clicking on the gear icon to the right of the tabs and unchecking "stake automatically" at the bottom of the menu that opens up.
 
 ![deposit setting](/img/guides/FAQ/deposit-setting.png)
 
@@ -30,11 +30,11 @@ If you want to change the default deposit behavior to only deposit and not also 
   
   </summary>
 
-veYFI rewards are variable depending on how much veYFI your wallet holds. If you don't have any veYFI then you will only get 10% of the maximum reward amount shown. In the image below, note the range of rewards APY. In that case, without any veYFI, a deposit will earn a 1.16% boost, paid in dYFI.
+veYFI rewards are variable depending on how much veYFI your wallet holds. If you don't have veYFI, you will only get 10% of the maximum reward amount shown. In the image below, note the range of rewards APY. Without any veYFI, a deposit will earn a 1.16% boost, paid in dYFI.
 
 ![apy-range](/img/guides/FAQ/boostAPY.png)
 
-If you don't have veYFI, you can use liquid lockers to deposit and stake your tokens. By doing this you use the liquid locker's veYFI to boost your deposit.
+If you don't have veYFI, you can deposit and stake your tokens using liquid lockers. By doing this you use the liquid locker's veYFI to boost your deposit.
 
 Read more about veYFI, boosts, dYFI and liquid lockers on the [veYFI page](/contributing/governance/veYFI-intro)
 
