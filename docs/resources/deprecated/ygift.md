@@ -25,7 +25,7 @@ Anyone can create and send a yGift. It is possible to add an image or mp4 video,
 
 ## How to Tip a yGift
 
-After a yGift has been sent, people can add more funds to it by tipping it! Are you feeling generous? Tip contributor's gift and share some love!
+After a yGift has been sent, people can add more funds to it by tipping it! Are you feeling generous? Tip contributors gift and share some love!
 
 1. Access the page of the yGift you want to tip;
 2. Click on "tip". Set amount and write a nice message
