@@ -40,7 +40,7 @@ function deposit() external;
 <!-- {% endtab %}
 {% endtabs %} -->
 
-### func `withdraw(address)`
+### function `withdraw(address)`
 
 Dust collecting function to create additional rewards out of tokens that were incorrectly sent to the Strategy.
 
