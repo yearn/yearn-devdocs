@@ -2,7 +2,7 @@
 
 A list of all the current yPool contract addresses.
 
-## yETH contract Address
+## yETH contract Addresses
 
 | Name                                             | Address                             |
 |--------------------------------------------------|-------------------------------------|

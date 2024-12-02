@@ -104,7 +104,11 @@ export default {
                 type: 'doc',
                 id: 'ypools/yeth/yeth-overview',
               },
-              items: ['ypools/yeth/adding-assets'],
+              items: [
+                'ypools/yeth/adding-assets',
+                'ypools/yeth/create-gov-proposal',
+                'ypools/yeth/spec',
+              ],
             },
             'ypools/ypools-roles',
             {

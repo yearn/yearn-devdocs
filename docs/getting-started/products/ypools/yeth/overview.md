@@ -30,7 +30,7 @@ The user's external vote weight equals the internal vote weight at the end of th
 
 ## Pool Weights for each LST
 
-In yETH, each Liquid Staking Derivative (LST) has an assigned weight representing its proportion in the pool. The weight management system ensures that the pool remains diversified and balanced. As an LST performs well or gains popularity, its weight in the pool may increase, attracting more liquidity and providing better returns. Conversely, if an LST underperforms or faces issues, its weight may decrease, reducing its impact on the overall pool performance. This dynamic adjustment helps maintain an optimal risk-adjusted yield for yETH users.
+In yETH, each Liquid Staking Derivative (LST) has an assigned weight representing its proportion in the pool. The weight management system ensures that the pool remains diversified and balanced. As an LST performs well or gains popularity, its weight in the pool may increase, attracting more liquidity and providing better returns. Conversely, if an LST under-performs or faces issues, its weight may decrease, reducing its impact on the overall pool performance. This dynamic adjustment helps maintain an optimal risk-adjusted yield for yETH users.
 
 For each epoch, users can vote to adjust the weights of the LSTs in the pool. The voting process also involves a "do nothing" option, allowing the current weight distribution to remain unchanged. If a new LST is added during the voting process, it starts at 0% weight and gradually increases to 1% in the first epoch. In the subsequent epoch, they participate like all other LSTs.
 
