@@ -1,6 +1,7 @@
 {
   "name": "yearn-devdocs",
   "version": "0.4.3",
+  "license": "MIT",
   "scripts": {
     "docusaurus": "docusaurus",
     "get-branch-name": "git rev-parse --abbrev-ref HEAD > .branch-name",
@@ -16,9 +17,8 @@
     "make-sol-doc": "solidity-docgen --templates=templates --helpers=helpers/solidityHelpers.js -i ../yearn-vaults/contracts/ -o docs/v2/smart-contracts",
     "make-vyper-doc": "vydoc -i ../yearn-vaults/contracts/ -o docs/v2/smart-contracts -t ./templates/contract.ejs",
     "vydoc": "npx vydoc   -i ../yearn-vaults-v3/contracts/   -o ./templates/temp   -t ./templates/contract.ejs   -c $(which vyper)",
-    "gitmodule-clean": "node natspec/scripts/gitmodule-clean.mjs",
-    "gitmodule-install": "node natspec/scripts/gitmodule-install.mjs",
-    "v3-docs": "node natspec/scripts/natspec-generate.mjs"
+    "v3-docs": "node natspec/scripts/natspec-generate.mjs",
+    "runAddressCheck": "ts-node scripts/runAddressChecks.ts"
   },
   "dependencies": {
     "@docusaurus/core": "3.5.2",
@@ -26,13 +26,15 @@
     "@docusaurus/theme-mermaid": "3.5.2",
     "@mdx-js/react": "^3.0.1",
     "clsx": "1.1.1",
+    "dotenv": "^16.4.5",
     "hast-util-is-element": "1.1.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "rehype-katex": "7",
     "remark-math": "6",
     "solc": "^0.8.17",
-    "solidity-docgen": "^0.5.11"
+    "solidity-docgen": "^0.5.11",
+    "viem": "^2.21.4"
   },
   "browserslist": {
     "production": [

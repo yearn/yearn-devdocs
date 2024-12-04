@@ -1,3 +1,16 @@
+---
+rpcCalls:  
+  - name: 'dYFI Redemption'
+    chain: '1'
+    address: '0x7dC3A74F0684fc026f9163C6D5c3C99fda2cf60a'
+    abiName: 'dyfiRedemptionABI'
+    methods:  
+      - 'discount'
+      - 'get_latest_price'
+      - name: 'eth_required'
+        args: ['1000000000000000000']
+---
+
 # Comprehensive veYFI Guide
 
 Yearn has implemented a sophisticated governance and rewards system centered around **veYFI** and **dYFI** tokens. This system is designed to empower active community members, incentivize long-term participation, and align the interests of YFI holders with the protocol's success. This document provides a comprehensive synthesis of the veYFI and dYFI mechanisms, incorporating detailed specifications and complexities for a thorough understanding.
@@ -175,6 +188,16 @@ Boost = 10 * BoostedBalance / AmountDepositedInGauge
 - **Implications**:
   - **High veYFI Supply**: Lower discount, as more YFI is locked, indicating strong commitment.
   - **Low veYFI Supply**: Higher discount, incentivizing users to lock more YFI.
+
+<br />
+
+:::yearnData
+
+- The current redemption discount is: <ContractData contractName='dYFI Redemption' methodName='discount' decimals={18} />
+- Current Spot Price of YFI/ETH: <ContractData contractName='dYFI Redemption' methodName='get_latest_price' decimals={18} />
+- ETH required to redeem 1 dYFI: <ContractData contractName='dYFI Redemption' methodName='eth_required' decimals={18} />
+
+:::
 
 ---
 
