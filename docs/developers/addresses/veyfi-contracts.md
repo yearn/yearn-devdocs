@@ -26,5 +26,11 @@
 | 7 | `yG-yvDAI-1`  | yGauge DAI-1 yVault  | [`0x128e72DfD8b00cbF9d12cB75E846AC87B83DdFc9`](https://etherscan.io/address/0x128e72DfD8b00cbF9d12cB75E846AC87B83DdFc9) |
 | 8 | `yG-yvCurve-sdYFIv2-f` | yGauge Curve sdYFIv2 Factory yVault | [`0xB61F8fff8Dd8C438E0d61C07b5536cE3d728f660`](https://etherscan.io/token/0xB61F8fff8Dd8C438E0d61C07b5536cE3d728f660) |
 | 9 | `yG-yvCurve-upYFI-f` | yGauge Curve upYFI Factory yVault | [`0xf719B2d3925CC445D2Bb67FA12963265E224Fa11`](https://etherscan.io/token/0xf719B2d3925CC445D2Bb67FA12963265E224Fa11) |
+| 10 | `yG-yvCurve-COVEYFI-f` | yGauge Curve COVEYFI Factory yVault | [`0x97A597CBcA514AfCc29cD300f04F98d9DbAA3624`](https://etherscan.io/token/0x97A597CBcA514AfCc29cD300f04F98d9DbAA3624) |
+| 11 | `yG-yvDAI-2` | yGauge DAI-2 yVault | [0x38E3d865e34f7367a69f096C80A4fc329DB38BF4](https://etherscan.io/address/0x38E3d865e34f7367a69f096C80A4fc329DB38BF4) |
+| 12 | `yG-yvWETH-2` | yGauge WETH-2 yVault | [0x8E2485942B399EA41f3C910c1Bb8567128f79859](https://etherscan.io/address/0x8E2485942B399EA41f3C910c1Bb8567128f79859) |
+| 13 | `yG-yvcrvUSD-2` | yGauge crvUSD-2 yVault | [0x71c3223D6f836f84cAA7ab5a68AAb6ECe21A9f3b](https://etherscan.io/address/0x71c3223D6f836f84cAA7ab5a68AAb6ECe21A9f3b) |
+| 14 | `yG-yGOLD-styETH` | yGauge yGOLD-styETH | [0xB98343536e584cf686427A54574567bA5BDa8070](https://etherscan.io/address/0xB98343536e584cf686427A54574567bA5BDa8070) |
+| 15| `yG-yvUSDS-1` | yGauge USDS-1 yVault | [0xd57aEa3686d623dA2dCEbc87010a4F2F38Ac7B15](https://etherscan.io/address/0xd57aEa3686d623dA2dCEbc87010a4F2F38Ac7B15) |
 
 The above Gauges can be verified using the [YFI Gauge Registry](https://etherscan.io/address/0x1D0fdCb628b2f8c0e22354d45B3B2D4cE9936F8B#readContract) contract and querying the `gauges()` function with the index listed above.
