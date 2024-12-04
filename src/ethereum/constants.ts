@@ -16,6 +16,69 @@ export const veYfiContracts = {
   dYfyiRewardPool: '0x2391Fc8f5E417526338F5aa3968b1851C16D894E',
 }
 
+export const veYfiGauges = [
+  {
+    index: 0,
+    symbol: 'yG-yvCurve-YFIETH',
+    name: 'yGauge Curve YFI-ETH Pool yVault',
+    address: '0x7Fd8Af959B54A677a1D8F92265Bd0714274C56a3',
+  },
+  {
+    index: 1,
+    symbol: 'yG-yvCurve-dYFIETH-f-f',
+    name: 'yGauge Curve dYFIETH-f Factory yVault',
+    address: '0x28da6dE3e804bDdF0aD237CFA6048f2930D0b4Dc',
+  },
+  {
+    index: 2,
+    symbol: 'yG-lp-yCRVv2',
+    name: 'yGauge LP Yearn CRV Vault v2',
+    address: '0x107717C98C8125A94D3d2Cc82b86a1b705f3A27C',
+  },
+  {
+    index: 3,
+    symbol: 'yG-yvCurve-yETH-f',
+    name: 'yGauge Curve yETH Factory yVault',
+    address: '0x81d93531720d86f0491DeE7D03f30b3b5aC24e59',
+  },
+  {
+    index: 4,
+    symbol: 'yG-lp-yPRISMA',
+    name: 'yGauge LP Yearn PRISMA Vault',
+    address: '0x6130E6cD924a40b24703407F246966D7435D4998',
+  },
+  {
+    index: 5,
+    symbol: 'yG-yvWETH-1',
+    name: 'yGauge WETH-1 yVault',
+    address: '0x5943F7090282Eb66575662EADf7C60a717a7cE4D',
+  },
+  {
+    index: 6,
+    symbol: 'yG-yvUSDC-1',
+    name: 'yGauge USDC-1 yVault',
+    address: '0x622fA41799406B120f9a40dA843D358b7b2CFEE3',
+  },
+  {
+    index: 7,
+    symbol: 'yG-yvDAI-1',
+    name: 'yGauge DAI-1 yVault',
+    address: '0x128e72DfD8b00cbF9d12cB75E846AC87B83DdFc9',
+  },
+  {
+    index: 8,
+    symbol: 'yG-yvCurve-sdYFIv2-f',
+    name: 'yGauge Curve sdYFIv2 Factory yVault',
+    address: '0xB61F8fff8Dd8C438E0d61C07b5536cE3d728f660',
+  },
+  {
+    index: 9,
+    symbol: 'yG-yvCurve-upYFI-f',
+    name: 'yGauge Curve upYFI Factory yVault',
+    address: '0xf719B2d3925CC445D2Bb67FA12963265E224Fa11',
+  },
+]
+
 // Top Level V3 Protocol Registry Addresses
 export const topLevel = {
   protocolAddressProviderENS: 'address-provider.v3.ychad.eth',
