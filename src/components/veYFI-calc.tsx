@@ -1,6 +1,7 @@
-import React, { useState, useContext, useEffect } from 'react';
+import React, { useState, useContext, useEffect } from 'react'
 import { Tabs, TabsList, TabsTrigger, TabsContent } from './shadcn/tabs/tabs'
-import {   Select,
+import {
+  Select,
   SelectGroup,
   SelectValue,
   SelectTrigger,
@@ -9,193 +10,366 @@ import {   Select,
   SelectItem,
   SelectSeparator,
   SelectScrollUpButton,
-  SelectScrollDownButton, } from './shadcn/select/select'
-import  Input from './shadcn/input/input'
+  SelectScrollDownButton,
+} from './shadcn/select/select'
+import Input from './shadcn/input/input'
 // import { Chart } from 'some-chart-library'; // Replace with the actual chart library
 // import { ContractDataContext } from '../context/ContractDataContext'
-import { veYfiGauges, yfiContracts } from '../ethereum/constants';
+import { veYfiGauges, yfiContracts } from '../ethereum/constants'
 import * as ABIs from '../ethereum/ABIs'
-import { getAddress, getContract, formatEther } from 'viem'
+import { getAddress, getContract, formatEther, formatUnits } from 'viem'
 import { PublicClientContext } from '../context/PublicClientContext'
+import { VeYfiGauge } from '../ethereum/types'
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from './shadcn/card/card'
+import {
+  LineChart,
+  Line,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
+  ResponsiveContainer,
+} from 'recharts'
+import styles from '../css/veYFI-calc.module.css'
+import Label from './shadcn/label/label'
+import { Button } from './shadcn/button/button'
+console.log('styles', styles)
+
+type gaugeData = {
+  name: string
+  address: string
+  totalAssets: number
+}
 
 const VeYFICalculator: React.FC = () => {
-    // const data = useContext(ContractDataContext)
-    const publicClient = useContext(PublicClientContext)
-    // State for the amount of veYFI owned
-    const [veyfiTotalSupply, setVeyfiTotalSupply] = useState<number>(0);
-  const [veYFIAmount, setVeYFIAmount] = useState<number>(0);
+  // const data = useContext(ContractDataContext)
+  const publicClient = useContext(PublicClientContext)
+  // State for the amount of veYFI owned
+  const [veyfiTotalSupply, setVeyfiTotalSupply] = useState<number>(0)
+  const [gaugeData, setGaugeData] = useState<gaugeData[]>([])
+  const [veYFIAmount, setVeYFIAmount] = useState<number>(0)
   // State for the selected vault
-  const [selectedVault, setSelectedVault] = useState<string>('');
+  const [selectedVault, setSelectedVault] = useState<string>('')
+  const [depositAmount, setDepositAmount] = useState<number>(0)
+  const [isUnderlying, setIsUnderlying] = useState<boolean>(true)
+  const [withVeYfichartData, setWithVeYfiChartData] = useState<
+    { amountDepositedInGauge: number; boost: number }[]
+  >([])
+  const [showChart1, setShowChart1] = useState<boolean>(false)
 
-  // State for amount to deposit (Mode 1)
-  const [depositAmount, setDepositAmount] = useState<number>(0);
-    const [isUnderlying, setIsUnderlying] = useState<boolean>(true);
-    
-    useEffect(() => {
-        if (publicClient) { 
-            const contract = getContract({
-                address: getAddress(yfiContracts.veYfiAddress),
-                abi: ABIs.yfiTokenABI,
-                client: publicClient, 
-            });
-            const veYFITotalSupply = await contract.read.totalSupply().catch(() => {
-                console.warn('veYFITotalSupply not found');
-                return undefined;
-            }); 
-            if (veYFITotalSupply) {
-                const formattedVeYFITotalSupply = Number(formatEther(veYFITotalSupply)); 
-                setVeyfiTotalSupply(formattedVeYFITotalSupply);
-            }
+  useEffect(() => {
+    if (publicClient) {
+      const fetchVeYfiSupply = async () => {
+        const contract = getContract({
+          address: getAddress(yfiContracts.veYfiAddress),
+          abi: ABIs.yfiTokenABI,
+          client: publicClient,
+        })
+        const veYFITotalSupply = await contract.read.totalSupply().catch(() => {
+          console.warn('veYFITotalSupply not found')
+          return undefined
+        })
+        if (veYFITotalSupply) {
+          const formattedVeYFITotalSupply = Number(
+            formatEther(veYFITotalSupply)
+          )
+          setVeyfiTotalSupply(formattedVeYFITotalSupply)
+          console.log('veYFITotalSupply', formattedVeYFITotalSupply)
         }
+      }
 
-        /** 
-         * for each entry in veYfiGauges, get the address and name.
-         * for each address, create a new contract with the address and the ABIs.yGaugeV2ABI ABI.
-         * Then do a batched call for the contracts calling totalAssets() for each contract
-         * */
-    }, [publicClient])
+      const fetchGaugeData = async () => {
+        const gaugeDataPromises = veYfiGauges.map(async (gauge) => {
+          const contract = getContract({
+            address: getAddress(gauge.address),
+            abi: ABIs.yGaugeV2ABI,
+            client: publicClient,
+          })
+          const totalAssets = await contract.read.totalAssets().catch(() => {
+            console.warn(`totalAssets not found for gauge ${gauge.name}`)
+            return undefined
+          })
+          return {
+            name: gauge.name,
+            address: gauge.address,
+            totalAssets: totalAssets
+              ? Number(formatUnits(totalAssets, gauge.underlyingDecimals))
+              : 0,
+          }
+        })
 
-    // Context to get price per share and total deposited
-
-  const { getPricePerShare, getTotalDeposited } = useContext(VaultContext);
+        const resolvedGaugeData = await Promise.all(gaugeDataPromises)
+        setGaugeData(resolvedGaugeData)
+        console.log('gaugeData', resolvedGaugeData)
+      }
+      fetchVeYfiSupply()
+      fetchGaugeData()
+    }
+  }, [publicClient])
 
   // Handle change in veYFI amount input
   const handleVeYFIChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setVeYFIAmount(Number(e.target.value));
-  };
+    setVeYFIAmount(Number(e.target.value))
+  }
 
   // Handle change in selected vault
-  const handleVaultChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    setSelectedVault(e.target.value);
-  };
+  const handleVaultChange = (value: string) => {
+    // Modified to accept string value
+    setSelectedVault(value) // Updated to use value directly
+  }
 
   // Handle change in deposit amount input
-  const handleDepositAmountChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setDepositAmount(Number(e.target.value));
-  };
+  const handleDepositAmountChange = (
+    e: React.ChangeEvent<HTMLInputElement>
+  ) => {
+    setDepositAmount(Number(e.target.value))
+  }
 
   // Fetch data based on the selected vault
-  const pricePerShare = getPricePerShare(selectedVault);
-  const totalDeposited = getTotalDeposited(selectedVault);
+  //   const pricePerShare = getPricePerShare(selectedVault);
+  console.log('selectedVault', selectedVault)
+  const totalDeposited =
+    gaugeData.find((gauge) => gauge.name === selectedVault)?.totalAssets || 0
+  console.log('totalDeposited', totalDeposited)
 
-  // Function to calculate Boost based on the equation
-  const calculateBoost = (amountDepositedInGauge: number) => {
-    const veYFITotalSupply = /* Fetch veYFITotalSupply from a data source */;
-    const VeYFIBalance = veYFIAmount;
-    // Boost calculation equation
-    const Boost =
-      1 +
-      ((VeYFIBalance / veYFITotalSupply) * 9) +
-      ((totalDeposited * (VeYFIBalance / veYFITotalSupply) * 9) / amountDepositedInGauge);
-    return Boost;
-  };
+  //   // Function to calculate Boost based on the equation
+  //   const calculateBoost = (amountDepositedInGauge: number) => {
+  //     const veYFITotalSupply = veyfiTotalSupply
+  //     const VeYFIBalance = veYFIAmount
+  //     // Boost calculation equation
+  //     const Boost =
+  //       1 +
+  //       (VeYFIBalance / veYFITotalSupply) * 9 +
+  //       (totalDeposited * (VeYFIBalance / veYFITotalSupply) * 9) /
+  //         amountDepositedInGauge
+  //     return Boost
+  //   }
+
+  const calculateBoost = (amountDepositedInGauge: number): number => {
+    const term1 = 1
+    const term2 = (veYFIAmount / veyfiTotalSupply) * 9
+    const term3 =
+      (totalDeposited * (veYFIAmount / veyfiTotalSupply) * 9) /
+      amountDepositedInGauge
+    const boost = term1 + term2 + term3
+    return Math.min(Math.max(boost, 1), 10) // Clamp Boost between 1 and 10
+  }
+
+  const generateChartData = (totalDeposited) => {
+    // Function to generate chart data
+    const stepSize = (totalDeposited * 3) / 200
+    const dataFromVeYfi = Array.from({ length: 500 }, (_, i) => {
+      const amountDepositedInGauge = (i + 1) * 200 // Range from 1 to 100,000 (step 200)
+      return {
+        amountDepositedInGauge,
+        boost: calculateBoost(amountDepositedInGauge),
+      }
+    })
+    setWithVeYfiChartData(dataFromVeYfi) // Update state with generated data
+    console.log('dataFromVeYfi', dataFromVeYfi)
+    setShowChart1(true)
+  }
+
+  const BoostChart = ({ data }) => {
+    return (
+      <ResponsiveContainer width="100%" height={400}>
+        <LineChart data={data}>
+          <CartesianGrid strokeDasharray="3 3" />
+          <XAxis
+            dataKey="amountDepositedInGauge"
+            label={{
+              value: 'Amount Deposited in Gauge',
+              position: 'insideBottom',
+              offset: -5,
+            }}
+            domain={[0, 100]}
+          />
+          <YAxis
+            dataKey="boost"
+            label={{ value: 'Boost', angle: -90, position: 'insideLeft' }}
+            domain={[0, 12]}
+            tickCount={10}
+          />
+          <Tooltip />
+          <Line type="monotone" dataKey="boost" stroke="black" dot={false} />
+        </LineChart>
+      </ResponsiveContainer>
+    )
+  }
 
   // Function to calculate VeYFIBalance for Mode 1
-  const calculateVeYFIBalance = (boost: number, amountDepositedInGauge: number) => {
-    const veYFITotalSupply = /* Fetch veYFITotalSupply from a data source */;
-    const totalCurrentlyInGauge = totalDeposited;
+  const calculateVeYFIBalance = (
+    boost: number,
+    amountDepositedInGauge: number
+  ) => {
+    const veYFITotalSupply = veyfiTotalSupply
+    const totalCurrentlyInGauge = totalDeposited
     const VeYFIBalance =
       ((amountDepositedInGauge * (boost - 1)) /
         (9 * (totalCurrentlyInGauge + amountDepositedInGauge))) *
-      veYFITotalSupply;
-    return VeYFIBalance;
-  };
+      veYFITotalSupply
+    return VeYFIBalance
+  }
 
   // Generate data for the chart
-  const chartData = /* Generate chart data based on calculations */ [];
+  const chartData = /* Generate chart data based on calculations */ []
 
   // Generate data for Mode 1 chart
-  const mode1ChartData = /* Generate chart data for Mode 1 based on calculations */ [];
+  const mode1ChartData =
+    /* Generate chart data for Mode 1 based on calculations */ []
 
   return (
-    <Tabs defaultValue="tab1">
-      {/* Modified Tabs component to use Radix UI syntax */}
-      <TabsList aria-label="VeYFI Calculator Tabs">
-        <TabsTrigger value="tab1">Calculate from veYFI</TabsTrigger>
-        <TabsTrigger value="tab2">Calculate from Gauge Deposit</TabsTrigger>
-      </TabsList>
-      <TabsContent value="tab1">
-        {/* Tab 1 Content */}
-        {/* Input field for amount of veYFI with tooltip */}
-        {/* <Tooltip content="veYFI is timelocked YFI and decays over time"> */}
-          <Input
-            type="number"
-            value={veYFIAmount}
-            onChange={handleVeYFIChange}
-            placeholder="Enter amount of veYFI"
-          />
-        {/* </Tooltip> */}
-
-        {/* Vault selector dropdown */}
-              <Select value={selectedVault} onChange={handleVaultChange}>
-                  <SelectTrigger>
-                        <SelectValue placeholder ="Select Gauge" />
-                  </SelectTrigger>
-                    <SelectContent>
-          {vaults.map((vault) => (
-            <SelectItem key={vault.id} value={vault.id}>
-              {vault.name}
-            </SelectItem>
-          ))}
-                  </SelectContent>
-                </Select>
-
-        {/* Chart displaying the Boost vs. Value Deposited */}
-        <Chart data={chartData} />
-      </TabsContent>
-      <TabsContent value="tab2">
-        {/* Tab 2 Content - Mode 1 Calculator */}
-        {/* 1. Choose asset to deposit */}
-              <Select value={selectedVault} onChange={handleVaultChange}>
+    <div style={{ width: '800px' }}>
+      <Tabs defaultValue="tab1">
+        {/* Modified Tabs component to use Radix UI syntax */}
+        <TabsList aria-label="VeYFI Calculator Tabs">
+          <TabsTrigger value="tab1">Calculate from veYFI</TabsTrigger>
+          <TabsTrigger value="tab2">Calculate from Gauge Deposit</TabsTrigger>
+        </TabsList>
+        <TabsContent value="tab1">
+          <Card>
+            <CardHeader>
+              <CardTitle>Determine Boost by entered veYFI</CardTitle>
+              <CardDescription>
+                Pick Gauge and enter a veYFI amount to see how much you can
+                boost
+              </CardDescription>
+            </CardHeader>
+            <CardContent className={styles.CardContent}>
+              <div className={styles.inputElements}>
+                {/* Tab 1 Content */}
+                {/* Vault selector dropdown */}
+                <div style={{ flexDirection: 'column', width: '100%' }}>
+                  <Label>Select Gauge</Label>
+                  <Select
+                    value={selectedVault}
+                    onValueChange={handleVaultChange}
+                  >
                     <SelectTrigger>
-                        <SelectValue placeholder ="Select Gauge" />
-                  </SelectTrigger>
-                  <SelectContent>
-          {vaults.map((vault) => (
-            <SelectItem key={vault.id} value={vault.id}>
-              {vault.name}
-            </SelectItem>
-          ))}
-        </SelectContent>
-        </Select>
+                      <SelectValue placeholder="Select Gauge" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      {gaugeData.map((vault) => (
+                        <SelectItem key={vault.name} value={vault.name}>
+                          {vault.name}
+                        </SelectItem>
+                      ))}
+                    </SelectContent>
+                  </Select>
+                </div>
+                <div style={{ flexDirection: 'column', width: '100%' }}>
+                  {/* Input field for amount of veYFI with tooltip */}
+                  {/* <Tooltip content="veYFI is timelocked YFI and decays over time"> */}
+                  <Label>Enter Amount of veYFI</Label>
+                  <Input
+                    type="number"
+                    value={veYFIAmount}
+                    onChange={handleVeYFIChange}
+                    placeholder="Enter amount of veYFI"
+                  />
+                </div>
+                {/* </Tooltip> */}
+              </div>
+            </CardContent>
+            <CardFooter className={styles.CardFooter}>
+              {/* <Button variant="outline">clear</Button> */}
+              <Button onClick={generateChartData}>Calculate</Button>
+            </CardFooter>
+          </Card>
+          {showChart1 && <BoostChart data={withVeYfichartData} />}
+          <div
+            style={{
+              width: '700px',
+              height: '500px',
+              backgroundColor: 'grey',
+              margin: 'auto',
+              marginTop: '2rem',
+            }}
+          >
+            <p>{selectedVault}</p>
+            <p>{veYFIAmount}</p>
+            <p>
+              `Boost = 1 + ({veYFIAmount} / {veyfiTotalSupply}) * 9 + (
+              {totalDeposited} * ({veYFIAmount} / {veyfiTotalSupply}) * 9) /
+              amountDepositedInGauge `
+            </p>
+            <p>{JSON.stringify(withVeYfichartData)}</p>
+          </div>
 
-        {/* Display price per share and total deposited */}
-        <p>Price per Share: {pricePerShare}</p>
-        <p>Total Deposited in Gauge: {totalDeposited}</p>
+          {/* Chart displaying the Boost vs. Value Deposited */}
+          {/* <Chart data={chartData} /> */}
+        </TabsContent>
+        <TabsContent value="tab2">
+          {/* Tab 2 Content - Mode 1 Calculator */}
+          <Card>
+            <CardHeader>
+              <CardTitle>Determine Boost by entered veYFI</CardTitle>
+              <CardDescription>
+                Pick Gauge and enter a veYFI amount
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              {/* 1. Choose asset to deposit */}
+              <Select value={selectedVault} onValueChange={handleVaultChange}>
+                {/* Changed onChange to onValueChange */}
+                <SelectTrigger>
+                  <SelectValue placeholder="Select Gauge" />
+                </SelectTrigger>
+                <SelectContent>
+                  {gaugeData.map((vault) => (
+                    <SelectItem key={vault.name} value={vault.name}>
+                      {vault.name}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
 
-        {/* 2. Choose amount to deposit */}
-        <Input
-          type="number"
-          value={depositAmount}
-          onChange={handleDepositAmountChange}
-          placeholder="Enter amount to deposit"
-        />
-        {/* Option to set in shares or underlying asset */}
-        <label>
+              {/* Display price per share and total deposited */}
+              {/* <p>Price per Share: {pricePerShare}</p> */}
+              <p>Total Deposited in Gauge: {totalDeposited}</p>
+
+              {/* 2. Choose amount to deposit */}
+              <Input
+                type="number"
+                value={depositAmount}
+                onChange={handleDepositAmountChange}
+                placeholder="Enter amount to deposit"
+              />
+              {/* Option to set in shares or underlying asset */}
+              {/* <label>
           <Input
             type="checkbox"
             checked={isUnderlying}
             onChange={(e) => setIsUnderlying(e.target.checked)}
           />
           Underlying Asset
-        </label>
+        </label> */}
 
-        {/* If underlying, convert to shares */}
-        {isUnderlying ? (
+              {/* If underlying, convert to shares */}
+              {/* {isUnderlying ? (
           <p>Equivalent Shares: {depositAmount / pricePerShare}</p>
         ) : (
           <p>Underlying Amount: {depositAmount * pricePerShare}</p>
-        )}
+        )} */}
 
-        {/* 3. Get range of veYFI needed to boost 1x to 10x and show as chart */}
-        <Chart data={mode1ChartData} />
-      </TabsContent>
-    </Tabs>
-  );
-};
+              {/* 3. Get range of veYFI needed to boost 1x to 10x and show as chart */}
+              {/* <Chart data={mode1ChartData} /> */}
+            </CardContent>
+          </Card>
+        </TabsContent>
+      </Tabs>
+    </div>
+  )
+}
 
-export default VeYFICalculator;
-
+export default VeYFICalculator
 
 /**
  * veYFI Calculator

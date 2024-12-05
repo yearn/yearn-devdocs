@@ -21,6 +21,14 @@ export type VeYfiContracts = {
   dYfyiRewardPool: `0x${string}` | string
 }
 
+export type VeYfiGauge = {
+  index: number
+  symbol: string
+  name: string
+  address: string
+  underlyingDecimals: number
+}
+
 export type TopLevelAddresses = {
   v3ProtocolAddressProvider: `0x${string}`
   v3ReleaseRegistry: `0x${string}`

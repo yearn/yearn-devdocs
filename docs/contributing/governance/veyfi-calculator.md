@@ -9,3 +9,5 @@ rpcCalls:
 ---
 
 # veYFI Calculator
+
+<VeYFICalculator />
