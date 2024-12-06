@@ -63,7 +63,7 @@ The owner of the Debt allocator can set multiple parameters that will dictate wh
 - `maxDebtRatio` The max percent (in basis points) for the allocator to allow a strategy to have.
 - `minimumChange` The minimum amount in terms of the underlying asset to be moved to trigger a debt update.
 - `maxAcceptableBaseFee` The maximum the block.basefee is allowed to be during debt updates to save gas.
-- `maxDebtUpdateLoss` The value to to send as [`maxLoss`](/developers/v3/integrating_v3#maxloss) for a debt update. Default is 1 (0.01%).
+- `maxDebtUpdateLoss` The value to send as [`maxLoss`](/developers/v3/integrating_v3#maxloss) for a debt update. Default is 1 (0.01%).
 - `keeper` Allow an address to call the `update_debt` function.
 - `manager` Non-governance address that is allowed to update the strategies target and max debt ratios.
 

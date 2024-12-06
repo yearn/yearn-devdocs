@@ -668,7 +668,7 @@ Returns:
 > type: `view function`
 >
 
-Get the the total amount of funds invested across all strategies.
+Get the total amount of funds invested across all strategies.
 
 Returns:
 
