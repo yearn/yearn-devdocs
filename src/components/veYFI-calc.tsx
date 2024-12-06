@@ -64,54 +64,62 @@ const VeYFICalculator: React.FC = () => {
   >([])
   const [showChart1, setShowChart1] = useState<boolean>(false)
 
-  useEffect(() => {
+  const fetchVeYfiSupply = async (yfiContracts) => {
     if (publicClient) {
-      const fetchVeYfiSupply = async () => {
+      const contract = getContract({
+        address: getAddress(yfiContracts.veYfiAddress),
+        abi: ABIs.yfiTokenABI,
+        client: publicClient,
+      })
+      const veYFITotalSupply = await contract.read.totalSupply().catch(() => {
+        console.warn('veYFITotalSupply not found')
+        return undefined
+      })
+      let formattedVeYFITotalSupply = 0
+      if (veYFITotalSupply) {
+        formattedVeYFITotalSupply = Number(formatEther(veYFITotalSupply))
+      }
+      return formattedVeYFITotalSupply
+    }
+  }
+
+  const fetchGaugeData = async (veYfiGauges) => {
+    if (publicClient) {
+      const gaugeDataPromises = veYfiGauges.map(async (gauge) => {
         const contract = getContract({
-          address: getAddress(yfiContracts.veYfiAddress),
-          abi: ABIs.yfiTokenABI,
+          address: getAddress(gauge.address),
+          abi: ABIs.yGaugeV2ABI,
           client: publicClient,
         })
-        const veYFITotalSupply = await contract.read.totalSupply().catch(() => {
-          console.warn('veYFITotalSupply not found')
+        const totalAssets = await contract.read.totalAssets().catch(() => {
+          console.warn(`totalAssets not found for gauge ${gauge.name}`)
           return undefined
         })
-        if (veYFITotalSupply) {
-          const formattedVeYFITotalSupply = Number(
-            formatEther(veYFITotalSupply)
-          )
-          setVeyfiTotalSupply(formattedVeYFITotalSupply)
-          console.log('veYFITotalSupply', formattedVeYFITotalSupply)
+        return {
+          name: gauge.name,
+          address: gauge.address,
+          totalAssets: totalAssets
+            ? Number(formatUnits(totalAssets, gauge.underlyingDecimals))
+            : 0,
         }
-      }
+      })
 
-      const fetchGaugeData = async () => {
-        const gaugeDataPromises = veYfiGauges.map(async (gauge) => {
-          const contract = getContract({
-            address: getAddress(gauge.address),
-            abi: ABIs.yGaugeV2ABI,
-            client: publicClient,
-          })
-          const totalAssets = await contract.read.totalAssets().catch(() => {
-            console.warn(`totalAssets not found for gauge ${gauge.name}`)
-            return undefined
-          })
-          return {
-            name: gauge.name,
-            address: gauge.address,
-            totalAssets: totalAssets
-              ? Number(formatUnits(totalAssets, gauge.underlyingDecimals))
-              : 0,
-          }
-        })
-
-        const resolvedGaugeData = await Promise.all(gaugeDataPromises)
-        setGaugeData(resolvedGaugeData)
-        console.log('gaugeData', resolvedGaugeData)
-      }
-      fetchVeYfiSupply()
-      fetchGaugeData()
+      const resolvedGaugeData = await Promise.all(gaugeDataPromises)
+      return resolvedGaugeData
     }
+  }
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const formattedVeYFITotalSupply = await fetchVeYfiSupply(yfiContracts)
+      setVeyfiTotalSupply(formattedVeYFITotalSupply || 0)
+      console.log('veYFITotalSupply', formattedVeYFITotalSupply)
+
+      const resolvedGaugeData = await fetchGaugeData(veYfiGauges)
+      setGaugeData(Array.isArray(resolvedGaugeData) ? resolvedGaugeData : []) // Ensure resolvedGaugeData is an array
+      console.log('gaugeData', resolvedGaugeData)
+    }
+    fetchData()
   }, [publicClient])
 
   // Handle change in veYFI amount input
@@ -139,19 +147,6 @@ const VeYFICalculator: React.FC = () => {
     gaugeData.find((gauge) => gauge.name === selectedVault)?.totalAssets || 0
   console.log('totalDeposited', totalDeposited)
 
-  //   // Function to calculate Boost based on the equation
-  //   const calculateBoost = (amountDepositedInGauge: number) => {
-  //     const veYFITotalSupply = veyfiTotalSupply
-  //     const VeYFIBalance = veYFIAmount
-  //     // Boost calculation equation
-  //     const Boost =
-  //       1 +
-  //       (VeYFIBalance / veYFITotalSupply) * 9 +
-  //       (totalDeposited * (VeYFIBalance / veYFITotalSupply) * 9) /
-  //         amountDepositedInGauge
-  //     return Boost
-  //   }
-
   const calculateBoost = (amountDepositedInGauge: number): number => {
     const term1 = 1
     const term2 = (veYFIAmount / veyfiTotalSupply) * 9
@@ -162,18 +157,58 @@ const VeYFICalculator: React.FC = () => {
     return Math.min(Math.max(boost, 1), 10) // Clamp Boost between 1 and 10
   }
 
-  const generateChartData = (totalDeposited) => {
-    // Function to generate chart data
-    const stepSize = (totalDeposited * 3) / 200
-    const dataFromVeYfi = Array.from({ length: 500 }, (_, i) => {
-      const amountDepositedInGauge = (i + 1) * 200 // Range from 1 to 100,000 (step 200)
-      return {
-        amountDepositedInGauge,
-        boost: calculateBoost(amountDepositedInGauge),
+  // Dynamically determine the range
+  const findDynamicRange = (): { start: number; end: number } => {
+    let amountDepositedInGauge = 0.01
+    const incrementFactor = 1.2
+    let lastBoost = 10
+    let start = 0
+    let end = amountDepositedInGauge
+
+    while (true) {
+      const boost = calculateBoost(amountDepositedInGauge)
+      //   if (boost < 10 && lastBoost === 10) start = amountDepositedInGauge
+      if (boost <= 1.5) {
+        end = amountDepositedInGauge
+        break
       }
-    })
-    setWithVeYfiChartData(dataFromVeYfi) // Update state with generated data
-    console.log('dataFromVeYfi', dataFromVeYfi)
+      lastBoost = boost
+      amountDepositedInGauge *= incrementFactor
+    }
+
+    return { start, end }
+  }
+
+  // Generate resampled linear data
+  const generateLinearData = (
+    start: number,
+    end: number,
+    points: number = 500
+  ): { amountDepositedInGauge: number; boost: number }[] => {
+    const step = (end - start) / (points - 1)
+    const data: { amountDepositedInGauge: number; boost: number }[] = []
+    for (let i = 0; i < points; i++) {
+      const amountDepositedInGauge = (start + i * step).toFixed(2) // Truncate to 2 decimals
+      data.push({
+        amountDepositedInGauge: parseFloat(amountDepositedInGauge), // Convert back to number
+        boost: calculateBoost(parseFloat(amountDepositedInGauge)), // Ensure correct type for calculation
+      })
+    }
+    return data
+  }
+
+  const [range, setRange] = useState({ start: 0, end: 0 })
+  const [chart1Data, setChart1Data] = useState(
+    generateLinearData(veYFIAmount, range.start, range.end)
+  )
+
+  const handleCalculateButtonClick = (
+    e: React.MouseEvent<HTMLButtonElement>
+  ) => {
+    console.log('clicked!')
+    const newRange = findDynamicRange()
+    setRange(newRange)
+    setChart1Data(generateLinearData(newRange.start, newRange.end))
     setShowChart1(true)
   }
 
@@ -187,9 +222,9 @@ const VeYFICalculator: React.FC = () => {
             label={{
               value: 'Amount Deposited in Gauge',
               position: 'insideBottom',
-              offset: -5,
+              offset: -10,
             }}
-            domain={[0, 100]}
+            tickFormatter={(tick) => Math.round(tick).toString()} // Ensure the formatter returns a string
           />
           <YAxis
             dataKey="boost"
@@ -280,10 +315,14 @@ const VeYFICalculator: React.FC = () => {
             </CardContent>
             <CardFooter className={styles.CardFooter}>
               {/* <Button variant="outline">clear</Button> */}
-              <Button onClick={generateChartData}>Calculate</Button>
+              <Button onClick={handleCalculateButtonClick}>Calculate</Button>
             </CardFooter>
           </Card>
-          {showChart1 && <BoostChart data={withVeYfichartData} />}
+          {showChart1 && (
+            <div style={{ paddingBottom: '1rem' }}>
+              <BoostChart data={chart1Data} /> {/* Moved style to parent div */}
+            </div>
+          )}
           <div
             style={{
               width: '700px',
