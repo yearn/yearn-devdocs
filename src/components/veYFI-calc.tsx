@@ -420,10 +420,9 @@ const VeYFICalculator: React.FC = () => {
           {showChart1 && (
             <div style={{ paddingBottom: '1rem' }}>
               <BoostChart data={chart1Data} xVar="amountDepositedInGauge" />{' '}
-              {/* Moved style to parent div */}
             </div>
           )}
-          <div
+          {/* <div
             style={{
               width: '700px',
               height: '500px',
@@ -440,13 +439,9 @@ const VeYFICalculator: React.FC = () => {
               amountDepositedInGauge `
             </p>
             <p>{JSON.stringify(chart1Data)}</p>
-          </div>
-
-          {/* Chart displaying the Boost vs. Value Deposited */}
-          {/* <Chart data={chartData} /> */}
+          </div> */}
         </TabsContent>
         <TabsContent value="tab2">
-          {/* Tab 2 Content - Mode 1 Calculator */}
           <Card>
             <CardHeader>
               <CardTitle>Determine Boost From Deposit Amount</CardTitle>
@@ -502,7 +497,7 @@ const VeYFICalculator: React.FC = () => {
               <BoostChart data={chart2Data} xVar="veYFIVar" />
             </div>
           )}
-          <div
+          {/* <div
             style={{
               width: '700px',
               height: '500px',
@@ -519,7 +514,7 @@ const VeYFICalculator: React.FC = () => {
               {depositAmount} `
             </p>
             <p>{JSON.stringify(chart2Data)}</p>
-          </div>
+          </div> */}
         </TabsContent>
       </Tabs>
     </div>
