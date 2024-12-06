@@ -40,7 +40,6 @@ import {
 import styles from '../css/veYFI-calc.module.css'
 import Label from './shadcn/label/label'
 import { Button } from './shadcn/button/button'
-console.log('styles', styles)
 
 type gaugeData = {
   name: string
@@ -63,6 +62,7 @@ const VeYFICalculator: React.FC = () => {
     { amountDepositedInGauge: number; boost: number }[]
   >([])
   const [showChart1, setShowChart1] = useState<boolean>(false)
+  const [showChart2, setShowChart2] = useState<boolean>(false)
 
   const fetchVeYfiSupply = async (yfiContracts) => {
     if (publicClient) {
@@ -142,23 +142,30 @@ const VeYFICalculator: React.FC = () => {
 
   // Fetch data based on the selected vault
   //   const pricePerShare = getPricePerShare(selectedVault);
-  console.log('selectedVault', selectedVault)
   const totalDeposited =
     gaugeData.find((gauge) => gauge.name === selectedVault)?.totalAssets || 0
-  console.log('totalDeposited', totalDeposited)
 
-  const calculateBoost = (amountDepositedInGauge: number): number => {
+  const calculateBoost1 = (amountDepositedVar: number): number => {
     const term1 = 1
     const term2 = (veYFIAmount / veyfiTotalSupply) * 9
     const term3 =
       (totalDeposited * (veYFIAmount / veyfiTotalSupply) * 9) /
-      amountDepositedInGauge
+      amountDepositedVar
     const boost = term1 + term2 + term3
     return Math.min(Math.max(boost, 1), 10) // Clamp Boost between 1 and 10
   }
 
+  const calculateBoost2 = (veYFIAmount: number): number => {
+    const term1 = 1
+    const term2 = (veYFIAmount / veyfiTotalSupply) * 9
+    const term3 =
+      (totalDeposited * (veYFIAmount / veyfiTotalSupply) * 9) / depositAmount
+    const boost = term1 + term2 + term3
+    return Math.min(boost, 10) // Clamp Boost to a maximum of 10
+  }
+
   // Dynamically determine the range
-  const findDynamicRange = (): { start: number; end: number } => {
+  const findDynamicRange1 = (): { start: number; end: number } => {
     let amountDepositedInGauge = 0.01
     const incrementFactor = 1.2
     let lastBoost = 10
@@ -166,7 +173,8 @@ const VeYFICalculator: React.FC = () => {
     let end = amountDepositedInGauge
 
     while (true) {
-      const boost = calculateBoost(amountDepositedInGauge)
+      const boost = calculateBoost1(amountDepositedInGauge)
+      console.log('boost', boost)
       //   if (boost < 10 && lastBoost === 10) start = amountDepositedInGauge
       if (boost <= 1.5) {
         end = amountDepositedInGauge
@@ -179,8 +187,66 @@ const VeYFICalculator: React.FC = () => {
     return { start, end }
   }
 
+  // Dynamically determine the range
+  const findDynamicRange2 = (): { start: number; end: number } => {
+    console.warn('enter findDynamicRange2')
+    let veYFIVar = 0.01
+    const incrementFactor = 1.2
+    let lastBoost = 10
+    let start = 0
+    let end = veYFIVar
+
+    while (true) {
+      console.warn('veYFIVarinFDR2', veYFIVar)
+      const boost = calculateBoost2(veYFIVar)
+      //   if (boost < 10 && lastBoost === 10) start = amountDepositedInGauge
+      if (boost <= 1.5) {
+        end = veYFIVar
+        break
+      }
+      lastBoost = boost
+      console.log('lastBoost', lastBoost)
+      veYFIVar *= incrementFactor
+    }
+    console.log('start', start, 'end', end)
+    return { start, end }
+  }
+
+  const findScaledDynamicRange = (
+    stepFactor: number = 1.2,
+    maxIterations: number = 1000,
+    scalePastMax: number = 0.3
+  ): { start: number; end: number } => {
+    let veYFIAmount = 0.01 // Starting point
+    let rangeStart = 0.01 // Initial x-axis minimum
+    let maxBoostVeYFI: number | null = null // To find veYFIAmount where Boost reaches 10
+
+    for (let i = 0; i < maxIterations; i++) {
+      const boost = calculateBoost2(veYFIAmount)
+
+      if (boost >= 10 && maxBoostVeYFI === null) {
+        maxBoostVeYFI = veYFIAmount // Capture veYFIAmount where Boost hits 10
+      }
+
+      if (boost <= 1.5 && maxBoostVeYFI !== null) {
+        break
+      }
+
+      veYFIAmount *= stepFactor
+    }
+
+    // If max Boost wasn't found, set range to a reasonable default
+    if (maxBoostVeYFI === null) {
+      maxBoostVeYFI = veYFIAmount
+    }
+
+    const rangeEnd = maxBoostVeYFI * (1 + scalePastMax) // Scale past max Boost point
+
+    return { start: rangeStart, end: rangeEnd }
+  }
+
   // Generate resampled linear data
-  const generateLinearData = (
+  const generateLinearData1 = (
     start: number,
     end: number,
     points: number = 500
@@ -191,51 +257,84 @@ const VeYFICalculator: React.FC = () => {
       const amountDepositedInGauge = (start + i * step).toFixed(2) // Truncate to 2 decimals
       data.push({
         amountDepositedInGauge: parseFloat(amountDepositedInGauge), // Convert back to number
-        boost: calculateBoost(parseFloat(amountDepositedInGauge)), // Ensure correct type for calculation
+        boost: calculateBoost1(parseFloat(amountDepositedInGauge)), // Ensure correct type for calculation
       })
     }
     return data
   }
 
-  const [range, setRange] = useState({ start: 0, end: 0 })
+  // Generate resampled linear data
+  const generateLinearData2 = (
+    start: number,
+    end: number,
+    points: number = 500
+  ): { veYFIVar: number; boost: number }[] => {
+    const step = (end - start) / (points - 1)
+    const data: { veYFIVar: number; boost: number }[] = []
+    for (let i = 0; i < points; i++) {
+      const veYFIVar = start + i * step
+      const boost = calculateBoost2(veYFIVar)
+      data.push({ veYFIVar, boost })
+    }
+
+    return data
+  }
+
+  const [range1, setRange1] = useState({ start: 0, end: 0 })
+  const [range2, setRange2] = useState({ start: 0, end: 0 })
   const [chart1Data, setChart1Data] = useState(
-    generateLinearData(veYFIAmount, range.start, range.end)
+    generateLinearData1(range1.start, range1.end)
+  )
+  const [chart2Data, setChart2Data] = useState(
+    generateLinearData2(range2.start, range2.end)
   )
 
-  const handleCalculateButtonClick = (
+  const handleCalculateButton1Click = (
     e: React.MouseEvent<HTMLButtonElement>
   ) => {
     console.log('clicked!')
-    const newRange = findDynamicRange()
-    setRange(newRange)
-    setChart1Data(generateLinearData(newRange.start, newRange.end))
+    const newRange = findDynamicRange1()
+    setRange1(newRange)
+    setChart1Data(generateLinearData1(newRange.start, newRange.end))
     setShowChart1(true)
   }
+  const handleCalculateButton2Click = (
+    e: React.MouseEvent<HTMLButtonElement>
+  ) => {
+    console.log('clicked!')
+    const newRange = findScaledDynamicRange()
+    console.log('newRange', newRange)
+    setRange2(newRange)
+    setChart2Data(generateLinearData2(newRange.start, newRange.end))
+    setShowChart2(true)
+  }
 
-  const BoostChart = ({ data }) => {
+  const BoostChart = ({ data, xVar }) => {
     return (
-      <ResponsiveContainer width="100%" height={400}>
-        <LineChart data={data}>
-          <CartesianGrid strokeDasharray="3 3" />
-          <XAxis
-            dataKey="amountDepositedInGauge"
-            label={{
-              value: 'Amount Deposited in Gauge',
-              position: 'insideBottom',
-              offset: -10,
-            }}
-            tickFormatter={(tick) => Math.round(tick).toString()} // Ensure the formatter returns a string
-          />
-          <YAxis
-            dataKey="boost"
-            label={{ value: 'Boost', angle: -90, position: 'insideLeft' }}
-            domain={[0, 12]}
-            tickCount={10}
-          />
-          <Tooltip />
-          <Line type="monotone" dataKey="boost" stroke="black" dot={false} />
-        </LineChart>
-      </ResponsiveContainer>
+      <>
+        <ResponsiveContainer width="100%" height={400}>
+          <LineChart data={data}>
+            <CartesianGrid strokeDasharray="3 3" />
+            <XAxis
+              dataKey={xVar}
+              label={{
+                value: xVar, // Modified to use xVar directly
+                position: 'insideBottom',
+                offset: -10,
+              }}
+              tickFormatter={(tick) => Math.round(tick).toString()} // Ensure the formatter returns a string
+            />
+            <YAxis
+              dataKey="boost"
+              label={{ value: 'Boost', angle: -90, position: 'insideLeft' }}
+              domain={[0, 12]}
+              tickCount={10}
+            />
+            <Tooltip />
+            <Line type="monotone" dataKey="boost" stroke="black" dot={false} />
+          </LineChart>
+        </ResponsiveContainer>
+      </>
     )
   }
 
@@ -315,12 +414,13 @@ const VeYFICalculator: React.FC = () => {
             </CardContent>
             <CardFooter className={styles.CardFooter}>
               {/* <Button variant="outline">clear</Button> */}
-              <Button onClick={handleCalculateButtonClick}>Calculate</Button>
+              <Button onClick={handleCalculateButton1Click}>Calculate</Button>
             </CardFooter>
           </Card>
           {showChart1 && (
             <div style={{ paddingBottom: '1rem' }}>
-              <BoostChart data={chart1Data} /> {/* Moved style to parent div */}
+              <BoostChart data={chart1Data} xVar="amountDepositedInGauge" />{' '}
+              {/* Moved style to parent div */}
             </div>
           )}
           <div
@@ -339,7 +439,7 @@ const VeYFICalculator: React.FC = () => {
               {totalDeposited} * ({veYFIAmount} / {veyfiTotalSupply}) * 9) /
               amountDepositedInGauge `
             </p>
-            <p>{JSON.stringify(withVeYfichartData)}</p>
+            <p>{JSON.stringify(chart1Data)}</p>
           </div>
 
           {/* Chart displaying the Boost vs. Value Deposited */}
@@ -349,59 +449,77 @@ const VeYFICalculator: React.FC = () => {
           {/* Tab 2 Content - Mode 1 Calculator */}
           <Card>
             <CardHeader>
-              <CardTitle>Determine Boost by entered veYFI</CardTitle>
+              <CardTitle>Determine Boost From Deposit Amount</CardTitle>
               <CardDescription>
-                Pick Gauge and enter a veYFI amount
+                Pick Gauge and enter the amount you want to deposit in the Gauge
               </CardDescription>
             </CardHeader>
-            <CardContent>
-              {/* 1. Choose asset to deposit */}
-              <Select value={selectedVault} onValueChange={handleVaultChange}>
-                {/* Changed onChange to onValueChange */}
-                <SelectTrigger>
-                  <SelectValue placeholder="Select Gauge" />
-                </SelectTrigger>
-                <SelectContent>
-                  {gaugeData.map((vault) => (
-                    <SelectItem key={vault.name} value={vault.name}>
-                      {vault.name}
-                    </SelectItem>
-                  ))}
-                </SelectContent>
-              </Select>
+            <CardContent className={styles.CardContent}>
+              <div className={styles.inputElements}>
+                {/* 1. Choose asset to deposit */}
+                <div style={{ flexDirection: 'column', width: '100%' }}>
+                  <Label>Select Gauge</Label>
 
-              {/* Display price per share and total deposited */}
-              {/* <p>Price per Share: {pricePerShare}</p> */}
-              <p>Total Deposited in Gauge: {totalDeposited}</p>
-
-              {/* 2. Choose amount to deposit */}
-              <Input
-                type="number"
-                value={depositAmount}
-                onChange={handleDepositAmountChange}
-                placeholder="Enter amount to deposit"
-              />
-              {/* Option to set in shares or underlying asset */}
-              {/* <label>
-          <Input
-            type="checkbox"
-            checked={isUnderlying}
-            onChange={(e) => setIsUnderlying(e.target.checked)}
-          />
-          Underlying Asset
-        </label> */}
-
-              {/* If underlying, convert to shares */}
-              {/* {isUnderlying ? (
-          <p>Equivalent Shares: {depositAmount / pricePerShare}</p>
-        ) : (
-          <p>Underlying Amount: {depositAmount * pricePerShare}</p>
-        )} */}
-
-              {/* 3. Get range of veYFI needed to boost 1x to 10x and show as chart */}
-              {/* <Chart data={mode1ChartData} /> */}
+                  <Select
+                    value={selectedVault}
+                    onValueChange={handleVaultChange}
+                  >
+                    {/* Changed onChange to onValueChange */}
+                    <SelectTrigger>
+                      <SelectValue placeholder="Select Gauge" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      {gaugeData.map((vault) => (
+                        <SelectItem key={vault.name} value={vault.name}>
+                          {vault.name}
+                        </SelectItem>
+                      ))}
+                    </SelectContent>
+                  </Select>
+                </div>
+                {/* Display price per share and total deposited */}
+                {/* <p>Price per Share: {pricePerShare}</p> */}
+                {/* <p>Total Deposited in Gauge: {totalDeposited}</p> */}
+                <div style={{ flexDirection: 'column', width: '100%' }}>
+                  {/* 2. Choose amount to deposit */}
+                  <Label>Enter Amount you want to Deposit</Label>
+                  <Input
+                    type="number"
+                    value={depositAmount}
+                    onChange={handleDepositAmountChange}
+                    placeholder="Enter amount to deposit"
+                  />
+                </div>
+              </div>
             </CardContent>
+            <CardFooter className={styles.CardFooter}>
+              {/* <Button variant="outline">clear</Button> */}
+              <Button onClick={handleCalculateButton2Click}>Calculate</Button>
+            </CardFooter>
           </Card>
+          {showChart2 && (
+            <div style={{ paddingBottom: '1rem' }}>
+              <BoostChart data={chart2Data} xVar="veYFIVar" />
+            </div>
+          )}
+          <div
+            style={{
+              width: '700px',
+              height: '500px',
+              backgroundColor: 'grey',
+              margin: 'auto',
+              marginTop: '2rem',
+            }}
+          >
+            <p>Selected Vault: {selectedVault}</p>
+            <p>deposit Amount: {depositAmount}</p>
+            <p>
+              `Boost = 1 + (veYFIAmount / {veyfiTotalSupply}) * 9 + (
+              {totalDeposited} * ({veYFIAmount} / {veyfiTotalSupply}) * 9) /
+              {depositAmount} `
+            </p>
+            <p>{JSON.stringify(chart2Data)}</p>
+          </div>
         </TabsContent>
       </Tabs>
     </div>
