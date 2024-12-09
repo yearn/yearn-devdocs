@@ -4,10 +4,11 @@
   align-items: center;
   justify-content: center;
   border-radius: var(--radius);
-  background-color: hsl(var(--muted));
+  background-color: transparent;
   padding: 0.25rem;
   color: hsl(var(--foreground));
   width: 100%; /* Modified to fill the width of the containing element */
+  gap: 0.5rem;
 }
 
 .TabsTrigger {
@@ -16,13 +17,15 @@
   justify-content: center;
   white-space: nowrap;
   border-radius: var(--radius);
-  background-color: white;
+  background-color: var(--ifm-background-color);
   padding: 0.75rem 1rem;
   font-size: 0.875rem;
   font-weight: 500;
   outline: none;
   transition: all 0.3s ease;
   flex: 1; /* Modified to fill the TabsList element */
+  border: 1px solid hsla(var(--border) / 0.5);
+  box-shadow: 3px 3px 5px hsl(var(--shadow-color));
 }
 
 .TabsTrigger:focus-visible {
@@ -37,7 +40,7 @@
 .TabsTrigger[data-state='active'] {
   background-color: var(--ifm-color-primary);
   color: hsl(var(--background));
-  box-shadow: 0 1px 2px hsl(var(--background) / 0.1);
+  box-shadow: inset 3px 3px 5px hsla(0, 0%, 0%, 0.5);
 }
 
 .TabsContent {

@@ -1,5 +1,5 @@
 .Card {
-  border: 1px solid hsl(var(--border));
+  border: 1px solid hsl(var(--border) / 0.5);
   border-radius: var(--radius);
   background-color: hsl(var(--card));
   color: hsl(var(--card-foreground));

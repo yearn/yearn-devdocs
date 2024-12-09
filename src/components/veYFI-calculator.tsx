@@ -108,15 +108,17 @@ function findDynamicRangeForDeposit(calcFunc: (x: number) => number): {
   let end = amountDeposited
 
   const minStepSize = 1e-6
-  const minBoostChange = 0.1
+  const minBoostChange = 0.05
 
   while (true) {
     const boost = calcFunc(amountDeposited)
     if (boost <= 1.1) {
       end = amountDeposited
+
       break
     }
-    if (boost < 10 && Math.abs(boost - lastBoost) < minBoostChange) {
+    const boostChange = Math.abs(boost - lastBoost)
+    if (boost < 10 && boostChange < minBoostChange) {
       end = amountDeposited
       break
     }
@@ -155,7 +157,7 @@ function findDynamicRangeForVeYFI(calcFunc: (x: number) => number): {
   start: number
   end: number
 } {
-  let veYFIVal = 0.01
+  let veYFIVal = 0.001
   const stepFactor = 1.2
   let maxBoostVeYFI: number | null = null
 
@@ -285,7 +287,10 @@ const VeYFICalculator: React.FC = () => {
           data={data}
           margin={{ top: 30, right: 30, left: 0, bottom: 30 }}
         >
-          <CartesianGrid strokeDasharray="3 3" />
+          <CartesianGrid
+            strokeDasharray="3 3"
+            stroke="hsl(var(--chart-grid-color))"
+          />
           <XAxis
             dataKey={dataKey}
             label={{ value: xVar, position: 'insideBottom', offset: -10 }}
@@ -314,7 +319,7 @@ const VeYFICalculator: React.FC = () => {
           <Line
             type="monotone"
             dataKey="boost"
-            stroke="black"
+            stroke="var(--ifm-color-primary)"
             dot={false}
             isAnimationActive={false}
           />
@@ -341,7 +346,7 @@ const VeYFICalculator: React.FC = () => {
             <CardContent className={styles.CardContent}>
               <div className={styles.inputElements}>
                 <div style={{ flexDirection: 'column', width: '100%' }}>
-                  <Label>Select Gauge</Label>
+                  {/* <Label>Select Gauge</Label> */}
                   <Select
                     value={selectedVault}
                     onValueChange={setSelectedVault}
@@ -359,7 +364,7 @@ const VeYFICalculator: React.FC = () => {
                   </Select>
                 </div>
                 <div style={{ flexDirection: 'column', width: '100%' }}>
-                  <Label>Enter Amount of veYFI</Label>
+                  {/* <Label>Enter Amount of veYFI</Label> */}
                   <Input
                     type="number"
                     value={veYFIAmount}
@@ -379,16 +384,16 @@ const VeYFICalculator: React.FC = () => {
                 Calculate
               </Button>
             </CardFooter>
+            {showChart1 && (
+              <div style={{ paddingBottom: '1rem' }}>
+                <BoostChart
+                  data={chart1Data}
+                  xVar="Amount Deposited in Gauge"
+                  dataKey="amountDepositedInGauge"
+                />
+              </div>
+            )}
           </Card>
-          {showChart1 && (
-            <div style={{ paddingBottom: '1rem' }}>
-              <BoostChart
-                data={chart1Data}
-                xVar="Amount Deposited in Gauge"
-                dataKey="amountDepositedInGauge"
-              />
-            </div>
-          )}
         </TabsContent>
         <TabsContent value="tab2">
           <Card>
@@ -401,7 +406,7 @@ const VeYFICalculator: React.FC = () => {
             <CardContent className={styles.CardContent}>
               <div className={styles.inputElements}>
                 <div style={{ flexDirection: 'column', width: '100%' }}>
-                  <Label>Select Gauge</Label>
+                  {/* <Label>Select Gauge</Label> */}
                   <Select
                     value={selectedVault}
                     onValueChange={setSelectedVault}
@@ -419,7 +424,7 @@ const VeYFICalculator: React.FC = () => {
                   </Select>
                 </div>
                 <div style={{ flexDirection: 'column', width: '100%' }}>
-                  <Label>Enter Amount to Deposit</Label>
+                  {/* <Label>Enter Amount to Deposit</Label> */}
                   <Input
                     type="number"
                     value={depositAmount}
@@ -441,16 +446,16 @@ const VeYFICalculator: React.FC = () => {
                 Calculate
               </Button>
             </CardFooter>
+            {showChart2 && (
+              <div style={{ paddingBottom: '1rem' }}>
+                <BoostChart
+                  data={chart2Data}
+                  xVar="veYFI Amount"
+                  dataKey="veYFIVar"
+                />
+              </div>
+            )}
           </Card>
-          {showChart2 && (
-            <div style={{ paddingBottom: '1rem' }}>
-              <BoostChart
-                data={chart2Data}
-                xVar="veYFI Amount"
-                dataKey="veYFIVar"
-              />
-            </div>
-          )}
         </TabsContent>
       </Tabs>
     </div>

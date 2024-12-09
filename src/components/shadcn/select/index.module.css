@@ -163,7 +163,7 @@
   justify-content: space-between;
   border-radius: 0.375rem;
   border: 1px solid hsl(var(--border));
-  background-color: transparent;
+  background-color: hsl(var(--background));
   padding-left: 0.75rem;
   padding-right: 0.75rem;
   padding-top: 0.5rem;
@@ -224,7 +224,7 @@
   overflow: hidden;
   border-radius: 0.375rem;
   border: 1px solid hsl(var(--border));
-  background-color: hsl(var(--background));
+  background-color: var(--ifm-background-surface-color);
   color: hsl(var(--popover-foreground));
   box-shadow: 0 2px 4px hsl(var(--background) / 0.1);
 }
