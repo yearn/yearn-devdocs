@@ -53,14 +53,10 @@ const VeYFICalculator: React.FC = () => {
   // State for the amount of veYFI owned
   const [veyfiTotalSupply, setVeyfiTotalSupply] = useState<number>(0)
   const [gaugeData, setGaugeData] = useState<gaugeData[]>([])
-  const [veYFIAmount, setVeYFIAmount] = useState<number>(0)
+  const [veYFIAmount, setVeYFIAmount] = useState<number | string>('')
   // State for the selected vault
   const [selectedVault, setSelectedVault] = useState<string>('')
-  const [depositAmount, setDepositAmount] = useState<number>(0)
-  const [isUnderlying, setIsUnderlying] = useState<boolean>(true)
-  const [withVeYfichartData, setWithVeYfiChartData] = useState<
-    { amountDepositedInGauge: number; boost: number }[]
-  >([])
+  const [depositAmount, setDepositAmount] = useState<number | string>('')
   const [showChart1, setShowChart1] = useState<boolean>(false)
   const [showChart2, setShowChart2] = useState<boolean>(false)
 
@@ -124,7 +120,20 @@ const VeYFICalculator: React.FC = () => {
 
   // Handle change in veYFI amount input
   const handleVeYFIChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setVeYFIAmount(Number(e.target.value))
+    const { value } = e.target // Destructure value from the event target
+
+    // If the input is empty, set the value to an empty string
+    if (value === '') {
+      setVeYFIAmount('')
+      return
+    }
+
+    // If the input is a valid number, and is less than current veYFI total supply update the state
+    if (!isNaN(Number(value)) && Number(value) <= veyfiTotalSupply) {
+      setVeYFIAmount(Number(value))
+    } else {
+      console.warn('veYFI amount entered is larger than existing supply')
+    }
   }
 
   // Handle change in selected vault
@@ -137,29 +146,44 @@ const VeYFICalculator: React.FC = () => {
   const handleDepositAmountChange = (
     e: React.ChangeEvent<HTMLInputElement>
   ) => {
-    setDepositAmount(Number(e.target.value))
+    const { value } = e.target
+
+    if (value === '') {
+      setDepositAmount('')
+      return
+    }
+
+    if (!isNaN(Number(value))) {
+      setDepositAmount(Number(value))
+    }
   }
 
   // Fetch data based on the selected vault
-  //   const pricePerShare = getPricePerShare(selectedVault);
   const totalDeposited =
     gaugeData.find((gauge) => gauge.name === selectedVault)?.totalAssets || 0
 
   const calculateBoost1 = (amountDepositedVar: number): number => {
+    const veYFIAmountNumber = isNaN(Number(veYFIAmount))
+      ? 0
+      : Number(veYFIAmount) // Ensure veYFIAmount is a valid number
     const term1 = 1
-    const term2 = (veYFIAmount / veyfiTotalSupply) * 9
+    const term2 = (veYFIAmountNumber / veyfiTotalSupply) * 9
     const term3 =
-      (totalDeposited * (veYFIAmount / veyfiTotalSupply) * 9) /
+      (totalDeposited * (veYFIAmountNumber / veyfiTotalSupply) * 9) /
       amountDepositedVar
     const boost = term1 + term2 + term3
     return Math.min(Math.max(boost, 1), 10) // Clamp Boost between 1 and 10
   }
 
   const calculateBoost2 = (veYFIAmount: number): number => {
+    const depositAmountNumber = isNaN(Number(depositAmount))
+      ? 0
+      : Number(depositAmount) // Ensure depositAmount is a valid number
     const term1 = 1
     const term2 = (veYFIAmount / veyfiTotalSupply) * 9
     const term3 =
-      (totalDeposited * (veYFIAmount / veyfiTotalSupply) * 9) / depositAmount
+      (totalDeposited * (veYFIAmount / veyfiTotalSupply) * 9) /
+      depositAmountNumber
     const boost = term1 + term2 + term3
     return Math.min(boost, 10) // Clamp Boost to a maximum of 10
   }
@@ -167,49 +191,98 @@ const VeYFICalculator: React.FC = () => {
   // Dynamically determine the range
   const findDynamicRange1 = (): { start: number; end: number } => {
     let amountDepositedInGauge = 0.01
-    const incrementFactor = 1.2
+    let incrementFactor = 1.2
     let lastBoost = 10
     let start = 0
     let end = amountDepositedInGauge
 
+    const minStepSize = 1e-6 // Minimum step size to prevent infinite loop
+    const minBoostChange = 0.1 // Minimum change in boost to prevent infinite loop
+
     while (true) {
       const boost = calculateBoost1(amountDepositedInGauge)
       console.log('boost', boost)
-      //   if (boost < 10 && lastBoost === 10) start = amountDepositedInGauge
-      if (boost <= 1.5) {
+      if (boost <= 1.1) {
+        end = amountDepositedInGauge
+        break
+      }
+      if (boost < 10 && Math.abs(boost - lastBoost) < minBoostChange) {
+        console.warn('Change in boost too small, breaking the loop')
         end = amountDepositedInGauge
         break
       }
       lastBoost = boost
       amountDepositedInGauge *= incrementFactor
+
+      // Break the loop if the step size becomes too small
+      if (amountDepositedInGauge - end < minStepSize) {
+        console.warn('Step size too small, breaking the loop')
+        end = amountDepositedInGauge
+        break
+      }
     }
 
     return { start, end }
   }
 
   // Dynamically determine the range
-  const findDynamicRange2 = (): { start: number; end: number } => {
-    console.warn('enter findDynamicRange2')
-    let veYFIVar = 0.01
+  const findDynamicRange1ALT = (): { start: number; end: number } => {
+    let amountDepositedInGauge = 0.01
     const incrementFactor = 1.2
     let lastBoost = 10
     let start = 0
-    let end = veYFIVar
+    let end = amountDepositedInGauge
 
-    while (true) {
-      console.warn('veYFIVarinFDR2', veYFIVar)
-      const boost = calculateBoost2(veYFIVar)
-      //   if (boost < 10 && lastBoost === 10) start = amountDepositedInGauge
+    let iterations = 0 // Initialize iteration counter
+    const maxIterations = 1000 // Set a maximum number of iterations
+    const minStepSize = 1e-6 // Minimum step size to prevent infinite loop
+
+    while (iterations < maxIterations) {
+      // Add iteration limit to the loop
+      const boost = calculateBoost1(amountDepositedInGauge)
+      console.log('boost', boost)
       if (boost <= 1.5) {
-        end = veYFIVar
+        end = amountDepositedInGauge
         break
       }
       lastBoost = boost
-      console.log('lastBoost', lastBoost)
-      veYFIVar *= incrementFactor
+      amountDepositedInGauge *= incrementFactor
+      iterations++ // Increment iteration counter
+      console.log('iterations', iterations)
+
+      // Break the loop if the step size becomes too small
+      if (amountDepositedInGauge - end < minStepSize) {
+        console.warn('Step size too small, breaking the loop')
+        break
+      }
     }
-    console.log('start', start, 'end', end)
+
+    if (iterations >= maxIterations) {
+      console.warn('Reached maximum iterations without finding a valid range')
+    }
+
     return { start, end }
+  }
+
+  // Generate resampled linear data
+  const generateLinearData1 = (
+    start: number,
+    end: number,
+    points: number = 500
+  ): { amountDepositedInGauge: number; boost: number }[] => {
+    const step = (end - start) / (points - 1)
+    const data: { amountDepositedInGauge: number; boost: number }[] = []
+    for (let i = 0; i < points; i++) {
+      const amountDepositedInGauge = parseFloat((start + i * step).toFixed(2))
+      const boost = calculateBoost1(amountDepositedInGauge)
+      if (!isNaN(boost) && isFinite(boost)) {
+        data.push({
+          amountDepositedInGauge: amountDepositedInGauge,
+          boost: boost,
+        })
+      }
+    }
+    return data
   }
 
   const findScaledDynamicRange = (
@@ -243,24 +316,6 @@ const VeYFICalculator: React.FC = () => {
     const rangeEnd = maxBoostVeYFI * (1 + scalePastMax) // Scale past max Boost point
 
     return { start: rangeStart, end: rangeEnd }
-  }
-
-  // Generate resampled linear data
-  const generateLinearData1 = (
-    start: number,
-    end: number,
-    points: number = 500
-  ): { amountDepositedInGauge: number; boost: number }[] => {
-    const step = (end - start) / (points - 1)
-    const data: { amountDepositedInGauge: number; boost: number }[] = []
-    for (let i = 0; i < points; i++) {
-      const amountDepositedInGauge = (start + i * step).toFixed(2) // Truncate to 2 decimals
-      data.push({
-        amountDepositedInGauge: parseFloat(amountDepositedInGauge), // Convert back to number
-        boost: calculateBoost1(parseFloat(amountDepositedInGauge)), // Ensure correct type for calculation
-      })
-    }
-    return data
   }
 
   // Generate resampled linear data
@@ -310,10 +365,51 @@ const VeYFICalculator: React.FC = () => {
   }
 
   const BoostChart = ({ data, xVar }) => {
+    const generateTicks = (min: number, max: number): number[] => {
+      const ticks: number[] = []
+      console.log('min', min, 'max', max)
+      if (max <= 2) {
+        for (let i = min; i <= max; i += 0.1) {
+          ticks.push(parseFloat(i.toFixed(1))) // Increment by 0.1 for values under 2
+        }
+      } else if (max <= 10) {
+        for (let i = min; i <= max; i += 0.5) {
+          ticks.push(parseFloat(i.toFixed(1))) // Increment by 0.5 for values under 10
+        }
+      } else if (max <= 20) {
+        for (let i = min; i <= max; i += 1) {
+          ticks.push(parseFloat(i.toFixed(1))) // Increment by 0.5 for values under 10
+        }
+      } else if (max <= 40) {
+        for (let i = min; i <= max; i += 2) {
+          ticks.push(i) // Increment by 1 for values under 20
+        }
+      } else {
+        for (let i = min; i <= max; i += 5) {
+          ticks.push(i) // Increment by 5 for values above 20
+        }
+      }
+      console.log('ticks', ticks)
+      return ticks
+    }
+
+    // Determine the min and max values for the x-axis
+    const xValues = data.map((d) => d[xVar])
+    const minX = Math.min(...xValues)
+    const maxX = Math.max(...xValues)
+
     return (
       <>
         <ResponsiveContainer width="100%" height={400}>
-          <LineChart data={data}>
+          <LineChart
+            data={data}
+            margin={{
+              top: 30,
+              right: 30,
+              left: 0,
+              bottom: 30,
+            }}
+          >
             <CartesianGrid strokeDasharray="3 3" />
             <XAxis
               dataKey={xVar}
@@ -322,34 +418,44 @@ const VeYFICalculator: React.FC = () => {
                 position: 'insideBottom',
                 offset: -10,
               }}
-              tickFormatter={(tick) => Math.round(tick).toString()} // Ensure the formatter returns a string
+              type="number"
+              // ticks={generateTicks(minX, maxX)}
+              includeHidden={true}
+              allowDataOverflow={true}
+              domain={[0, 'dataMax']}
+              interval={0}
+              tickCount={10}
+              tickFormatter={(tick) => {
+                // Adjust tick formatting based on value
+                if (maxX <= 10) {
+                  return tick.toFixed(1) // Show small numbers with 2 decimal places
+                } else {
+                  return Math.round(tick).toLocaleString() // Round large numbers and add commas
+                }
+              }}
             />
             <YAxis
               dataKey="boost"
-              label={{ value: 'Boost', angle: -90, position: 'insideLeft' }}
+              label={{
+                value: 'Boost',
+                angle: -90,
+                position: 'insideLeft',
+                offset: 20,
+              }}
               domain={[0, 12]}
-              tickCount={10}
             />
             <Tooltip />
-            <Line type="monotone" dataKey="boost" stroke="black" dot={false} />
+            <Line
+              type="monotone"
+              dataKey="boost"
+              stroke="black"
+              dot={false}
+              isAnimationActive={false}
+            />
           </LineChart>
         </ResponsiveContainer>
       </>
     )
-  }
-
-  // Function to calculate VeYFIBalance for Mode 1
-  const calculateVeYFIBalance = (
-    boost: number,
-    amountDepositedInGauge: number
-  ) => {
-    const veYFITotalSupply = veyfiTotalSupply
-    const totalCurrentlyInGauge = totalDeposited
-    const VeYFIBalance =
-      ((amountDepositedInGauge * (boost - 1)) /
-        (9 * (totalCurrentlyInGauge + amountDepositedInGauge))) *
-      veYFITotalSupply
-    return VeYFIBalance
   }
 
   // Generate data for the chart
@@ -414,7 +520,14 @@ const VeYFICalculator: React.FC = () => {
             </CardContent>
             <CardFooter className={styles.CardFooter}>
               {/* <Button variant="outline">clear</Button> */}
-              <Button onClick={handleCalculateButton1Click}>Calculate</Button>
+              <Button
+                onClick={handleCalculateButton1Click}
+                disabled={
+                  !selectedVault || isNaN(Number(veYFIAmount)) || !veYFIAmount
+                }
+              >
+                Calculate
+              </Button>
             </CardFooter>
           </Card>
           {showChart1 && (
@@ -489,7 +602,16 @@ const VeYFICalculator: React.FC = () => {
             </CardContent>
             <CardFooter className={styles.CardFooter}>
               {/* <Button variant="outline">clear</Button> */}
-              <Button onClick={handleCalculateButton2Click}>Calculate</Button>
+              <Button
+                onClick={handleCalculateButton2Click}
+                disabled={
+                  !selectedVault ||
+                  isNaN(Number(depositAmount)) ||
+                  !depositAmount
+                }
+              >
+                Calculate
+              </Button>
             </CardFooter>
           </Card>
           {showChart2 && (
