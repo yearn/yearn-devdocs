@@ -65,7 +65,7 @@ Coordinates quick changes to Governance and Guardian roles during the emergency,
 
 - Prepare and Execute Core Dev Multi-sig transactions and operations
 - Revoke a Strategy
-- Set vault in Shutdown shutdown mode
+- Set vault in Emergency Shutdown mode
 
 ### Web Lead
 
