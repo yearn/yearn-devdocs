@@ -285,7 +285,7 @@ const VeYFICalculator: React.FC = () => {
       <ResponsiveContainer width="100%" height={400}>
         <LineChart
           data={data}
-          margin={{ top: 30, right: 30, left: 0, bottom: 30 }}
+          margin={{ top: 30, right: 30, left: 5, bottom: 30 }}
         >
           <CartesianGrid
             strokeDasharray="3 3"
@@ -294,13 +294,16 @@ const VeYFICalculator: React.FC = () => {
           <XAxis
             dataKey={dataKey}
             label={{ value: xVar, position: 'insideBottom', offset: -10 }}
-            type="number"
-            domain={[0, 'dataMax']}
-            tickCount={10}
+            type="category"
+            interval="equidistantPreserveStart"
             tickFormatter={(tick) => {
               if (maxX <= 5) return tick.toFixed(2)
               if (maxX <= 10) return tick.toFixed(1)
-              return Math.round(tick).toLocaleString()
+              if (tick < 1000) return Math.round(tick).toLocaleString()
+              if (tick < 1000000) return (tick / 1000).toFixed(1) + 'k'
+              if (tick < 1000000000) return (tick / 1000000).toFixed(1) + 'M'
+              if (tick < 1000000000000)
+                return (tick / 1000000000).toFixed(1) + 'B'
             }}
           />
           <YAxis
@@ -329,7 +332,7 @@ const VeYFICalculator: React.FC = () => {
   }
 
   return (
-    <div style={{ width: '800px' }}>
+    <div style={{ width: '900px' }}>
       <Tabs defaultValue="tab1">
         <TabsList aria-label="VeYFI Calculator Tabs">
           <TabsTrigger value="tab1">Calculate from veYFI</TabsTrigger>
