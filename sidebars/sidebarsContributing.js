@@ -30,6 +30,7 @@ module.exports = {
           },
           items: [
             'governance/veYFI-comp-summary',
+            'governance/veyfi-calculator',
             {
               type: 'link',
               label: 'Contract Addresses →',
