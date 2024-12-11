@@ -12,6 +12,7 @@ import { veYfiGauges, yfiContracts } from '../ethereum/constants'
 import * as ABIs from '../ethereum/ABIs'
 import { getAddress, getContract, formatEther, formatUnits } from 'viem'
 import { PublicClientContext } from '../context/PublicClientContext'
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext'
 import {
   Card,
   CardContent,
@@ -51,6 +52,12 @@ async function fetchVeYFISupply(publicClient: any) {
   // @ts-ignore: Ignore TypeScript error for totalAssets
   const supply = await contract.read.totalSupply().catch(() => undefined)
   return supply ? Number(formatEther(supply)) : 0
+}
+
+async function fetchLatestBlockNumber(publicClient: any) {
+  if (!publicClient) return 0
+  const blockNumber = await publicClient.getBlockNumber()
+  return blockNumber.toString()
 }
 
 async function fetchAllGaugeData(publicClient: any) {
@@ -174,12 +181,45 @@ function findDynamicRangeForVeYFI(calcFunc: (x: number) => number): {
   return { start: 0.01, end: maxBoostVeYFI * 1.3 }
 }
 
+async function fetchTokenPrice(yDaemon: string, address: string) {
+  const response = await fetch(`${yDaemon}1/vaults/${address}`)
+  if (!response.ok) {
+    console.error('Failed to fetch token price')
+    return null
+  }
+  const data = await response.json()
+  return data
+}
+
+async function fetchTokenPrices(
+  yPriceMagic: string,
+  addresses: string[],
+  latestBlock: string
+) {
+  const tokensQuery = addresses.map((address) => `tokens=${address}`).join('&')
+  const fullQuery = `${yPriceMagic}/get_prices/1?${tokensQuery}&block=${latestBlock}`
+  console.log(fullQuery)
+  const response = await fetch(fullQuery)
+  if (!response.ok) {
+    console.error('Failed to fetch token price')
+    return null
+  }
+  const data = await response.json()
+  return data
+}
+
 // ------------------------ Main Component ------------------------
 
 const VeYFICalculator: React.FC = () => {
   const publicClient = useContext(PublicClientContext)
+  const { siteConfig } = useDocusaurusContext()
+  const { yDaemon, yPriceMagic } = siteConfig.customFields as {
+    yDaemon: string
+    yPriceMagic: string
+  }
   const [veYfiTotalSupply, setVeYfiTotalSupply] = useState<number>(0)
   const [gaugeData, setGaugeData] = useState<GaugeData[]>([])
+  const [latestBlock, setLatestBlock] = useState<string>('')
   const [veYFIAmount, setVeYFIAmount] = useState<number | string>('')
   const [selectedVault, setSelectedVault] = useState<string>('')
   const [depositAmount, setDepositAmount] = useState<number | string>('')
@@ -197,7 +237,19 @@ const VeYFICalculator: React.FC = () => {
       setVeYfiTotalSupply(supply || 0)
 
       const gauges = await fetchAllGaugeData(publicClient)
+      console.log(gauges)
       setGaugeData(Array.isArray(gauges) ? gauges : [])
+
+      const blockNumber = await fetchLatestBlockNumber(publicClient)
+      setLatestBlock(blockNumber)
+
+      // // Get prices from yPriceMagic
+      // const tokenPrices = await fetchTokenPrices(
+      //   yPriceMagic,
+      //   veYfiGauges.map((g) => g.underlyingVaultAddress),
+      //   blockNumber
+      // )
+      // console.log(tokenPrices)
     }
     fetchData()
   }, [publicClient])
@@ -223,6 +275,24 @@ const VeYFICalculator: React.FC = () => {
     }
     if (!isNaN(Number(val))) {
       setDepositAmount(Number(val))
+    }
+  }
+
+  const handleVaultChange = async (vaultName: string) => {
+    setSelectedVault(vaultName)
+
+    const selectedGauge = veYfiGauges.find((gauge) => gauge.name === vaultName)
+    if (selectedGauge) {
+      const tokenPriceData = await fetchTokenPrice(
+        yDaemon,
+        selectedGauge.underlyingVaultAddress
+      )
+      console.log(tokenPriceData)
+      const underlyingPrice = tokenPriceData?.tvl.price
+      console.log('underlyingPrice: ', underlyingPrice)
+      const pricePerShare = tokenPriceData?.apr.pricePerShare.today
+      console.log('pricePerShare: ', pricePerShare)
+      const vaultSharePrice = pricePerShare * underlyingPrice
     }
   }
 
@@ -352,7 +422,7 @@ const VeYFICalculator: React.FC = () => {
                   {/* <Label>Select Gauge</Label> */}
                   <Select
                     value={selectedVault}
-                    onValueChange={setSelectedVault}
+                    onValueChange={handleVaultChange}
                   >
                     <SelectTrigger>
                       <SelectValue placeholder="Select Gauge" />
@@ -412,7 +482,7 @@ const VeYFICalculator: React.FC = () => {
                   {/* <Label>Select Gauge</Label> */}
                   <Select
                     value={selectedVault}
-                    onValueChange={setSelectedVault}
+                    onValueChange={handleVaultChange}
                   >
                     <SelectTrigger>
                       <SelectValue placeholder="Select Gauge" />

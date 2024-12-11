@@ -23,6 +23,7 @@ export const veYfiGauges = [
     name: 'yGauge Curve YFI-ETH Pool yVault',
     address: '0x7Fd8Af959B54A677a1D8F92265Bd0714274C56a3',
     underlyingDecimals: 18,
+    underlyingVaultAddress: '0x790a60024bc3aea28385b60480f15a0771f26d09',
   },
   {
     index: 1,
@@ -30,6 +31,7 @@ export const veYfiGauges = [
     name: 'yGauge Curve dYFIETH-f Factory yVault',
     address: '0x28da6dE3e804bDdF0aD237CFA6048f2930D0b4Dc',
     underlyingDecimals: 18,
+    underlyingVaultAddress: '0xf70b3f1ea3bfc659ffb8b27e84fae7ef38b5bd3b',
   },
   {
     index: 2,
@@ -37,6 +39,7 @@ export const veYfiGauges = [
     name: 'yGauge LP Yearn CRV Vault v2',
     address: '0x107717C98C8125A94D3d2Cc82b86a1b705f3A27C',
     underlyingDecimals: 18,
+    underlyingVaultAddress: '0x6E9455D109202b426169F0d8f01A3332DAE160f3',
   },
   {
     index: 3,
@@ -44,6 +47,7 @@ export const veYfiGauges = [
     name: 'yGauge Curve yETH Factory yVault',
     address: '0x81d93531720d86f0491DeE7D03f30b3b5aC24e59',
     underlyingDecimals: 18,
+    underlyingVaultAddress: '0x58900d761ae3765b75ddfc235c1536b527f25d8f',
   },
   {
     index: 4,
@@ -51,6 +55,7 @@ export const veYfiGauges = [
     name: 'yGauge LP Yearn PRISMA Vault',
     address: '0x6130E6cD924a40b24703407F246966D7435D4998',
     underlyingDecimals: 18,
+    underlyingVaultAddress: '0xbA61BaA1D96c2F4E25205B331306507BcAeA4677',
   },
   {
     index: 5,
@@ -58,6 +63,7 @@ export const veYfiGauges = [
     name: 'yGauge WETH-1 yVault',
     address: '0x5943F7090282Eb66575662EADf7C60a717a7cE4D',
     underlyingDecimals: 18,
+    underlyingVaultAddress: '0xc56413869c6CDf96496f2b1eF801fEDBdFA7dDB0',
   },
   {
     index: 6,
@@ -65,6 +71,7 @@ export const veYfiGauges = [
     name: 'yGauge USDC-1 yVault',
     address: '0x622fA41799406B120f9a40dA843D358b7b2CFEE3',
     underlyingDecimals: 6,
+    underlyingVaultAddress: '0xBe53A109B494E5c9f97b9Cd39Fe969BE68BF6204',
   },
   {
     index: 7,
@@ -72,6 +79,7 @@ export const veYfiGauges = [
     name: 'yGauge DAI-1 yVault',
     address: '0x128e72DfD8b00cbF9d12cB75E846AC87B83DdFc9',
     underlyingDecimals: 18,
+    underlyingVaultAddress: '0x028eC7330ff87667b6dfb0D94b954c820195336c',
   },
   {
     index: 8,
@@ -79,6 +87,7 @@ export const veYfiGauges = [
     name: 'yGauge Curve sdYFIv2 Factory yVault',
     address: '0xB61F8fff8Dd8C438E0d61C07b5536cE3d728f660',
     underlyingDecimals: 18,
+    underlyingVaultAddress: '0x93cF0b02D0A2B61551d107378AFf60CEAe40c342',
   },
   {
     index: 9,
@@ -86,6 +95,7 @@ export const veYfiGauges = [
     name: 'yGauge Curve upYFI Factory yVault',
     address: '0xf719B2d3925CC445D2Bb67FA12963265E224Fa11',
     underlyingDecimals: 18,
+    underlyingVaultAddress: '0xFCa9Ab2996e7b010516adCC575eB63de4f4fa47A',
   },
   {
     index: 10,
@@ -93,6 +103,7 @@ export const veYfiGauges = [
     name: 'yGauge Curve COVEYFI Factory yVault',
     address: '0x97A597CBcA514AfCc29cD300f04F98d9DbAA3624',
     underlyingDecimals: 18,
+    underlyingVaultAddress: '0x6A5694C1b37fFA30690b6b60D8Cf89c937d408aD',
   },
   {
     index: 11,
@@ -100,6 +111,7 @@ export const veYfiGauges = [
     name: 'yGauge DAI-2 yVault',
     address: '0x38E3d865e34f7367a69f096C80A4fc329DB38BF4',
     underlyingDecimals: 18,
+    underlyingVaultAddress: '0x92545bCE636E6eE91D88D2D017182cD0bd2fC22e',
   },
   {
     index: 12,
@@ -107,6 +119,7 @@ export const veYfiGauges = [
     name: 'yGauge WETH-2 yVault',
     address: '0x8E2485942B399EA41f3C910c1Bb8567128f79859',
     underlyingDecimals: 18,
+    underlyingVaultAddress: '0xAc37729B76db6438CE62042AE1270ee574CA7571',
   },
   {
     index: 13,
@@ -114,6 +127,7 @@ export const veYfiGauges = [
     name: 'yGauge crvUSD-2 yVault',
     address: '0x71c3223D6f836f84cAA7ab5a68AAb6ECe21A9f3b',
     underlyingDecimals: 18,
+    underlyingVaultAddress: '0xBF319dDC2Edc1Eb6FDf9910E39b37Be221C8805F',
   },
   {
     index: 14,
@@ -121,6 +135,7 @@ export const veYfiGauges = [
     name: 'yGauge yGOLD-styETH',
     address: '0xB98343536e584cf686427A54574567bA5BDa8070',
     underlyingDecimals: 18,
+    underlyingVaultAddress: '0x42842754aBce504E12C20E434Af8960FDf85C833',
   },
   {
     index: 15,
@@ -128,6 +143,7 @@ export const veYfiGauges = [
     name: 'yGauge USDS-1 yVault',
     address: '0xd57aEa3686d623dA2dCEbc87010a4F2F38Ac7B15',
     underlyingDecimals: 18,
+    underlyingVaultAddress: '0x182863131F9a4630fF9E27830d945B1413e347E8',
   },
 ]
 
