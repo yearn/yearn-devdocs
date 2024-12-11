@@ -12,6 +12,7 @@ import { veYfiGauges, yfiContracts } from '../ethereum/constants'
 import * as ABIs from '../ethereum/ABIs'
 import { getAddress, getContract, formatEther, formatUnits } from 'viem'
 import { PublicClientContext } from '../context/PublicClientContext'
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext'
 import {
   Card,
   CardContent,
@@ -51,6 +52,12 @@ async function fetchVeYFISupply(publicClient: any) {
   // @ts-ignore: Ignore TypeScript error for totalAssets
   const supply = await contract.read.totalSupply().catch(() => undefined)
   return supply ? Number(formatEther(supply)) : 0
+}
+
+async function fetchLatestBlockNumber(publicClient: any) {
+  if (!publicClient) return 0
+  const blockNumber = await publicClient.getBlockNumber()
+  return blockNumber.toString()
 }
 
 async function fetchAllGaugeData(publicClient: any) {
@@ -174,19 +181,61 @@ function findDynamicRangeForVeYFI(calcFunc: (x: number) => number): {
   return { start: 0.01, end: maxBoostVeYFI * 1.3 }
 }
 
+async function fetchTokenPrice(yDaemon: string, address: string) {
+  const response = await fetch(`${yDaemon}1/vaults/${address}`)
+  if (!response.ok) {
+    console.error('Failed to fetch token price')
+    return null
+  }
+  const data = await response.json()
+  return data
+}
+
+async function fetchTokenPrices(
+  yPriceMagic: string,
+  addresses: string[],
+  latestBlock: string
+) {
+  const tokensQuery = addresses.map((address) => `tokens=${address}`).join('&')
+  const fullQuery = `${yPriceMagic}/get_prices/1?${tokensQuery}&block=${latestBlock}`
+  console.log(fullQuery)
+  const response = await fetch(fullQuery)
+  if (!response.ok) {
+    console.error('Failed to fetch token price')
+    return null
+  }
+  const data = await response.json()
+  return data
+}
+
 // ------------------------ Main Component ------------------------
 
 const VeYFICalculator: React.FC = () => {
   const publicClient = useContext(PublicClientContext)
+  const { siteConfig } = useDocusaurusContext()
+  const { yDaemon, yPriceMagic } = siteConfig.customFields as {
+    yDaemon: string
+    yPriceMagic: string
+  }
   const [veYfiTotalSupply, setVeYfiTotalSupply] = useState<number>(0)
   const [gaugeData, setGaugeData] = useState<GaugeData[]>([])
+  const [latestBlock, setLatestBlock] = useState<string>('')
   const [veYFIAmount, setVeYFIAmount] = useState<number | string>('')
   const [selectedVault, setSelectedVault] = useState<string>('')
+  const [selectedVaultSharePrice, setSelectedVaultSharePrice] = useState<
+    number | undefined
+  >(undefined)
   const [depositAmount, setDepositAmount] = useState<number | string>('')
+  const [depositAmountInUSD, setDepositAmountInUSD] = useState<number | string>(
+    ''
+  )
   const [showChart1, setShowChart1] = useState<boolean>(false)
   const [showChart2, setShowChart2] = useState<boolean>(false)
-  const [chart1Data, setChart1Data] = useState<any[]>([])
+  const [chart1DataShares, setChart1DataShares] = useState<any[]>([])
+  const [chart1DataUSD, setChart1DataUSD] = useState<any[]>([])
   const [chart2Data, setChart2Data] = useState<any[]>([])
+  const [isUSDInput, setIsUSDInput] = useState(true)
+  const [isUSDChart, setIsUSDChart] = useState(true)
 
   const totalDeposited =
     gaugeData.find((g) => g.name === selectedVault)?.totalAssets || 0
@@ -197,7 +246,19 @@ const VeYFICalculator: React.FC = () => {
       setVeYfiTotalSupply(supply || 0)
 
       const gauges = await fetchAllGaugeData(publicClient)
+      console.log(gauges)
       setGaugeData(Array.isArray(gauges) ? gauges : [])
+
+      const blockNumber = await fetchLatestBlockNumber(publicClient)
+      setLatestBlock(blockNumber)
+
+      // // Get prices from yPriceMagic
+      // const tokenPrices = await fetchTokenPrices(
+      //   yPriceMagic,
+      //   veYfiGauges.map((g) => g.underlyingVaultAddress),
+      //   blockNumber
+      // )
+      // console.log(tokenPrices)
     }
     fetchData()
   }, [publicClient])
@@ -213,7 +274,7 @@ const VeYFICalculator: React.FC = () => {
     }
   }
 
-  const handleDepositAmountChange = (
+  const handleDepositAmountInSharesChange = (
     e: React.ChangeEvent<HTMLInputElement>
   ) => {
     const val = e.target.value
@@ -222,7 +283,54 @@ const VeYFICalculator: React.FC = () => {
       return
     }
     if (!isNaN(Number(val))) {
+      const depositAmountInDollars = selectedVaultSharePrice
+        ? selectedVaultSharePrice * Number(val)
+        : 0
+      setDepositAmountInUSD(depositAmountInDollars)
       setDepositAmount(Number(val))
+    }
+  }
+
+  const handleDepositAmountInUSDChange = (
+    e: React.ChangeEvent<HTMLInputElement>
+  ) => {
+    const val = e.target.value
+    if (val === '') {
+      setDepositAmount('')
+      return
+    }
+    if (!isNaN(Number(val))) {
+      setDepositAmountInUSD(Number(val))
+      const depositAmountInShares = selectedVaultSharePrice
+        ? Number(val) / selectedVaultSharePrice
+        : 0
+      setDepositAmount(depositAmountInShares)
+    }
+  }
+
+  const handleCheckboxChange1 = () => {
+    setIsUSDInput(!isUSDInput)
+  }
+  const handleCheckboxChange2 = () => {
+    setIsUSDChart(!isUSDChart)
+  }
+
+  const handleVaultChange = async (vaultName: string) => {
+    setSelectedVault(vaultName)
+
+    const selectedGauge = veYfiGauges.find((gauge) => gauge.name === vaultName)
+    if (selectedGauge) {
+      const tokenPriceData = await fetchTokenPrice(
+        yDaemon,
+        selectedGauge.underlyingVaultAddress
+      )
+      console.log(tokenPriceData)
+      const underlyingPrice = tokenPriceData?.tvl.price
+      console.log('underlyingPrice: ', underlyingPrice)
+      const pricePerShare = tokenPriceData?.apr.pricePerShare.today
+      console.log('pricePerShare: ', pricePerShare)
+      const vaultSharePrice = pricePerShare * underlyingPrice
+      setSelectedVaultSharePrice(vaultSharePrice)
     }
   }
 
@@ -237,14 +345,23 @@ const VeYFICalculator: React.FC = () => {
       )
 
     const newRange = findDynamicRangeForDeposit(calcFunc)
-    const data = generateLinearData(
+    const dataShares = generateLinearData(
       newRange.start,
       newRange.end,
       500,
       calcFunc,
       'amountDepositedInGauge'
     )
-    setChart1Data(data)
+
+    // Convert shares to USD
+    const dataUSD = dataShares.map((entry) => ({
+      ...entry,
+      [Object.keys(entry)[0]]:
+        entry[Object.keys(entry)[0]] * (selectedVaultSharePrice ?? 0),
+    }))
+
+    setChart1DataShares(dataShares)
+    setChart1DataUSD(dataUSD)
     setShowChart1(true)
   }
 
@@ -282,52 +399,86 @@ const VeYFICalculator: React.FC = () => {
     const xValues = data.map((d) => d[dataKey])
     const maxX = Math.max(...xValues)
     return (
-      <ResponsiveContainer width="100%" height={400}>
-        <LineChart
-          data={data}
-          margin={{ top: 30, right: 30, left: 5, bottom: 30 }}
+      <div
+        style={{
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+        }}
+      >
+        <ResponsiveContainer width="100%" height={400}>
+          <LineChart
+            data={data}
+            margin={{ top: 30, right: 30, left: 5, bottom: 30 }}
+          >
+            <CartesianGrid
+              strokeDasharray="3 3"
+              stroke="hsl(var(--chart-grid-color))"
+            />
+            <XAxis
+              dataKey={dataKey}
+              label={{ value: xVar, position: 'insideBottom', offset: -10 }}
+              type="category"
+              interval="equidistantPreserveStart"
+              tickFormatter={(tick) => {
+                if (maxX <= 5) return tick.toFixed(2)
+                if (maxX <= 20) return tick.toFixed(1)
+                if (tick < 1000) return Math.round(tick).toLocaleString()
+                if (tick < 1000000) return (tick / 1000).toFixed(1) + 'k'
+                if (tick < 1000000000) return (tick / 1000000).toFixed(1) + 'M'
+                if (tick < 1000000000000)
+                  return (tick / 1000000000).toFixed(1) + 'B'
+              }}
+            />
+            <YAxis
+              dataKey="boost"
+              label={{
+                value: 'Boost',
+                angle: -90,
+                position: 'insideLeft',
+                offset: 20,
+              }}
+              type="number"
+              tickCount={12}
+              domain={[0, 12]}
+            />
+            <Tooltip />
+            <Line
+              type="monotone"
+              dataKey="boost"
+              stroke="var(--ifm-color-primary)"
+              dot={false}
+              isAnimationActive={false}
+            />
+          </LineChart>
+        </ResponsiveContainer>
+        <div
+          style={{
+            display: 'flex',
+            flexDirection: 'row',
+            alignItems: 'center',
+            gap: '1rem',
+            height: '2rem',
+          }}
         >
-          <CartesianGrid
-            strokeDasharray="3 3"
-            stroke="hsl(var(--chart-grid-color))"
-          />
-          <XAxis
-            dataKey={dataKey}
-            label={{ value: xVar, position: 'insideBottom', offset: -10 }}
-            type="category"
-            interval="equidistantPreserveStart"
-            tickFormatter={(tick) => {
-              if (maxX <= 5) return tick.toFixed(2)
-              if (maxX <= 10) return tick.toFixed(1)
-              if (tick < 1000) return Math.round(tick).toLocaleString()
-              if (tick < 1000000) return (tick / 1000).toFixed(1) + 'k'
-              if (tick < 1000000000) return (tick / 1000000).toFixed(1) + 'M'
-              if (tick < 1000000000000)
-                return (tick / 1000000000).toFixed(1) + 'B'
-            }}
-          />
-          <YAxis
-            dataKey="boost"
-            label={{
-              value: 'Boost',
-              angle: -90,
-              position: 'insideLeft',
-              offset: 20,
-            }}
-            type="number"
-            tickCount={12}
-            domain={[0, 12]}
-          />
-          <Tooltip />
-          <Line
-            type="monotone"
-            dataKey="boost"
-            stroke="var(--ifm-color-primary)"
-            dot={false}
-            isAnimationActive={false}
-          />
-        </LineChart>
-      </ResponsiveContainer>
+          <div>
+            <input
+              type="checkbox"
+              checked={isUSDChart}
+              onChange={handleCheckboxChange2}
+            />
+            <label>in USD</label>
+          </div>
+          <div>
+            <input
+              type="checkbox"
+              checked={!isUSDChart}
+              onChange={handleCheckboxChange2}
+            />
+            <label>in Vault Shares</label>
+          </div>
+        </div>
+      </div>
     )
   }
 
@@ -352,7 +503,7 @@ const VeYFICalculator: React.FC = () => {
                   {/* <Label>Select Gauge</Label> */}
                   <Select
                     value={selectedVault}
-                    onValueChange={setSelectedVault}
+                    onValueChange={handleVaultChange}
                   >
                     <SelectTrigger>
                       <SelectValue placeholder="Select Gauge" />
@@ -389,11 +540,19 @@ const VeYFICalculator: React.FC = () => {
             </CardFooter>
             {showChart1 && (
               <div style={{ paddingBottom: '1rem' }}>
-                <BoostChart
-                  data={chart1Data}
-                  xVar="Amount Deposited in Gauge"
-                  dataKey="amountDepositedInGauge"
-                />
+                {isUSDChart ? (
+                  <BoostChart
+                    data={chart1DataUSD} // Use USD data
+                    xVar="Amount Deposited in Gauge (USD)"
+                    dataKey="amountDepositedInGauge"
+                  />
+                ) : (
+                  <BoostChart
+                    data={chart1DataShares} // Use Shares data
+                    xVar="Amount Deposited in Gauge (Shares)"
+                    dataKey="amountDepositedInGauge"
+                  />
+                )}
               </div>
             )}
           </Card>
@@ -408,11 +567,16 @@ const VeYFICalculator: React.FC = () => {
             </CardHeader>
             <CardContent className={styles.CardContent}>
               <div className={styles.inputElements}>
-                <div style={{ flexDirection: 'column', width: '100%' }}>
+                <div
+                  style={{
+                    flexDirection: 'column',
+                    width: '100%',
+                  }}
+                >
                   {/* <Label>Select Gauge</Label> */}
                   <Select
                     value={selectedVault}
-                    onValueChange={setSelectedVault}
+                    onValueChange={handleVaultChange}
                   >
                     <SelectTrigger>
                       <SelectValue placeholder="Select Gauge" />
@@ -426,14 +590,54 @@ const VeYFICalculator: React.FC = () => {
                     </SelectContent>
                   </Select>
                 </div>
-                <div style={{ flexDirection: 'column', width: '100%' }}>
-                  {/* <Label>Enter Amount to Deposit</Label> */}
-                  <Input
-                    type="number"
-                    value={depositAmount}
-                    onChange={handleDepositAmountChange}
-                    placeholder="Enter amount to deposit"
-                  />
+                <div
+                  style={{
+                    flexDirection: 'column',
+                    width: '100%',
+                    // marginTop: '-2rem',
+                  }}
+                >
+                  {isUSDInput ? (
+                    <Input
+                      type="number"
+                      value={depositAmountInUSD}
+                      onChange={handleDepositAmountInUSDChange}
+                      placeholder="Enter amount to deposit in USD"
+                    />
+                  ) : (
+                    <Input
+                      type="number"
+                      value={depositAmount}
+                      onChange={handleDepositAmountInSharesChange}
+                      placeholder="Enter amount to deposit in Vault shares"
+                    />
+                  )}
+                  <div
+                    style={{
+                      display: 'flex',
+                      flexDirection: 'row',
+                      alignItems: 'center',
+                      gap: '1rem',
+                      height: '2rem',
+                    }}
+                  >
+                    <div>
+                      <input
+                        type="checkbox"
+                        checked={isUSDInput}
+                        onChange={handleCheckboxChange1}
+                      />
+                      <label>in USD</label>
+                    </div>
+                    <div>
+                      <input
+                        type="checkbox"
+                        checked={!isUSDInput}
+                        onChange={handleCheckboxChange1}
+                      />
+                      <label>in Vault Shares</label>
+                    </div>
+                  </div>
                 </div>
               </div>
             </CardContent>
