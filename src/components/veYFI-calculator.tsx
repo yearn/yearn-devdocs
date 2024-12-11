@@ -243,13 +243,13 @@ const VeYFICalculator: React.FC = () => {
       const blockNumber = await fetchLatestBlockNumber(publicClient)
       setLatestBlock(blockNumber)
 
-      // // Get prices from yPriceMagic
-      // const tokenPrices = await fetchTokenPrices(
-      //   yPriceMagic,
-      //   veYfiGauges.map((g) => g.underlyingVaultAddress),
-      //   blockNumber
-      // )
-      // console.log(tokenPrices)
+      // Get prices from yPriceMagic
+      const tokenPrices = await fetchTokenPrices(
+        yPriceMagic,
+        veYfiGauges.map((g) => g.underlyingVaultAddress),
+        blockNumber
+      )
+      console.log(tokenPrices)
     }
     fetchData()
   }, [publicClient])
