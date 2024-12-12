@@ -33,6 +33,7 @@ import {
 import styles from '../css/veYFI-calc.module.css'
 import Label from './shadcn/label/label'
 import { Button } from './shadcn/button/button'
+import VeYFILockCalculator from './VeYFILockCalculator' // Import the new component
 
 type GaugeData = {
   name: string
@@ -54,11 +55,11 @@ async function fetchVeYFISupply(publicClient: any) {
   return supply ? Number(formatEther(supply)) : 0
 }
 
-async function fetchLatestBlockNumber(publicClient: any) {
-  if (!publicClient) return 0
-  const blockNumber = await publicClient.getBlockNumber()
-  return blockNumber.toString()
-}
+// async function fetchLatestBlockNumber(publicClient: any) {
+//   if (!publicClient) return 0
+//   const blockNumber = await publicClient.getBlockNumber()
+//   return blockNumber.toString()
+// }
 
 async function fetchAllGaugeData(publicClient: any) {
   if (!publicClient) return []
@@ -191,22 +192,22 @@ async function fetchTokenPrice(yDaemon: string, address: string) {
   return data
 }
 
-async function fetchTokenPrices(
-  yPriceMagic: string,
-  addresses: string[],
-  latestBlock: string
-) {
-  const tokensQuery = addresses.map((address) => `tokens=${address}`).join('&')
-  const fullQuery = `${yPriceMagic}/get_prices/1?${tokensQuery}&block=${latestBlock}`
-  console.log(fullQuery)
-  const response = await fetch(fullQuery)
-  if (!response.ok) {
-    console.error('Failed to fetch token price')
-    return null
-  }
-  const data = await response.json()
-  return data
-}
+// async function fetchTokenPrices(
+//   yPriceMagic: string,
+//   addresses: string[],
+//   latestBlock: string
+// ) {
+//   const tokensQuery = addresses.map((address) => `tokens=${address}`).join('&')
+//   const fullQuery = `${yPriceMagic}/get_prices/1?${tokensQuery}&block=${latestBlock}`
+//   console.log(fullQuery)
+//   const response = await fetch(fullQuery)
+//   if (!response.ok) {
+//     console.error('Failed to fetch token price')
+//     return null
+//   }
+//   const data = await response.json()
+//   return data
+// }
 
 // ------------------------ Main Component ------------------------
 
@@ -219,7 +220,7 @@ const VeYFICalculator: React.FC = () => {
   }
   const [veYfiTotalSupply, setVeYfiTotalSupply] = useState<number>(0)
   const [gaugeData, setGaugeData] = useState<GaugeData[]>([])
-  const [latestBlock, setLatestBlock] = useState<string>('')
+  // const [latestBlock, setLatestBlock] = useState<string>('')
   const [veYFIAmount, setVeYFIAmount] = useState<number | string>('')
   const [selectedVault, setSelectedVault] = useState<string>('')
   const [selectedVaultSharePrice, setSelectedVaultSharePrice] = useState<
@@ -236,6 +237,8 @@ const VeYFICalculator: React.FC = () => {
   const [chart2Data, setChart2Data] = useState<any[]>([])
   const [isUSDInput, setIsUSDInput] = useState(true)
   const [isUSDChart, setIsUSDChart] = useState(true)
+  const [useVeYfiCalculator, setUseVeYfiCalculator] = useState(false)
+  const [veYFIFromLock, setVeYFIFromLock] = useState(0)
 
   const totalDeposited =
     gaugeData.find((g) => g.name === selectedVault)?.totalAssets || 0
@@ -249,8 +252,8 @@ const VeYFICalculator: React.FC = () => {
       console.log(gauges)
       setGaugeData(Array.isArray(gauges) ? gauges : [])
 
-      const blockNumber = await fetchLatestBlockNumber(publicClient)
-      setLatestBlock(blockNumber)
+      // const blockNumber = await fetchLatestBlockNumber(publicClient)
+      // setLatestBlock(blockNumber)
 
       // // Get prices from yPriceMagic
       // const tokenPrices = await fetchTokenPrices(
@@ -272,6 +275,10 @@ const VeYFICalculator: React.FC = () => {
     if (!isNaN(Number(val)) && Number(val) <= veYfiTotalSupply) {
       setVeYFIAmount(Number(val))
     }
+  }
+
+  const handleVeYFICalcChange = (newVeYFI) => {
+    setVeYFIFromLock(newVeYFI)
   }
 
   const handleDepositAmountInSharesChange = (
@@ -313,6 +320,10 @@ const VeYFICalculator: React.FC = () => {
   }
   const handleCheckboxChange2 = () => {
     setIsUSDChart(!isUSDChart)
+  }
+  const handleVeYfiCheckboxChange1 = () => {
+    setVeYFIAmount(veYFIFromLock)
+    setUseVeYfiCalculator(!useVeYfiCalculator)
   }
 
   const handleVaultChange = async (vaultName: string) => {
@@ -492,9 +503,16 @@ const VeYFICalculator: React.FC = () => {
         <TabsContent value="tab1">
           <Card>
             <CardHeader>
-              <CardTitle>Determine Boost by entered veYFI</CardTitle>
+              <CardTitle>Determine Boost From veYFI Amount</CardTitle>
               <CardDescription>
-                Pick Gauge and enter a veYFI amount to see your boost
+                Pick Gauge and enter a veYFI amount to see your boost.{' '}
+                <a
+                  href="https://docs.yearn.fi/contributing/governance/veYFI-comp-summary#yield-boosts-on-vault-deposits"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  More info
+                </a>
               </CardDescription>
             </CardHeader>
             <CardContent className={styles.CardContent}>
@@ -521,10 +539,29 @@ const VeYFICalculator: React.FC = () => {
                   {/* <Label>Enter Amount of veYFI</Label> */}
                   <Input
                     type="number"
-                    value={veYFIAmount}
+                    value={useVeYfiCalculator ? veYFIFromLock : veYFIAmount}
                     onChange={handleVeYFIChange}
                     placeholder="Enter amount of veYFI"
+                    disabled={useVeYfiCalculator}
                   />
+                  <div
+                    style={{
+                      display: 'flex',
+                      flexDirection: 'row',
+                      alignItems: 'center',
+                      gap: '1rem',
+                      height: '2rem',
+                    }}
+                  >
+                    <div>
+                      <input
+                        type="checkbox"
+                        checked={useVeYfiCalculator}
+                        onChange={handleVeYfiCheckboxChange1}
+                      />
+                      <label>use veYFI calculator</label>
+                    </div>
+                  </div>
                 </div>
               </div>
             </CardContent>
@@ -562,7 +599,14 @@ const VeYFICalculator: React.FC = () => {
             <CardHeader>
               <CardTitle>Determine Boost From Deposit Amount</CardTitle>
               <CardDescription>
-                Pick Gauge and enter the amount you want to deposit
+                Pick Gauge and enter the amount you want to deposit{' '}
+                <a
+                  href="https://docs.yearn.fi/contributing/governance/veYFI-comp-summary#yield-boosts-on-vault-deposits"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  More info
+                </a>
               </CardDescription>
             </CardHeader>
             <CardContent className={styles.CardContent}>
@@ -664,6 +708,8 @@ const VeYFICalculator: React.FC = () => {
             )}
           </Card>
         </TabsContent>
+        {/* Integrate the new VeYFILockCalculator component */}
+        <VeYFILockCalculator onVeYFIChange={handleVeYFICalcChange} />
       </Tabs>
     </div>
   )
