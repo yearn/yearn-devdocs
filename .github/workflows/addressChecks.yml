@@ -1,0 +1,71 @@
+name: Address Checks
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 0 * * *' # Runs daily at midnight
+
+jobs:
+  update-data:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18.x'
+
+      - name: Install dependencies
+        run: |
+          if [ -e yarn.lock ]; then
+            yarn install
+            yarn global add ts-node
+          elif [ -e package-lock.json ]; then
+            npm ci
+            npm install -g ts-node
+          else
+            npm install
+            npm install -g ts-node
+          fi
+          npm run build
+
+      - name: Run checks and update data
+        env:
+          ALCHEMY_API_KEY: ${{ secrets.ALCHEMY_API_KEY }}
+        run: |
+          ts-node scripts/runAddressChecks.ts
+
+      - name: Check if all checks passed
+        id: check_all_passed
+        run: |
+          ALL_CHECKS_PASSED=$(jq -r '.addressChecks.allChecksPassed' scripts/fetchedAddressData.json)
+          echo "All checks passed: $ALL_CHECKS_PASSED"
+          echo "all_checks_passed=$ALL_CHECKS_PASSED" >> $GITHUB_ENV
+          if [ "$ALL_CHECKS_PASSED" != "true" ]; then
+            echo "Generating issue content..."
+            echo "Automatic Address Checks have failed. The following contracts have changed:" > issue_body.md
+            jq -r '.addressChecks.failedChecks[]' scripts/fetchedAddressData.json | while read CHECK; do
+                echo "- $CHECK" >> issue_body.md
+            done
+            echo "The addresses shown above should be the updated, correct addresses. Please review and change the values in \`src/ethereum/constants.ts\`." >> issue_body.md
+          fi
+
+      - name: Commit and push changes
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: 'Update data from daily check'
+          file_pattern: scripts/fetchedAddressData.json
+
+      - name: Create an issue if checks failed
+        if: env.all_checks_passed != 'true'
+        uses: peter-evans/create-issue-from-file@v4
+        with:
+          token: ${{ secrets.RG_ISSUES_TOKEN }}
+          title: 'Address Checks Failed'
+          content-filepath: 'issue_body.md'
+          labels: 'address-checks, alert'
+          assignees: 'rossgalloway'
