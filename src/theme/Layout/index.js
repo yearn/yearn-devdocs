@@ -16,6 +16,7 @@ export default function LayoutWrapper(props) {
             right: 0,
             background: 'yellow',
             padding: '5px',
+            color: 'black',
           }}
         >
           {branchName}
