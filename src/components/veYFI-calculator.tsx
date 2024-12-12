@@ -346,7 +346,9 @@ const VeYFICalculator: React.FC = () => {
   }
 
   const handleCalculateButton1Click = () => {
-    const veYFIVal = Number(veYFIAmount) || 0
+    const veYFIVal = useVeYfiCalculator
+      ? Number(veYFIFromLock) || 0
+      : Number(veYFIAmount) || 0
     const calcFunc = (amountDepositedInGauge: number) =>
       calculateBoostFromDeposit(
         veYFIVal,
