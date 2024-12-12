@@ -455,7 +455,9 @@ const VeYFICalculator: React.FC = () => {
               tickCount={12}
               domain={[0, 12]}
             />
-            <Tooltip />
+            <Tooltip
+              contentStyle={{ backgroundColor: 'var(--ifm-background-color)' }}
+            />
             <Line
               type="monotone"
               dataKey="boost"
