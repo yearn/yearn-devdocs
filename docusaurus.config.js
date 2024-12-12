@@ -3,9 +3,13 @@
 import math from 'remark-math'
 import katex from 'rehype-katex'
 import { themes as prismThemes } from 'prism-react-renderer'
+import 'dotenv/config'
 
 const branchName = process.env.BRANCH_NAME || 'unknown'
 const isDev = process.env.IS_DEV === 'true'
+const alchemyKey = process.env.ALCHEMY_API_KEY || 'unknown'
+const yDaemon = process.env.YDAEMON_ENDPOINT || 'unknown'
+const yPriceMagic = process.env.YPRICEMAGIC_ENDPOINT || 'unknown'
 
 export default {
   title: 'Yearn Docs',
@@ -23,6 +27,9 @@ export default {
   customFields: {
     branchName,
     isDev,
+    alchemyKey,
+    yDaemon,
+    yPriceMagic,
   },
   themes: ['@docusaurus/theme-mermaid'],
   themeConfig: {
@@ -150,7 +157,7 @@ export default {
           sidebarCollapsed: true,
           breadcrumbs: false,
           admonitions: {
-            keywords: ['yearn'],
+            keywords: ['yearn', 'yearnData'],
             extendDefaults: true,
           },
         },
@@ -182,7 +189,7 @@ export default {
         remarkPlugins: [math],
         rehypePlugins: [katex],
         admonitions: {
-          keywords: ['yearn'],
+          keywords: ['yearn', 'yearnData'],
           extendDefaults: true,
         },
       },
@@ -200,7 +207,7 @@ export default {
         remarkPlugins: [math],
         rehypePlugins: [katex],
         admonitions: {
-          keywords: ['yearn'],
+          keywords: ['yearn', 'yearnData'],
           extendDefaults: true,
         },
       },
@@ -218,7 +225,7 @@ export default {
         remarkPlugins: [math],
         rehypePlugins: [katex],
         admonitions: {
-          keywords: ['yearn'],
+          keywords: ['yearn', 'yearnData'],
           extendDefaults: true,
         },
       },
@@ -236,7 +243,7 @@ export default {
         remarkPlugins: [math],
         rehypePlugins: [katex],
         admonitions: {
-          keywords: ['yearn'],
+          keywords: ['yearn', 'yearnData'],
           extendDefaults: true,
         },
       },
