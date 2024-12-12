@@ -859,7 +859,7 @@ function totalIdle()
 
 ### totalDebt
 
-Get the the total amount of funds invested across all strategies.
+Get the total amount of funds invested across all strategies.
 
 ```solidity
 function totalDebt()
