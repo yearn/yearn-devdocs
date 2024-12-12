@@ -5,7 +5,7 @@ import Link from '@docusaurus/Link'
 export default function PrettyLink({ children }) {
   return (
     <Link to={children.props.href} className={styles.prettylink}>
-      <div className={styles.textContainer}>{children.props.children}</div>
+      <span className={styles.textContainer}>{children.props.children}</span>
     </Link>
   )
 }

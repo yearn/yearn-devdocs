@@ -1,6 +1,6 @@
 # yVaults FAQ
 
-<details open className="customFaqDetails">
+<details className="customFaqDetails">
 
   <summary>
 
