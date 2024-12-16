@@ -1,5 +1,7 @@
 # veYFI Contract Addresses
 
+<AddressCheck contractType='veYFI'/>
+
 ## Deployed Addresses
 
 | Description        | Address                                                         |

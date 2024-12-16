@@ -6,7 +6,7 @@ import {
   fetchAndCheckFromReleaseRegistry,
   fetchAndCheckProtocolAddresses,
   fetchAndCheckYearnV3Addresses,
-} from '../ethereum/checks'
+} from '../ethereum/v3Checks'
 import { yfiContracts, veYfiContracts } from '../ethereum/constants'
 import { ContractAddresses } from '../ethereum/types'
 
