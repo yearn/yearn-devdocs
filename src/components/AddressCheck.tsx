@@ -50,7 +50,7 @@ function AddressCheck({ contractType }: AddressCheckProps) {
           <span className={styles.icon}>✅ </span>
           <span>
             All Addresses on this page match on-chain data. Last checked on:{' '}
-            {lastTimeCheckedUTC}
+            {lastTimeCheckedUTC} UTC
           </span>
         </div>
       ) : (
