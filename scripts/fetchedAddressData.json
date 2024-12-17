@@ -1,7 +1,5 @@
 {
-
-  "timeLastChecked": 1734388049,
-
+  "timeLastChecked": 1734467116,
   "addressesData": {
     "v3ContractAddresses": {
       "topLevel": {
@@ -73,14 +71,16 @@
       "yGauge DAI-2 yVault": "0x38E3d865e34f7367a69f096C80A4fc329DB38BF4",
       "yGauge WETH-2 yVault": "0x8E2485942B399EA41f3C910c1Bb8567128f79859",
       "yGauge crvUSD-2 yVault": "0x71c3223D6f836f84cAA7ab5a68AAb6ECe21A9f3b",
-      "yGauge yGOLD-styETH": "0xB98343536e584cf686427A54574567bA5BDa8070",
-      "yGauge USDS-1 yVault": "0xd57aEa3686d623dA2dCEbc87010a4F2F38Ac7B15"
+      "yGauge yGOLD-styETH": "0xd57aEa3686d623dA2dCEbc87010a4F2F38Ac7B15"
     }
   },
   "addressChecks": {
     "allV3ChecksPassed": true,
-    "allVeYfiChecksPassed": true,
-    "failedChecks": [],
+    "allVeYfiChecksPassed": false,
+    "failedChecks": [
+      "Number of gauges does not match number of fallback addresses",
+      "yGauge yGOLD-styETH: 0xd57aEa3686d623dA2dCEbc87010a4F2F38Ac7B15"
+    ],
     "v3Checks": {
       "topLevel": {
         "v3ProtocolAddressProviderCheck": {},
@@ -132,8 +132,7 @@
       "yGauge DAI-2 yVault": true,
       "yGauge WETH-2 yVault": true,
       "yGauge crvUSD-2 yVault": true,
-      "yGauge yGOLD-styETH": true,
-      "yGauge USDS-1 yVault": true
+      "yGauge yGOLD-styETH": false
     }
   }
 }
