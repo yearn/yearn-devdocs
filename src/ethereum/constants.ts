@@ -131,14 +131,6 @@ export const veYfiGauges = [
   },
   {
     index: 14,
-    symbol: 'yG-yGOLD-styETH',
-    name: 'yGauge yGOLD-styETH',
-    address: '0xB98343536e584cf686427A54574567bA5BDa8070',
-    underlyingDecimals: 18,
-    underlyingVaultAddress: '0x42842754aBce504E12C20E434Af8960FDf85C833',
-  },
-  {
-    index: 15,
     symbol: 'yG-yvUSDS-1',
     name: 'yGauge USDS-1 yVault',
     address: '0xd57aEa3686d623dA2dCEbc87010a4F2F38Ac7B15',
