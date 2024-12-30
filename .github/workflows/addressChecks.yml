@@ -52,13 +52,10 @@ jobs:
                 echo "- $CHECK" >> issue_body.md
             done
             echo "The addresses shown above should be the updated, correct addresses. Please review and change the values in \`src/ethereum/constants.ts\`." >> issue_body.md
+            echo "" >> issue_body.md
+            echo "Updated fetchedAddressData.json content:" >> issue_body.md
+            cat scripts/fetchedAddressData.json >> issue_body.md
           fi
-
-      - name: Commit and push changes
-        uses: stefanzweifel/git-auto-commit-action@v5
-        with:
-          commit_message: 'Update data from daily check'
-          file_pattern: scripts/fetchedAddressData.json
 
       - name: Create an issue if checks failed
         if: env.all_checks_passed != 'true'
