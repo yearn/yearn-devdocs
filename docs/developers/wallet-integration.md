@@ -227,13 +227,13 @@ Boom, now you have vault prices and the value of your user's positions.
 
 Once again, the easiest way to get APY data is using Kong. The vault query in the [vaults section](#getting-v2-and-v3-vaults-with-kong) includes the APY from the last week. The other options are:
 
-- `grossAPR`: current rate from the oracle?
-- `net`: current rate from the on-chain interest rate oracle, converted to APY using an assumption on compounding from recent harvest frequency.
-- `weeklyNet`: Same as net, but with average over the last 7 days.
-- `monthlyNet`: Same as weeklyNet, but with average over the last 30 days.
-- `inceptionNet`: Same as monthlyNet, but averaged over the entire dataset.
+- `grossAPR`: the APR rate reversed engineered from calculated APY. This number does not have fees taken out.
+- `net`: APY value calculated from the change in the pricePerShare (PPS) over a certain time period. It uses `monthlyNet` for mainnet vaults and `weeklyNet` for all other chains.
+- `weeklyNet`: The net APY (yield minus fees) based on the change in PPS over the last week, annualized, with compounding extrapolated from the harvest frequency over the last 7 days.
+- `monthlyNet`: The net APY (yield minus fees) based on the change in PPS over the last month, annualized, with compounding extrapolated from the harvest frequency over the last 30 days.
+- `inceptionNet`: The net APY (yield minus fees) based on the change in PPS since vault creation.
 
-Kong can also serve historical APYs. To get those you will need to use a timeseries. Here is an [example](https://kong.yearn.farm/api/gql?explorerURLState=N4IgJg9gxgrgtgUwHYBcQC4QAIsEcYIBOAnlgIIAOxAigSQBQA6SOOAJADYCGARgh%2BiwBlFIQCWSAOYBCZqyxsuYMIQQBnNYJHipc1pzFwxKQQElUe9lAhwKEJMhPDREyXoCUWYJawpD6ojF1JhZ5LG4%2BAQUI-h8cJRV1TQUE1Q048MNjQQMjFAzrW3tHHMK7BwtQnE9vKtYoAAsuCVMwDNSkjJiOAptyxwyKQIg2upw-RAyANy4OAh8AXz0FkAAaEBnxXg51DBBvQj1GEA70jCxjgAYAD0uAdgAWAEYAZgeyACY7gA4HgDF-gA2QE8QFQBAAEUBADNAd9fgBOF7fD4IhGXP7Ql4fJ4AVmOq0Yh1Cx26x0Exy4VAAtDwAO5galgfgoLjUigUNQEolHEBlYoWc7HOkIBAAaw4xAAcgh8mseSSQBwsnLBE9LhqFSsFkA):
+Kong can also serve historical APYs. To get those you will need to use a timeseries. Here is an [example](https://kong.yearn.farm/api/gql?explorerURLState=N4IgJg9gxgrgtgUwHYBcQC4QAIsEcYIBOAnlgIIAOxAigSQBQA6SOOAJADYCGARgh%2BiwBlFIQCWSAOYBCZqyxsuYMIQQBnNYJHipc1pzFwxKQQElUe9lAhwKEJMhPDREyXoCUWYJawpD6ojF1JhZ5LG4%2BAQUI-h8cJRV1TQUE1Q048MNjQQMjFAzrW3tHHMK7BwtQnE9vKtYoAAsuCVMwDNSkjJiOAptyxwyKQIg2upw-RAyANy4OAh8AXz0FkAAaEBnxXg51DBBvQj1GEA70jCxjgAYAD0uAdgAWAEYAZgeyACY7gA4HgDF-gA2QE8QFQBAAEUBADNAd9fgBOF7fD4IhGXP7Ql4fJ4AVmOq0Yh1Cx26x0Exy4VAAtDwAO5galgfgoLjUigUNQEolHEBlYoWc7HBz5NY8kkgDhZUWCJ6XeXilYLIA):
 
 ```markdown
   query ApyQuery(
@@ -263,7 +263,7 @@ The above query will need to be made with variables passed into it
 
 - address: the vault address as a string
 - label: 'apy-bwd-delta-pps' is the label for APY queries.
-- component?: this is APY time period mentioned above like 'weeklyNet'
+- component?: this is APY time period mentioned above like 'net'
 - limit?: number of results to return (1000 is a good number)
 
 The above query will give daily values for the `weeklyAPY` value for a chosen vault.
