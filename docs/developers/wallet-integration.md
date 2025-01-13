@@ -95,13 +95,13 @@ A full list of yVault V3 contracts can be viewed [here](/developers/addresses/v3
 
 :::info
 
-If you only want to get "official" or endorsed Yearn vaults then skip this section and just to the Querying Registries section below.
+If you only want to get "official" or endorsed Yearn vaults, then skip this section and just go to the "Querying Registries" section below.
 
 :::
 
-Yearn's V3 Vault Factory contracts are deployed on many EVM chains and are permissionless so anyone can use them to create vaults. If you want to find all vaults that have been deployed, whether it was done by Yearn or not, you need to look at the Factory Vaults.
+Yearn's V3 Vault Factory contracts are deployed on many EVM chains and are permissionless, so anyone can use them to create vaults. If you want to find all vaults that have been deployed, whether it was done by Yearn or not, you need to look at the Factory Vaults.
 
-When a new vault is created with a factory, the factory emits a `NewVault` event to the logs that includes the vault address and the address of the underlying asset in the vault (i.e. usdc).
+When a new vault is created with a factory, the factory emits a `NewVault` event to the logs that includes the vault address and the address of the underlying asset in the vault (i.e. USDC).
 
 ```solidity
 NewVault (index_topic_1 address vault_address, index_topic_2 address asset)
@@ -113,15 +113,15 @@ Each new version of Vaults that are deployed will have its own factory, and each
 
 Since V3 factories are permissionless, Yearn also deploys permissioned registry contracts that only Yearn governance can add to. These are the best place to find the official (endorsed) Yearn Vaults that are deployed by Yearn. As mentioned above, the most recent registry will resolve from registry.v3.ychad.eth. But you will need to query all the registries to get all the endorsed vaults.
 
-To get the endorsed vaults you can either:
+To get the endorsed vaults, you can either:
 
-**A.** Search through the Events Log of the registry contract and save all `NewEndorsedVault` events. This data contains the vault address, the underlying asset address, the releaseVersion, and the Vault Type.
+**A.** Search through the Events Log of the registry contract and save all `NewEndorsedVault` events. This data contains the vault address, the underlying asset address, the release Version, and the Vault Type.
 
 ```solidity
 NewEndorsedVault (index_topic_1 address vault, index_topic_2 address asset, uint256 releaseVersion, uint256 vaultType)
 ```
 
-**B.** Or query the registry factory directly. To do that you need to:
+**B.** Or query the registry factory directly. To do that, you need to:
 
 1. Call the `getAssets()` function to get an array of underlying tokens with deployed vaults. This array will be used in the next step.
 2. Loop through each entry in the array and call the `getEndorsedVaults()` function with the address value from the array as the argument to get an array of vaults for each underlying asset
@@ -135,7 +135,7 @@ for (asset in assetArray) {
 }
 ```
 
-Additional vault data can then be found by calling the respective read functions on the vault contracts (`name()`, `symbol()`, `decimals()`, `token()`, `pricePerShare()`, etc).
+Additional vault data can then be found by calling the respective read functions on the vault contracts (`name()`, `symbol()`, `decimals()`, `token()`, `pricePerShare()`, etc.).
 
 Like the factories, you will need to query all registry contracts to get all the endorsed vaults.
 
