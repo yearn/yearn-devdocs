@@ -2,6 +2,8 @@
  * Ethereum Contracts
  */
 
+//TODO add v2 and v2 contracts
+
 export const yfiContracts = {
   // YFI Contracts
   yfiAddress: '0x0bc529c00C6401aEF6D220BE8C6Ea1667F6Ad93e',
@@ -82,6 +84,7 @@ export const yearnV3Contracts = {
   accountant: '0x5A74Cb32D36f2f517DB6f7b0A0591e09b22cDE69',
   registryENS: 'registry.v3.ychad.eth',
   registry: '0xd40ecF29e001c76Dcc4cC0D9cd50520CE845B038',
+  legacyRegistry1: '0xff31A1B020c868F6eA3f61Eb953344920EeCA3af',
   debtAllocator: '0x1e9eB053228B1156831759401dE0E115356b8671',
   keeper: '0x52605BbF54845f520a3E94792d019f62407db2f8',
   daddy: '0xFEB4acf3df3cDEA7399794D0869ef76A6EfAff52',

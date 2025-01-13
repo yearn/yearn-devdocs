@@ -38,7 +38,7 @@ You can see our progress on the [Github Project Board](https://github.com/orgs/y
 
 We use a combination of HackMD, Docusaurus, and Github for our [Documentation](https://docs.yearn.fi/) and we use [DrawIO](https://draw.io) with Google Drive for our diagrams & schemas. If you are a grammar stickler, you can see our [Reviewer Guide](https://hackmd.io/juTKNn3xTpKJgFDo2AglLw).
 
-Last but not least, join the #documentation channel in [Discord](https://discord.gg/freT6YRNSX) and introduce yourself.
+Last but not least, join the #documentation channel in [Discord](https://discord.gg/yearn) and introduce yourself.
 
 If this sounds confusing, please let us know what we can clear up. In the meantime: You can begin contributing to our HackMD docs immediately via the Github issues — we'll guide you through the rest.
 
@@ -48,7 +48,7 @@ If this sounds confusing, please let us know what we can clear up. In the meanti
 
 If you're a developer, we need your help! Before you begin: Familiarize yourself with Yearn, its products, and its infrastructure by reading our [Documentation](https://docs.yearn.fi/).
 
-You can see our progress on our [Github Project Board](https://contribute.yearn.farm/good-first-issue.html), and you can immediately begin contributing where you see fit. We recommend checking out issues tagged as `help wanted` and recommend sticking to the respective repository's coding guidelines (linting, formatting, PRs, etc). It's that simple 🙂. You can also join us on the #dev channel in [Discord](https://discord.gg/w89vVxeV9h).
+You can see our progress on our [Github Project Board](https://contribute.yearn.farm/good-first-issue.html), and you can immediately begin contributing where you see fit. We recommend checking out issues tagged as `help wanted` and recommend sticking to the respective repository's coding guidelines (linting, formatting, PRs, etc). It's that simple 🙂. You can also join us on the #dev channel in [Discord](https://discord.gg/yearn).
 
 If you are interested in working on a specific project, check out the list of Yearn products in the [General Resources](#general-resources) section below or check out our list of repos [here](https://github.com/orgs/yearn/repositories).
 
@@ -60,7 +60,7 @@ If you want to integrate with Yearn, please visit our [Integration Guide](https:
 
 #### Designers
 
-We invite designers, animators, artists, and more to share your skills with the Yearn ecosystem! If you're interested in creating graphics that describe Yearn's systems, creating video explainers, fixing Yearn's UI/UX, or any other combination of things — hop into the #ui-ux channel or #media-resources channels in [Discord](https://discord.gg/H8AVhpz63R).
+We invite designers, animators, artists, and more to share your skills with the Yearn ecosystem! If you're interested in creating graphics that describe Yearn's systems, creating video explainers, fixing Yearn's UI/UX, or any other combination of things — hop into the #ui-ux channel or #media-resources channels in [Discord](https://discord.gg/yearn).
 
 #### Creating Strategies
 
