@@ -6,7 +6,7 @@ Yearn and its ecosystem contain a number of different vaults and products that c
 
 There are 2 ways to get Yearn Vault Data: Via the [Kong API](/developers/data-services/yearn-data/#kong) that Yearn provides or manually by querying the smart contracts used to deploy and register Vaults. We will start by looking at how to do this manually to give an overview of how the system works.
 
-Yearn has a few versions of Vaults: [V1](/developers/v3/overview), [V2](/developers/v2/getting-started), and [V3](/developers/v1/introduction) and each will need to be queried slightly differently. We will start with V3.
+Yearn has a few versions of Vaults: [V1](/developers/v1/introduction), [V2](/developers/v2/getting-started), and [V3](/developers/v3/overview) and each will need to be queried slightly differently. We will start with V3.
 
 ## Getting V2 and V3 Vaults with Kong
 
@@ -148,13 +148,16 @@ Below are the relevant registries for V2 contracts.
 | Mainnet Factory Registry | 1 | 0xaF1f5e1c19cB68B30aAD73846eFfDf78a5863319 |
 | Mainnet Legacy Registry 1 | 1 | 0xe15461b18ee31b7379019dc523231c57d1cbc18c |
 | Mainnet Legacy Registry 2 | 1 | 0x50c1a2eA0a861A967D9d0FFE2AE4012c2E053804 |
+| Optimism Factory Registry | 10 | 0x79286Dd38C9017E5423073bAc11F53357Fc5C128 |
 | Optimism Legacy Registry | 10 | 0x1ba4eB0F44AB82541E56669e18972b0d6037dfE0 |
 | Fantom Legacy Registry | 250 | 0x727fe1759430df13655ddb0731dE0D0FDE929b04 |
+| Arbitrum Factory Registry | 42161 | 0x84654e35E504452769757AAe5a8C7C6599cBf954 |
 | Arbitrum Legacy Registry | 42161 | 0x3199437193625DCcD6F9C9e98BDf93582200Eb1f |
+| Base Factory Registry | 8453 | 0xF3885eDe00171997BFadAa98E01E167B53a78Ec5 |
 
-V2 works similarly to V3 in that there is a factory contract (called the Release Registry) where anyone can deploy a vault. There is also a registry contract that stores the endorsed Yearn vaults (called the factory registry on Mainnet).
+V2 works similarly to V3 in that there is a factory contract (called the Release Registry) where anyone can deploy a vault. There is also a Vault registry contract that stores the endorsed Yearn vaults (called the Factory Registry). A full list of yVault V2 contracts can be viewed [here](/developers/addresses/v2-contracts).
 
-Endorsed vaults can be queried directly from this contract. To do that you need to:
+Endorsed vaults can be queried directly from this Vault Registry contract. To do that you need to:
 
 1. Call the `numTokens()` function to get the number of underlying tokens with deployed vaults. This will be used as the index for the next step.
 2. Loop through each entry in the index and call the `tokens()` function with the index value as the argument to get the underlying token address at that index point.
