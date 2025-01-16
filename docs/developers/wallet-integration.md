@@ -228,6 +228,12 @@ Boom, now you have vault prices and the value of your user's positions.
 
 ## Calculating APYs
 
+:::info
+
+APR? APY? What's the difference? [This article](https://www.investopedia.com/personal-finance/apr-apy-bank-hopes-cant-tell-difference/) explains it in depth, but the gist is APR does not include compounding (reinvestment) while APY does. APY tends to be more accurate when determining interest earned over longer periods since the interest compounds to earn additional interest.
+
+:::
+
 Once again, the easiest way to get APY data is using Kong. The vault query in the [vaults section](#getting-v2-and-v3-vaults-with-kong) includes the APY from the last week. The other options are:
 
 - `grossAPR`: the APR rate reversed engineered from calculated APY. This number does not have fees taken out.
@@ -235,6 +241,12 @@ Once again, the easiest way to get APY data is using Kong. The vault query in th
 - `weeklyNet`: The net APY (yield minus fees) based on the change in PPS over the last week, annualized, with compounding extrapolated from the harvest frequency over the last 7 days.
 - `monthlyNet`: The net APY (yield minus fees) based on the change in PPS over the last month, annualized, with compounding extrapolated from the harvest frequency over the last 30 days.
 - `inceptionNet`: The net APY (yield minus fees) based on the change in PPS since vault creation.
+
+:::info
+
+The APY you get from Kong is an accurate, backward-looking APY calculated from the change in value of the vault. They do not incorporate any forward looking projections. The `grossAPR` number from Kong is calculated from the APY and does account for fees that will be taken out. It is different from the APRs discussed below from the AprOracle.
+
+:::
 
 Kong can also serve historical APYs. To get those you will need to use a timeseries. Here is an [example](https://kong.yearn.farm/api/gql?explorerURLState=N4IgJg9gxgrgtgUwHYBcQC4QAIsEcYIBOAnlgIIAOxAigSQBQA6SOOAJADYCGARgh%2BiwBlFIQCWSAOYBCZqyxsuYMIQQBnNYJHipc1pzFwxKQQElUe9lAhwKEJMhPDREyXoCUWYJawpD6ojF1JhZ5LG4%2BAQUI-h8cJRV1TQUE1Q048MNjQQMjFAzrW3tHHMK7BwtQnE9vKtYoAAsuCVMwDNSkjJiOAptyxwyKQIg2upw-RAyANy4OAh8AXz0FkAAaEBnxXg51DBBvQj1GEA70jCxjgAYAD0uAdgAWAEYAZgeyACY7gA4HgDF-gA2QE8QFQBAAEUBADNAd9fgBOF7fD4IhGXP7Ql4fJ4AVmOq0Yh1Cx26x0Exy4VAAtDwAO5galgfgoLjUigUNQEolHEBlYoWc7HBz5NY8kkgDhZUWCJ6XeXilYLIA):
 
@@ -272,6 +284,12 @@ The above query will need to be made with variables passed into it
 The above query will give daily values for the `weeklyAPY` value for a chosen vault.
 
 ## Calculating APRs from on-chain APR Oracles
+
+:::info
+
+The data from an APR oracle is a current APR and does not include compounding like the historical data from Kong. It is both a snapshot of the current APR and also gives an expected APR into the near future since it reads reward assets that are being streamed into the vault.
+
+:::
 
 V3 vaults have an APR oracle that can be queried to get current APR values calculated from the yield unlocking on the contracts. As of writing, this contract is [0x1981AD9F44F2EA9aDd2dC4AD7D075c102C70aF92](https://etherscan.io/address/0x1981AD9F44F2EA9aDd2dC4AD7D075c102C70aF92). This can be manually checked by calling the `getAprOracle()` view function on the Protocol Address Provider: <ContractAddress contractName = {['topLevel', 'protocolAddressProvider']} />.
 
