@@ -107,7 +107,8 @@ export default {
               items: [
                 'ypools/yeth/adding-assets',
                 'ypools/yeth/create-gov-proposal',
-                'ypools/yeth/spec',
+                'ypools/yeth/yETH-spec',
+                'ypools/yeth/periphery-spec',
               ],
             },
             'ypools/ypools-roles',
