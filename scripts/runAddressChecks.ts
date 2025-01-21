@@ -39,6 +39,7 @@ const fetchAddresses = async () => {
       failedChecks
     )
     v3CheckFlag = topLevelData?.checkFlag
+
     if (!topLevelData)
       throw new Error('Failed to fetch top-level contract addresses')
 
@@ -49,6 +50,7 @@ const fetchAddresses = async () => {
       failedChecks
     )
     v3CheckFlag = protocolPeripheryData?.checkFlag
+
     if (!protocolPeripheryData || !protocolPeripheryData?.addresses)
       throw new Error('Failed to fetch protocol addresses')
 
@@ -72,6 +74,7 @@ const fetchAddresses = async () => {
     if (!yearnV3Data) throw new Error('Failed to fetch Yearn V3 addresses')
 
     const v3AddressData: V3ContractAddresses = {
+
       topLevel: topLevelData.addresses,
       protocolPeriphery: protocolPeripheryData.addresses,
       releaseRegistry: releaseRegistryData.addresses,

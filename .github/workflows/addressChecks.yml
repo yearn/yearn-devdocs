@@ -59,6 +59,7 @@ jobs:
             cat scripts/fetchedAddressData.json >> issue_body.md
           fi
 
+
       - name: Create an issue if checks failed
         if: env.all_checks_passed != 'true'
         uses: peter-evans/create-issue-from-file@v4
