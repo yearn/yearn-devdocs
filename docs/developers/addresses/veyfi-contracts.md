@@ -1,5 +1,7 @@
 # veYFI Contract Addresses
 
+<AddressCheck contractType='veYFI'/>
+
 ## Deployed Addresses
 
 | Description        | Address                                                         |
@@ -30,7 +32,6 @@
 | 11 | `yG-yvDAI-2` | yGauge DAI-2 yVault | [`0x38E3d865e34f7367a69f096C80A4fc329DB38BF4`](https://etherscan.io/address/0x38E3d865e34f7367a69f096C80A4fc329DB38BF4) |
 | 12 | `yG-yvWETH-2` | yGauge WETH-2 yVault | [`0x8E2485942B399EA41f3C910c1Bb8567128f79859`](https://etherscan.io/address/0x8E2485942B399EA41f3C910c1Bb8567128f79859) |
 | 13 | `yG-yvcrvUSD-2` | yGauge crvUSD-2 yVault | [`0x71c3223D6f836f84cAA7ab5a68AAb6ECe21A9f3b`](https://etherscan.io/address/0x71c3223D6f836f84cAA7ab5a68AAb6ECe21A9f3b) |
-| 14 | `yG-yGOLD-styETH` | yGauge yGOLD-styETH | [`0xB98343536e584cf686427A54574567bA5BDa8070`](https://etherscan.io/address/0xB98343536e584cf686427A54574567bA5BDa8070) |
-| 15| `yG-yvUSDS-1` | yGauge USDS-1 yVault | [`0xd57aEa3686d623dA2dCEbc87010a4F2F38Ac7B15`](https://etherscan.io/address/0xd57aEa3686d623dA2dCEbc87010a4F2F38Ac7B15) |
+| 14| `yG-yvUSDS-1` | yGauge USDS-1 yVault | [`0xd57aEa3686d623dA2dCEbc87010a4F2F38Ac7B15`](https://etherscan.io/address/0xd57aEa3686d623dA2dCEbc87010a4F2F38Ac7B15) |
 
 The above Gauges can be verified using the [YFI Gauge Registry](https://etherscan.io/address/0x1D0fdCb628b2f8c0e22354d45B3B2D4cE9936F8B#readContract) contract and querying the `gauges()` function with the index listed above.

@@ -6,7 +6,7 @@ import {
   yearnV3RoleManagerABI,
   v3VaultFactoryBlueprintABI,
 } from './ABIs'
-import { ReleaseDataMap } from './types'
+import { V3ReleaseDataMap } from './types'
 
 const useFallback = (contractName: string, fallback: string): Address => {
   console.warn(
@@ -16,15 +16,16 @@ const useFallback = (contractName: string, fallback: string): Address => {
 }
 
 export const getProtocolContractAddresses = async (
-  address: Address,
+  addressProviderAddress: Address,
   publicClient: PublicClient
 ) => {
   const contract = getContract({
-    address,
+    address: addressProviderAddress,
     abi: v3ProtocolAddressProviderABI,
     client: publicClient,
   })
 
+  console.log('Fetching protocol contract addresses...')
   const [
     v3Router,
     v3AprOracle,
@@ -49,7 +50,7 @@ export const getProtocolContractAddresses = async (
       return undefined
     }),
   ])
-
+  console.log('Protocol contract addresses fetched.')
   return {
     router: v3Router,
     aprOracle: v3AprOracle,
@@ -71,16 +72,16 @@ export const getProtocolContractAddresses = async (
 export const readReleaseRegistryAll = async (
   registryAddress: Address,
   publicClient: PublicClient
-): Promise<ReleaseDataMap> => {
+): Promise<V3ReleaseDataMap> => {
   const contract = getContract({
     address: registryAddress,
     abi: v3ReleaseRegistryABI,
     client: publicClient,
   })
-
+  console.log('Fetching release registry data...')
   const latestRelease = await contract.read.latestRelease()
   const numReleases = await contract.read.numReleases()
-  const releaseDataMap: ReleaseDataMap = { latestRelease }
+  const releaseDataMap: V3ReleaseDataMap = { latestRelease }
 
   // Loop through the `factories` array
   for (let i = 0; i < numReleases; i++) {
@@ -112,6 +113,7 @@ export const readReleaseRegistryAll = async (
       tokenizedStrategy: tokenizedStrategyAddress,
     }
   }
+  console.log('Release registry data fetched.')
   return releaseDataMap
 }
 
@@ -124,7 +126,7 @@ export const readYearnRoleManager = async (
     abi: yearnV3RoleManagerABI,
     client: publicClient,
   })
-
+  console.log('Fetching Yearn Role Manager data...')
   const [
     yearnBrain,
     yearnDaddy,
@@ -147,6 +149,7 @@ export const readYearnRoleManager = async (
       return undefined
     }),
   ])
+  console.log('Yearn Role Manager data fetched.')
 
   return {
     yearnBrain,
