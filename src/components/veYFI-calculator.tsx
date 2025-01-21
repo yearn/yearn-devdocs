@@ -573,7 +573,10 @@ const VeYFICalculator: React.FC = () => {
               <Button
                 onClick={handleCalculateButton1Click}
                 disabled={
-                  !selectedVault || isNaN(Number(veYFIAmount)) || !veYFIAmount
+                  !selectedVault ||
+                  (useVeYfiCalculator
+                    ? isNaN(Number(veYFIFromLock)) || !veYFIFromLock
+                    : isNaN(Number(veYFIAmount)) || !veYFIAmount)
                 }
               >
                 Calculate
@@ -597,6 +600,7 @@ const VeYFICalculator: React.FC = () => {
               </div>
             )}
           </Card>
+          <VeYFILockCalculator onVeYFIChange={handleVeYFICalcChange} />
         </TabsContent>
         <TabsContent value="tab2">
           <Card>
@@ -712,8 +716,6 @@ const VeYFICalculator: React.FC = () => {
             )}
           </Card>
         </TabsContent>
-        {/* Integrate the new VeYFILockCalculator component */}
-        <VeYFILockCalculator onVeYFIChange={handleVeYFICalcChange} />
       </Tabs>
     </div>
   )
