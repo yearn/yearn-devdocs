@@ -9,6 +9,14 @@
   box-shadow: var(--ifm-alert-shadow);
 }
 
+.yearnDiv.data {
+  /* Specific .data style for yearnDiv */
+  background-color: unset;
+  /* box-shadow: 0 1px 2px 0 var(--ifm-color-primary-light); */
+  border: solid 1px var(--ifm-color-primary-light);
+  border-left-width: var(--ifm-alert-border-left-width);
+}
+
 .yearnTitle {
   display: flex;
   align-items: center;
@@ -23,8 +31,18 @@
   margin-left: 0.5em;
 }
 
+.yearnHeading.data {
+  /* Specific .data style for yearnHeading */
+  color: unset;
+}
+
 .yearnBody {
   color: white;
+}
+
+.yearnBody.data {
+  /* Specific .data style for yearnBody */
+  color: unset;
 }
 
 .yearnLogo {
@@ -34,3 +52,9 @@
 .yearnBody code {
   background-color: var(--ifm-color-primary-darker);
 }
+
+.yearnBody.data code {
+  /* Specific .data style for yearnBody code */
+  background-color: unset;
+}
+

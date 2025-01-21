@@ -199,6 +199,7 @@ module.exports = {
       type: 'category',
       label: 'Guides',
       items: [
+        'guides/user-faq',
         'guides/using-yearn-v3',
         'guides/using-yearn-v2',
         'guides/how-boost-works',
