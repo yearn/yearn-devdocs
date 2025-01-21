@@ -29,3 +29,9 @@ Yes, you can withdraw multiple LSTs or just one LST. However, your withdrawal ca
 ### Is there slippage with proportional withdrawal?
 
 No, there is no slippage with proportional withdrawal.
+
+### How do I vote?
+
+Every 4th week (known as an epoch in yPools speak), st-yETH holders can vote on the composition of yETH. You can do that here: https://yeth.yearn.fi/vote?action=weight
+
+You must have held st-yETH from the beginning of the epoch . Your voting power grows over time. Read more about how it is calculated [here](/developers/ypools/ypools-overview#st-ytoken-user-vote-weight)

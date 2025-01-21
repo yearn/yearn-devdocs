@@ -6,7 +6,15 @@ yPools are user-governed baskets of similar assets, typically liquid staking tok
 
 Users stake their yPool tokens to mint st-yTokens, accrue yield, and later unstake st-yTokens to receive yPool tokens back according to their earnings. Stakers receive all yield and slashings from the underlying yield sources and earn incentives if they participate and vote in their respective yPool governance.
 
-yPools are governed by their users who stake their yPool tokens. Once staked, yPool token holders can set parameters, weights and whitelist pool assets.
+## Governance at a Glance
+
+yPools are governed by their users who stake their yPool tokens. Once staked, yPool token holders can set parameters, weights and whitelist pool assets. all depositors can pitch in and help to maximize yield and mitigate risks associated with individual assets.
+
+:::yearnData
+
+test
+
+:::
 
 Want to dive into the details? Check out the Developer Docs:
 <PrettyLink>[yPools Developer Docs](/developers/ypools/ypools-overview)</PrettyLink>
