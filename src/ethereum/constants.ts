@@ -2,6 +2,8 @@
  * Ethereum Contracts
  */
 
+//TODO add v2 and v2 contracts
+
 export const yfiContracts = {
   // YFI Contracts
   yfiAddress: '0x0bc529c00C6401aEF6D220BE8C6Ea1667F6Ad93e',
@@ -59,14 +61,6 @@ export const veYfiGauges = [
   },
   {
     index: 5,
-    symbol: 'yG-yvWETH-1',
-    name: 'yGauge WETH-1 yVault',
-    address: '0x5943F7090282Eb66575662EADf7C60a717a7cE4D',
-    underlyingDecimals: 18,
-    underlyingVaultAddress: '0xc56413869c6CDf96496f2b1eF801fEDBdFA7dDB0',
-  },
-  {
-    index: 6,
     symbol: 'yG-yvUSDC-1',
     name: 'yGauge USDC-1 yVault',
     address: '0x622fA41799406B120f9a40dA843D358b7b2CFEE3',
@@ -74,12 +68,20 @@ export const veYfiGauges = [
     underlyingVaultAddress: '0xBe53A109B494E5c9f97b9Cd39Fe969BE68BF6204',
   },
   {
-    index: 7,
+    index: 6,
     symbol: 'yG-yvDAI-1',
     name: 'yGauge DAI-1 yVault',
     address: '0x128e72DfD8b00cbF9d12cB75E846AC87B83DdFc9',
     underlyingDecimals: 18,
     underlyingVaultAddress: '0x028eC7330ff87667b6dfb0D94b954c820195336c',
+  },
+  {
+    index: 7,
+    symbol: 'yG-yvWETH-1',
+    name: 'yGauge WETH-1 yVault',
+    address: '0x5943F7090282Eb66575662EADf7C60a717a7cE4D',
+    underlyingDecimals: 18,
+    underlyingVaultAddress: '0xc56413869c6CDf96496f2b1eF801fEDBdFA7dDB0',
   },
   {
     index: 8,
@@ -131,14 +133,6 @@ export const veYfiGauges = [
   },
   {
     index: 14,
-    symbol: 'yG-yGOLD-styETH',
-    name: 'yGauge yGOLD-styETH',
-    address: '0xB98343536e584cf686427A54574567bA5BDa8070',
-    underlyingDecimals: 18,
-    underlyingVaultAddress: '0x42842754aBce504E12C20E434Af8960FDf85C833',
-  },
-  {
-    index: 15,
     symbol: 'yG-yvUSDS-1',
     name: 'yGauge USDS-1 yVault',
     address: '0xd57aEa3686d623dA2dCEbc87010a4F2F38Ac7B15',
@@ -213,6 +207,7 @@ export const yearnV3Contracts = {
   accountant: '0x5A74Cb32D36f2f517DB6f7b0A0591e09b22cDE69',
   registryENS: 'registry.v3.ychad.eth',
   registry: '0xd40ecF29e001c76Dcc4cC0D9cd50520CE845B038',
+  legacyRegistry1: '0xff31A1B020c868F6eA3f61Eb953344920EeCA3af',
   debtAllocator: '0x1e9eB053228B1156831759401dE0E115356b8671',
   keeper: '0x52605BbF54845f520a3E94792d019f62407db2f8',
   daddy: '0xFEB4acf3df3cDEA7399794D0869ef76A6EfAff52',

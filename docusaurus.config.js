@@ -8,8 +8,6 @@ import 'dotenv/config'
 const branchName = process.env.BRANCH_NAME || 'unknown'
 const isDev = process.env.IS_DEV === 'true'
 const alchemyKey = process.env.ALCHEMY_API_KEY || 'unknown'
-const yDaemon = process.env.YDAEMON_ENDPOINT || 'unknown'
-const yPriceMagic = process.env.YPRICEMAGIC_ENDPOINT || 'unknown'
 
 export default {
   title: 'Yearn Docs',
@@ -28,8 +26,6 @@ export default {
     branchName,
     isDev,
     alchemyKey,
-    yDaemon,
-    yPriceMagic,
   },
   themes: ['@docusaurus/theme-mermaid'],
   themeConfig: {

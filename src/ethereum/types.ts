@@ -1,10 +1,47 @@
 export type ContractAddresses = {
-  topLevel: TopLevelAddresses
-  protocolPeriphery: ProtocolPeripheryAddresses
-  releaseRegistry: ReleaseDataMap
-  yearnV3: YearnAddresses
+  v3ContractAddresses: V3ContractAddresses
   yfiTokenContracts: YfiTokenContracts
   veYfiContracts: VeYfiContracts
+  veYfiGaugeAddresses: GaugeAddressRecord
+}
+
+export type V3ContractAddresses = {
+  topLevel: V3TopLevelAddresses
+  protocolPeriphery: V3ProtocolPeripheryAddresses
+  releaseRegistry: V3ReleaseDataMap
+  yearnV3: YearnV3Addresses
+}
+
+export type V3TopLevelAddresses = {
+  v3ProtocolAddressProvider: `0x${string}`
+  v3ReleaseRegistry: `0x${string}`
+  v3RoleManager: `0x${string}`
+}
+
+export type V3ProtocolPeripheryAddresses = {
+  router: `0x${string}` | undefined
+  aprOracle: `0x${string}` | undefined
+  commonReportTrigger: `0x${string}` | undefined
+  roleManagerFactory: `0x${string}` | undefined
+}
+
+export type V3ReleaseDataMap = {
+  latestRelease: string
+  [releaseNumber: string]: V3ReleaseData | string
+}
+// contains array of:
+export type V3ReleaseData = {
+  vaultOriginal: string
+  factory: string
+  tokenizedStrategy: string
+}
+
+export type YearnV3Addresses = {
+  yearnBrain: `0x${string}` | undefined
+  yearnDaddy: `0x${string}` | undefined
+  yearnAccountant: `0x${string}` | undefined
+  yearnDebtAllocator: `0x${string}` | undefined
+  yearnRegistry: `0x${string}` | undefined
 }
 
 export type YfiTokenContracts = {
@@ -21,58 +58,33 @@ export type VeYfiContracts = {
   dYfyiRewardPool: `0x${string}` | string
 }
 
+export type GaugeAddressRecord = Record<string, string>
+export type GaugeCheckRecord = Record<string, boolean>
+
 export type VeYfiGauge = {
   index: number
   symbol: string
   name: string
-  address: string
+  address: `0x${string}` | string
   underlyingDecimals: number
-}
-
-export type TopLevelAddresses = {
-  v3ProtocolAddressProvider: `0x${string}`
-  v3ReleaseRegistry: `0x${string}`
-  v3RoleManager: `0x${string}`
-}
-
-export type ProtocolPeripheryAddresses = {
-  router: `0x${string}` | undefined
-  aprOracle: `0x${string}` | undefined
-  commonReportTrigger: `0x${string}` | undefined
-  roleManagerFactory: `0x${string}` | undefined
-}
-
-export type ReleaseDataMap = {
-  latestRelease: string
-  [releaseNumber: string]: ReleaseData | string
-}
-// contains array of:
-export type ReleaseData = {
-  vaultOriginal: string
-  factory: string
-  tokenizedStrategy: string
-}
-
-export type YearnAddresses = {
-  yearnBrain: `0x${string}` | undefined
-  yearnDaddy: `0x${string}` | undefined
-  yearnAccountant: `0x${string}` | undefined
-  yearnDebtAllocator: `0x${string}` | undefined
-  yearnRegistry: `0x${string}` | undefined
+  underlyingVaultAddress: `0x${string}` | string
 }
 
 export type AddressChecks = {
   allChecksPassed: boolean | undefined
   failedChecks: string[]
-  topLevel: {
-    v3ProtocolAddressProviderCheck: Promise<boolean>
-    v3ProtocolAddressProviderENSCheck: boolean
-    v3ReleaseRegistryCheck: Promise<boolean>
-    v3ReleaseRegistryENSCheck: boolean
-    v3RoleManagerCheck: Promise<boolean>
-    v3RoleManagerENSCheck: boolean
+  v3Checks: {
+    topLevel: {
+      v3ProtocolAddressProviderCheck: Promise<boolean>
+      v3ProtocolAddressProviderENSCheck: boolean
+      v3ReleaseRegistryCheck: Promise<boolean>
+      v3ReleaseRegistryENSCheck: boolean
+      v3RoleManagerCheck: Promise<boolean>
+      v3RoleManagerENSCheck: boolean
+    }
+    protocolPeriphery: { [key: string]: boolean }
+    releaseRegistry: { [key: string]: boolean }
+    yearnV3: { [key: string]: boolean }
   }
-  protocolPeriphery: { [key: string]: boolean }
-  releaseRegistry: { [key: string]: boolean }
-  yearnV3: { [key: string]: boolean }
+  veYFiChecks: GaugeCheckRecord
 }

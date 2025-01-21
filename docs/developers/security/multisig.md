@@ -6,6 +6,10 @@ The multisig is implemented by a 6-of-9 multi-signature wallet. The members of t
 
 The multisig is implemented as a Gnosis Safe. The multisig's assets, transactions, and signers can be viewed using [Gnosis's Web UI](https://app.safe.global/home?safe=eth:0xFEB4acf3df3cDEA7399794D0869ef76A6EfAff52). If there is a need to trustlessly audit Yearn's multisig (without trusting the Gnosis site), the Gnosis Safe web app source code can be found on Github [here](https://github.com/safe-global/safe-wallet-web).
 
+## Protocol Guardian Role
+
+Per [YIP-81](https://snapshot.box/#/s:veyfi.eth/proposal/0x6f3082db2cef3e0c254e569580d063cb14130a92d0bf1729bef342a386e419f2), the Yearn Multisig (AKA yChad) serves in the Guardian role to steward and protect the Yearn Protocol and its participants. The Guardian role is defined as being able to **"nullify a proposal or governance decision but cannot make proposals"**.
+
 ## Members
 
 Multisig membership can be validated from the Gnosis UI [here](https://app.safe.global/settings/setup?safe=eth:0xFEB4acf3df3cDEA7399794D0869ef76A6EfAff52).  

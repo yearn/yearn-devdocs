@@ -1,6 +1,6 @@
 # yVaults v3 Contract Addresses
 
-<AddressCheck />
+<AddressCheck contractType='v3'/>
 
 :::info
 
@@ -75,5 +75,5 @@ To find individual vaults, use the V3 Registry below or refer to https://yearn.f
 | ----------------------   | ---------------------- |
 | **Role Manager** <br/> role-manager.v3.ychad.eth | <ContractAddress contractName = {['yearnV3RoleManager', 'roleManager']} /> |
 | **Current V3 Registry** <br/> registry.v3.ychad.eth | <ContractAddress contractName = {['yearnV3Contracts', 'registry']} /> |
-| **Legacy V3 Registry** <br/> | [0xff31A1B020c868F6eA3f61Eb953344920EeCA3af](https://etherscan.io/address/0xff31A1B020c868F6eA3f61Eb953344920EeCA3af) |
+| **Legacy V3 Registry** <br/> | <ContractAddress contractName = {['yearnV3Contracts', 'legacyRegistry1']} /> |
 | **Accountant** <br/> accountant.v3.ychad.eth | <ContractAddress contractName = {['yearnV3Contracts', 'accountant']} /> |

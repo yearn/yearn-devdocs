@@ -1,46 +1,49 @@
 {
-  "timeLastChecked": 1732226783,
+  "timeLastChecked": 1736294978,
+
   "addressesData": {
-    "topLevel": {
-      "v3ProtocolAddressProvider": "0x775F09d6f3c8D2182DFA8bce8628acf51105653c",
-      "v3ReleaseRegistry": "0x0377b4daDDA86C89A0091772B79ba67d0E5F7198",
-      "v3RoleManager": "0xb3bd6B2E61753C311EFbCF0111f75D29706D9a41"
-    },
-    "protocolPeriphery": {
-      "router": "0x1112dbCF805682e828606f74AB717abf4b4FD8DE",
-      "aprOracle": "0x1981AD9F44F2EA9aDd2dC4AD7D075c102C70aF92",
-      "commonReportTrigger": "0xA045D4dAeA28BA7Bfe234c96eAa03daFae85A147",
-      "roleManagerFactory": "0xca12459a931643BF28388c67639b3F352fe9e5Ce"
-    },
-    "releaseRegistry": {
-      "latestRelease": "3.0.4",
-      "3.0.1": {
-        "vaultOriginal": "0xDE992C652b266AE649FEC8048aFC35954Bee6145",
-        "factory": "0xE9E8C89c8Fc7E8b8F23425688eb68987231178e5",
-        "tokenizedStrategy": "0xDFC8cD9F2f2d306b7C0d109F005DF661E14f4ff2"
+    "v3ContractAddresses": {
+      "topLevel": {
+        "v3ProtocolAddressProvider": "0x775F09d6f3c8D2182DFA8bce8628acf51105653c",
+        "v3ReleaseRegistry": "0x0377b4daDDA86C89A0091772B79ba67d0E5F7198",
+        "v3RoleManager": "0xb3bd6B2E61753C311EFbCF0111f75D29706D9a41"
       },
-      "3.0.2": {
-        "vaultOriginal": "0x1ab62413e0cf2eBEb73da7D40C70E7202ae14467",
-        "factory": "0x444045c5C13C246e117eD36437303cac8E250aB0",
-        "tokenizedStrategy": "0xBB51273D6c746910C7C06fe718f30c936170feD0"
+      "protocolPeriphery": {
+        "router": "0x1112dbCF805682e828606f74AB717abf4b4FD8DE",
+        "aprOracle": "0x1981AD9F44F2EA9aDd2dC4AD7D075c102C70aF92",
+        "commonReportTrigger": "0xA045D4dAeA28BA7Bfe234c96eAa03daFae85A147",
+        "roleManagerFactory": "0xca12459a931643BF28388c67639b3F352fe9e5Ce"
       },
-      "3.0.3": {
-        "vaultOriginal": "0xcA78AF7443f3F8FA0148b746Cb18FF67383CDF3f",
-        "factory": "0x5577EdcB8A856582297CdBbB07055E6a6E38eb5f",
-        "tokenizedStrategy": "0x254A93feff3BEeF9cA004E913bB5443754e8aB19"
+      "releaseRegistry": {
+        "latestRelease": "3.0.4",
+        "3.0.1": {
+          "vaultOriginal": "0xDE992C652b266AE649FEC8048aFC35954Bee6145",
+          "factory": "0xE9E8C89c8Fc7E8b8F23425688eb68987231178e5",
+          "tokenizedStrategy": "0xDFC8cD9F2f2d306b7C0d109F005DF661E14f4ff2"
+        },
+        "3.0.2": {
+          "vaultOriginal": "0x1ab62413e0cf2eBEb73da7D40C70E7202ae14467",
+          "factory": "0x444045c5C13C246e117eD36437303cac8E250aB0",
+          "tokenizedStrategy": "0xBB51273D6c746910C7C06fe718f30c936170feD0"
+        },
+        "3.0.3": {
+          "vaultOriginal": "0xcA78AF7443f3F8FA0148b746Cb18FF67383CDF3f",
+          "factory": "0x5577EdcB8A856582297CdBbB07055E6a6E38eb5f",
+          "tokenizedStrategy": "0x254A93feff3BEeF9cA004E913bB5443754e8aB19"
+        },
+        "3.0.4": {
+          "vaultOriginal": "0xd8063123BBA3B480569244AE66BFE72B6c84b00d",
+          "factory": "0x770D0d1Fb036483Ed4AbB6d53c1C88fb277D812F",
+          "tokenizedStrategy": "0xD377919FA87120584B21279a491F82D5265A139c"
+        }
       },
-      "3.0.4": {
-        "vaultOriginal": "0xd8063123BBA3B480569244AE66BFE72B6c84b00d",
-        "factory": "0x770D0d1Fb036483Ed4AbB6d53c1C88fb277D812F",
-        "tokenizedStrategy": "0xD377919FA87120584B21279a491F82D5265A139c"
+      "yearnV3": {
+        "yearnBrain": "0x16388463d60FFE0661Cf7F1f31a7D658aC790ff7",
+        "yearnDaddy": "0xFEB4acf3df3cDEA7399794D0869ef76A6EfAff52",
+        "yearnAccountant": "0x5A74Cb32D36f2f517DB6f7b0A0591e09b22cDE69",
+        "yearnDebtAllocator": "0x1e9eB053228B1156831759401dE0E115356b8671",
+        "yearnRegistry": "0xd40ecF29e001c76Dcc4cC0D9cd50520CE845B038"
       }
-    },
-    "yearnV3": {
-      "yearnBrain": "0x16388463d60FFE0661Cf7F1f31a7D658aC790ff7",
-      "yearnDaddy": "0xFEB4acf3df3cDEA7399794D0869ef76A6EfAff52",
-      "yearnAccountant": "0x5A74Cb32D36f2f517DB6f7b0A0591e09b22cDE69",
-      "yearnDebtAllocator": "0x1e9eB053228B1156831759401dE0E115356b8671",
-      "yearnRegistry": "0xd40ecF29e001c76Dcc4cC0D9cd50520CE845B038"
     },
     "yfiTokenContracts": {
       "yfiAddress": "0x0bc529c00C6401aEF6D220BE8C6Ea1667F6Ad93e",
@@ -53,44 +56,81 @@
       "dyfiRedemptionAddress": "0x7dC3A74F0684fc026f9163C6D5c3C99fda2cf60a",
       "yfiRewardPool": "0xb287a1964AEE422911c7b8409f5E5A273c1412fA",
       "dYfyiRewardPool": "0x2391Fc8f5E417526338F5aa3968b1851C16D894E"
+    },
+    "veYfiGaugeAddresses": {
+      "yGauge Curve YFI-ETH Pool yVault": "0x7Fd8Af959B54A677a1D8F92265Bd0714274C56a3",
+      "yGauge Curve dYFIETH-f Factory yVault": "0x28da6dE3e804bDdF0aD237CFA6048f2930D0b4Dc",
+      "yGauge LP Yearn CRV Vault v2": "0x107717C98C8125A94D3d2Cc82b86a1b705f3A27C",
+      "yGauge Curve yETH Factory yVault": "0x81d93531720d86f0491DeE7D03f30b3b5aC24e59",
+      "yGauge LP Yearn PRISMA Vault": "0x6130E6cD924a40b24703407F246966D7435D4998",
+      "yGauge USDC-1 yVault": "0x622fA41799406B120f9a40dA843D358b7b2CFEE3",
+      "yGauge DAI-1 yVault": "0x128e72DfD8b00cbF9d12cB75E846AC87B83DdFc9",
+      "yGauge WETH-1 yVault": "0x5943F7090282Eb66575662EADf7C60a717a7cE4D",
+      "yGauge Curve sdYFIv2 Factory yVault": "0xB61F8fff8Dd8C438E0d61C07b5536cE3d728f660",
+      "yGauge Curve upYFI Factory yVault": "0xf719B2d3925CC445D2Bb67FA12963265E224Fa11",
+      "yGauge Curve COVEYFI Factory yVault": "0x97A597CBcA514AfCc29cD300f04F98d9DbAA3624",
+      "yGauge DAI-2 yVault": "0x38E3d865e34f7367a69f096C80A4fc329DB38BF4",
+      "yGauge WETH-2 yVault": "0x8E2485942B399EA41f3C910c1Bb8567128f79859",
+      "yGauge crvUSD-2 yVault": "0x71c3223D6f836f84cAA7ab5a68AAb6ECe21A9f3b",
+      "yGauge USDS-1 yVault": "0xd57aEa3686d623dA2dCEbc87010a4F2F38Ac7B15"
     }
   },
   "addressChecks": {
-    "allChecksPassed": true,
+    "allV3ChecksPassed": true,
+    "allVeYfiChecksPassed": true,
     "failedChecks": [],
-    "topLevel": {
-      "v3ProtocolAddressProviderCheck": {},
-      "v3ProtocolAddressProviderENSCheck": true,
-      "v3ReleaseRegistryCheck": {},
-      "v3ReleaseRegistryENSCheck": true,
-      "v3RoleManagerCheck": {},
-      "v3RoleManagerENSCheck": true
+    "v3Checks": {
+      "topLevel": {
+        "v3ProtocolAddressProviderCheck": {},
+        "v3ProtocolAddressProviderENSCheck": true,
+        "v3ReleaseRegistryCheck": {},
+        "v3ReleaseRegistryENSCheck": true,
+        "v3RoleManagerCheck": {},
+        "v3RoleManagerENSCheck": true
+      },
+      "protocolPeriphery": {
+        "aprOracleCheck": true,
+        "routerCheck": true,
+        "reportTriggerCheck": true,
+        "roleManagerFactoryCheck": true
+      },
+      "releaseRegistry": {
+        "hasLatestRelease": true,
+        "is301VaultOriginalMatch": true,
+        "is301FactoryMatch": true,
+        "is301TokenizedStrategyMatch": true,
+        "is302VaultOriginalMatch": true,
+        "is302FactoryMatch": true,
+        "is302TokenizedStrategyMatch": true,
+        "is303VaultOriginalMatch": true,
+        "is303FactoryMatch": true,
+        "is303TokenizedStrategyMatch": true,
+        "is304VaultOriginalMatch": true,
+        "is304FactoryMatch": true,
+        "is304TokenizedStrategyMatch": true
+      },
+      "yearnV3": {
+        "accountantCheck": true,
+        "registryCheck": true,
+        "debtAllocatorCheck": true
+      }
     },
-    "protocolPeriphery": {
-      "aprOracleCheck": true,
-      "routerCheck": true,
-      "reportTriggerCheck": true,
-      "roleManagerFactoryCheck": true
-    },
-    "releaseRegistry": {
-      "hasLatestRelease": true,
-      "is301VaultOriginalMatch": true,
-      "is301FactoryMatch": true,
-      "is301TokenizedStrategyMatch": true,
-      "is302VaultOriginalMatch": true,
-      "is302FactoryMatch": true,
-      "is302TokenizedStrategyMatch": true,
-      "is303VaultOriginalMatch": true,
-      "is303FactoryMatch": true,
-      "is303TokenizedStrategyMatch": true,
-      "is304VaultOriginalMatch": true,
-      "is304FactoryMatch": true,
-      "is304TokenizedStrategyMatch": true
-    },
-    "yearnV3": {
-      "accountantCheck": true,
-      "registryCheck": true,
-      "debtAllocatorCheck": true
+    "veYfiChecks": {
+      "yGauge Curve YFI-ETH Pool yVault": true,
+      "yGauge Curve dYFIETH-f Factory yVault": true,
+      "yGauge LP Yearn CRV Vault v2": true,
+      "yGauge Curve yETH Factory yVault": true,
+      "yGauge LP Yearn PRISMA Vault": true,
+      "yGauge USDC-1 yVault": true,
+      "yGauge DAI-1 yVault": true,
+      "yGauge WETH-1 yVault": true,
+      "yGauge Curve sdYFIv2 Factory yVault": true,
+      "yGauge Curve upYFI Factory yVault": true,
+      "yGauge Curve COVEYFI Factory yVault": true,
+      "yGauge DAI-2 yVault": true,
+      "yGauge WETH-2 yVault": true,
+      "yGauge crvUSD-2 yVault": true,
+      "yGauge USDS-1 yVault": true
     }
   }
 }
