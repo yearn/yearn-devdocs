@@ -17,15 +17,15 @@ Cryptographic membership attestations can be validated against the PGP keys in t
 
 | Address           | Member Name          | Membership Attestation       |
 |-------------------|----------------------|------------------------------|
-| [0x6F2A8Ee9452ba7d336b3fba03caC27f7818AeAD6](https://etherscan.io/address/0x6F2A8Ee9452ba7d336b3fba03caC27f7818AeAD6) | Mariano Conti (nanexcool.com, prev. MakerDAO) | [Twitter](https://twitter.com/nanexcool/status/1491900804223041540) |
-| [0x7321ED86B0Eb914b789D6A4CcBDd3bB10f367153](https://etherscan.io/address/0x7321ED86B0Eb914b789D6A4CcBDd3bB10f367153) | Leo Cheng (C.R.E.A.M. Finance) | [Twitter](https://twitter.com/lumbergdoteth/status/1492736002724876291) |
-| [0x7A1057E6e9093DA9C1D4C1D049609B6889fC4c67](https://etherscan.io/address/0x7A1057E6e9093DA9C1D4C1D049609B6889fC4c67) | Banteg (Yearn Finance) | [Twitter](https://twitter.com/bantg/status/1285426492906909696) |
-| [0x99BC02c239025E431D5741cC1DbA8CE77fc51CE3](https://etherscan.io/address/0x99BC02c239025E431D5741cC1DbA8CE77fc51CE3) | Daryl Lau (Not3Lau Capital) | [Twitter](https://twitter.com/Daryllautk/status/1285434908383444992) |
-| [0xf5D3dbda5F41A0E26D71B948e29522398e71cFaE](https://etherscan.io/address/0xf5D3dbda5F41A0E26D71B948e29522398e71cFaE) | 0xngmi (DefiLlama) | [Twitter](https://twitter.com/0xngmi/status/1590047391797088257) |
-| [0x1496546f89fc1605880e556c9a1d6c5e2409fb0a](https://etherscan.io/address/0x1496546f89fc1605880e556c9a1d6c5e2409fb0a) | monoloco (Yearn) | [Gist](https://gist.github.com/therealmonoloco/306ffd61c46c662bb7f8d7a09b2ffb02) |
-| [0x2B888954421b424C5D3D9Ce9bB67c9bD47537d12](https://etherscan.io/address/0x2B888954421b424C5D3D9Ce9bB67c9bD47537d12) | Lefteris Karapetsas (rotkiapp) | [Twitter](https://twitter.com/LefterisJP/status/1590083336210644992) |
+| [0x6F2A8Ee9452ba7d336b3fba03caC27f7818AeAD6](https://etherscan.io/address/0x6F2A8Ee9452ba7d336b3fba03caC27f7818AeAD6) | Mariano Conti (nanexcool.com, prev. MakerDAO) | [Twitter](https://x.com/nanexcool/status/1491900804223041540) |
+| [0x7321ED86B0Eb914b789D6A4CcBDd3bB10f367153](https://etherscan.io/address/0x7321ED86B0Eb914b789D6A4CcBDd3bB10f367153) | Leo Cheng (C.R.E.A.M. Finance) | [Twitter](https://x.com/lumbergdoteth/status/1492736002724876291) |
+| [0x99BC02c239025E431D5741cC1DbA8CE77fc51CE3](https://etherscan.io/address/0x99BC02c239025E431D5741cC1DbA8CE77fc51CE3) | Daryl Lau (Not3Lau Capital) | [Twitter](https://x.com/Daryllautk/status/1285434908383444992) |
+| [0xf5D3dbda5F41A0E26D71B948e29522398e71cFaE](https://etherscan.io/address/0xf5D3dbda5F41A0E26D71B948e29522398e71cFaE) | 0xngmi (DefiLlama) | [Twitter](https://x.com/0xngmi/status/1590047391797088257) |
+| [0x1496546f89fc1605880e556c9a1d6c5e2409fb0a](https://etherscan.io/address/0x1496546f89fc1605880e556c9a1d6c5e2409fb0a) | monoloco (Defi Wonderland) | [Github Gist](https://gist.github.com/therealmonoloco/306ffd61c46c662bb7f8d7a09b2ffb02) |
+| [0x2B888954421b424C5D3D9Ce9bB67c9bD47537d12](https://etherscan.io/address/0x2B888954421b424C5D3D9Ce9bB67c9bD47537d12) | Lefteris Karapetsas (rotkiapp) | [Twitter](https://x.com/LefterisJP/status/1590083336210644992) |
 | [0xFe45baf0F18c207152A807c1b05926583CFE2e4b](https://etherscan.io/address/0xFe45baf0F18c207152A807c1b05926583CFE2e4b) | Michael Egorov (Curve) | [Twitter](https://x.com/newmichwill/status/1849912651163250755) |
 | [0x962228a90eaC69238c7D1F216d80037e61eA9255](https://etherscan.io/address/0x962228a90eaC69238c7D1F216d80037e61eA9255) | CryptoHarry (Inverse) | [Twitter](https://x.com/0xCryptoHarry/status/1848394875659776430) |
+| [0x700F1a984C962b447CcDb95c4c2D8074C65098a3](https://etherscan.io/address/0x700F1a984C962b447CcDb95c4c2D8074C65098a3) | Tapir (Yearn) | [Github Gist](https://gist.github.com/tapired/3b26a56b8847dc6f608edb9403dfc61d) |
 
 ## History
 
