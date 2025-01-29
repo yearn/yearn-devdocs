@@ -2,9 +2,11 @@
 
 Follow these steps to enable the inclusion of new assets into yETH via governance proposal and voting.
 
-## Prerequisites
+:::info[Pre-requisites]
 
-You will need access to the necessary governance contracts and a sufficient voting weight of at least 100 to create proposals.
+You will need access to the necessary governance contracts and a sufficient voting weight of at least 100 to create proposals. You can check your voting weight [here](https://etherscan.io/address/0x583019fF0f430721aDa9cfb4fac8F06cA104d0B4#readContract#F13).
+
+:::
 
 ## Steps
 

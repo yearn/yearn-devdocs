@@ -64,7 +64,12 @@ const fetchData = async (
     (arg0: (prevData: any) => any): void
   }
 ) => {
+  console.log('contractReadParams', contractReadParams)
   try {
+    // Fetch the latest block timestamp
+    const block = await publicClient.getBlock({ blockTag: 'latest' })
+    const blockTimestamp = Number(block.timestamp)
+
     for (const contractReadCall of contractReadParams) {
       const address = contractReadCall.address
       const abi = ABIs[contractReadCall.abiName]
@@ -105,6 +110,7 @@ const fetchData = async (
           }
           newData[contractReadCall.name][methodName] = result
         })
+        newData['blockTimestamp'] = blockTimestamp
         return newData
       })
     }

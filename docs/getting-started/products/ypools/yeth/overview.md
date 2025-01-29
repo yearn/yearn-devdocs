@@ -24,4 +24,4 @@ Get yETH, swap it for st-yETH, vote and more on the app:
 <PrettyLink>[yETH dApp](https://yeth.yearn.fi/)</PrettyLink>
 
 Want to dive into the details? Check out the Developer Docs:
-<PrettyLink>[yPools Developer Docs](/developers/ypools/ypools-overview)</PrettyLink>
+<PrettyLink>[yETH Developer Docs](/developers/ypools/yeth/yeth-overview)</PrettyLink>
