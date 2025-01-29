@@ -22,6 +22,9 @@ You will need access to the necessary governance contracts and a sufficient voti
 1. Generate a script by calling the `script(_to, _data)` view function on the [Executor contract](https://etherscan.io/address/0x71258Ee726644f1D52d6A9F5E11C21d1E38c2bF1#readContract#F1).
 
    In this case, set the `_to(address)` field to the [InclusionVote contract](../../addresses/ypools-contracts.md#yeth-contract-addresses) `0x6bc0878939669339e82dbFa13d260c89230f2c31` and use ABI-encoded data for the function set_enable_epoch(next_epoch) as the calldata (_data).
+
+   <AbiEncodingWidget defaultAbi='yPoolsInclusionVoteABI' defaultFunction='set_enable_epoch' functionArg='20'/>
+
 2. To enable multiple calls in a single proposal, concatenate the scripts together.
 
 ## Step 2: Submit a Governance Proposal

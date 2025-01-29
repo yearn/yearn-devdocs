@@ -31,7 +31,6 @@ import {
   ResponsiveContainer,
 } from 'recharts'
 import styles from '../css/veYFI-calc.module.css'
-import Label from './shadcn/label/label'
 import { Button } from './shadcn/button/button'
 import VeYFILockCalculator from './VeYFILockCalculator' // Import the new component
 
