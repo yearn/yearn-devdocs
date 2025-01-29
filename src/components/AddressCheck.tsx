@@ -2,14 +2,26 @@ import React from 'react'
 import styles from '../css/AddressCheck.module.css'
 import fetchedAddressData from '../../scripts/fetchedAddressData.json'
 
-function AddressCheck() {
+// I want to make a type for the value I pass into Address check. It should be an enum of 'v3' or 'veYfi'
+type AddressCheckProps = {
+  contractType: 'v3' | 'veYFI'
+}
+
+function AddressCheck({ contractType }: AddressCheckProps) {
   const data = fetchedAddressData
   const lastTimeCheckedUTC = new Date(
     data.timeLastChecked * 1000
   ).toLocaleString('en-US', { timeZone: 'UTC' }) // modified comment
   const checks = data.addressChecks
   const failedChecks = checks.failedChecks
-  const allChecksPassed = checks.allChecksPassed
+  let allChecksPassed
+  if (contractType === 'v3') {
+    allChecksPassed = checks.allV3ChecksPassed
+  } else if (contractType === 'veYFI') {
+    allChecksPassed = checks.allVeYfiChecksPassed
+  } else {
+    throw new Error('Invalid contract type')
+  }
 
   const loading = !checks || Object.keys(checks).length === 0
 
@@ -38,7 +50,7 @@ function AddressCheck() {
           <span className={styles.icon}>✅ </span>
           <span>
             All Addresses on this page match on-chain data. Last checked on:{' '}
-            {lastTimeCheckedUTC}
+            {lastTimeCheckedUTC} UTC
           </span>
         </div>
       ) : (

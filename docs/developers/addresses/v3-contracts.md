@@ -1,6 +1,8 @@
 # yVaults v3 Contract Addresses
 
-<AddressCheck />
+
+<AddressCheck contractType='v3'/>
+
 
 :::info
 

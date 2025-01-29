@@ -1,0 +1,23 @@
+.CardContent {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding: 0 1.5rem 0 1.5rem;
+  gap: 1rem;
+}
+
+.inputElements {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  width: 100%;
+}
+
+.CardFooter {
+  display: flex;
+  align-items: center;
+  padding: 1.5rem;
+  padding-top: 0;
+  justify-content: space-between;
+  padding-top: 1rem;
+}

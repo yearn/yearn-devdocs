@@ -1,0 +1,3 @@
+# veYFI Boost Calculator
+
+<VeYFICalculator />
