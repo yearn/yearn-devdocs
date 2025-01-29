@@ -1,14 +1,11 @@
 ---
-
 rpcCalls:  
-
-- name: 'yPools Inclusion'
+  - name: 'yPools Inclusion'
     chain: '1'
     address: '0x6bc0878939669339e82dbFa13d260c89230f2c31'
     abiName: 'yPoolsInclusionVoteABI'
     methods:  
-  - 'epoch'
-
+      - 'epoch'
 ---
 <!-- markdownlint-disable MD037 -->
 
