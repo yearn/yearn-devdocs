@@ -6,9 +6,14 @@ import {
   fetchAndCheckFromReleaseRegistry,
   fetchAndCheckProtocolAddresses,
   fetchAndCheckYearnV3Addresses,
-} from '../src/ethereum/checks'
+} from '../src/ethereum/v3Checks'
+import { veYfiChecks } from '../src/ethereum/veYfiChecks'
 import { yfiContracts, veYfiContracts } from '../src/ethereum/constants'
-import { ContractAddresses, AddressChecks } from '../src/ethereum/types'
+import {
+  ContractAddresses,
+  AddressChecks,
+  V3ContractAddresses,
+} from '../src/ethereum/types'
 import { mainnet } from 'viem/chains'
 
 dotenv.config()
@@ -25,65 +30,92 @@ const publicClient = createPublicClient({
 
 const fetchAddresses = async () => {
   try {
-    let checkFlag: boolean | undefined
+    let v3CheckFlag: boolean | undefined
     const failedChecks: string[] = []
-    checkFlag = true
+    v3CheckFlag = true
     const topLevelData = await fetchTopLevelAddressesFromENS(
       publicClient,
-      checkFlag,
+      v3CheckFlag,
       failedChecks
     )
-    checkFlag = topLevelData?.checkFlag
+    v3CheckFlag = topLevelData?.checkFlag
+    
     if (!topLevelData)
       throw new Error('Failed to fetch top-level contract addresses')
 
     const protocolPeripheryData = await fetchAndCheckProtocolAddresses(
       topLevelData.addresses.v3ProtocolAddressProvider,
       publicClient,
-      checkFlag,
+      v3CheckFlag,
       failedChecks
     )
-    checkFlag = protocolPeripheryData?.checkFlag
+    v3CheckFlag = protocolPeripheryData?.checkFlag
+
     if (!protocolPeripheryData || !protocolPeripheryData?.addresses)
       throw new Error('Failed to fetch protocol addresses')
 
     const releaseRegistryData = await fetchAndCheckFromReleaseRegistry(
       topLevelData.addresses.v3ReleaseRegistry,
       publicClient,
-      checkFlag,
+      v3CheckFlag,
       failedChecks
     )
-    checkFlag = releaseRegistryData?.checkFlag
+    v3CheckFlag = releaseRegistryData?.checkFlag
     if (!releaseRegistryData)
       throw new Error('Failed to fetch release registry addresses')
 
     const yearnV3Data = await fetchAndCheckYearnV3Addresses(
       topLevelData.addresses.v3RoleManager,
       publicClient,
-      checkFlag,
+      v3CheckFlag,
       failedChecks
     )
-    checkFlag = yearnV3Data?.checkFlag
+    v3CheckFlag = yearnV3Data?.checkFlag
     if (!yearnV3Data) throw new Error('Failed to fetch Yearn V3 addresses')
 
-    const addressesData: ContractAddresses = {
+    const v3AddressData: V3ContractAddresses = {
+
       topLevel: topLevelData.addresses,
       protocolPeriphery: protocolPeripheryData.addresses,
       releaseRegistry: releaseRegistryData.addresses,
       yearnV3: yearnV3Data.addresses,
+    }
+
+    let veYfiCheckFlag: boolean | undefined
+    veYfiCheckFlag = true
+    const veYfiData = await veYfiChecks(
+      publicClient,
+      veYfiCheckFlag,
+      failedChecks
+    )
+    veYfiCheckFlag = veYfiData?.checkFlag
+    if (!veYfiData) throw new Error('Failed to fetch veYFI gauge addresses')
+
+    const addressesData: ContractAddresses = {
+      v3ContractAddresses: v3AddressData,
       yfiTokenContracts: yfiContracts,
       veYfiContracts: veYfiContracts,
+      veYfiGaugeAddresses: veYfiData.veYfiGaugeAddresses,
     }
 
     const addressChecks = {
-      allChecksPassed: checkFlag,
+      allV3ChecksPassed: v3CheckFlag,
+      allVeYfiChecksPassed: veYfiCheckFlag,
       failedChecks,
-      topLevel: topLevelData.checks,
-      protocolPeriphery: protocolPeripheryData.checks,
-      releaseRegistry: releaseRegistryData.checks,
-      yearnV3: yearnV3Data.checks,
+      v3Checks: {
+        topLevel: topLevelData.checks,
+        protocolPeriphery: protocolPeripheryData.checks,
+        releaseRegistry: releaseRegistryData.checks,
+        yearnV3: yearnV3Data.checks,
+      },
+      veYfiChecks: veYfiData.veYfiGaugeChecks,
     }
-    if (checkFlag === false || checkFlag === undefined) {
+    if (
+      v3CheckFlag === false ||
+      v3CheckFlag === undefined ||
+      veYfiCheckFlag === false ||
+      veYfiCheckFlag === undefined
+    ) {
       console.log('Addresses:', addressesData)
       console.log('Checks:', addressChecks)
     } else {
@@ -98,10 +130,9 @@ const fetchAddresses = async () => {
 async function runAddressCheck() {
   let addressesData, addressChecks // declare variables outside the if block
   if (publicClient) {
-    ;({ addressesData, addressChecks } = (await fetchAddresses()) as {
-      addressesData: ContractAddresses
-      addressChecks: AddressChecks
-    })
+    const result = await fetchAddresses()
+    addressesData = result?.addressesData
+    addressChecks = result?.addressChecks
   }
   const timeLastChecked = Math.floor(Date.now() / 1000) // get current time in Unix format
   console.log('writing report to scripts/fetchedAddressData.json')

@@ -4,6 +4,7 @@ import PrettyLink from '@site/src/components/PrettyLink'
 import ContractData from '@site/src/components/ContractData'
 import ContractAddress from '@site/src/components/StaticContractAddress'
 import AddressCheck from '@site/src/components/AddressCheck'
+import VeYFICalculator from '../components/veYFI-calculator'
 import GovDataYPools from '@site/src/components/GovDataYPools'
 
 /**
@@ -15,5 +16,6 @@ export default {
   ContractData,
   ContractAddress,
   AddressCheck,
+  VeYFICalculator,
   GovDataYPools,
 }

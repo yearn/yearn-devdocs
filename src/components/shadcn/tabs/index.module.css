@@ -1,0 +1,54 @@
+.TabsList {
+  display: inline-flex;
+  height: 3.5rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius);
+  background-color: transparent;
+  padding: 0.25rem;
+  color: hsl(var(--foreground));
+  width: 100%; /* Modified to fill the width of the containing element */
+  gap: 0.5rem;
+}
+
+.TabsTrigger {
+  display: flex; /* Modified to flex to fill the parent container */
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  border-radius: var(--radius);
+  background-color: var(--ifm-background-color);
+  padding: 0.75rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  outline: none;
+  transition: all 0.3s ease;
+  flex: 1; /* Modified to fill the TabsList element */
+  border: 1px solid hsla(var(--border) / 0.5);
+  box-shadow: 3px 3px 5px hsl(var(--shadow-color));
+}
+
+.TabsTrigger:focus-visible {
+  box-shadow: 0 0 0 2px hsl(var(--ring)), 0 0 0 4px hsl(var(--ring));
+}
+
+.TabsTrigger:disabled {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.TabsTrigger[data-state='active'] {
+  background-color: var(--ifm-color-primary);
+  color: hsl(var(--background));
+  box-shadow: inset 3px 3px 5px hsla(0, 0%, 0%, 0.5);
+}
+
+.TabsContent {
+  margin-top: 0.5rem;
+  outline: none;
+}
+
+.TabsContent:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px hsl(var(--ring)), 0 0 0 4px hsl(var(--ring));
+}
