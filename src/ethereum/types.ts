@@ -71,7 +71,8 @@ export type VeYfiGauge = {
 }
 
 export type AddressChecks = {
-  allChecksPassed: boolean | undefined
+  allV3ChecksPassed: boolean | undefined
+  allVeYfiChecksPassed: boolean | undefined
   failedChecks: string[]
   v3Checks: {
     topLevel: {
@@ -86,5 +87,5 @@ export type AddressChecks = {
     releaseRegistry: { [key: string]: boolean }
     yearnV3: { [key: string]: boolean }
   }
-  veYFiChecks: GaugeCheckRecord
+  veYfiChecks: GaugeCheckRecord
 }
