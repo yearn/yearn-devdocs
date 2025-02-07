@@ -13,13 +13,56 @@ jobs:
       - name: Test Build
         run: |
           if [ -e yarn.lock ]; then
-          yarn install
+            yarn install
+            yarn global add ts-node
           elif [ -e package-lock.json ]; then
-          npm ci
+            npm ci
+            npm install -g ts-node
           else
-          npm i
+            npm install
+            npm install -g ts-node
           fi
           npm run build
+      - name: Run checks and update data
+        env:
+          ALCHEMY_API_KEY: ${{ secrets.ALCHEMY_API_KEY }}
+        run: |
+          ts-node scripts/runAddressChecks.ts
+
+      - name: Check if all checks passed
+        id: check_all_passed
+        run: |
+          V3_CHECKS_PASSED=$(jq -r '.addressChecks.allV3ChecksPassed' scripts/fetchedAddressData.json)
+          VEYFI_CHECKS_PASSED=$(jq -r '.addressChecks.allVeYfiChecksPassed' scripts/fetchedAddressData.json)
+          echo "V3 Checks Passed: $V3_CHECKS_PASSED"
+          echo "veYFI Checks Passed: $VEYFI_CHECKS_PASSED"
+          if [ "$V3_CHECKS_PASSED" = "true" ] && [ "$VEYFI_CHECKS_PASSED" = "true" ]; then
+            ALL_CHECKS_PASSED=true
+          else
+            ALL_CHECKS_PASSED=false
+          fi
+          echo "All checks passed: $ALL_CHECKS_PASSED"
+          echo "all_checks_passed=$ALL_CHECKS_PASSED" >> $GITHUB_ENV
+          if [ "$ALL_CHECKS_PASSED" != "true" ]; then
+            echo "Generating issue content..."
+            echo ":robot::warning: **Automatic Address Checks have failed!** :warning::robot:" > issue_body.md 
+            echo "The following contracts have changed:" >> issue_body.md
+            jq -r '.addressChecks.failedChecks[]' scripts/fetchedAddressData.json | while read CHECK; do
+                echo "- $CHECK" >> issue_body.md
+            done
+            echo "" >> issue_body.md
+            echo "The addresses shown above should be the updated, correct addresses. Please review and change the values in \`src/ethereum/constants.ts\`." >> issue_body.md
+          fi
+
+      - name: Create an issue if checks failed
+        if: env.all_checks_passed != 'true'
+        run: |
+          curl -H "Authorization: Bearer ${{ secrets.ADDRESS_CHECKS }}" \
+          -H "Content-Type: application/json" \
+          -d "$(jq -n --arg title ':robot: Address Checks Failed' --arg body "$(cat issue_body.md)" '{title: $title, body: $body}')" \
+          https://api.github.com/repos/yearn/yearn-devdocs/issues
+          echo "Issue created"
+
       - name: Trigger Algolia Recrawl
         if: github.event_name != 'pull_request'
         run: |
