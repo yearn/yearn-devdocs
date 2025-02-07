@@ -5,6 +5,8 @@ on: [push, pull_request]
 jobs:
   build-and-release:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -23,13 +25,13 @@ jobs:
             npm install -g ts-node
           fi
           npm run build
-      - name: Run checks and update data
+      - name: Run address checks
         env:
           ALCHEMY_API_KEY: ${{ secrets.ALCHEMY_API_KEY }}
         run: |
           ts-node scripts/runAddressChecks.ts
 
-      - name: Check if all checks passed
+      - name: confirm whether address checks passed
         id: check_all_passed
         run: |
           V3_CHECKS_PASSED=$(jq -r '.addressChecks.allV3ChecksPassed' scripts/fetchedAddressData.json)
@@ -54,7 +56,7 @@ jobs:
             echo "The addresses shown above should be the updated, correct addresses. Please review and change the values in \`src/ethereum/constants.ts\`." >> issue_body.md
           fi
 
-      - name: Create an issue if checks failed
+      - name: Create an issue if address checks fail
         if: env.all_checks_passed != 'true'
         run: |
           curl -H "Authorization: Bearer ${{ secrets.ADDRESS_CHECKS }}" \
