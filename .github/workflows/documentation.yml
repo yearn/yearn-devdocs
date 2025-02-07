@@ -25,13 +25,26 @@ jobs:
             npm install -g ts-node
           fi
           npm run build
+
+      - name: Check if PR is from a fork
+        id: check_fork
+        run: |
+          if [ "${{ github.event.pull_request.head.repo.full_name }}" != "${{ github.repository }}" ]; then
+            echo "PR is from a fork"
+            echo "is_fork=true" >> $GITHUB_ENV
+          else
+            echo "PR is not from a fork"
+            echo "is_fork=false" >> $GITHUB_ENV
+
       - name: Run address checks
+        if: env.is_fork != 'true'
         env:
           ALCHEMY_API_KEY: ${{ secrets.ALCHEMY_API_KEY }}
         run: |
           ts-node scripts/runAddressChecks.ts
 
       - name: confirm whether address checks passed
+        if: env.is_fork != 'true'
         id: check_all_passed
         run: |
           V3_CHECKS_PASSED=$(jq -r '.addressChecks.allV3ChecksPassed' scripts/fetchedAddressData.json)
@@ -57,7 +70,7 @@ jobs:
           fi
 
       - name: Create an issue if address checks fail
-        if: env.all_checks_passed != 'true'
+        if: env.is_fork != 'true' && env.all_checks_passed != 'true'
         run: |
           curl -H "Authorization: Bearer ${{ secrets.ADDRESS_CHECKS }}" \
           -H "Content-Type: application/json" \
