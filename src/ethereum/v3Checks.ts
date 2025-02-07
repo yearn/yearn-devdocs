@@ -38,7 +38,7 @@ export const fetchTopLevelAddressesFromENS = async (
     'v3ProtocolAddressProvider',
     failedChecks
   )
-  const v3ProtocolAddressProviderCheck = validateAddress(
+  const v3ProtocolAddressProviderCheck = await validateAddress(
     constants.topLevel.protocolAddressProvider,
     'v3ProtocolAddressProvider',
     v3ProtocolAddressProvider,
@@ -55,7 +55,7 @@ export const fetchTopLevelAddressesFromENS = async (
     'v3ReleaseRegistry',
     failedChecks
   )
-  const v3ReleaseRegistryCheck = validateAddress(
+  const v3ReleaseRegistryCheck = await validateAddress(
     constants.topLevel.releaseRegistry,
     'v3ReleaseRegistry',
     v3ReleaseRegistry,
@@ -70,7 +70,7 @@ export const fetchTopLevelAddressesFromENS = async (
       'v3RoleManager',
       failedChecks
     )
-  const v3RoleManagerCheck = validateAddress(
+  const v3RoleManagerCheck = await validateAddress(
     constants.yearnV3RoleManager.roleManager,
     'v3RoleManager',
     v3RoleManager,
