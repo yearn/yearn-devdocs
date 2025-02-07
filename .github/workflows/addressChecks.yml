@@ -57,14 +57,11 @@ jobs:
           echo "all_checks_passed=$ALL_CHECKS_PASSED" >> $GITHUB_ENV
           if [ "$ALL_CHECKS_PASSED" != "true" ]; then
             echo "Generating issue content..."
-            echo "Automatic Address Checks have failed. The following contracts have changed:" > issue_body.md
+            echo ":robot::alert: Automatic Address Checks have failed! :alert::robot: The following contracts have changed:" > issue_body.md
             jq -r '.addressChecks.failedChecks[]' scripts/fetchedAddressData.json | while read CHECK; do
                 echo "- $CHECK" >> issue_body.md
             done
             echo "The addresses shown above should be the updated, correct addresses. Please review and change the values in \`src/ethereum/constants.ts\`." >> issue_body.md
-            echo "" >> issue_body.md
-            echo "Updated fetchedAddressData.json content:" >> issue_body.md
-            cat scripts/fetchedAddressData.json >> issue_body.md
           fi
 
       - name: Create an issue if checks failed
