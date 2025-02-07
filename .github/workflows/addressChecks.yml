@@ -57,7 +57,8 @@ jobs:
           echo "all_checks_passed=$ALL_CHECKS_PASSED" >> $GITHUB_ENV
           if [ "$ALL_CHECKS_PASSED" != "true" ]; then
             echo "Generating issue content..."
-            echo ":robot: :warning: Automatic Address Checks have failed! :warning: :robot: The following contracts have changed:" > issue_body.md
+            echo ":robot::warning: **Automatic Address Checks have failed!** :warning::robot:" > issue_body.md 
+            echo "The following contracts have changed:" >> issue_body.md
             jq -r '.addressChecks.failedChecks[]' scripts/fetchedAddressData.json | while read CHECK; do
                 echo "- $CHECK" >> issue_body.md
             done
