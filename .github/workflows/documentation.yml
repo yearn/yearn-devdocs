@@ -35,6 +35,7 @@ jobs:
           else
             echo "PR is not from a fork"
             echo "is_fork=false" >> $GITHUB_ENV
+          fi
 
       - name: Run address checks
         if: env.is_fork != 'true'
