@@ -44,27 +44,33 @@ jobs:
       - name: Check if all checks passed
         id: check_all_passed
         run: |
-          ALL_CHECKS_PASSED=$(jq -r '.addressChecks.allChecksPassed' scripts/fetchedAddressData.json)
+          V3_CHECKS_PASSED=$(jq -r '.addressChecks.allV3ChecksPassed' scripts/fetchedAddressData.json)
+          VEYFI_CHECKS_PASSED=$(jq -r '.addressChecks.allVeYfiChecksPassed' scripts/fetchedAddressData.json)
+          echo "V3 Checks Passed: $V3_CHECKS_PASSED"
+          echo "veYFI Checks Passed: $VEYFI_CHECKS_PASSED"
+          if [ "$V3_CHECKS_PASSED" = "true" ] && [ "$VEYFI_CHECKS_PASSED" = "true" ]; then
+            ALL_CHECKS_PASSED=true
+          else
+            ALL_CHECKS_PASSED=false
+          fi
           echo "All checks passed: $ALL_CHECKS_PASSED"
           echo "all_checks_passed=$ALL_CHECKS_PASSED" >> $GITHUB_ENV
           if [ "$ALL_CHECKS_PASSED" != "true" ]; then
             echo "Generating issue content..."
-            echo "Automatic Address Checks have failed. The following contracts have changed:" > issue_body.md
+            echo ":robot::warning: **Automatic Address Checks have failed!** :warning::robot:" > issue_body.md 
+            echo "The following contracts have changed:" >> issue_body.md
             jq -r '.addressChecks.failedChecks[]' scripts/fetchedAddressData.json | while read CHECK; do
                 echo "- $CHECK" >> issue_body.md
             done
-            echo "The addresses shown above should be the updated, correct addresses. Please review and change the values in \`src/ethereum/constants.ts\`." >> issue_body.md
             echo "" >> issue_body.md
-            echo "Updated fetchedAddressData.json content:" >> issue_body.md
-            cat scripts/fetchedAddressData.json >> issue_body.md
+            echo "The addresses shown above should be the updated, correct addresses. Please review and change the values in \`src/ethereum/constants.ts\`." >> issue_body.md
           fi
-
 
       - name: Create an issue if checks failed
         if: env.all_checks_passed != 'true'
         uses: peter-evans/create-issue-from-file@v4
         with:
-          token: ${{ secrets.RG_ISSUES_TOKEN }}
+          token: ${{ secrets.ADDRESS_CHECKS }}
           title: 'Address Checks Failed'
           content-filepath: 'issue_body.md'
           labels: 'address-checks, alert'
