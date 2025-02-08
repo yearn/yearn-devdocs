@@ -1,7 +1,5 @@
 # Yearn DAO
 
-![image](/img/dao-pages/here-we-are-cropped.jpg)
-
 Yearn is a collective of developers, users, thinkers, and doers all working toward making the best suite of on-chain, decentralized, yield products. There are no bosses or interns, no board of directors or HR department, only those who contribute to, participate in, and explore Yearn. Yearn started as an experiment with a week long release of YFI and continues as an experiment today.
 
 ## Governance
