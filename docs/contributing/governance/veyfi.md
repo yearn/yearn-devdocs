@@ -60,8 +60,6 @@ veYFI incorporates [YIP-56: Buyback and Build](https://gov.yearn.fi/t/yip-56-buy
 
   :::
 
-  ![image](/img/charts/dyfi-redemption-chart.png)
-
 ## Vault Gauges + Voting
 
 - Vault gauges allow vault depositors to stake their vault tokens and earn dYFI rewards according to their veYFI weight.
