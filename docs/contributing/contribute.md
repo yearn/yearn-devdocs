@@ -104,7 +104,7 @@ This is complementary to the above, but it's not directly related to creating st
 - [Yearn Governance Forum](https://gov.yearn.fi/)
 - [Yearn Snapshot Governance Voting](https://snapshot.org/#/ybaby.eth)
 
-#### List of Yearn Tools
+### List of Yearn Tools
 
 - [Yearn Watch](https://yearn.watch/), [Github](https://github.com/yearn/yearn-watch)
 - Yearn Subgraphs, [Ethereum](https://thegraph.com/explorer/subgraph?id=0xf50b705e4eaba269dfe954f10c65bd34e6351e0c-0&version=0xf50b705e4eaba269dfe954f10c65bd34e6351e0c-0-0&view=Overview), [Fantom](https://thegraph.com/hosted-service/subgraph/yearn/yearn-vaults-v2-fantom), [Github](https://github.com/yearn/yearn-vaults-v2-subgraph)
@@ -113,7 +113,7 @@ This is complementary to the above, but it's not directly related to creating st
 - [Yearn Vision](https://yearn.vision/)
 - Yearn Discord FAQ Bot, [Github](https://github.com/dgornjakovic/yfi-faq-bot)
 
-#### Contributors Websites
+### Contributors Websites
 
 - [yCosystem (Yearn Community Aggregator)](https://ycosystem.info/) - Repository Of Yearn Links
 - [YFI Address Stats](https://www.yfistats.com/) - Yearn Financial Information
