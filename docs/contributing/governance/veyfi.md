@@ -59,8 +59,8 @@ veYFI incorporates [YIP-56: Buyback and Build](https://gov.yearn.fi/t/yip-56-buy
   - ETH required to redeem 1 dYFI: <ContractData contract='dYFI Redemption' methodName='eth_required' decimals={18} />
 
   :::
-
-  ![image](/img/charts/dyfi-redemption-chart.png)
+  
+![image](/img/charts/dyfi-redemption-chart.png)
 
 ## Vault Gauges + Voting
 
