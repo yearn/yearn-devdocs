@@ -139,6 +139,25 @@ async function runAddressCheck() {
       throw new Error('Failed to fetch addresses')
     }
   }
+
+  const allChecksPassed =
+    addressChecks.allV3ChecksPassed && addressChecks.allVeYfiChecksPassed
+  process.env.ALL_CHECKS_PASSED = allChecksPassed ? 'true' : 'false'
+
+  if (addressChecks.failedChecks.length > 0) {
+    console.log('Generating issue content...')
+    let issueContent =
+      ':robot::warning: **Automatic Address Checks have failed!** :warning::robot:\n'
+    issueContent += 'The following contracts have changed:\n'
+    addressChecks.failedChecks.forEach((check: string) => {
+      issueContent += `- ${check}\n`
+    })
+    issueContent +=
+      '\nThe addresses shown above should be the updated, correct addresses. Please review and change the values in `src/ethereum/constants.ts`.\n'
+
+    fs.writeFileSync('issue_body.md', issueContent)
+    console.log('Issue content generated.')
+  }
   const timeLastChecked = Math.floor(Date.now() / 1000) // get current time in Unix format
   console.log('writing report to scripts/fetchedAddressData.json')
   fs.writeFileSync(

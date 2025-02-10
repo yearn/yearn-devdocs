@@ -44,32 +44,6 @@ jobs:
         run: |
           ts-node scripts/runAddressChecks.ts
 
-      - name: confirm whether address checks passed
-        if: env.is_fork != 'true'
-        id: check_all_passed
-        run: |
-          V3_CHECKS_PASSED=$(jq -r '.addressChecks.allV3ChecksPassed' scripts/fetchedAddressData.json)
-          VEYFI_CHECKS_PASSED=$(jq -r '.addressChecks.allVeYfiChecksPassed' scripts/fetchedAddressData.json)
-          echo "V3 Checks Passed: $V3_CHECKS_PASSED"
-          echo "veYFI Checks Passed: $VEYFI_CHECKS_PASSED"
-          if [ "$V3_CHECKS_PASSED" = "true" ] && [ "$VEYFI_CHECKS_PASSED" = "true" ]; then
-            ALL_CHECKS_PASSED=true
-          else
-            ALL_CHECKS_PASSED=false
-          fi
-          echo "All checks passed: $ALL_CHECKS_PASSED"
-          echo "all_checks_passed=$ALL_CHECKS_PASSED" >> $GITHUB_ENV
-          if [ "$ALL_CHECKS_PASSED" != "true" ]; then
-            echo "Generating issue content..."
-            echo ":robot::warning: **Automatic Address Checks have failed!** :warning::robot:" > issue_body.md 
-            echo "The following contracts have changed:" >> issue_body.md
-            jq -r '.addressChecks.failedChecks[]' scripts/fetchedAddressData.json | while read CHECK; do
-                echo "- $CHECK" >> issue_body.md
-            done
-            echo "" >> issue_body.md
-            echo "The addresses shown above should be the updated, correct addresses. Please review and change the values in \`src/ethereum/constants.ts\`." >> issue_body.md
-          fi
-
       - name: Create an issue if address checks fail
         if: env.is_fork != 'true' && env.all_checks_passed != 'true'
         run: |
