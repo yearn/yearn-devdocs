@@ -47,3 +47,4 @@ jobs:
           -d "$(jq -n --arg title ':robot: Address Checks Failed' --arg body "$(cat issue_body.md)" '{title: $title, body: $body}')" \
           https://api.github.com/repos/yearn/yearn-devdocs/issues
           echo "Issue created"
+
