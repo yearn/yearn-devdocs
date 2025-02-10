@@ -5,6 +5,8 @@ on: [push, pull_request]
 jobs:
   build-and-release:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -13,13 +15,44 @@ jobs:
       - name: Test Build
         run: |
           if [ -e yarn.lock ]; then
-          yarn install
+            yarn install
+            yarn global add ts-node
           elif [ -e package-lock.json ]; then
-          npm ci
+            npm ci
+            npm install -g ts-node
           else
-          npm i
+            npm install
+            npm install -g ts-node
           fi
           npm run build
+
+      - name: Check if PR is from a fork
+        id: check_fork
+        run: |
+          if [ "${{ github.event.pull_request.head.repo.full_name }}" != "${{ github.repository }}" ]; then
+            echo "PR is from a fork"
+            echo "is_fork=true" >> $GITHUB_ENV
+          else
+            echo "PR is not from a fork"
+            echo "is_fork=false" >> $GITHUB_ENV
+          fi
+
+      - name: Run address checks
+        if: env.is_fork != 'true'
+        env:
+          ALCHEMY_API_KEY: ${{ secrets.ALCHEMY_API_KEY }}
+        run: |
+          ts-node scripts/runAddressChecks.ts
+
+      - name: Create an issue if address checks fail
+        if: env.is_fork != 'true' && env.all_checks_passed != 'true'
+        run: |
+          curl -H "Authorization: Bearer ${{ secrets.ADDRESS_CHECKS }}" \
+          -H "Content-Type: application/json" \
+          -d "$(jq -n --arg title ':robot: Address Checks Failed' --arg body "$(cat issue_body.md)" '{title: $title, body: $body}')" \
+          https://api.github.com/repos/yearn/yearn-devdocs/issues
+          echo "Issue created"
+
       - name: Trigger Algolia Recrawl
         if: github.event_name != 'pull_request'
         run: |
