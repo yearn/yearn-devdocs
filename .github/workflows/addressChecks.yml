@@ -40,7 +40,7 @@ jobs:
           ts-node scripts/runAddressChecks.ts
 
       - name: Create an issue if checks failed
-        if: env.all_checks_passed != 'true'
+        if: env.all_checks_passed != 'true' && env.all_checks_passed != 'true'
         run: |
           curl -H "Authorization: Bearer ${{ secrets.ADDRESS_CHECKS }}" \
           -H "Content-Type: application/json" \
