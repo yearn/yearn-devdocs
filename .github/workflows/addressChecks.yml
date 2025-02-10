@@ -38,13 +38,13 @@ jobs:
           ALCHEMY_API_KEY: ${{ secrets.ALCHEMY_API_KEY }}
         run: |
           ts-node scripts/runAddressChecks.ts
+          echo ${{ env.all_checks_passed }}
 
       - name: Create an issue if checks failed
-        if: env.all_checks_passed != 'true' && env.all_checks_passed != 'true'
+        if: env.all_checks_passed != 'true'
         run: |
           curl -H "Authorization: Bearer ${{ secrets.ADDRESS_CHECKS }}" \
           -H "Content-Type: application/json" \
           -d "$(jq -n --arg title ':robot: Address Checks Failed' --arg body "$(cat issue_body.md)" '{title: $title, body: $body}')" \
           https://api.github.com/repos/yearn/yearn-devdocs/issues
           echo "Issue created"
-
