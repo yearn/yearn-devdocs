@@ -43,9 +43,10 @@ jobs:
           ALCHEMY_API_KEY: ${{ secrets.ALCHEMY_API_KEY }}
         run: |
           ts-node scripts/runAddressChecks.ts
+          echo "ALL_CHECKS_PASSED=$(cat all_checks_passed.txt)" >> $GITHUB_ENV
 
       - name: Create an issue if address checks fail
-        if: env.is_fork != 'true' && env.all_checks_passed != 'true'
+        if: env.is_fork != 'true' && env.ALL_CHECKS_PASSED != 'true'
         run: |
           curl -H "Authorization: Bearer ${{ secrets.ADDRESS_CHECKS }}" \
           -H "Content-Type: application/json" \

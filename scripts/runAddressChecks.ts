@@ -143,6 +143,9 @@ async function runAddressCheck() {
   const allChecksPassed =
     addressChecks.allV3ChecksPassed && addressChecks.allVeYfiChecksPassed
   process.env.ALL_CHECKS_PASSED = allChecksPassed ? 'true' : 'false'
+  console.log('allChecksPassed: ', process.env.ALL_CHECKS_PASSED)
+
+  fs.writeFileSync('all_checks_passed.txt', process.env.ALL_CHECKS_PASSED)
 
   if (addressChecks.failedChecks.length > 0) {
     console.log('Generating issue content...')
