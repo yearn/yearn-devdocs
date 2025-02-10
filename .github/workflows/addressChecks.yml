@@ -38,7 +38,7 @@ jobs:
           ALCHEMY_API_KEY: ${{ secrets.ALCHEMY_API_KEY }}
         run: |
           ts-node scripts/runAddressChecks.ts
-          echo ${{ env.ALL_CHECKS_PASSED }}
+          echo "ALL_CHECKS_PASSED=$(cat all_checks_passed.txt)" >> $GITHUB_ENV
 
       - name: Create an issue if checks failed
         if: env.ALL_CHECKS_PASSED != 'true'
