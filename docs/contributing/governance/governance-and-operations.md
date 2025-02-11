@@ -10,7 +10,7 @@ Multi-DAO refers to the fluid number of decentralized autonomous organizations (
 - **yTeams** focus on specific aspects of the protocol or relevant operations
 - **Multisig** members execute or veto any on-chain decisions
 
-Token holders have an ultimate say over what yTeams exist, who is part of the Multisig, and the limitations of each group's operational control. The term 'constrained delgation' originates from token holders delegating specific powers to various groups building and managing yearn.
+Token holders have an ultimate say over what yTeams exist, who is part of the Multisig, and the limitations of each group's operational control. The term 'constrained delegation' originates from token holders delegating specific powers to various groups building and managing yearn.
 
 A simplified flow of governance would look like this:
 
@@ -51,7 +51,7 @@ Specifically, these proposals allow token holders to make the following decision
 
 ### yTeams
 
-Each yTeam has an objective and discrete powers which are defined by token holders. yTeams can be broken into membership pools, separating groups of contributors working towards similar goals as the overarching team. Additionally, one membership pool can bet a part of multiple yTeams.
+Each yTeam has an objective and discrete powers which are defined by token holders. yTeams can be broken into membership pools, separating groups of contributors working towards similar goals as the overarching team. Additionally, one membership pool can be a part of multiple yTeams.
 
 | yTeam   | Objective               | Membership Pool                                                       |
 | ------- | ----------------------- | --------------------------------------------------------------------- |
