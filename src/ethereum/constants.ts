@@ -181,7 +181,6 @@ export const protocolPeriphery = {
   keeper: '0x52605BbF54845f520a3E94792d019f62407db2f8',
   aprOracleENS: 'apr.oracle.v3.ychad.eth',
   aprOracle: '0x1981AD9F44F2EA9aDd2dC4AD7D075c102C70aF92',
-  releaseRegistry: '0x1981ad9f44f2ea9add2dc4ad7d075c102c70af92',
   baseFeeProvider: '0xe0514dd71cfdc30147e76f65c30bdf60bfd437c3',
   commonReportTrigger: '0xa045d4daea28ba7bfe234c96eaa03dafae85a147',
   auctionFactory: '0xE6aB098E8582178A76DC80d55ca304d1Dec11AD8',

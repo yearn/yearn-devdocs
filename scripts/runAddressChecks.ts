@@ -74,7 +74,6 @@ const fetchAddresses = async () => {
     if (!yearnV3Data) throw new Error('Failed to fetch Yearn V3 addresses')
 
     const v3AddressData: V3ContractAddresses = {
-
       topLevel: topLevelData.addresses,
       protocolPeriphery: protocolPeripheryData.addresses,
       releaseRegistry: releaseRegistryData.addresses,
@@ -98,7 +97,7 @@ const fetchAddresses = async () => {
       veYfiGaugeAddresses: veYfiData.veYfiGaugeAddresses,
     }
 
-    const addressChecks = {
+    const addressChecks: AddressChecks = {
       allV3ChecksPassed: v3CheckFlag,
       allVeYfiChecksPassed: veYfiCheckFlag,
       failedChecks,
@@ -128,11 +127,39 @@ const fetchAddresses = async () => {
 }
 
 async function runAddressCheck() {
-  let addressesData, addressChecks // declare variables outside the if block
+  let addressesData: ContractAddresses = {} as ContractAddresses // initialize with default value
+  let addressChecks: AddressChecks = {} as AddressChecks // initialize with default value
   if (publicClient) {
     const result = await fetchAddresses()
-    addressesData = result?.addressesData
-    addressChecks = result?.addressChecks
+    if (result) {
+      // added null check for result
+      addressesData = result.addressesData
+      addressChecks = result.addressChecks
+    } else {
+      throw new Error('Failed to fetch addresses')
+    }
+  }
+
+  const allChecksPassed =
+    addressChecks.allV3ChecksPassed && addressChecks.allVeYfiChecksPassed
+  process.env.ALL_CHECKS_PASSED = allChecksPassed ? 'true' : 'false'
+  console.log('allChecksPassed: ', process.env.ALL_CHECKS_PASSED)
+
+  fs.writeFileSync('all_checks_passed.txt', process.env.ALL_CHECKS_PASSED)
+
+  if (addressChecks.failedChecks.length > 0) {
+    console.log('Generating issue content...')
+    let issueContent =
+      ':robot::warning: **Automatic Address Checks have failed!** :warning::robot:\n'
+    issueContent += 'The following contracts have changed:\n'
+    addressChecks.failedChecks.forEach((check: string) => {
+      issueContent += `- ${check}\n`
+    })
+    issueContent +=
+      '\nThe addresses shown above should be the updated, correct addresses. Please review and change the values in `src/ethereum/constants.ts`.\n'
+
+    fs.writeFileSync('issue_body.md', issueContent)
+    console.log('Issue content generated.')
   }
   const timeLastChecked = Math.floor(Date.now() / 1000) // get current time in Unix format
   console.log('writing report to scripts/fetchedAddressData.json')

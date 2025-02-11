@@ -71,20 +71,21 @@ export type VeYfiGauge = {
 }
 
 export type AddressChecks = {
-  allChecksPassed: boolean | undefined
+  allV3ChecksPassed: boolean | undefined
+  allVeYfiChecksPassed: boolean | undefined
   failedChecks: string[]
   v3Checks: {
     topLevel: {
-      v3ProtocolAddressProviderCheck: Promise<boolean>
+      v3ProtocolAddressProviderCheck: boolean
       v3ProtocolAddressProviderENSCheck: boolean
-      v3ReleaseRegistryCheck: Promise<boolean>
+      v3ReleaseRegistryCheck: boolean
       v3ReleaseRegistryENSCheck: boolean
-      v3RoleManagerCheck: Promise<boolean>
+      v3RoleManagerCheck: boolean
       v3RoleManagerENSCheck: boolean
     }
     protocolPeriphery: { [key: string]: boolean }
     releaseRegistry: { [key: string]: boolean }
     yearnV3: { [key: string]: boolean }
   }
-  veYFiChecks: GaugeCheckRecord
+  veYfiChecks: GaugeCheckRecord
 }
