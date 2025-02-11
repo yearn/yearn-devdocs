@@ -444,11 +444,14 @@ It is recommended to build strategies on the assumption that reports will happen
 
 Since reports are the only time _harvestAndReport will be called any strategies that need more frequent checks or updates should override the_tend and tendTrigger functions for any needed mid-report maintenance.
 
-#### Keepers
+### Keepers
 
 The easiest way to ensure regular reports and tends on your strategy is to hook it up with a 3rd party keeper.
 
-The recommended keeper network is the [Gelato Network](https://www.gelato.network/).
+There are 2 keeper networks that integrate well with Yearn Vaults:
+
+- [yHaas](https://hackmd.io/g6v3e3mIS9y5kBYSYU2ZPw) is Yearn's in-house automation solution for vaults and strategies.
+- [Gelato Network](https://www.gelato.network/) is a large 3rd party automation solution for different EVM networks.
 
 ### Setters
 

@@ -16,7 +16,7 @@ Here are some examples for the four categories of decisions that emerge from thi
 |----|--------|---------|
 |gated|add a strategy to a vault|merge a pr|
 ||transfer money from the treasury|decide on a logo|
-||mint YFI|addsomeone to telegram|
+||mint YFI|add someone to telegram|
 |ungated|fork our protocol|submit a pr|
 ||execute a signed multisig tx|write a new docs page|
 ||create a new vault|propose a YIP|

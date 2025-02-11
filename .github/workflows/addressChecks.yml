@@ -13,8 +13,6 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-        with:
-          token: ${{ secrets.RG_ISSUES_TOKEN }}
 
       - name: Set up Node.js
         uses: actions/setup-node@v4
@@ -40,32 +38,13 @@ jobs:
           ALCHEMY_API_KEY: ${{ secrets.ALCHEMY_API_KEY }}
         run: |
           ts-node scripts/runAddressChecks.ts
-
-      - name: Check if all checks passed
-        id: check_all_passed
-        run: |
-          ALL_CHECKS_PASSED=$(jq -r '.addressChecks.allChecksPassed' scripts/fetchedAddressData.json)
-          echo "All checks passed: $ALL_CHECKS_PASSED"
-          echo "all_checks_passed=$ALL_CHECKS_PASSED" >> $GITHUB_ENV
-          if [ "$ALL_CHECKS_PASSED" != "true" ]; then
-            echo "Generating issue content..."
-            echo "Automatic Address Checks have failed. The following contracts have changed:" > issue_body.md
-            jq -r '.addressChecks.failedChecks[]' scripts/fetchedAddressData.json | while read CHECK; do
-                echo "- $CHECK" >> issue_body.md
-            done
-            echo "The addresses shown above should be the updated, correct addresses. Please review and change the values in \`src/ethereum/constants.ts\`." >> issue_body.md
-            echo "" >> issue_body.md
-            echo "Updated fetchedAddressData.json content:" >> issue_body.md
-            cat scripts/fetchedAddressData.json >> issue_body.md
-          fi
-
+          echo "ALL_CHECKS_PASSED=$(cat all_checks_passed.txt)" >> $GITHUB_ENV
 
       - name: Create an issue if checks failed
-        if: env.all_checks_passed != 'true'
-        uses: peter-evans/create-issue-from-file@v4
-        with:
-          token: ${{ secrets.RG_ISSUES_TOKEN }}
-          title: 'Address Checks Failed'
-          content-filepath: 'issue_body.md'
-          labels: 'address-checks, alert'
-          assignees: 'rossgalloway'
+        if: env.ALL_CHECKS_PASSED != 'true'
+        run: |
+          curl -H "Authorization: Bearer ${{ secrets.ADDRESS_CHECKS }}" \
+          -H "Content-Type: application/json" \
+          -d "$(jq -n --arg title ':robot: Address Checks Failed' --arg body "$(cat issue_body.md)" '{title: $title, body: $body}')" \
+          https://api.github.com/repos/yearn/yearn-devdocs/issues
+          echo "Issue created"
