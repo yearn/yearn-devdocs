@@ -11,7 +11,6 @@ const alchemyKey = process.env.ALCHEMY_API_KEY || 'unknown'
 const yDaemon = process.env.YDAEMON_ENDPOINT || 'unknown'
 const yPriceMagic = process.env.YPRICEMAGIC_ENDPOINT || 'unknown'
 
-
 export default {
   title: 'Yearn Docs',
   tagline: 'DeFi made simple',
@@ -31,7 +30,6 @@ export default {
     alchemyKey,
     yDaemon,
     yPriceMagic,
-
   },
   themes: ['@docusaurus/theme-mermaid'],
   themeConfig: {

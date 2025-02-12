@@ -39,7 +39,7 @@ const fetchAddresses = async () => {
       failedChecks
     )
     v3CheckFlag = topLevelData?.checkFlag
-    
+
     if (!topLevelData)
       throw new Error('Failed to fetch top-level contract addresses')
 

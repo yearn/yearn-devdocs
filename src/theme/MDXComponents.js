@@ -5,8 +5,7 @@ import ContractData from '@site/src/components/ContractData'
 import ContractAddress from '@site/src/components/StaticContractAddress'
 import AddressCheck from '@site/src/components/AddressCheck'
 import VeYFICalculator from '../components/veYFI-calculator'
-import GovDataYPools from '@site/src/components/GovDataYPools'
-import AbiEncodingWidget from '@site/src/components/AbiEncodingWidget'
+
 
 /**
  * Manually add the custom components to the list of MDXComponents that docusaurus uses
@@ -18,6 +17,5 @@ export default {
   ContractAddress,
   AddressCheck,
   VeYFICalculator,
-  GovDataYPools,
-  AbiEncodingWidget,
+
 }

@@ -125,10 +125,6 @@ module.exports = {
         {
           type: 'category',
           label: 'yPools',
-          link: {
-            type: 'doc',
-            id: 'products/ypools/ypools-overview',
-          },
           items: [
             {
               type: 'category',
@@ -149,11 +145,6 @@ module.exports = {
                   href: 'https://yeth.yearn.fi/',
                 },
               ],
-            },
-            {
-              type: 'link',
-              label: 'yPools Contract Addresses →',
-              href: '/developers/addresses/ypools-contracts',
             },
           ],
         },
