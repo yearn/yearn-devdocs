@@ -82,6 +82,37 @@ export default {
             'v2/naming-convention',
           ],
         },
+        // yPools
+        {
+          type: 'category',
+          label: 'yPools',
+          link: {
+            type: 'doc',
+            id: 'ypools/ypools-overview',
+          },
+          items: [
+            {
+              type: 'category',
+              label: 'yETH',
+              link: {
+                type: 'doc',
+                id: 'ypools/yeth/yeth-overview',
+              },
+              items: [
+                'ypools/yeth/adding-assets',
+                'ypools/yeth/create-gov-proposal',
+                'ypools/yeth/yETH-spec',
+                'ypools/yeth/periphery-spec',
+              ],
+            },
+            'ypools/ypools-roles',
+            {
+              type: 'link',
+              label: 'yPools Contract Addresses →',
+              href: '/developers/addresses/ypools-contracts',
+            },
+          ],
+        },
         // Yearn Data Services
         {
           type: 'category',
@@ -178,6 +209,11 @@ export default {
           type: 'doc',
           label: 'yPRISMA',
           id: 'addresses/yprisma-contracts',
+        },
+        {
+          type: 'doc',
+          label: 'yPools',
+          id: 'addresses/ypools-contracts',
         },
         {
           type: 'doc',

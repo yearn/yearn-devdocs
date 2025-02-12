@@ -34,4 +34,5 @@
 | 13 | `yG-yvcrvUSD-2` | yGauge crvUSD-2 yVault | [`0x71c3223D6f836f84cAA7ab5a68AAb6ECe21A9f3b`](https://etherscan.io/address/0x71c3223D6f836f84cAA7ab5a68AAb6ECe21A9f3b) |
 | 14| `yG-yvUSDS-1` | yGauge USDS-1 yVault | [`0xd57aEa3686d623dA2dCEbc87010a4F2F38Ac7B15`](https://etherscan.io/address/0xd57aEa3686d623dA2dCEbc87010a4F2F38Ac7B15) |
 
+
 The above Gauges can be verified using the [YFI Gauge Registry](https://etherscan.io/address/0x1D0fdCb628b2f8c0e22354d45B3B2D4cE9936F8B#readContract) contract and querying the `gauges()` function with the index listed above.
