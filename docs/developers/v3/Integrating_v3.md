@@ -69,7 +69,7 @@ The max amount that a vault will allow an address to redeem/withdraw can be retu
 
 Generic pricing of vault tokens can be done using the standard 4626 [`convertToShares`](https://eips.ethereum.org/EIPS/eip-4626#converttoshares) and [`convertToAssets`](https://eips.ethereum.org/EIPS/eip-4626#converttoassets) functions.
 
-While Yearn takes great care to try and prevent manipulation of the conversion functions, it is important to know that are some security considerations if using these functions on chain as part of another protocol. Please read more in [Yearn vaults as collateral](/partners/yvtokens-as-collateral)
+While Yearn takes great care to try and prevent manipulation of the conversion functions, it is important to know that there are some security considerations if using these functions on chain as part of another protocol. Please read more in [Yearn vaults as collateral](/partners/yvtokens-as-collateral)
 
 V3 vaults also contain the legacy `pricePerShare` function from the V2 Vaults implementation. However, this is intended as a simple off-chain helper and should not be used for on chain integrations due to precision loss.
 
