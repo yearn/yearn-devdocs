@@ -88,7 +88,7 @@ This Strategy's name.
 |`_strategist` | address | The address to assign as `strategist`.
 The strategist is able to change the reward address
 |`_rewards` | address |  The address to use for pulling rewards.
-|`_keeper` | address | The adddress of the _keeper. _keeper
+|`_keeper` | address | The address of the _keeper. _keeper
 can harvest and tend a strategy.
 
 ### setStrategist
