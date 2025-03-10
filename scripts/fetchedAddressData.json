@@ -1,5 +1,5 @@
 {
-  "timeLastChecked": 1738956876,
+  "timeLastChecked": 1741647140,
   "addressesData": {
     "v3ContractAddresses": {
       "topLevel": {
@@ -80,11 +80,11 @@
     "failedChecks": [],
     "v3Checks": {
       "topLevel": {
-        "v3ProtocolAddressProviderCheck": {},
+        "v3ProtocolAddressProviderCheck": true,
         "v3ProtocolAddressProviderENSCheck": true,
-        "v3ReleaseRegistryCheck": {},
+        "v3ReleaseRegistryCheck": true,
         "v3ReleaseRegistryENSCheck": true,
-        "v3RoleManagerCheck": {},
+        "v3RoleManagerCheck": true,
         "v3RoleManagerENSCheck": true
       },
       "protocolPeriphery": {
