@@ -8,7 +8,6 @@ yDaemon is a RESTful API that hydrates subgraph responses with more data, like A
 
 - **Live API:** https://ydaemon.yearn.fi/
 - **Source:** https://github.com/yearn/ydaemon
-- **Docs:** https://ydaemon.yearn.farm/docs/intro
 - **Guide:** https://medium.com/iearn/ydaemon-one-api-to-unify-all-yearn-data-4fc74dc9a33b
 
 ## Kong
