@@ -6,7 +6,7 @@
     "docusaurus": "docusaurus",
     "get-branch-name": "git rev-parse --abbrev-ref HEAD > .branch-name",
     "start": "yarn runAddressCheck && yarn get-branch-name && BRANCH_NAME=$(cat .branch-name) IS_DEV=true docusaurus start",
-    "build": "docusaurus build",
+    "build": "yarn runAddressCheck && docusaurus build",
     "swizzle": "docusaurus swizzle",
     "deploy": "docusaurus deploy",
     "clear": "docusaurus clear",
