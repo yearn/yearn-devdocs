@@ -46,12 +46,13 @@ And remember, you have to consider transaction costs when using Yearn. If using 
 
   <summary>
 
-## My Transaction isn't going through
+## A Website Interaction isn't Working
   
   </summary>
 
-If your transaction doesn't go through on the Yearn UI (stuck with a spinning loading circle), there are a few things you can do:
+If an interaction on the website isn't working or your transaction doesn't go through on the Yearn UI (stuck with a spinning loading circle), there are a few things you can do:
 
+- Perform a hard refresh on the web page: `ctrl+shift+R` on Windows, `cmd+shift+R` on Mac.
 - Try using a different browser or wallet provider.
 - If on mobile, try using the desktop version, and vice versa
 - Change your wallet RPC for the network you are transacting on. This is the data endpoint that your wallet talks to to pull blockchain data.
@@ -97,7 +98,7 @@ All of these sites should look and feel and work the same way.
 
 <br></br>
 
-You can find the address of the smart contract that you want to interact with from the Yearn website. If is a 42-digit alphanumeric string. If you navigate to a vault page, the address is listed directly below the name. Click on the address to copy it to the clipboard.
+You can find the address of the smart contract that you want to interact with from the Yearn website. It is a 42-digit alphanumeric string. If you navigate to a vault page, the address is listed directly below the name. Click on the address to copy it to the clipboard.
 
 ![find address](/img/guides/FAQ/findSCAddress.png)
 
@@ -165,7 +166,7 @@ If a V3 Vault:
 
 1. Withdrawing from V3 vaults requires 3 arguments to withdraw: The amount, the owner, and the recipient.
 2. Both the owner and the recipient will be your wallet address.
-3. To get the amount, you need get your total balance by clicking on `balanceOf` and then entering your wallet address in the address field. Click query and you should get a long number that is your balance. copy this balance to the clipboard.
+3. To get the amount, you need get your total balance by clicking on `balanceOf` and then entering your wallet address in the address field. Click query and you should get a long number that is your balance. Copy this balance to use in later steps.
   ![balanceOf](/img/guides/FAQ/balanceOf.png)
 4. Click on `Write Contract as Proxy`
 5. find the first `redeem` function. It will have 3 fields for arguments. Enter the copied `balanceOf` value into the `shares` field, and your wallet address into both the `receiver` and `owner` fields.
