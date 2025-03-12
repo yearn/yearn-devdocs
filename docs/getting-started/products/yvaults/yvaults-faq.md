@@ -79,3 +79,9 @@ The vault tokens have evolved between v1, v2, and v3, here are a couple of main 
 - Single strategy vaults are prefixed with `ys`, so a v3 single strategy vault gives the user `ysUSDC`.
 
 </details>
+
+:::tip
+
+Didn't find what you are looking for? Check out additional frequently asked questions and troubleshooting [here](/getting-started/guides/user-faq)
+
+:::
