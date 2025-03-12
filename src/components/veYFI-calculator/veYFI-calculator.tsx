@@ -20,7 +20,7 @@ import {
 } from '../shadcn/card/card'
 import styles from '../../css/veYFI-calc.module.css'
 import { Button } from '../shadcn/button/button'
-import VeYFILockCalculator from '../VeYFILockCalculator'
+import VeYFILockCalculator from './VeYFILockCalculator'
 // import SelectLiquidLockerCard from './SelectLiquidLockerCard'
 import SelectLiquidLockerCard from './SelectLiquidLockerCard'
 import {
@@ -48,7 +48,7 @@ type GaugeData = {
   underlyingVaultAddress: string
 }
 
-const VeYFICalculator2: React.FC = () => {
+const VeYFICalculator: React.FC = () => {
   const publicClient = useContext(PublicClientContext)
   const { siteConfig } = useDocusaurusContext()
   const { yDaemon } = siteConfig.customFields as {
@@ -517,4 +517,4 @@ const VeYFICalculator2: React.FC = () => {
   )
 }
 
-export default VeYFICalculator2
+export default VeYFICalculator
