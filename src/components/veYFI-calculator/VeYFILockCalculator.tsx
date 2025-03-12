@@ -5,9 +5,9 @@ import {
   CardDescription,
   CardHeader,
   CardTitle,
-} from './shadcn/card/card'
-import Input from './shadcn/input/input'
-import styles from '../css/veYFI-calc.module.css'
+} from '../shadcn/card/card'
+import Input from '../shadcn/input/input'
+import styles from '../../css/veYFI-calc.module.css'
 
 const VeYFILockCalculator = ({ onVeYFIChange }) => {
   // Accept callback prop

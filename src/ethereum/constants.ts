@@ -141,6 +141,16 @@ export const veYfiGauges = [
   },
 ]
 
+// Liquid Locker Contracts
+export const LiquidLockerContracts = {
+  stakeDAO: '0xF750162fD81F9a436d74d737EF6eE8FC08e98220',
+  Cove: '0x05dcdBF02F29239D1f8d9797E22589A2DE1C152F',
+  _1UP: '0x242521ca01f330F050a65FF5B8Ebbe92198Ae64F',
+}
+
+// Define a type for LiquidLockerContracts
+export type LiquidLockerContractsType = typeof LiquidLockerContracts
+
 // Top Level V3 Protocol Registry Addresses
 export const topLevel = {
   protocolAddressProviderENS: 'address-provider.v3.ychad.eth',

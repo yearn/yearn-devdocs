@@ -1,0 +1,78 @@
+/*
+src/css/selectLiquidLockerCard.module.css
+*/
+
+.card {
+  display: flex;
+  flex-direction: row;
+  border: none;
+}
+
+.cardContent {
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
+  gap: 10px;
+  padding: 4px;
+}
+
+.liquidLockerButton {
+  display: flex;
+  align-items: start;
+  flex-direction: column;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  width: 100%;
+  outline: 1px solid rgb(148, 148, 148);
+  border-radius: 4px;
+  box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.liquidLockerButton:hover {
+  background-color: var(--ifm-color-gray-200);
+  outline: 1px solid var(--ifm-color-primary-darker);
+}
+
+.liquidLockerButton:active,
+.liquidLockerButton.selected,
+.liquidLockerButton.selected:focus {
+  outline: 1px solid var(--ifm-color-primary-darker);
+  box-shadow: inset 2px 2px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.liquidLockerTitle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.name {
+  padding-left: 4px;
+}
+
+.logo {
+  height: 24px;
+  width: 24px;
+}
+
+.externalLink {
+  margin-left: auto;
+  width: 14px;
+  height: 14px;
+}
+
+.externalLink:hover {
+  color: var(--ifm-color-primary-darker);
+}
+
+.externalLink:active {
+  color: black;
+}
+
+.veYFIText {
+  padding-left: 0px;
+  color: hsl(var(--muted-foreground));
+}
