@@ -10,7 +10,7 @@
 
 If you deposited into a Yearn Vault and then click the "withdraw" tab and don't see your tokens, don't worry, they are probably staked!
 
-The default "deposit" action in yVaults with a gauge or other extra rewards is to deposit your tokens in the yVault and stake the yVault token for extra rewards. To see your yVault tokens, click on the "veYFI BOOST" tab (it may be named something else like "staking BOOST") next to the withdraw tab. You should be able to un-stake your vault tokens there and then withdraw.
+The default "deposit" action in yVaults with a gauge or other extra rewards is to deposit your tokens in the yVault and stake the yVault token for extra rewards. To see your yVault tokens, click on the "veYFI BOOST" tab (it may be named something else like "staking BOOST") next to the withdraw tab. You should be able to unstake your vault tokens there and then withdraw.
 
 ![Withdraw modal](/img/guides/FAQ/unstake.png)
 
@@ -56,8 +56,8 @@ If an interaction on the website isn't working or your transaction doesn't go th
 - Try using a different browser or wallet provider.
 - If on mobile, try using the desktop version, and vice versa
 - Change your wallet RPC for the network you are transacting on. This is the data endpoint that your wallet talks to to pull blockchain data.
-  - Here website with lists of different chain RPCs: https://chainlist.org/
-  - If you connect your wallet to the chainlist site then you can add new RPCs to your wallet directly from there.
+  - Here is a website with lists of different chain RPCs: https://chainlist.org/
+  - If you connect your wallet to the chainlist site, you can add new RPCs directly from there.
 - If none of the above work, you can interact with Yearn smart contracts via a block explorer. See the next entry for more information on how to do that.
 
 </details>
@@ -80,7 +80,7 @@ If you need help, come by the discord and [open a support ticket](https://discor
 
 All of the smart contracts that you will interact with from Yearn's website live on Ethereum or one of its layer-2 networks. We have worked to make the experience of interacting with the contracts as easy as possible via the website, but sometimes something goes wrong and the website may not work. If that happens, you can interact with the underlying contracts directly with a block explorer like [Etherscan](https://etherscan.io/).
 
-Each network has its own block explorer, and many have more than one. The most popular is Etherscan and most networks have a version of it for their users to use.
+Each network has its block explorer, and many have more than one. The most popular is Etherscan and most networks have a version of it for their users to use.
 
 | Network Name | Etherscan URL |
 |--------------|---------------|
@@ -98,7 +98,7 @@ All of these sites should look and feel and work the same way.
 
 <br></br>
 
-You can find the address of the smart contract that you want to interact with from the Yearn website. It is a 42-digit alphanumeric string. If you navigate to a vault page, the address is listed directly below the name. Click on the address to copy it to the clipboard.
+You can find the address of the smart contract that you want to interact with on the Yearn website. It is a 42-digit alphanumeric string. If you navigate to a vault page, the address is listed directly below the name. Click on the address to copy it to the clipboard.
 
 ![find address](/img/guides/FAQ/findSCAddress.png)
 
