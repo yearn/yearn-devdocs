@@ -89,6 +89,8 @@ This command starts a local development server and opens up a browser window. Mo
 yarn start
 ```
 
+Running `yarn start` will also run a script that checks the validity of smart contract addresses in the docs against a local constants file. This runs on every dev run as a way to keep the checks updated and the information about them on the site current (all PRs will include an update to last check time). If you want to run `yarn start` without the `runAddressChecks` script running you can run `yarn start-no-check`.
+
 ## Build
 
 This command generates static content into the `build` directory and can be served using any static content hosting service.
