@@ -36,7 +36,7 @@ So many options! But don't worry, it isn't so complicated.
 
   </summary>
 
-[Gimme](https://gimme.mom/) is a new, easy-to-use front-end focused on making Yearn super simple. It currently only supports Polygon, but will roll out other L2s soon. You can easily zap right into Yearn's single asset V3 vaults and start earning fast!
+[Gimme](https://gimme.mom/) is a new, easy-to-use front-end focused on making Yearn super simple. It currently supports yVaults on Polygon and Base and will roll out other L2s soon. You can easily zap right into Yearn's single asset V3 vaults and start earning fast!
 
 </details>
 
@@ -79,3 +79,9 @@ The vault tokens have evolved between v1, v2, and v3, here are a couple of main 
 - Single strategy vaults are prefixed with `ys`, so a v3 single strategy vault gives the user `ysUSDC`.
 
 </details>
+
+:::tip
+
+Didn't find what you are looking for? Check out additional frequently asked questions and troubleshooting [here](/getting-started/guides/user-faq)
+
+:::

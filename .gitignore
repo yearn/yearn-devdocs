@@ -26,6 +26,7 @@ yarn-error.log*
 
 .branch-name
 .github/copilot-instructions.md
+all_checks_passed.txt
 
 # Use yarn.lock
 package-lock.json

@@ -49,7 +49,7 @@ Each yLocker has been designed to create an attractive yToken that offers value 
 
 ### What is yvcrvUSD?
 
-yvcrvUSD is a Yearn V3 vault that allows yield to auto-compound.
+yvcrvUSD is a Yearn V3 vault that allows the crvUSD yield earned by the YBS strategy to auto-compound. Instead of getting naked crvUSD, you receive autocompounding yvcrvUSD.
 
 ### What are the fees associated with yCRV?
 
@@ -72,7 +72,7 @@ Liquid locker tokens are not redeemable for the underlying locked tokens as they
 
 ### I still have yveCRV and/or yvBOOST. What do I do?
 
-yveCRV and yvBOOST have been deprecated and no longer receive yield. There is a migration path available to users. yCRV can be minted 1:1 from yveCRV. yCRV can be minted `1 * pricePerShare` of yvBOOST at the time of migration. There will be a migration zap available shortly to all users to make this easy. If you are reading this and need to migrate, please come to the [discord](https://discord.gg/b8ENPNqG5c) and ask for assistance.
+yveCRV and yvBOOST have been deprecated and no longer receive yield. There is a migration path available to users. yCRV can be minted 1:1 from yveCRV. yCRV can be minted `1 * pricePerShare` of yvBOOST at the time of migration. There is a migration zap available [here](https://ycrv.yearn.fi/app/get) to make this easy. If you are having trouble migrating, please come to the [discord](https://discord.gg/yearn) and ask for assistance.
 
 ### How are Curve DAO governance votes handled in this system?
 
