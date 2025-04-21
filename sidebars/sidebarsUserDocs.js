@@ -190,7 +190,6 @@ module.exports = {
       type: 'category',
       label: 'Guides',
       items: [
-        'guides/user-faq',
         'guides/using-yearn-v3',
         'guides/using-yearn-v2',
         'guides/how-boost-works',
@@ -204,6 +203,11 @@ module.exports = {
       type: 'html',
       value: '<hr/>',
       className: 'divider',
+    },
+    {
+      type: 'doc',
+      label: 'FAQ',
+      id: 'guides/user-faq',
     },
     {
       type: 'link',
