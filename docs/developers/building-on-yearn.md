@@ -76,4 +76,5 @@ Some of the research questions that we are interested in:
 - Decide on when to harvest
 - Predicting impermanent loss for Uniswap V3 pools
 - Portfolio construction across yearn products
+
 More details on these topics can be seen in our issues tab.
