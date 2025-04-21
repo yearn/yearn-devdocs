@@ -1,5 +1,5 @@
 {
-  "timeLastChecked": 1741809161,
+  "timeLastChecked": 1745245767,
   "addressesData": {
     "v3ContractAddresses": {
       "topLevel": {
@@ -61,7 +61,7 @@
       "yGauge Curve dYFIETH-f Factory yVault": "0x28da6dE3e804bDdF0aD237CFA6048f2930D0b4Dc",
       "yGauge LP Yearn CRV Vault v2": "0x107717C98C8125A94D3d2Cc82b86a1b705f3A27C",
       "yGauge Curve yETH Factory yVault": "0x81d93531720d86f0491DeE7D03f30b3b5aC24e59",
-      "yGauge LP Yearn PRISMA Vault": "0x6130E6cD924a40b24703407F246966D7435D4998",
+      "yGauge USDS-1 yVault": "0xd57aEa3686d623dA2dCEbc87010a4F2F38Ac7B15",
       "yGauge USDC-1 yVault": "0x622fA41799406B120f9a40dA843D358b7b2CFEE3",
       "yGauge DAI-1 yVault": "0x128e72DfD8b00cbF9d12cB75E846AC87B83DdFc9",
       "yGauge WETH-1 yVault": "0x5943F7090282Eb66575662EADf7C60a717a7cE4D",
@@ -70,8 +70,7 @@
       "yGauge Curve COVEYFI Factory yVault": "0x97A597CBcA514AfCc29cD300f04F98d9DbAA3624",
       "yGauge DAI-2 yVault": "0x38E3d865e34f7367a69f096C80A4fc329DB38BF4",
       "yGauge WETH-2 yVault": "0x8E2485942B399EA41f3C910c1Bb8567128f79859",
-      "yGauge crvUSD-2 yVault": "0x71c3223D6f836f84cAA7ab5a68AAb6ECe21A9f3b",
-      "yGauge USDS-1 yVault": "0xd57aEa3686d623dA2dCEbc87010a4F2F38Ac7B15"
+      "yGauge crvUSD-2 yVault": "0x71c3223D6f836f84cAA7ab5a68AAb6ECe21A9f3b"
     }
   },
   "addressChecks": {
@@ -119,7 +118,7 @@
       "yGauge Curve dYFIETH-f Factory yVault": true,
       "yGauge LP Yearn CRV Vault v2": true,
       "yGauge Curve yETH Factory yVault": true,
-      "yGauge LP Yearn PRISMA Vault": true,
+      "yGauge USDS-1 yVault": true,
       "yGauge USDC-1 yVault": true,
       "yGauge DAI-1 yVault": true,
       "yGauge WETH-1 yVault": true,
@@ -128,8 +127,7 @@
       "yGauge Curve COVEYFI Factory yVault": true,
       "yGauge DAI-2 yVault": true,
       "yGauge WETH-2 yVault": true,
-      "yGauge crvUSD-2 yVault": true,
-      "yGauge USDS-1 yVault": true
+      "yGauge crvUSD-2 yVault": true
     }
   }
 }
