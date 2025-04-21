@@ -99,26 +99,9 @@ module.exports = {
               ],
             },
             {
-              type: 'category',
+              type: 'doc',
               label: 'yPRISMA',
-              link: {
-                type: 'doc',
-                id: 'products/ylockers/yprisma/overview',
-              },
-              items: [
-                'products/ylockers/yprisma/yprisma-guide',
-                'products/ylockers/yprisma/yprisma-faq',
-                {
-                  type: 'link',
-                  label: 'yPRISMA Contract Addresses →',
-                  href: '/developers/addresses/yprisma-contracts',
-                },
-                {
-                  type: 'link',
-                  label: 'yPRISMA dApp',
-                  href: 'https://yprisma.yearn.fi/',
-                },
-              ],
+              id: 'products/ylockers/yprisma/overview',
             },
           ],
         },

@@ -176,11 +176,6 @@ export default {
         },
         {
           type: 'doc',
-          label: 'yPRISMA',
-          id: 'addresses/yprisma-contracts',
-        },
-        {
-          type: 'doc',
           label: 'Lens',
           id: 'addresses/lens-contracts',
         },
