@@ -107,8 +107,8 @@ const fetchData = async (
             newData[contractReadCall.name] = {}
           }
           newData[contractReadCall.name][methodName] = result
-          newData['blockTimestamp'] = blockTimestamp
         })
+        newData['blockTimestamp'] = blockTimestamp
         return newData
       })
     }
