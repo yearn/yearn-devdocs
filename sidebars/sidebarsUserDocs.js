@@ -226,5 +226,10 @@ module.exports = {
       label: 'Deprecated Projects →',
       href: '/resources/deprecated',
     },
+    {
+      type: 'link',
+      label: 'Brand Assets and Guidelines',
+      href: 'https://brand.yearn.fi',
+    },
   ],
 }

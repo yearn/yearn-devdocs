@@ -120,6 +120,11 @@ export default {
             'wallet-integration',
             'data-services/yearn-stack',
             'v2/fork-yearn-ui',
+            {
+              type: 'link',
+              label: 'Brand Assets and Guidelines',
+              href: 'https://brand.yearn.fi',
+            },
           ],
         },
         // Other Stuff
