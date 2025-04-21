@@ -96,10 +96,7 @@ export default {
             {
               type: 'category',
               label: 'yETH',
-              items: [
-                'ypools/yeth/yeth-overview',
-                'ypools/yeth/adding-assets-v2',
-              ],
+              items: ['ypools/yeth/yeth-overview', 'ypools/yeth/adding-assets'],
             },
             {
               type: 'link',

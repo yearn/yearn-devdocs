@@ -5,7 +5,7 @@ import ContractData from '@site/src/components/ContractData'
 import ContractAddress from '@site/src/components/StaticContractAddress'
 import AddressCheck from '@site/src/components/AddressCheck'
 import VeYFICalculator from '../components/veYFI-calculator/veYFI-calculator'
-import AbiEncodingWidget from '../components/yPools-components/AbiEncodingWidget2'
+import AbiEncodingWidget from '../components/yPools-components/AbiEncodingWidget'
 import GovDataYPools from '../components/yPools-components/GovDataYPools'
 
 /**
