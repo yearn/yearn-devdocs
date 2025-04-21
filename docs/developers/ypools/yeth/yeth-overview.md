@@ -1,6 +1,8 @@
-# yETH
+---
+sidebar_label: Overview
+---
 
-## Overview
+# yETH Overview
 
 yETH is a user-governed yPool consisting of various Ethereum Liquid Staking Derivatives (LSTs).
 

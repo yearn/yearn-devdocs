@@ -91,16 +91,16 @@ export default {
             id: 'ypools/ypools-overview',
           },
           items: [
+            'ypools/ypools-overview',
+            'ypools/ypools-roles',
             {
               type: 'category',
               label: 'yETH',
-              link: {
-                type: 'doc',
-                id: 'ypools/yeth/yeth-overview',
-              },
-              items: ['ypools/yeth/adding-assets'],
+              items: [
+                'ypools/yeth/yeth-overview',
+                'ypools/yeth/adding-assets-v2',
+              ],
             },
-            'ypools/ypools-roles',
             {
               type: 'link',
               label: 'yPools Contract Addresses →',
