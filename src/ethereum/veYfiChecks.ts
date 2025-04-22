@@ -33,6 +33,9 @@ export const veYfiChecks = async (
   for (const [index, address] of gaugeAddresses.entries()) {
     const expectedAddress = constants.veYfiGauges[index].address
     const expectedName = constants.veYfiGauges[index].name
+    console.log(
+      `Validating ${expectedName} (${expectedAddress}) against ${address}...`
+    )
     const isValid = await validateAddress(
       expectedAddress,
       expectedName,

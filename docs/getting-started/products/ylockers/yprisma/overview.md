@@ -1,38 +1,15 @@
-# yPRISMA Overview
+# yPrisma
 
-![image](/img/product-pages/yprisma-banner.png)
+:::warning
 
-Claim and deposit at [yprisma.yearn.fi](https://yprisma.yearn.fi)
+ yPrisma has been deprecated and all PRISMA and yPRISMA tokens can be migrated to the native token of Resupply (RSUP).
 
-## What is yPRISMA?
+ :::
 
-yPRISMA is Yearn's latest liquid locker, built for Prisma Finance's governance token (PRISMA). Let's review the basics of liquid locker tokens like yPRISMA:
+Please head over to the ReSupply docs to find out how to migrate.
 
-- They represent 1 vePRISMA max-locked to Yearn
-- They are not redeemable for the underlying locked PRISMA
-- They have no transfer restrictions and thus can always be swapped in DEX pools
+**Guide on how to migrate from PRISMA, yPRISMA, or cvxPRISMA**: https://docs.resupply.fi/how-to-guides/using-resupply/redeeming-prisma-for-vesting-rsup-tokens
 
-Governance for Prisma is controlled by vePRISMA, a locked token position that grants users voting power, fee revenue, and boosted PRISMA emissions.
+> The Redeem PRISMA feature allows users to convert their Prisma-based tokens (PRISMA, cvxPRISMA, and yPRISMA) into a vesting allocation of RSUP tokens. This process allows Prisma token holders to convert to RSUP tokens. This can be found [here](https://resupply.fi/governance/rsup) below the Stake RSUP section. **In order to see this section you must have a wallet with Prisma, cvxPrisma, or yPrisma connected.**
 
-Because all PRISMA emissions come as locked vePRISMA, it is often inconvenient for users who want to avoid managing their position or want to cash out. yPRISMA aims to offer users a tokenized version of this position, giving them instant liquidity and auto-managing governance participation to maximize yield.
-
-## Earn Yield on yPRISMA
-
-Yearn has 2 ways to earn yield on your yPRISMA; depositing to the `YearnBoostedStaker` contract to earn mkUSD or depositing to the yPRISMA Auto-Compounder V3 vault to earn more yPRISMA. The intricacies and details are documented [here](../overview#earning-yield-with-ylockers). Once you know which path you want to take, you can follow the step by step guide [here](yprisma-guide.md).
-
-**More questions Anon? Head over to the [FAQ](yprisma-faq.md).**
-
-## Links
-
-<PrettyLink>[Contract Addresses](/developers/addresses/yprisma-contracts)</PrettyLink>
-<PrettyLink>[yPRISMA UI](https://yprisma.yearn.fi/)</PrettyLink>
-<PrettyLink>[UI Source Code](https://github.com/yearn/ylockers-ui)</PrettyLink>
-<PrettyLink>[Yearn Boosted Staker Source Code](https://github.com/yearn/yearn-boosted-staker)</PrettyLink>
-<PrettyLink>[PRISMA.lol - Liquid Lockers Tracker](https://www.prisma.lol/)</PrettyLink>
-<PrettyLink>[yLockers Discord Channel](https://discord.com/channels/734804446353031319/1186417376275730552)</PrettyLink>
-
-## Read More
-
-<PrettyLink>[Upcoming yPRISMA YBS Staking Launch: All You Need to Know](https://blog.yearn.fi/ybs-yprisma-launch)</PrettyLink>
-<PrettyLink>[yPRISMA Roadmap](https://medium.com/iearn/yprisma-roadmap-8fb3e2376594)</PrettyLink>
-<PrettyLink>[Introduction to Yearn PRISMA Incentives Farming and FAQ](/getting-started/products/ylockers/yprisma/yprisma-faq)</PrettyLink>
+If you still need to find something from the old yPRISMA docs you can find them [here](/resources/deprecated/yPrisma/overview).
