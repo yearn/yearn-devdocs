@@ -70,13 +70,13 @@ If an interaction on the website isn't working or your transaction doesn't go th
 
 </summary>
 
-Liquid Lockers are products built on top of Yearn's governance and incentive contracts. They have 2 main benefits, one for vault depositors and another for YFI holders.
+Liquid Lockers are products built on top of Yearn's governance and incentive contracts. They have two main benefits, one for vault depositors and another for YFI holders.
 
 ### For Vault Depositors
 
-Yearn has an incentives system to encourage deposits in some of it's most important pools. Yearn governance participants lock YFI (it becomes veYFI) and can vote one which pools get incentives and how much. These rewards are then given to depositors in the rewarded vaults, but the amount of rewards is heavily dependent on whether a user has locked YFI or not. You can read more about this [here](/contributing/governance/veYFI-intro), but the gist of it is that if you down hold veYFI you get 10% of the possible rewards.
+Yearn has an incentives system to encourage deposits in some of its most important pools. Yearn governance participants lock YFI (it becomes veYFI) and can vote one which pools get incentives and how much. These rewards are then given to depositors in the rewarded vaults, but the amount of rewards is heavily dependent on whether a user has locked YFI or not. You can read more about this [here](/contributing/governance/veYFI-intro), but the gist of it is that if you down hold veYFI you get 10% of the possible rewards.
 
-Because locking YFI for veYFI is complicated, If you don't want to deal with the intricacies of locks, the Liquid Lockers let you use the locked tokens of other governance participants for a fee. As a depositor, you can earn 10x more rewards by doing this, and all you have to do is stake in the liquid locker contract. See below for links to the different liquid lockers. There are also autocompounding liquid locker vault contracts that you can deposit into. Find those on the main https://yearn.fi website.
+Because locking YFI for veYFI is complicated, if you don't want to deal with the intricacies of locks, the Liquid Lockers let you use the locked tokens of other governance participants for a fee. As a depositor, you can earn 10x more rewards by doing this, and all you have to do is stake in the liquid locker contract. See below for links to the different liquid lockers. There are also autocompounding liquid locker vault contracts that you can deposit into. Find those on the main https://yearn.fi website.
 
 ### For YFI Holders
 
@@ -104,7 +104,7 @@ At the time of writing, there are 3 liquid lockers for YFI:
 
 ### Deposits and Withdrawals
 
-  The standard way to enter and exit vaults is to deposit the underlying tokens directly into the contracts. That means if the vault is a single asset vault like the USDC-1 vault, you would deposit USDC. For a liquidity pool vault like a Curve factory vault, you would deposit the Liquidity pool token. For example, if you want to deposit into the Curve stETH Factory Vault, you would deposit the curve LP token, which is the crvSTETH token that you get when depositing into that curve pool.
+  The standard way to enter and exit vaults is to deposit the underlying tokens directly into the contracts. That means if the vault is a single asset vault like the USDC-1 vault, you would deposit USDC. For a liquidity pool vault like a Curve factory vault, you would deposit the Liquidity pool token. For example, if you want to deposit into the Curve stETH Factory Vault, you would deposit the Curve LP token, which is the crvSTETH token that you get when depositing into that Curve pool.
 
 ### Zaps
 
@@ -120,9 +120,9 @@ At the time of writing, there are 3 liquid lockers for YFI:
 
   You can then paste that into the input or output fields of the cowswap interface. Always be sure to check and make sure the trade output looks right!
 
-  ![cowSwap import](/img/guides/FAQ/cowClick.png)
+  ![CowSwap import](/img/guides/FAQ/cowClick.png)
 
-  There are also other aggregators like [defillama](https://swap.defillama.com/?chain=ethereum&from=0x0000000000000000000000000000000000000000&tab=swap) and [kyberswap](https://kyberswap.com/swap/ethereum).
+  There are also other aggregators like [Defillama](https://swap.defillama.com/?chain=ethereum&from=0x0000000000000000000000000000000000000000&tab=swap) and [Kyberswap](https://kyberswap.com/swap/ethereum).
 
 </details>
 
@@ -138,7 +138,7 @@ Yearn offers vaults for Pendle fixed term positions in a number of different ass
 
 **Some things to be aware of:**
 
-- Because of how the underlying mechanics of pendle work, if you withdraw far in time from the underlying strategy maturity date, you may get a bad price for your assets.
+- Because of how the underlying mechanics of Pendle work, if you withdraw far in time from the underlying strategy maturity date, you may get a bad price for your assets.
   
 </details>
 
@@ -146,7 +146,7 @@ Yearn offers vaults for Pendle fixed term positions in a number of different ass
 
   <summary>
 
-## What is Yearn X Projects?
+## What is Yearn X?
 
   </summary>
 
@@ -174,9 +174,9 @@ The current partner sites are:
 
 Yearn vaults auto-compound rewards, but they only do so when it makes sense. This means that for some pools, at some times, there is a period where rewards sit in the contract waiting to be harvested or swapped for more of the underlying vault tokens. Understanding how this works is important if you are depositing into some of the smaller pools that are harvested less frequently.
 
-All yearn vaults have a permissionless `harvest` function that claims rewards earned by the vault. But this only claims the rewards. In order for these rewards to be re-invested, they have to be sold for the underlying vault assets. This is a separate, permissioned step due to the complexity of swapping into some of the more bespoke yVault assets. These swaps occur once there is enough assets waiting to be swapped that the cost to swap isn't too high. This depends on gas costs mainly. Once the assets have been swapped they are ready to go back into the vault, but are not added until the next `harvest` call.
+All yearn vaults have a permissionless `harvest` function that claims rewards earned by the vault. But this only claims the rewards. In order for these rewards to be re-invested, they have to be sold for the underlying vault assets. This is a separate, permissioned step due to the complexity of swapping into some of the more bespoke yVault assets. These swaps occur once there is enough assets waiting to be swapped that the cost to swap isn't too high. This depends on gas costs mainly. Once the assets have been swapped, they are ready to go back into the vault, but are not added until the next `harvest` call.
 
-The intent is for this process to be happening continuously, where rewards are claimed, swapped, and then when the next round are claimed, the swapped assets get re-invested. For smaller TVL pools or those with low reward rates, this cadence may be delayed. If you are in a vault where rewards have not been claimed in a while, come into the discord, open a ticket, and let us know!
+The intent is for this process to be happening continuously, where rewards are claimed, swapped, and then when the next round are claimed, the swapped assets get re-invested. For smaller TVL pools or those with low reward rates, this cadence may be delayed. If you are in a vault where rewards have not been claimed in a while, come into the [Discord](https://discord.gg/yearn), open a ticket, and let us know!
 
 The easiest way to see if there are harvests is to check if the Price Per Share of a vault is increasing. You can do this using the vault analytics site PowerGlove and clicking on the PPS chart to see if it is growing. Check out [this page](https://yearn-powerglove.vercel.app/vaults/1/0x3f34A7eF4f17528CbFFb7817060941BCdaC924fa) for a good example of a vault that has an intermittent re-investing period.
 
