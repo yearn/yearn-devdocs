@@ -53,11 +53,11 @@ export const veYfiGauges = [
   },
   {
     index: 4,
-    symbol: 'yG-lp-yPRISMA',
-    name: 'yGauge LP Yearn PRISMA Vault',
-    address: '0x6130E6cD924a40b24703407F246966D7435D4998',
+    symbol: 'yG-yvUSDS-1',
+    name: 'yGauge USDS-1 yVault',
+    address: '0xd57aEa3686d623dA2dCEbc87010a4F2F38Ac7B15',
     underlyingDecimals: 18,
-    underlyingVaultAddress: '0xbA61BaA1D96c2F4E25205B331306507BcAeA4677',
+    underlyingVaultAddress: '0x182863131F9a4630fF9E27830d945B1413e347E8',
   },
   {
     index: 5,
@@ -130,14 +130,6 @@ export const veYfiGauges = [
     address: '0x71c3223D6f836f84cAA7ab5a68AAb6ECe21A9f3b',
     underlyingDecimals: 18,
     underlyingVaultAddress: '0xBF319dDC2Edc1Eb6FDf9910E39b37Be221C8805F',
-  },
-  {
-    index: 14,
-    symbol: 'yG-yvUSDS-1',
-    name: 'yGauge USDS-1 yVault',
-    address: '0xd57aEa3686d623dA2dCEbc87010a4F2F38Ac7B15',
-    underlyingDecimals: 18,
-    underlyingVaultAddress: '0x182863131F9a4630fF9E27830d945B1413e347E8',
   },
 ]
 

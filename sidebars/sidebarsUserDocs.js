@@ -99,26 +99,9 @@ module.exports = {
               ],
             },
             {
-              type: 'category',
+              type: 'doc',
               label: 'yPRISMA',
-              link: {
-                type: 'doc',
-                id: 'products/ylockers/yprisma/overview',
-              },
-              items: [
-                'products/ylockers/yprisma/yprisma-guide',
-                'products/ylockers/yprisma/yprisma-faq',
-                {
-                  type: 'link',
-                  label: 'yPRISMA Contract Addresses →',
-                  href: '/developers/addresses/yprisma-contracts',
-                },
-                {
-                  type: 'link',
-                  label: 'yPRISMA dApp',
-                  href: 'https://yprisma.yearn.fi/',
-                },
-              ],
+              id: 'products/ylockers/yprisma/overview',
             },
           ],
         },
@@ -199,7 +182,6 @@ module.exports = {
       type: 'category',
       label: 'Guides',
       items: [
-        'guides/user-faq',
         'guides/using-yearn-v3',
         'guides/using-yearn-v2',
         'guides/how-boost-works',
@@ -213,6 +195,11 @@ module.exports = {
       type: 'html',
       value: '<hr/>',
       className: 'divider',
+    },
+    {
+      type: 'doc',
+      label: 'FAQ',
+      id: 'guides/user-faq',
     },
     {
       type: 'link',
@@ -234,6 +221,11 @@ module.exports = {
       type: 'link',
       label: 'Deprecated Projects →',
       href: '/resources/deprecated',
+    },
+    {
+      type: 'link',
+      label: 'Brand Assets and Guidelines',
+      href: 'https://brand.yearn.fi',
     },
   ],
 }

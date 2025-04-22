@@ -143,6 +143,11 @@ export default {
             'wallet-integration',
             'data-services/yearn-stack',
             'v2/fork-yearn-ui',
+            {
+              type: 'link',
+              label: 'Brand Assets and Guidelines',
+              href: 'https://brand.yearn.fi',
+            },
           ],
         },
         // Other Stuff
@@ -196,16 +201,6 @@ export default {
           type: 'doc',
           label: 'yCRV',
           id: 'addresses/ycrv-contracts',
-        },
-        {
-          type: 'doc',
-          label: 'yPRISMA',
-          id: 'addresses/yprisma-contracts',
-        },
-        {
-          type: 'doc',
-          label: 'yPools',
-          id: 'addresses/ypools-contracts',
         },
         {
           type: 'doc',
