@@ -74,7 +74,7 @@ Liquid Lockers are products built on top of Yearn's governance and incentive con
 
 ### For Vault Depositors
 
-Yearn has an incentives system to encourage deposits in some of its most important pools. Yearn governance participants lock YFI (it becomes veYFI) and can vote one which pools get incentives and how much. These rewards are then given to depositors in the rewarded vaults, but the amount of rewards is heavily dependent on whether a user has locked YFI or not. You can read more about this [here](/contributing/governance/veYFI-intro), but the gist of it is that if you down hold veYFI you get 10% of the possible rewards.
+Yearn has an incentives system to encourage deposits in some of its most important pools. Yearn governance participants lock YFI (it becomes veYFI) and can vote on which pools get incentives and how much. These rewards are then given to depositors in the rewarded vaults, but the amount of rewards is heavily dependent on whether a user has locked YFI or not. You can read more about this [here](/contributing/governance/veYFI-intro), but the gist of it is that if you down, hold veYFI you get 10% of the possible rewards.
 
 Because locking YFI for veYFI is complicated, if you don't want to deal with the intricacies of locks, the Liquid Lockers let you use the locked tokens of other governance participants for a fee. As a depositor, you can earn 10x more rewards by doing this, and all you have to do is stake in the liquid locker contract. See below for links to the different liquid lockers. There are also autocompounding liquid locker vault contracts that you can deposit into. Find those on the main https://yearn.fi website.
 
@@ -114,7 +114,7 @@ At the time of writing, there are 3 liquid lockers for YFI:
 
 ### Swaps
 
-  You can also swap directly between vaults or from vaults to assets using third party services. Yearn works with a solver on [Cowswap](https://swap.cow.fi/) to provide routes between many different vaults and yearn assets. You may have to manually enter the vault or asset address in cowswap for it to be recognized. You can get that from the page for that vault, with the address living right below the name.
+  You can also swap directly between vaults or from vaults to assets using third-party services. Yearn works with a solver on [Cowswap](https://swap.cow.fi/) to provide routes between many different vaults and yearn assets. You may have to manually enter the vault or asset address in cowswap for it to be recognized. You can get that from the page for that vault, with the address living right below the name.
 
   ![copy address](/img/guides/FAQ/copyAddress.png)
 
