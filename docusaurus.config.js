@@ -99,7 +99,7 @@ export default {
           items: [
             {
               label: 'Discord',
-              href: 'https://discord.gg/b8ENPNqG5c',
+              href: 'https://discord.gg/yearn',
             },
             {
               label: 'Twitter',

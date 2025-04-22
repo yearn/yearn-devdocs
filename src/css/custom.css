@@ -250,6 +250,7 @@ h6 {
   --ifm-alert-border-color: grey;
   border: none !important;
   box-shadow: none;
+  margin-bottom: 0 !important;
 }
 
 .docusaurus-highlight-code-line {
