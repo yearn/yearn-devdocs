@@ -82,6 +82,29 @@ export default {
             'v2/naming-convention',
           ],
         },
+        // yPools
+        {
+          type: 'category',
+          label: 'yPools',
+          link: {
+            type: 'doc',
+            id: 'ypools/ypools-overview',
+          },
+          items: [
+            'ypools/ypools-overview',
+            'ypools/ypools-roles',
+            {
+              type: 'category',
+              label: 'yETH',
+              items: ['ypools/yeth/yeth-overview', 'ypools/yeth/adding-assets'],
+            },
+            {
+              type: 'link',
+              label: 'yPools Contract Addresses →',
+              href: '/developers/addresses/ypools-contracts',
+            },
+          ],
+        },
         // Yearn Data Services
         {
           type: 'category',
