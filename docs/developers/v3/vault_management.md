@@ -29,6 +29,12 @@ You will only need three variables.
 2. `governance` : The main address to be in control of the vaults and RoleManager contract. This should be a fully trusted address.
 3. `management` :  Secondary address to manage lower risk more day to day needs of the vault such as debt allocations.
 
+:::warning
+
+Make sure your `governance` and `management` addresses are NOT the same address as this will prevent you from adding strategies.
+
+:::
+
 ```solidity
 projectName = "Project Name"     // Name of your project.
 governance = address(0x69)      // Address to be in charge of the project.
