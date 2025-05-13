@@ -6,7 +6,7 @@
 yPRISMA can be purchased through the following platforms:
 
 * If you already have PRISMA tokens, you can ZAP directly into yPRISMA using Yearn's yPRISMA zapper contract [**here**](https://yprisma.yearn.fi/app/get)
-* [Curve Finance](https://curve.fi/#/ethereum/swap?from=0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee&to=0xe3668873d944e4a949da05fc8bde419eff543882) - The primary liquidity source for yPRISMA
+* [Curve Finance](https://curve.finance/#/ethereum/swap?from=0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee&to=0xe3668873d944e4a949da05fc8bde419eff543882) - The primary liquidity source for yPRISMA
 * [CowSwap](https://swap.cow.fi/#/1/swap/ETH/YPRISMA) - DEX aggregators like CowSwap should also work well
 
 ### Should I stake my yPRISMA directly or auto-compound it in the vault?
