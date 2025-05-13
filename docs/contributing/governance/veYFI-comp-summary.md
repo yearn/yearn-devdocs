@@ -301,7 +301,7 @@ For users who prefer not to manage individual locks and veYFI decay, **liquid lo
 
 ### Other Resources
 
-- **[veCRV Explained](https://resources.curve.fi/vecrv/overview/)**
+- **[veCRV Explained](https://resources.curve.finance/vecrv/overview/)**
 
 ---
 

@@ -40,7 +40,7 @@ root(Naming Conventions)
   - **Curve**
     - Name: `Curve + pool + Pool yVault`
       - **Examples:** `Curve sBTC Pool yVault`, `Curve 3pool yVault`, `Curve Y Pool yVault`
-      - In this case, `pool` is taken directly from Curve.fi's UI, and we can adjust for capitalization as needed. In the case of the `3pool`, the redundant "Pool" is removed.
+      - In this case, `pool` is taken directly from curve.finance's UI, and we can adjust for capitalization as needed. In the case of the `3pool`, the redundant "Pool" is removed.
     - Symbol: `yvCurve-pool`
       - **Examples:** `yvCurve-sBTC`, `yvCurve-3pool`, `yvCurve-Y`
     - Note: In this methodology, `yvCurve-Y` refers to the vault previously known as `yUSD`. Please see below for a more detailed discussion on proper use of `yUSD`.
@@ -102,7 +102,7 @@ root(Naming Conventions)
   - Curve
     - Name: `Curve + pool + Pool`
       - **Examples:** `Curve sBTC Pool`, `Curve 3pool`, `Curve Y Pool`, `Curve Compound Pool`
-      - In this case, `pool` is taken directly from Curve.fi's UI, and we can adjust for capitalization as needed. In the case of the `3pool`, the redundant "Pool" is removed.
+      - In this case, `pool` is taken directly from curve.finance's UI, and we can adjust for capitalization as needed. In the case of the `3pool`, the redundant "Pool" is removed.
     - Symbol: `crvPOOL or override`
       - **Examples:** `crvBUSD`, `crvCOMP`, `crvGUSD`, `crvMUSD`, `crvTBTC`, `crvSBTC`, `yCRV`, `3Crv`
     - These names were chosen as `crvBUSD` and `crvSBTC` are already fairly widely used, and applying this formula works well for other pools. `yCRV` and `3Crv` are the allowed exceptions, as `yCRV` is the most widely used name for that pool, and `3Crv` usage is now fairly common with the recent admin fee distribution.

@@ -141,7 +141,7 @@
 
 ## Related Projects
 
-- [Curve Finance](https://curve.fi)
+- [Curve Finance](https://curve.finance)
 - [CREAM Finance](https://cream.finance)
 - [SushiSwap](https://www.sushi.com)
 - [Akropolis](https://www.akropolis.io)
