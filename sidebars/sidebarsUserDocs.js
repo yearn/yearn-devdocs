@@ -58,6 +58,11 @@ module.exports = {
             },
             {
               type: 'doc',
+              id: 'products/yvaults/yBold',
+              label: 'yBOLD',
+            },
+            {
+              type: 'doc',
               id: 'products/yvaults/yvaults-faq',
               label: 'yVaults FAQ',
             },
