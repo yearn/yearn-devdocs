@@ -38,7 +38,7 @@ Rewards are shown here: [https://crv.ape.tax/](https://crv.ape.tax/)
 
 Other vaults increase your holding in the token that you deposit. For example, the yETH vault increases your ETH holdings.
 
-The yveCRV vault pays weekly rewards in LP 3pool Curve \(3CRV\). 3CRV is a combination of DAI+USDT+USDC. Please refer to [Curve's website](https://www.curve.fi/3pool) for current weights. DAI, USDT and USDC are USD stablecoins therefore 3CRV is expected to maintain a price close to $1.
+The yveCRV vault pays weekly rewards in LP 3pool Curve \(3CRV\). 3CRV is a combination of DAI+USDT+USDC. Please refer to [Curve's website](https://www.curve.finance/3pool) for current weights. DAI, USDT and USDC are USD stablecoins therefore 3CRV is expected to maintain a price close to $1.
 
 The other key difference is that **deposited CRV is locked forever**. It **cannot be withdrawn**, as the vault perpetually re-locks CRV upon their expiration. Instead you earn a stream of 3CRV rewards for as long as people continue to trade on the Curve Finance protocol.
 

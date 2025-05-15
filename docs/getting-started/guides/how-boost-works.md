@@ -26,7 +26,7 @@ Once CRV holders vote-lock their CRV, changing it into veCRV, they can then vote
 
 It is worth noting that native veCRV cannot be transferred, and the only way to obtain it is by vote-locking CRV.
 
-You can stake CRV on [Curve.fi](https://curve.fi/) and actively manage your boosts for Liquidity Pools yourself, or you can let Yearn take care of CRV staking for you with our dedicated vaults: yveCRV, and yvBOOST. Also our yVault tokens are tradeable and transferable unlike staking CRV at [Curve.fi](https://curve.fi/).
+You can stake CRV on [curve.finance](https://curve.finance/) and actively manage your boosts for Liquidity Pools yourself, or you can let Yearn take care of CRV staking for you with our dedicated vaults: yveCRV, and yvBOOST. Also our yVault tokens are tradeable and transferable unlike staking CRV at [curve.finance](https://curve.finance/).
 
 ### Staking
 
@@ -44,7 +44,7 @@ The actual boost multiplier is determined by a formula that depends on the curre
 
 A "Yearn boost" tool displaying Yearn's current active and potential boost is available [here](https://crv.ape.tax/).
 
-See the [Curve Guide](https://resources.curve.fi/reward-gauges/boosting-your-crv-rewards/) for more details on the formula and its calculation.
+See the [Curve Guide](https://resources.curve.finance/reward-gauges/boosting-your-crv-rewards/) for more details on the formula and its calculation.
 
 ## The yveCRV yVault
 
@@ -54,13 +54,13 @@ See the [Curve Guide](https://resources.curve.fi/reward-gauges/boosting-your-crv
 
 #### Earn CRV with a better boost
 
-When a user deposits CRV into the vault, that CRV is locked on the [Curve.fi](https://curve.fi/) platform as veCRV and the user is returned a tokenized version of veCRV, yveCRV. This vault earns you a continuous share of Curve’s trading fees. Every week, these rewards can be claimed as 3Crv (Curve’s 3pool LP token).
+When a user deposits CRV into the vault, that CRV is locked on the [curve.finance](https://curve.finance/) platform as veCRV and the user is returned a tokenized version of veCRV, yveCRV. This vault earns you a continuous share of Curve’s trading fees. Every week, these rewards can be claimed as 3Crv (Curve’s 3pool LP token).
 
-You could do this yourself directly on the [Curve.fi](https://curve.fi/), but there is a very good reason one would prefer to use the yveCRV yVault: **more rewards!**
+You could do this yourself directly on the [curve.finance](https://curve.finance/), but there is a very good reason one would prefer to use the yveCRV yVault: **more rewards!**
 
-How much more? Your rewards through this vault can be more than double! Yearn achieves this because it periodically donates 10% of the farmed CRV it earns through all [Curve.fi](https://curve.fi/) based strategies to this yveCRV vault and allows yveCRV vault depositors to claim Yearn’s share of Curve protocol fees. This means we give all of Yearn’s rewards, which we could have claimed for the protocol, to yveCRV depositors, boosting their weekly rewards.
+How much more? Your rewards through this vault can be more than double! Yearn achieves this because it periodically donates 10% of the farmed CRV it earns through all [curve.finance](https://curve.finance/) based strategies to this yveCRV vault and allows yveCRV vault depositors to claim Yearn’s share of Curve protocol fees. This means we give all of Yearn’s rewards, which we could have claimed for the protocol, to yveCRV depositors, boosting their weekly rewards.
 
-Locking your CRV tokens into the vault means that you delegate your [Curve.fi](https://curve.fi/) voting power to yearn. Yearn constantly runs simulations to optimize its voting allocations which maximizes yield across all vaults, benefiting your deposits in other vaults!
+Locking your CRV tokens into the vault means that you delegate your [curve.finance](https://curve.finance/) voting power to yearn. Yearn constantly runs simulations to optimize its voting allocations which maximizes yield across all vaults, benefiting your deposits in other vaults!
 
 **You can now claim your rewards and spend that money on mojitos while you enjoy retirement.** Though, another option you might want instead is to add your rewards back into the vault to compound your gains and you can even find a “Restake” button to do just that. You could very well do this manually, but Yearn has you covered here with …
 
@@ -76,7 +76,7 @@ The yvBOOST yVault is a fully automated and compounding version of the yveCRV yV
 
 To put it simply, this vault claims your weekly 3CRV rewards automatically and uses them to acquire more yveCRV (either via market-buy or mint, depending on which is most efficient at time of harvest).
 
-Once deposited, just as in the yveCRV yVault, your CRV tokens’s voting power is handled and optimized by Yearn. You do not need to worry about claiming [Curve.fi](https://curve.fi/)’s weekly protocol fees, the vault does this for you!
+Once deposited, just as in the yveCRV yVault, your CRV tokens’s voting power is handled and optimized by Yearn. You do not need to worry about claiming [curve.finance](https://curve.finance/)’s weekly protocol fees, the vault does this for you!
 
 This is a “set-and-forget” vault where your CRV tokens grow exponentially, harnessing the power of compound interest!
 
@@ -94,7 +94,7 @@ Actual veCRV distribution has not yet begun, with a date for this still to be an
 
 ## CRV Vote Locking in Yearn
 
-Staking your CRV directly on the [Curve.fi](https://curve.fi/) platform means locking your CRV token in exchange for a non-transferrable veCRV token that allows you to manually claim a share of the protocol’s fee (3CRV). You can use this veCRV token to manually rebalance your votes to obtain a boost on your provided liquidity to the [Curve.fi](https://curve.fi/) platform.
+Staking your CRV directly on the [curve.finance](https://curve.finance/) platform means locking your CRV token in exchange for a non-transferrable veCRV token that allows you to manually claim a share of the protocol’s fee (3CRV). You can use this veCRV token to manually rebalance your votes to obtain a boost on your provided liquidity to the [curve.finance](https://curve.finance/) platform.
 
 Yearn deploys a single CRV vote locking strategy that is shared across its general Curve strategies:
 
@@ -107,8 +107,8 @@ Yearn deploys a single CRV vote locking strategy that is shared across its gener
 
 Both of these Yearn vaults reward CRV stakers with a share of the CRV locked by Yearn, making it an ideal destination for those who wish to stake CRV whilst remaining liquid:
 
-- Earn a share of trading fees from the [Curve.fi](https://curve.fi/) protocol (3Crv), automatically reinvested (for the yvBOOST vault).
-- Earn a share of Yearn’s claim of [Curve.fi](https://curve.fi/) protocol fees, on top of your own rewards (more 3CRV!), automatically reinvested (for the yvBOOST vault).
+- Earn a share of trading fees from the [curve.finance](https://curve.finance/) protocol (3Crv), automatically reinvested (for the yvBOOST vault).
+- Earn a share of Yearn’s claim of [curve.finance](https://curve.finance/) protocol fees, on top of your own rewards (more 3CRV!), automatically reinvested (for the yvBOOST vault).
 - The collective voting power of the veCRV tokens is optimized and rebalanced automatically to maximize rewards in all of Yearn’s Curve Pool vaults.
 - Receive yveCRV or yvBOOST tokens for your deposited CRV, allowing you to easily extract profit or exit your staked CRV position
 
@@ -116,10 +116,10 @@ Yearn’s work to automate the yield generation and rebalancing of your crypto a
 
 ## More information
 
-- [curve.fi](https://www.curve.fi/) webpage
-- Curve [Guide](https://resources.curve.fi/crv-token/staking-your-crv/) for staking CRV
-- Curve [Guide](https://resources.curve.fi/reward-gauges/boosting-your-crv-rewards/) for vote locking
-- Curve [FAQ](https://resources.curve.fi/governance/vote-locking-boost)
+- [curve.finance](https://www.curve.finance/) webpage
+- Curve [Guide](https://resources.curve.finance/crv-token/staking-your-crv/) for staking CRV
+- Curve [Guide](https://resources.curve.finance/reward-gauges/boosting-your-crv-rewards/) for vote locking
+- Curve [FAQ](https://resources.curve.finance/governance/vote-locking-boost)
 - deFinn [Infographic](https://gateway.pinata.cloud/ipfs/QmY8BZjN6oT4rrgveSqHjygcQmWitoMQk5B3moqFA6K8ea) on CRV Voting Boost and formula
-- Boost [calculator](https://dao.curve.fi/minter/calc)
+- Boost [calculator](https://dao.curve.finance/minter/calc)
 - Yearn CurveDAO proxy strategy [diagram](https://twitter.com/bantg/status/1308680661801340929)

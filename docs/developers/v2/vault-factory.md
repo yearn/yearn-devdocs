@@ -3,11 +3,12 @@
 Yearn's Vault Factory allows anyone to permissionlessly deploy an official Yearn Vault with ready-made yield strategies.
 
 The easiest way to get started using the factory is through the User Interface:
+
 - https://yearn.fi/vaults/factory - [Tutorial](#create-with-ui)
 
 The current version of the Vault Factory works with the following:
 
-- [Curve LP Tokens](#Curve-LP-Tokens)
+- [Curve LP Tokens](#curve-lp-tokens)
 - Balancer LP Tokens (soon)
 
 The Vault Factory is a massive step forward in automation. We're significantly reducing our operational costs for all vaults deployed with this new method. Here's the fee structure for them:
@@ -69,11 +70,11 @@ Factory-deployed yVaults for Curve LP tokens contain up to three ready-made yiel
 
 <img src="https://i.imgur.com/oJdwz6n.png" />
 
-In all three strategies, any earned tokens are regularly claimed, sold for more of the underlying Curve LP token, and then deposited back into the strategy to compound the yield. 
+In all three strategies, any earned tokens are regularly claimed, sold for more of the underlying Curve LP token, and then deposited back into the strategy to compound the yield.
 
 ## Velodrome LP Tokens
 
-On Optimism, we have deployed the Velodrome LP Token Vault Factory. Several vaults have already been deployed and users can now permissionlessly deploy a new vault for any Velodrome V2 pool. The strategy collects VELO emissions from gauge incentives, swaps them for the LP token making auto-compounding effortless! At the moment, harvests for the Velodrome Vault Factory are permissioned and called regularly by keepers. 
+On Optimism, we have deployed the Velodrome LP Token Vault Factory. Several vaults have already been deployed and users can now permissionlessly deploy a new vault for any Velodrome V2 pool. The strategy collects VELO emissions from gauge incentives, swaps them for the LP token making auto-compounding effortless! At the moment, harvests for the Velodrome Vault Factory are permissioned and called regularly by keepers.
 
 ## Balancer LP Tokens
 
@@ -95,11 +96,11 @@ Like with the Velodrome Vault Factory, harvests for the Aerodrome Vault Factory 
 
 ## Determine Accumulated Rewards
 
-This section helps you know how much profit has accumulated, but calling harvest will **not** recognize profits unless they are sitting in the strategy's contract address. Also if there are reward tokens in the strategy's contract, those values should be added to your calculation in the section below. 
+This section helps you know how much profit has accumulated, but calling harvest will **not** recognize profits unless they are sitting in the strategy's contract address. Also if there are reward tokens in the strategy's contract, those values should be added to your calculation in the section below.
 
 ### Curve Strategy
 
-For curve strategies, you can view how much rewards have accumulated for that vault by using Curve.Fi's [dashboard](https://curve.fi/#/ethereum/dashboard) and putting in Yearn's Curve Voter Proxy address `0xF147b8125d2ef93FB6965Db97D6746952a133934` (curve-voter.ychad.eth). This will show you the dollar amount accumulated in the strategy for all factory vaults. 
+For curve strategies, you can view how much rewards have accumulated for that vault by using curve.finance's [dashboard](https://curve.finance/#/ethereum/dashboard) and putting in Yearn's Curve Voter Proxy address `0xF147b8125d2ef93FB6965Db97D6746952a133934` (curve-voter.ychad.eth). This will show you the dollar amount accumulated in the strategy for all factory vaults.
 
 ### Convex and Convex Frax Strategies
 
@@ -113,9 +114,11 @@ For Convex and Convex Frax you can view how much rewards have accumulated in USD
 - Balancer LP Factory Address: [0x06393857dB733b76DD3ec91F3681cE85db275438](https://etherscan.io/address/0x06393857db733b76dd3ec91f3681ce85db275438#readContract)
 
 ### Optimism
+
 - Velodrome LP Factory Address: [0x8eb53a4fD9D2727a49E9e68a32108C18049bFf86](https://optimistic.etherscan.io/address/0x8eb53a4fD9D2727a49E9e68a32108C18049bFf86#readContract)
 
 ### Base
+
 - Aerodrome LP Factory Address: [0x2d12caFfa46ab3b6c5cEb224620de8b4DE3cDff1](https://basescan.org/address/0x2d12caffa46ab3b6c5ceb224620de8b4de3cdff1#readContract)
 
 The LP Factory contract provides a few main functions:
