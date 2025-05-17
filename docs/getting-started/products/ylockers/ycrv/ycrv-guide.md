@@ -34,7 +34,7 @@ There's also a "Learn More" tab to the right of those 4 options and a helpful da
 
 First, you'll need some yCRV. You can mint or buy yCRV with CRV via the zapper on the [Get yCRV](#4-get-ycrv) tab. Alternatively, yCRV can be purchased directly through the following platforms:
 
-* [Curve Finance](https://curve.fi/#/ethereum/swap?from=0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee&to=0xfcc5c47be19d06bf83eb04298b026f81069ff65b) - The primary liquidity source for yCRV
+* [Curve Finance](https://curve.finance/#/ethereum/swap?from=0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee&to=0xfcc5c47be19d06bf83eb04298b026f81069ff65b) - The primary liquidity source for yCRV
 * [CowSwap](https://swap.cow.fi/#/1/swap/ETH/YCRV) - DEX aggregators like CowSwap should also work well
 
 ![image](/img/guides/yCRV/stake.png)

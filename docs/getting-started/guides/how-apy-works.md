@@ -1,6 +1,6 @@
 # How to Understand Vault APYs
 
-It is a standard on Defi Space to estimate returns through [APY](https://www.investopedia.com/terms/a/apy.asp) and [APR](https://www.investopedia.com/terms/a/apr.asp), and Yearn also does so. However, different calculations depend on the yVault underlying asset: one for [Curve.Finance](https://curve.fi/) LP Tokens and another for non-curve assets. For a simpler version, check [our APYs medium article](https://medium.com/iearn/how-yearn-calculates-estimated-returns-apy-b4fd5b687bf9) or the infographic at the end of the page. The following sections will show how each is calculated:
+It is a standard on Defi Space to estimate returns through [APY](https://www.investopedia.com/terms/a/apy.asp) and [APR](https://www.investopedia.com/terms/a/apr.asp), and Yearn also does so. However, different calculations depend on the yVault underlying asset: one for [Curve.Finance](https://curve.finance/) LP Tokens and another for non-curve assets. For a simpler version, check [our APYs medium article](https://medium.com/iearn/how-yearn-calculates-estimated-returns-apy-b4fd5b687bf9) or the infographic at the end of the page. The following sections will show how each is calculated:
 
 ## Non-curve assets
 
@@ -57,4 +57,3 @@ The file that contains the calculation for the most recent version of the yVault
 ## Infographic
 
 ![image](https://i.imgur.com/uT6VW9f.png)
-

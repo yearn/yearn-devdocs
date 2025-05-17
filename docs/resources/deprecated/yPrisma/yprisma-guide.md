@@ -34,7 +34,7 @@ There's also a helpful data panel on the right-hand side with the following info
 
 First, you'll need some yPRISMA. You can mint or buy yPRISMA with PRISMA via the zapper on the "Get yPRISMA" tab. Alternatively, yPRISMA can be purchased directly through the following platforms:
 
-* [Curve Finance](https://curve.fi/#/ethereum/swap?from=0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee&to=0xe3668873d944e4a949da05fc8bde419eff543882) - The primary liquidity source for yPRISMA
+* [Curve Finance](https://curve.finance/#/ethereum/swap?from=0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee&to=0xe3668873d944e4a949da05fc8bde419eff543882) - The primary liquidity source for yPRISMA
 * [CowSwap](https://swap.cow.fi/#/1/swap/ETH/YPRISMA) - DEX aggregators like CowSwap should also work well
 
 ![image](/img/guides/yPRISMA/stake-1.png)

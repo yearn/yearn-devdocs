@@ -10,7 +10,7 @@ Contracts are live, you can find relevant addresses [here](/getting-started/prod
 yCRV can be purchased through the following platforms:
 
 * If you already have CRV tokens, you can ZAP directly into yCRV using Yearn's yCRV zapper contract [**here**](https://yCRV.yearn.fi/app/get)
-* [Curve Finance](https://curve.fi/#/ethereum/swap?from=0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee&to=0xfcc5c47be19d06bf83eb04298b026f81069ff65b) - The primary liquidity source for yCRV
+* [Curve Finance](https://curve.finance/#/ethereum/swap?from=0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee&to=0xfcc5c47be19d06bf83eb04298b026f81069ff65b) - The primary liquidity source for yCRV
 * [CowSwap](https://swap.cow.fi/#/1/swap/ETH/YCRV) - DEX aggregators like CowSwap should also work well
 
 ### What is YBS and how is the new version of yCRV different from the old one?
