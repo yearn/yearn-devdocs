@@ -18,7 +18,7 @@ Cryptographic membership attestations can be validated against the PGP keys in t
 | Address           | Member Name          | Membership Attestation       |
 |-------------------|----------------------|------------------------------|
 | [0x6F2A8Ee9452ba7d336b3fba03caC27f7818AeAD6](https://etherscan.io/address/0x6F2A8Ee9452ba7d336b3fba03caC27f7818AeAD6) | Mariano Conti (nanexcool.com, prev. MakerDAO) | [Twitter](https://x.com/nanexcool/status/1491900804223041540) |
-| [0xeA6c0837fef621E77329f85820F503cA09f2B3a9](https://etherscan.io/address/0xeA6c0837fef621E77329f85820F503cA09f2B3a9) | Leo Cheng (C.R.E.A.M. Finance) | [Twitter](https://x.com/lumbergdoteth/status/1492736002724876291) |
+| [0xeA6c0837fef621E77329f85820F503cA09f2B3a9](https://etherscan.io/address/0xeA6c0837fef621E77329f85820F503cA09f2B3a9) | Leo Cheng (C.R.E.A.M. Finance) | [Twitter](https://x.com/lumbergdoteth/status/1923382177200218580) |
 | [0x99BC02c239025E431D5741cC1DbA8CE77fc51CE3](https://etherscan.io/address/0x99BC02c239025E431D5741cC1DbA8CE77fc51CE3) | Daryl Lau (Not3Lau Capital) | [Twitter](https://x.com/Daryllautk/status/1285434908383444992) |
 | [0xf5D3dbda5F41A0E26D71B948e29522398e71cFaE](https://etherscan.io/address/0xf5D3dbda5F41A0E26D71B948e29522398e71cFaE) | 0xngmi (DefiLlama) | [Twitter](https://x.com/0xngmi/status/1590047391797088257) |
 | [0x5Db9926c93085a92F14A85daBF6FF27b07362Cae](https://etherscan.io/address/0x5Db9926c93085a92F14A85daBF6FF27b07362Cae) | Ephy (Sky/MakerDAO) | [Twitter](https://x.com/0x3phemeralsoul/status/1923374073440080069) |
