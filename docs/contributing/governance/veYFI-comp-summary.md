@@ -268,7 +268,7 @@ For users who prefer not to manage individual locks and veYFI decay, **liquid lo
   - These tokens represent a claim on the locked YFI and can be traded or used to earn rewards.
 - **Available Services**:
   - **1up**: [1up.tokyo/stake](https://1up.tokyo/stake)
-  - **Cove**: [app.cove.finance/yfi/stake-yfi](https://app.cove.finance/yfi/stake-yfi)
+  - **Cove**: [app.cove.finance/yfi/stake-yfi](https://boosties.cove.finance/yfi/stake-yfi)
   - **StakeDAO**: [stakedao.org/lockers/yfi](https://www.stakedao.org/lockers/yfi)
 - **Considerations**:
   - Liquid locker tokens may not always maintain parity with YFI's value.
