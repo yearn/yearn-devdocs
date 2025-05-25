@@ -35,7 +35,7 @@ veYFI is non-transferrable and additional YFI locked from an account that alread
 If you don't want to deal with the intricacies of locks, there are products called *Liquid Lockers* that abstract them away and also counteract veYFI decay. Yearn provides these for other protocols (yCRV and yPRISMA), and while it does not provide them for YFI, other DAOs/entities do. At the time of writing, there are 3 liquid lockers for YFI:
 
 - [1up](https://1up.tokyo/stake)
-- [Cove](https://app.cove.finance/yfi/stake-yfi)
+- [Cove](https://boosties.cove.finance/yfi/stake-yfi)
 - [StakeDAO](https://www.stakedao.org/lockers/yfi)
 
 Liquid Lockers are contracts that permissionlessly max-lock governance tokens (YFI to veYFI in this case) in exchange for a receipt token at a rate of 1:1. The benefit of doing this is to provide the end user with a fully transferrable token that can still receive a share of governance benefits like yield or voting power. Liquid locker tokens are not redeemable for the underlying locked tokens. Instead, they can be traded on decentralized exchanges. This means they may not always maintain price parity with their underlying assets.
@@ -46,4 +46,4 @@ If you use a liquid locker instead of locking YFI for veYFI directly then you wo
 
 dYFI has a variable redemption cost (in ETH) to convert into YFI. The amount you must pay to redeem YFI increases as the veYFI supply increases.
 
-There is an interface to redeem on the [Yearn dApp](https://veyfi.yearn.fi/?tab=redeem) or you can use [Cove's dYFI redeemer contract](https://app.cove.finance/yfi/convert-dyfi) that will redeem automatically and charges a fee to do so, but don't not require any ETH upfront.
+There is an interface to redeem on the [Yearn dApp](https://veyfi.yearn.fi/?tab=redeem) or you can use [Cove's dYFI redeemer contract](https://boosties.cove.finance/yfi/convert-dyfi) that will redeem automatically and charges a fee to do so, but don't not require any ETH upfront.
