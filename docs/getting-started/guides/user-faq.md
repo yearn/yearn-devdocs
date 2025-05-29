@@ -192,7 +192,7 @@ The easiest way to see if there are harvests is to check if the Price Per Share 
 
 :::warning
 
-Using a block explorer is advanced and if you have not used one before, we only recommend it to withdraw from a vault that you cannot access from the yearn.fi website, or in an emergency. Yearn, and its website, are in active developement, so issues with the website should be fixed quickly upon reporting them. For many issues it is better to wait for a website fix.
+Using a block explorer is advanced and if you have not used one before, we only recommend it to withdraw from a vault that you cannot access from the yearn.fi website, or in an emergency. Yearn, and its website, are in active development, so issues with the website should be fixed quickly upon reporting them. For many issues it is better to wait for a website fix.
 
 If you need help, come by the discord and [open a support ticket](https://discord.gg/q8fYnmnV).
 
