@@ -10,7 +10,7 @@
 | Gauge registry     | [`0x1D0fdCb628b2f8c0e22354d45B3B2D4cE9936F8B`](https://etherscan.io/address/0x1D0fdCb628b2f8c0e22354d45B3B2D4cE9936F8B) |
 | Gauge controller   | [`0x46b38522422D597dDbAA2D6E98D6C9b397028d5B`](https://etherscan.io/address/0x46b38522422D597dDbAA2D6E98D6C9b397028d5B) |
 | dYFI               | [`0x41252e8691e964f7de35156b68493bab6797a275`](https://etherscan.io/address/0x41252e8691e964f7de35156b68493bab6797a275) |
-| dYFI Redemption    | [`0x7dC3A74F0684fc026f9163C6D5c3C99fda2cf60a`](https://etherscan.io/address/0x7dC3A74F0684fc026f9163C6D5c3C99fda2cf60a) |
+| dYFI Redemption    | [`0x4707C855323545223fA2bA4150A83950F6F53b6E`](https://etherscan.io/address/0x4707C855323545223fA2bA4150A83950F6F53b6E) |
 | YFI Reward Pool    | [`0xb287a1964AEE422911c7b8409f5E5A273c1412fA`](https://etherscan.io/address/0xb287a1964AEE422911c7b8409f5E5A273c1412fA) |
 | dYFI Reward Pool   | [`0x2391Fc8f5E417526338F5aa3968b1851C16D894E`](https://etherscan.io/address/0x2391Fc8f5E417526338F5aa3968b1851C16D894E) |
 
