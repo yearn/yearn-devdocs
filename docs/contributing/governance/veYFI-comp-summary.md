@@ -2,7 +2,7 @@
 rpcCalls:  
   - name: 'dYFI Redemption'
     chain: '1'
-    address: '0x7dC3A74F0684fc026f9163C6D5c3C99fda2cf60a'
+    address: '0x4707C855323545223fA2bA4150A83950F6F53b6E'
     abiName: 'dyfiRedemptionABI'
     methods:  
       - 'discount'
