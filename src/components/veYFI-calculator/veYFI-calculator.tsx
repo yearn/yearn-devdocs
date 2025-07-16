@@ -102,7 +102,6 @@ const VeYFICalculator: React.FC = () => {
     const fetchData = async () => {
       const supply = await fetchVeYFISupply(publicClient)
       setVeYfiTotalSupply(supply || 0)
-      console.log(`veYfiTotalSupply: ${supply}`)
       const gauges = await fetchAllGaugeData(publicClient)
       setGaugeData(Array.isArray(gauges) ? gauges : [])
       const fetchedLiquidLockerBalances = await fetchLiquidLockerVeYFIBalance(
@@ -110,7 +109,7 @@ const VeYFICalculator: React.FC = () => {
         LiquidLockerContracts
       )
       setLiquidLockerBalances(fetchedLiquidLockerBalances || {})
-      console.log(fetchedLiquidLockerBalances)
+
       setIsDataFetched(true)
     }
     fetchData()
@@ -151,7 +150,6 @@ const VeYFICalculator: React.FC = () => {
   const handleDepositAmountInUSDChange = (
     e: React.ChangeEvent<HTMLInputElement>
   ) => {
-    console.log('---- in handleDepositAmountInUSDChange ----')
     const val = e.target.value
     if (val === '') {
       setDepositAmount('')
@@ -159,16 +157,13 @@ const VeYFICalculator: React.FC = () => {
     }
     if (!isNaN(Number(val))) {
       setDepositAmountInUSD(Number(val))
-      console.log(`selectedVaultSharePrice: ${selectedVaultSharePrice}`)
       const depositAmountInShares = selectedVaultSharePrice
         ? Number(val) / selectedVaultSharePrice
         : 0
-      console.log(`depositAmountInShares: ${depositAmountInShares}`)
       setDepositAmount(depositAmountInShares)
     }
     setShowChart1(false)
     setShowChart2(false)
-    console.log('---- out handleDepositAmountInUSDChange ----')
   }
 
   const handleCheckboxChange1 = () => {
@@ -196,11 +191,8 @@ const VeYFICalculator: React.FC = () => {
         yDaemon,
         selectedGauge.underlyingVaultAddress
       )
-      console.log(tokenPriceData)
       const underlyingPrice = tokenPriceData?.tvl.price
-      console.log('underlyingPrice: ', underlyingPrice)
       const pricePerShare = tokenPriceData?.apr.pricePerShare.today
-      console.log('pricePerShare: ', pricePerShare)
       const vaultSharePrice = pricePerShare * underlyingPrice
       setSelectedVaultSharePrice(vaultSharePrice)
     }
@@ -213,13 +205,10 @@ const VeYFICalculator: React.FC = () => {
   const handleCalculateButton1Click = () => {
     const totalDeposited =
       gaugeData.find((g) => g.name === selectedVault)?.totalAssets || 0
-    console.log(`totalDeposited in ${selectedVault} Gauge: , ${totalDeposited}`)
     const depositVal = Number(depositAmount) || 0
     const veYFIVal = useVeYfiCalculator
       ? Number(veYFIFromLock) || 0
       : Number(veYFIAmount) || 0
-    console.log(`veYFIVal: ${veYFIVal}`)
-    console.log(`selectedVaultSharePrice: ${selectedVaultSharePrice}`)
     // get the boost value for a range of deposit amounts
     const calcFunc = (amountDepositedInGauge: number) =>
       calculateBoost(
@@ -242,21 +231,15 @@ const VeYFICalculator: React.FC = () => {
         entry.amountDepositedInGauge * (selectedVaultSharePrice ?? 0),
     }))
     // get the boost for the entered deposit amount
-    console.log('depositAmountInUSD: ', depositAmountInUSD)
-    console.log('selectedVaultSharePrice: ', selectedVaultSharePrice)
-    console.log('Deposit Amount in Shares: ', depositVal)
     const specificBoost = calculateBoost(
       veYFIVal,
       veYfiTotalSupply,
       totalDeposited,
       Number(depositAmountInUSD) / (selectedVaultSharePrice ?? 0)
     )
-    console.log(`specificBoost: ${specificBoost}`)
     const specificBoostDataPoint = generateSinglePoint(depositVal, calcFunc)
-    console.log(`specificBoostDataPoint: ${specificBoostDataPoint}`)
     const specificBoostDataPointUSD =
       (specificBoostDataPoint?.value ?? 0) * (selectedVaultSharePrice ?? 0)
-    console.log(`specificBoostDataPointUSD: ${specificBoostDataPointUSD}`)
     setCalculatedBoost({
       veYFI: veYFIVal,
       value: specificBoostDataPoint?.value || 0,
