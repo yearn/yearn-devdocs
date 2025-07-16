@@ -141,7 +141,7 @@ export function generateSinglePoint(
 ): { value: number; boost: number } | null {
   const boost = calcFunc(value)
   if (!isNaN(boost) && isFinite(boost)) {
-    return { value: parseFloat(value.toFixed(5)), boost } // Modified: keys are 'value' and 'boost', value is a string
+    return { value: parseFloat(value.toFixed(5)), boost } // Modified: keys are 'value' and 'boost', value is a number
   }
   return null
 }
