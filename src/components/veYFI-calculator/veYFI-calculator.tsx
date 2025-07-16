@@ -24,11 +24,11 @@ import VeYFILockCalculator from './VeYFILockCalculator'
 // import SelectLiquidLockerCard from './SelectLiquidLockerCard'
 import SelectLiquidLockerCard from './SelectLiquidLockerCard'
 import {
-  calculateBoostFromDeposit,
-  calculateBoostFromVeYFI,
+  calculateBoost,
   findDynamicRangeForDeposit,
   generateLinearData,
   findDynamicRangeForVeYFI,
+  generateSinglePoint,
 } from './calculations'
 import {
   fetchVeYFISupply,
@@ -46,6 +46,13 @@ type GaugeData = {
   totalAssets: number
   symbol: string
   underlyingVaultAddress: string
+}
+
+export type BoostCalculationResult = {
+  veYFI: number
+  value: number
+  valueUsd: number
+  boost: number
 }
 
 const VeYFICalculator: React.FC = () => {
@@ -68,6 +75,14 @@ const VeYFICalculator: React.FC = () => {
   const [depositAmountInUSD, setDepositAmountInUSD] = useState<number | string>(
     ''
   )
+
+  const [calculatedBoost, setCalculatedBoost] =
+    useState<BoostCalculationResult>({
+      veYFI: 0,
+      value: 0,
+      valueUsd: 0,
+      boost: 0,
+    })
   const [showChart1, setShowChart1] = useState<boolean>(false)
   const [showChart2, setShowChart2] = useState<boolean>(false)
   const [chart1DataShares, setChart1DataShares] = useState<any[]>([])
@@ -87,6 +102,7 @@ const VeYFICalculator: React.FC = () => {
     const fetchData = async () => {
       const supply = await fetchVeYFISupply(publicClient)
       setVeYfiTotalSupply(supply || 0)
+      console.log(`veYfiTotalSupply: ${supply}`)
       const gauges = await fetchAllGaugeData(publicClient)
       setGaugeData(Array.isArray(gauges) ? gauges : [])
       const fetchedLiquidLockerBalances = await fetchLiquidLockerVeYFIBalance(
@@ -109,6 +125,8 @@ const VeYFICalculator: React.FC = () => {
     if (!isNaN(Number(val)) && Number(val) <= veYfiTotalSupply) {
       setVeYFIAmount(Number(val))
     }
+    setShowChart1(false)
+    setShowChart2(false)
   }
 
   const handleDepositAmountInSharesChange = (
@@ -126,11 +144,14 @@ const VeYFICalculator: React.FC = () => {
       setDepositAmountInUSD(depositAmountInDollars)
       setDepositAmount(Number(val))
     }
+    setShowChart1(false)
+    setShowChart2(false)
   }
 
   const handleDepositAmountInUSDChange = (
     e: React.ChangeEvent<HTMLInputElement>
   ) => {
+    console.log('---- in handleDepositAmountInUSDChange ----')
     const val = e.target.value
     if (val === '') {
       setDepositAmount('')
@@ -138,11 +159,16 @@ const VeYFICalculator: React.FC = () => {
     }
     if (!isNaN(Number(val))) {
       setDepositAmountInUSD(Number(val))
+      console.log(`selectedVaultSharePrice: ${selectedVaultSharePrice}`)
       const depositAmountInShares = selectedVaultSharePrice
         ? Number(val) / selectedVaultSharePrice
         : 0
+      console.log(`depositAmountInShares: ${depositAmountInShares}`)
       setDepositAmount(depositAmountInShares)
     }
+    setShowChart1(false)
+    setShowChart2(false)
+    console.log('---- out handleDepositAmountInUSDChange ----')
   }
 
   const handleCheckboxChange1 = () => {
@@ -178,16 +204,25 @@ const VeYFICalculator: React.FC = () => {
       const vaultSharePrice = pricePerShare * underlyingPrice
       setSelectedVaultSharePrice(vaultSharePrice)
     }
+    setShowChart1(false)
+    setShowChart2(false)
+    setDepositAmountInUSD('')
+    setDepositAmount('')
   }
 
   const handleCalculateButton1Click = () => {
     const totalDeposited =
       gaugeData.find((g) => g.name === selectedVault)?.totalAssets || 0
+    console.log(`totalDeposited in ${selectedVault} Gauge: , ${totalDeposited}`)
+    const depositVal = Number(depositAmount) || 0
     const veYFIVal = useVeYfiCalculator
       ? Number(veYFIFromLock) || 0
       : Number(veYFIAmount) || 0
+    console.log(`veYFIVal: ${veYFIVal}`)
+    console.log(`selectedVaultSharePrice: ${selectedVaultSharePrice}`)
+    // get the boost value for a range of deposit amounts
     const calcFunc = (amountDepositedInGauge: number) =>
-      calculateBoostFromDeposit(
+      calculateBoost(
         veYFIVal,
         veYfiTotalSupply,
         totalDeposited,
@@ -206,6 +241,28 @@ const VeYFICalculator: React.FC = () => {
       amountDepositedInGauge:
         entry.amountDepositedInGauge * (selectedVaultSharePrice ?? 0),
     }))
+    // get the boost for the entered deposit amount
+    console.log('depositAmountInUSD: ', depositAmountInUSD)
+    console.log('selectedVaultSharePrice: ', selectedVaultSharePrice)
+    console.log('Deposit Amount in Shares: ', depositVal)
+    const specificBoost = calculateBoost(
+      veYFIVal,
+      veYfiTotalSupply,
+      totalDeposited,
+      Number(depositAmountInUSD) / (selectedVaultSharePrice ?? 0)
+    )
+    console.log(`specificBoost: ${specificBoost}`)
+    const specificBoostDataPoint = generateSinglePoint(depositVal, calcFunc)
+    console.log(`specificBoostDataPoint: ${specificBoostDataPoint}`)
+    const specificBoostDataPointUSD =
+      (specificBoostDataPoint?.value ?? 0) * (selectedVaultSharePrice ?? 0)
+    console.log(`specificBoostDataPointUSD: ${specificBoostDataPointUSD}`)
+    setCalculatedBoost({
+      veYFI: veYFIVal,
+      value: specificBoostDataPoint?.value || 0,
+      valueUsd: specificBoostDataPointUSD,
+      boost: specificBoost,
+    })
     setChart1DataShares(dataShares)
     setChart1DataUSD(dataUSD)
     setChartedVaultName(selectedVault)
@@ -217,12 +274,7 @@ const VeYFICalculator: React.FC = () => {
       gaugeData.find((g) => g.name === selectedVault)?.totalAssets || 0
     const depositVal = Number(depositAmount) || 0
     const calcFunc = (veYfiVar: number) =>
-      calculateBoostFromVeYFI(
-        veYfiVar,
-        veYfiTotalSupply,
-        totalDeposited,
-        depositVal
-      )
+      calculateBoost(veYfiVar, veYfiTotalSupply, totalDeposited, depositVal)
     const newRange = findDynamicRangeForVeYFI(calcFunc)
     const data = generateLinearData(
       newRange.start,
@@ -330,6 +382,13 @@ const VeYFICalculator: React.FC = () => {
                       />
                     </div>
                   )}
+                  <Input
+                    type="number"
+                    value={depositAmountInUSD}
+                    onChange={handleDepositAmountInUSDChange}
+                    placeholder="(Optional) Enter deposit amount in USD"
+                    style={{ marginTop: '0.5rem', width: '100%' }}
+                  />
                 </div>
               </div>
             </CardContent>
@@ -352,6 +411,7 @@ const VeYFICalculator: React.FC = () => {
                   <BoostChart
                     gaugeName={chartedVaultName}
                     data={chart1DataUSD}
+                    specificBoost={calculatedBoost}
                     xVar="Amount Deposited in Gauge (USD)"
                     dataKey="amountDepositedInGauge"
                   />
@@ -359,6 +419,7 @@ const VeYFICalculator: React.FC = () => {
                   <BoostChart
                     gaugeName={chartedVaultName}
                     data={chart1DataShares}
+                    specificBoost={calculatedBoost}
                     xVar="Amount Deposited in Gauge (Shares)"
                     dataKey="amountDepositedInGauge"
                   />

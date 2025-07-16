@@ -83,7 +83,7 @@ export async function fetchAllGaugeData(publicClient: any) {
 }
 
 export async function fetchTokenPrice(yDaemon: string, address: string) {
-  const response = await fetch(`${yDaemon}1/vaults/${address}`)
+  const response = await fetch(`${yDaemon}/1/vaults/${address}`)
   if (!response.ok) {
     console.error('Failed to fetch token price')
     return null
