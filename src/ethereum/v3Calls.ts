@@ -64,7 +64,7 @@ export const getProtocolContractAddresses = async (
  * 1. loop through the `factories` array in the `v3ReleaseRegistry` contract with `numReleases`-1 as the upper bound. save the factory address for each release.
  * 2. For each factory, call `apiVersion` to get the release number.
  * 3. For each factory, call `vault_original` to get the vault address.
- * 4. Save data to a map with the release number as the key and the the vault_original and vault factory addresses as values.
+ * 4. Save data to a map with the release number as the key and the vault_original and vault factory addresses as values.
  * 5. loop through the `tokenizedStrategy` array in the `v3ReleaseRegistry` contract with `numReleases`-1 as the upper bound.
  * save the tokenizedStrategy address for each release to the map.
  */
