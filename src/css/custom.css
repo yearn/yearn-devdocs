@@ -55,6 +55,7 @@
 html[data-theme='dark'] {
   --ifm-toc-border-color: transparent;
   /* background-color: #18191a; */
+  --ifm-background-color: #18191a;
   --background: var(--ifm-background-color);
   --foreground: 0 0% 100%;
   --muted: 223 47% 11%;
@@ -273,7 +274,7 @@ h6 {
 /*---IMG stuff---*/
 
 img {
-  height: auto;
+  height: 100%;
 }
 .topRightImg {
   object-fit: cover;

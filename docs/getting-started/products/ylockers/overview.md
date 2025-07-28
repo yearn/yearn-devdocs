@@ -1,10 +1,4 @@
-# Overview
-
-:::info
-
-The new Ylockers ecosystem has rolled out as of June 6th, 2024 with the launch of the *YearnBoostedStaker* (YBS) contract and a new V3 Auto-Compounder vault. These new contracts are now available for yPRISMA and yCRV.
-
-:::
+# yLockers Overview
 
 yLockers are a category of assets built by Yearn designed to tokenize locked governance positions in external DeFi protocols based on [Curve's vote escrow (ve) model](https://resources.curve.finance/crv-token/vecrv/). This asset type is often called a "Liquid Locker".
 
@@ -16,8 +10,8 @@ The benefit of doing this is to provide the end user with a fully transferrable 
 
 ## yLocker Products
 
-* [yPrisma](../ylockers/yprisma/overview)
 * [yCRV](../ylockers/ycrv/overview)
+* [yPrisma (Deprecated)](../ylockers/yprisma/overview)
 
 ## Earning Yield with yLockers
 
