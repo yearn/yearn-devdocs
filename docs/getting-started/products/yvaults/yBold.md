@@ -1,11 +1,5 @@
 # yBOLD
 
-:::info
-
-yBOLD is not yet live. It will be released as soon as its audit is completed.
-
-:::
-
 yBOLD is Yearn's BOLD tokenized Stability pool product. It is designed to tokenize the different benefits of a BOLD-in-Stability-Pool position in a simple, user-friendly way. Let's review the basics of yBOLD:
 
 - 1 yBOLD represents 1 BOLD deposited in one of Liquity V2's Stability Pools
@@ -18,11 +12,11 @@ If you have BOLD tokens, you can convert them to yBOLD either by minting yBOLD a
 
 ## Earn Yield on yBOLD
 
-There are 2 main ways to earn yield on your yBOLD; (1) depositing to the Curve LP to earn trading fees and CRV emissions (AKA lp-yBOLD), or (2) staking it in the yBOLD Auto-Compounder vault (AKA st-yBOLD) to earn more yBOLD.
+There are 2 main ways to earn yield on your yBOLD; (1) depositing to the Curve LP to earn trading fees and CRV emissions (AKA lp-yBOLD), or (2) staking it in the yBOLD Auto-Compounder vault (AKA ysyBOLD) to earn more yBOLD.
 
 ## How It Works
 
-When you deposit BOLD into yBOLD, Yearn routes your funds into the different Liquity V2 Stability Pools. Revenue for Stability Pool depositors comes from (1) liquidation fees and (2) 75% of the system's interest rate earnings. When you stake yBOLD, you'll receive st-yBOLD (Staked Yearn BOLD). Over time, the value of st-yBOLD increases relative to yBOLD as rewards compound automatically.
+When you deposit BOLD into yBOLD, Yearn routes your funds into the different Liquity V2 Stability Pools. Revenue for Stability Pool depositors comes from (1) liquidation fees and (2) 75% of the system's interest rate earnings. When you stake yBOLD, you'll receive ysyBOLD (Staked Yearn BOLD). Over time, the value of ysyBOLD increases relative to yBOLD as rewards compound automatically.
 
 ## Why Use yBOLD?
 
@@ -38,7 +32,7 @@ When you deposit BOLD into yBOLD, Yearn routes your funds into the different Liq
 
 - Immutable: yBOLD is designed with immutability in mind. A few months after launch, once we're confident no funny stuff happens, we'll revoke any privileged rights (which are almost non-existent anyways).
 
-- Composable: yBOLD and st-yBOLD can be integrated into DeFi protocols as a productive version of BOLD.
+- Composable: yBOLD and ysyBOLD can be integrated into DeFi protocols as a productive version of BOLD.
 
 ## Risks
 
@@ -50,4 +44,4 @@ When you deposit BOLD into yBOLD, Yearn routes your funds into the different Liq
 
 ## Integrations
 
-yBOLD and st-yBOLD can be used in protocols that support ERC-4626 tokens. If you're building an integration or need help, reach out on [Telegram](https://t.me/yearnfinance/) or [Discord](https://discord.gg/yearn).
+yBOLD and ysyBOLD can be used in protocols that support ERC-4626 tokens. If you're building an integration or need help, reach out on [Telegram](https://t.me/yearnfinance/) or [Discord](https://discord.gg/yearn).
