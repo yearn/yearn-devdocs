@@ -175,6 +175,9 @@ html[data-theme='light'] .DocSearch:hover {
   font-weight: 400;
   margin-right: auto;
 } */
+.navbar__logo {
+  width: 32px;
+}
 .navbar__items .navbar__item:first-child {
   margin-left: auto;
   padding-left: 0;
@@ -272,9 +275,8 @@ h6 {
 }
 
 /*---IMG stuff---*/
-
 img {
-  height: 100%;
+  height: auto;
 }
 .topRightImg {
   object-fit: cover;
