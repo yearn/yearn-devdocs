@@ -55,6 +55,7 @@
 html[data-theme='dark'] {
   --ifm-toc-border-color: transparent;
   /* background-color: #18191a; */
+  --ifm-background-color: #18191a;
   --background: var(--ifm-background-color);
   --foreground: 0 0% 100%;
   --muted: 223 47% 11%;
@@ -174,6 +175,9 @@ html[data-theme='light'] .DocSearch:hover {
   font-weight: 400;
   margin-right: auto;
 } */
+.navbar__logo {
+  width: 32px;
+}
 .navbar__items .navbar__item:first-child {
   margin-left: auto;
   padding-left: 0;
@@ -271,7 +275,6 @@ h6 {
 }
 
 /*---IMG stuff---*/
-
 img {
   height: auto;
 }
