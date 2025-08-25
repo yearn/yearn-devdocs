@@ -22,14 +22,18 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
+# Bun lockfile
+bun.lockb
+
 .markdownlint.json
 
 .branch-name
 .github/copilot-instructions.md
 all_checks_passed.txt
 
-# Use yarn.lock
+# Lockfiles managed by package managers (we use Bun)
 package-lock.json
+yarn.lock
 
 # Not needed doc
 docs/developers/contracts/test

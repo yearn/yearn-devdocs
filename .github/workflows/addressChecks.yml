@@ -14,30 +14,21 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v4
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
         with:
-          node-version: '22.x'
+          bun-version: '1.1.x'
 
-      - name: Install dependencies
+      - name: Install dependencies and build
         run: |
-          if [ -e yarn.lock ]; then
-            yarn install
-            yarn global add ts-node
-          elif [ -e package-lock.json ]; then
-            npm ci
-            npm install -g ts-node
-          else
-            npm install
-            npm install -g ts-node
-          fi
-          npm run build
+          bun install
+          bun run build
 
       - name: Run checks and update data
         env:
           ALCHEMY_API_KEY: ${{ secrets.ALCHEMY_API_KEY }}
         run: |
-          ts-node scripts/runAddressChecks.ts
+          bun run runAddressCheck
           echo "ALL_CHECKS_PASSED=$(cat all_checks_passed.txt)" >> $GITHUB_ENV
 
       - name: Create an issue if checks failed
