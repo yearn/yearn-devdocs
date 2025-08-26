@@ -83,7 +83,7 @@ require(!TokenizedStrategy.isShutdown(), "strategy is shutdown");
 
 ___
 
-### *_deployFunds(uint256_amount)*
+### *_deployFunds(uint256 _amount)*
 
 **Purpose**:
 
@@ -112,7 +112,7 @@ function _deployFunds(uint256 _amount) internal override \{
 
 ___
 
-### *_freeFunds(uint256_amount)*
+### *_freeFunds(uint256 _amount)*
 
 **Purpose**:
 
@@ -193,11 +193,13 @@ function _harvestAndReport() internal override returns (uint256 _totalAssets) {
 
 ___
 
-### Optional Functions
+## Optional Functions
 
 Simply overriding those three functions will make your strategy a fully functional, permissionless, 4626-compliant stand-alone vault. It can work independently or seamlessly into any Yearn V3 vault.
 
 While that may be all that's necessary for some of the most straightforward strategies, most strategists may want to add more customization or complexity to their strategy. There are five more optional functions that can be overridden by a strategist if desired to continue to build out their Tokenized Strategy.
+
+___
 
 ### *availableDepositLimit(address _owner)*
 
@@ -234,126 +236,135 @@ function availableDepositLimit(
 }
 ```
 
-1. *availableWithdrawLimit(address _owner)*
+___
 
-    **Purpose**:
-    - This is called during every withdraw and can be used to enforce any withdraw limit the strategist desires.
+### *availableWithdrawLimit(address _owner)*
 
-    **Parameters**:
-    - `_owner`: The address that owns the shares that would be burnt for the underlying assets.
+**Purpose**:
+- This is called during every withdraw and can be used to enforce any withdraw limit the strategist desires.
 
-    **Returns**:
-    - The limit if any that should be enforced on withdraws.
+**Parameters**:
+- `_owner`: The address that owns the shares that would be burnt for the underlying assets.
 
-    **Good to Know**:
-    - This does not need to consider the balance of the _owner.
-    - This can be more than the actual amount available to withdraw.
-    - **Recommended use is to have the amount returned not be close to the actual strategies totalAssets to avoid rounding issues.**
-    - Defaults to max uint256.
+**Returns**:
+- The limit if any that should be enforced on withdraws.
 
-    **Best Practices**:
-    - This should be overridden for strategies that have illiquid, or sandwichable positions to prevent reporting incorrect losses on withdraws.
-    - This should also account for any restrictions the underlying protocol may encounter.
-    - To just allow the idle funds to be withdrawn use `asset.balanceOf(address(this))`.
-    - This does not need to consider conversion rates from assets to shares. But you should know that any limit under uint256 max may get converted to shares and should not be high enough to overflow  on multiplication.
+**Good to Know**:
+- This does not need to consider the balance of the _owner.
+- This can be more than the actual amount available to withdraw.
+- **Recommended use is to have the amount returned not be close to the actual strategies totalAssets to avoid rounding issues.**
+- Defaults to max uint256.
 
-    ```solidity title="availableWithdrawLimit() Example"
-    function availableWithdrawLimit(
-        address _owner
-    ) public view override returns (uint256) {
-        if(positionIsLocked || yieldSource.isPaused()) {
-            return asset.balanceOf(address(this));
-        }
-        
-        // Return both the loose balance and the current liqudity of the yield source.
-        return asset.balanceOf(address(this)) + asset.balanceOf(address(yieldSource));   
+**Best Practices**:
+- This should be overridden for strategies that have illiquid, or sandwichable positions to prevent reporting incorrect losses on withdraws.
+- This should also account for any restrictions the underlying protocol may encounter.
+- To just allow the idle funds to be withdrawn use `asset.balanceOf(address(this))`.
+- This does not need to consider conversion rates from assets to shares. But you should know that any limit under uint256 max may get converted to shares and should not be high enough to overflow  on multiplication.
+
+```solidity title="availableWithdrawLimit() Example"
+function availableWithdrawLimit(
+    address _owner
+) public view override returns (uint256) {
+    if(positionIsLocked || yieldSource.isPaused()) {
+        return asset.balanceOf(address(this));
     }
-    ```
+    
+    // Return both the loose balance and the current liqudity of the yield source.
+    return asset.balanceOf(address(this)) + asset.balanceOf(address(yieldSource));   
+}
+```
 
-1. *_tend(uint256 _totalIdle)*
+___
 
-    **Purpose**:
-    - This would get called during a `tend` call and can be used if a strategy needs to perform any maintenance or other actions that don't require a full report. If used the strategy should also implement a `_tendTrigger` that keepers can monitor to know when it should be called.
+### *_tend(uint256 _totalIdle)*
 
-    **Parameters**:
-    - `_totalIdle`: The amount of asset currently loose in the strategy.
+**Purpose**:
+- This would get called during a `tend` call and can be used if a strategy needs to perform any maintenance or other actions that don't require a full report. If used the strategy should also implement a `_tendTrigger` that keepers can monitor to know when it should be called.
 
-    **Returns**: NONE
+**Parameters**:
+- `_totalIdle`: The amount of asset currently loose in the strategy.
 
-    **Good to Know**:
-    - The strategies `totalAssets` will be the exact before and after a tend as not to have any effect on PPS.
+**Returns**: NONE
 
-    **Best Practices**:
-    - This can only be called by the keeper or management so it should be from a trusted source.
-    - Can be used to perform LTV adjustments on leveraged strategies.
-    - Can be used to know a trusted relay has been used to deposit idle funds for a strategy that doesn't deploy funds during deposits.
+**Good to Know**:
+- The strategies `totalAssets` will be the exact before and after a tend as not to have any effect on PPS.
 
-    **Example**:
+**Best Practices**:
+- This can only be called by the keeper or management so it should be from a trusted source.
+- Can be used to perform LTV adjustments on leveraged strategies.
+- Can be used to know a trusted relay has been used to deposit idle funds for a strategy that doesn't deploy funds during deposits.
 
-    ```solidity title="_tend() Example"
-    function _tend(uint256 _totalIdle) internal override {
-        if (currentLTV() < targetLTV()) {
-            _leverUp(_totalIdle);
-        } else if (currentLTV > warningLTV()) {
-            _leverDown(_totalIdle);
-        }
+**Example**:
+
+```solidity title="_tend() Example"
+function _tend(uint256 _totalIdle) internal override {
+    if (currentLTV() < targetLTV()) {
+        _leverUp(_totalIdle);
+    } else if (currentLTV > warningLTV()) {
+        _leverDown(_totalIdle);
     }
-    ```
+}
+```
 
-1. *_tendTrigger()*
+___
 
-    **Purpose**:
-    - Should return whether or not a keeper should call `tend` on the strategy. This should be implemented if tend is needed to be used.
+### *_tendTrigger()*
 
-    **Parameters**: NONE.
+**Purpose**:
+- Should return whether or not a keeper should call `tend` on the strategy. This should be implemented if tend is needed to be used.
 
-    **Returns**:
-    - Boolean representing if a keeper should call `tend`.
+**Parameters**: NONE.
 
-    **Good to Know**:
-    - Default return value is false.
+**Returns**:
+- Boolean representing if a keeper should call `tend`.
 
-    **Best Practices**:
-    - Can implement checks on the current base fee of the chain to ensure the gas cost isn't too high.
+**Good to Know**:
+- Default return value is false.
 
-    **Example**:
+**Best Practices**:
+- Can implement checks on the current base fee of the chain to ensure the gas cost isn't too high.
 
-    ```solidity title="_tendTrigger() Example"
-    function _tendTrigger() public view override returns (bool) {
-        if (currentLTV() > warningLTV()) {
-            return true;
-        } else if (currentLTV() < lowerBoundLTV()) {
-            return isBaseFeeAcceptable() ? true : false;
-        }
+**Example**:
+
+```solidity title="_tendTrigger() Example"
+function _tendTrigger() public view override returns (bool) {
+    if (currentLTV() > warningLTV()) {
+        return true;
+    } else if (currentLTV() < lowerBoundLTV()) {
+        return isBaseFeeAcceptable() ? true : false;
     }
-    ```
+}
+```
 
-1. *_emergencyWithdraw(uint256 _amount)*
-    **Purpose**:
-    - Allows management to manually pull funds from the yield source once a strategy has been shut down.
+___
 
-    **Parameters**:
-    - `_amount`: The specific amount to pull from the yield source
+### *_emergencyWithdraw(uint256 _amount)*
 
-    **Returns**: NONE.
+**Purpose**:
+- Allows management to manually pull funds from the yield source once a strategy has been shut down.
 
-    **Good to Know**:
-    - This can only be called once a strategy is shut down.
-    - The `_amount` can be more than is available to pull.
-    - The totalAssets will be the same before and after this call.
+**Parameters**:
+- `_amount`: The specific amount to pull from the yield source
 
-    **Best Practices**:
-    - Keep the withdrawal logic as simple as possible.
-    - Check `_amount` against the available amount to withdraw.
+**Returns**: NONE.
 
-    **Example**:
+**Good to Know**:
+- This can only be called once a strategy is shut down.
+- The `_amount` can be more than is available to pull.
+- The totalAssets will be the same before and after this call.
 
-    ```solidity title="_emergencyWithdraw() Example"
-        function _emergencyWithdraw(uint256 _amount) internal override {
-        _amount = min(_amount, yieldSource.balanceOf(address(this)));
-        _freeFunds(_amount);
-    }
-    ````
+**Best Practices**:
+- Keep the withdrawal logic as simple as possible.
+- Check `_amount` against the available amount to withdraw.
+
+**Example**:
+
+```solidity title="_emergencyWithdraw() Example"
+    function _emergencyWithdraw(uint256 _amount) internal override {
+    _amount = min(_amount, yieldSource.balanceOf(address(this)));
+    _freeFunds(_amount);
+}
+````
 
 ___
 
