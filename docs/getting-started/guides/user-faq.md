@@ -324,3 +324,48 @@ A DSProxy is a "smart account" similar to a gnosis safe that was used by project
 You may be able to access and operate your DSProxy using the [defisaver](https://app.defisaver.com/) website.
 
 </details>
+
+<details className="customFaqDetails">
+
+  <summary>
+
+## How do I withdraw YFI staked in old governance staking contracts or ygov.finance?
+
+  </summary>
+
+If portfolio trackers show that you have governance-staked YFI for your address, it is likely in a legacy yGov staking contract. The ygov.finance site is deprecated, but you can still withdraw directly from the contracts through block explorers like Etherscan.
+
+Step 1: Find Your Staked YFI
+
+Your YFI is most likely in the main governance staking contract, but there are a few related contracts to check as well:
+
+- [`0xba37b002abafdd8e89a1995da52740bbc013d992`](https://etherscan.io/address/0xba37b002abafdd8e89a1995da52740bbc013d992) (Main governance contract)
+- [`0x3a22df48d84957f907e67f4313e3d43179040d6e`](https://etherscan.io/address/0x3a22df48d84957f907e67f4313e3d43179040d6e)
+- [`0x0001fb050fe7312791bf6475b96569d83f695c9f`](https://etherscan.io/address/0x0001fb050fe7312791bf6475b96569d83f695c9f)
+- [`0x033e52f513f9b98e129381c6708f9faa2dee5db5`](https://etherscan.io/address/0x033e52f513f9b98e129381c6708f9faa2dee5db5)
+- [`0xb01419e74d8a2abb1bbad82925b19c36c191a701`](https://etherscan.io/address/0xb01419e74d8a2abb1bbad82925b19c36c191a701)
+
+For each contract:
+- Open the contract page on Etherscan.
+- Click the **Contract** tab.
+- Click the **Read Contract** tab.
+- Click **Connect to Web3** and connect your wallet app, making sure your correct address is selected.
+- Find the `balanceOf` function and click it.
+- Enter your address in the field.
+- Click the **Query** button.
+  - If the result is a non-zero value, you have YFI staked in that contract.
+
+Step 2: Withdraw Your Staked YFI
+- Stay on the same contract page. 
+- Click the **Write Contract** tab.
+- Click **Connect to Web3** and connect your wallet app, making sure you are using the correct address.
+- Find the `exit` function and click it.
+- Click the **Write** button.
+- Sign the transaction with your wallet.
+- Once confirmed, your entire staked balance will be returned to your address.
+
+Tips:
+- Always double-check you’re connected with the correct wallet address.
+- If you have trouble or see unexpected results, reach out to the Yearn community for help.
+	
+</details>

@@ -31,6 +31,10 @@ export default {
     yDaemon,
     yPriceMagic,
   },
+  future: {
+    experimental_faster: true,
+    v4: true,
+  },
   themes: ['@docusaurus/theme-mermaid'],
   themeConfig: {
     docs: {
