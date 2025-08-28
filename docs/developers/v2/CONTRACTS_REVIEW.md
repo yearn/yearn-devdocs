@@ -81,6 +81,7 @@ function myFunction() public {
 ```
 
 use
+
 ```javascript=
 
 // Add a sentence describing what this constant means.
@@ -133,7 +134,7 @@ In case we need to use multiple routers to swap tokens, we should use this appro
 - Create a variable `boolean useUniswap` or similar.
 - Create a external/public function to switch the `useUniswap` value.
 - To get the router, use:
-    - `Router router = useUniswap ? uniswapRouter : sushiswapRouter;`
+  - `Router router = useUniswap ? uniswapRouter : sushiswapRouter;`
 
 See an example [here](https://github.com/therealmonoloco/geist-lender-borrower/blob/master/contracts/Strategy.sol#L158).
 
@@ -146,21 +147,20 @@ Use a new branch for each new strategy. Some old comments have references to lin
 - If the strategy uses another vault, we should add the maxLoss setting. See comment [here](https://github.com/jmonteer/yearnV2-strat-SNX-staking/pull/9#issuecomment-872376640).
 - *Strategy*.*liquidatePosition* function: This condition must be true. `amountNeeded == liquidatedAmount + loss`
 - **Must** have the health check address set.
-    - [Example for Fantom](https://github.com/flashfish0x/Strategy0xDAOStaker/blob/ripae/contracts/GenericMasterChefStrategy.sol#L210)
-    - [Example for Ethereum](https://github.com/tonkers-kuma/strategy-ssb/blob/main/contracts/Strategy.sol#L93)
+  - [Example for Fantom](https://github.com/flashfish0x/Strategy0xDAOStaker/blob/ripae/contracts/GenericMasterChefStrategy.sol#L210)
+  - [Example for Ethereum](https://github.com/tonkers-kuma/strategy-ssb/blob/main/contracts/Strategy.sol#L93)
 - **Must** use the `SafeMath` library to do calculations in the Solidity version `0.6.x`.
-    - The over/underflow issues are fixed in the Solidity version `0.8.x`.
-    - The `BaseStrategy` already imports and declares the `SafeMath` and `SafeERC20` libraries, so you don't need to use the `using SafeMath for uint` statement. The same with `SafeERC20`.
+  - The over/underflow issues are fixed in the Solidity version `0.8.x`.
+  - The `BaseStrategy` already imports and declares the `SafeMath` and `SafeERC20` libraries, so you don't need to use the `using SafeMath for uint` statement. The same with `SafeERC20`.
 
 ## Tools
 
 - [ETH Security Tools](https://www.ethsecurity.org/research-and-developer-resources/tools)
 - Trail of Bits Tools
-    - [Slither](https://github.com/crytic/slither)
-    - [Manticore](https://github.com/trailofbits/manticore)
-    - [Echidna](https://github.com/crytic/echidna)
-    - [Docker Image with all ToB tools](https://github.com/trailofbits/eth-security-toolbox/)
-
+  - [Slither](https://github.com/crytic/slither)
+  - [Manticore](https://github.com/trailofbits/manticore)
+  - [Echidna](https://github.com/crytic/echidna)
+  - [Docker Image with all ToB tools](https://github.com/trailofbits/eth-security-toolbox/)
 
 ## Required Checklists
 
@@ -186,4 +186,5 @@ These posts describe the most important considerations on security reviews.
 - [Open Zeppelin - Creation vs Runtime Code](https://blog.openzeppelin.com/deconstructing-a-solidity-contract-part-ii-creation-vs-runtime-6b9d60ecb44c/)
 - [Not Only Owner - Spanish & English](https://twitter.com/tinchoabbate/status/1433435829372850180?s=21)
 - [Twitter Thread - How Your Crypto Fund or Exchange Gets Hacked](https://twitter.com/moo9000/status/1448967076698333192?s=21)
+
 ---

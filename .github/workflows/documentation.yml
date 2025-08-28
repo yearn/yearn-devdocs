@@ -9,22 +9,14 @@ jobs:
       contents: write
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: '22.x'
-      - name: Test Build
+      - name: Install Bun
         run: |
-          if [ -e yarn.lock ]; then
-            yarn install
-            yarn global add ts-node
-          elif [ -e package-lock.json ]; then
-            npm ci
-            npm install -g ts-node
-          else
-            npm install
-            npm install -g ts-node
-          fi
-          npm run build
+          curl -fsSL https://bun.sh/install | bash
+          echo "$HOME/.bun/bin" >> $GITHUB_PATH
+      - name: Install dependencies and build
+        run: |
+          bun install
+          bun run build
 
       - name: Check if PR is from a fork
         id: check_fork
@@ -42,7 +34,7 @@ jobs:
         env:
           ALCHEMY_API_KEY: ${{ secrets.ALCHEMY_API_KEY }}
         run: |
-          ts-node scripts/runAddressChecks.ts
+          bun run runAddressCheck
           echo "ALL_CHECKS_PASSED=$(cat all_checks_passed.txt)" >> $GITHUB_ENV
 
       - name: Create an issue if address checks fail
