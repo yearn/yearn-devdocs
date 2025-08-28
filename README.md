@@ -28,11 +28,11 @@ The Yearn Docs [website](https://docs.yearn.fi/) is built using [Docusaurus](htt
 
     ```
 
-    Then install node dependencies
+  Then install dependencies with Bun
 
-    ```bash
-    yarn
-    ```
+  ```bash
+  bun install
+  ```
 
 2. Install Python/Vyper dependencies for natspec docs generation (You can skip this step if you aren't working on smart contract documentation)
 
@@ -86,17 +86,17 @@ The Yearn Docs [website](https://docs.yearn.fi/) is built using [Docusaurus](htt
 This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
 
 ```bash
-yarn start
+bun run start
 ```
 
-Running `yarn start` will also run a script that checks the validity of smart contract addresses in the docs against a local constants file. This runs on every dev run as a way to keep the checks updated and the information about them on the site current (all PRs will include an update to last check time). If you want to run `yarn start` without the `runAddressChecks` script running you can run `yarn start-no-check`.
+Running `bun run start` will also run a script that checks the validity of smart contract addresses in the docs against a local constants file. This runs on every dev run as a way to keep the checks updated and the information about them on the site current (all PRs will include an update to last check time). If you want to start without the `runAddressChecks` script you can run `bun run start-no-check`.
 
 ## Build
 
 This command generates static content into the `build` directory and can be served using any static content hosting service.
 
 ```bash
-yarn build
+bun run build
 ```
 
 ## Configure .env
@@ -114,7 +114,7 @@ Generally you should not need to use this as there is a github actions script th
 If you are using GitHub pages for hosting, this command is a convenient way to build the website and push it to the `gh-pages` branch.
 
 ```bash
-GIT_USER=<Your GitHub username> USE_SSH=true yarn deploy
+GIT_USER=<Your GitHub username> USE_SSH=true bun run deploy
 ```
 
 ---
@@ -204,7 +204,7 @@ Generate docs with vydoc. Arguments are:
 -c is the compiler (make sure you have the correct vyper installed)
 
 ```bash
-npx vydoc -i ../yearn-vaults/contracts/ -o ./natspec/temp -t ./natspec/contract.ejs -c $(which vyper)
+bunx vydoc -i ../yearn-vaults/contracts/ -o ./natspec/temp -t ./natspec/contract.ejs -c $(which vyper)
 ```
 
 ```bash
@@ -261,7 +261,7 @@ source venv/bin/activate
 You should now be ready to generate some docs! To generate new documentation run the v3 documentation script.
 
 ```bash
-yarn v3-docs
+bun run v3-docs
 ```
 
 This should generate a prompt for you to follow:
