@@ -204,6 +204,11 @@ export default {
         },
         {
           type: 'doc',
+          label: 'yETH',
+          id: 'addresses/ypools-contracts',
+        },
+        {
+          type: 'doc',
           label: 'Lens',
           id: 'addresses/lens-contracts',
         },
