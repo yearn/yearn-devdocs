@@ -10,7 +10,7 @@
 
 If you deposited into a Yearn Vault and then click the "withdraw" tab and don't see your tokens, don't worry, they are probably staked!
 
-The default "deposit" action in yVaults with a gauge or other extra rewards is to deposit your tokens in the yVault and stake the yVault token for extra rewards. To see your yVault tokens, click on the "veYFI BOOST" tab (it may be named something else like "staking BOOST") next to the withdraw tab. You should be able to unstake your vault tokens there and then withdraw.
+The default "deposit" action in yVaults with a gauge or other extra rewards is to deposit your tokens in the yVault and stake the yVault token for extra rewards. To see your yVault tokens, look at the "veYFI BOOST" section (it may be named something else like "staking BOOST") below the withdraw section. You should be able to unstake your vault tokens there and then withdraw.
 
 ![Withdraw modal](/img/guides/FAQ/unstake.png)
 
@@ -26,7 +26,7 @@ If you want to change the default deposit behavior to only deposit and not also 
 
   <summary>
 
-## My veYFI rewards are lower than expected, Why?
+## My dYFI rewards are lower than expected, Why?
   
   </summary>
 
@@ -39,6 +39,20 @@ If you don't have veYFI, you can deposit and stake your tokens using liquid lock
 Read more about veYFI, boosts, dYFI and liquid lockers on the [veYFI page](/contributing/governance/veYFI-intro)
 
 And remember, you have to consider transaction costs when using Yearn. If using Ethereum mainnet, prices for transactions vary from a few dollars to tens or hundreds of dollars, depending on chain congestion (Yearn has no control over this). If you are depositing lower amounts (\<$500-1000), you may want to consider using Yearn on an L2 so fees don't negate your interest earned.
+
+</details>
+
+<details className="customFaqDetails">
+
+  <summary>
+
+## I have withdrawn from a Factory Vault and now I have a Curve LP token. What do I do with it?
+  
+  </summary>
+
+Curve factory vaults accept Curve LP tokens that represent the 2 assets being traded in a curve pool. When you withdraw, you will most likely get this back. In order to withdraw the underlying assets from that token, you need to go to the curve website and withdraw. You can find a link to the pool page for a specific factory vault by looking in the "Info" section on the vault page. There will be a Curve deposit URI field that will link you to the correct page to withdraw.
+
+![curve-page-link](/img/guides/FAQ/curve-page-link.png)
 
 </details>
 
@@ -154,6 +168,7 @@ Yearn offers vaults for Pendle fixed term positions in a number of different ass
 
 The current partner sites are:
 
+- [Katana](https://katana.yearn.space)
 - [Aerodrome](https://aerodrome.yearn.space)
 - [Ajna](https://ajna.yearn.space)
 - [Curve](https://curve.yearn.space)
@@ -346,6 +361,7 @@ Your YFI is most likely in the main governance staking contract, but there are a
 - [`0xb01419e74d8a2abb1bbad82925b19c36c191a701`](https://etherscan.io/address/0xb01419e74d8a2abb1bbad82925b19c36c191a701)
 
 For each contract:
+
 - Open the contract page on Etherscan.
 - Click the **Contract** tab.
 - Click the **Read Contract** tab.
@@ -356,7 +372,8 @@ For each contract:
   - If the result is a non-zero value, you have YFI staked in that contract.
 
 Step 2: Withdraw Your Staked YFI
-- Stay on the same contract page. 
+
+- Stay on the same contract page.
 - Click the **Write Contract** tab.
 - Click **Connect to Web3** and connect your wallet app, making sure you are using the correct address.
 - Find the `exit` function and click it.
@@ -365,7 +382,8 @@ Step 2: Withdraw Your Staked YFI
 - Once confirmed, your entire staked balance will be returned to your address.
 
 Tips:
+
 - Always double-check you’re connected with the correct wallet address.
 - If you have trouble or see unexpected results, reach out to the Yearn community for help.
-	
+
 </details>
