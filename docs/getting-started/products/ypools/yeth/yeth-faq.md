@@ -12,7 +12,7 @@ yETH earns APY through various sources:
 
 However, there are also deductions such as Beacon Chain slashings and a 10% Yearn performance fee on profits.
 
-Please note that yield is paid out one week after it is generated. The yield generated in week N is streamed out in week N+1.
+Please note that yield is paid out one week after it is generated. The yield generated in week n is streamed out in week n+1.
 
 ### What other benefits does yETH give holders?
 
@@ -24,7 +24,7 @@ LSD Protocols generate yield and update their on-chain rates. This results in yE
 
 ### Can I withdraw multiple LSDs?
 
-Yes, you can withdraw multiple LSDs or just one LSD. However, your withdrawal cannot cause an LSD to leave its safety bands around its target weight. For example, if a pool has a weight of 20% and a band of 5%, the actual weight is allowed to be between 15% and 25%. This caps losses to at most 25%, assuming that token permanently depegs and goes to 0. In that worst-case scenario, yETH depegs to 0.75 ETH, because you can always do a balanced withdrawal of all the assets, of which only 25% is worthless. Compare this with holding the token by yourself, you’d be -100%.
+Yes, you can withdraw multiple LSDs or just one LSD. However, your withdrawal cannot cause an LSD to leave its safety bands around its target weight. For example, if a pool has a weight of 20% and a band of 5%, the actual weight is allowed to be between 15% and 25%. This caps losses to, at most, 25%, assuming a token permanently depegs and goes to 0. In that worst-case scenario, yETH depegs to 0.75 ETH, because you can always do a balanced withdrawal of all the assets, of which only 25% is worthless. Compare this to holding the depegged token yourself, where you would have a loss of 100%.
 
 ### Is there slippage with proportional withdrawal?
 

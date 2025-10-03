@@ -28,7 +28,7 @@ Using the Backscratcher yVault, Yearn locks up a significant amount of CRV indef
 
 The Backscratcher yVault, yvBOOST and pSLPyvBOOST-ETH, capitalizes on liquidity mining in a way that's beneficial to both Curve and Yearn.
 
-Users deposit CRV into the yVault which is locked infinitely. In return they receive a token that represents a share of the Backscratcher pool. Revenue earned from the curve through curve fee sharing is distributed in the Backscratcher pool and can be redeemed by depositors on a weekly basis.
+Users deposit CRV into the yVault which is locked infinitely. In return they receive a token that represents a share of the Backscratcher pool. Revenue earned from Curve through Curve fee sharing is distributed in the Backscratcher pool and can be redeemed by depositors on a weekly basis.
 
 Additionally, 10% of all CRV earned by Yearn Finance is deposited into Backscratcher and locked infinitely. Because of this, people who want to stake CRV will always receive a higher share of the Backscratcher yVault's revenue than staking directly through Curve. They also can earn emissions of tokens like SUSHI and PICKLE for providing liquidity.
 
@@ -48,7 +48,7 @@ Yearn utilizes the [Iron Bank (C.R.E.A.M. Finance)](https://docs.ib.xyz/) to acc
 
 ![](https://i.imgur.com/WJIjOKv.png)
 
-Some strategies also implement [flash loans](https://docs.yearn.fi/resources/defi-glossary#flash-loan), which is typically a back-end service that requires development experience to take advantage of.
+Some strategies also implement [flash loans](https://docs.yearn.fi/resources/defi-glossary#flash-loan), which is typically a backend service that requires development experience to take advantage of.
 
 ## Partnerships
 

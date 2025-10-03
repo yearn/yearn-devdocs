@@ -8,7 +8,7 @@
 **Author:**
 Yearn.finance
 
-*Contract to easily retrieve the APR's of V3 vaults and
+Contract to easily retrieve the APR's of V3 vaults and
 strategies.
 Can be used to check the current APR of any vault or strategy
 based on the current profit unlocking rate. As well as the
@@ -17,7 +17,7 @@ This can also be used to retrieve the expected APR a strategy
 is making, thats yet to be reported, if a strategy specific
 oracle has been added.
 NOTE: All values are just at the specific time called and subject
-to change.*
+to change.
 
 ## State Variables
 

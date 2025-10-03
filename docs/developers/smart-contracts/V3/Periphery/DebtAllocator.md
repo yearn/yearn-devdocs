@@ -12,8 +12,6 @@ This Debt Allocator is meant to be used alongside
 Yearn V3 vaults to provide the needed triggers for a keeper
 to perform automated debt updates for the vaults strategies.
 
-*
-
 Each vault that should be managed by this allocator will
 need to be added by first setting a `minimumChange` for the
 vault, which will act as the minimum amount of funds to move that will
@@ -26,7 +24,7 @@ strategy should hold (i.e 1_000 == 10% of the vaults `totalAssets`).
 The trigger will attempt to allocate up to the `maxRatio` when
 the strategy has `minimumChange` amount less than the `targetRatio`.
 And will pull funds to the `targetRatio` when it has `minimumChange`
-more than its `maxRatio`.*
+more than its `maxRatio`.
 
 ## State Variables
 
@@ -539,7 +537,7 @@ function getStrategyMaxRatio(address _vault, address _strategy) public view virt
 
 ### isCurrentBaseFeeAcceptable
 
-Returns wether or not the current base fee is acceptable
+Returns whether or not the current base fee is acceptable
 based on the `maxAcceptableBaseFee`.
 
 ```solidity
