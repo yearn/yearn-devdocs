@@ -138,7 +138,7 @@ In case we need to use multiple routers to swap tokens, we should use this appro
 
 See an example [here](https://github.com/therealmonoloco/geist-lender-borrower/blob/master/contracts/Strategy.sol#L158).
 
-## Github Issues
+## GitHub Issues
 
 Use a new branch for each new strategy. Some old comments have references to lines of codes in branches that were already modified. It is more complicated to follow the comment when it happens.
 

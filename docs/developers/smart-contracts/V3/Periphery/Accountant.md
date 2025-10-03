@@ -3,8 +3,8 @@
 
 [Git Source](https://github.com/yearn/vault-periphery/blob/516f95edcd36e28b714b52408c05009b430900e3/src/accountants/Accountant.sol)
 
-*Will charge fees, issue refunds, and run health check on any reported
-gains or losses during a strategy's report.*
+Will charge fees, issue refunds, and run health check on any reported
+gains or losses during a strategy's report.
 
 ## State Variables
 

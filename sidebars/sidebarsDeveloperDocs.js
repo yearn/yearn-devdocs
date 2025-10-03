@@ -131,10 +131,10 @@ export default {
             'data-services/yearn-lens',
           ],
         },
-        // Front End Development
+        // Frontend Development
         {
           type: 'category',
-          label: 'Front End Development',
+          label: 'Frontend Development',
           link: {
             type: 'doc',
             id: 'front-end-development',

@@ -4,7 +4,7 @@ If you want to programmatically interact with Yearn data, or need to fetch large
 
 ## yDaemon
 
-yDaemon is a RESTful API that hydrates subgraph responses with more data, like APY calculations. yDaemon is the best source for current yearn Vault data and is what is used by the production Yearn front ends.
+yDaemon is a RESTful API that hydrates subgraph responses with more data, like APY calculations. yDaemon is the best source for current yearn Vault data and is what is used by the production Yearn frontends.
 
 - **Live API:** https://ydaemon.yearn.fi/
 - **Source:** https://github.com/yearn/ydaemon
@@ -57,14 +57,14 @@ Yearn Lens is a collection of smart contracts that collect data about V2 Yearn v
 <details className="customFaqDetails">
 
   <summary>
-  
+
 ## Deprecated Data Services
-  
+
   </summary>
 
 ### Yearn Exporter - No longer supported
 
-The exporter is was to build the (now deprecated) Yearn Grafana dashboard.
+The exporter was used to build the (now deprecated) Yearn Grafana dashboard.
 
 - **Source + Guide:** https://github.com/yearn/yearn-exporter
 

@@ -15,34 +15,34 @@
 * `sender` : address, *indexed*
 * `receiver` : address, *indexed*
 * `value` : uint256, *notIndexed*
-  
+
 **Approval**
 
 * `owner` : address, *indexed*
 * `spender` : address, *indexed*
 * `value` : uint256, *notIndexed*
-  
+
 **Deposit**
 
 * `recipient` : address, *indexed*
 * `shares` : uint256, *notIndexed*
 * `amount` : uint256, *notIndexed*
-  
+
 **Withdraw**
 
 * `recipient` : address, *indexed*
 * `shares` : uint256, *notIndexed*
 * `amount` : uint256, *notIndexed*
-  
+
 **Sweep**
 
 * `token` : address, *indexed*
 * `amount` : uint256, *notIndexed*
-  
+
 **LockedProfitDegradationUpdated**
 
 * `value` : uint256, *notIndexed*
-  
+
 **StrategyAdded**
 
 * `strategy` : address, *indexed*
@@ -50,7 +50,7 @@
 * `minDebtPerHarvest` : uint256, *notIndexed*
 * `maxDebtPerHarvest` : uint256, *notIndexed*
 * `performanceFee` : uint256, *notIndexed*
-  
+
 **StrategyReported**
 
 * `strategy` : address, *indexed*
@@ -62,97 +62,97 @@
 * `totalDebt` : uint256, *notIndexed*
 * `debtAdded` : uint256, *notIndexed*
 * `debtRatio` : uint256, *notIndexed*
-  
+
 **FeeReport**
 
 * `management_fee` : uint256, *notIndexed*
 * `performance_fee` : uint256, *notIndexed*
 * `strategist_fee` : uint256, *notIndexed*
 * `duration` : uint256, *notIndexed*
-  
+
 **WithdrawFromStrategy**
 
 * `strategy` : address, *indexed*
 * `totalDebt` : uint256, *notIndexed*
 * `loss` : uint256, *notIndexed*
-  
+
 **UpdateGovernance**
 
 * `governance` : address, *notIndexed*
-  
+
 **UpdateManagement**
 
 * `management` : address, *notIndexed*
-  
+
 **UpdateRewards**
 
 * `rewards` : address, *notIndexed*
-  
+
 **UpdateDepositLimit**
 
 * `depositLimit` : uint256, *notIndexed*
-  
+
 **UpdatePerformanceFee**
 
 * `performanceFee` : uint256, *notIndexed*
-  
+
 **UpdateManagementFee**
 
 * `managementFee` : uint256, *notIndexed*
-  
+
 **UpdateGuardian**
 
 * `guardian` : address, *notIndexed*
-  
+
 **EmergencyShutdown**
 
 * `active` : bool, *notIndexed*
-  
+
 **UpdateWithdrawalQueue**
 
 * `queue` : address[20], *notIndexed*
-  
+
 **StrategyUpdateDebtRatio**
 
 * `strategy` : address, *indexed*
 * `debtRatio` : uint256, *notIndexed*
-  
+
 **StrategyUpdateMinDebtPerHarvest**
 
 * `strategy` : address, *indexed*
 * `minDebtPerHarvest` : uint256, *notIndexed*
-  
+
 **StrategyUpdateMaxDebtPerHarvest**
 
 * `strategy` : address, *indexed*
 * `maxDebtPerHarvest` : uint256, *notIndexed*
-  
+
 **StrategyUpdatePerformanceFee**
 
 * `strategy` : address, *indexed*
 * `performanceFee` : uint256, *notIndexed*
-  
+
 **StrategyMigrated**
 
 * `oldVersion` : address, *indexed*
 * `newVersion` : address, *indexed*
-  
+
 **StrategyRevoked**
 
 * `strategy` : address, *indexed*
-  
+
 **StrategyRemovedFromQueue**
 
 * `strategy` : address, *indexed*
-  
+
 **StrategyAddedToQueue**
 
 * `strategy` : address, *indexed*
-  
+
 **NewPendingGovernance**
 
 * `pendingGovernance` : address, *indexed*
-  
+
 ## Methods
 
 ### initialize
@@ -877,9 +877,9 @@ Reports the amount of assets the calling Strategy has free (usually in terms of 
 
 Arguments:
 
-* `gain`:  - *Amount Strategy has realized as a gain on it's investment since its last report, and is free to be given back to Vault as earnings*
+* `gain`:  - *Amount Strategy has realized as a gain on its investment since its last report, and is free to be given back to Vault as earnings*
 
-* `loss`:  - *Amount Strategy has realized as a loss on it's investment since its last report, and should be accounted for on the Vault's balance sheet. The loss will reduce the debtRatio. The next time the strategy will harvest, it will pay back the debt in an attempt to adjust to the new debt limit.*
+* `loss`:  - *Amount Strategy has realized as a loss on its investment since its last report, and should be accounted for on the Vault's balance sheet. The loss will reduce the debtRatio. The next time the strategy will harvest, it will pay back the debt in an attempt to adjust to the new debt limit.*
 
 * `_debtPayment`:  - *Amount Strategy has made available to cover outstanding debt*
 

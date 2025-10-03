@@ -11,7 +11,7 @@ This guide focuses primarily on strategy descriptions, but those thirsty for mor
 
 ### yVault / Yearn Vault
 
-- [Smart contract↗](https://ethereum.org/en/developers/docs/smart-contracts/) that holds user deposits and allocates into different strategies (up to 20 in the current version 2).
+- [Smart contract↗](https://ethereum.org/en/developers/docs/smart-contracts/) that holds user deposits and allocates into different strategies.
 
 ### Token
 
@@ -43,7 +43,7 @@ This guide focuses primarily on strategy descriptions, but those thirsty for mor
 ### Compound / Autocompound
 
 - Compounding is when you reinvest [yields](#yield--profit) in the same investment.
-- Autocoumpound is when a tool does compounding automatically for you.
+- Autocompound is when a tool does compounding automatically for you.
 - There is also a protocol called Compound Finance (COMP), but that is different.
 
 ### Position
@@ -57,7 +57,7 @@ This guide focuses primarily on strategy descriptions, but those thirsty for mor
 ### Arbitrage
 
 - Taking advantage of the price difference in different places.
-- For example: ETH is $2000 at one place and $1950 at another, so you quickly buy from the cheaper source and sell on the more expensive source for $50 profit.  
+- For example: ETH is $2000 at one place and $1950 at another, so you quickly buy from the cheaper source and sell on the more expensive source for $50 profit.
 
 ### Vest
 
@@ -134,7 +134,7 @@ This guide focuses primarily on strategy descriptions, but those thirsty for mor
 
 ### Uniswap
 
-- The [Uniswap↗](https://app.uniswap.org/#/swap?chain=mainnet↗) protocol, a decentralized exchange that aggregates many [Liquidity Pools](#liquidity-pool), used to buy and sell tokens.
+- The [Uniswap↗](https://app.uniswap.org/#/swap?chain=mainnet) protocol, a decentralized exchange that aggregates many [Liquidity Pools](#liquidity-pool), used to buy and sell tokens.
 - The Uniswap protocol has a v1, v2 and v3, when you read "Uniswap" it refers to v2, the v3 is always explicitly mentioned like "Uniswap v3".
 
 ### DAI / USDT / USDC
@@ -145,21 +145,21 @@ This guide focuses primarily on strategy descriptions, but those thirsty for mor
 
 - Curve is the most well-known and largest stablecoin swap protocol.
 - CRV is the token Curve mints
-- CRV can be locked for veCRV (untradeable) to receive curve protocol [profits](#yield--profit).
+- CRV can be locked for veCRV (untradeable) to receive Curve protocol [profits](#yield--profit).
 - veCRV also has governance power over the Curve protocol and allows boosting rewards for adding liquidity to their [pools](#liquidity-pool).
 
 ### 3pool
 
-- 3pool refers to the [DAI / USDT / USDC](#usdc--dai--usdt) curve [liquidity pool](#liquidity-pool).
+- 3pool refers to the [DAI / USDT / USDC](#dai--usdt--usdc) Curve [liquidity pool](#liquidity-pool).
 
 ### Tricrypto
 
-- Tricripto refers to the wBTC + wETH + USDT curve [liquidity pool](#liquidity-pool).
+- Tricripto refers to the wBTC + wETH + USDT Curve [liquidity pool](#liquidity-pool).
 
 ### Curve Boost / Curve Gauge
 
 - Locking up [CRV](#curve) on Curve allows you to boost your CRV [rewards](#rewards) for being a liquidity provider.
-- Read more at curve [docs↗](https://resources.curve.finance/reward-gauges/boosting-your-crv-rewards).
+- Read more at Curve [docs↗](https://resources.curve.finance/reward-gauges/boosting-your-crv-rewards).
 
 ### Convex
 
@@ -186,4 +186,4 @@ This guide focuses primarily on strategy descriptions, but those thirsty for mor
 ### Fold / Leverage
 
 - [Borrow](#lend--borrow-against) tokens, sell them for the ones you borrowed against, and borrow again.
-- For example. You deposit 100 ETH as collateral, borrow DAI, trade DAI for ETH and deposit again as [collateral](#collateral) for increased [yield](#yield--profit) (but also increased [liquidation](#liquidation) risk).
+- For example: you deposit 100 ETH as collateral and borrow DAI, then trade that DAI for more ETH and deposit again as [collateral](#collateral) for increased [yield](#yield--profit) (but also increased [liquidation](#liquidation) risk).

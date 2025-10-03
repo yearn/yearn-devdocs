@@ -100,7 +100,7 @@ This section helps you know how much profit has accumulated, but calling harvest
 
 ### Curve Strategy
 
-For curve strategies, you can view how much rewards have accumulated for that vault by using curve.finance's [dashboard](https://curve.finance/#/ethereum/dashboard) and putting in Yearn's Curve Voter Proxy address `0xF147b8125d2ef93FB6965Db97D6746952a133934` (curve-voter.ychad.eth). This will show you the dollar amount accumulated in the strategy for all factory vaults.
+For Curve strategies, you can view how much rewards have accumulated for that vault by using Curve.finance's [dashboard](https://curve.finance/#/ethereum/dashboard) and putting in Yearn's Curve Voter Proxy address `0xF147b8125d2ef93FB6965Db97D6746952a133934` (curve-voter.ychad.eth). This will show you the dollar amount accumulated in the strategy for all factory vaults.
 
 ### Convex and Convex Frax Strategies
 

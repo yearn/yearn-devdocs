@@ -110,14 +110,14 @@ We can store Asset informations so in critical situations we can toggle interact
 ```
 
 
-### Front End stack
+### Frontend stack
 
 <p align="center">
   <img src="https://i.imgur.com/H5XqpZI.png" alt="Backend Chart"/>
 </p>
 
 
-### Front End Features
+### Frontend Features
 
 
 <p align="center">

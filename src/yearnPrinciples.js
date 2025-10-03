@@ -35,7 +35,7 @@ const yearnPrinciples = [
     title: 'You are what you do.',
     titleColor: '#ff90a1',
     description:
-      "Yearn is a place that values ideas over identity. Whether you're a defi og or a newb on the Discord, the best contributions will always be respected. We're all for personality, but never cult of personality. Here, work always trumps credentials - we don't care who you are, only what you do.",
+      "Yearn is a place that values ideas over identity. Whether you're a DeFi OG or a newb on the Discord, the best contributions will always be respected. We're all for personality, but never cult of personality. Here, work always trumps credentials - we don't care who you are, only what you do.",
     image: '/img/principles/doers.png',
     alt: 'drawing of woman holding mirror',
   },
@@ -51,7 +51,7 @@ const yearnPrinciples = [
     title: 'Humans and code.',
     titleColor: '#a446ba',
     description:
-      "The protocol isn't our only product. Yearn is a community of independent builders who are free to sprout new organizations and grow the network organically. Each day Yearn supports the flourishing Defi ecosystem by uniting exceptional people around radical projects that make finance more flexible and accessible. This synergistic relationship guides Yearn to build its code and community with integrity.",
+      "The protocol isn't our only product. Yearn is a community of independent builders who are free to sprout new organizations and grow the network organically. Each day Yearn supports the flourishing DeFi ecosystem by uniting exceptional people around radical projects that make finance more flexible and accessible. This synergistic relationship guides Yearn to build its code and community with integrity.",
     image: '/img/principles/code.png',
     alt: 'drawing of woman holding hoop',
   },

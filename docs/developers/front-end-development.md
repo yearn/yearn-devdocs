@@ -1,4 +1,4 @@
-# Front-end Integrations
+# Frontend Integrations
 
 Yearn uses a JavaScript SDK for formatting protocol data and generating transactions for reading/writing protocol data. Yearn SDK integrates several components, both on-chain and off-chain.
 

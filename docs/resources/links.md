@@ -6,7 +6,7 @@
 
 - [Discord](https://discord.gg/yearn)
 - [Reddit](https://www.reddit.com/r/yearn_finance/)
-- [Github](https://github.com/yearn)
+- [GitHub](https://github.com/yearn)
 - [Telegram](https://t.me/yearnfinance)
 - [Telegram Price Chat](https://t.me/yearncommunity)
 - [Telegram Announcements](https://t.me/yearnupdates)
@@ -21,7 +21,7 @@
 
 ### Collaborate
 
-- [Github](https://github.com/yearn)
+- [GitHub](https://github.com/yearn)
 - [Governance Forum](https://gov.yearn.fi)
 - [Yearn Contribute](https://contribute.yearn.farm)
 

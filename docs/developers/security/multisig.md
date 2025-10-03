@@ -4,7 +4,7 @@
 
 The multisig is implemented by a 6-of-9 multi-signature wallet. The members of the multi-signature wallet were voted in by YFI holders and are subject to change from future governance votes. Specific powers are delegated to the governance multisig, as defined by [Governance 2.0](https://gov.yearn.fi/t/yip-41-temporarily-empower-multisig/3630).
 
-The multisig is implemented as a Gnosis Safe. The multisig's assets, transactions, and signers can be viewed using [Gnosis's Web UI](https://app.safe.global/home?safe=eth:0xFEB4acf3df3cDEA7399794D0869ef76A6EfAff52). If there is a need to trustlessly audit Yearn's multisig (without trusting the Gnosis site), the Gnosis Safe web app source code can be found on Github [here](https://github.com/safe-global/safe-wallet-web).
+The multisig is implemented as a Gnosis Safe. The multisig's assets, transactions, and signers can be viewed using [Gnosis's Web UI](https://app.safe.global/home?safe=eth:0xFEB4acf3df3cDEA7399794D0869ef76A6EfAff52). If there is a need to trustlessly audit Yearn's multisig (without trusting the Gnosis site), the Gnosis Safe web app source code can be found on GitHub [here](https://github.com/safe-global/safe-wallet-web).
 
 ## Protocol Guardian Role
 
@@ -12,7 +12,7 @@ Per [YIP-81](https://snapshot.box/#/s:veyfi.eth/proposal/0x6f3082db2cef3e0c254e5
 
 ## Members
 
-Multisig membership can be validated from the Gnosis UI [here](https://app.safe.global/settings/setup?safe=eth:0xFEB4acf3df3cDEA7399794D0869ef76A6EfAff52).  
+Multisig membership can be validated from the Gnosis UI [here](https://app.safe.global/settings/setup?safe=eth:0xFEB4acf3df3cDEA7399794D0869ef76A6EfAff52).
 Cryptographic membership attestations can be validated against the PGP keys in the [yearn-security](https://github.com/yearn/yearn-security/tree/master/keys) repository.
 
 | Address           | Member Name          | Membership Attestation       |
@@ -25,7 +25,7 @@ Cryptographic membership attestations can be validated against the PGP keys in t
 | [0x2B888954421b424C5D3D9Ce9bB67c9bD47537d12](https://etherscan.io/address/0x2B888954421b424C5D3D9Ce9bB67c9bD47537d12) | Lefteris Karapetsas (rotkiapp) | [Twitter](https://x.com/LefterisJP/status/1590083336210644992) |
 | [0xFe45baf0F18c207152A807c1b05926583CFE2e4b](https://etherscan.io/address/0xFe45baf0F18c207152A807c1b05926583CFE2e4b) | Michael Egorov (Curve) | [Twitter](https://x.com/newmichwill/status/1849912651163250755) |
 | [0x962228a90eaC69238c7D1F216d80037e61eA9255](https://etherscan.io/address/0x962228a90eaC69238c7D1F216d80037e61eA9255) | CryptoHarry (Inverse) | [Twitter](https://x.com/0xCryptoHarry/status/1848394875659776430) |
-| [0x700F1a984C962b447CcDb95c4c2D8074C65098a3](https://etherscan.io/address/0x700F1a984C962b447CcDb95c4c2D8074C65098a3) | Tapir (Yearn) | [Github Gist](https://gist.github.com/tapired/3b26a56b8847dc6f608edb9403dfc61d) |
+| [0x700F1a984C962b447CcDb95c4c2D8074C65098a3](https://etherscan.io/address/0x700F1a984C962b447CcDb95c4c2D8074C65098a3) | Tapir (Yearn) | [GitHub Gist](https://gist.github.com/tapired/3b26a56b8847dc6f608edb9403dfc61d) |
 
 ## History
 

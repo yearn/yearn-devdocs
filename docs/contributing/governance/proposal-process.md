@@ -1,6 +1,6 @@
 # Proposal Process
 
-[veYFI](https://docs.yearn.fi/contributing/governance/veyfi) token holders control the Yearn ecosystem through off-chain proposals and votes via [Snapshot](https://snapshot.org/#/ybaby.eth). Proposals that generate majority support (>50% of the vote) are implemented by a 9-member multi-signature wallet, and 6 out of 9 wallet signers must sign for a change to be implemented. The [members of the multi-signature wallet](https://docs.yearn.fi/resources/faq#who-is-on-the-multisig) were voted in by YFI holders and are subject to change from future governance votes.
+[veYFI](https://docs.yearn.fi/contributing/governance/veyfi) token holders control the Yearn ecosystem through off-chain proposals and votes via [Snapshot](https://snapshot.org/#/ybaby.eth). Proposals that generate majority support (>50% of the vote) are implemented by a 9-member multi-signature wallet, and 6 out of 9 wallet signers must sign for a change to be implemented. The [members of the multi-signature wallet](https://docs.yearn.fi/developers/security/multisig#members) were voted in by YFI holders and are subject to change from future governance votes.
 
 ## Discussion
 
@@ -36,7 +36,7 @@ Getting as much feedback as possible from the various communication channels is 
 
 Anyone can post a proposal on the forum for discussion within the community. If it's promoted to off-chain votation (via [Snapshot](https://snapshot.org/#/ybaby.eth)), only someone holding 1 veYFI can submit it to Snapshot. If your proposal made it to off-chain votation and you don't have enough veYFI, mods will help you through this stage.
 
-The default template for proposals can be found on [Github](https://github.com/yearn/YIPS/blob/master/yip-X.md) + on the [forum](https://gov.yearn.fi), if you post under "proposals" or "discussion" it will auto-fill in the template as well.
+The default template for proposals can be found on [GitHub](https://github.com/yearn/YIPS/blob/master/yip-X.md) + on the [forum](https://gov.yearn.fi), if you post under "proposals" or "discussion" it will auto-fill in the template as well.
 
 **Resources**:
 
