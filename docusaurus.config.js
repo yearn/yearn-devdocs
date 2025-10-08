@@ -92,6 +92,11 @@ export default {
           activeBasePath: '/contributing',
         },
         {
+          to: 'curating/introduction',
+          label: 'Curating Docs',
+          activeBasePath: '/curating',
+        },
+        {
           label: 'Blog',
           position: 'right',
           href: 'https://blog.yearn.fi',
@@ -180,6 +185,24 @@ export default {
     },
   ],
   plugins: [
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'curating',
+        path: 'docs/curating',
+        routeBasePath: 'curating',
+        sidebarPath: './sidebars/sidebarsCurating.js',
+        showLastUpdateTime: true,
+        sidebarCollapsed: true,
+        breadcrumbs: false,
+        remarkPlugins: [math],
+        rehypePlugins: [katex],
+        admonitions: {
+          keywords: ['yearn', 'curating', 'yearn curating', 'term curating', 'morpho curating'],
+          extendDefaults: true,
+        },
+      },
+    ],
     [
       '@docusaurus/plugin-content-docs',
       {
