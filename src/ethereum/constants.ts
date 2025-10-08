@@ -185,7 +185,7 @@ export const protocolPeriphery = {
   aprOracle: '0x1981AD9F44F2EA9aDd2dC4AD7D075c102C70aF92',
   baseFeeProvider: '0xe0514dd71cfdc30147e76f65c30bdf60bfd437c3',
   commonReportTrigger: '0xa045d4daea28ba7bfe234c96eaa03dafae85a147',
-  auctionFactory: '0xE6aB098E8582178A76DC80d55ca304d1Dec11AD8',
+  auctionFactory: '0xCfA510188884F199fcC6e750764FAAbE6e56ec40',
   splitterFactory: '0xe28fCC9FB2998ba57754789F6666DAa8C815614D',
   registryFactory: '0x3A0fa8aac82aD94048098D6af6e8eB36c98816A1',
   debtAllocatorFactory: '0x03D43dF6FF894C848fC6F1A0a7E8a539Ef9A4C18',
