@@ -100,7 +100,7 @@ NOTE: Forcefully removing a strategy that still has debt will cause a loss to be
 
 The DEBT_MANAGER role is in charge of allocating funds between the strategies added to a vault.
 
-By default the DEBT_MANAGER role is given to the `DebtAllocator` contract deployed by the `RoleManagerFactory` and is controlled by the `management` address. For a full explanation of the `DebtAllocator` visit the [full spech](LINK IT)
+By default the DEBT_MANAGER role is given to the `DebtAllocator` contract deployed by the `RoleManagerFactory` and is controlled by the `management` address. For a full explanation of the `DebtAllocator` visit the [full spec](/developers/smart-contracts/V3/Periphery/DebtAllocator)
 
 All debt updates are denominated in the underlying asset and are restricted by the `max_debt` for each strategy and the `minimum_total_idle` for the specific vault.
 

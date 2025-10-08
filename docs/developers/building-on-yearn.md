@@ -2,7 +2,7 @@
 
 ![image](/img/landing-page/pixie-wide-no-logo.jpg)
 
-Welcome! This is the spot to be for all things related to building products on, for, and with Yearn. If you are looking for more general information about Yearn and it's products, check out the [Getting Started](../getting-started/intro) section of the docs. If you are looking to build, read on!
+Welcome! This is the spot to be for all things related to building products on, for, and with Yearn. If you are looking for more general information about Yearn and its products, check out the [Getting Started](../getting-started/intro) section of the docs. If you are looking to build, read on!
 
 ## Core Tools
 
@@ -25,7 +25,7 @@ Check out the [V3 Vaults](v3/overview) section of this documentation for more in
 
 ### V2 Vaults
 
-[This repository](https://github.com/yearn/yearn-vaults#readme) includes the set of smart contracts that are used for the Yearn  V2 Vaults. It contains the requirements, code, deployment scripts, and tests necessary for the core protocol, including an inheritable template strategy for use with Solidity-based strategies that interact with Yearn Vaults. These contracts are used to create a simple way to generate high risk-adjusted returns for depositors of various assets via best-in-class lending protocols, liquidity pools, and community-made yield farming strategies on Ethereum.
+[This repository](https://github.com/yearn/yearn-vaults) includes the set of smart contracts that are used for the Yearn  V2 Vaults. It contains the requirements, code, deployment scripts, and tests necessary for the core protocol, including an inheritable template strategy for use with Solidity-based strategies that interact with Yearn Vaults. These contracts are used to create a simple way to generate high risk-adjusted returns for depositors of various assets via best-in-class lending protocols, liquidity pools, and community-made yield farming strategies on Ethereum.
 
 Check out the [V2 Vaults](v2/getting-started) section of this documentation for more information.
 
@@ -35,21 +35,21 @@ A Yearn Strategy is a set of smart contracts that implement different farming st
 
 V2 and V3 vaults implement strategies differently, so it is important to get familiar with the differences when deciding which Vault product you wish to use. More information about V3 strategies can be found [here](./v3/strategy_writing_guide) and information on V2 strategies can be found [here](./v2/DEPLOYMENT#deploying-a-new-strategy)
 
-### Front-end Integrations
+### Frontend Integrations
 
 Yearn uses a JavaScript SDK for formatting protocol data and generating transactions for reading/writing protocol data. Yearn SDK integrates several components, both on-chain and off-chain.
 
 [The repository here](https://github.com/turtlemoji/yearn-sdk-examples) contains a live preview and example usage of the Yearn SDK. Explore this codebase to learn how to start interacting with the Yearn protocol in your own app.
 
-Check out the [Front End Integrations](front-end-development) section of this documentation for more information about Front End Integrations.
+Check out the [Frontend Integrations](front-end-development) section of this documentation for more information about Frontend Integrations.
 
 ### Data Sources
 
-[**yDaemon**](https://ydaemon.yearn.finance/) is a public API for a broad range of Vault data.
+[**yDaemon**](https://ydaemon.yearn.fi/) is a public API for a broad range of Vault data.
 
 - Learn more about yDaemon at their [Docs page](https://ydaemon.yearn.farm/docs/intro)
 
-**The Graph**- Query contract data with GQL using the Yearn subgraphs
+**The Graph** - Query contract data with GQL using the Yearn subgraphs
 
 - Learn more about the Graph and Subgraphs that Yearn provides [here](./data-services/subgraph-info).
 
