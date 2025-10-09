@@ -12,7 +12,7 @@ We will sort our vaults into three risk tiers:
 
 - Normie: Sticks mostly to the big, well-known crypto markets (“blue-chips”). The goal here is steady, reliable yield with the lowest possible chance of things going sideways.
 - OG: Dips into markets that offer potentially higher yields but come with a bit more risk. Corresponds to Yearn’s internal “risk level 2”.
-- Degen: For those comfortable with higher risk for potentially even higher rewards. Corresponds to Yearn’s internal “risk level 3”.
+- Degen: For those comfortable with higher risk for potentially even higher rewards. Corresponds to Yearn’s internal “risk level 3” and above.
 
 ## How We Decide Where to Put the Money
 
@@ -28,7 +28,7 @@ We don’t just guess! We use on-chain data and simulations to calculate how mar
 
 Once a vault is set up, the job isn’t done. We’re always monitoring and making adjustments because market conditions, borrowing demand, and risks can change fast.
 
-- Playing it Safe: We constantly check if there’s enough liquidity on decentralized exchanges (DEXs) to handle potential liquidations without causing chaos. If a lot of borrowers in a market are close to liquidation, we reduce our exposure there. We also aim not to use overly utilized markets to ensure there’s always some breathing room for withdrawals.
+- Playing it Safe: We constantly check on-chain liquidity on DEXs for potential liquidation capacity and monitor borrower health on the Morpho market. We evaluate the collateral of risky positions and compare it with available on-chain DEX liquidity to adjust the cap accordingly. We also aim to avoid overly utilized markets to ensure there’s always some breathing room for withdrawals.
 - Yield Optimization: We analyze which markets are offering the best returns for their risk level and shift funds accordingly. Our goal is always the best risk-adjusted yield, not just the highest number. We use our models to predict how yield might change based on time and how much a market is being used.
 
 Our whole strategy boils down to deeply understanding and managing risk. We use:
@@ -36,7 +36,7 @@ Our whole strategy boils down to deeply understanding and managing risk. We use:
 - Frequent Data Checks: Looking at liquidity, volatility, potential slippage, risky positions.
 - Automated Optimization: Tools constantly work to find the best allocations and adjust safety caps.
 - Sensible Guardrails: Things like a 72-hour timelock for major changes give everyone time to react if needed, and specific roles (Guardian, Reallocator, Owner) ensure actions are taken by the right parties with the right permissions.
-- Monitoring: We monitor assets and protocols that we use, from governance to contract upgrades and other risk factors.
+- Monitoring: We monitor assets and protocols that we use. From governance decisions to contract upgrades, on-chain liquidity to borrower health on the Morpho market, and other key risk factors.
 
 By combining automated optimization with careful, real-time monitoring and a risk-first mindset, we aim to provide Morpho vaults that are both high-performing and aligned with Yearn’s safety standards. This means Yearn users can confidently use these vaults, and Morpho users get access to expertly managed options.
 
