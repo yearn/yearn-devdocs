@@ -2,7 +2,7 @@
 
 ![image](/img/curating/yearning.jpg)
 
-Yearn Curating team has started from a need to handle risk score for Yearn V3 strategies that deposit into Morpho Vaults. Each vault has its own curator and each curator has different risk appetites. Morpho Vaults are alive, markets can be added and removed, risky market can have too high allocation for our current risk score so we need to react and updated the risk score dynamically. To handle this flow we build monitoring stack around different Morpho Vaults used by Yearn V3 strategies to capture events and trigger alerts when risk score is not behaving as expected. Check out how monitoring works in our [Github Repo](https://github.com/yearn/monitoring-scripts-py/tree/main/morpho).
+Yearn Curating team has started from a need to handle risk score for Yearn V3 strategies that deposit into Morpho Vaults. Each vault has its own curator and each curator has different risk appetites. Morpho Vault code is immutable, but risk scores change all the time. Markets can be added and removed, risky market can have too high allocation for our current risk score so we need to react and updated the risk score dynamically. To handle this flow we build monitoring stack around different Morpho Vaults used by Yearn V3 strategies to capture events and trigger alerts when risk score is not behaving as expected. Check out how monitoring works in our [Github repository](https://github.com/yearn/monitoring-scripts-py/tree/main/morpho).
 
 With the monitoring stack in line and knowledge about risk management, we decided to start curating on Morpho to make sure our strategies are always in line with our risk appetite.
 
@@ -10,9 +10,9 @@ With the monitoring stack in line and knowledge about risk management, we decide
 
 We will sort our vaults into three risk tiers:
 
-- Normie: Sticks mostly to the big, well-known crypto markets (“blue-chips”). The goal here is steady, reliable yield with the lowest possible chance of things going sideways.
-- OG: Dips into markets that offer potentially higher yields but come with a bit more risk. Corresponds to Yearn’s internal “risk level 2”.
-- Degen: For those comfortable with higher risk for potentially even higher rewards. Corresponds to Yearn’s internal “risk level 3” and above.
+- **Normie**: Sticks mostly to the big, well-known crypto markets (“blue-chips”). The goal here is steady, reliable yield with the lowest possible chance of things going sideways.
+- **OG**: Dips into markets that offer potentially higher yields but come with a bit more risk. Corresponds to Yearn’s internal “risk level 2”.
+- **Degen**: For those comfortable with higher risk for potentially even higher rewards. Corresponds to Yearn’s internal “risk level 3” and above.
 
 ## How We Decide Where to Put the Money
 
@@ -59,6 +59,4 @@ Capabilities include:
 
 Alerts are primarily delivered via Telegram, triggered by scheduled GitHub Actions running Python scripts or real-time Tenderly alerts based on on-chain events.
 
-For more details, check our [Github monitoring repository](https://github.com/yearn/monitoring-scripts-py).
-
-> Note: This is only part of our monitoring stack that we keep open source.
+For more details, check our [Github monitoring repository](https://github.com/yearn/monitoring-scripts-py). This is only part of our monitoring stack that we have open sourced.

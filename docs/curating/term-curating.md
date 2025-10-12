@@ -6,6 +6,4 @@ Term Finance Protocol enables noncustodial fixed-rate collateralized lending on-
 
 ## Live Vaults
 
-Mainnet:
-
-- [USDS Vault](https://app.term.finance/vaults/0xe852db931ac6f02490a32695f09ee79a31f53821/1)
+- [USDS Vault](https://app.term.finance/vaults/0xe852db931ac6f02490a32695f09ee79a31f53821/1) on Mainnet

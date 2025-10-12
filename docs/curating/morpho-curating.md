@@ -24,6 +24,8 @@ Our Morpho vaults are managed by a team of roles:
 
 ### Live Morpho Vaults
 
+We have deployed Morpho vaults on the following chains:
+
 - [Mainnet](https://app.morpho.org/ethereum/earn?curatorAddressesFilter=0xe5e2Baf96198c56380dDD5E992D7d1ADa0e989c0%2C0xFEaE2F855250c36A77b8C68dB07C4dD9711fE36F%2C0x518C21DC88D9780c0A1Be566433c571461A70149%2C0xfd99a19Fcf577Be92fDAB4ef162c1644BB056885)
 - [Katana](https://app.morpho.org/katana/earn?curatorAddressesFilter=0xe5e2Baf96198c56380dDD5E992D7d1ADa0e989c0%2C0xFEaE2F855250c36A77b8C68dB07C4dD9711fE36F%2C0x518C21DC88D9780c0A1Be566433c571461A70149%2C0xfd99a19Fcf577Be92fDAB4ef162c1644BB056885)
 - [Base](https://app.morpho.org/base/earn?curatorAddressesFilter=0xe5e2Baf96198c56380dDD5E992D7d1ADa0e989c0%2C0xFEaE2F855250c36A77b8C68dB07C4dD9711fE36F%2C0x518C21DC88D9780c0A1Be566433c571461A70149%2C0xfd99a19Fcf577Be92fDAB4ef162c1644BB056885)
@@ -51,4 +53,4 @@ Users can engage with Yearn-curated Morpho Vaults in three ways:
 
 ## YFI Maxi
 
-For Yearn lovers and YFI holders, we have a special [Morpho Market YFI/USDC](https://app.morpho.org/ethereum/market/0x973e9dd45799efe8775417bcc420a3ab84a583587b2108985746e2fe201d0c83/yfi-usdc) where users can
+For Yearn lovers and YFI holders, we have a special [Morpho Market YFI/USDC](https://app.morpho.org/ethereum/market/0x973e9dd45799efe8775417bcc420a3ab84a583587b2108985746e2fe201d0c83/yfi-usdc) where users can deposit YFI as collateral and borrow USDC.
