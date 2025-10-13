@@ -17,4 +17,4 @@ Want to dive into the details? check out the Developer Docs:
 
 <PrettyLink>[Frequently Asked Questions](./yeth-faq)</PrettyLink>
 
-<PrettyLink>[Github Repo](https://github.com/yearn/yETH)</PrettyLink>
+<PrettyLink>[GitHub Repo](https://github.com/yearn/yETH)</PrettyLink>

@@ -67,7 +67,7 @@ Yearn has base templates made to build off of built-in both [Ape Worx](https://w
 
 ## Strategy Writing
 
-So you have your idea and local environment setup. Now its time to start writing your actual strategy.
+So you have your idea and local environment setup. Now it's time to start writing your actual strategy.
 
 To create your Tokenized Strategy, you must override at least three functions outlined in the `Strategy.sol`.
 
@@ -156,7 +156,7 @@ ___
 
 - `_totalAssets`:  A trusted and accurate account for the total amount of 'asset' the strategy currently holds including loose funds.
 
-**Good to Know**:  
+**Good to Know**:
 
 - This can only be called by a permissioned address so if set up correctly, it can be trusted to perform swaps, LP movements etc.
 - This should account for both deployed and idle assets.
@@ -172,20 +172,20 @@ function _harvestAndReport() internal override returns (uint256 _totalAssets) {
     if(!TokenizedStrategy.isShutdown()) {
         // Claim all rewards and sell to asset.
         _claimAndSellRewards();
-        
+
         // Check how much we can re-deploy into the yield source.
         uint256 toDeploy = Math.min(
-            asset.balanceOf(address(this)), 
+            asset.balanceOf(address(this)),
             availableDepositLimit(address(this))
         );
-        
+
         // If greater than 0.
         if (toDeploy > 0) {
             // Deposit the sold amount back into the yield source.
-            _deployFunds(toDeploy)
+            _deployFunds(toDeploy);
         }
     }
-    
+
     // Return full balance no matter what.
     _totalAssets = yieldSource.balanceOf(address(this)) + asset.balanceOf(address(this));
 }
@@ -226,9 +226,9 @@ While that may be all that's necessary for some of the most straightforward stra
 ```solidity title="availableDepositLimit() Example"
 function availableDepositLimit(
     address _owner
-) public view override returns (uint256) { 
+) public view override returns (uint256) {
     if (yieldSource.isPaused()) return 0;
-    
+
     uint256 totalAssets = TokenizedStrategy.totalAssets();
     return totalAssets >= depositLimit ? 0 : depositLimit - totalAssets;
 }
@@ -264,9 +264,9 @@ function availableDepositLimit(
         if(positionIsLocked || yieldSource.isPaused()) {
             return asset.balanceOf(address(this));
         }
-        
+
         // Return both the loose balance and the current liqudity of the yield source.
-        return asset.balanceOf(address(this)) + asset.balanceOf(address(yieldSource));   
+        return asset.balanceOf(address(this)) + asset.balanceOf(address(yieldSource));
     }
     ```
 
@@ -353,7 +353,7 @@ function availableDepositLimit(
         _amount = min(_amount, yieldSource.balanceOf(address(this)));
         _freeFunds(_amount);
     }
-    ````
+    ```
 
 ___
 
@@ -381,7 +381,7 @@ To make reward swapping as easy and standardized as possible, multiple swapper c
 
 ### [APR Oracles](https://github.com/yearn/tokenized-strategy-periphery/tree/master/src/AprOracle)
 
-For easy integration with Vaults, front ends, debt allocators, etc. There is the option to create an [APR oracle](https://github.com/yearn/tokenized-strategy-periphery/blob/master/src/AprOracle/AprOracleBase.sol) contract for your specific strategy that should return the expected APR of the Strategy based on some given `debtChange`.
+For easy integration with Vaults, frontends, debt allocators, etc. There is the option to create an [APR oracle](https://github.com/yearn/tokenized-strategy-periphery/blob/master/src/AprOracle/AprOracleBase.sol) contract for your specific strategy that should return the expected APR of the Strategy based on some given `debtChange`.
 
 ### [HealthCheck](https://github.com/yearn/tokenized-strategy-periphery/tree/master/src/Bases/HealthCheck)
 

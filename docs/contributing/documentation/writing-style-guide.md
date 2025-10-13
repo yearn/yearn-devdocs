@@ -280,7 +280,7 @@ Review the respective Contribute.md for each repository where pertinent before s
   - Produce a project outline. Clarify the what so we can agree on the how.
   - Set achievable deadlines. Timeboxing is good :)
   - Assign and divide tasks with other contributors.
-    - Multiple contributors should not start work on similar projects individually. Please check that the same issue does not already exist in the Github Issues for that Repository, and if it does please coordinate with whoever is working on it to divide the work if needed.
+    - Multiple contributors should not start work on similar projects individually. Please check that the same issue does not already exist in the GitHub Issues for that Repository, and if it does please coordinate with whoever is working on it to divide the work if needed.
 
 #### Track Progress
 
@@ -291,7 +291,7 @@ Review the respective Contribute.md for each repository where pertinent before s
 #### Final Drafts and Submissions
 
 - Transfer approved final drafts from Google Docs to HackMD or DrawIO(for diagrams) if need be.
-- Let the team know when a project is ready for final review by moving your issue to the status of `Pending Review` on Github and messaging in the appropriate Discord or Telegram channel.
+- Let the team know when a project is ready for final review by moving your issue to the status of `Pending Review` on GitHub and messaging in the appropriate Discord or Telegram channel.
 - Once reviewed, submit completed projects for approval as a [Pull Request](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request) on GitHub.
   - Ensure to update any relevant issues and the project board on GitHub
 
