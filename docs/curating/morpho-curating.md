@@ -22,15 +22,6 @@ Our Morpho vaults are managed by a team of roles:
 - Reallocator: A role that has the ability to reallocate the vault's assets. Our bots(EOA) will be the reallocators.
 - Timelock: set to 72 hours to enable guardain and users to react if needed.
 
-### Live Morpho Vaults
-
-We have deployed Morpho vaults on the following chains:
-
-- [Mainnet](https://app.morpho.org/ethereum/earn?curatorAddressesFilter=0xe5e2Baf96198c56380dDD5E992D7d1ADa0e989c0%2C0xFEaE2F855250c36A77b8C68dB07C4dD9711fE36F%2C0x518C21DC88D9780c0A1Be566433c571461A70149%2C0xfd99a19Fcf577Be92fDAB4ef162c1644BB056885)
-- [Katana](https://app.morpho.org/katana/earn?curatorAddressesFilter=0xe5e2Baf96198c56380dDD5E992D7d1ADa0e989c0%2C0xFEaE2F855250c36A77b8C68dB07C4dD9711fE36F%2C0x518C21DC88D9780c0A1Be566433c571461A70149%2C0xfd99a19Fcf577Be92fDAB4ef162c1644BB056885)
-- [Base](https://app.morpho.org/base/earn?curatorAddressesFilter=0xe5e2Baf96198c56380dDD5E992D7d1ADa0e989c0%2C0xFEaE2F855250c36A77b8C68dB07C4dD9711fE36F%2C0x518C21DC88D9780c0A1Be566433c571461A70149%2C0xfd99a19Fcf577Be92fDAB4ef162c1644BB056885)
-- [Arbitrum](https://app.morpho.org/arbitrum/earn?curatorAddressesFilter=0xe5e2Baf96198c56380dDD5E992D7d1ADa0e989c0%2C0xFEaE2F855250c36A77b8C68dB07C4dD9711fE36F%2C0x518C21DC88D9780c0A1Be566433c571461A70149%2C0xfd99a19Fcf577Be92fDAB4ef162c1644BB056885)
-
 ## User Flow
 
 Users can engage with Yearn-curated Morpho Vaults in three ways:
@@ -50,6 +41,19 @@ Users can engage with Yearn-curated Morpho Vaults in three ways:
    - One of these strategies will be the **Yearn Morpho Lender** (from #2)
    - This means their deposits ultimately flow into the Yearn-curated Morpho Vault
    - And they benefit from **native lending APY** and **compounded MORPHO rewards**, all wrapped inside a diversified yield-optimized strategy
+
+### Yearn Morpho Lender Strategy
+
+To enjoy maximum yield, users can deposit into the Yearn Morpho Lender Strategy. Check out [Yearn Morpho Compounder strategies](https://yearn.fi/v3?types=single&search=morpho%20yearn) and deposit to earn juicy yields.
+
+### Live Morpho Vaults
+
+ If you prefer depositing directly into the Morpho vaults, we are live on the following chains:
+
+- [Mainnet](https://app.morpho.org/ethereum/earn?curatorAddressesFilter=0xe5e2Baf96198c56380dDD5E992D7d1ADa0e989c0%2C0xFEaE2F855250c36A77b8C68dB07C4dD9711fE36F%2C0x518C21DC88D9780c0A1Be566433c571461A70149%2C0xfd99a19Fcf577Be92fDAB4ef162c1644BB056885)
+- [Katana](https://app.morpho.org/katana/earn?curatorAddressesFilter=0xe5e2Baf96198c56380dDD5E992D7d1ADa0e989c0%2C0xFEaE2F855250c36A77b8C68dB07C4dD9711fE36F%2C0x518C21DC88D9780c0A1Be566433c571461A70149%2C0xfd99a19Fcf577Be92fDAB4ef162c1644BB056885)
+- [Base](https://app.morpho.org/base/earn?curatorAddressesFilter=0xe5e2Baf96198c56380dDD5E992D7d1ADa0e989c0%2C0xFEaE2F855250c36A77b8C68dB07C4dD9711fE36F%2C0x518C21DC88D9780c0A1Be566433c571461A70149%2C0xfd99a19Fcf577Be92fDAB4ef162c1644BB056885)
+- [Arbitrum](https://app.morpho.org/arbitrum/earn?curatorAddressesFilter=0xe5e2Baf96198c56380dDD5E992D7d1ADa0e989c0%2C0xFEaE2F855250c36A77b8C68dB07C4dD9711fE36F%2C0x518C21DC88D9780c0A1Be566433c571461A70149%2C0xfd99a19Fcf577Be92fDAB4ef162c1644BB056885)
 
 ## YFI Maxi
 
