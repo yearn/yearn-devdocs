@@ -3,7 +3,7 @@
 
 [Git Source](https://github.com/yearn/vault-periphery/blob/516f95edcd36e28b714b52408c05009b430900e3/src/accountants/AccountantFactory.sol)
 
-*A factory contract for deploying Accountant contracts*
+A factory contract for deploying Accountant contracts
 
 ## State Variables
 

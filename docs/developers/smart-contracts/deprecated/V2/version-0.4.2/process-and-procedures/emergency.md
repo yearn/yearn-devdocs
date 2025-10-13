@@ -158,7 +158,7 @@ List of tools and alternatives in case primary tools are not available during an
 
 | Description         | Primary                                        |                               Secondary                                |
 | ------------------- | ---------------------------------------------- | :--------------------------------------------------------------------: |
-| Code Sharing        | Github                                         | [HackMd](https://hackmd.io/), [CodeShare](https://codeshare.io/5Og7mj) |
+| Code Sharing        | GitHub                                         | [HackMd](https://hackmd.io/), [CodeShare](https://codeshare.io/5Og7mj) |
 | Communications\*    | Telegram                                       |                                Discord                                 |
 | Transaction Details | [Etherscan](https://etherscan.io/)             |                    [EthTxInfo](https://ethtx.info/)                    |
 | Debugging           | Brownie                                        |                    [Tenderly](https://tenderly.co/)                    |
