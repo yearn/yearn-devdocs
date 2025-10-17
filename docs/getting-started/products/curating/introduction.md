@@ -51,10 +51,10 @@ We don’t just guess what might happen – we build tools to watch it closely. 
 Our monitoring system is designed to track key metrics and potential risks across various DeFi protocols integrated with Yearn.
 Capabilities include:
 
-- Governance Tracking: Observes governance activities, including scheduled timelock transactions, multisig queue proposals, and critical function calls across protocols like Aave, Compound, Maker, Morpho, and others.
-- Peg Stability: Checks exchange rates for LSTs/LRTs (like stETH, ezETH) and stablecoins in key liquidity pools, alerting on significant depegs.
-- Market Risk Metrics: For specific protocols like Morpho and Euler, it monitors composite vault/market risk levels based on asset allocations and individual risk scores.
-- Bad Debt Monitoring: Tracks protocol bad debt levels, often using external data sources like Risk DAO, alerting if thresholds are breached.
+- Governance Tracking: Observes governance activities, including scheduled timelock transactions using [Tenderly Alerts](https://docs.tenderly.co/alerts/intro-to-alerts), [multisig queued transactions](https://github.com/yearn/monitoring-scripts-py/blob/main/safe/main.py) on safe, and critical function calls across protocols like [Aave](https://github.com/yearn/monitoring-scripts-py/tree/main/aave), [Compound](https://github.com/yearn/monitoring-scripts-py/tree/main/compound), [Maker](https://github.com/yearn/monitoring-scripts-py/tree/main/maker), [Morpho](https://github.com/yearn/monitoring-scripts-py/tree/main/morpho), [Ethena](https://github.com/yearn/monitoring-scripts-py/tree/main/ethena) and [others](https://github.com/yearn/monitoring-scripts-py/tree/main/README.md).
+- Peg Stability: Checks exchange rates for [LSTs/LRTs](https://github.com/yearn/monitoring-scripts-py/tree/main/lrt-pegs) (like stETH, ezETH) and stablecoins in key liquidity pools, alerting on significant depegs.
+- Market Risk Metrics: For specific protocols like [Morpho](https://github.com/yearn/monitoring-scripts-py/tree/main/morpho), [Euler](https://github.com/yearn/monitoring-scripts-py/tree/main/euler), it monitors composite vault/market risk levels based on asset allocations and individual risk scores.
+- Bad Debt Monitoring: Tracks protocol bad debt levels, often using external data sources like [Risk DAO](https://github.com/Risk-DAO/simulation-results), alerting if [thresholds are breached](https://github.com/yearn/monitoring-scripts-py/blob/main/bad-debt/bad-debt-trigger.py).
 - Market Utilization: Monitors asset utilization rates in lending markets, sending alerts when utilization approaches critical levels.
 
 Alerts are primarily delivered via Telegram, triggered by scheduled GitHub Actions running Python scripts or real-time Tenderly alerts based on on-chain events.

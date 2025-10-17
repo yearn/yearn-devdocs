@@ -5,8 +5,8 @@
 Morpho was our first step into curating story... and it is a succesful one. More to come in the future.
 
 - $200M+ in assets, more info on [DefiLlama](https://defillama.com/protocol/yearn-curating)
-- 12 vaults on 4 chains
-- 7 custom markets created
+- 10+ vaults on 4 chains
+- 5+ custom markets created
 
 ## Morpho Vaults
 
@@ -30,17 +30,20 @@ Users can engage with Yearn-curated Morpho Vaults in three ways:
    These users deposit directly (typically via the Morpho UI) into a Yearn-curated Morpho Vault.
    - They earn **native lending APY** on their assets
    - Plus **MORPHO rewards**
+   - Performance fees is 5-10% of the native lending APY, excluding rewards APY.
 
 2. **Deposit into Yearn Morpho Lender Strategy**
    This is a Yearn strategy that lends to the Yearn-curated Morpho Vault and **auto-compounds MORPHO rewards**.
    - Users earn **native lending APY**
    - Plus **additional yield from compounded MORPHO**, converted into more of the underlying asset
+   - No additional performance fees are charged.
 
 3. **Deposit into Yearn V3 Allocator Vault**
    These users deposit into a Yearn V3 Vault that dynamically allocates across multiple strategies.
    - One of these strategies will be the **Yearn Morpho Lender** (from #2)
    - This means their deposits ultimately flow into the Yearn-curated Morpho Vault
    - And they benefit from **native lending APY** and **compounded MORPHO rewards**, all wrapped inside a diversified yield-optimized strategy
+   - Yearn V3 vaults have a 10% performance fee because vaults funds are managed between multiple strategies and protocols. More info on [Yearn V3 vaults](/getting-started/products/yvaults/v3).
 
 ### Yearn Morpho Lender Strategy
 
