@@ -6,7 +6,7 @@ If you want to programmatically interact with Yearn data, or need to fetch large
 
 yDaemon is a RESTful API that hydrates subgraph responses with more data, like APY calculations. yDaemon is the best source for current yearn Vault data and is what is used by the production Yearn frontends.
 
-- **Live API:** https://ydaemon.yearn.fi/
+- **Live API:** https://ydaemon.yearn.fi/1/vaults/all
 - **Source:** https://github.com/yearn/ydaemon
 - **Guide:** https://medium.com/iearn/ydaemon-one-api-to-unify-all-yearn-data-4fc74dc9a33b
 
@@ -39,7 +39,7 @@ Currently only subgraphs for V2 vaults are available and some subgraphs have not
 
 The subgraph is a GraphQL interface to query raw historical data. For current data it is recommended to check yDaemon before using the subgraph directly.
 
-- **Docs:** https://docs.yearn.fi/developers/v2/subgraph-info
+- **Docs:** https://docs.yearn.fi/developers/data-services/subgraph-info
 
 ### V2 Vaults
 
@@ -50,7 +50,7 @@ The subgraph is a GraphQL interface to query raw historical data. For current da
 
 Yearn Lens is a collection of smart contracts that collect data about V2 Yearn vaults.
 
-- **Docs:** https://docs.yearn.fi/developers/v2/yearn-lens
+- **Docs:** https://docs.yearn.fi/developers/data-services/yearn-lens
 
 ---
 
@@ -67,6 +67,12 @@ Yearn Lens is a collection of smart contracts that collect data about V2 Yearn v
 The exporter was used to build the (now deprecated) Yearn Grafana dashboard.
 
 - **Source + Guide:** https://github.com/yearn/yearn-exporter
+
+### Yearn Vision - No longer supported
+
+Yearn Vision was the Grafana dashboard of the hosted version of Yearn Exporter.
+
+- **original endpoint**: https://yearn.vision
 
 ### V1 Yearn API - No longer supported
 

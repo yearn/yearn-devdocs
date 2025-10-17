@@ -50,12 +50,11 @@ vault.setGovernance(ychad.eth)
 1. Request access to a Core Dev strategist and create a new issue using the `Strategy Review` template in the strategies [private repo](https://github.com/yearn/yearn-strategies/issues) **Complete all the fields**.
 2. If the strategy targets a new protocol/new chain not currently approved by yearn (used in production) it may also require due diligence and path to production plan documents for the strategy to be considered for endorsement.
    Example(s) [SNX](https://hackmd.io/0w1RZh7DSc27A9EyzlHbJQ?view)
-3. Coordinate with Core Dev strategist for reviewing strategy, then follow the status on the [private board](https://github.com/orgs/yearn/projects/5).
+3. Coordinate with Core Dev strategist for reviewing strategy
 4. Have it peer-reviewed by at least **two** strategists.
 5. Check if `want` token has a deployed vault already (>=v0.3.0) and coordinate to use that first if possible.
 6. Coordinate with a core developer to set a proper deposit limit and other settings for the new vault. See the table below: [Limits per Stage](#limits-per-stage).
 7. Deploy strategy and upload code to Etherscan for verification.
-8. Tag GitHub review issue with deployed version and attach mainnet address(es) to the strategy item in [private board](https://github.com/orgs/yearn/projects/5).
 
 ## Make the Vault and Strategy work together
 
@@ -309,16 +308,6 @@ Custom Health Check **must** follow the interface for [custom health checks](htt
 | Core Dev multisig      | dev.ychad.eth         | [0x846e211e8ba920B353FB717631C015cf04061Cc9](https://etherscan.io/address/0x846e211e8ba920B353FB717631C015cf04061Cc9) |
 | Treasury               | treasury.ychad.eth    | [0x93A62dA5a14C80f265DAbC077fCEE437B1a0Efde](https://etherscan.io/address/0x93A62dA5a14C80f265DAbC077fCEE437B1a0Efde) |
 | Health Check           | health.ychad.eth      | [0xDDCea799fF1699e98EDF118e0629A974Df7DF012](https://etherscan.io/address/0xDDCea799fF1699e98EDF118e0629A974Df7DF012) |
-
-### Fantom Addresses
-
-| Identity               | Address                                    |
-| ---------------------- | ------------------------------------------ |
-| Registry               | [0x727fe1759430df13655ddb0731dE0D0FDE929b04](https://ftmscan.com/address/0x727fe1759430df13655ddb0731dE0D0FDE929b04) |
-| Strategist multisig    | [0x72a34AbafAB09b15E7191822A679f28E067C4a16](https://ftmscan.com/address/0x72a34AbafAB09b15E7191822A679f28E067C4a16) |
-| Governance multisig    | [0xC0E2830724C946a6748dDFE09753613cd38f6767](https://ftmscan.com/address/0xC0E2830724C946a6748dDFE09753613cd38f6767) |
-| Treasury               | [0x89716ad7edc3be3b35695789c475f3e7a3deb12a](https://ftmscan.com/address/0x89716ad7edc3be3b35695789c475f3e7a3deb12a) |
-| Health Check           | [0xf13Cd6887C62B5beC145e30c38c4938c5E627fe0](https://ftmscan.com/address/0xf13Cd6887C62B5beC145e30c38c4938c5E627fe0) |
 
 ### Arbitrum Addresses
 
