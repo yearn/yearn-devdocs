@@ -30,7 +30,7 @@ When you deposit BOLD into yBOLD, Yearn routes your funds into the different Liq
 
 - No oracles: No oracles are being used to price the collateral token rewards.
 
-- Immutable: yBOLD is designed with immutability in mind. A few months after launch, once we're confident no funny stuff happens, we'll revoke any privileged rights (which are almost non-existent anyways).
+- Immutable: yBOLD is designed with immutability in mind. A few months after launch, once we're confident no funny stuff happens, we'll revoke any privileged rights (which are almost non-existent anyway).
 
 - Composable: yBOLD and ysyBOLD can be integrated into DeFi protocols as a productive version of BOLD.
 

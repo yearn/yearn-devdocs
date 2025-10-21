@@ -161,9 +161,9 @@ How long the strategy has been running live on yearn.fi:
 
 ### Protocol Safety
 
-Protocol Safety evaluates the resilience of the protocol the strategy uses. It takes into account the safety measures given the current DeFi security standards, based on our internal assessments and due diligence compared to the top projects in DeFI. This includes multisig health, decentralization, bounty programs, audits, etc.
+Protocol Safety evaluates the resilience of the protocol the strategy uses. It takes into account the safety measures given the current DeFi security standards, based on our internal assessments and due diligence compared to the top projects in DeFi. This includes multisig health, decentralization, bounty programs, audits, etc.
 
-We hope to improve this dimension with the help of the DeFI community to potentially use a standard scoring system that is widely accepted in the ecosystem to replace our current scoring table:
+We hope to improve this dimension with the help of the DeFi community to potentially use a standard scoring system that is widely accepted in the ecosystem to replace our current scoring table:
 
 <table>
   <tr>
@@ -289,7 +289,7 @@ The TVL (total value locked) metric measures how to allocate to new riskier stra
 
 A vault is a contract that holds funds for up to 20 strategies, the vault risk score is a TVL weighted average for each active strategy, for example:
 
-**Strategy X** has **5000$** funds deposited  
+**Strategy X** has **5000$** funds deposited
 **Strategy Y** has **1000$** funds deposited
 
 This vault's risk score would be calculated as follows:
@@ -308,7 +308,7 @@ This vault's risk score would be calculated as follows:
 
 Risks on some projects may have more relevance than others, so before calculating the overall score we first define the weight for the context we want to apply the framework on, and then we do a weighted average between all risk dimensions and risk profiles:
 
-**Risk Profile** = Weighted table of which risk dimension is more important given the current context  
+**Risk Profile** = Weighted table of which risk dimension is more important given the current context
 **Risk Score** = Weighted average of all 8 dimensions using the risk profile weights
 
 A project may have many risk profiles, so for each profile the score is calculated and the final list that remains is then used with medians to reach the final result.

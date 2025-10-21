@@ -3,7 +3,7 @@
 <!-- markdownlint-disable MD001 -->
 ### When will yCRV launch?
 
-Contracts are live, you can find relevant addresses [here](/getting-started/products/ylockers/ycrv/overview#addresses).
+Contracts are live, you can find relevant addresses [here](/developers/addresses/ycrv-contracts).
 
 ### Where can I buy yCRV?
 
