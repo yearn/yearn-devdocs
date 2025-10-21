@@ -15,15 +15,15 @@ The below instructions show some python commands that assume you are using the b
 1. Confirm the script is using the latest version of registry `v2.registry.ychad.eth` against the planned new release vault to be sure its an updated version. (Can validate on Etherscan for latest address)
 1. Select the version of vault to deploy or press enter to use latest release.
 1. Enter `Y` when prompt to deploy Proxy Vault
-1. Enter the checksummed address of the ERC20 token the vault will use. 
+1. Enter the checksummed address of the ERC20 token the vault will use.
 1. Enter the vault Parameters (Below are some suggested values):
    - Set your address or an address you control as governance.
    - Set Treasury (`treasury.ychad.eth`) as the rewards address.
    - Set Core Dev multisig (`dev.ychad.eth`) as guardian.
    - Set Strategist multisig (`brain.ychad.eth`) as management.
    - Set description and symbol for vault or use suggested as default (can be changed on chain later)
-1. Confirm the Parameters are set correctly and press `y`and ENTER to deploy vault. 
-   
+1. Confirm the Parameters are set correctly and press `y`and ENTER to deploy vault.
+
 1. Check new vault has ABI setup on Etherscan (Some vault versions from older releases may have verification issues with Vyper and proxy detection on Etherscan, consider using latest releases >0.3.5 to ensure verification works).
 
 1. Set up the vault with correct deposit limit:
@@ -50,13 +50,12 @@ The below instructions show some python commands that assume you are using the b
 1. Discuss your strategy in Discord or Telegram to gain access to the yearn/yearn-strategies repository.
 1. Create a new issue in the strategies' [repo](https://github.com/yearn/yearn-strategies/issues) using the template `Strategy Review`. **Complete all the fields**.
 1. If the strategy is targeting a new protocol/new chain, not currently approved by yearn (used in production), a due diligence and path to production plan documents may also be required for the strategy to be considered for endorsing. [PATH TO PROD](https://hackmd.io/@ucVuhc2gShSGsOJwjaDvqg/HJ1ZplgTO)
-Examples [SNX](https://hackmd.io/0w1RZh7DSc27A9EyzlHbJQ?view), [VESPER](https://hackmd.io/@Ap_76vwNTg-vxJxbiaLMMQ/SkXEzic7O) 
-1. Coordinate with Core Dev strategist for getting a review on [board](https://github.com/orgs/yearn/projects/5).
+Examples [SNX](https://hackmd.io/0w1RZh7DSc27A9EyzlHbJQ?view), [VESPER](https://hackmd.io/@Ap_76vwNTg-vxJxbiaLMMQ/SkXEzic7O)
+1. Coordinate with Core Dev strategist for getting a review
 1. Complete peer review by at least 2 strategists.
 1. Check if `want` token has a deployed vault already (>=v0.3.0) and coordinate to use that first if possible.
 1. Coordinate with core developer to set proper deposit limit and other settings for new vault. See the table below: [Limits per Stage](#limits-per-stage).
 1. Deploy strategy and upload code to Etherscan for verification.
-1. Tag GitHub review issue with deployed version and add mainnet address(es) to the [board](https://github.com/orgs/yearn/projects/5).
 
 ## Make the Vault and Strategy work together
 
@@ -70,8 +69,8 @@ Examples [SNX](https://hackmd.io/0w1RZh7DSc27A9EyzlHbJQ?view), [VESPER](https://
    performance_fee = 1000            # Strategist perf fee: 10%
 
    vault.addStrategy(
-     strategy, 
-     debt_ratio, 
+     strategy,
+     debt_ratio,
      minDebtPerHarvest,
      maxDebtPerHarvest,
      performance_fee
@@ -133,7 +132,7 @@ In addition to the 2 strategists, a Core Developer has to review the strategy be
    ```
 
 1. Set parameters for vault correctly before endorse:
-   - Set Governance to (`ychad.eth`) 
+   - Set Governance to (`ychad.eth`)
    - Set Treasury (`treasury.ychad.eth`) as the rewards address.
    - Set Core Dev multisig (`dev.ychad.eth`) as guardian.
    - Set Strategist multisig (`brain.ychad.eth`) as management.

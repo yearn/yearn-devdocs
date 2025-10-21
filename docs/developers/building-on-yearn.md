@@ -47,7 +47,7 @@ Check out the [Frontend Integrations](front-end-development) section of this doc
 
 [**yDaemon**](https://ydaemon.yearn.fi/) is a public API for a broad range of Vault data.
 
-- Learn more about yDaemon at their [Docs page](https://ydaemon.yearn.farm/docs/intro)
+- Learn more about yDaemon in the [README](https://github.com/yearn/ydaemon)
 
 **The Graph** - Query contract data with GQL using the Yearn subgraphs
 

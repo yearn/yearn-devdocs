@@ -68,7 +68,6 @@ First, be sure to check if your wallet provider allows you to switch to testnet.
 #### Additional Resources
 * Workshop: Building and Integrating with Yearn Vaults: https://www.youtube.com/watch?v=urC35PMbpJ4
 --> Learn how to leverage the power of Yearn by creating a money-making integration on top of v2 vaults by taking advantage of the brand new EIP-4626: Tokenized Vault Standard! This workshop will guide you through creating a B2B/business router for yearn v2 vaults, which complies with the new EIP-4626. You'll be able to choose from multiple fee strategies for your users to maximize your profit.
-* Smart Contract parameters: https://docs.yearn.fi/vaults/smart-contracts/vault
 * https://hackmd.io/t8HlcedLQeCu2l7RG-5Vbw?view
 * https://twitter.com/storming0x/status/1436851219864059906?s=20
 
@@ -148,9 +147,6 @@ If you are not sure about which service you should first look into, Yearn SDK ca
 
 [**Yearn API**](https://github.com/yearn/yearn-caching-api) [[Docs](https://docs.yearn.fi/vaults/yearn-api)]
 Yearn API can provide non-user specific metadata, including the tvl of vaults, apys, fees, and strategy metadata through REST API, without the need to make web3 calls.
-
-[**Yearn Vision**](https://yearn.vision)
-Yearn Vision is the Grafana dashboard of the hosted version of [Yearn Exporter](https://github.com/yearn/yearn-exporter). You can download the historical metrics related to our vaults and strategies as json or csv files through the dashboard. For instructions on downloading, please see [Downloading query results as csv](https://grafana.com/docs/grafana/latest/explore/explore-inspector/#download-raw-query-results-as-csv).
 
 # Inspiration
 

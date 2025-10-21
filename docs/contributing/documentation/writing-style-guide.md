@@ -284,9 +284,7 @@ Review the respective Contribute.md for each repository where pertinent before s
 
 #### Track Progress
 
-- Track projects and progress with [GitHub Issues.](https://github.com/orgs/yearn/projects/2)
-  - Keep GitHub issues updated with comments and feedback.
-- Take advantage of version history when working in HackMD or Google Docs.
+- Track projects and progress with clear GitHub commit messages
 
 #### Final Drafts and Submissions
 
