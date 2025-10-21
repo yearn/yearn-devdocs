@@ -32,8 +32,6 @@ Depositing CRV in this vault allows you to earn:
 - Additional CRV rewards
 - A boost to your CRV rewards that you cannot get elsewhere
 
-Rewards are shown here: [https://crv.ape.tax/](https://crv.ape.tax/)
-
 ## How is this vault different from the other vaults?
 
 Other vaults increase your holding in the token that you deposit. For example, the yETH vault increases your ETH holdings.

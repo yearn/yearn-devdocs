@@ -109,7 +109,7 @@ If you would like to use a different RPC service, or your own node to pull block
 
 ## Deployment
 
-Generally you should not need to use this as there is a github actions script that builds and deploys the site when a pull request is merged to the `master` branch of the upstream Yearn Github Repo.
+Generally you should not need to use this as there is a github actions script that builds and deploys the site when a pull request is merged to the `master` branch of the upstream Yearn GitHub Repo.
 
 If you are using GitHub pages for hosting, this command is a convenient way to build the website and push it to the `gh-pages` branch.
 
@@ -152,7 +152,7 @@ docs/developers/smart-contracts
 │   ├── Current contract 2
 │   └── Current contract n...
 │
-├── Deprecated   
+├── Deprecated
 │   ├── V3 Deprecated
 │   │   ├── v3.x.x
 │   │   │   ├── contract 1
@@ -226,7 +226,7 @@ For reference, these are the addresses for the different submodules:
 - [yearn/tokenized-strategy](https://github.com/yearn/tokenized-strategy/tree/master)
 - [yearn/tokenized-strategy-periphery](https://github.com/yearn/tokenized-strategy-periphery/tree/master)
 - [yearn/yearn-ERC4626-Router](https://github.com/yearn/Yearn-ERC4626-Router)
-  
+
 2. If you haven't already, create a python virtual environment and initialize.
 
 ```bash
@@ -293,9 +293,9 @@ This is a Detail element that contains other text inside. If you format the summ
 <details className="customDetails">
 
   <summary>
-  
+
   ## Title Here
-  
+
   </summary>
 
 ### Subtitles as needed
@@ -369,7 +369,7 @@ rpcCalls:
     chain: '1' <--chainID
     address: '0x7dC3A74F0684fc026f9163C6D5c3C99fda2cf60a' <--the contract address
     abiName: 'dyfiRedemptionABI' <--name of exported ABI object from src/ethereum/ABIs
-    methods:  
+    methods:
       - 'discount' <-- name of call (if no arguments needed)
       - 'get_latest_price'
       - name: 'eth_required' <-- name of call (if arguments are needed)
