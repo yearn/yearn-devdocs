@@ -55,6 +55,14 @@ Most Yearn vaults on Arbitrum are [V3 Vaults](v3-contracts)
 | Health Check           | [0x32059ccE723b4DD15dD5cb2a5187f814e6c470bC](https://arbiscan.io/address/0x32059ccE723b4DD15dD5cb2a5187f814e6c470bC) |
 | Multisigs              | See [here](core-contracts#arbitrum-contracts). |
 
+## Fantom V2 Contracts
+
+| Identity               | Address                                    |
+| ---------------------- | ------------------------------------------ |
+| Registry               | [0x727fe1759430df13655ddb0731dE0D0FDE929b04](https://oklink.com/fantom/address/0x727fe1759430df13655ddb0731dE0D0FDE929b04) |
+| Health Check           | [0xf13Cd6887C62B5beC145e30c38c4938c5E627fe0](https://oklink.com/fantom/address/0xf13Cd6887C62B5beC145e30c38c4938c5E627fe0) |
+| Multisigs              | See [here](core-contracts#fantom-contracts). |
+
 ## Polygon Contracts
 
 :::note

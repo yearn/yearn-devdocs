@@ -25,7 +25,7 @@ The below instructions show some python commands that assume you are using the b
 8. Confirm the Parameters are correct and press `y` and ENTER to deploy the vault.
 9. Check new vault has ABI setup on Etherscan (Some vault versions from older releases may have verification issues with Vyper and proxy detection on Etherscan, consider using later releases >0.3.5 to ensure verification works).
 
-10. Set deposit limit according to the table [below](#Limits-per-Stage)
+10. Set deposit limit according to the table [below](#limits-per-stage)
 
    ```python
    vault.setDepositLimit(limit)
@@ -95,7 +95,7 @@ vault.setGovernance(ychad.eth)
 
    - `health_check` = `0xddcea799ff1699e98edf118e0629a974df7df012`
 
-**NOTE**: see section on [ health check ](#health-checks) for more details.
+**NOTE**: see section on [health check](#health-checks) for more details.
 
 1. Set rewards:
 
@@ -135,7 +135,7 @@ vault.setGovernance(ychad.eth)
 In addition to the two strategist reviews, a Core Developer has to review the strategy before going into production.
 
 1. Create an [issue](https://github.com/yearn/yearn-finance-v3/issues) in yearn's web repo to ensure that the new vault won't create any problems with the API and that all necessary token/vault metadata is ready. Additionally, if this vault needs to go in the "labs" category, it must be manually added to the website.
-2. Increase deposit limit according to the table [below](#Limits-per-Stage)
+2. Increase deposit limit according to the table [below](#limits-per-stage)
 3. Set management fee to production level:
 
    ```python
@@ -308,6 +308,16 @@ Custom Health Check **must** follow the interface for [custom health checks](htt
 | Core Dev multisig      | dev.ychad.eth         | [0x846e211e8ba920B353FB717631C015cf04061Cc9](https://etherscan.io/address/0x846e211e8ba920B353FB717631C015cf04061Cc9) |
 | Treasury               | treasury.ychad.eth    | [0x93A62dA5a14C80f265DAbC077fCEE437B1a0Efde](https://etherscan.io/address/0x93A62dA5a14C80f265DAbC077fCEE437B1a0Efde) |
 | Health Check           | health.ychad.eth      | [0xDDCea799fF1699e98EDF118e0629A974Df7DF012](https://etherscan.io/address/0xDDCea799fF1699e98EDF118e0629A974Df7DF012) |
+
+### Fantom Addresses
+
+| Identity               | Address                                    |
+| ---------------------- | ------------------------------------------ |
+| Registry               | [0x727fe1759430df13655ddb0731dE0D0FDE929b04](https://oklink.com/fantom/address/0x727fe1759430df13655ddb0731dE0D0FDE929b04) |
+| Strategist multisig    | [0x72a34AbafAB09b15E7191822A679f28E067C4a16](https://oklink.com/fantom/address/0x72a34AbafAB09b15E7191822A679f28E067C4a16) |
+| Governance multisig    | [0xC0E2830724C946a6748dDFE09753613cd38f6767](https://oklink.com/fantom/address/0xC0E2830724C946a6748dDFE09753613cd38f6767) |
+| Treasury               | [0x89716ad7edc3be3b35695789c475f3e7a3deb12a](https://oklink.com/fantom/address/0x89716ad7edc3be3b35695789c475f3e7a3deb12a) |
+| Health Check           | [0xf13Cd6887C62B5beC145e30c38c4938c5E627fe0](https://oklink.com/fantom/address/0xf13Cd6887C62B5beC145e30c38c4938c5E627fe0) |
 
 ### Arbitrum Addresses
 

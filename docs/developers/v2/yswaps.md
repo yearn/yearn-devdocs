@@ -10,6 +10,7 @@ ySwaps is used to **abstract** the token trading logic from the strategies harve
 ![yswaps-intro-diagram](https://i.imgur.com/VynhCU4.png)
 
 ## Glossary
+
 - `sms`: Strategists multisig
 - `tokenIn`:  Token we have and we want to trade/swap
 - `tokenOut`: Token we want to obtain on the swap
@@ -26,7 +27,6 @@ ySwaps is used to **abstract** the token trading logic from the strategies harve
 - [Extra Toolings](#extra-toolings)
 - [Procedures](#procedures)
 - [Keep3r Jobs](#keep3r-jobs)
-
 
 ### Swappers
 
@@ -45,6 +45,7 @@ This contract will receive a bundle of transactions that are required to acquire
 **Single swapper example:** We have `tokenIn` and `tokenOut` and we know that we can go straight to sushiswap that has enought liquidity to make the trade with good conditions.
 
 **Multicall example:** We have a `tokenIn` and we want a `tokenOut`. But theres no path on any dex to do the trade directly, so we need to split the swap in two steps:
+
 1. Step 1: `tokenIn` for `hopToken`.
 2. Step 2: `hopToken` for `tokenOut`.
 
@@ -61,6 +62,16 @@ For this example we are gonna assume that we will need to use two different dexe
 - AsyncUniswapV2 [0xA780b6A733D06dFf526A84c4258616b75279C763](https://etherscan.io/address/0xA780b6A733D06dFf526A84c4258616b75279C763)
 - OneInchAggregator [0x934D1c4ba7DF902d6cd0803882876e3C999cb406](https://etherscan.io/address/0x934D1c4ba7DF902d6cd0803882876e3C999cb406)
 
+##### Fantom
+
+- ZRX: [0x0a94017DF3f8981Da97D79c28b103bAbDa0D67C7](https://oklink.com/fantom/address/0x0a94017DF3f8981Da97D79c28b103bAbDa0D67C7)
+- MultiCallOptimizedSwapper: [0x590B3e12Ded77dE66CBF45050cD07a65d1F51dDD](https://oklink.com/fantom/address/0x590B3e12Ded77dE66CBF45050cD07a65d1F51dDD)
+- AsyncSolidly: [0x2cb391afd5180a31d01bE95Bd61A757594C9295a](https://oklink.com/fantom/address/0x2cb391afd5180a31d01bE95Bd61A757594C9295a)
+- AsyncSpiritswap: [0x8d2aFF696F14b287a6E759F4bfFB6f08E92DFD20](https://oklink.com/fantom/address/0x8d2aFF696F14b287a6E759F4bfFB6f08E92DFD20)
+- AsyncSpookyswap: [0x86ee473C2eE7eB97Ee0276bE43427a6CF0cC6348](https://oklink.com/fantom/address/0x86ee473C2eE7eB97Ee0276bE43427a6CF0cC6348)
+- SyncSpiritswap: [0x923D22FE66C77E2fea215050F088AE26186F96aE](https://oklink.com/fantom/address/0x923D22FE66C77E2fea215050F088AE26186F96aE)
+- SyncSpookyswap: [0xcD00a47D9fB36B0B37D589E20fE4fB7e2D9d9e8A](https://oklink.com/fantom/address/0xcD00a47D9fB36B0B37D589E20fE4fB7e2D9d9e8A)
+
 ### Trade Factory
 
 - This contract has the `enabled trades` that each strategy can make. Enabled trades are just a list of possible swaps that a strategy can make. So it only contains three variables: `strategyAddress`, `tokenIn`, `tokenOut`. We have these enabled trades to know which swaps can/should be made with each strategy.
@@ -74,6 +85,10 @@ For this example we are gonna assume that we will need to use two different dexe
 ##### Ethereum
 
 - TradeFactory: [0x7BAF843e06095f68F4990Ca50161C2C4E4e01ec6](https://etherscan.io/address/0x7BAF843e06095f68F4990Ca50161C2C4E4e01ec6)
+
+##### Fantom
+
+- TradeFactory: [0xD3f89C21719Ec5961a3E6B0f9bBf9F9b4180E9e9](https://oklink.com/fantom/address/0xD3f89C21719Ec5961a3E6B0f9bBf9F9b4180E9e9)
 
 ### Solvers Scripts
 
@@ -168,15 +183,18 @@ Previous knowledge about how `Keeper Network` works is needed.
 #### Add strategy fantom keeper harvest job
 
 ##### A)
+
  1. Go straight to ftmscan harvest job and add the strategy manually by a yMech.
  2. Add strategy to v2-ftm-strategies.ts config with `added: true`
 
 ##### B) (safest way to have everything added)
+
  1. Review and merge pr from strategists to add new strategies.
  2. On  packages/strategies-keep3r Execute script: `npx hardhat run scripts/jobs/detached/01-v2-harvest-ftm-detached-job-add-strategies.ts --network fantom`
  3. On config file strategies-keep3r/utils/v2-ftm-strategies.ts change once again  strategies property added to true
  4. Push changes.
 
 #### Remove strategy fantom keeper harvest job
+
 1. Go to ftmscan `Harvest Job SC` and remove the strategy manually using method `removeStrategies`. Call with a mechanic.
 2. Remove strategy from `v2-NETWORK-strategies.json` file.
