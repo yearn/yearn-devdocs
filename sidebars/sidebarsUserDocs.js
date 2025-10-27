@@ -152,7 +152,7 @@ module.exports = {
         },
         {
           type: 'category',
-          label: 'Curating',
+          label: 'Curation',
           link: {
             type: 'doc',
             id: 'products/curating/introduction',
@@ -169,7 +169,7 @@ module.exports = {
               id: 'products/curating/term-curating',
             },
           ],
-        }
+        },
       ],
     },
     {
