@@ -1,4 +1,4 @@
-# Yearn Curating
+# Yearn Curation
 
 ![image](/img/curating/yearning.jpg)
 
