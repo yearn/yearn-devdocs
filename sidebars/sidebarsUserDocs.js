@@ -150,6 +150,26 @@ module.exports = {
           label: 'veYFI →',
           href: '/contributing/governance/veyfi-intro',
         },
+        {
+          type: 'category',
+          label: 'Curation',
+          link: {
+            type: 'doc',
+            id: 'products/curating/introduction',
+          },
+          items: [
+            {
+              type: 'doc',
+              label: 'Morpho',
+              id: 'products/curating/morpho-curating',
+            },
+            {
+              type: 'doc',
+              label: 'Term',
+              id: 'products/curating/term-curating',
+            },
+          ],
+        },
       ],
     },
     {
