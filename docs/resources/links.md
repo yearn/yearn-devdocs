@@ -16,6 +16,7 @@
 ### Updates
 
 - [Twitter](https://twitter.com/yearnfi)
+- [Blog](https://blog.yearn.fi/)
 - [Medium](https://medium.com/iearn)
 - [Yearn Newsletter](https://yearn.substack.com/)
 
@@ -23,7 +24,6 @@
 
 - [GitHub](https://github.com/yearn)
 - [Governance Forum](https://gov.yearn.fi)
-- [Yearn Contribute](https://contribute.yearn.farm)
 
 ### Vaults Detail Reference
 
@@ -34,14 +34,13 @@
 
 ### Statistics
 
-- [Yearn Dashboard](https://yearn.vision)
 - [Yearn API](https://ydaemon.yearn.fi/1/vaults/all)
 - [Yearn on Token Terminal](https://www.tokenterminal.com/terminal/projects/yearn-finance)
 
 ### General Websites
 
 - [CoinGecko](https://www.coingecko.com/en/coins/yearn-finance)
-- [Defi Market Cap](https://defimarketcap.io/protocol/yearn-vault)
+- [DeFiLlama](https://defillama.com/protocol/yearn)
 
 ### Media Resources
 
