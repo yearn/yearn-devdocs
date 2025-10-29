@@ -20,11 +20,11 @@
 
 #### What are the implications of depositing or withdrawing with an asset that isn't native to the vault?
 
-- You can potentially [lose value](https://docs.yearn.fi/getting-started/using-yearn#if-you-dont-have-the-required-token-for-the-vault-that-you-would-like-to-deposit-in) to slippage.
+- You can potentially lose value due to [slippage](https://docs.yearn.fi/resources/defi-glossary#slippage).
 
 #### Can I deposit any token into any vault?
 
-- [Zap](https://docs.yearn.fi/getting-started/products/yvaults/overview#zap-in-with-any-asset)
+- [Zap](https://docs.yearn.fi/getting-started/guides/using-yearn-v2#zapping-into-a-vault)
 
 #### Where can I go to see how my deposit is performing?
 
@@ -48,7 +48,7 @@
 
 #### Why is gas so expensive?
 
-- Gas prices fluctuate and can be monitored with tools like [Etherscan](https://ethereumprice.org/gas/), [Blocknative's Gas Estimator](https://www.blocknative.com/gas-estimator), or [Tx Price](https://txprice.com/).
+- Gas prices fluctuate and can be monitored with tools like [ethereumprice.org](https://ethereumprice.org/gas/) or [Blocknative's Gas Estimator](https://www.blocknative.com/gas-estimator).
 
 #### What is yveCRV?
 
@@ -84,7 +84,7 @@
 
 #### Who is on the multisig?
 
-- [Multisig Documentation](/developers/security/multisig)
+- [Multisig Documentation](https://docs.yearn.fi/developers/security/multisig)
 
 #### What is a YIP?
 
@@ -152,7 +152,7 @@
 
 #### Lists of yVaults Deployed
 
-- Use the [Registry](https://docs.yearn.fi/vaults/smart-contracts/registry)
+- Call the `getAllEndorsedVaults()` function on the [latest v3 Registry](https://etherscan.io/address/0xd40ecF29e001c76Dcc4cC0D9cd50520CE845B038#readContract)
 
 #### Statistics
 
