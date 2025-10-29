@@ -60,8 +60,15 @@ All generic periphery contracts and factories can be retrieved on chain from the
 | ---------------------- | ---------------------- |
 | **Protocol Address Provider** <br/> address-provider.v3.ychad.eth |  <ContractAddress contractName = {['topLevel', 'protocolAddressProvider']} /> |
 | **APR Oracle**   <br/> apr.oracle.v3.ychad.eth | <ContractAddress contractName = {['protocolPeriphery', 'aprOracle']} /> |
-| **Report Trigger**  <br/>  | <ContractAddress contractName = {['protocolPeriphery', 'commonReportTrigger']} /> |
+| **Common Report Trigger**  <br/>  | <ContractAddress contractName = {['protocolPeriphery', 'commonReportTrigger']} /> |
 | **4626 Router**   <br/>  | <ContractAddress contractName = {['protocolPeriphery', 'router']} /> |
+| **Accountant Factory**   <br/>  | <ContractAddress contractName = {['protocolPeriphery', 'accountantFactory']} /> |
+| **Debt Allocator Factory**   <br/>  | <ContractAddress contractName = {['protocolPeriphery', 'debtAllocatorFactory']} /> |
+| **Registry Factory**   <br/>  | <ContractAddress contractName = {['protocolPeriphery', 'registryFactory']} /> |
+| **Splitter Factory**   <br/>  | <ContractAddress contractName = {['protocolPeriphery', 'splitterFactory']} /> |
+| **Auction Factory**   <br/>  | <ContractAddress contractName = {['protocolPeriphery', 'auctionFactory']} /> |
+| **Keeper**   <br/>  | <ContractAddress contractName = {['protocolPeriphery', 'keeper']} /> |
+| **Base Fee Provider**   <br/>  | <ContractAddress contractName = {['protocolPeriphery', 'baseFeeProvider']} /> |
 
 For a more complete list of all available periphery contracts visit the [Periphery](/developers/v3/periphery) section.
 
