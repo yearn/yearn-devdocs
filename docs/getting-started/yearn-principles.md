@@ -30,5 +30,3 @@ import yearnPrinciples from "@site/src/yearnPrinciples";
 ## Community
 
 <PrinciplesCard cardData={yearnPrinciples[6]}></PrinciplesCard>
-
-Adapted with ❤️ from https://yearn.love/
