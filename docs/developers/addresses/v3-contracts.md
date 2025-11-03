@@ -102,8 +102,8 @@ Optimism-specific Yearn addresses
 
 | Name / ENS | Contract Address |
 | ----------------------   | ---------------------- |
-| **Role Manager** <br/>   | <ContractAddress contractName = {['yearnV3ContractsOptimism', 'roleManager']}/>  |
-| **Accountant** <br/>     | <ContractAddress contractName = {['yearnV3ContractsOptimism', 'accountant']} />   |
+| **Role Manager** <br/>   | <ContractAddress contractName = {['yearnV3ContractsOptimism', 'roleManager']} chainID={10}/>  |
+| **Accountant** <br/>     | <ContractAddress contractName = {['yearnV3ContractsOptimism', 'accountant']} chainID={10} />   |
 
 ### Polygon (137) Addresses
 
@@ -111,8 +111,8 @@ Polygon-specific Yearn addresses
 
 | Name / ENS | Contract Address |
 | ----------------------   | ---------------------- |
-| **Role Manager** <br/>   | <ContractAddress contractName = {['yearnV3ContractsPolygon', 'roleManager']}/>   |
-| **Accountant** <br/>     | <ContractAddress contractName = {['yearnV3ContractsPolygon', 'accountant']} />   |
+| **Role Manager** <br/>   | <ContractAddress contractName = {['yearnV3ContractsPolygon', 'roleManager']} chainID={137} />   |
+| **Accountant** <br/>     | <ContractAddress contractName = {['yearnV3ContractsPolygon', 'accountant']} chainID={137} />   |
 
 ### Base (8453) Addresses
 
@@ -120,8 +120,8 @@ Base-specific Yearn addresses
 
 | Name / ENS | Contract Address |
 | ----------------------   | ---------------------- |
-| **Role Manager** <br/>   | <ContractAddress contractName = {['yearnV3ContractsBase', 'roleManager']}/>   |
-| **Accountant** <br/>     | <ContractAddress contractName = {['yearnV3ContractsBase', 'accountant']} />    |
+| **Role Manager** <br/>   | <ContractAddress contractName = {['yearnV3ContractsBase', 'roleManager']} chainID={8453} />   |
+| **Accountant** <br/>     | <ContractAddress contractName = {['yearnV3ContractsBase', 'accountant']} chainID={8453} />    |
 
 ### Arbitrum (42161) Addresses
 
@@ -129,8 +129,8 @@ Arbitrum-specific Yearn addresses
 
 | Name / ENS | Contract Address |
 | ----------------------   | ---------------------- |
-| **Role Manager** <br/>   | <ContractAddress contractName = {['yearnV3ContractsArbitrum', 'roleManager']}/>   |
-| **Accountant** <br/>     | <ContractAddress contractName = {['yearnV3ContractsArbitrum', 'accountant']} />   |
+| **Role Manager** <br/>   | <ContractAddress contractName = {['yearnV3ContractsArbitrum', 'roleManager']} chainID={42161} />   |
+| **Accountant** <br/>     | <ContractAddress contractName = {['yearnV3ContractsArbitrum', 'accountant']} chainID={42161} />   |
 
 ### Katana (747474) Addresses
 
@@ -138,5 +138,5 @@ Katana-specific Yearn addresses
 
 | Name / ENS | Contract Address |
 | ----------------------   | ---------------------- |
-| **Role Manager** <br/>   | <ContractAddress contractName = {['yearnV3ContractsKatana', 'roleManager']}/>   |
-| **Accountant** <br/>     | <ContractAddress contractName = {['yearnV3ContractsKatana', 'accountant']} />   |
+| **Role Manager** <br/>   | <ContractAddress contractName = {['yearnV3ContractsKatana', 'roleManager']} chainID={747474}/>   |
+| **Accountant** <br/>     | <ContractAddress contractName = {['yearnV3ContractsKatana', 'accountant']} chainID={747474}/>   |

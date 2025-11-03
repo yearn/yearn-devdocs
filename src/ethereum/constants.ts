@@ -221,17 +221,17 @@ export const yearnV3ContractsMainnet = {
  * Yearn V3 Addresses on optimism (10)
  */
 export const yearnV3ContractsOptimism = {
-  roleManager: '"0x000000000000000000000000000000000000000',
-  accountant: '"0x000000000000000000000000000000000000000',
-  daddy: '"0xF5d9D6133b698cE29567a90Ab35CfB874204B3A7',
+  roleManager: '0x0000000000000000000000000000000000000000',
+  accountant: '0x0000000000000000000000000000000000000000',
+  daddy: '0xF5d9D6133b698cE29567a90Ab35CfB874204B3A7',
 }
 
 /**
  * Yearn V3 Addresses on polygon (137)
  */
 export const yearnV3ContractsPolygon = {
-  roleManager: '"0x9bcD66bf09ebe5DD35A868307B7638Fd281061E',
-  accountant: '"0x54483f1592ab0aDea2757Ae0d62e6393361d4CEe',
+  roleManager: '0x9bcD66bf09ebe5DD35A868307B7638Fd281061E2',
+  accountant: '0x54483f1592ab0aDea2757Ae0d62e6393361d4CEe',
   daddy: '0xC4ad0000E223E398DC329235e6C497Db5470B626',
 }
 
