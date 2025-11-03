@@ -6,7 +6,7 @@ import {
   readYearnRoleManager,
 } from './calls'
 import { Address, PublicClient, getAddress } from 'viem'
-import { ReleaseDataMap, ReleaseData } from './types'
+import { V3ReleaseDataMap, V3ReleaseData } from './types'
 
 /**
  * Resolves an Ethereum address from an ENS name, with fallback and validation checks.
@@ -131,13 +131,13 @@ export const fetchTopLevelAddressesFromENS = async (
   const { address: v3RoleManager, isENSResolved: v3RoleManagerENSCheck } =
     await resolveAddressFromENS(
       publicClient,
-      constants.yearnV3RoleManager.roleManagerENS,
-      constants.yearnV3RoleManager.roleManager,
+      constants.yearnV3ContractsMainnet.roleManagerENS,
+      constants.yearnV3ContractsMainnet.roleManager,
       'v3RoleManager',
       failedChecks
     )
   const v3RoleManagerCheck = validateAddress(
-    constants.yearnV3RoleManager.roleManager,
+    constants.yearnV3ContractsMainnet.roleManager,
     'v3RoleManager',
     v3RoleManager,
     failedChecks
@@ -282,7 +282,7 @@ export const fetchAndCheckFromReleaseRegistry = async (
     console.error('publicClient is null')
     return
   }
-  const addresses: ReleaseDataMap = await readReleaseRegistryAll(
+  const addresses: V3ReleaseDataMap = await readReleaseRegistryAll(
     releaseRegistry,
     publicClient
   )
@@ -300,7 +300,7 @@ export const fetchAndCheckFromReleaseRegistry = async (
 
   for (const releaseNumber in addresses) {
     if (releaseNumber === 'latestRelease') continue // Skip the latestRelease key
-    const fetchedRelease = addresses[releaseNumber] as ReleaseData
+    const fetchedRelease = addresses[releaseNumber] as V3ReleaseData
     const constantRelease = constants.releaseRegistry[releaseNumber]
     if (!constantRelease) {
       console.warn(`Release ${releaseNumber} is missing in constants.`)
@@ -376,13 +376,13 @@ export const fetchAndCheckYearnV3Addresses = async (
 
   const { isENSResolved: accountantENSCheck } = await resolveAddressFromENS(
     publicClient,
-    constants.yearnV3Contracts.accountantENS,
-    constants.yearnV3Contracts.accountant,
+    constants.yearnV3ContractsMainnet.accountantENS,
+    constants.yearnV3ContractsMainnet.accountant,
     'yearnV3Accountant',
     failedChecks
   )
   const accountantCheck = await validateAddress(
-    constants.yearnV3Contracts.accountant,
+    constants.yearnV3ContractsMainnet.accountant,
     'yearnV3Accountant',
     yearnAccountant,
     failedChecks
@@ -390,20 +390,20 @@ export const fetchAndCheckYearnV3Addresses = async (
 
   const { isENSResolved: registryENSCheck } = await resolveAddressFromENS(
     publicClient,
-    constants.yearnV3Contracts.registryENS,
-    constants.yearnV3Contracts.registry,
+    constants.yearnV3ContractsStable.registryENS,
+    constants.yearnV3ContractsStable.registry,
     'yearnV3Registry',
     failedChecks
   )
   const registryCheck = await validateAddress(
-    constants.yearnV3Contracts.registry,
+    constants.yearnV3ContractsStable.registry,
     'yearnV3Registry',
     yearnRegistry,
     failedChecks
   )
 
   const debtAllocatorCheck = await validateAddress(
-    constants.yearnV3Contracts.debtAllocator,
+    constants.yearnV3ContractsMainnet.debtAllocator,
     'yearnV3DebtAllocator',
     yearnDebtAllocator,
     failedChecks

@@ -60,6 +60,14 @@ Looking for the Woofy token addresses? Find them [here](/resources/deprecated/wo
 | Strategist multisig   | [0x01fE3347316b2223961B20689C65eaeA71348e93](https://basescan.org/address/0x01fE3347316b2223961B20689C65eaeA71348e93) |
 | Treasury              | [0x02ff746D8cb62709aEEc611CeC9B17d7dD1D3480](https://basescan.org/address/0x02ff746D8cb62709aEEc611CeC9B17d7dD1D3480) |
 
+## Katana Contracts
+
+| Identity              | Address                                    |
+| --------------------- | ------------------------------------------ |
+| kChad multisig        | [0xe6ad5A88f5da0F276C903d9Ac2647A937c917162](https://katanascan.com/address/0xe6ad5A88f5da0F276C903d9Ac2647A937c917162) |
+| Strategist multisig   | [0xBe7c7efc1ef3245d37E3157F76A512108D6D7aE6](https://katanascan.com/address/0xBe7c7efc1ef3245d37E3157F76A512108D6D7aE6) |
+| V3 multisig           | [0x33333333D5eFb92f19a5F94a43456b3cec2797AE](https://katanascan.com/address/0x33333333D5eFb92f19a5F94a43456b3cec2797AE) |
+
 ## Fantom Contracts
 
 | Identity               | Address                                    |

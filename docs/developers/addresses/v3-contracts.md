@@ -24,7 +24,7 @@ The Role Manager Factory provides the easiest way to deploy and manage your own 
 | **Release Registry** <br/> release.registry.v3.ychad.eth | <ContractAddress contractName={['topLevel', 'releaseRegistry']} /> |
 | **Role Manager Factory** <br/> | <ContractAddress contractName={['protocolPeriphery', 'roleManagerFactory']} /> |
 
-### Core Contract Addresses
+## Core Contract Addresses
 
 Core contracts are the base generic contracts that can be used by anyone who wants to build on v3 yVaults.
 
@@ -78,9 +78,65 @@ Yearn Specific contracts and roles, as well as the most up to date V3 registry c
 
 To find individual vaults, use the V3 Registry below or refer to https://yearn.fi
 
+### EVM Stable Addresses
+
+These addresses are consistent across all EVM chains.
+
 | Name / ENS | Contract Address |
 | ----------------------   | ---------------------- |
-| **Role Manager** <br/> role-manager.v3.ychad.eth | <ContractAddress contractName = {['yearnV3RoleManager', 'roleManager']} /> |
-| **Current V3 Registry** <br/> registry.v3.ychad.eth | <ContractAddress contractName = {['yearnV3Contracts', 'registry']} /> |
-| **Legacy V3 Registry** <br/> | <ContractAddress contractName = {['yearnV3Contracts', 'legacyRegistry1']} /> |
-| **Accountant** <br/> accountant.v3.ychad.eth | <ContractAddress contractName = {['yearnV3Contracts', 'accountant']} /> |
+| **Current V3 Registry** <br/> registry.v3.ychad.eth | <ContractAddress contractName = {['yearnV3ContractsStable', 'registry']} /> |
+| **Legacy V3 Registry** <br/> | <ContractAddress contractName = {['yearnV3ContractsStable', 'legacyRegistry1']} /> |
+
+### Ethereum Mainnet (1) Addresses
+
+Ethereum-specific Yearn addresses
+
+| Name / ENS | Contract Address |
+| ----------------------   | ---------------------- |
+| **Role Manager** <br/> role-manager.v3.ychad.eth | <ContractAddress contractName = {['yearnV3ContractsMainnet', 'roleManager']} /> |
+| **Accountant** <br/> accountant.v3.ychad.eth | <ContractAddress contractName = {['yearnV3ContractsMainnet', 'accountant']} /> |
+
+### Optimism (10) Addresses
+
+Optimism-specific Yearn addresses
+
+| Name / ENS | Contract Address |
+| ----------------------   | ---------------------- |
+| **Role Manager** <br/>   | <ContractAddress contractName = {['yearnV3ContractsOptimism', 'roleManager']}/>  |
+| **Accountant** <br/>     | <ContractAddress contractName = {['yearnV3ContractsOptimism', 'accountant']} />   |
+
+### Polygon (137) Addresses
+
+Polygon-specific Yearn addresses
+
+| Name / ENS | Contract Address |
+| ----------------------   | ---------------------- |
+| **Role Manager** <br/>   | <ContractAddress contractName = {['yearnV3ContractsPolygon', 'roleManager']}/>   |
+| **Accountant** <br/>     | <ContractAddress contractName = {['yearnV3ContractsPolygon', 'accountant']} />   |
+
+### Base (8453) Addresses
+
+Base-specific Yearn addresses
+
+| Name / ENS | Contract Address |
+| ----------------------   | ---------------------- |
+| **Role Manager** <br/>   | <ContractAddress contractName = {['yearnV3ContractsBase', 'roleManager']}/>   |
+| **Accountant** <br/>     | <ContractAddress contractName = {['yearnV3ContractsBase', 'accountant']} />    |
+
+### Arbitrum (42161) Addresses
+
+Arbitrum-specific Yearn addresses
+
+| Name / ENS | Contract Address |
+| ----------------------   | ---------------------- |
+| **Role Manager** <br/>   | <ContractAddress contractName = {['yearnV3ContractsArbitrum', 'roleManager']}/>   |
+| **Accountant** <br/>     | <ContractAddress contractName = {['yearnV3ContractsArbitrum', 'accountant']} />   |
+
+### Katana (747474) Addresses
+
+Katana-specific Yearn addresses
+
+| Name / ENS | Contract Address |
+| ----------------------   | ---------------------- |
+| **Role Manager** <br/>   | <ContractAddress contractName = {['yearnV3ContractsKatana', 'roleManager']}/>   |
+| **Accountant** <br/>     | <ContractAddress contractName = {['yearnV3ContractsKatana', 'accountant']} />   |

@@ -28,8 +28,8 @@ That's totally up to you and depends on your personal situation and preferences.
   * Direct stakers receive their yield in stablecoins, making them less exposed to the price fluctuations of the underlying governance token and the yCRV peg.
   * Vault depositors are "all in" on yCRV.
 * **Gas Fees:**
-  * Direct stakers must manually claim their mkUSD stablecoin rewards. Although earned rewards automatically accumulate and earn interest, this requires at least one additional transaction and can be expensive, depending on gas pricing and network congestion.
-  * Vault depositors have their mkUSD stablecoin rewards claimed, swapped and reinvested into the yv-yCRV vault each week. And Yearn covers the gas.
+  * Direct stakers must manually claim their crvUSD stablecoin rewards. Although earned rewards automatically accumulate and earn interest, this requires at least one additional transaction and can be expensive, depending on gas pricing and network congestion.
+  * Vault depositors have their crvUSD stablecoin rewards claimed, swapped and reinvested into the yv-yCRV vault each week. And Yearn covers the gas.
 * **Composability:**
   * Direct stakers do not receive a receipt token in their wallet.
   * Vault depositors receive back a yv-yCRV token into their wallet which has the potential to be accepted as collateral across DeFi.

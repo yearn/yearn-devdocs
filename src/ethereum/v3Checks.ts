@@ -65,13 +65,13 @@ export const fetchTopLevelAddressesFromENS = async (
   const { address: v3RoleManager, isENSResolved: v3RoleManagerENSCheck } =
     await resolveAddressFromENS(
       publicClient,
-      constants.yearnV3RoleManager.roleManagerENS,
-      constants.yearnV3RoleManager.roleManager,
+      constants.yearnV3ContractsMainnet.roleManagerENS,
+      constants.yearnV3ContractsMainnet.roleManager,
       'v3RoleManager',
       failedChecks
     )
   const v3RoleManagerCheck = await validateAddress(
-    constants.yearnV3RoleManager.roleManager,
+    constants.yearnV3ContractsMainnet.roleManager,
     'v3RoleManager',
     v3RoleManager,
     failedChecks
@@ -316,13 +316,13 @@ export const fetchAndCheckYearnV3Addresses = async (
 
   const { isENSResolved: accountantENSCheck } = await resolveAddressFromENS(
     publicClient,
-    constants.yearnV3Contracts.accountantENS,
-    constants.yearnV3Contracts.accountant,
+    constants.yearnV3ContractsMainnet.accountantENS,
+    constants.yearnV3ContractsMainnet.accountant,
     'yearnV3Accountant',
     failedChecks
   )
   const accountantCheck = await validateAddress(
-    constants.yearnV3Contracts.accountant,
+    constants.yearnV3ContractsMainnet.accountant,
     'yearnV3Accountant',
     yearnAccountant,
     failedChecks
@@ -330,20 +330,20 @@ export const fetchAndCheckYearnV3Addresses = async (
 
   const { isENSResolved: registryENSCheck } = await resolveAddressFromENS(
     publicClient,
-    constants.yearnV3Contracts.registryENS,
-    constants.yearnV3Contracts.registry,
+    constants.yearnV3ContractsStable.registryENS,
+    constants.yearnV3ContractsStable.registry,
     'yearnV3Registry',
     failedChecks
   )
   const registryCheck = await validateAddress(
-    constants.yearnV3Contracts.registry,
+    constants.yearnV3ContractsStable.registry,
     'yearnV3Registry',
     yearnRegistry,
     failedChecks
   )
 
   const debtAllocatorCheck = await validateAddress(
-    constants.yearnV3Contracts.debtAllocator,
+    constants.yearnV3ContractsMainnet.debtAllocator,
     'yearnV3DebtAllocator',
     yearnDebtAllocator,
     failedChecks

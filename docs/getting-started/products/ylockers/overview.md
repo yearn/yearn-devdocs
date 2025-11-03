@@ -24,7 +24,7 @@ ___
 
 ### Option 1: Deposit yLocker Tokens into YBS
 
-Each week, Yearn's yLockers earn revenue from protocol fees and vote incentives. This revenue is converted into ecosystem stablecoins (mkUSD for yPrisma or crvUSD for yCRV) and distributed to yLocker stakers at the start of the week via the `YearnBoostedStaker`(YBS), a new contract which was launched in Spring 2024 following the passing of [YIP-77](https://snapshot.org/#/veyfi.eth/proposal/0xe79fb2ef4f21ef1e9cc30dd1522c9751c74b631c4782bccbbeb25185d4ddae1d).
+Each week, Yearn's yLockers earn revenue from protocol fees and vote incentives. This revenue is converted into ecosystem stablecoins (crvUSD for yCRV) and distributed to yLocker stakers at the start of the week via the `YearnBoostedStaker`(YBS), a new contract which was launched in Spring 2024 following the passing of [YIP-77](https://snapshot.org/#/veyfi.eth/proposal/0xe79fb2ef4f21ef1e9cc30dd1522c9751c74b631c4782bccbbeb25185d4ddae1d).
 
 To begin earning your share, all you need to do is stake your respective yLocker tokens in the staking contract. Take a look at the interface guides for your desired yLocker to get started. Want to learn how it all works under the hood? Read on Anon!
 
