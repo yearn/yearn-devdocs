@@ -1,5 +1,5 @@
 {
-  "timeLastChecked": 1759152565,
+  "timeLastChecked": 1762212771,
   "addressesData": {
     "v3ContractAddresses": {
       "topLevel": {
@@ -10,7 +10,7 @@
       "protocolPeriphery": {
         "router": "0x1112dbCF805682e828606f74AB717abf4b4FD8DE",
         "aprOracle": "0x1981AD9F44F2EA9aDd2dC4AD7D075c102C70aF92",
-        "commonReportTrigger": "0xA045D4dAeA28BA7Bfe234c96eAa03daFae85A147",
+        "commonReportTrigger": "0xf8dF17a35c88AbB25e83C92f9D293B4368b9D52D",
         "roleManagerFactory": "0xca12459a931643BF28388c67639b3F352fe9e5Ce"
       },
       "releaseRegistry": {

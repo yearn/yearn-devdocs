@@ -158,7 +158,7 @@ List of tools and alternatives in case primary tools are not available during an
 | ------------------- | ---------------------------------------------- | :--------------------------------------------------------------------: |
 | Code Sharing        | GitHub                                         | [HackMd](https://hackmd.io/), [CodeShare](https://codeshare.io/) |
 | Communications\*    | Telegram                                       |                                Discord                                 |
-| Transaction Details | [Etherscan](https://etherscan.io/)             |                    [EthTxInfo](https://ethtx.info/)                    |
+| Transaction Details | [Etherscan](https://etherscan.io/)             |                    [Tenderly](https://tenderly.co/)                    |
 | Debugging           | Brownie                                        |                    [Tenderly](https://tenderly.co/)                    |
 | Transaction Builder | [ape-safe](https://github.com/banteg/ape-safe) |              _Backup if gnosis safe Api is not working?_               |
 | Screen Sharing\*    | [jitsi](https://jitsi.org/)                    |                            Google Hangouts                             |

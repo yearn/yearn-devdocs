@@ -185,7 +185,7 @@ export const protocolPeriphery = {
   aprOracle: '0x1981AD9F44F2EA9aDd2dC4AD7D075c102C70aF92',
   baseFeeProvider: '0xe0514dd71cfdc30147e76f65c30bdf60bfd437c3',
   commonReportTrigger: '0xf8dF17a35c88AbB25e83C92f9D293B4368b9D52D',
-  auctionFactory: '0xE6aB098E8582178A76DC80d55ca304d1Dec11AD8',
+  auctionFactory: '0xbC587a495420aBB71Bbd40A0e291B64e80117526',
   splitterFactory: '0xe28fCC9FB2998ba57754789F6666DAa8C815614D',
   registryFactory: '0x3A0fa8aac82aD94048098D6af6e8eB36c98816A1',
   debtAllocatorFactory: '0x03D43dF6FF894C848fC6F1A0a7E8a539Ef9A4C18',
@@ -193,24 +193,71 @@ export const protocolPeriphery = {
   roleManagerFactory: '0xca12459a931643BF28388c67639b3F352fe9e5Ce',
 }
 
-export const yearnV3RoleManager = {
-  roleManagerENS: 'role-manager.v3.ychad.eth',
-  roleManager: '0xb3bd6b2e61753c311efbcf0111f75d29706d9a41',
-  roleManagerFactory: '0xca12459a931643BF28388c67639b3F352fe9e5Ce',
-}
-
 /**
- * Yearn V3 Addresses
+ * Yearn V3 Addresses on all chains
  * Queried from the Yearn Role Manager
  */
-export const yearnV3Contracts = {
-  accountantENS: 'accountant.v3.ychad.eth',
-  accountant: '0x5A74Cb32D36f2f517DB6f7b0A0591e09b22cDE69',
+export const yearnV3ContractsStable = {
   registryENS: 'registry.v3.ychad.eth',
   registry: '0xd40ecF29e001c76Dcc4cC0D9cd50520CE845B038',
   legacyRegistry1: '0xff31A1B020c868F6eA3f61Eb953344920EeCA3af',
+}
+
+/**
+ * Yearn V3 Addresses on mainnet (1)
+ * Queried from the Yearn Role Manager
+ */
+export const yearnV3ContractsMainnet = {
+  roleManagerENS: 'role-manager.v3.ychad.eth',
+  roleManager: '0xb3bd6b2e61753c311efbcf0111f75d29706d9a41',
+  accountantENS: 'accountant.v3.ychad.eth',
+  accountant: '0x5A74Cb32D36f2f517DB6f7b0A0591e09b22cDE69',
   debtAllocator: '0x1e9eB053228B1156831759401dE0E115356b8671',
-  keeper: '0x52605BbF54845f520a3E94792d019f62407db2f8',
   daddy: '0xFEB4acf3df3cDEA7399794D0869ef76A6EfAff52',
   brain: '0x16388463d60FFE0661Cf7F1f31a7D658aC790ff7',
+}
+
+/**
+ * Yearn V3 Addresses on optimism (10)
+ */
+export const yearnV3ContractsOptimism = {
+  roleManager: '0x0000000000000000000000000000000000000000',
+  accountant: '0x0000000000000000000000000000000000000000',
+  daddy: '0xF5d9D6133b698cE29567a90Ab35CfB874204B3A7',
+}
+
+/**
+ * Yearn V3 Addresses on polygon (137)
+ */
+export const yearnV3ContractsPolygon = {
+  roleManager: '0x9bcD66bf09ebe5DD35A868307B7638Fd281061E2',
+  accountant: '0x54483f1592ab0aDea2757Ae0d62e6393361d4CEe',
+  daddy: '0xC4ad0000E223E398DC329235e6C497Db5470B626',
+}
+
+/**
+ * Yearn V3 Addresses on base (8453)
+ */
+export const yearnV3ContractsBase = {
+  roleManager: '0xea3481244024E2321cc13AcAa80df1050f1fD456',
+  accountant: '0x1f399808fE52d0E960CAB84b6b54d5707ab27c8a',
+  daddy: '0xbfAABa9F56A39B814281D68d2Ad949e88D06b02E',
+}
+
+/**
+ * Yearn V3 Addresses on optimism (42161)
+ */
+export const yearnV3ContractsArbitrum = {
+  roleManager: '0x3BF72024420bdc4D7cA6a8b6211829476D6685b1',
+  accountant: '0x9ab47be62631036cda3a64b8322704988427f366',
+  daddy: '0xb6bc033D34733329971B938fEf32faD7e98E56aD',
+}
+
+/**
+ * Yearn V3 Addresses on katana (747474)
+ */
+export const yearnV3ContractsKatana = {
+  roleManager: '0x4671394A28FF147cfcBc9c2b1aab9d3883597417',
+  accountant: '0x1f399808fE52d0E960CAB84b6b54d5707ab27c8a',
+  daddy: '0xe6ad5A88f5da0F276C903d9Ac2647A937c917162',
 }

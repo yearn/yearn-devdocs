@@ -17,6 +17,10 @@ A list of all the current yPool contract addresses.
 | Bootstrap: Deposit, Vote, Claim Incentives       | [`0x41B994C192183793bB9cc35bAAb8bD9C6885c6bf`](https://etherscan.io/address/0x41B994C192183793bB9cc35bAAb8bD9C6885c6bf) |
 | Bootstrap: Claim st-yETH                         | [`0x7cf484D9d16BA26aB3bCdc8EC4a73aC50136d491`](https://etherscan.io/address/0x7cf484D9d16BA26aB3bCdc8EC4a73aC50136d491) |
 | Rate Providers                                   | [`0x5a7CbC89d543399743D7c4b4a21110b19c6208AE`](https://etherscan.io/address/0x5a7CbC89d543399743D7c4b4a21110b19c6208AE) |
+| Shutdown Module                                  | [`0xe9462885290eb79ece41367d92712d6f525Ba5FA`](https://etherscan.io/address/0xe9462885290eb79ece41367d92712d6f525Ba5FA) |
+| Curve LP Module                                  | [`0xCE62d9Eb4409af3800e24719e08A736aab7D2022`](https://etherscan.io/address/0xCE62d9Eb4409af3800e24719e08A736aab7D2022) |
+| Staking Module                                   | [`0x27a2FC2D47c5063A551C8fE81F580b84Ab78aC52`](https://etherscan.io/address/0x27a2FC2D47c5063A551C8fE81F580b84Ab78aC52) |
+| Merkle Incentives                                | [`0xAE9De8A3e62e8E2f1e3800d142D23527680a5179`](https://etherscan.io/address/0xAE9De8A3e62e8E2f1e3800d142D23527680a5179) |
 | | |
 | Weight Vote                                      | ['0x50397CAB18446761F05883338111AE0eD8213DA3'](https://etherscan.io/address/0x50397CAB18446761F05883338111AE0eD8213DA3) |
 | Ownership Proxy                                  | ['0x56aF9C2780E0323810aCFdAeaB3F58ef6e76FaFd'](https://etherscan.io/address/0x56aF9C2780E0323810aCFdAeaB3F58ef6e76FaFd) |
