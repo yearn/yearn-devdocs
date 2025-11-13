@@ -69,7 +69,7 @@ If an interaction on the website isn't working or your transaction doesn't go th
 - Perform a hard refresh on the web page: `ctrl+shift+R` on Windows, `cmd+shift+R` on Mac.
 - Try using a different browser or wallet provider.
 - If on mobile, try using the desktop version, and vice versa
-- Change your wallet RPC for the network you are transacting on. This is the data endpoint that your wallet talks to to pull blockchain data.
+- Change your wallet RPC for the network you are transacting on. This is the data endpoint that your wallet talks to pull blockchain data.
   - Here is a website with lists of different chain RPCs: https://chainlist.org/
   - If you connect your wallet to the chainlist site, you can add new RPCs directly from there.
 - If none of the above work, you can interact with Yearn smart contracts via a block explorer. See the next entry for more information on how to do that.
@@ -285,7 +285,6 @@ The current partner sites are:
 
 - [Katana](https://katana.yearn.space)
 - [Aerodrome](https://aerodrome.yearn.space)
-- [Ajna](https://ajna.yearn.space)
 - [Curve](https://curve.yearn.space)
 - [Morpho](https://morpho.yearn.space)
 - [Pendle](https://pendle.yearn.space)
