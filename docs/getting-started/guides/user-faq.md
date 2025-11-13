@@ -285,7 +285,6 @@ The current partner sites are:
 
 - [Katana](https://katana.yearn.space)
 - [Aerodrome](https://aerodrome.yearn.space)
-- [Ajna](https://ajna.yearn.space)
 - [Curve](https://curve.yearn.space)
 - [Morpho](https://morpho.yearn.space)
 - [Pendle](https://pendle.yearn.space)
