@@ -46,7 +46,7 @@ This Strategy's name.
  towards Yearn's TVL calculations.
 @dev
  You can override this field to set it to a non-zero value if some of the assets of this
- Strategy is somehow delegated inside another part of of Yearn's ecosystem e.g. another Vault.
+ Strategy is somehow delegated inside another part of Yearn's ecosystem e.g. another Vault.
  Note that this value must be strictly less than or equal to the amount provided by
  `estimatedTotalAssets()` below, as the TVL calc will be total assets minus delegated assets.
  Also note that this value is used to determine the total assets under management by this
