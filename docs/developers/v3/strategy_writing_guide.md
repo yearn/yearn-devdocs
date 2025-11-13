@@ -450,7 +450,7 @@ The easiest way to ensure regular reports and tends on your strategy is to hook 
 
 There are 2 keeper networks that integrate well with Yearn Vaults:
 
-- [yHaas](https://hackmd.io/g6v3e3mIS9y5kBYSYU2ZPw) is Yearn's in-house automation solution for vaults and strategies.
+- TKS (The Keeper Service) is Yearn's in-house automation solution for vaults and strategies.
 - [Gelato Network](https://www.gelato.network/) is a large 3rd party automation solution for different EVM networks.
 
 ### Setters
