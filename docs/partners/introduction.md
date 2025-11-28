@@ -60,7 +60,7 @@ So out of this $200,000:
 * **45% ($90,000)** are set apart as operational costs
 * **55% ($110,000)** is shared with the partner according to the tier table
 
-Since the partner contributed with **$10,000,000 TVL** it fits in **tier 3** in the [Profit-Sharing Tier Table](#Profit-Sharing-Tier-Table)
+Since the partner contributed with **$10,000,000 TVL** it fits in **tier 3** in the [Profit-Sharing Tier Table](#profit-sharing-tier-table)
 
 | Tier | TVL contributed | Profit Share |
 | -------- | -------- | -------- |

@@ -148,7 +148,7 @@ module.exports = {
         {
           type: 'link',
           label: 'veYFI →',
-          href: '/contributing/governance/veyfi-intro',
+          href: '/contributing/governance/veYFI-intro',
         },
         {
           type: 'category',

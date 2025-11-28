@@ -66,7 +66,7 @@ This guide focuses primarily on strategy descriptions, but those thirsty for mor
 
 ### Collateral
 
-- An amount of money (or tokens) that gets [locked](#lock--unlock) until a pre-determined agreement is met, commonly at risk of [liquidation](#liquidation)
+- An amount of money (or tokens) that gets [locked](#lock) until a pre-determined agreement is met, commonly at risk of [liquidation](#liquidation)
 
 ### Liquidation
 

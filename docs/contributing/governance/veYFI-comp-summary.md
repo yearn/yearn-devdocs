@@ -291,7 +291,7 @@ For users who prefer not to manage individual locks and veYFI decay, **liquid lo
 
 ### Contract Addresses
 
-- **[Yearn veYFI Contract Addresses](/developers/addresses/veyfi-contract)**
+- **[Yearn veYFI Contract Addresses](/developers/addresses/veyfi-contracts)**
 
 ### Audits
 

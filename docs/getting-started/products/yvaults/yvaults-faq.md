@@ -75,7 +75,7 @@ The vault tokens have evolved between v1, v2, and v3, here are a couple of main 
 
 - All V3 vaults are [ERC-4626](https://ethereum.org/en/developers/docs/standards/tokens/erc-4626/) compliant.
 - Vaults can be either [multi-strategy](https://docs.yearn.fi/developers/v3/overview#definitions) or [single-strategy (Tokenized Strategy)](https://docs.yearn.fi/developers/v3/overview#definitions).
-- Multi-strategy vaults tokens are prefixed with `yv` and appended with a ["category"](https://docs.yearn.fi/developers/v3/integrating_v3#category), so a v3 vault for USDC with a category type of `1` gives the user `yvUSDC-1`.
+- Multi-strategy vaults tokens are prefixed with `yv` and appended with a ["category"](https://docs.yearn.fi/developers/v3/Integrating_v3#category), so a v3 vault for USDC with a category type of `1` gives the user `yvUSDC-1`.
 - Single strategy vaults are prefixed with `ys`, so a v3 single strategy vault gives the user `ysUSDC`.
 
 </details>
