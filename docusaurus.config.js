@@ -17,12 +17,14 @@ export default {
   url: 'https://docs.yearn.fi',
   baseUrl: '/',
   onBrokenLinks: 'warn',
-  onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
   organizationName: 'yearn', // Usually your GitHub org/user name.
   projectName: 'yearn-devdocs', // Usually your repo name.
   markdown: {
     mermaid: true,
+    hooks: {
+      onBrokenMarkdownLinks: 'warn',
+    },
   },
   customFields: {
     branchName,
@@ -205,42 +207,6 @@ export default {
         path: 'docs/contributing',
         routeBasePath: 'contributing',
         sidebarPath: './sidebars/sidebarsContributing.js',
-        showLastUpdateTime: true,
-        sidebarCollapsed: true,
-        breadcrumbs: false,
-        remarkPlugins: [math],
-        rehypePlugins: [katex],
-        admonitions: {
-          keywords: ['yearn', 'yearnData'],
-          extendDefaults: true,
-        },
-      },
-    ],
-    [
-      '@docusaurus/plugin-content-docs',
-      {
-        id: 'resources',
-        path: 'docs/resources',
-        routeBasePath: 'resources',
-        sidebarPath: './sidebars/sidebarsResources.js',
-        showLastUpdateTime: true,
-        sidebarCollapsed: true,
-        breadcrumbs: false,
-        remarkPlugins: [math],
-        rehypePlugins: [katex],
-        admonitions: {
-          keywords: ['yearn', 'yearnData'],
-          extendDefaults: true,
-        },
-      },
-    ],
-    [
-      '@docusaurus/plugin-content-docs',
-      {
-        id: 'partners',
-        path: 'docs/partners',
-        routeBasePath: 'partners',
-        sidebarPath: './sidebars/sidebarsPartners.js',
         showLastUpdateTime: true,
         sidebarCollapsed: true,
         breadcrumbs: false,

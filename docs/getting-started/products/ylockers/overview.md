@@ -74,7 +74,7 @@ yLocker stakers are entitled to the following rewards:
 
 Your rewards accrue week over week and are never lost if unclaimed. In fact, they begin earning you additional stablecoin yield from the moment we receive them! When claimed, Yearn V3 vault tokens will be received directly to your wallet.
 
-> ⚠️ **Important:** Yearn vaults can use multiple strategies to generate yield and may be exposed to more than one DeFi protocol. For more information on the various layers of smart contract risk involved, please refer to our [risk documentation](https://docs.yearn.fi/resources/risks/protocol-risks).
+> ⚠️ **Important:** Yearn vaults can use multiple strategies to generate yield and may be exposed to more than one DeFi protocol. For more information on the various layers of smart contract risk involved, please refer to our [risk documentation](https://docs.yearn.fi/developers/security/risks/).
 
 ### Fees
 

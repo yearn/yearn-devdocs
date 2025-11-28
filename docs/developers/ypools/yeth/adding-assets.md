@@ -39,7 +39,7 @@ To enable a one-off inclusion vote, a governance call must be made to the `set_e
 
 2. Generate a script by calling the `script(_to, _data)` view function on the yPools [Executor contract](https://etherscan.io/address/0x71258Ee726644f1D52d6A9F5E11C21d1E38c2bF1#readContract#F1). In this case, you want this script to call `set_enable_epoch()` on the InclusionVote contract with the value of the next epoch.
 
-    - Set the`_to(address)` field to the [InclusionVote contract](../../addresses/ypools-contracts.md#yeth-contract-addresses): `0x6bc0878939669339e82dbFa13d260c89230f2c31`.
+    - Set the`_to(address)` field to the [InclusionVote contract](../../addresses/ypools-contracts.md#yeth-contract-address): `0x6bc0878939669339e82dbFa13d260c89230f2c31`.
     - Then create the ABI-encoded data for the function `set_enable_epoch()` with the argument set to the next epoch. Below is a ABI encoding widget that you can use. It should be pre-populated with the correct contract and function, but you need to enter the next epoch into the "Function Argument" box. The current epoch should be listed at the top of this page in the `Live Governance Info` admonition. Just add 1 to that number. Then hit "Encode" and take the output from the widget and put it in the `_data(bytes)` field on etherscan.
     - Click `query` and copy the result.
 

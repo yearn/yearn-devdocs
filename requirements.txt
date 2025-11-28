@@ -1,13 +1,13 @@
-asttokens==2.0.5
-certifi==2024.8.30
-charset-normalizer==3.3.2
-idna==3.10
-packaging==24.1
-pycryptodome==3.21.0
-requests==2.32.3
+asttokens==3.0.1
+certifi==2025.11.12
+charset-normalizer==3.4.4
+idna==3.11
+packaging==25.0
+pycryptodome==3.23.0
+requests==2.32.5
 semantic-version==2.10.0
-six==1.16.0
-solc-select==1.0.4
-urllib3==2.2.3
-vyper==0.3.7
-# ypricemagic==4.0.52
+six==1.17.0
+solc-select==1.1.0
+urllib3==2.5.0
+vyper==0.4.3
+# ypricemagic==4.10.10

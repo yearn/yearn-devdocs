@@ -46,7 +46,7 @@
  <br />
  <br />
 
-# Transaction
+## Transaction
 
 Description: get specific details of the transaction
 
@@ -66,7 +66,7 @@ Description: get specific details of the transaction
 | blockGasLimit | BigInt! | Gas limit used in the current block                                         |
 | blockNumber   | BigInt! | Block number                                                                |
 
-# Token
+## Token
 
 Description: get specific details of the token
 
@@ -77,7 +77,7 @@ Description: get specific details of the token
 | name     | String! | Name of the Token                 |
 | symbol   | String! | Symbol of the Token               |
 
-# TokenFee
+## TokenFee
 
 Description: get specific details of the token fee
 
@@ -92,7 +92,7 @@ Description: get specific details of the token fee
 | unrecognizedTreasuryFees | BigInt! | Internal field used by VaultUpdate. The amount of treasury fees paid using this token that has yet to be recognized by the subgraph's accounting logic.   |
 | unrecognizedStrategyFees | BigInt! | Internal field used by VaultUpdate. The amount of strategist fees paid using this token that has yet to be recognized by the subgraph's accounting logic. |
 
-# VaultRelease
+## VaultRelease
 
 Description: get specific details of the Vault Release
 
@@ -106,7 +106,7 @@ Description: get specific details of the Vault Release
 | blockNumber | BigInt!            | Block number of Release                   |
 | transaction | Transaction!       | Ethereum Transaction                      |
 
-# Registry
+## Registry
 
 Description: get specific details of the Registry
 
@@ -118,7 +118,7 @@ Description: get specific details of the Registry
 | transaction | Transaction!       | Ethereum Transaction              |
 | vaults      | [`Vault!`](#vault) | Vaults registered in the registry |
 
-# Vault
+## Vault
 
 Description: get specific details of the Vault
 
@@ -160,7 +160,7 @@ Description: get specific details of the Vault
 | emergencyShutdown     | Boolean!                         | Is vault in emergency shutdown                                                                                                              |
 | activationBlockNumber | BigInt!                          | Block.timestamp of contract deployment                                                                                                      |
 
-# VaultUpdate
+## VaultUpdate
 
 Description: get specific details of Vault Update
 
@@ -190,7 +190,7 @@ Description: get specific details of Vault Update
 | management            | Bytes!       | The management address of the Vault to assert privileged functions that can only be called by management                                     |
 | governance            | Bytes!       | The governance address of the Vault to assert privileged functions that can only be called by governance                                     |
 
-# Healthcheck
+## Healthcheck
 
 Description: get healthcheck
 
@@ -199,7 +199,7 @@ Description: get healthcheck
 | id     | ID!                | Health check address                       |
 | vaults | [`Vault!`](#vault) | Vaults that use this health check contract |
 
-# Account
+## Account
 
 Description: get specific details of the Account
 
@@ -212,7 +212,7 @@ Description: get specific details of the Account
 | sharesReceived | [`Transfer!`](#transfer)                         | Incoming share transfers |
 | sharesSent     | [`Transfer!`](#transfer)                         | Outgoing share transfers |
 
-# Deposit
+## Deposit
 
 Description: get specific details of the Deposit
 
@@ -228,7 +228,7 @@ Description: get specific details of the Deposit
 | transaction  | Transaction! | Ethereum Transaction                  |
 | vaultUpdate  | VaultUpdate! | Vault Update                          |
 
-# Withdrawal
+## Withdrawal
 
 Description: get specific details of the Withdrawal
 
@@ -244,7 +244,7 @@ Description: get specific details of the Withdrawal
 | transaction | Transaction! | Ethereum Transaction                  |
 | vaultUpdate | VaultUpdate! | Vault Update                          |
 
-# Transfer
+## Transfer
 
 Description: get specific details of the Transfer
 
@@ -265,7 +265,7 @@ Description: get specific details of the Transfer
 | isFeeToTreasury | Boolean!     | Whether the transfer was used to pay a fee to the vault's rewards address                 |
 | isFeeToStrategy | Boolean!     | Whether the transfer was used to pay a fee to a strategy                                  |
 
-# AccountVaultPosition
+## AccountVaultPosition
 
 Description: get specific details of the Account Vault positions
 
@@ -284,7 +284,7 @@ Description: get specific details of the Account Vault positions
 | balancePosition | BigInt!                                                      | The current balance position defined as: (vault.balanceOf(account) \* (vault.pricePerShare() / 10\*\*vault.decimals())).    |
 | balanceProfit   | BigInt!                                                      | The accumulated profit balance for the account/vault. It is only calculated when the user withdraws all the shares.         |
 
-# AccountVaultPositionUpdate
+## AccountVaultPositionUpdate
 
 Description: get specific details of the Account Vault positions
 
@@ -309,7 +309,7 @@ Description: get specific details of the Account Vault positions
 | balancePosition      | BigInt!               | The balance position.                                  |
 | vaultUpdate          | VaultUpdate!          | Vault Update                                           |
 
-# Strategy
+## Strategy
 
 Description: get specific details of the Strategy
 
@@ -343,7 +343,7 @@ Description: get specific details of the Strategy
 | isActive             | Boolean!                             | Provide an indication of whether this strategy is currently active                                                                                              |
 | estimatedTotalAssets | BigInt!#                             | Provide an accurate estimate for the total amount of assets (principle + return) that this Strategy is currently managing, denominated in terms of want tokens. |
 
-# StrategyMigration
+## StrategyMigration
 
 Description: get specific details of the Strategy Migration
 
@@ -356,7 +356,7 @@ Description: get specific details of the Strategy Migration
 | timestamp   | BigInt!      | Timestamp the migration was created.   |
 | transaction | Transaction! | Ethereum Transaction                   |
 
-# StrategyReport
+## StrategyReport
 
 Description: get specific details of the Strategy Report
 
@@ -380,7 +380,7 @@ Description: get specific details of the Strategy Report
 | apy12dEMA   | Int!                                             | 12-day EMA of Vault APY as reported by built-in Yield Oracle                                             |
 | apy50dEMA   | Int!                                             | 50-day EMA of Vault APY as reported by built-in Yield Oracle                                             |
 
-# StrategyReportResult
+## StrategyReportResult
 
 Description: get specific details of the Strategy Report Results
 
@@ -398,7 +398,7 @@ Description: get specific details of the Strategy Report Results
 | apr            | BigDecimal!     | Annual Percentage Rate.                                    |
 | transaction    | Transaction!    | Ethereum Transaction                                       |
 
-# Harvest
+## Harvest
 
 Description: get specific details of the Harvest
 
@@ -416,7 +416,7 @@ Description: get specific details of the Harvest
 | debtPayment     | BigInt!      | The reported debt paid from strategy at the time of the harvest        |
 | debtOutstanding | BigInt!      | The reported outstanding debt from strategy at the time of the harvest |
 
-# VaultDayData
+## VaultDayData
 
 Description: get specific details of Vault Day Data
 
@@ -435,7 +435,7 @@ Description: get specific details of Vault Day Data
 | tokenPriceUSDC            | BigInt! | The price of one of the vault's underlying token                                                                                                                                            |
 | blockNumber               | BigInt! | Block number the day data aggregation occurred on                                                                                                                                            |
 
-# Yearn
+## Yearn
 
 Description: get specific details of Yearn
 

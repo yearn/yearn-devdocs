@@ -2,8 +2,6 @@
 
 While reading the strategy descriptions at [yearn.fi/vaults↗](https://yearn.fi/vaults) you may come across unfamiliar terms. But do not fear, like a DeFi Duolingo, Yearn is here to help you navigate these strange semantic waters. So buckle in and let's learn the lingo of strategies.
 
-This guide focuses primarily on strategy descriptions, but those thirsty for more DeFi jargon can see our broader [glossary↗](https://docs.yearn.fi/resources/defi-glossary).
-
 - Regular links navigate between the glossary.
 - Links marked with ↗ go to external websites.
 
@@ -66,7 +64,7 @@ This guide focuses primarily on strategy descriptions, but those thirsty for mor
 
 ### Collateral
 
-- An amount of money (or tokens) that gets [locked](#lock--unlock) until a pre-determined agreement is met, commonly at risk of [liquidation](#liquidation)
+- An amount of money (or tokens) that gets [locked](#lock) until a pre-determined agreement is met, commonly at risk of [liquidation](#liquidation)
 
 ### Liquidation
 

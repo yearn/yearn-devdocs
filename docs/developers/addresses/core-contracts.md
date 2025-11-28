@@ -12,8 +12,6 @@ A list of all the current Yearn token addresses, multisigs, and treasuries on va
 | Optimism       | [0x9046D36440290FfDE54FE0DD84Db8b1CfEE9107B](https://optimistic.etherscan.io/token/0x9046d36440290ffde54fe0dd84db8b1cfee9107b) |
 | Base           | [0x9EaF8C1E34F05a589EDa6BAfdF391Cf6Ad3CB239](https://basescan.org/token/0x9eaf8c1e34f05a589eda6bafdf391cf6ad3cb239) |
 
-Looking for the Woofy token addresses? Find them [here](/resources/deprecated/woofy)
-
 ## veYFI
 
 | Chain          | Address                                    |
