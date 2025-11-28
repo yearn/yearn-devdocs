@@ -1,6 +1,6 @@
 # Protocol Risks
 
-Yearn’s core products are the vaults. Each vault runs at least one strategy, and each strategy is exposed to at least one protocol. Strategy and protocol risks are described [here](https://docs.yearn.fi/resources/risks/strategy-risks) and [here](https://docs.yearn.fi/resources/risks/protocol-risks) respectively.
+Yearn’s core products are the vaults. Each vault runs at least one strategy, and each strategy is exposed to at least one protocol. Strategy and protocol risks are described [here](https://docs.yearn.fi/developers/security/risks/strategy-risks) and [here](https://docs.yearn.fi/developers/security/risks/protocol-risks) respectively.
 
 The key protocols to which Yearn’s vaults are exposed are lending protocols, AMMs and protocols that enable leverage.
 

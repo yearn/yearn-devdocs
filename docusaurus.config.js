@@ -218,41 +218,5 @@ export default {
         },
       },
     ],
-    [
-      '@docusaurus/plugin-content-docs',
-      {
-        id: 'resources',
-        path: 'docs/resources',
-        routeBasePath: 'resources',
-        sidebarPath: './sidebars/sidebarsResources.js',
-        showLastUpdateTime: true,
-        sidebarCollapsed: true,
-        breadcrumbs: false,
-        remarkPlugins: [math],
-        rehypePlugins: [katex],
-        admonitions: {
-          keywords: ['yearn', 'yearnData'],
-          extendDefaults: true,
-        },
-      },
-    ],
-    [
-      '@docusaurus/plugin-content-docs',
-      {
-        id: 'partners',
-        path: 'docs/partners',
-        routeBasePath: 'partners',
-        sidebarPath: './sidebars/sidebarsPartners.js',
-        showLastUpdateTime: true,
-        sidebarCollapsed: true,
-        breadcrumbs: false,
-        remarkPlugins: [math],
-        rehypePlugins: [katex],
-        admonitions: {
-          keywords: ['yearn', 'yearnData'],
-          extendDefaults: true,
-        },
-      },
-    ],
   ],
 }

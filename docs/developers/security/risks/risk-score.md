@@ -12,7 +12,7 @@ Different risk scores for all V2 vaults can be viewed on the [Seafood](https://s
 
 Risk for different strategies is quantified using a 1-5 point system developed by Yearn's strategy deployment process. The higher the risk score number, the more risky the strategy is. The risk assessment evaluates eight dimensions:
 
-- [Risk Scores](#risk-scores)
+- [Risk Scores](#)
   - [Strategy Risk Score](#strategy-risk-score)
     - [Audit](#audit)
     - [Code Review](#code-review)
