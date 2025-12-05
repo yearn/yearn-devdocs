@@ -355,10 +355,10 @@ export default {
             id: 'security/risks/index',
           },
           items: [
-            'security/risks/risk-score',
             'security/risks/protocol-risks',
             'security/risks/strategy-risks',
             'security/risks/vault-risks',
+            'security/risks/risk-score',
           ],
         },
         'security/testing',
