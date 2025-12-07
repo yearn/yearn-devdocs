@@ -158,7 +158,6 @@ export default {
             // 'wallet-integrations',
             'v2/yswaps',
             'auctions',
-            'v2/ledger-plugin',
           ],
         },
       ],
