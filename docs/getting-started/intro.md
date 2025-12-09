@@ -17,10 +17,3 @@ yLockers are yVault products built to get the most out of DeFi protocol governan
 <PrettyLink>[Don't know what that means? Check out the yLockers Docs](products/ylockers/overview.md)</PrettyLink>
 <PrettyLink>[Yearn yCRV dApp](https://ycrv.yearn.fi/)</PrettyLink>
 <PrettyLink>[Yearn yPRISMA dApp](https://yprisma.yearn.fi/)</PrettyLink>
-
-## yPools
-
-yPools are user-governed liquidity pools of different crypto-assets. They are risk adjusted baskets of community chosen derivatives of the base asset that earn yield from those underlying derivatives. The first yPool is yETH, which is a collection of different liquid staked version of ETH.
-
-<PrettyLink>[Don't know what that means? Check out the yETH Docs](/developers/smart-contracts/deprecated/ypools/yeth/yeth-overview)</PrettyLink>
-<PrettyLink>[Yearn yETH dApp](https://yearn.fi/yeth)</PrettyLink>

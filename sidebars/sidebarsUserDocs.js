@@ -206,10 +206,7 @@ module.exports = {
       label: 'Smart Contracts →',
       href: '/developers/smart-contracts/',
     },
-    { type: 'link',
-      label: 'Security →',
-      href: '/developers/security'
-    },
+    { type: 'link', label: 'Security →', href: '/developers/security' },
     {
       type: 'link',
       label: 'Brand Assets and Guidelines',
