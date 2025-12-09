@@ -8,7 +8,14 @@ Potential vulnerabilities are welcome to be disclosed following the guidelines e
 
 ## Third-party audits
 
-The core contracts found in [yearn-vaults](https://github.com/yearn/yearn-vaults/) repository have been audited by multiple independent third-party firms:
+The V3 core contracts used in V3 vaults, found at [yearn-vaults-v3](https://github.com/yearn/yearn-vaults-v3) repository have been audited by multiple independent third-party firms:
+
+- [StateMind](https://statemind.io/) has audited v3.0.0, public report [available here](https://github.com/yearn/yearn-security/tree/master/audits/20240502_Statemind_Yearn_V3)
+- [ChainSecurity](https://www.chainsecurity.com/) has audited v3.0.0, public report [available here](https://github.com/yearn/yearn-security/tree/master/audits/20240504_ChainSecurity_Yearn_V3)
+- [yAudit](https://yaudit.dev/) has audited v3.0.1, public report [available here](https://github.com/yearn/yearn-security/tree/master/audits/20240601_YAcademy_Yearn_V3)
+
+The legacy core contracts used in V2 vaults and the Factory Vaults, found at [yearn-vaults](https://github.com/yearn/yearn-vaults/) repository have been audited by multiple independent third-party firms:
+
 - [MixBytes](https://mixbytes.io/) has audited v0.2.1, public report [available here](https://github.com/yearn/yearn-security/tree/master/audits/202012_MixBytes_yearn-vaults)
 - [ChainSecurity](https://chainsecurity.com/) has audited v0.3.5, public report unavailable
 - [Trail of Bits](https://www.trailofbits.com/) has audited v0.4.2, public report [available here](https://github.com/yearn/yearn-security/tree/master/audits/20210719_ToB_yearn_vaultsv2)
@@ -28,10 +35,3 @@ It is a conscious design decision that this role is not behind a time lock. Prio
 Trusting `Governance` to be honest is a prerequisite to trusting Yearn's vaults.
 
 Modifications to these design decisions can be proposed in the forum through [Yearn's governance process](https://gov.yearn.fi/t/yip-61-governance-2-0/10460).
-
-
-## Testing
-
-Vault tests are done using brownie and the [ganache CLI](https://trufflesuite.com/docs/ganache/) development network.
-
-To see test coverage you can have a look at the [CI](https://github.com/yearn/yearn-vaults/actions/workflows/test.yaml) you must look for a run that runs `Run build test_duration`. The tests are run once a month together to compute the duration cache, then they are split into several test pipelines to speed up testing.

@@ -1,340 +1,183 @@
-# Risk Scores
+# Yearn Risk Score Framework
 
-Yearn works with risk scores to quantify and assess the amount of risk of each strategy and vault. This document outlines how we measure risk vectors and use them to find the optimal balance of security and innovation.
+Risk scores are separated into two categories: strategy-related and external protocol-related.
 
-* [**Strategy Risk Score**](#strategy-risk-score) defines each dimension of risk for a strategy and how we quantify them
-* [**Vault Risk Score Proposal**](#vault-risk-score-proposal) aggregates all strategy scores for a vault, averaging by TVL **(this is in draft stage)**
-* [**Overall Risk Score Proposal**](#overall-risk-score-proposal) aggregates strategy/vault scores into overall scores **(this is in draft stage)**
+Strategy-related scores are intended to focus solely on the strategy implementation. While there may be indirect exposure to external protocols when evaluating these scores, the primary focus is on the strategy implementation itself.
 
-Different risk scores for all V2 vaults can be viewed on the [Seafood](https://seafood.yearn.watch/risk) Dashboard.
+External protocol-related scores directly target external protocols. While the strategy-related scores indirectly reference the external protocol, the responses are not directly related to the external protocol itself. Conversely, these scores fully concentrate on the external protocol.
 
-## Strategy Risk Score
+In the case of multiple external protocols integrated with a strategy, each external protocol should be evaluated according to the risk scores, and the average will be the final score. For example, if a strategy involves depositing DAI to CurveLP and staking it in Convex, then both Convex and Curve should be evaluated accordingly.
 
-Risk for different strategies is quantified using a 1-5 point system developed by Yearn's strategy deployment process. The higher the risk score number, the more risky the strategy is. The risk assessment evaluates eight dimensions:
+All scores are intended to be filled objectively, so the metrics are chosen as objectively as possible. However, due to the uncertainty of potential strategies and external protocols, the Yearn security team can make exceptions and assign scores that do not strictly adhere to the scoring framework. In such cases, every score type has an optional text box, which the Yearn security team fills out to justify why the score is given as it is.
 
-- [Risk Scores](#)
-  - [Strategy Risk Score](#strategy-risk-score)
-    - [Audit](#audit)
-    - [Code Review](#code-review)
-    - [Complexity](#complexity)
-    - [Longevity](#longevity)
-    - [Protocol Safety](#protocol-safety)
-    - [Team Knowledge](#team-knowledge)
-    - [Testing Score](#testing-score)
-    - [TVL Impact](#tvl-impact)
-  - [Vault Risk Score Proposal](#vault-risk-score-proposal)
-  - [Overall Risk Score Proposal](#overall-risk-score-proposal)
+To assign scores, certain information is required, such as testing coverage and external protocol audits. This information should be initially provided by the strategist who writes the strategy, and then the Yearn security team will double-check whether the supplied information is correct or missing.
 
-This risk framework is an ongoing process to ensure the security of Yearn strategies. Yearn recognized that, due to its unique approach to deploying strategies, it could not rely on a traditional waterfall process (heavy analysis and design, testing, multiple audits before release, etc.) to deploy contracts. Strategies are deployed and capped by their risk score. As we reduce the risk in any of the eight dimensions, the strategy can grow its TVL. This system allows Yearn to compare the risk score of two strategies and prioritize risk mitigation and preventive actions, such as forming a committee to spread knowledge on the code, getting more audits, migrating current code to improved versions of the strategy, etc.
+## Overall `riskLevel`
 
-The current version of the risk score system works for Yearn's current needs, but we are always looking to improve and expand it to the vaults. We want to provide our users with a better understanding of what is happening behind the scenes in the vaults. The development of vault risk scoring is still in progress!
+`riskLevel` is used to define the final risk score of the strategy. The `riskLevel` for the strategy is calculated by summing all risk scores below and check the following table:
 
-### Audit
+- 10-20 -> 1
+- 21-30 -> 2
+- 31-40 -> 3
+- 41+ -> 4
 
-Auditing is a process that an audit firm or external security researcher reviews code for any potential vulnerabilities and present a report for mitigation. Audits take longer than an internal security review and are not immediately available due to the high demand for audits in the space. As such, most strategies are sent to production without an audit (leading to a high risk score) in order to limit their Total Value Locked (TVL). This approach allows for strategies to be validated in production while still managing risk, and the risk score helps determine which strategies should get an audit first, based on impact and other scoring criteria. The table below outlines the scoring criteria associated with audits.
+Yearn V3 vaults can be single-strategy or multi-strategy vaults. The risk score for the vault will be calculated as follows:
 
-<table>
-  <tr>
-   <td><strong>Score</strong></td>
-   <td><strong>Audit</strong></td>
-  </tr>
-  <tr>
-   <td>5</td>
-   <td>No audit by a trusted firm or security researcher.</td>
-  </tr>
-  <tr>
-   <td>4</td>
-   <td>Audit by trusted firm or security researcher conducted more than 6 months ago.</td>
-  </tr>
-  <tr>
-   <td>3</td>
-   <td>Audit by trusted firm or security researcher conducted more than 3 months ago.</td>
-  </tr>
-  <tr>
-   <td>2</td>
-   <td>Audit conducted less than 3 months ago by an independent trusted firm.</td>
-  </tr>
-  <tr>
-   <td>1</td>
-   <td>Audit conducted less than 3 months ago by 3 or more independent trusted firms.</td>
-  </tr>
-</table>
+- [single-strategy](https://github.com/yearn/ydaemon/blob/6797a0246ba13ac3e8b78f8b9a54b12e8500d603/data/meta/vaults/1.json#L13374): riskScore is used to define final riskLevel
+- [multi-strategy](https://github.com/yearn/ydaemon/blob/6797a0246ba13ac3e8b78f8b9a54b12e8500d603/data/meta/vaults/1.json#L2606): riskLevel is defined by the highest riskLevel value of all strategies in the vault. Typically, vaults are constructed to only allow strategies at or below a specific risk level. So the USDC-2 vault could only have -2 or -1 level strategies attached to it, while the USDC-1 vault could only have -1 strategies attached to it.
 
-### Code Review
+## Strategy Related Scores
 
-This is the process that reviews strategy code going to production. It is done in two major phases:
+### `review`
 
-**Phase 1:** Two internal peers (strategists) review the strategy for any potential issues regarding handling accounts, profits, losses, etc. After this phase is completed, the strategy can go to ape.tax for live testing and validation.
+To have a unified reviewScore for both internal and external strategies, we assume that the strategist writer itself is either a Source of Trust (internal) or not (external). So all internal strategies always includes that 1 additional source of trust in addition.
+Together with all other Sources of Trust (SoTs) in this list:
 
-**Phase 2:** An internal security reviewer from Yearn will review the code focusing on security concerns. Once phase 2 is completed, the strategy gets a risk score in all dimensions and is usually deemed enough for a strategy to go to production with limited TVL based on scoring.
+- internal strategist wrote the strategy
+- peer reviews
+- expert peer reviews
+- Yearn security team security reviews
+- Yearn security team recurring security review
 
-After these steps a recurring review is scheduled, where either a second either internal or external security reviewer will have another look at the code:
+each item accounts for 1 SoT point, and any combinations of these gives the number of SoTs a strategy has and thus gives the associated review score:
 
-<table>
-  <tr>
-   <td><strong>Score</strong></td>
-   <td><strong>Code Review</strong></td>
-  </tr>
-  <tr>
-   <td>5</td>
-   <td>0 - 1 reviewer of the code only or most recent was done 6 months+ ago</td>
-  </tr>
-  <tr>
-   <td>4</td>
-   <td>2 reviewers of the code, the most recent of which was done 3+ months ago</td>
-  </tr>
-  <tr>
-   <td>3</td>
-   <td>3 reviewers of the code, the most recent of which was done 3+ months ago (1 of the reviewers is an internal security dev)</td>
-  </tr>
-  <tr>
-   <td>2</td>
-   <td>4 reviewers of the code (2 peers and 2 internal security devs)</td>
-  </tr>
-  <tr>
-   <td>1</td>
-   <td>5 reviewers of the code, (2 strategists peers and 2 security reviewers and either external protocol devs reviewed or external security researchers reviewed)</td>
-  </tr>
-</table>
+- 5 -> 1 SoT
+- 4 -> 2 SoT
+- 3 -> 3 SoT
+- 2 -> 4 SoT
+- 1 -> 5 SoT
 
-### Complexity
+### `testing`
 
-This is how the strategy earns its returns: is it a simple strategy like a masterchef staking or does it have complex mechanics such as leverage, risk of liquidation, and involvement with multiple protocols? The more components it needs will require a higher complexity score. This score is essential in an emergency to evaluate how difficult it is to mitigate a live issue:
+The testing coverage of the strategy being evaluated. Note that there are no intermediate scores for this score. The reason is to incentivise strategists to aim for at least 80% testing coverage.
 
-<table>
-  <tr>
-   <td><strong>Score</strong></td>
-   <td><strong>Complexity</strong></td>
-  </tr>
-  <tr>
-   <td>5</td>
-   <td>Strategy is highly complex, uses leverage or debt, and is not easy to unwind. No health check available</td>
-  </tr>
-  <tr>
-   <td>4</td>
-   <td>Uses leverage or debt, and is not easy to unwind. No health check available</td>
-  </tr>
-  <tr>
-   <td>3</td>
-   <td>Has potential for losses, withdrawal fees, or requires detailed queue management to prevent losses. No health check available</td>
-  </tr>
-  <tr>
-   <td>2</td>
-   <td>Strategy is relatively simple, and is easy to migrate/unwind. Has a health check</td>
-  </tr>
-  <tr>
-   <td>1</td>
-   <td>Strategy is easy to understand, and can be migrated/unwound easily. No leverage and no publicly accessible methods. Highly unlikely to incur losses.</td>
-  </tr>
-</table>
+- 1 -> 95%+
+- 2 -> 90%+
+- 3 -> 80%+
+- 4 -> 70%+
+- 5 -> below 70%
 
-### Longevity
+### `complexity`
 
-How long the strategy has been running live on yearn.fi:
+The sLOC count of the strategy being evaluated. Note that the strategy can be complex regardless of the sLOC. In such cases, the Yearn security team will provide the justification reason for the score by text if needed.
 
-<table>
-  <tr>
-   <td><strong>Score</strong></td>
-   <td><strong>Longevity</strong></td>
-  </tr>
-  <tr>
-   <td>5</td>
-   <td>Code is new and did not go to ape tax before going live on yearn.fi</td>
-  </tr>
-  <tr>
-   <td>4</td>
-   <td>Code has been running for less than one month</td>
-  </tr>
-  <tr>
-   <td>3</td>
-   <td>Code has been running between 1-4 months</td>
-  </tr>
-  <tr>
-   <td>2</td>
-   <td>Code has been running for 4+ months</td>
-  </tr>
-  <tr>
-   <td>1</td>
-   <td>Code has been running for 8+ months with no critical issues and no changes in code base</td>
-  </tr>
-</table>
+- 5 -> 600+ sLOC
+- 4 -> 450-600 sLOC
+- 3 -> 300-450 sLOC
+- 2 -> 150-300 sLOC
+- 1 -> 0-150 sLOC
 
-### Protocol Safety
+### `riskExposure`
 
-Protocol Safety evaluates the resilience of the protocol the strategy uses. It takes into account the safety measures given the current DeFi security standards, based on our internal assessments and due diligence compared to the top projects in DeFi. This includes multisig health, decentralization, bounty programs, audits, etc.
+This score aims to find out how much and how often a strategy can be subject to losses. Due to the nature of evaluating such hard metrics, the Yearn security team will provide the justification reason for the score by text if needed.
 
-We hope to improve this dimension with the help of the DeFi community to potentially use a standard scoring system that is widely accepted in the ecosystem to replace our current scoring table:
+- 5 -> Loss of funds or non recoverable funds 30%+ (Example, Leveraging cross assets and got liquidated, adding liquidity to volatile pairs single sided)
+- 4 -> Loss of funds or non recoverable funds 10-30% (Example, adding liquidity to single sided curve stable pools)
+- 3 -> Loss of funds or non recoverable funds 3-10% (Example, Protocol specific IL exposure, very high deposit/withdrawal fees)
+- 2 -> Loss of funds or non recoverable funds 0-3% (Example, deposit/withdrawal fees or anything protocol specific)
+- 1 -> Strategy has no lossable cases, only gains, up only.
 
-<table>
-  <tr>
-   <td><strong>Score</strong></td>
-   <td><strong>Protocol Safety</strong></td>
-  </tr>
-  <tr>
-   <td>5</td>
-   <td>No due diligence (DD) document for this strategy. The protocol contracts used are very recent and not audited/verified. An EOA (externally owned account) owns the contracts and can upgrade them. </td>
-  </tr>
-  <tr>
-   <td>4</td>
-   <td>DD took place. Protocol contracts audited/verified. A multisig is required or contracts are upgradable. Multisig has a low threshold of signers. No bounty program.</td>
-  </tr>
-  <tr>
-   <td>3</td>
-   <td>DD took place. Protocol contracts are audited/verified by at least <strong>one reputable audit </strong>firm. A multisig with an appropriate threshold is required and/or contracts are immutable. Has a good bounty program.</td>
-  </tr>
-  <tr>
-   <td>2</td>
-   <td>DD took place. Protocol contracts are audited/verified by at least <strong>two reputable audit </strong>firms. A multisig with an appropriate threshold is required and/or contracts are immutable. Has a good bounty program.</td>
-  </tr>
-  <tr>
-   <td>1</td>
-   <td>Protocols involved in contracts are trusted blue chip protocols with a good track record of security. For example: Maker, Uniswap, Curve, AAVE, and Compound. These protocols meet all the criteria specified in item 2 and more.</td>
-  </tr>
-</table>
+### `centralisationRisk`
 
-### Team Knowledge
+The centralization score of the strategy that is being evaluated. Measures the strategy's reliance on privileged roles that are defined in strategy.
 
-Measures the amount of expertise on a strategy that is shared amongst Yearn contributors. How many contributors can manage the strategy and respond in an emergency? The fewer people who can manage and respond during an emergency the riskier the strategy assessment in this dimension:
+- 5 -> Strategy heavily relies on off-chain management, potentially exposing user funds to rug possibilities by admins.
+- 4 -> Strategy frequently depends on off-chain management but has safeguards against rug possibilities by admins.
+- 3 -> Strategy involves privileged roles but less frequently and with less risk of rug possibilities.
+- 2 -> Strategy has privileged roles but they are not vital for operations and pose minimal risk of rug possibilities.
+- 1 -> Strategy operates without dependency on any privileged roles, ensuring full permissionlessness.
 
-<table>
-  <tr>
-   <td><strong>Score</strong></td>
-   <td><strong>Team Knowledge</strong></td>
-  </tr>
-  <tr>
-   <td>5</td>
-   <td>1 person in the team is the only one that has in-depth knowledge of the strategy code</td>
-  </tr>
-  <tr>
-   <td>4</td>
-   <td>1 strategist has in-depth knowledge, and 1 strategist is somewhat familiar with the strategy code.</td>
-  </tr>
-  <tr>
-   <td>3</td>
-   <td>2 strategists have in-depth knowledge of the strategy code.</td>
-  </tr>
-  <tr>
-   <td>2</td>
-   <td>2 strategists have in-depth knowledge, and 1 strategist is somewhat familiar with the strategy code.</td>
-  </tr>
-  <tr>
-   <td>1</td>
-   <td>A team of 3+ strategists are very familiar with the strategy code and the protocol the strategy is utilising. </td>
-  </tr>
-</table>
+### `protocolIntegration`
 
-### Testing Score
+The protocols that are integrated into the strategy that is being evaluated.
+For example:
+If the strategy's underlying asset is DAI and deposits it to Curve LP and stakes the LP in Convex, then there are 2 external protocols integrated.
+Note:
+Protocols used only in swapping or getting reference value that are not critical to how the strategy works are not added here. For example: UniswapV3Swapper is not counted as an external protocol.
 
-Testing score is a metric of how much of the codebase for the strategy has been tested. It uses the test coverage number as a reference, higher coverage means the developer/strategist took time to test most of the operations of the strategy in a unit test or fork environment. This score assumes that a less tested strategy entails more risk since we know less about what is expected from the code:
+- 5 -> Strategy interacts with 5 external protocols
+- 4 -> Strategy interacts with 4 external protocols
+- 3 -> Strategy interacts with 3 external protocols
+- 2 -> Strategy interacts with 2 external protocols
+- 1 -> Strategy interacts with 1 external protocol
 
-<table>
-  <tr>
-   <td><strong>Score</strong></td>
-   <td><strong>Testing Score</strong></td>
-  </tr>
-  <tr>
-   <td>5</td>
-   <td>Less than 20% coverage in testing</td>
-  </tr>
-  <tr>
-   <td>4</td>
-   <td>Less than 40% coverage in testing</td>
-  </tr>
-  <tr>
-   <td>3</td>
-   <td>40% to 80% coverage</td>
-  </tr>
-  <tr>
-   <td>2</td>
-   <td>Over 80% coverage</td>
-  </tr>
-  <tr>
-   <td>1</td>
-   <td>Over 90% coverage in testing. Second developer validated and added tests and also added new ones for uncovered cases while reviewing. You can pull the repository and the tests are currently passing</td>
-  </tr>
-</table>
+## External Protocol Related Scores
 
-### TVL Impact
+In case there are multiple external protocols integrated with strategy, then each external protocol should be evaluated according to the risk scores and the average will be the final score. For example: If strategy is depositing DAI to CurveLP and stakes it in Convex, then both Convex and Curve should be evaluated accordingly.
 
-The TVL (total value locked) metric measures how to allocate to new riskier strategies without having a catastrophic event in case of a hack or issue. The lower the impact, the more likely Yearn’s treasury can recover from an incident. The TVL is measured in USD and grows dynamically based on strategies allocations onchain. Through [seafood](https://seafood.yearn.watch/risk) we keep track of the TVL and risk score to make fund allocation decisions and mitigations if a strategy group has fallen into the “red” high-risk zone:
+### `externalProtocolAuditing`
 
-<table>
-  <tr>
-   <td><strong>Score</strong></td>
-   <td><strong>TVL Impact</strong></td>
-  </tr>
-  <tr>
-   <td>5</td>
-   <td>Extreme: greater than USD 100 MM</td>
-  </tr>
-  <tr>
-   <td>4</td>
-   <td>Very high: less than USD 100 MM</td>
-  </tr>
-  <tr>
-   <td>3</td>
-   <td>High: less than USD 50 MM</td>
-  </tr>
-  <tr>
-   <td>2</td>
-   <td>Medium: less than USD 10 MM</td>
-  </tr>
-  <tr>
-   <td>1</td>
-   <td>Low: less than USD 1 MM</td>
-  </tr>
-</table>
+The public audits count of the external protocols.
 
-## Vault Risk Score Proposal
+- 5 -> No audit conducted by a trusted firm or security researcher.
+- 4 -> Audit conducted by 1 trusted firm or security researcher conducted
+- 3 -> Audit conducted by 2 trusted firm or security researcher conducted
+- 2 -> Audit conducted by 3 trusted firm or security researcher conducted
+- 1 -> Audit conducted by 4 or more trusted firm or security researcher conducted
 
-A vault is a contract that holds funds for up to 20 strategies, the vault risk score is a TVL weighted average for each active strategy, for example:
+### `externalProtocolCentralisation`
 
-**Strategy X** has **5000$** funds deposited
-**Strategy Y** has **1000$** funds deposited
+Measurement of the centralization score of the external protocols.
 
-This vault's risk score would be calculated as follows:
+- 5 -> Contracts owner is an EOA or a multisig with less than 4 members `OR` Contracts are not verified `OR` Contracts owner can harm our strategy completely
+- 4 -> Contracts owner is a multisig but the addresses are not known/hidden `OR` Contracts owner can harm our strategy by setting parameters in external protocol contracts up to some degree
+- 3 -> Contracts owner is a multisig with known people but multisig threshold is very low.
+- 2 -> Contracts owner is a multisig with known trusted people
+- 1 -> Contracts owner is a multisig with known trusted people with Timelock `OR` Contracts are governanceless, immutable `OR` Contracts owner can't do any harm to our strategy by setting parameters in external protocol contracts
 
-```
-(
-  (Strategy X risk) * 5000
-  +
-  (Strategy Y risk) * 1000
-)
-÷
-6000
-```
+### `externalProtocolTvl`
 
-## Overall Risk Score Proposal
+The active TVL that the external protocol holds:
 
-Risks on some projects may have more relevance than others, so before calculating the overall score we first define the weight for the context we want to apply the framework on, and then we do a weighted average between all risk dimensions and risk profiles:
+- 5 -> TVL of $10M or less
+- 4 -> TVL between $10M and $40M
+- 3 -> TVL between $40M and $120M
+- 2 -> TVL between $120M and $480M
+- 1 -> TVL of $480M or more
 
-**Risk Profile** = Weighted table of which risk dimension is more important given the current context
-**Risk Score** = Weighted average of all 8 dimensions using the risk profile weights
+### `externalProtocolLongevity`
 
-A project may have many risk profiles, so for each profile the score is calculated and the final list that remains is then used with medians to reach the final result.
+How long the external protocol contracts in scope have been deployed alive
 
-The projects overall risk score will be presented in 3 variables:
+- 5 -> Less than 6 months
+- 4 -> Between 6 and 12 months
+- 3 -> Between 12 and 18 months
+- 2 -> Between 18 and 24 months
+- 1 -> 24 months or more
 
-* **high:** profile score for a risk-averse user
-* **low:** profile score for a risk-seeking user
-* **median:** profile score for a median representative user
+### `externalProtocolType`
 
-Where each one of these use the final list median:
+What does the external protocol do? Note that this is a rough estimate of evaluating a protocol's purpose. In some cases, the Yearn security team can score regardless of the criteria; in such cases, the reasoning will be provided in the text box as usual with all scores.
 
-* **high:** median + 1.5 IQR
-* **low:** median - 1.5 IQR
-* **median:** the median value from the distribution
+- 5 -> The main expertise of the protocol lies in off-chain operations, such as RWA protocols.
+- 4 -> Cross-chain applications, like cross-chain bridges, cross-chain yield aggregators, and cross-chain lending/borrowing protocols
+- 3 -> AMM lending/borrowing protocols that are not forks of blue-chip protocols, leveraged farming protocols, as well as newly conceptualized protocols
+- 2 -> Slightly modified forked blue-chip protocols.
+- 1 -> Blue-chip protocols such as AAVE, Compound, Uniswap, Curve, Convex, and Balancer.
 
-Where IQR stands for the interquartile range of the distribution
+### `comment`
 
-Here is what the final result looks like:
+Comment is used by the Yearn security team to provide additional information about the score given. It can be used to justify the score given or provide additional information about the potential problems or loses.
 
-```
+## Defining risk scores for the strategy
+
+This is how the risk scores will be attached to the strategy:
+
+```json
 {
-  'overallScore': {
-    'high': 3.37675585284281,
-    'low': 2.5463210702341135,
-    'median': 2.9615384615384617,
-  },
+    "review": 2,
+    "testing": 3,
+    "complexity": 1,
+    "riskExposure": 3,
+    "protocolIntegration": 1,
+    "centralizationRisk": 1,
+    "externalProtocolAudit": 4,
+    "externalProtocolCentralisation": 3,
+    "externalProtocolTvl": 2,
+    "externalProtocolLongevity": 1,
+    "externalProtocolType": 4,
+    "comment": ""
 }
 ```
+
+For more info on how to attach the risk scores to the strategy see [yDaemon schema](https://github.com/yearn/ydaemon/blob/main/data/meta/vaults/_schema.md#the-risk-score-object). Example of the strategy [`yPT-uniETH Yearn Auto-Rolling Pendle PT`](https://github.com/yearn/ydaemon/blob/6797a0246ba13ac3e8b78f8b9a54b12e8500d603/data/meta/vaults/1.json#L62-L75).
