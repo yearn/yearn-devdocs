@@ -111,41 +111,6 @@ module.exports = {
           ],
         },
         {
-          type: 'category',
-          label: 'yPools',
-          link: {
-            type: 'doc',
-            id: 'products/ypools/ypools-overview',
-          },
-          items: [
-            {
-              type: 'category',
-              label: 'yETH',
-              link: {
-                type: 'doc',
-                id: 'products/ypools/yeth/overview',
-              },
-              items: [
-                {
-                  type: 'doc',
-                  id: 'products/ypools/yeth/yeth-faq',
-                  label: 'yETH FAQ',
-                },
-                {
-                  type: 'link',
-                  label: 'yETH dApp',
-                  href: 'https://yeth.yearn.fi/',
-                },
-              ],
-            },
-            {
-              type: 'link',
-              label: 'yPools Contract Addresses →',
-              href: '/developers/addresses/ypools-contracts',
-            },
-          ],
-        },
-        {
           type: 'link',
           label: 'veYFI →',
           href: '/contributing/governance/veYFI-intro',

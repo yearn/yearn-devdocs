@@ -78,15 +78,18 @@ export default {
           label: 'yPools',
           link: {
             type: 'doc',
-            id: 'ypools/ypools-overview',
+            id: 'smart-contracts/deprecated/ypools/ypools-overview',
           },
           items: [
-            'ypools/ypools-overview',
-            'ypools/ypools-roles',
+            'smart-contracts/deprecated/ypools/ypools-overview',
+            'smart-contracts/deprecated/ypools/ypools-roles',
             {
               type: 'category',
               label: 'yETH',
-              items: ['ypools/yeth/yeth-overview', 'ypools/yeth/adding-assets'],
+              items: [
+                'smart-contracts/deprecated/ypools/yeth/yeth-overview',
+                'smart-contracts/deprecated/ypools/yeth/adding-assets',
+              ],
             },
             {
               type: 'link',

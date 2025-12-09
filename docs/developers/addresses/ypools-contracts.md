@@ -30,4 +30,4 @@ A list of all the current yPool contract addresses.
 
 > Due to a redeploy of st-yETH during the bootstrap process the first st-yETH contract has been deprecated, use the `Bootstrap: Claim st-yETH` contract to claim the new version if you participated in the bootstrap phase.
 
-Find more information about the yPools Roles, modes, and privileges [here](/developers/ypools/ypools-roles)
+Find more information about the yPools Roles, modes, and privileges [here](/developers/smart-contracts/deprecated/ypools/ypools-roles)
