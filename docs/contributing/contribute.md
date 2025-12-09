@@ -80,7 +80,6 @@ When you decide to start, this reading material is going to come handy:
 
 Once you have your strategy ready, this will guide you further down the road:
 
-- [Vault naming standard](https://docs.yearn.fi/developers/v2/naming-convention)
 - [Release process](https://docs.yearn.fi/developers/v2/DEPLOYMENT)
 - [Security check](https://docs.google.com/document/d/1hBKB73kJPQM71enrG8xoSFj7wxYmczUlgigyq2KkcTE/edit#heading=h.4ieoeyetfrxm)
 

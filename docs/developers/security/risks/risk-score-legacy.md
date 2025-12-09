@@ -12,18 +12,14 @@ Different risk scores for all V2 vaults can be viewed on the [Seafood](https://s
 
 Risk for different strategies is quantified using a 1-5 point system developed by Yearn's strategy deployment process. The higher the risk score number, the more risky the strategy is. The risk assessment evaluates eight dimensions:
 
-- [Risk Scores](#risk-scores)
-  - [Strategy Risk Score](#strategy-risk-score)
-    - [Audit](#audit)
-    - [Code Review](#code-review)
-    - [Complexity](#complexity)
-    - [Longevity](#longevity)
-    - [Protocol Safety](#protocol-safety)
-    - [Team Knowledge](#team-knowledge)
-    - [Testing Score](#testing-score)
-    - [TVL Impact](#tvl-impact)
-  - [Vault Risk Score Proposal](#vault-risk-score-proposal)
-  - [Overall Risk Score Proposal](#overall-risk-score-proposal)
+1. [Audit](#audit)
+2. [Code Review](#code-review)
+3. [Complexity](#complexity)
+4. [Longevity](#longevity)
+5. [Protocol Safety](#protocol-safety)
+6. [Team Knowledge](#team-knowledge)
+7. [Testing Score](#testing-score)
+8. [TVL Impact](#tvl-impact)
 
 This risk framework is an ongoing process to ensure the security of Yearn strategies. Yearn recognized that, due to its unique approach to deploying strategies, it could not rely on a traditional waterfall process (heavy analysis and design, testing, multiple audits before release, etc.) to deploy contracts. Strategies are deployed and capped by their risk score. As we reduce the risk in any of the eight dimensions, the strategy can grow its TVL. This system allows Yearn to compare the risk score of two strategies and prioritize risk mitigation and preventive actions, such as forming a committee to spread knowledge on the code, getting more audits, migrating current code to improved versions of the strategy, etc.
 
