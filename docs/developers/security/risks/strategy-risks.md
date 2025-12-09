@@ -6,20 +6,18 @@ Yearn earns income from lending, liquidity mining and trading fees. This income 
 
 Collateralized lending is when an asset is lent in return for a yield paid by the borrower. The borrower has to lock up a greater amount of collateral than the value of the loan to incentivize the repayment of the loan.
 
-| Risk          | Description                                                                                                                       |
-| ------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| Risk          |Description                       |
+| ------------- | ----------------------------------------------------- |
 | Governance    | Admin key holders change lending protocol adversely, e.g. change the interest rate model in such a way that discourages borrowing |
-| Technological | Smart contract risk of interacting with lending protocols                                                                         |
-| Market        | Low demand for borrowing the asset causes low lending yields                                                                      |
-|               | Collateral price falls causing the lending protocol to become undercollateralized                                                 |
-|               | Lent assets become unavailable to withdraw because the utilization ratio becomes too high                                         |
-| Operational   | Delays or inability to withdraw assets from the lending protocol in an emergency                                                  |
+| Technological | Smart contract risk of interacting with lending protocols        |
+| Market        | Low demand for borrowing the asset causes low lending yields  |
+|               | Collateral price falls causing the lending protocol to become undercollateralized  |
+|               | Lent assets become unavailable to withdraw because the utilization ratio becomes too high |
+| Operational   | Delays or inability to withdraw assets from the lending protocol in an emergency    |
 
 ## Liquidity Mining
 
-Liquidity mining involves interacting with a protocol to earn the protocol’s native tokens. The interaction can be as simple as staking an asset in a protocol’s staking contract, or more complicated such as staking SNX to mint sUSD in Synthetix to earn SNX rewards.
-
-In most cases the liquidity mined token is exchanged for the Want token on an AMM.
+Liquidity mining involves interacting with a protocol to earn the protocol’s native tokens.
 
 | Risk             | Description                                                                              |
 | ---------------- | ---------------------------------------------------------------------------------------- |
@@ -29,8 +27,6 @@ In most cases the liquidity mined token is exchanged for the Want token on an AM
 | Market           | Fall in price of token being farmed                                                      |
 |                  | Liquidity of liquidity mined token on AMM is reduced or removed                          |
 | Operational Risk | Delays or inability to withdraw liquidity in an emergency                                |
-
-The [Safe Farming Committee](https://gov.yearn.fi/t/introducing-yearn-safe-farming-committee/10533) decides which protocols are secure.
 
 ## Trading Fees
 
@@ -55,3 +51,5 @@ Trading fees are earned in Automated Market Makers (AMMs) by providing liquidity
 | Oracle           | Incorrect price feed                                                                   |
 |                  | liquidation penalties                                                                  |
 | Operational Risk | Operational risk of managing debt positions                                            |
+
+These factors are all taken into account by the Yearn Security Team when scoring strategies using the [Risk Score Framework](./risk-score.md).
