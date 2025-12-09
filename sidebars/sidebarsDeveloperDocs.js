@@ -70,16 +70,6 @@ export default {
                 },
               ],
             },
-            {
-              type: 'category',
-              label: 'yVaults v1',
-              link: {
-                type: 'doc',
-                id: 'v1/introduction',
-              },
-              items: ['v1/interfaces'],
-            },
-            'v2/naming-convention',
           ],
         },
         // yPools
@@ -282,7 +272,11 @@ export default {
           type: 'category',
           label: 'V1 Vaults',
           collapsed: true,
-          items: ['v1/interfaces'],
+          link: {
+            type: 'doc',
+            id: 'smart-contracts/deprecated/V1/introduction',
+          },
+          items: ['smart-contracts/deprecated/V1/interfaces'],
         },
         {
           type: 'link',

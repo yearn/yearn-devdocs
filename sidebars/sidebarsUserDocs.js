@@ -69,7 +69,7 @@ module.exports = {
             {
               type: 'link',
               label: 'yVaults Dev Docs →',
-              href: '/developers/v1/introduction',
+              href: '/developers/smart-contracts/deprecated/V1/introduction',
             },
           ],
         },

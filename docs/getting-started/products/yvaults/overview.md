@@ -18,7 +18,7 @@ Go you!
 
 Over the years, Yearn has developed 3 versions of the yVault products: v1, v2, and v3. Super creative, we know!
 
-- [**v1 yVaults**](../../../developers/v1/introduction) are the OG vaults and are mostly phased out (*deprecated* in developer-speak).
+- [**v1 yVaults**](../../../developers/smart-contracts/deprecated/V1/introduction) are the OG vaults and are mostly phased out (*deprecated* in developer-speak).
 
 - [**v2 yVaults**](./v2) are the reliable, workhorse vaults that you know and love. They started focused on the Curve ecosystem and are still used when creating vaults for Curve pools.
 

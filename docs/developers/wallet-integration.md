@@ -6,7 +6,7 @@ Yearn and its ecosystem contain a number of different vaults and products that c
 
 There are 2 ways to get Yearn Vault Data: Via the [Kong API](/developers/data-services/yearn-data/#kong) that Yearn provides or manually by querying the smart contracts used to deploy and register Vaults. We will start by looking at how to do this manually to give an overview of how the system works.
 
-Yearn has a few versions of Vaults: [V1](/developers/v1/introduction), [V2](/developers/v2/getting-started), and [V3](/developers/v3/overview) and each will need to be queried slightly differently. We will start with V3.
+Yearn has a few versions of Vaults: [V1](/developers/smart-contracts/deprecated/V1/introduction), [V2](/developers/v2/getting-started), and [V3](/developers/v3/overview) and each will need to be queried slightly differently. We will start with V3.
 
 ## Getting V2 and V3 Vaults with Kong
 
