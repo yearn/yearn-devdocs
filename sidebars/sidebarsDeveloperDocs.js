@@ -82,11 +82,6 @@ export default {
           },
           items: [
             {
-              type: 'link',
-              label: 'yDaemon',
-              href: 'https://ydaemon.yearn.farm/docs/intro',
-            },
-            {
               type: 'category',
               label: 'Subgraph',
               link: {
@@ -109,7 +104,6 @@ export default {
           items: [
             'wallet-integration',
             'data-services/yearn-stack',
-            'v2/fork-yearn-ui',
             {
               type: 'link',
               label: 'Brand Assets and Guidelines',
