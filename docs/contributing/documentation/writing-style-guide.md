@@ -252,7 +252,7 @@ Review the respective Contribute.md for each repository where pertinent before s
 
 #### Contributor Tools
 
-- The [Contributor Tools Guide](https://docs.yearn.fi/contributing/contributor-tools) guide introduces the tools regularly used by Yearn contributors.
+- The [Contributor Tools Guide](/contributing/contributor-tools) guide introduces the tools regularly used by Yearn contributors.
 
 ### Express Interest
 

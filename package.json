@@ -42,9 +42,9 @@
     "recharts": "^2.15.4",
     "rehype-katex": "^7.0.1",
     "remark-math": "^6.0.0",
-    "solc": "^0.8.30",
+    "solc": "^0.8.31",
     "solidity-docgen": "^0.5.17",
-    "viem": "^2.40.3"
+    "viem": "^2.41.2"
   },
   "browserslist": {
     "production": [

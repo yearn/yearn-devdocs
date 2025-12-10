@@ -16,7 +16,7 @@ export default {
   tagline: 'DeFi made simple',
   url: 'https://docs.yearn.fi',
   baseUrl: '/',
-  onBrokenLinks: 'warn',
+  onBrokenLinks: 'throw',
   favicon: 'img/favicon.ico',
   organizationName: 'yearn', // Usually your GitHub org/user name.
   projectName: 'yearn-devdocs', // Usually your repo name.
@@ -158,8 +158,6 @@ export default {
           rehypePlugins: [katex],
           routeBasePath: 'getting-started',
           sidebarPath: './sidebars/sidebarsUserDocs.js',
-          editUrl:
-            'https://github.com/yearn/yearn-devdocs/edit/master/website/',
           sidebarCollapsed: true,
           breadcrumbs: false,
           admonitions: {
@@ -175,9 +173,9 @@ export default {
   ],
   stylesheets: [
     {
-      href: 'https://cdn.jsdelivr.net/npm/katex@0.13.24/dist/katex.min.css',
+      href: 'https://cdn.jsdelivr.net/npm/katex@0.16.27/dist/katex.min.css',
       integrity:
-        'sha384-odtC+0UGzzFL/6PNoE8rX/SPcQDXBJ+uRepguP4QkPCm2LBxH3FA3y+fKSiJ+AmM',
+        'sha384-Pu5+C18nP5dwykLJOhd2U4Xen7rjScHN/qusop27hdd2drI+lL5KvX7YntvT8yew',
       crossorigin: 'anonymous',
     },
   ],

@@ -12,7 +12,7 @@ yDaemon is a RESTful API that hydrates subgraph responses with more data, like A
 
 ## Kong
 
-[Kong](https://kong.yearn.farm/) is an integrated set of services and tools that make it easy to index EVM logs and state, enrich your data with custom hooks, query your data over graphql. Kong is designed to be cheap, reliable, easy to maintain, and simplify the process of updating your index.
+[Kong](https://kong.yearn.fi/) is an integrated set of services and tools that make it easy to index EVM logs and state, enrich your data with custom hooks, query your data over graphql. Kong is designed to be cheap, reliable, easy to maintain, and simplify the process of updating your index.
 
 Kong's Yearn index covers the v3 and v2 vault ecosystems:
 
@@ -25,7 +25,7 @@ Kong's Yearn index covers the v3 and v2 vault ecosystems:
 
 Kong can be run locally or a hosted version run by Yearn can be queried with the public endpoint.
 
-- **Live API:** https://kong.yearn.farm/api/gql
+- **Live API:** https://kong.yearn.fi/api/gql
 - **Source:** https://github.com/yearn/kong
 - **Docs:** Under Construction 🚧
 
