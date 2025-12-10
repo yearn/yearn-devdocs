@@ -42,7 +42,7 @@ Another simple way to contribute is through the built in 'Edit on GitHub' button
 
    ![](https://i.imgur.com/oESKgwx.jpg)
 
-4. After you 'Propose changes' GitHub will create a branch of the yearn-devdocs repository for you and show a summary of the changes you made. If everything looks right and complies with the [Writing Style Guide](https://docs.yearn.fi/contributing/documentation/writing-style-guide), click 'Create pull request'
+4. After you 'Propose changes' GitHub will create a branch of the yearn-devdocs repository for you and show a summary of the changes you made. If everything looks right and complies with the [Writing Style Guide](/contributing/documentation/writing-style-guide), click 'Create pull request'
 
 5. In your pull request (PR), give enough context about your changes for the repo admin to understand why they should be accepted. Afterwards, click 'Create pull request' and the admins will either merge, deny or make a comment.
 
@@ -89,4 +89,4 @@ Cloning a repository is ideal if you are working on more than one page.
     ![](https://i.imgur.com/r8JuC84.jpg)
 
 15. Make sure the base repository is 'yearn/yearn-devdocs' and the base is 'master'. (unless you are contributing to translated versions, in which case, the base should be the name of the language you are translating) The head repository should be 'your-username/yearn-devdocs' and the compare should be 'your-branch-name'
-16. Make sure that your PR has all of the information needed to contextualize the change and that your changes comply with the [Writing Style Guide](https://docs.yearn.fi/contributing/documentation/writing-style-guide). Once you create a pull request, it will be sent to the repo admins who can approve it to be merged into the live site.
+16. Make sure that your PR has all of the information needed to contextualize the change and that your changes comply with the [Writing Style Guide](/contributing/documentation/writing-style-guide). Once you create a pull request, it will be sent to the repo admins who can approve it to be merged into the live site.

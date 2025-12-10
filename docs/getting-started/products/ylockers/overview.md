@@ -74,7 +74,7 @@ yLocker stakers are entitled to the following rewards:
 
 Your rewards accrue week over week and are never lost if unclaimed. In fact, they begin earning you additional stablecoin yield from the moment we receive them! When claimed, Yearn V3 vault tokens will be received directly to your wallet.
 
-> ⚠️ **Important:** Yearn vaults can use multiple strategies to generate yield and may be exposed to more than one DeFi protocol. For more information on the various layers of smart contract risk involved, please refer to our [risk documentation](https://docs.yearn.fi/developers/security/risks/).
+> ⚠️ **Important:** Yearn vaults can use multiple strategies to generate yield and may be exposed to more than one DeFi protocol. For more information on the various layers of smart contract risk involved, please refer to our [risk documentation](/developers/security/risks/).
 
 ### Fees
 
@@ -92,7 +92,7 @@ ___
 
 Too busy to deal with staking, weights, and manual claims? Just want more yLocker tokens and the highest APYs? Then the simple yLocker auto-compounding vaults are for you!
 
-These are Yearn V3 vaults (more info [here](https://docs.yearn.fi/getting-started/products/yvaults/v3)) that have the capability to use multiple strategies to increase the yield on your yLocker tokens. However, in practice, it only requires one simple strategy to farm the `YearnBoostedStaker` staking contract.
+These are Yearn V3 vaults (more info [here](/getting-started/products/yvaults/v3)) that have the capability to use multiple strategies to increase the yield on your yLocker tokens. However, in practice, it only requires one simple strategy to farm the `YearnBoostedStaker` staking contract.
 
 Once a week, the vault claims its boosted share of stablecoins from the yLocker staker contract, swaps it for more yLocker tokens, and deposits it back into the staker. On top of that, the Auto-Compounder vault is whitelisted, allowing it to earn max boost immediately on all reinvested yLocker tokens.
 

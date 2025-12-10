@@ -110,7 +110,7 @@
 
 ## yEarn
 
-- These are Yearn's original yield-aware tokens, whose v1 and v2 contracts can be found [here](https://docs.yearn.fi/getting-started/products/yvaults/vault-tokens#v2-yvault-tokens) or by clicking on the etherscan icon when viewing the vault:
+- These are Yearn's original yield-aware tokens, whose v1 and v2 contracts can be found [here](/getting-started/products/yvaults/vault-tokens#v2-yvault-tokens) or by clicking on the etherscan icon when viewing the vault:
 
   ![](https://i.imgur.com/FZ0BJjf.png)
 

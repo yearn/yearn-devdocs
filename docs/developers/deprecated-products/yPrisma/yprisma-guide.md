@@ -120,6 +120,6 @@ Clicking on a vault will open up the vault detail page in a new tab. Here you ca
 
 :::info
 
-You can find more information on Yearn's vaults [**here**](https://docs.yearn.fi/getting-started/products/yvaults/overview).
+You can find more information on Yearn's vaults [**here**](/getting-started/products/yvaults/overview).
 
 :::

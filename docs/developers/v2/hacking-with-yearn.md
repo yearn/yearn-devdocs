@@ -145,7 +145,7 @@ More details on these topics can be seen in our issues tab.
 https://docs.yearn.fi/vaults/yearn-sdk/yearn-stack
 If you are not sure about which service you should first look into, Yearn SDK can provide you with addresses of contracts and endpoints of yearn’s services.
 
-[**Yearn API**](https://github.com/yearn/yearn-caching-api) [[Docs](https://docs.yearn.fi/vaults/yearn-api)]
+[**Yearn API**](https://github.com/yearn/yearn-caching-api) [[Docs](/vaults/yearn-api)]
 Yearn API can provide non-user specific metadata, including the tvl of vaults, apys, fees, and strategy metadata through REST API, without the need to make web3 calls.
 
 # Inspiration
