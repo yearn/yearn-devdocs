@@ -85,13 +85,13 @@ In charge of coordinating comms and operations assistance as required:
 
 ## Emergency Steps
 
-_Also see [Check list](#Emergency-checklist) and [Tools](#tools)._
+_Also see [Check list](#emergency-checklist) and [Tools](#tools)._
 
 This acts as a guideline to follow when an incident is reported requiring immediate attention.
 
 The primary objective is to minimize the loss of funds, in particular for Yearn's users. All decisions made should be driven by this goal.
 
-1. Open a private chat room (War Room) with a voice channel and invite only the team members that are online that can cover the [roles described above](#Roles). The War Room is limited to members that act in the capacities of the designated roles, as well as additional persons that can provide critical insight into the circumstances of the issue and how it can best be resolved.
+1. Open a private chat room (War Room) with a voice channel and invite only the team members that are online that can cover the [roles described above](#roles). The War Room is limited to members that act in the capacities of the designated roles, as well as additional persons that can provide critical insight into the circumstances of the issue and how it can best be resolved.
 2. All the information that is gathered during the War Room should be considered private to the chat and not to be shared with third parties. Relevant data should be pinned and updated by the Facilitator for the team to have handy.
 3. The team's first milestone is to assess the situation as quickly as possible: Confirming the reported information and determining how critical the incident is. A few questions to guide this process:
    - Is there confirmation from several team members/sources that the issue is valid? Are there example transactions that show the incident occurring? (Pin these in the War Room)

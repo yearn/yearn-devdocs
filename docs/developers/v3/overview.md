@@ -37,7 +37,7 @@ To read more about the periphery contracts or where to find the current versions
 
 ## Get started
 
-- [Integrating V3](/developers/v3/integrating_v3)
+- [Integrating V3](/developers/v3/Integrating_v3)
 - [Building your own V3 Strategy](/developers/v3/strategy_writing_guide)
 - [Deploying and managing a V3 Vault](/developers/v3/vault_management)
 - [Periphery Contracts](/developers/v3/periphery)

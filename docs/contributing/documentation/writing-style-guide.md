@@ -57,7 +57,7 @@ As such, Writers should focus on communicating concepts as clearly and succinctl
 - Exclamation points.
 - Footnotes.
 - References to deprecated names for Yearn Components.
-  - **Examples:** yyCRV or yUSD instead of yvCurve-Y (see: [Yearn Naming Conventions](https://docs.yearn.fi/developers/v2/naming-convention))
+  - **Examples:** yyCRV or yUSD instead of yvCurve-Y
 - Parentheses for stating additional information
   - **Incorrect:** Development Grants are larger sized ($5,000 to $50,000) grants aimed at individuals or teams building projects around vaults and the broader Yearn ecosystem.
   - **Correct:** Development Grants are generally larger sized grants, ranging from $5,000 to $50,000, aimed at individuals or teams building projects around vaults and the broader Yearn ecosystem.
@@ -117,10 +117,6 @@ The examples below use dollars, but the same rules apply to all global currencie
   - **Example:** “wETH is a token that represents Ether 1:1 and conforms to the ERC20 token standard.”
 - Similarly, when referring to exchange pairs:
   - Use: `wETH/DAI`
-
-#### Yearn Products
-
-Please see [Yearn Naming Conventions](https://docs.yearn.fi/developers/v2/naming-convention).
 
 #### Yearn
 
@@ -256,7 +252,7 @@ Review the respective Contribute.md for each repository where pertinent before s
 
 #### Contributor Tools
 
-- The [Contributor Tools Guide](https://docs.yearn.fi/contributing/contributor-tools) guide introduces the tools regularly used by Yearn contributors.
+- The [Contributor Tools Guide](/contributing/contributor-tools) guide introduces the tools regularly used by Yearn contributors.
 
 ### Express Interest
 

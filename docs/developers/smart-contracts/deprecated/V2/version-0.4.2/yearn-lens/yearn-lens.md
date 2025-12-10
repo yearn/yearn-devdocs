@@ -899,7 +899,7 @@ function positionsFromAdapter(
     ) external view returns (RegistryAdapter.Position[] memory)
 ```
 
-See: [registryAdapter.positionsOf](#positions-of)
+See: [registryAdapter.positionsOf](#positionsof)
 
 ##### positionsOf
 
@@ -912,7 +912,7 @@ function positionsOf(address account)
         returns (RegistryAdapter.Position[] memory)
 ```
 
-See: [registryAdapter.positionsOf](#positions-of)
+See: [registryAdapter.positionsOf](#positionsof)
 
 ##### assetsLength
 
@@ -921,7 +921,7 @@ function assetsLength() public view returns (uint256);
 ```
 
 Get the total number of assets for all Yearn family protocols
-See: [registryAdapter.assetsLength](#assets-length)
+See: [registryAdapter.assetsLength](#assetslength)
 
 ##### assetsAddresses
 
@@ -930,7 +930,7 @@ function assetsAddresses() public view returns (address[] memory);
 ```
 
 Get all addresses for all Yearn family assets
-See: [registryAdapter.assetsAddresses](#assets-addresses)
+See: [registryAdapter.assetsAddresses](#assetsaddresses)
 
 ##### allowances
 

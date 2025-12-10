@@ -46,14 +46,13 @@ If you're a developer, we need your help! Before you begin: Familiarize yourself
 
 If you are interested in working on a specific project, check out the list of Yearn products in the [General Resources](#general-resources) section below or check out our list of repos [here](https://github.com/orgs/yearn/repositories).
 
+If you're not sure where to start or have questions, it's best to join us on the #dev channel in [Discord](https://discord.gg/yearn).
 
-Previously, progress was on our (now deprecated) [GitHub Project Board](https://contribute.yearn.farm/good-first-issue.html). Now, it's better if you join us on the #dev channel in [Discord](https://discord.gg/yearn).
-
-If you want an overview of how our vaults work, please see the schema and accompanying descriptions in the [Vaults Overview](https://docs.yearn.fi/getting-started/products/yvaults/overview).
+If you want an overview of how our vaults work, please see the schema and accompanying descriptions in the [Vaults Overview](/getting-started/products/yvaults/overview).
 
 If you're wondering how **strategies** work, please check out [Yearn Vaults v2 Introduction](https://www.youtube.com/watch?v=C0fsYiCI54g) — hosted by our Yearn Devs. To start writing your own strategy, please check out our template [Yearn Brownie Mix](https://github.com/yearn/brownie-strategy-mix).
 
-If you want to integrate with Yearn, please visit our [Integration Guide](https://docs.yearn.fi/partners/integration_guide) and check out our [data services](/developers/data-services/yearn-data/).
+If you want to integrate with Yearn, please visit our [Integration Guide](/developers/v3/Integrating_v3) and check out our [data services](/developers/data-services/yearn-data/).
 
 #### Designers
 
@@ -72,17 +71,9 @@ The best introduction to V2 is the workshop done for Gitcoin Kernel Sessions. Ev
 
 When you decide to start, this reading material is going to come handy:
 
-- [Template for Strategies](https://github.com/yearn/brownie-strategy-mix)
-- [Vaults V2 Repository](https://github.com/yearn/yearn-vaults)
-- [How to set up coding environment for Yearn Strategies](https://sambacha.github.io/yearn-vaults/index.html)
-- [Mint your own DAI](https://medium.com/ethereum-grid/forking-ethereum-mainnet-mint-your-own-dai-d8b62a82b3f7)
-- [Dev Docs](https://docs.yearn.fi/developers/v2/getting-started)
-
-Once you have your strategy ready, this will guide you further down the road:
-
-- [Vault naming standard](https://docs.yearn.fi/developers/v2/naming-convention)
-- [Release process](https://docs.yearn.fi/developers/v2/DEPLOYMENT)
-- [Security check](https://docs.google.com/document/d/1hBKB73kJPQM71enrG8xoSFj7wxYmczUlgigyq2KkcTE/edit#heading=h.4ieoeyetfrxm)
+- [Guide to v3 strategies](/developers/v3/strategy_writing_guide)
+- [Template for Strategies](https://github.com/yearn/tokenized-strategy-foundry-mix)
+- [Vaults V3 Repository](https://github.com/yearn/yearn-vaults-v3)
 
 ##### Other reading material
 
@@ -96,27 +87,30 @@ This is complementary to the above, but it's not directly related to creating st
 
 ### Yearn Products
 
-- [yearn.fi](https://yearn.fi/), [GitHub](https://github.com/yearn/yearn-finance-v3)
-- [Yearn Documentation](https://docs.yearn.fi/), [GitHub](https://github.com/yearn/yearn-docs)
+- [yearn.fi](https://yearn.fi/), [GitHub](https://github.com/yearn/yearn.fi)
+- [Yearn Documentation](https://docs.yearn.fi/), [GitHub](https://github.com/yearn/yearn-devdocs)
 - [Yearn Governance Forum](https://gov.yearn.fi/)
-- [Yearn Snapshot Governance Voting](https://snapshot.org/#/ybaby.eth)
+- [Yearn Snapshot Governance Voting](https://snapshot.box/#/s:veyfi.eth)
 
 #### List of Yearn Tools
 
 - Yearn Subgraphs, [Ethereum](https://thegraph.com/explorer/subgraph?id=0xf50b705e4eaba269dfe954f10c65bd34e6351e0c-0&version=0xf50b705e4eaba269dfe954f10c65bd34e6351e0c-0-0&view=Overview), [Fantom](https://thegraph.com/hosted-service/subgraph/yearn/yearn-vaults-v2-fantom), [GitHub](https://github.com/yearn/yearn-vaults-v2-subgraph)
 - Yearn SDK, [GitHub](https://github.com/yearn/yearn-sdk)
-- [Yearn API](https://ydaemon.yearn.fi/1/vaults/all), [GitHub](https://github.com/yearn/ydaemon)
+- Yearn API, [GitHub](https://github.com/yearn/kong)
 - Yearn Discord FAQ Bot, [GitHub](https://github.com/danijelthales/yfi-faq-bot)
 
 ### Legacy Products and Websites
 
 - Former list of [open GitHub issues here](https://contribute.yearn.rocks/).
 - [v1 yearn.fi](https://v1.yearn.fi), [GitHub](https://github.com/yearn/iearn-finance)
-- [v2 yearn.fi](https://v2.yearn.fi), [GitHub](https://github.com/yearn/yearn-finance)
+- [v2 yearn.fi](https://yearn.fi/vaults), [GitHub](https://github.com/yearn/yearn-finance)
+- v3 yearn.fi, [GitHub](https://github.com/yearn/yearn-finance-v3)
 - [Yearn Borrow](https://yborrow.finance/), [GitHub](https://github.com/yearn/iborrow-finance)
 - [Yearn Governance](https://ygov.finance/), [GitHub](https://github.com/yearn/ygov-finance) - V1 Governance
+- [Legacy Yearn Snapshot Governance Voting](https://snapshot.org/#/ybaby.eth)
 - [Yearn Newsletter](https://yearn.substack.com/) - Weekly YFI newsletter
 - [Trackavault](https://trackavault.com/) - Track V2 Vaults
 - [Yearn Watch](https://yearn.watch/), [GitHub](https://github.com/yearn/yearn-watch)
 - [YFI Address Stats](https://www.yfistats.com/) - Yearn Financial Information
 - [yCosystem (Yearn Community Aggregator)](https://ycosystem.info/) - Repository Of Yearn Links
+- [GitHub Project Board](https://contribute.yearn.farm)

@@ -4,7 +4,7 @@ Status: Not recommended for retail use
 
 # yTrade
 
-## yTrade <a id="yTrade"></a>
+## yTrade
 
 [yTrade](https://ytrade.finance/) is a leveraged stablecoin exchange. **It enables users to borrow stablecoins with up to 1000x leverage.** Four stablecoins \(DAI, USDC, USDT, BUSD\) are currently enabled as collateral. Users deposit one of the four stablecoins identified above and receive another stablecoin on margin. Leverage tiers are: 75x, 100x, and 1000x.
 
