@@ -1,6 +1,6 @@
 # Proposal Process
 
-[veYFI](https://docs.yearn.fi/contributing/governance/veyfi) token holders control the Yearn ecosystem through off-chain proposals and votes via [Snapshot](https://snapshot.org/#/ybaby.eth). Proposals that generate majority support (>50% of the vote) are implemented by a 9-member multi-signature wallet, and 6 out of 9 wallet signers must sign for a change to be implemented. The [members of the multi-signature wallet](https://docs.yearn.fi/developers/security/multisig#members) were voted in by YFI holders and are subject to change from future governance votes.
+[veYFI](/contributing/governance/veyfi) token holders control the Yearn ecosystem through off-chain proposals and votes via [Snapshot](https://snapshot.org/#/ybaby.eth). Proposals that generate majority support (>50% of the vote) are implemented by a 9-member multi-signature wallet, and 6 out of 9 wallet signers must sign for a change to be implemented. The [members of the multi-signature wallet](/developers/security/multisig#members) were voted in by YFI holders and are subject to change from future governance votes.
 
 ## Discussion
 
@@ -22,7 +22,7 @@ Getting as much feedback as possible from the various communication channels is 
 
 #### Previous and current proposals
 
-- Previous: [Proposal Repository](https://docs.yearn.fi/contributing/governance/proposal-repository)
+- Previous: [Proposal Repository](/contributing/governance/proposal-repository)
 - Current: [Snapshot](https://snapshot.org/#/ybaby.eth)
 
 #### Requirements to pass proposals
@@ -49,7 +49,7 @@ The default template for proposals can be found on [GitHub](https://github.com/y
 
 #### How do I vote?
 
-- Holding [veYFI](https://docs.yearn.fi/contributing/governance/veyfi) enables you to vote on Yearn's [Snapshot](https://snapshot.org/#/ybaby.eth) page
+- Holding [veYFI](/contributing/governance/veyfi) enables you to vote on Yearn's [Snapshot](https://snapshot.org/#/ybaby.eth) page
 
 #### What’s the difference between voting for a poll on the forum and an off-chain vote?
 
@@ -61,4 +61,4 @@ Once a Snapshot votes have passed, changes will be implemented by Yearn's protoc
 
 ## Guardian Role
 
-Per [YIP-81](https://snapshot.box/#/s:veyfi.eth/proposal/0x6f3082db2cef3e0c254e569580d063cb14130a92d0bf1729bef342a386e419f2), the [Yearn Multisig](https://docs.yearn.fi/developers/security/multisig) (AKA yChad) serves in the Guardian role to steward and protect the Yearn Protocol and its participants. The Guardian role is defined as being able to **"nullify a proposal or governance decision but cannot make proposals"**.
+Per [YIP-81](https://snapshot.box/#/s:veyfi.eth/proposal/0x6f3082db2cef3e0c254e569580d063cb14130a92d0bf1729bef342a386e419f2), the [Yearn Multisig](/developers/security/multisig) (AKA yChad) serves in the Guardian role to steward and protect the Yearn Protocol and its participants. The Guardian role is defined as being able to **"nullify a proposal or governance decision but cannot make proposals"**.
