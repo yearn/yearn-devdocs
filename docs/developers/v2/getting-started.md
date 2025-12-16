@@ -33,7 +33,7 @@ This is the short version of the vetting process for a new strategy.
 
 When the strategy has more than 3M-10M in TVL, it should improve it's risk score.
 
-[Risk-score](https://docs.yearn.fi/resources/risks/risk-score) dimension: 1=best, 5=worst.
+[Risk-score](/developers/security/risks/risk-score) dimension: 1=best, 5=worst.
 
 1. Improve risk score in dimensions like external audit, additional security reviews
 [Internal Risk Dashboard](https://yearn.watch/risk)

@@ -6,13 +6,13 @@ Yearn and its ecosystem contain a number of different vaults and products that c
 
 There are 2 ways to get Yearn Vault Data: Via the [Kong API](/developers/data-services/yearn-data/#kong) that Yearn provides or manually by querying the smart contracts used to deploy and register Vaults. We will start by looking at how to do this manually to give an overview of how the system works.
 
-Yearn has a few versions of Vaults: [V1](/developers/v1/introduction), [V2](/developers/v2/getting-started), and [V3](/developers/v3/overview) and each will need to be queried slightly differently. We will start with V3.
+Yearn has a few versions of Vaults: [V1](/developers/smart-contracts/deprecated/V1/introduction), [V2](/developers/v2/getting-started), and [V3](/developers/v3/overview) and each will need to be queried slightly differently. We will start with V3.
 
 ## Getting V2 and V3 Vaults with Kong
 
 Being able to get the vaults manually is great, but here at Yearn we like to make things easy. So we have a public endpoint for the Yearn-built [Kong](/developers/data-services/yearn-data/#kong) indexer that you can query for all V2 and V3 Yearn vaults (and you can also get other 4626 vaults with it!).
 
-The public endpoint is: https://kong.yearn.farm/api/gql
+The public endpoint is: https://kong.yearn.fi/api/gql
 
 As of writing there is no need for an API key and the API can be queried with standard graphQL libraries The example below use Apollo client, but the concept should be similar for all libraries. The above link is also an explorer to play around with the endpoint. The documentation is still under construction, but below you will get the basics.
 
@@ -248,7 +248,7 @@ The APY you get from Kong is an accurate, backward-looking APY calculated from t
 
 :::
 
-Kong can also serve historical APYs. To get those you will need to use a timeseries. Here is an [example](https://kong.yearn.farm/api/gql?explorerURLState=N4IgJg9gxgrgtgUwHYBcQC4QAIsEcYIBOAnlgIIAOxAigSQBQA6SOOAJADYCGARgh%2BiwBlFIQCWSAOYBCZqyxsuYMIQQBnNYJHipc1pzFwxKQQElUe9lAhwKEJMhPDREyXoCUWYJawpD6ojF1JhZ5LG4%2BAQUI-h8cJRV1TQUE1Q048MNjQQMjFAzrW3tHHMK7BwtQnE9vKtYoAAsuCVMwDNSkjJiOAptyxwyKQIg2upw-RAyANy4OAh8AXz0FkAAaEBnxXg51DBBvQj1GEA70jCxjgAYAD0uAdgAWAEYAZgeyACY7gA4HgDF-gA2QE8QFQBAAEUBADNAd9fgBOF7fD4IhGXP7Ql4fJ4AVmOq0Yh1Cx26x0Exy4VAAtDwAO5galgfgoLjUigUNQEolHEBlYoWc7HBz5NY8kkgDhZUWCJ6XeXilYLIA):
+Kong can also serve historical APYs. To get those you will need to use a timeseries. Here is an [example](https://kong.yearn.fi/api/gql?explorerURLState=N4IgJg9gxgrgtgUwHYBcQC4QAIsEcYIBOAnlgIIAOxAigSQBQA6SOOAJADYCGARgh%2BiwBlFIQCWSAOYBCZqyxsuYMIQQBnNYJHipc1pzFwxKQQElUe9lAhwKEJMhPDREyXoCUWYJawpD6ojF1JhZ5LG4%2BAQUI-h8cJRV1TQUE1Q048MNjQQMjFAzrW3tHHMK7BwtQnE9vKtYoAAsuCVMwDNSkjJiOAptyxwyKQIg2upw-RAyANy4OAh8AXz0FkAAaEBnxXg51DBBvQj1GEA70jCxjgAYAD0uAdgAWAEYAZgeyACY7gA4HgDF-gA2QE8QFQBAAEUBADNAd9fgBOF7fD4IhGXP7Ql4fJ4AVmOq0Yh1Cx26x0Exy4VAAtDwAO5galgfgoLjUigUNQEolHEBlYoWc7HBz5NY8kkgDhZUWCJ6XeXilYLIA):
 
 ```markdown
   query ApyQuery(

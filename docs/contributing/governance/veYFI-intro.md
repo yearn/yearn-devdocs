@@ -8,7 +8,7 @@ Locking YFI for veYFI has 3 main benefits: Voting power, Yield boosts on funds d
 
 ### veYFI Voting
 
-veYFI is the governance token of Yearn. It is used to vote on YFI emissions distributions and other governance items in [snapshot](https://snapshot.org/#/veyfi.eth). For more information on Yearn's governance process, head over to the [governance section of the docs](https://docs.yearn.fi/contributing/governance/proposal-process).
+veYFI is the governance token of Yearn. It is used to vote on YFI emissions distributions and other governance items in [snapshot](https://snapshot.org/#/veyfi.eth). For more information on Yearn's governance process, head over to the [governance section of the docs](/contributing/governance/proposal-process).
 
 ### veYFI Yield Boosts on Yearn Deposits
 

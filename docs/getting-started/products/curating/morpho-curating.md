@@ -17,7 +17,7 @@ Morpho is a permissionless, isolated money market protocol where each market con
 Yearn's Morpho vaults are managed by role:
 
 - `Owner`: This role, which can update vault configurations, is assigned to Yearn's Security and Monitoring (SAM) 4/7 multisig, which has members from Yearn's different teams and is globally distributed.
-- `Curator`: The curator role is set to a zero-address (disabled) because all vault management will be handled by the `Owner` role.
+- `Curator`: The curator role is set to a multisig 2/3 to enable flexibility and speed in managing the vaults.
 - `Guardian`: This role that has the ability to pause a vault in case of emergency. Yearn's yChad multisig is the guardian for all our vaults. yChad is an optimal guardian because it has extensive experience managing similar, crucial roles for the rest of the Yearn ecosystem.
 - `Reallocator`: This role that has the ability to reallocate the vault's assets. Our bots (managed by EOA) hold the `reallocator` role.
 - `Timelock`: set to 72 hours to enable the Guardian and users to react if needed.

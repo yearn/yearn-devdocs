@@ -33,7 +33,7 @@ Stores the endorsed multi strategy and single strategy vaults. Can also deploy n
 
 - `newEndorsedVault(...)` Deploy and endorse a new multi strategy vault.
 
-Deploy a custom Registry using the [RegistryFactory](/developers/smart-contracts/V3/periphery/RegistryFactory)
+Deploy a custom Registry using the [RegistryFactory](/developers/smart-contracts/V3/Periphery/RegistryFactory)
 
 ### Accountant
 
@@ -49,7 +49,7 @@ Some possible non-standard uses of an accountant could be:
 - Setting up a Junior Tranche
 - Tiered fees based on % returns or TVL
 
-To deploy a generic account use the [Accountant Factory](/developers/smart-contracts/V3/periphery/AccountantFactory) and then call [`set_accountant`](https://github.com/yearn/yearn-vaults-v3/blob/9fbc614bbce9d7cbad42e284a15f0f43cf1a673f/contracts/VaultV3.vy#L1342) on the vault.
+To deploy a generic account use the [Accountant Factory](/developers/smart-contracts/V3/Periphery/AccountantFactory) and then call [`set_accountant`](https://github.com/yearn/yearn-vaults-v3/blob/9fbc614bbce9d7cbad42e284a15f0f43cf1a673f/contracts/VaultV3.vy#L1342) on the vault.
 
 ### Debt Allocator
 
@@ -63,11 +63,11 @@ The owner of the Debt allocator can set multiple parameters that will dictate wh
 - `maxDebtRatio` The max percent (in basis points) for the allocator to allow a strategy to have.
 - `minimumChange` The minimum amount in terms of the underlying asset to be moved to trigger a debt update.
 - `maxAcceptableBaseFee` The maximum the block.basefee is allowed to be during debt updates to save gas.
-- `maxDebtUpdateLoss` The value to send as [`maxLoss`](/developers/v3/integrating_v3#maxloss) for a debt update. Default is 1 (0.01%).
+- `maxDebtUpdateLoss` The value to send as [`maxLoss`](/developers/v3/Integrating_v3#maxloss) for a debt update. Default is 1 (0.01%).
 - `keeper` Allow an address to call the `update_debt` function.
 - `manager` Non-governance address that is allowed to update the strategies target and max debt ratios.
 
-You can deploy a single generic Debt Allocator using the [Debt Allocator Factory](/developers/v3/overview#protocol-address-provider) for any V3 vault.
+You can deploy a single generic Debt Allocator using the [Debt Allocator Factory](/developers/addresses/v3-contracts#protocol-addresses) for any V3 vault.
 
 ### Role Manager
 

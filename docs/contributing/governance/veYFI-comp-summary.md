@@ -291,17 +291,13 @@ For users who prefer not to manage individual locks and veYFI decay, **liquid lo
 
 ### Contract Addresses
 
-- **[Yearn veYFI Contract Addresses](/developers/addresses/veyfi-contract)**
+- **[Yearn veYFI Contract Addresses](/developers/addresses/veyfi-contracts)**
 
 ### Audits
 
 - **[veYFI StateMind Audit](https://github.com/yearn/yearn-security/blob/master/audits/202208_yAcademy_yearn-veyfi/yAcademy_-_yearn_veyfi_review.pdf)**
 - **[veYFI yAcademy Audit](https://github.com/yearn/yearn-security/blob/master/audits/202208_yAcademy_yearn-veyfi/yAcademy_-_yearn_veyfi_review.pdf)**
 - **[dYFI ChainSecurity Audit](https://old.chainsecurity.com/wp-content/uploads/2023/03/Yearn-Smart-Contract-Audit-oYfi-ChainSecurity.pdf)**
-
-### Other Resources
-
-- **[veCRV Explained](https://resources.curve.finance/vecrv/overview/)**
 
 ---
 
