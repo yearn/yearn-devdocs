@@ -86,8 +86,8 @@ Below are the relevant factories and registries for V3 contracts. The most recen
 | **VaultFactory 3.0.2** | <ContractAddress contractName = {['releaseRegistry', '3.0.2', 'factory']} /> |
 | **VaultFactory 3.0.3** | <ContractAddress contractName = {['releaseRegistry', '3.0.3', 'factory']} /> |
 | **VaultFactory 3.0.4** | <ContractAddress contractName = {['releaseRegistry', '3.0.4', 'factory']} /> |
-| **V3 Registry** <br/> registry.v3.ychad.eth | <ContractAddress contractName = {['yearnV3Contracts', 'registry']} /> |
-| **Legacy V3 Registry** <br/> | <ContractAddress contractName = {['yearnV3Contracts', 'legacyRegistry1']} /> |
+| **V3 Registry** <br/> registry.v3.ychad.eth | <ContractAddress contractName = {['yearnV3ContractsStable', 'registry']} /> |
+| **Legacy V3 Registry** <br/> | <ContractAddress contractName = {['yearnV3ContractsStable', 'legacyRegistry1']} /> |
 
 A full list of yVault V3 contracts can be viewed [here](/developers/addresses/v3-contracts). The addresses on that page are stored in a `constants.ts` file located in the yearn DevDocs repo. You can find it [here](https://github.com/yearn/yearn-devdocs/blob/master/src/ethereum/constants.ts).
 

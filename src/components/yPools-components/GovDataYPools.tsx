@@ -9,7 +9,6 @@ enum GovernanceState {
 
 const GovDataYPools = () => {
   const data = useContext(ContractDataContext)
-  console.log('GovDataYPools data:', data)
   const yPoolsGovernance = data?.['yPools Governance']
   const blockTimestamp = data?.['blockTimestamp']
 
