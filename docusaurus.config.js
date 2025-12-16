@@ -37,20 +37,7 @@ export default {
     experimental_faster: true,
     v4: true,
   },
-  themes: [
-    '@docusaurus/theme-mermaid',
-    [
-      require.resolve("@easyops-cn/docusaurus-search-local"),
-      {
-        hashed: true,
-        language: ["en"],
-        highlightSearchTermsOnTargetPage: true,
-        explicitSearchResultPath: true,
-        docsRouteBasePath: ['/getting-started', '/developers', '/contributing'],
-        indexBlog: false,
-      },
-    ],
-  ],
+  themes: ['@docusaurus/theme-mermaid'],
   themeConfig: {
     docs: {
       sidebar: {
@@ -188,6 +175,27 @@ export default {
     },
   ],
   plugins: [
+    [
+      require.resolve("@cmfcmf/docusaurus-search-local"),
+      {
+        indexDocs: true,
+        indexDocSidebarParentCategories: 2,
+        indexBlog: false,
+        indexPages: false,
+        language: "en",
+        style: undefined,
+        maxSearchResults: 10,
+        lunr: {
+          tokenizerSeparator: /[\s\-]+/,
+          b: 0.75,
+          k1: 1.2,
+          titleBoost: 5,
+          contentBoost: 1,
+          tagsBoost: 3,
+          parentCategoriesBoost: 2,
+        },
+      },
+    ],
     [
       '@docusaurus/plugin-content-docs',
       {
