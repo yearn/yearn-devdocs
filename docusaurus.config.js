@@ -37,7 +37,20 @@ export default {
     experimental_faster: true,
     v4: true,
   },
-  themes: ['@docusaurus/theme-mermaid'],
+  themes: [
+    '@docusaurus/theme-mermaid',
+    [
+      require.resolve("@easyops-cn/docusaurus-search-local"),
+      {
+        hashed: true,
+        language: ["en"],
+        highlightSearchTermsOnTargetPage: true,
+        explicitSearchResultPath: true,
+        docsRouteBasePath: ['/getting-started', '/developers', '/contributing'],
+        indexBlog: false,
+      },
+    ],
+  ],
   themeConfig: {
     docs: {
       sidebar: {
@@ -48,11 +61,6 @@ export default {
       additionalLanguages: ['solidity'],
       theme: prismThemes.github,
       darkTheme: prismThemes.dracula,
-    },
-    algolia: {
-      apiKey: process.env.ALGOLIA_API_KEY || 'UNKNOWN',
-      indexName: process.env.ALGOLIA_INDEX_NAME || 'UNKNOWN',
-      appId: process.env.ALGOLIA_APP_ID || 'UNKNOWN',
     },
     colorMode: {
       defaultMode: 'light',

@@ -45,11 +45,3 @@ jobs:
           -d "$(jq -n --arg title ':robot: Address Checks Failed' --arg body "$(cat issue_body.md)" '{title: $title, body: $body}')" \
           https://api.github.com/repos/yearn/yearn-devdocs/issues
           echo "Issue created"
-
-      - name: Trigger Algolia Recrawl
-        if: github.event_name != 'pull_request'
-        run: |
-          curl -H "Content-Type: application/json" \
-          -X POST \
-          --user ${{ secrets.CRAWLER_USER_ID }}:${{ secrets.CRAWLER_API_KEY }} \
-          "https://crawler.algolia.com/api/1/crawlers/${{ secrets.CRAWLER_ID }}/reindex"
