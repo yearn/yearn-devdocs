@@ -176,13 +176,13 @@ export default {
   ],
   plugins: [
     [
-      require.resolve("@cmfcmf/docusaurus-search-local"),
+      require.resolve('@cmfcmf/docusaurus-search-local'),
       {
         indexDocs: true,
-        indexDocSidebarParentCategories: 2,
+        indexDocSidebarParentCategories: 4,
         indexBlog: false,
         indexPages: false,
-        language: "en",
+        language: 'en',
         style: undefined,
         maxSearchResults: 10,
         lunr: {
