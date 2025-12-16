@@ -165,6 +165,74 @@ html[data-theme='light'] .DocSearch:hover {
   border: solid 1px rgba(128, 128, 128, 0.521);
 }
 
+/* ---LOCAL SEARCH (@cmfcmf/docusaurus-search-local / Algolia Autocomplete)--- */
+.navbar__items--right .dsla-search-wrapper {
+  width: 160px;
+}
+
+.dsla-search-wrapper,
+.aa-DetachedContainer {
+  --aa-primary-color-rgb: 0, 123, 255;
+  --aa-primary-color-alpha: 0.2;
+  --aa-search-input-height: 36px;
+}
+
+html[data-theme='light'] .dsla-search-wrapper {
+  --yearn-search-bg: #ebedf0;
+  --yearn-search-bg-hover: #fff;
+}
+html[data-theme='dark'] .dsla-search-wrapper {
+  --yearn-search-bg: #090a11;
+  --yearn-search-bg-hover: #000;
+}
+
+.dsla-search-wrapper .aa-DetachedSearchButton,
+.dsla-search-wrapper .aa-Form {
+  border-radius: 40px;
+  font-weight: 500;
+}
+
+.dsla-search-wrapper .aa-DetachedSearchButton,
+.dsla-search-wrapper .aa-Form {
+  background-color: var(--yearn-search-bg);
+}
+.dsla-search-wrapper .aa-Form:focus-within {
+  background-color: var(--yearn-search-bg-hover);
+}
+
+html[data-theme='dark'] .dsla-search-wrapper .aa-DetachedSearchButton,
+html[data-theme='dark'] .dsla-search-wrapper .aa-Form {
+  border: solid 2px var(--ifm-color-emphasis-300);
+  color: var(--ifm-color-emphasis-300);
+}
+html[data-theme='dark'] .dsla-search-wrapper .aa-Label svg,
+html[data-theme='dark'] .dsla-search-wrapper .aa-DetachedSearchButtonIcon {
+  color: var(--ifm-color-emphasis-300);
+}
+
+html[data-theme='light'] .dsla-search-wrapper .aa-DetachedSearchButton,
+html[data-theme='light'] .dsla-search-wrapper .aa-Form {
+  border: solid 2px var(--ifm-color-emphasis-500);
+  color: var(--ifm-color-emphasis-500);
+}
+html[data-theme='light'] .dsla-search-wrapper .aa-Label svg,
+html[data-theme='light'] .dsla-search-wrapper .aa-DetachedSearchButtonIcon {
+  color: var(--ifm-color-emphasis-500);
+}
+
+html[data-theme='dark'] .dsla-search-wrapper .aa-DetachedSearchButton:hover,
+html[data-theme='dark'] .dsla-search-wrapper .aa-Form:not(:focus-within):hover,
+html[data-theme='light'] .dsla-search-wrapper .aa-DetachedSearchButton:hover,
+html[data-theme='light'] .dsla-search-wrapper .aa-Form:not(:focus-within):hover {
+  border-color: rgb(var(--aa-primary-color-rgb));
+}
+
+.dsla-search-wrapper .aa-DetachedSearchButtonPlaceholder,
+.dsla-search-wrapper .aa-DetachedSearchButtonQuery {
+  font-size: 1rem;
+  padding: 0 12px 0 6px;
+}
+
 /* ---NAVBAR--- */
 .navbar {
   box-shadow: none;

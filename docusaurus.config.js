@@ -49,11 +49,6 @@ export default {
       theme: prismThemes.github,
       darkTheme: prismThemes.dracula,
     },
-    algolia: {
-      apiKey: process.env.ALGOLIA_API_KEY || 'UNKNOWN',
-      indexName: process.env.ALGOLIA_INDEX_NAME || 'UNKNOWN',
-      appId: process.env.ALGOLIA_APP_ID || 'UNKNOWN',
-    },
     colorMode: {
       defaultMode: 'light',
       disableSwitch: false,
@@ -180,6 +175,27 @@ export default {
     },
   ],
   plugins: [
+    [
+      require.resolve('@cmfcmf/docusaurus-search-local'),
+      {
+        indexDocs: true,
+        indexDocSidebarParentCategories: 4,
+        indexBlog: false,
+        indexPages: false,
+        language: 'en',
+        style: undefined,
+        maxSearchResults: 10,
+        lunr: {
+          tokenizerSeparator: /[\s\-]+/,
+          b: 0.75,
+          k1: 1.2,
+          titleBoost: 5,
+          contentBoost: 1,
+          tagsBoost: 3,
+          parentCategoriesBoost: 2,
+        },
+      },
+    ],
     [
       '@docusaurus/plugin-content-docs',
       {

@@ -23,6 +23,7 @@
   },
   "packageManager": "bun@1.1.0",
   "dependencies": {
+    "@cmfcmf/docusaurus-search-local": "^2.0.1",
     "@docusaurus/core": "3.9.2",
     "@docusaurus/faster": "^3.9.2",
     "@docusaurus/preset-classic": "3.9.2",
