@@ -33,7 +33,7 @@ Yearn has two ways to earn yield on your yYB; depositing to the `YearnBoostedSta
 
 ## Links
 
-* [Contract Addresses](https://docs.yearn.fi/developers/addresses/yyb-contracts)
+* [Contract Addresses](/developers/addresses/yyb-contracts)
 * [yYB UI](https://yyb.yearn.fi/)
 * [UI Source Code](https://github.com/yearn/ylockers-ui)
 * [Yearn Boosted Staker Source Code](https://github.com/yearn/yearn-boosted-staker)

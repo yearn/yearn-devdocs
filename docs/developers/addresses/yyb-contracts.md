@@ -15,4 +15,4 @@ A list of deployed yYB contracts.
 | YB Token | [0x01791F726B4103694969820be083196cC7c045fF](https://etherscan.io/address/0x01791F726B4103694969820be083196cC7c045fF#code) |
 | yYB Token | [0x22222222aEA0076fCA927a3f44dc0B4FdF9479D6](https://etherscan.io/address/0x22222222aEA0076fCA927a3f44dc0B4FdF9479D6#code) |
 
-<PrettyLink>[yYB Docs](/getting-started/products/ylockers/yYB/overview)</PrettyLink>
+<PrettyLink>[yYB Docs](/getting-started/products/ylockers/yyb/overview)</PrettyLink>

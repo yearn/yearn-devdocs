@@ -2,7 +2,7 @@
 
 ## When did yYB launch?
 
-The contracts are live. Week 0 began on Thursday, December 18th, 2025. You can find relevant addresses [here](https://docs.yearn.fi/developers/addresses/yyb-contracts).
+The contracts are live. Week 0 began on Thursday, December 18th, 2025. You can find relevant addresses [here](/developers/addresses/yyb-contracts).
 
 ## Where can I buy yYB?
 
@@ -23,7 +23,7 @@ If you have an existing veYB position, you can convert your veYB to yYB at a 1:1
 
 ## What is YBS?
 
-YearnBoostedStaker (YBS) allows yYB holders to earn rewards in stablecoins (crvUSD) - compared to the auto-compounding version of yYB (yvyYB). You can read more about how each option works [here](https://docs.yearn.fi/getting-started/products/ylockers/overview#ylocker-products).
+YearnBoostedStaker (YBS) allows yYB holders to earn rewards in stablecoins (crvUSD) - compared to the auto-compounding version of yYB (yvyYB). You can read more about how each option works [here](/getting-started/products/ylockers/overview#ylocker-products).
 
 ## Should I stake my yYB directly or auto-compound it in the vault?
 
