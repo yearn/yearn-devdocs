@@ -104,6 +104,28 @@ module.exports = {
               ],
             },
             {
+              type: 'category',
+              label: 'yYB',
+              link: {
+                type: 'doc',
+                id: 'products/ylockers/yyb/overview',
+              },
+              items: [
+                'products/ylockers/yyb/yyb-faq',
+                'products/ylockers/yyb/yyb-guide',
+                {
+                  type: 'link',
+                  label: 'yYB Contract Addresses →',
+                  href: '/developers/addresses/yYB-contracts',
+                },
+                {
+                  type: 'link',
+                  label: 'yYB dApp',
+                  href: 'https://yyb.yearn.fi/',
+                },
+              ],
+            },
+            {
               type: 'doc',
               label: 'yPRISMA',
               id: 'products/ylockers/yprisma/overview',

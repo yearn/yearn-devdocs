@@ -164,6 +164,11 @@ export default {
         },
         {
           type: 'doc',
+          label: 'yYB',
+          id: 'addresses/yyb-contracts',
+        },
+        {
+          type: 'doc',
           label: 'yETH',
           id: 'addresses/ypools-contracts',
         },
