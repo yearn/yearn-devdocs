@@ -116,7 +116,7 @@ module.exports = {
                 {
                   type: 'link',
                   label: 'yYB Contract Addresses →',
-                  href: '/developers/addresses/yYB-contracts',
+                  href: '/developers/addresses/yyb-contracts',
                 },
                 {
                   type: 'link',

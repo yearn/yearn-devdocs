@@ -37,21 +37,19 @@ V2 and V3 vaults implement strategies differently, so it is important to get fam
 
 ### Frontend Integrations
 
-Yearn uses a JavaScript SDK for formatting protocol data and generating transactions for reading/writing protocol data. Yearn SDK integrates several components, both on-chain and off-chain.
-
-[The repository here](https://github.com/turtlemoji/yearn-sdk-examples) contains a live preview and example usage of the Yearn SDK. Explore this codebase to learn how to start interacting with the Yearn protocol in your own app.
+Yearn uses Kong and yDaemon as frontend data sources. Old Yearn SDKs existed, but as of late 2025, only yDaemon and Kong are actively used.
 
 Check out the [Frontend Integrations](front-end-development) section of this documentation for more information about Frontend Integrations.
 
 ### Data Sources
 
+[**Kong**](https://kong.yearn.fi/api/gql) is an API to submit graphql queries for Yearn data.
+
+- Learn more about kong [here](/developers/data-services/kong) and in the [README](https://github.com/yearn/kong).
+
 [**yDaemon**](https://ydaemon.yearn.fi/) is a public API for a broad range of Vault data.
 
-- Learn more about yDaemon in the [README](https://github.com/yearn/ydaemon)
-
-**The Graph** - Query contract data with GQL using the Yearn subgraphs
-
-- Learn more about the Graph and Subgraphs that Yearn provides [here](./data-services/subgraph-info).
+- Learn more about yDaemon [here](/developers/data-services/ydaemon) and in the [README](https://github.com/yearn/ydaemon)
 
 ## Data Analysis
 
