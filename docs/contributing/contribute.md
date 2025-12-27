@@ -92,14 +92,12 @@ This is complementary to the above, but it's not directly related to creating st
 - [Yearn Governance Forum](https://gov.yearn.fi/)
 - [Yearn Snapshot Governance Voting](https://snapshot.box/#/s:veyfi.eth)
 
-#### List of Yearn Tools
+#### List of Yearn Data Tools
 
-- Yearn Subgraphs, [Ethereum](https://thegraph.com/explorer/subgraph?id=0xf50b705e4eaba269dfe954f10c65bd34e6351e0c-0&version=0xf50b705e4eaba269dfe954f10c65bd34e6351e0c-0-0&view=Overview), [Fantom](https://thegraph.com/hosted-service/subgraph/yearn/yearn-vaults-v2-fantom), [GitHub](https://github.com/yearn/yearn-vaults-v2-subgraph)
-- Yearn SDK, [GitHub](https://github.com/yearn/yearn-sdk)
-- Yearn API, [GitHub](https://github.com/yearn/kong)
-- Yearn Discord FAQ Bot, [GitHub](https://github.com/danijelthales/yfi-faq-bot)
+- yDaemon API, [GitHub](https://github.com/yearn/ydaemon)
+- Kong API, [GitHub](https://github.com/yearn/kong)
 
-### Legacy Products and Websites
+### Old Legacy Products and Websites
 
 - Former list of [open GitHub issues here](https://contribute.yearn.rocks/).
 - [v1 yearn.fi](https://v1.yearn.fi), [GitHub](https://github.com/yearn/iearn-finance)

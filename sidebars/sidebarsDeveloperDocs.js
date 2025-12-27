@@ -81,15 +81,8 @@ export default {
             id: 'data-services/yearn-data',
           },
           items: [
-            {
-              type: 'category',
-              label: 'Subgraph',
-              link: {
-                type: 'doc',
-                id: 'data-services/subgraph-info',
-              },
-              items: ['data-services/entities', 'data-services/queries'],
-            },
+            'data-services/kong',
+            'data-services/ydaemon',
             'data-services/yearn-lens',
           ],
         },
