@@ -1,0 +1,36 @@
+.copyToolbar {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 0;
+  padding-left: var(
+    --doc-copy-padding-horizontal,
+    calc(var(--ifm-toc-padding-horizontal) * 2)
+  );
+  padding-right: var(
+    --doc-copy-padding-horizontal,
+    calc(var(--ifm-toc-padding-horizontal) * 2)
+  );
+}
+
+.copyButton {
+  gap: 0.5rem;
+  max-width: none;
+  border: none;
+  background: transparent;
+  font-weight: 400;
+  padding: 0.25rem 0;
+  color: var(--ifm-font-color-base);
+  text-decoration: none;
+}
+
+.copyButton.copyButton:hover {
+  background: transparent;
+  color: var(--ifm-color-primary);
+  text-decoration: none;
+}
+
+.copyButton.copyButton:focus-visible {
+  box-shadow: none;
+  text-decoration: underline;
+}

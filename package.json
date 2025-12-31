@@ -7,7 +7,7 @@
     "get-branch-name": "git rev-parse --abbrev-ref HEAD > .branch-name",
     "start": "bun run runAddressCheck && bun run get-branch-name && BRANCH_NAME=$(cat .branch-name) IS_DEV=true docusaurus start",
     "start-no-check": "bun run get-branch-name && BRANCH_NAME=$(cat .branch-name) IS_DEV=true docusaurus start",
-    "build": "docusaurus build",
+    "build": "docusaurus build && bun scripts/generateAiArtifacts.ts",
     "swizzle": "docusaurus swizzle",
     "deploy": "docusaurus deploy",
     "clear": "docusaurus clear",
@@ -45,6 +45,8 @@
     "remark-math": "^6.0.0",
     "solc": "^0.8.31",
     "solidity-docgen": "^0.5.17",
+    "turndown": "^7.1.2",
+    "turndown-plugin-gfm": "^1.0.2",
     "viem": "^2.41.2"
   },
   "browserslist": {
