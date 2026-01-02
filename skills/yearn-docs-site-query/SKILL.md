@@ -7,12 +7,64 @@ description: Query and cite Yearn documentation via the hosted docs site's AI ex
 
 ## Inputs
 
-- `BASE`: The docs site origin to query (e.g. a Vercel preview or `https://docs.yearn.fi`).
+- `BASE` (optional): The docs site origin to query (e.g. a Vercel preview). Defaults to `https://docs.yearn.fi`.
 
 Example:
 
 ```text
 BASE=https://docs.yearn.fi
+```
+
+Tip: if you use a bash one-liner like `BASE=... python3 ... --base "$BASE" ...`, `$BASE` expands before the assignment takes effect. Prefer either `--base 'https://...'` directly, or `export BASE=...` first, or omit `--base` and rely on the default.
+
+## One-approval workflow (recommended)
+
+To avoid repeated network approvals in restricted environments, use the bundled helper. It auto-checks for updates (conditional request) and only downloads `docs.jsonl` when it has changed, so you typically need only **one approval per invocation**:
+
+```bash
+python3 skills/yearn-docs-site-query/scripts/yearn_docs_query.py --base "$BASE" search "yCHAD multisig signers"
+```
+
+If you want absolutely no network calls, force offline mode (no network at all):
+
+```bash
+python3 skills/yearn-docs-site-query/scripts/yearn_docs_query.py --base "$BASE" --offline search "veYFI gauge"
+```
+
+To fetch a page by route:
+
+```bash
+python3 skills/yearn-docs-site-query/scripts/yearn_docs_query.py --base "$BASE" get /developers/security/multisig
+```
+
+To clear cached files for that `BASE`:
+
+```bash
+python3 skills/yearn-docs-site-query/scripts/yearn_docs_query.py --base "$BASE" cleanup
+```
+
+To see whether your cached data is stale (age/etag/manifest info):
+
+```bash
+python3 skills/yearn-docs-site-query/scripts/yearn_docs_query.py --base "$BASE" status
+```
+
+To check the remote for updates and refresh the cache if needed (will require network approval in restricted environments):
+
+```bash
+python3 skills/yearn-docs-site-query/scripts/yearn_docs_query.py --base "$BASE" --check-updates status
+```
+
+To skip update checks and use cached data (if present):
+
+```bash
+python3 skills/yearn-docs-site-query/scripts/yearn_docs_query.py --base "$BASE" --no-auto-update search "multisig signers"
+```
+
+To force a full re-download (even if unchanged):
+
+```bash
+python3 skills/yearn-docs-site-query/scripts/yearn_docs_query.py --base "$BASE" --refresh status
 ```
 
 ## Endpoints (relative to `BASE`)
