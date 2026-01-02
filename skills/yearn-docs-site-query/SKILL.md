@@ -12,7 +12,7 @@ description: Query and cite Yearn documentation via the hosted docs site's AI ex
 Example:
 
 ```text
-BASE=https://yearn-docs-git-feat-copy-page-content-to-markdown-yearn.vercel.app
+BASE=https://docs.yearn.fi
 ```
 
 ## Endpoints (relative to `BASE`)
@@ -66,4 +66,3 @@ When you need exact formatting, tables, or the original MDX:
 
 - Cache `GET {BASE}/ai/docs.jsonl` per session.
 - If you can, revalidate with `ETag`/`If-None-Match` on subsequent runs.
-
