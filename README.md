@@ -99,6 +99,15 @@ This command generates static content into the `build` directory and can be serv
 bun run build
 ```
 
+## AI / agent exports
+
+The build also generates AI-friendly artifacts that will be served by the hosted site:
+
+- `build/llms.txt` (served as `/llms.txt`)
+- `build/ai/manifest.json` (served as `/ai/manifest.json`)
+- `build/ai/docs.jsonl` (served as `/ai/docs.jsonl`)
+- `build/ai/raw/` (served as `/ai/raw/`)
+
 ## Configure .env
 
 The docs site pulls data from on-chain smart contracts, so an API key is necessary. The default is an Alchemy API key so the easiest thing to do is get a free api key from them at https://www.alchemy.com/pricing.
