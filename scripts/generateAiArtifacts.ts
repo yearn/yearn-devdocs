@@ -9,8 +9,9 @@ type Heading = {
 }
 
 type DocRecordV1 = {
-  schemaVersion: 1
+  schemaVersion: 2
   url: string
+  canonicalUrl?: string
   route: string
   title: string
   headings: Heading[]
@@ -19,11 +20,12 @@ type DocRecordV1 = {
   updatedAt: string
   source: {
     htmlPath: string
+    rawPath?: string
   }
 }
 
 type ManifestV1 = {
-  schemaVersion: 1
+  schemaVersion: 2
   generatedAt: string
   siteOrigin: string
   docCount: number
@@ -92,6 +94,21 @@ function extractCanonicalUrl(html: string) {
   if (!match) return undefined
   const href = extractAttr(match[0], 'href')
   return href
+}
+
+function resolveSiteOrigin() {
+  const explicit = process.env.DOCS_URL?.trim()
+  if (explicit) return explicit.replace(/\/+$/, '')
+
+  const vercel = process.env.VERCEL_URL?.trim()
+  if (vercel) {
+    const withProto = vercel.startsWith('http://') || vercel.startsWith('https://')
+      ? vercel
+      : `https://${vercel}`
+    return withProto.replace(/\/+$/, '')
+  }
+
+  return 'https://docs.yearn.fi'
 }
 
 function extractDocHtml(html: string) {
@@ -263,6 +280,26 @@ function copyRawDocs(docsDir: string, rawOutDir: string) {
   }
 }
 
+function findRawSourceRelativePath(docsDir: string, relHtmlPath: string) {
+  const rel = relHtmlPath.replace(/\\/g, '/')
+
+  const candidates: string[] = []
+  if (rel.endsWith('/index.html')) {
+    const dir = rel.slice(0, -'/index.html'.length)
+    candidates.push(`${dir}.md`, `${dir}.mdx`, `${dir}/index.md`, `${dir}/index.mdx`)
+  } else if (rel.endsWith('index.html')) {
+    const base = rel.slice(0, -'index.html'.length).replace(/\/+$/, '')
+    candidates.push(`${base}.md`, `${base}.mdx`, `${base}/index.md`, `${base}/index.mdx`)
+  }
+
+  for (const candidate of candidates) {
+    const full = path.join(docsDir, candidate)
+    if (fs.existsSync(full) && fs.statSync(full).isFile()) return candidate
+  }
+
+  return undefined
+}
+
 function main() {
   const workspaceRoot = process.cwd()
   const buildDir = path.join(workspaceRoot, 'build')
@@ -276,10 +313,7 @@ function main() {
     )
   }
 
-  const siteOrigin = (process.env.DOCS_URL ?? 'https://docs.yearn.fi').replace(
-    /\/+$/,
-    ''
-  )
+  const siteOrigin = resolveSiteOrigin()
 
   fs.rmSync(outDir, { recursive: true, force: true })
   ensureDir(outDir)
@@ -303,19 +337,13 @@ function main() {
     if (!html.includes('docs-doc-page')) continue
     if (!html.includes('theme-doc-markdown')) continue
 
-    const canonical = extractCanonicalUrl(html)
-    const pageUrl =
-      canonical && canonical.startsWith('http')
-        ? canonical
-        : canonical
-          ? absoluteUrl(siteOrigin, canonical)
-          : undefined
+    const canonicalUrl = extractCanonicalUrl(html)
 
     const relHtmlPath = path.relative(buildDir, htmlPath).replace(/\\/g, '/')
 
     const route =
-      pageUrl && pageUrl.startsWith(siteOrigin)
-        ? pageUrl.slice(siteOrigin.length) || '/'
+      canonicalUrl && canonicalUrl.startsWith(siteOrigin)
+        ? canonicalUrl.slice(siteOrigin.length) || '/'
         : (() => {
             const rel = relHtmlPath.replace(/index\.html$/i, '')
             return `/${rel}`.replace(/\\/g, '/').replace(/\/+$/, '') || '/'
@@ -326,20 +354,23 @@ function main() {
 
     const title = extractTitle(html, docHtml)
     const headings = extractHeadings(docHtml)
-    const absUrl = pageUrl ?? absoluteUrl(siteOrigin, route)
-    const text = htmlToPlainText(docHtml, siteOrigin, absUrl)
+    const url = absoluteUrl(siteOrigin, route)
+    const rawRel = findRawSourceRelativePath(docsDir, relHtmlPath)
+    const rawPath = rawRel ? `/ai/raw/${rawRel}` : undefined
+    const text = htmlToPlainText(docHtml, siteOrigin, url)
     const stat = fs.statSync(htmlPath)
 
     const record: DocRecordV1 = {
-      schemaVersion: 1,
-      url: absUrl,
+      schemaVersion: 2,
+      url,
+      canonicalUrl: canonicalUrl && canonicalUrl.startsWith('http') ? canonicalUrl : undefined,
       route,
       title,
       headings,
       text,
       sha256: sha256(text),
       updatedAt: stat.mtime.toISOString(),
-      source: { htmlPath: relHtmlPath },
+      source: { htmlPath: relHtmlPath, rawPath },
     }
 
     docsJsonlStream.write(`${JSON.stringify(record)}\n`)
@@ -351,7 +382,7 @@ function main() {
   copyRawDocs(docsDir, rawOutDir)
 
   const manifest: ManifestV1 = {
-    schemaVersion: 1,
+    schemaVersion: 2,
     generatedAt: new Date().toISOString(),
     siteOrigin,
     docCount,
@@ -366,7 +397,9 @@ function main() {
   fs.writeFileSync(
     path.join(buildDir, 'llms.txt'),
     [
-      '# Yearn Docs (docs.yearn.fi)',
+      '# Yearn Docs',
+      '',
+      `Site: ${siteOrigin}`,
       '',
       'AI-readable exports:',
       '- Manifest: /ai/manifest.json',
