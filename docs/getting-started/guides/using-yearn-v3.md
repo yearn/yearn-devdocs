@@ -1,6 +1,6 @@
 # Using Yearn's V3 Vaults
 
-So you want to deposit into on of Yearn's V3 Vaults? You are in the right spot. Keep reading for a full walkthrough on how to use them.
+So you want to deposit into one of Yearn's V3 Vaults? You are in the right spot. Keep reading for a full walkthrough on how to use them.
 
 ## Connect your Wallet
 
@@ -14,7 +14,7 @@ There is a big button, anon!
 
 ![image](/img/guides/using-yearn/v3/image2.png)
 
-Our V3 vaults are currently on Ethereum, Arbitrum, and Polygon with more to come. Click on this button to select the network you would like to interact with:
+Our V3 vaults are currently on Ethereum, Arbitrum, Polygon, Base, and Katana, with more chains to come. Click on this button to select the network you would like to interact with:
 
 ![image](/img/guides/using-yearn/v3/image3.png)
 
@@ -57,12 +57,4 @@ When you're ready to withdraw:
 
 ## Tools to track your funds
 
-If you would like to see how your USD balance changes while your assets are in a vault, connect your wallet to [Zapper.xyz](https://zapper.xyz) or a similar portfolio-tracking product. This is also the easiest way to tell how much profit the vault has made for you.
-
-Your balance WILL NOT increase continuously. Profit will be distributed to your share of the vault when the harvest() function is called, which happens on a fluctuating basis.
-
-Community resources to monitor your returns:
-
-- [Zapper](https://zapper.xyz/)
-- [Zerion](https://app.zerion.io/)
-- [DeBank](https://debank.com/)
+If you would like to see how your USD balance changes while your assets are in a vault, connect your wallet to [DeBank](https://debank.com/), [Zerion](https://app.zerion.io/), [Zapper.xyz](https://zapper.xyz), or a similar portfolio-tracking product. This is also the easiest way to tell how much profit the vault has made for you.
