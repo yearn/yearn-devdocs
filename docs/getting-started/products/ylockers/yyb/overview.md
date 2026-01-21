@@ -1,5 +1,7 @@
 # yYB Overview
 
+![image](/img/product-pages/yyb-banner.png)
+
 ## What is yYB?
 
 yYB is Yearn's veYB yLocker product. It is designed to tokenize the different benefits of a [veYB position](https://docs.yieldbasis.com/user/veyb) in a simple, user-friendly way. Let's review the basics of liquid locker tokens like yYB:
