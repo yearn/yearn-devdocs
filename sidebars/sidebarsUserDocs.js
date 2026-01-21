@@ -113,6 +113,7 @@ module.exports = {
               items: [
                 'products/ylockers/yyb/yyb-faq',
                 'products/ylockers/yyb/yyb-guide',
+                'products/ylockers/yyb/yyb-migration-guide',
                 {
                   type: 'link',
                   label: 'yYB Contract Addresses →',
