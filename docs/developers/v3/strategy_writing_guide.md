@@ -338,7 +338,7 @@ function availableDepositLimit(
     **Returns**: NONE.
 
     **Good to Know**:
-    - This can only be called once a strategy is shut down.
+    - This can only be called after a strategy is shut down.
     - The `_amount` can be more than is available to pull.
     - The totalAssets will be the same before and after this call.
 

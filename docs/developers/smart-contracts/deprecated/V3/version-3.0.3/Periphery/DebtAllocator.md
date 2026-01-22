@@ -540,7 +540,7 @@ function getStrategyMaxRatio(address _vault, address _strategy) public view virt
 
 ### isCurrentBaseFeeAcceptable
 
-Returns wether or not the current base fee is acceptable
+Returns whether or not the current base fee is acceptable
 based on the `maxAcceptableBaseFee`.
 
 ```solidity

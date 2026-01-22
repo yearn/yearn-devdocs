@@ -59,17 +59,17 @@ Yearn SDK integrates several components, both on-chain and off-chain.
 ### Historical APY and TVL
 
 - Yearn Exporter provides a simple backend solution for storing real-time stats from yearn products.
-- Metrics are stored in a timeseries database and will be exposed by an api, accessible by SDK and third-party.
+- Metrics are stored in a time series database and will be exposed by an API, accessible by SDK and third-party.
 
-### SDK, aggregator of many datasources
+### SDK, aggregator of many data sources
 
 - SDK will provide a simple interface for all integrators, including ourselves.
-- Read methods will seamlessly integrate with all datasources, while keeping coherent datastructures.
+- Read methods will seamlessly integrate with all data sources, while keeping coherent data structures.
 - Write methods talk directly to assets on chain. Execution of write transactions will trigger refresh events so data freshness of frontend (or other integration platforms) will still be preserved.
 
 ### Historical User Earnings
 
-- Yearn Subgraph leverages thegraph to store historical user data that can be aggregated to display historical earnings.
+- Yearn Subgraph leverages The Graph to store historical user data that can be aggregated to display historical earnings.
 
 ### Metadata
 

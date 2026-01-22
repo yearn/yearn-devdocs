@@ -160,7 +160,7 @@ function setCustomVaultBaseFee(address _vault, address _strategy, uint256 _baseF
 
 ### strategyReportTrigger
 
-Returns wether or not a strategy is ready for a keeper to call `report`.
+Returns whether or not a strategy is ready for a keeper to call `report`.
 
 *Will first check if a custom trigger is set. If not it will use
 the default trigger flow.*
@@ -217,7 +217,7 @@ function defaultStrategyReportTrigger(address _strategy) public view virtual ret
 
 ### vaultReportTrigger
 
-Return wether or not a report should be called on a vault for
+Return whether or not a report should be called on a vault for
 a specific strategy.
 
 *Will first check if a custom trigger is set. If not it will use
@@ -323,7 +323,7 @@ function getCurrentBaseFee() public view virtual returns (uint256);
 
 ### isCurrentBaseFeeAcceptable
 
-Returns wether or not the current base fee is acceptable
+Returns whether or not the current base fee is acceptable
 based on the default `acceptableBaseFee`.
 
 *Can be used in custom triggers to easily still use this contracts
