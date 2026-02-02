@@ -8,6 +8,7 @@ Welcome! This is the spot to be for all things related to building products on, 
 
 - [Solidity](https://docs.soliditylang.org/en/v0.8.6/index.html)
 - [Brownie](https://eth-brownie.readthedocs.io/en/stable/)
+- [Moccasin](https://github.com/Cyfrin/moccasin) (alternative)
 - [ethers.js](https://docs.ethers.io/v5/)
 - [Web3.js](https://web3js.readthedocs.io/en/v1.4.0/)
 - [Ganache](https://trufflesuite.com/ganache/)
