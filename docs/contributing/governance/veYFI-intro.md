@@ -1,5 +1,12 @@
 # veYFI Overview
 
+:::warning Deprecated
+This page documents the legacy **veYFI + dYFI gauge** system.
+
+For the current governance staking UX, see [stYFI](/contributing/governance/styfi).
+If you have a legacy veYFI lock, see [Migrate from veYFI](/contributing/governance/migrating-from-veyfi).
+:::
+
 veYFI is a time-locked version of the YFI token that grants access to governance, yield boosts, and rewards. It is based on [Curve's vote escrow (ve) model](https://resources.curve.finance/crv-token/vecrv/) and each YFI token can be locked for up to 4 years (technically longer, but there is no added voting or earning power gained by locking for more than 4 years). The length of lock determines how much veYFI is received per locked YFI. One YFI locked for four+ years converts to one veYFI. This relationship scales linearly, so one YFI locked for two years converts to 0.5 veYFI, one year converts to 0.25 veYFI, and so forth.
 
 ## veYFI Benefits

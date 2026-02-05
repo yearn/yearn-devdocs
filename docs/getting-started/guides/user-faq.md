@@ -36,7 +36,7 @@ veYFI rewards are variable depending on how much veYFI your wallet holds. If you
 
 If you don't have veYFI, you can deposit and stake your tokens using liquid lockers. By doing this you use the liquid locker's veYFI to boost your deposit.
 
-Read more about veYFI, boosts, dYFI and liquid lockers on the [veYFI page](/contributing/governance/veYFI-intro)
+Read more about the current governance staking system on the [stYFI page](/contributing/governance/styfi). Legacy veYFI/dYFI docs are still available under [veYFI (Deprecated)](/contributing/governance/veYFI-intro).
 
 And remember, you have to consider transaction costs when using Yearn. If using Ethereum mainnet, prices for transactions vary from a few dollars to tens or hundreds of dollars, depending on chain congestion (Yearn has no control over this). If you are depositing lower amounts (\<$500-1000), you may want to consider using Yearn on an L2 so fees don't negate your interest earned.
 
@@ -203,7 +203,7 @@ Liquid Lockers are products built on top of Yearn's governance and incentive con
 
 ### For Vault Depositors
 
-Yearn has an incentives system to encourage deposits in some of its most important pools. Yearn governance participants lock YFI (it becomes veYFI) and can vote on which pools get incentives and how much. These rewards are then given to depositors in the rewarded vaults, but the amount of rewards is heavily dependent on whether a user has locked YFI or not. You can read more about this [here](/contributing/governance/veYFI-intro), but the gist of it is that if you don't hold veYFI you get 10% of the possible rewards.
+Historically, Yearn has used veYFI-based incentives to encourage deposits in some of its most important pools. For the current governance staking system (stYFI) and the migration path from legacy veYFI, start with the [stYFI page](/contributing/governance/styfi). The legacy veYFI documentation remains available under [veYFI (Deprecated)](/contributing/governance/veYFI-intro).
 
 Because locking YFI for veYFI is complicated, if you don't want to deal with the intricacies of locks, the Liquid Lockers let you use the locked tokens of other governance participants for a fee. As a depositor, you can earn 10x more rewards by doing this, and all you have to do is stake in the liquid locker contract. See below for links to the different liquid lockers. There are also autocompounding liquid locker vault contracts that you can deposit into. Find those on the main https://yearn.fi website.
 
