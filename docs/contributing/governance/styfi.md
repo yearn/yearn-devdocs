@@ -1,9 +1,9 @@
 # stYFI (Governance Staking)
 
-Yearn’s current governance staking UX is built around **stYFI** (and **stYFIx**).
+Yearn governance staking is centered on **stYFI** and **stYFIx**:
 
-- **stYFI**: stake YFI to earn rewards and keep direct governance rights.
-- **stYFIx**: a “set-and-forget” option that delegates voting power (recommended if you don’t want to manage governance actions yourself).
+- **stYFI**: stake YFI, earn rewards, and retain direct governance rights.
+- **stYFIx**: a more passive option that delegates voting power (recommended if you do not want to manage governance actions directly).
 
 ## Where to use it
 
@@ -12,26 +12,27 @@ Yearn’s current governance staking UX is built around **stYFI** (and **stYFIx*
 
 ## Stake (YFI → stYFI / stYFIx)
 
-Staking is a two‑step flow:
+Staking is a two-step flow:
 
-1. **Approve** YFI for the contract you’re using.
+1. **Approve** YFI for the selected staking contract.
 2. **Stake** YFI to mint `stYFI` or `stYFIx`.
 
-The interface uses **exact‑amount approvals** (not infinite approvals).
+The UI uses **exact-amount approvals** (not infinite approvals).
 
-## Unstake and withdraw (14‑day linear cooldown)
+## Unstake and withdraw (14-day linear cooldown)
 
-Unstaking starts a **14‑day linear cooldown**:
+Unstaking starts a **14-day linear cooldown**:
 
-- funds unlock gradually during the stream
-- you can withdraw the **currently unlocked** portion without waiting for the full 14 days
+- funds unlock linearly over time
+- you can withdraw the **currently unlocked** amount at any point during the stream
 
 If you add more to an active cooldown:
 
-- any currently‑unlocked amount is **auto‑withdrawn** first (so it can’t be re‑locked), and
-- the cooldown timer **resets** for the remaining streaming amount
-
-The UI will warn you before you confirm a reset.
+- the cooldown timer resets for the **entire cooldown position** (existing amount + new amount)
+- any amount that was already withdrawable is **re-locked** (it is not auto-withdrawn)
+- withdrawable resets to `0` immediately after the new cooldown starts
+- the UI shows an in-context warning (with the exact withdrawable amount) before submission
+- the action remains available (warn-and-confirm, not block-and-prevent)
 
 ## Rewards (claim `yvUSDC`)
 
@@ -39,7 +40,7 @@ Rewards are claimable from the stYFI dashboard and are paid in **`yvUSDC`** (a Y
 
 Notes:
 
-- stYFIx **does not auto‑compound** in the current implementation.
+- stYFIx **does not auto-compound** in the current implementation.
 - Rewards accrue separately and still need to be claimed.
 
 ## If you have legacy veYFI
