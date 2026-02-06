@@ -23,12 +23,45 @@ module.exports = {
         'governance/yfi',
         {
           type: 'category',
-          label: 'veYFI',
+          label: 'stYFI',
+          link: {
+            type: 'doc',
+            id: 'governance/styfi',
+          },
+          items: [
+            'governance/migrating-from-veyfi',
+            'governance/liquid-lockers',
+            {
+              type: 'link',
+              label: 'Contract Addresses →',
+              href: '/developers/addresses/styfi-contracts',
+            },
+            {
+              type: 'link',
+              label: 'stYFI dashboard',
+              href: 'https://styfi.yearn.fi/',
+            },
+            {
+              type: 'link',
+              label: 'Migration + LLYFI dashboard',
+              href: 'https://veyfi.yearn.fi/',
+            },
+            {
+              type: 'link',
+              label: 'Legacy veYFI lock management',
+              href: 'https://legacy-veyfi.yearn.fi/',
+            },
+          ],
+        },
+        {
+          type: 'category',
+          label: 'veYFI (Deprecated)',
           link: {
             type: 'doc',
             id: 'governance/veYFI-intro',
           },
           items: [
+            'governance/veyfi',
             'governance/veYFI-comp-summary',
             'governance/veyfi-calculator',
             'governance/veyfi-faq',
@@ -39,7 +72,7 @@ module.exports = {
             },
             {
               type: 'link',
-              label: 'veYFI dApp',
+              label: 'veYFI / LLYFI dashboard',
               href: 'https://veyfi.yearn.fi/',
             },
             {

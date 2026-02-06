@@ -106,6 +106,11 @@ export default {
             'wallet-integration',
             'data-services/yearn-stack',
             {
+              type: 'doc',
+              label: 'Governance Apps (Repo)',
+              id: 'governance-apps/index',
+            },
+            {
               type: 'link',
               label: 'Brand Assets and Guidelines',
               href: 'https://brand.yearn.fi',
@@ -152,6 +157,11 @@ export default {
           type: 'doc',
           label: 'yVaults v2',
           id: 'addresses/v2-contracts',
+        },
+        {
+          type: 'doc',
+          label: 'stYFI',
+          id: 'addresses/styfi-contracts',
         },
         {
           type: 'doc',

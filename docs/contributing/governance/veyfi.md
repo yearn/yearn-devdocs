@@ -13,6 +13,13 @@ rpcCalls:
 
 # Specification
 
+:::warning Deprecated
+This page documents the legacy **veYFI + dYFI gauge** system.
+
+For the current governance staking UX, see [stYFI](/contributing/governance/styfi).
+If you have a legacy veYFI lock, see [Migrate from veYFI](/contributing/governance/migrating-from-veyfi).
+:::
+
 veYFI incorporates [YIP-56: Buyback and Build](https://gov.yearn.fi/t/yip-56-buyback-and-build/8929) funds into YFI tokenomics. Users can lock YFI tokens and receive veYFI, which allows them to boost vault rewards and vote on where bought-back YFI will be sent.
 
 ## veYFI Overview
