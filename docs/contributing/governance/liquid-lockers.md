@@ -15,8 +15,8 @@ For each supported token, the dashboard provides:
 - **Stake**: approve → deposit into that token’s depositor contract
 - **Unstake**: start a **14‑day linear cooldown** and withdraw unlocked amounts over time
 - **Trade**:
-  - **Sell LLYFI → YFI** (exit): subject to an **exit fee** and limited by capacity and available YFI inventory
-  - **Buy YFI → LLYFI** (enter): currently fee‑free, limited by available LLYFI inventory held by the redemption contract
+  - **LLYFI → YFI** (exit): subject to an **exit fee** and limited by capacity and available YFI inventory
+  - **YFI → LLYFI** (enter): currently fee‑free, limited by available LLYFI inventory held by the redemption contract
 
 ## Cooldowns and partial withdrawals
 

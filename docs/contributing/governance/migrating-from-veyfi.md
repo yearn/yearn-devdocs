@@ -11,7 +11,7 @@ Use the **veYFI / LLYFI dashboard**: https://veyfi.yearn.fi
 You’ll only see a **Migrate** call‑to‑action if all of the following are true:
 
 - your wallet has a non‑zero **legacy veYFI** position
-- your address is eligible to migrate (snapshot‑verified)
+- your address is eligible to migrate (You didn't lock YFI after the snapshot)
 - you have not migrated previously
 
 If you don’t see the migration card, it usually means you’re not eligible or you don’t have a legacy lock on the connected address.

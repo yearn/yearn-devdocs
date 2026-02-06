@@ -10,10 +10,6 @@ Yearn’s current governance staking UX is built around **stYFI** (and **stYFIx*
 - **stYFI dashboard**: https://styfi.yearn.fi
 - **Migration + Liquid Lockers dashboard**: https://veyfi.yearn.fi
 
-:::note Network
-The dashboards target **Ethereum mainnet**. If you connect to another network, write actions won’t be available.
-:::
-
 ## Stake (YFI → stYFI / stYFIx)
 
 Staking is a two‑step flow:

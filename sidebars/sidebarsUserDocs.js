@@ -195,6 +195,11 @@ module.exports = {
       type: 'category',
       label: 'Guides',
       items: [
+        {
+          type: 'link',
+          label: 'Migrate from veYFI',
+          href: '/contributing/governance/migrating-from-veyfi',
+        },
         'guides/using-yearn-v3',
         'guides/using-yearn-v2',
         'guides/how-boost-works',
