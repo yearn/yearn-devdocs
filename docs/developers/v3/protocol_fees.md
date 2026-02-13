@@ -1,10 +1,13 @@
 # Protocol Fees
 
-The V3 system sees the introduction of "Protocol Fees" to the stack, a percentage charged each time a V3 vault or strategy "reports".
+V3 introduces a **protocol fee** that is applied by the **vault** on each strategy
+`report()`. This fee is a **percentage of the total fees** returned by the
+Accountant (management/performance fees), not a direct percentage of profit.
 
-Protocol fees give the managers of vaults and strategies complete control over the fees charged while rewarding Yearn for supplying the infrastructure those vaults are built on.
-
-Yearn Governance dictates the amount of the Protocol fee and can be set anywhere between 0 - 50%. Yearn governance also holds the ability to set custom protocol fees for individual vaults and strategies. Allowing full customization of the system.
+The protocol fee is configured in the VaultFactory (default + optional per‑vault
+custom overrides). Governance controls the allowed values, which can be set anywhere
+from 0% to 50%. The protocol fee recipient is stored in the VaultFactory and is the
+default recipient even when a custom protocol fee is set for a specific vault.
 
 ```markdown title="Example"
 profit = 100
@@ -19,7 +22,8 @@ performance_fees = total_fees - protocol_fees = 18
 2 would get paid to the Yearn Treasury.
 ```
 
-You can retrieve both the default protocol fee as well as if a custom config has been set for a specific vault or strategy using the Vault Factory that corresponds to that vault's API.
+You can retrieve both the default protocol fee and a vault‑specific override using
+the VaultFactory that corresponds to that vault’s API.
 
 ``` solidity title="Examples"
 # Retrieve the default config.
@@ -27,4 +31,7 @@ vaultFactory.protocol_fee_config()
 
 # Check a specific vault current config to be used
 vaultFactory.protocol_fee_config(vault_address)
+
+# Check whether a custom override is active for a vault
+vaultFactory.use_custom_protocol_fee(vault_address)
 ```

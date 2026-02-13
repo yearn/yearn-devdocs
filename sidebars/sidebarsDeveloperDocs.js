@@ -32,6 +32,7 @@ export default {
               items: [
                 'v3/Integrating_v3',
                 'v3/strategy_writing_guide',
+                'v3/yield_accrual',
                 'v3/vault_management',
                 'v3/vault_deployment',
                 'v3/periphery',
@@ -105,6 +106,11 @@ export default {
             'wallet-integration',
             'data-services/yearn-stack',
             {
+              type: 'doc',
+              label: 'Governance Apps (Repo)',
+              id: 'governance-apps/index',
+            },
+            {
               type: 'link',
               label: 'Brand Assets and Guidelines',
               href: 'https://brand.yearn.fi',
@@ -151,6 +157,11 @@ export default {
           type: 'doc',
           label: 'yVaults v2',
           id: 'addresses/v2-contracts',
+        },
+        {
+          type: 'doc',
+          label: 'stYFI',
+          id: 'addresses/styfi-contracts',
         },
         {
           type: 'doc',

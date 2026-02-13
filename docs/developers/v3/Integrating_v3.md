@@ -82,16 +82,16 @@ There are multiple periphery contracts that can be helpful to get information ab
 Retrieve all of the endorsed vaults on a specific chain.
 
 - `getAllEndorsedVaults()` Returns a nested array sorted by vaults `asset` of all endorsed vaults in that registry.
-- `getEndorsedVaults(address _asset)` Returns and array of all endorsed vaults for that asset
+- `getEndorsedVaults(address _asset)` Returns an array of all endorsed vaults for that asset
 - `vaultInfo(address _vault)` Return the [`Info`](/developers/smart-contracts/V3/Periphery/Registry#structs) struct for an endorsed vault that includes its underlying asset, release version, deployment timestamp, vault 'type' (i.e. multi-strategy or single-strategy) and any tag.
 
 ### Role Manager
 
 Manages all of the multi-strategy vaults on a chain, and holds the `role_manager` position for those vaults.
 
-All the other periphery contracts and Yearn multisigs can be retrieved from the Role manager as well using the getter functions, such as `getBrain()`/`getPositionHolder(keccak256("Brain"))`, `getRegistry()`/`getPositionHolder(keccak256("Registry"))`, `getDebtAllocator(vault)`, .
+All the other periphery contracts and Yearn multisigs can be retrieved from the Role manager as well using the getter functions, such as `getBrain()`/`getPositionHolder(keccak256("Brain"))`, `getRegistry()`/`getPositionHolder(keccak256("Registry"))`, `getDebtAllocator(vault)`.
 
-- [`getAllVaults()`](/developers/smart-contracts/V3/Periphery/RoleManager#getallvaults) Returns and array for all multi-strategy vaults the contract is the role manager for.
+- [`getAllVaults()`](/developers/smart-contracts/V3/Periphery/RoleManager#getallvaults) Returns an array for all multi-strategy vaults the contract is the role manager for.
 - [`getVault(asset, apiVersion, category)`](/developers/smart-contracts/V3/Periphery/RoleManager#getvault) Returns the vault if any based on the inputs.
 
 #### Category
