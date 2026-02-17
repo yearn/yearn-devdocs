@@ -56,7 +56,7 @@ While the complete architecture of the Tokenized Strategy is out of the scope of
 
 ## Getting started
 
-Yearn has base templates made to build off of built-in both [Ape Worx](https://www.apeworx.io/), a python-based development toolkit, and [Foundry](https://book.getfoundry.sh/).
+Yearn has base templates made to build off of built-in both [Ape Worx](https://www.apeworx.io/), a python-based development toolkit, and [Foundry](https://book.getfoundry.sh/). As a community alternative, [Moccasin](https://github.com/Cyfrin/moccasin) is another python-based smart contract development and testing framework that can also be used for strategy development.
 
 1. Choose your development framework.
     - [Tokenized Strategy Foundry Mix](https://github.com/yearn/tokenized-strategy-foundry-mix)
