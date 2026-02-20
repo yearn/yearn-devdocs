@@ -2,7 +2,7 @@
 
 ## Yearn Contributors
 
-Help build the future of finance, shape your skills, and grow the Yearn ecosystem. Before joining our community, take some time to understand the philosophy behind Yearn through the [The Bluepill](https://yfistory.org/thebluepill) and [Yearn Manifesto](https://gov.yearn.fi/t/how-we-think-about-yearn/7137).
+Help build the future of finance, shape your skills, and grow the Yearn ecosystem. Before joining our community, take some time to understand the philosophy behind Yearn through the [The Bluepill](https://bluepill.yearn.dev/) and [Yearn Manifesto](https://gov.yearn.fi/t/how-we-think-about-yearn/7137).
 
 ## How to Contribute
 

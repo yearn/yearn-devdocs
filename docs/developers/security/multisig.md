@@ -19,7 +19,7 @@ Cryptographic membership attestations can be validated against the PGP keys in t
 |-------------------|----------------------|------------------------------|
 | [0x6F2A8Ee9452ba7d336b3fba03caC27f7818AeAD6](https://etherscan.io/address/0x6F2A8Ee9452ba7d336b3fba03caC27f7818AeAD6) | Mariano Conti (nanexcool.com, prev. MakerDAO) | [Twitter](https://x.com/nanexcool/status/1491900804223041540) |
 | [0xeA6c0837fef621E77329f85820F503cA09f2B3a9](https://etherscan.io/address/0xeA6c0837fef621E77329f85820F503cA09f2B3a9) | Leo Cheng (C.R.E.A.M. Finance) | [Twitter](https://x.com/lumbergdoteth/status/1923382177200218580) |
-| [0x99BC02c239025E431D5741cC1DbA8CE77fc51CE3](https://etherscan.io/address/0x99BC02c239025E431D5741cC1DbA8CE77fc51CE3) | Daryl Lau (Not3Lau Capital) | [Twitter](https://x.com/Daryllautk/status/1285434908383444992) |
+| [0x70aF5a3368606c6557D2B3ce2EEC8796B914EAa3](https://etherscan.io/address/0x70aF5a3368606c6557D2B3ce2EEC8796B914EAa3) | omnifient (Katana) | [Twitter](https://x.com/omnifient/status/2015032813326643230) |
 | [0xf5D3dbda5F41A0E26D71B948e29522398e71cFaE](https://etherscan.io/address/0xf5D3dbda5F41A0E26D71B948e29522398e71cFaE) | 0xngmi (DefiLlama) | [Twitter](https://x.com/0xngmi/status/1590047391797088257) |
 | [0x5Db9926c93085a92F14A85daBF6FF27b07362Cae](https://etherscan.io/address/0x5Db9926c93085a92F14A85daBF6FF27b07362Cae) | Ephy (Sky/MakerDAO) | [Twitter](https://x.com/0x3phemeralsoul/status/1923374073440080069) |
 | [0x2B888954421b424C5D3D9Ce9bB67c9bD47537d12](https://etherscan.io/address/0x2B888954421b424C5D3D9Ce9bB67c9bD47537d12) | Lefteris Karapetsas (rotkiapp) | [Twitter](https://x.com/LefterisJP/status/1590083336210644992) |
@@ -29,6 +29,7 @@ Cryptographic membership attestations can be validated against the PGP keys in t
 
 ## History
 
+- December 2025 - [YIP-89: Proposal to rotate multisig signer](https://snapshot.box/#/s:veyfi.eth/proposal/0x02ac9f5cc91ad090938195c37e17fd24941a668082b2b6b58f20e11e32d73003)
 - April 2025 - [YIP-84: Proposal to rotate multisig signer](https://snapshot.box/#/s:veyfi.eth/proposal/0xeecd2a9ca79f9b22071d79d436a7e5ccc56593eb4c3bc8ef1b57c8389809a101)
 - October 2024 - [YIP-79: Proposal to rotate multisig signers and provide compensation](https://snapshot.org/#/veyfi.eth/proposal/0xc7ded2863a10154b6b520921af4ada48d64d74e5b7989f98cdf073542b2e4411)
 - June 2022 - [YIP-68: Change Three Multisig signers](https://gov.yearn.fi/t/yip-68-rotate-multisig-signers/12582)

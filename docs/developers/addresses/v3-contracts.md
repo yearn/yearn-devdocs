@@ -76,7 +76,7 @@ For a more complete list of all available periphery contracts visit the [Periphe
 
 Yearn Specific contracts and roles, as well as the most up to date V3 registry can be retrieved on chain from the Role Manager.
 
-To find individual vaults, use the V3 Registry below or refer to https://yearn.fi
+To find individual vaults, use the V3 Registry below or refer to https://yearn.fi/v3
 
 ### EVM Stable Addresses
 

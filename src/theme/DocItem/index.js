@@ -6,7 +6,12 @@ export default function DocItemWrapper(props) {
   const handleHashChange = () => {
     const hash = decodeURIComponent(window.location.hash)
     if (hash) {
-      const heading = document.querySelector(hash)
+      const id = hash.startsWith('#') ? hash.slice(1) : hash
+      const heading =
+        document.getElementById(id) ||
+        (typeof CSS !== 'undefined' && CSS.escape
+          ? document.querySelector(`#${CSS.escape(id)}`)
+          : null)
       if (heading) {
         const details = heading.closest('details')
         if (details) {

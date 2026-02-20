@@ -113,6 +113,7 @@ module.exports = {
               items: [
                 'products/ylockers/yyb/yyb-faq',
                 'products/ylockers/yyb/yyb-guide',
+                'products/ylockers/yyb/yyb-migration-guide',
                 {
                   type: 'link',
                   label: 'yYB Contract Addresses →',
@@ -134,8 +135,8 @@ module.exports = {
         },
         {
           type: 'link',
-          label: 'veYFI →',
-          href: '/contributing/governance/veYFI-intro',
+          label: 'stYFI →',
+          href: '/contributing/governance/styfi',
         },
         {
           type: 'category',
@@ -194,6 +195,11 @@ module.exports = {
       type: 'category',
       label: 'Guides',
       items: [
+        {
+          type: 'link',
+          label: 'Migrate from veYFI',
+          href: '/contributing/governance/migrating-from-veyfi',
+        },
         'guides/using-yearn-v3',
         'guides/using-yearn-v2',
         'guides/how-boost-works',

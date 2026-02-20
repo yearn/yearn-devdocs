@@ -13,6 +13,13 @@ rpcCalls:
 
 # Comprehensive veYFI Guide
 
+:::warning Deprecated
+This page documents the legacy **veYFI + dYFI gauge** system.
+
+For the current governance staking UX, see [stYFI](/contributing/governance/styfi).
+If you have a legacy veYFI lock, see [Migrate from veYFI](/contributing/governance/migrating-from-veyfi).
+:::
+
 Yearn has implemented a sophisticated governance and rewards system centered around **veYFI** and **dYFI** tokens. This system is designed to empower active community members, incentivize long-term participation, and align the interests of YFI holders with the protocol's success. This document provides a comprehensive synthesis of the veYFI and dYFI mechanisms, incorporating detailed specifications and complexities for a thorough understanding.
 
 ---
