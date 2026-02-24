@@ -1,5 +1,5 @@
 {
-  "timeLastChecked": 1770347214,
+  "timeLastChecked": 1771939655,
   "addressesData": {
     "v3ContractAddresses": {
       "topLevel": {
@@ -71,11 +71,38 @@
       "yGauge DAI-2 yVault": "0x38E3d865e34f7367a69f096C80A4fc329DB38BF4",
       "yGauge WETH-2 yVault": "0x8E2485942B399EA41f3C910c1Bb8567128f79859",
       "yGauge crvUSD-2 yVault": "0x71c3223D6f836f84cAA7ab5a68AAb6ECe21A9f3b"
+    },
+    "yearnMultisigMembers": {
+      "multisigAddress": "0xFEB4acf3df3cDEA7399794D0869ef76A6EfAff52",
+      "docsMemberAddresses": [
+        "0x6F2A8Ee9452ba7d336b3fba03caC27f7818AeAD6",
+        "0xeA6c0837fef621E77329f85820F503cA09f2B3a9",
+        "0x70aF5a3368606c6557D2B3ce2EEC8796B914EAa3",
+        "0xf5D3dbda5F41A0E26D71B948e29522398e71cFaE",
+        "0x5Db9926c93085a92F14A85daBF6FF27b07362Cae",
+        "0x2B888954421b424C5D3D9Ce9bB67c9bD47537d12",
+        "0xFe45baf0F18c207152A807c1b05926583CFE2e4b",
+        "0x962228a90eaC69238c7D1F216d80037e61eA9255",
+        "0x700F1a984C962b447CcDb95c4c2D8074C65098a3"
+      ],
+      "onChainOwners": [
+        "0xf5D3dbda5F41A0E26D71B948e29522398e71cFaE",
+        "0xeA6c0837fef621E77329f85820F503cA09f2B3a9",
+        "0x6F2A8Ee9452ba7d336b3fba03caC27f7818AeAD6",
+        "0x2B888954421b424C5D3D9Ce9bB67c9bD47537d12",
+        "0xFe45baf0F18c207152A807c1b05926583CFE2e4b",
+        "0x962228a90eaC69238c7D1F216d80037e61eA9255",
+        "0x70aF5a3368606c6557D2B3ce2EEC8796B914EAa3",
+        "0x5Db9926c93085a92F14A85daBF6FF27b07362Cae",
+        "0x700F1a984C962b447CcDb95c4c2D8074C65098a3"
+      ],
+      "docsSourcePath": "docs/developers/security/multisig.md"
     }
   },
   "addressChecks": {
     "allV3ChecksPassed": true,
     "allVeYfiChecksPassed": true,
+    "allMultisigChecksPassed": true,
     "failedChecks": [],
     "v3Checks": {
       "topLevel": {
@@ -128,6 +155,14 @@
       "yGauge DAI-2 yVault": true,
       "yGauge WETH-2 yVault": true,
       "yGauge crvUSD-2 yVault": true
+    },
+    "multisigChecks": {
+      "docsMembersSectionParsed": true,
+      "docsAddressesValid": true,
+      "docsOwnerCountMatch": true,
+      "docsUniqueOwnersCheck": true,
+      "onChainUniqueOwnersCheck": true,
+      "exactMembersMatch": true
     }
   }
 }
