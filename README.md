@@ -108,6 +108,8 @@ The build also generates AI-friendly artifacts that will be served by the hosted
 - `build/ai/docs.jsonl` (served as `/ai/docs.jsonl`)
 - `build/ai/raw/` (served as `/ai/raw/`)
 
+Artifact URLs default to `https://docs.yearn.fi`. To generate artifacts against a preview deployment, set `DOCS_URL` explicitly (for example `DOCS_URL=https://<preview-host>`).
+
 ## Configure .env
 
 The docs site pulls data from on-chain smart contracts, so an API key is necessary. The default is an Alchemy API key so the easiest thing to do is get a free api key from them at https://www.alchemy.com/pricing.
