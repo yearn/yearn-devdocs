@@ -341,6 +341,11 @@ export default {
       className: 'divider',
     },
     {
+      type: 'link',
+      label: 'LLM Friendly Documentation',
+      href: '/getting-started/llm-friendly-docs',
+    },
+    {
       type: 'category',
       label: 'Deprecated Products',
       items: [
