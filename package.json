@@ -43,11 +43,11 @@
     "recharts": "^2.15.4",
     "rehype-katex": "^7.0.1",
     "remark-math": "^6.0.0",
-    "solc": "^0.8.31",
+    "solc": "^0.8.34",
     "solidity-docgen": "^0.5.17",
-    "turndown": "^7.1.2",
+    "turndown": "^7.2.2",
     "turndown-plugin-gfm": "^1.0.2",
-    "viem": "^2.41.2"
+    "viem": "^2.46.3"
   },
   "browserslist": {
     "production": [
