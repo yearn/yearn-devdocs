@@ -1,10 +1,10 @@
 import fs from 'fs'
 import path from 'path'
 import { Address, PublicClient, getAddress } from 'viem'
-import * as constants from './constants'
 import { readSafeOwners } from './multisigCalls'
 
 const MULTISIG_DOCS_PATH = 'docs/developers/security/multisig.md'
+const ZERO_ADDRESS = '0x0000000000000000000000000000000000000000'
 
 const extractMembersSection = (markdown: string) => {
   const parts = markdown.split(/^## Members\s*$/m)
@@ -44,11 +44,14 @@ const getDuplicates = (addresses: Address[]) => {
 }
 
 export const checkYearnMultisigMembers = async (
+  multisigAddressFromRoleManager: Address | undefined,
   publicClient: PublicClient,
   checkFlag: boolean | undefined,
   failedChecks: string[]
 ) => {
-  const multisigAddress = getAddress(constants.yearnV3ContractsMainnet.daddy)
+  const multisigAddress = getAddress(
+    multisigAddressFromRoleManager ?? ZERO_ADDRESS
+  )
   const docsPath = path.resolve(MULTISIG_DOCS_PATH)
 
   console.log('validating Yearn multisig members...')
@@ -59,6 +62,7 @@ export const checkYearnMultisigMembers = async (
   let docsUniqueOwnersCheck = true
   let onChainUniqueOwnersCheck = true
   let exactMembersMatch = true
+  let onChainOwnersRead = true
 
   let docsMemberAddressesRaw: string[] = []
   let docsMemberAddresses: Address[] = []
@@ -87,11 +91,36 @@ export const checkYearnMultisigMembers = async (
     }
   }
 
-  const onChainOwners = (await readSafeOwners(multisigAddress, publicClient)).map(
-    (address) => getAddress(address)
-  )
+  let onChainOwners: Address[] = []
 
-  if (docsAddressesValid) {
+  if (multisigAddress === getAddress(ZERO_ADDRESS)) {
+    onChainOwnersRead = false
+    docsOwnerCountMatch = false
+    onChainUniqueOwnersCheck = false
+    exactMembersMatch = false
+    checkFlag = false
+    failedChecks.push('yearnMultisig daddy address missing from role manager')
+  } else {
+    try {
+      const safeOwners = (await readSafeOwners(
+        multisigAddress,
+        publicClient
+      )) as Address[]
+      onChainOwners = safeOwners.map((address) => getAddress(address))
+    } catch (error) {
+      onChainOwnersRead = false
+      docsOwnerCountMatch = false
+      onChainUniqueOwnersCheck = false
+      exactMembersMatch = false
+      checkFlag = false
+      failedChecks.push(
+        `yearnMultisig failed to read onchain owners for ${multisigAddress}`
+      )
+      console.error(error)
+    }
+  }
+
+  if (docsAddressesValid && onChainOwnersRead) {
     docsOwnerCountMatch = docsMemberAddresses.length === onChainOwners.length
     if (!docsOwnerCountMatch) {
       failedChecks.push(

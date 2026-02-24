@@ -100,6 +100,7 @@ const fetchAddresses = async () => {
     let multisigCheckFlag: boolean | undefined
     multisigCheckFlag = true
     const multisigData = await checkYearnMultisigMembers(
+      yearnV3Data.addresses.yearnDaddy,
       publicClient,
       multisigCheckFlag,
       failedChecks
