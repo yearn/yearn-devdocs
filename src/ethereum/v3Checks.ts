@@ -309,6 +309,8 @@ export const fetchAndCheckYearnV3Addresses = async (
   console.log('validating Yearn specific V3 periphery addresses...')
   const yearnAccountant =
     addresses.yearnAccountant || '0x0000000000000000000000000000000000000000'
+  const yearnDaddy =
+    addresses.yearnDaddy || '0x0000000000000000000000000000000000000000'
   const yearnRegistry =
     addresses.yearnRegistry || '0x0000000000000000000000000000000000000000'
   const yearnDebtAllocator =
@@ -348,13 +350,20 @@ export const fetchAndCheckYearnV3Addresses = async (
     yearnDebtAllocator,
     failedChecks
   )
+  const daddyCheck = await validateAddress(
+    constants.yearnV3ContractsMainnet.daddy,
+    'yearnV3Daddy',
+    yearnDaddy,
+    failedChecks
+  )
 
   if (
     !accountantCheck ||
     !accountantENSCheck ||
     !registryCheck ||
     !registryENSCheck ||
-    !debtAllocatorCheck
+    !debtAllocatorCheck ||
+    !daddyCheck
   ) {
     checkFlag = false
   }
@@ -363,6 +372,7 @@ export const fetchAndCheckYearnV3Addresses = async (
     accountantCheck,
     registryCheck,
     debtAllocatorCheck,
+    daddyCheck,
   }
   console.log('Yearn V3 Periphery address validation complete. \n')
   return { addresses, checks, checkFlag }
