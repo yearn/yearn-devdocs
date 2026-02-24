@@ -2,14 +2,6 @@
 
 If you want to programmatically interact with Yearn data, or need to fetch large amounts of it then you have a few options:
 
-## yDaemon
-
-yDaemon is a RESTful API that hydrates subgraph responses with more data, like APY calculations. yDaemon is the best source for current yearn Vault data and is what is used by the production Yearn frontends.
-
-- **Live API:** https://ydaemon.yearn.fi/1/vaults/all
-- **Source:** https://github.com/yearn/ydaemon
-- **Guide:** https://medium.com/iearn/ydaemon-one-api-to-unify-all-yearn-data-4fc74dc9a33b
-
 ## Kong
 
 [Kong](https://kong.yearn.fi/) is an integrated set of services and tools that make it easy to index EVM logs and state, enrich your data with custom hooks, query your data over graphql. Kong is designed to be cheap, reliable, easy to maintain, and simplify the process of updating your index.
@@ -27,24 +19,13 @@ Kong can be run locally or a hosted version run by Yearn can be queried with the
 
 - **Live API:** https://kong.yearn.fi/api/gql
 - **Source:** https://github.com/yearn/kong
-- **Docs:** Under Construction 🚧
 
-## Subgraph
+## yDaemon
 
-:::info
+yDaemon is a RESTful API used by some Yearn frontends. While Kong is generally preferred to yDaemon when possible for the areas of overlap, yDaemon is the best source for current Yearn Vault data and is what is used by the production Yearn frontends.
 
-Currently only subgraphs for V2 vaults are available and some subgraphs have not been migrated to the new service. We recommend using Kong or yDaemon for your data needs.
-
-:::
-
-The subgraph is a GraphQL interface to query raw historical data. For current data it is recommended to check yDaemon before using the subgraph directly.
-
-- **Docs:** https://docs.yearn.fi/developers/data-services/subgraph-info
-
-### V2 Vaults
-
-- **Mainnet Live API:** https://thegraph.com/explorer/subgraphs/FDLuaz69DbMADuBjJDEcLnTuPnjhZqNbFVrkNiBLGkEg?view=Query&chain=arbitrum-one
-- **Arbitrum Live API:** https://thegraph.com/explorer/subgraphs/G3JZhmKKHC4mydRzD6kSz5fCWve5WDYYCyTFSJyv3SD5?view=Query&chain=arbitrum-one
+- **Live API:** https://ydaemon.yearn.fi/1/vaults/all
+- **Source:** https://github.com/yearn/ydaemon
 
 ## Yearn Lens
 

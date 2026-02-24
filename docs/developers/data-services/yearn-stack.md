@@ -33,11 +33,7 @@ Yearn SDK integrates several components, both on-chain and off-chain.
 
 ### Off Chain
 
-- Yearn Exporter: stores (and displays) stats about yearn assets, exposing:
-  - historical TVL
-  - historical APY
-- Yearn Subgraph: stores all historical data for users
-- Zapper Integration
+- yDaemon and Kong: stores historical data for vaults
 
 ## Backend features
 
