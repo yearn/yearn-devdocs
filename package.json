@@ -34,8 +34,6 @@
     "@radix-ui/react-select": "^2.2.6",
     "@radix-ui/react-tabs": "^1.1.13",
     "@radix-ui/react-tooltip": "^1.2.8",
-    "baseline-browser-mapping": "^2.10.0",
-    "caniuse-lite": "^1.0.30001774",
     "clsx": "1.1.1",
     "dotenv": "^16.6.1",
     "hast-util-is-element": "1.1.0",
