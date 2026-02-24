@@ -17,7 +17,7 @@ Use https://docs.yearn.fi/llms.txt as the entry point. Read the linked AI endpoi
 
 ## Install the Yearn Docs Skill
 
-You can also install the Yearn docs skill, which is is published from this docs site and gives instructions to query the docs:
+You can also install the Yearn docs skill, which is published from this docs site and gives instructions to query the docs:
 
 - https://docs.yearn.fi/skills/yearn-docs-site-query/SKILL.md
 - https://docs.yearn.fi/skills/yearn-docs-site-query/scripts/yearn_docs_query.py
