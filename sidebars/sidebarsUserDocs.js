@@ -220,6 +220,11 @@ module.exports = {
       id: 'guides/user-faq',
     },
     {
+      type: 'doc',
+      label: 'LLM Friendly Documentation',
+      id: 'llm-friendly-docs',
+    },
+    {
       type: 'link',
       label: 'Token and Contract Addresses →',
       href: '/developers/addresses',

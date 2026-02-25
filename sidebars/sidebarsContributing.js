@@ -92,5 +92,10 @@ module.exports = {
         'documentation/writing-style-guide',
       ],
     },
+    {
+      type: 'link',
+      label: 'LLM Friendly Documentation',
+      href: '/getting-started/llm-friendly-docs',
+    },
   ],
 }
