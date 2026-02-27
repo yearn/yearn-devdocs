@@ -1,5 +1,5 @@
 {
-  "timeLastChecked": 1771960246,
+  "timeLastChecked": 1772219650,
   "addressesData": {
     "v3ContractAddresses": {
       "topLevel": {
@@ -137,7 +137,8 @@
       "yearnV3": {
         "accountantCheck": true,
         "registryCheck": true,
-        "debtAllocatorCheck": true
+        "debtAllocatorCheck": true,
+        "daddyCheck": true
       }
     },
     "veYfiChecks": {
