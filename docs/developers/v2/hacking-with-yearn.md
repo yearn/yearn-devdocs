@@ -100,31 +100,6 @@ By having a strategy, users only need to deposit single assets and let the strat
 
 Yearn aims to provide more insights into our products to our customers and partners through analyzing the on-chain and off-chain data. Given that all Yearn protocol data is publicly stored on-chain, there are lots of insights to be gained from analyzing these transactions.
 
-Two common tools for on-chain data analysis are:
-1. **Dune Analytics**- Query contract data and generate dashboards with SQL
-- [Current Dashboards](https://dune.com/projects/yearn )
-
-    Here's a list of all the new things you can query for:
-    - harvests
-    - deployments
-    - transactions
-    - contract_tokens
-    - contract_strategy
-    - v2_deployments
-
-Fiddle with them all at https://dune.com/queries/625814
-
-2. **The Graph**- Query contract data with GQL using the Yearn subgraphs
-
-The Graph is a decentralized protocol for indexing and querying data from blockchains, starting with Ethereum. It is an easier way to retrieve specific data from the blockchain, within the ethos of web3, with the advantages of decentralization and reliability.
-
-GraphQL is the underlying query language used in The Graph.
-
-What is the difference between standard RESTFUL API calls and GraphQL calls? The difference is that traditional APIs require the developers to create specific endpoints for users that return specific data. If the user requires more information, they may need to make multiple API calls, sometimes hundreds of API calls, to get the information they require. With The Graph (which uses GraphQL), only one call is needed to a subgraph, as long as the developer has created a flexible schema.
-
- - https://thegraph.com/hosted-service/subgraph/rareweasel/yearn-vaults-v2-mainnet
- - https://api.thegraph.com/subgraphs/name/rareweasel/yearn-vaults-v2-mainnet/graphql
-
 ## Some of the research questions that we are interested in:
 * Screening profitable liquidity pools for our strategies
 * Assessing the impact of TVL on the impermanent loss
