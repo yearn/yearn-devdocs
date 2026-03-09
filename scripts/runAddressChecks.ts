@@ -8,6 +8,7 @@ import {
   fetchAndCheckYearnV3Addresses,
 } from '../src/ethereum/v3Checks'
 import { veYfiChecks } from '../src/ethereum/veYfiChecks'
+import { checkYearnMultisigMembers } from '../src/ethereum/multisigChecks'
 import { yfiContracts, veYfiContracts } from '../src/ethereum/constants'
 import {
   ContractAddresses,
@@ -18,7 +19,13 @@ import { mainnet } from 'viem/chains'
 
 dotenv.config()
 
-const alchemyKey = process.env.ALCHEMY_API_KEY
+const alchemyKey = process.env.ALCHEMY_API_KEY?.trim()
+const invalidAlchemyValues = new Set(['', 'undefined', 'null', 'yourApiKeyHere'])
+
+if (!alchemyKey || invalidAlchemyValues.has(alchemyKey)) {
+  console.error('Environment vars not set properly')
+  process.exit(1)
+}
 
 const publicClient = createPublicClient({
   batch: {
@@ -90,16 +97,29 @@ const fetchAddresses = async () => {
     veYfiCheckFlag = veYfiData?.checkFlag
     if (!veYfiData) throw new Error('Failed to fetch veYFI gauge addresses')
 
+    let multisigCheckFlag: boolean | undefined
+    multisigCheckFlag = true
+    const multisigData = await checkYearnMultisigMembers(
+      yearnV3Data.addresses.yearnDaddy,
+      publicClient,
+      multisigCheckFlag,
+      failedChecks
+    )
+    multisigCheckFlag = multisigData?.checkFlag
+    if (!multisigData) throw new Error('Failed to fetch multisig owners')
+
     const addressesData: ContractAddresses = {
       v3ContractAddresses: v3AddressData,
       yfiTokenContracts: yfiContracts,
       veYfiContracts: veYfiContracts,
       veYfiGaugeAddresses: veYfiData.veYfiGaugeAddresses,
+      yearnMultisigMembers: multisigData.addresses,
     }
 
     const addressChecks: AddressChecks = {
       allV3ChecksPassed: v3CheckFlag,
       allVeYfiChecksPassed: veYfiCheckFlag,
+      allMultisigChecksPassed: multisigCheckFlag,
       failedChecks,
       v3Checks: {
         topLevel: topLevelData.checks,
@@ -108,12 +128,15 @@ const fetchAddresses = async () => {
         yearnV3: yearnV3Data.checks,
       },
       veYfiChecks: veYfiData.veYfiGaugeChecks,
+      multisigChecks: multisigData.checks,
     }
     if (
       v3CheckFlag === false ||
       v3CheckFlag === undefined ||
       veYfiCheckFlag === false ||
-      veYfiCheckFlag === undefined
+      veYfiCheckFlag === undefined ||
+      multisigCheckFlag === false ||
+      multisigCheckFlag === undefined
     ) {
       console.log('Addresses:', addressesData)
       console.log('Checks:', addressChecks)
@@ -141,7 +164,9 @@ async function runAddressCheck() {
   }
 
   const allChecksPassed =
-    addressChecks.allV3ChecksPassed && addressChecks.allVeYfiChecksPassed
+    addressChecks.allV3ChecksPassed &&
+    addressChecks.allVeYfiChecksPassed &&
+    addressChecks.allMultisigChecksPassed
   process.env.ALL_CHECKS_PASSED = allChecksPassed ? 'true' : 'false'
   console.log('allChecksPassed: ', process.env.ALL_CHECKS_PASSED)
 
@@ -156,7 +181,7 @@ async function runAddressCheck() {
       issueContent += `- ${check}\n`
     })
     issueContent +=
-      '\nThe addresses shown above should be the updated, correct addresses. Please review and change the values in `src/ethereum/constants.ts`.\n'
+      '\nThe addresses shown above should be the updated, correct addresses. Please review and update the relevant source (`src/ethereum/constants.ts` and/or `docs/developers/security/multisig.md`).\n'
 
     fs.writeFileSync('issue_body.md', issueContent)
     console.log('Issue content generated.')

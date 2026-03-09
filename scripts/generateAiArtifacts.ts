@@ -100,14 +100,6 @@ function resolveSiteOrigin() {
   const explicit = process.env.DOCS_URL?.trim()
   if (explicit) return explicit.replace(/\/+$/, '')
 
-  const vercel = process.env.VERCEL_URL?.trim()
-  if (vercel) {
-    const withProto = vercel.startsWith('http://') || vercel.startsWith('https://')
-      ? vercel
-      : `https://${vercel}`
-    return withProto.replace(/\/+$/, '')
-  }
-
   return 'https://docs.yearn.fi'
 }
 

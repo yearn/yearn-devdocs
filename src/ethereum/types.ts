@@ -3,6 +3,7 @@ export type ContractAddresses = {
   yfiTokenContracts: YfiTokenContracts
   veYfiContracts: VeYfiContracts
   veYfiGaugeAddresses: GaugeAddressRecord
+  yearnMultisigMembers: YearnMultisigMembers
 }
 
 export type V3ContractAddresses = {
@@ -60,6 +61,7 @@ export type VeYfiContracts = {
 
 export type GaugeAddressRecord = Record<string, string>
 export type GaugeCheckRecord = Record<string, boolean>
+export type MultisigAddressList = `0x${string}`[]
 
 export type VeYfiGauge = {
   index: number
@@ -70,9 +72,26 @@ export type VeYfiGauge = {
   underlyingVaultAddress: `0x${string}` | string
 }
 
+export type YearnMultisigMembers = {
+  multisigAddress: `0x${string}`
+  docsMemberAddresses: MultisigAddressList
+  onChainOwners: MultisigAddressList
+  docsSourcePath: string
+}
+
+export type MultisigChecks = {
+  docsMembersSectionParsed: boolean
+  docsAddressesValid: boolean
+  docsOwnerCountMatch: boolean
+  docsUniqueOwnersCheck: boolean
+  onChainUniqueOwnersCheck: boolean
+  exactMembersMatch: boolean
+}
+
 export type AddressChecks = {
   allV3ChecksPassed: boolean | undefined
   allVeYfiChecksPassed: boolean | undefined
+  allMultisigChecksPassed: boolean | undefined
   failedChecks: string[]
   v3Checks: {
     topLevel: {
@@ -88,4 +107,5 @@ export type AddressChecks = {
     yearnV3: { [key: string]: boolean }
   }
   veYfiChecks: GaugeCheckRecord
+  multisigChecks: MultisigChecks
 }
