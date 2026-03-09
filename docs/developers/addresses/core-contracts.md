@@ -31,7 +31,7 @@ See all stYFI contracts [on this page](./styfi-contracts.md)
 | Core Dev multisig      | dev.ychad.eth         | [0x846e211e8ba920B353FB717631C015cf04061Cc9](https://etherscan.io/address/0x846e211e8ba920B353FB717631C015cf04061Cc9) |
 | Treasury               | treasury.ychad.eth    | [0x93A62dA5a14C80f265DAbC077fCEE437B1a0Efde](https://etherscan.io/address/0x93A62dA5a14C80f265DAbC077fCEE437B1a0Efde) |
 | Timelock               |                       | [0x88Ba032be87d5EF1fbE87336B7090767F367BF73](https://etherscan.io/address/0x88Ba032be87d5EF1fbE87336B7090767F367BF73) |
-| Timelock Executor      |                       | [0xF8f60BF9456A6e0141149Db2DD6f02C60da5779B](https://etherscan.io/address/0x88Ba032be87d5EF1fbE87336B7090767F367BF73) |
+| Timelock Executor      |                       | [0xF8f60BF9456A6e0141149Db2DD6f02C60da5779B](https://etherscan.io/address/0xF8f60BF9456A6e0141149Db2DD6f02C60da5779B) |
 
 ## Polygon Contracts
 
