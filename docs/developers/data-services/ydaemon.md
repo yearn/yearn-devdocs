@@ -1,6 +1,6 @@
 # yDaemon
 
-[yDaemon](https://github.com/yearn/ydaemon) is a legacy REST API aggregator and indexer for Yearn Finance. It serves as the primary data service for Yearn's production frontends, providing comprehensive, real-time data about vaults, strategies, tokens, prices, and APR calculations across multiple blockchain networks. One old medium post sharing a yDaemon overview [is here](https://medium.com/iearn/ydaemon-one-api-to-unify-all-yearn-data-4fc74dc9a33b). For more detailed docs, reference [deepwiki](https://deepwiki.com/yearn/ydaemon).
+[yDaemon](https://github.com/yearn/ydaemon) is a legacy REST API aggregator and indexer for Yearn Finance. For more detailed docs, reference [deepwiki](https://deepwiki.com/yearn/ydaemon). If you are looking to integrate Yearn data, we recommend using the [Kong API](./kong.md) either via graphQL or REST.
 
 ## Key Features
 
@@ -243,6 +243,7 @@ The `riskScore` array in vault data contains 11 risk factors (scored 0-5 each):
 | 10 | External protocol type risk |
 
 **Overall Risk Level:**
+
 - -1: Not assessed
 - 1: Safest
 - 5: Riskiest
@@ -250,11 +251,13 @@ The `riskScore` array in vault data contains 11 risk factors (scored 0-5 each):
 ## Vault Categories
 
 ### Vault Types
+
 - "Yearn Vault" - Yearn V2 vaults
 - "Automated Yearn Vault" - Yearn V3 vaults
 - Various integration-specific types
 
 ### Vault Kinds
+
 - "Legacy" - Older vault versions
 - "Single Strategy" - One strategy per vault
 - "Multi Strategy" - Multiple strategies (V3)

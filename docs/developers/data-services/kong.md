@@ -13,6 +13,7 @@
 ### Hook System
 
 Three types of custom enrichment hooks:
+
 - **Snapshot Hooks**: Process recurring snapshots of contracts
 - **Event Hooks**: Process and enrich blockchain events
 - **Timeseries Hooks**: Generate time-series analytics data
@@ -34,7 +35,7 @@ Three types of custom enrichment hooks:
 ### Base URL
 
 - GraphQL Explorer: https://kong.yearn.fi/api/gql
-- REST API: https://kong.yearn.fi/api/rest/
+- REST API: see [REST API](#rest-api) section below
 
 ### Example Queries
 
@@ -100,33 +101,68 @@ query Timeseries {
 }
 ```
 
-REST: https://kong.yearn.fi/api/rest/timeseries/:segment/:chainId/:address
-REST Example: https://kong.yearn.fi/api/rest/timeseries/tvl/1/0xBe53A109B494E5c9f97b9Cd39Fe969BE68BF6204
+## REST API
+
+Kong Exposes a few rest API endpoints that are useful for standardized vault data
+
+### Vault List Data
+
+This will get a list of all vaults in Kong (note: this includes more than just Yearn Vaults)
+
+- REST timeseries path structure: https://kong.yearn.fi/api/rest/list/vaults/
+- REST timeseries path structure: https://kong.yearn.fi/api/rest/list/vaults/:chainId (optional chainID)
+- REST timeseries Example: https://kong.yearn.fi/api/rest/list/vaults
+
+### Vault snapshot Data
+
+This endpoint will return comprehensive data about a particular vault, similar to how yDaemon's individual vault endpoint worked.
+
+- REST timeseries path structure: https://kong.yearn.fi/api/rest/snapshot/:chainId/:address
+- REST timeseries Example: https://kong.yearn.fi/api/rest/snapshot/1/0xBe53A109B494E5c9f97b9Cd39Fe969BE68BF6204
+
+### Timeseries Data
+
+- REST timeseries path structure: https://kong.yearn.fi/api/rest/timeseries/:segment/:chainId/:address
+- :segment options:
+  - 'tvl'
+  - 'apy-historical'
+  - 'pps'
+- REST timeseries Example: https://kong.yearn.fi/api/rest/timeseries/tvl/1/0xBe53A109B494E5c9f97b9Cd39Fe969BE68BF6204
 
 ## Database Schema
 
 ### Core Tables
 
 #### `thing`
+
 Domain object definitions (vaults, strategies, etc.)
+
 - `chain_id`, `address`, `label`, `defaults` (JSONB)
 
 #### `snapshot`
+
 Latest contract snapshots with hook data
+
 - Stores contract state and enriched hook data
 - JSONB fields for flexible schema
 
 #### `evmlog`
+
 Raw EVM logs with hook enrichments
+
 - Full event history with args and hook data in JSONB
 - Limited history on transfers, deposits, withdraws, approves
 
 #### `evmlog_strides`
+
 Track which blocks have been indexed
+
 - Prevents duplicate indexing
 - Identifies gaps in coverage
 
 #### `output`
+
 Timeseries data from timeseries hooks
+
 - TVL, APY, PPS calculations
 - Time-series analytics
