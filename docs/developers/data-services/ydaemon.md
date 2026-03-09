@@ -1,6 +1,6 @@
 # yDaemon
 
-[yDaemon](https://github.com/yearn/ydaemon) is a next-generation REST API aggregator and indexer for Yearn Finance. It serves as the primary data service for Yearn's production frontends, providing comprehensive, real-time data about vaults, strategies, tokens, prices, and APR calculations across multiple blockchain networks. One old medium post sharing a yDaemon overview [is here](https://medium.com/iearn/ydaemon-one-api-to-unify-all-yearn-data-4fc74dc9a33b). For more detailed docs, reference [deepwiki](https://deepwiki.com/yearn/ydaemon).
+[yDaemon](https://github.com/yearn/ydaemon) is a legacy REST API aggregator and indexer for Yearn Finance. It serves as the primary data service for Yearn's production frontends, providing comprehensive, real-time data about vaults, strategies, tokens, prices, and APR calculations across multiple blockchain networks. One old medium post sharing a yDaemon overview [is here](https://medium.com/iearn/ydaemon-one-api-to-unify-all-yearn-data-4fc74dc9a33b). For more detailed docs, reference [deepwiki](https://deepwiki.com/yearn/ydaemon).
 
 ## Key Features
 

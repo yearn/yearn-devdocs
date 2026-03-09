@@ -1,6 +1,6 @@
 # Kong
 
-[Kong](https://github.com/yearn/kong) is a real-time/historical EVM indexer and analytics platform designed to make it easy to index EVM logs, enrich blockchain data, and query indexed data via GraphQL. It comes pre-configured with an index over Yearn's v2 and v3 vault ecosystems. For more detailed docs, reference [deepwiki](https://deepwiki.com/yearn/kong).
+[Kong](https://github.com/yearn/kong) is a real-time/historical EVM indexer and analytics platform designed to make it easy to index EVM logs, enrich blockchain data, and query indexed data via GraphQL. A few REST endpoints also exist in Kong for common queries. It comes pre-configured with an index over Yearn's v2 and v3 vault ecosystems. For more detailed docs, reference [deepwiki](https://deepwiki.com/yearn/kong).
 
 ## Key Features
 
@@ -34,6 +34,7 @@ Three types of custom enrichment hooks:
 ### Base URL
 
 - GraphQL Explorer: https://kong.yearn.fi/api/gql
+- REST API: https://kong.yearn.fi/api/rest/
 
 ### Example Queries
 
@@ -48,6 +49,9 @@ query MainnetVaults {
   }
 }
 ```
+
+REST: https://kong.yearn.fi/api/rest/list/vaults/:chainId
+REST Example: https://kong.yearn.fi/api/rest/list/vaults/1
 
 #### List Yearn v2 vaults on all chains
 
@@ -95,6 +99,9 @@ query Timeseries {
   }
 }
 ```
+
+REST: https://kong.yearn.fi/api/rest/timeseries/:segment/:chainId/:address
+REST Example: https://kong.yearn.fi/api/rest/timeseries/tvl/1/0xBe53A109B494E5c9f97b9Cd39Fe969BE68BF6204
 
 ## Database Schema
 
