@@ -39,3 +39,6 @@ yarn.lock
 docs/developers/contracts/test
 docs/developers/contracts/IWETH.md
 docs/developers/contracts/yWETH.md
+
+# AI folders
+.codex
