@@ -4,6 +4,8 @@ yvUSD deploys capital cross-chain through a pair of contracts: an **origin strat
 
 ## Architecture
 
+![Cross-chain USDC deployment flow](/img/diagrams/yvusd/cross-chain.png)
+
 ### Origin strategy (`CCTPStrategy`)
 
 `CCTPStrategy` is a standard Yearn V3 tokenized strategy deployed on Ethereum mainnet. It:
@@ -71,8 +73,6 @@ Deployed on the destination chain. It:
 - Receives USDC from the origin via CCTP and deposits it into a target ERC-4626 vault
 - Reports total assets back to the origin by sending a CCTP *message* (no token transfer)
 - Processes withdrawal requests by redeeming from the vault, bridging USDC back via CCTP, and sending an updated accounting message
-
-![Cross-chain USDC deployment flow](/img/diagrams/yvusd/cross-chain.png)
 
 ## Accounting model
 
