@@ -1,3 +1,14 @@
+---
+rpcCalls:
+  - name: 'Locked yvUSD'
+    chain: '1'
+    address: '0xAaaFEa48472f77563961Cdb53291DEDfB46F9040'
+    abiName: 'yvUsdLockedVaultABI'
+    methods:
+      - 'cooldownDuration'
+      - 'withdrawalWindow'
+---
+
 # yvUSD
 
 ## Overview
@@ -25,8 +36,8 @@ Because only a strategy contract is needed on any native-bridge-supported chain,
 
 Withdrawing from `Locked yvUSD` is a two-step process:
 
-1. **Start cooldown** — call `startCooldown(shares)` to lock a specific number of shares for withdrawal. The default cooldown period is 14 days.
-2. **Withdraw** — once the cooldown expires, withdraw within the 5-day withdrawal window.
+1. **Start cooldown** — call `startCooldown(shares)` to lock a specific number of shares for withdrawal. The current cooldown period is <ContractData contractName='Locked yvUSD' methodName='cooldownDuration' format='durationDays' />.
+2. **Withdraw** — once the cooldown expires, withdraw within the <ContractData contractName='Locked yvUSD' methodName='withdrawalWindow' format='durationDaysAdjective' /> withdrawal window.
 
 If the withdrawal window expires before the user withdraws, the cooldown must be restarted from step 1. Shares locked in an active cooldown cannot be transferred.
 

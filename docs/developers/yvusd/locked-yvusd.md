@@ -1,13 +1,24 @@
+---
+rpcCalls:
+  - name: 'Locked yvUSD'
+    chain: '1'
+    address: '0xAaaFEa48472f77563961Cdb53291DEDfB46F9040'
+    abiName: 'yvUsdLockedVaultABI'
+    methods:
+      - 'cooldownDuration'
+      - 'withdrawalWindow'
+---
+
 # Locked yvUSD (Cooldown Vault)
 
 Locked yvUSD is a vault that wraps `yvUSD` shares and restricts withdrawals behind a cooldown period plus a withdrawal window.
 
-## Default Parameters
+## Current Onchain Parameters
 
-In the current contract code, defaults are:
+The current onchain values are:
 
-- Cooldown duration: `14 days`
-- Withdrawal window: `5 days`
+- Cooldown duration: <ContractData contractName='Locked yvUSD' methodName='cooldownDuration' format='durationDays' />
+- Withdrawal window: <ContractData contractName='Locked yvUSD' methodName='withdrawalWindow' format='durationDays' />
 
 These are configurable by management onchain (for example `setCooldownDuration` and `setWithdrawalWindow`).
 
