@@ -18,7 +18,7 @@ Primary methods to be aware of:
 - `startCooldown(uint256 shares)`: starts or overwrites the cooldown for `shares` owned by `msg.sender`.
 - `cancelCooldown()`: clears the cooldown state for `msg.sender`.
 - `maxWithdraw(address owner)` / `maxRedeem(address owner)`: returns `0` if cooldown is not active, still pending, or the withdrawal window has expired.
-- `cooldownStatus(address user)`: returns `(cooldownEnd, windowEnd, shares)` for UI state.
+- `getCooldownStatus(address user)`: returns `(cooldownEnd, windowEnd, shares)` for UI state.
 
 Management methods (onchain configuration):
 

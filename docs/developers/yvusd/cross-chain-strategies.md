@@ -27,7 +27,7 @@ To learn "where yvUSD is sending assets", you:
 
 1. Enumerate the strategy addresses used by the yvUSD vault on Ethereum.
 2. For each strategy, read its destination configuration (`REMOTE_*` and `REMOTE_COUNTERPART`).
-3. (Optional) On the destination chain, read the remote strategy to learn where it deploys funds (for example, the target ERC-4626 vault).
+3. (Optional) On the destination chain, read the remote strategy to learn where it deploys funds (for example, the target ERC4626 vault).
 
 ### 1) Enumerate Origin Strategy Addresses
 
@@ -52,9 +52,9 @@ This is the source of truth for where the origin strategy bridges to.
 
 ### 3) Read The Remote Strategy’s Deployment Target (Optional)
 
-For the standard remote implementation (`CCTPRemoteStrategy`), the remote strategy deploys into an ERC-4626 vault that is stored as an immutable `vault` (see `BaseRemote4626`).
+For the standard remote implementation (`CCTPRemoteStrategy`), the remote strategy deploys into an ERC4626 vault that is stored as an immutable `vault` (see `BaseRemote4626`).
 
-### Remote strategy (standard: `CCTPRemoteStrategy`)
+## Remote strategy (standard: `CCTPRemoteStrategy`)
 
 Deployed on the destination chain. It:
 
@@ -62,7 +62,7 @@ Deployed on the destination chain. It:
 - Reports total assets back to the origin by sending a CCTP *message* (no token transfer)
 - Processes withdrawal requests by redeeming from the vault, bridging USDC back via CCTP, and sending an updated accounting message
 
-### Accounting model
+## Accounting model
 
 `remoteAssets` on the origin strategy is updated in two situations:
 
