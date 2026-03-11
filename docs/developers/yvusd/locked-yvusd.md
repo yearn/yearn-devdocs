@@ -7,9 +7,9 @@ Locked yvUSD is a vault that wraps `yvUSD` shares and restricts withdrawals behi
 In the current contract code, defaults are:
 
 - Cooldown duration: `14 days`
-- Withdrawal window: `5 days`
+- Withdrawal window: `7 days`
 
-These are configurable by management onchain (for example `setCooldownDuration` and `setWithdrawalWindow`).
+These are configurable by management onchain and can be changed. For example, the withdrawal window is currently 5 days.
 
 ![Withdrawal timeline for Locked yvUSD](/img/diagrams/yvusd/Locked yvUSD-timeline.png)
 
