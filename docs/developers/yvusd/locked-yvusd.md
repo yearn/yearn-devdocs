@@ -1,17 +1,17 @@
-# LockedyvUSD (Cooldown Vault)
+# Locked yvUSD (Cooldown Vault)
 
-LockedyvUSD is a vault that wraps `yvUSD` shares and restricts withdrawals behind a cooldown period plus a withdrawal window.
+Locked yvUSD is a vault that wraps `yvUSD` shares and restricts withdrawals behind a cooldown period plus a withdrawal window.
 
 ## Default Parameters
 
 In the current contract code, defaults are:
 
 - Cooldown duration: `14 days`
-- Withdrawal window: `7 days`
+- Withdrawal window: `5 days`
 
 These are configurable by management onchain (for example `setCooldownDuration` and `setWithdrawalWindow`).
 
-![Withdrawal timeline for LockedyvUSD](/img/diagrams/yvusd/lockedyvUSD-timeline.png)
+![Withdrawal timeline for Locked yvUSD](/img/diagrams/yvusd/Locked yvUSD-timeline.png)
 
 ## Key Behaviors (Integrator Notes)
 
@@ -20,7 +20,7 @@ These are configurable by management onchain (for example `setCooldownDuration` 
 - **Transfer restrictions**: shares that are in cooldown cannot be transferred (non-cooldown shares may still be transferable).
 - **Shutdown bypass**: when cooldown is disabled or the strategy is shutdown, the gating checks are bypassed (behavior depends on onchain configuration).
 
-If you integrate LockedyvUSD, assume user withdrawals can revert unless your UI guides them through the cooldown flow.
+If you integrate Locked yvUSD, assume user withdrawals can revert unless your UI guides them through the cooldown flow.
 
 ## Cooldown Flow (Contract Methods)
 

@@ -1,6 +1,6 @@
-# yvUSD APR (Oracle + APR Service)
+# yvUSD API
 
-yvUSD APR is derived from a mix of onchain data (vault/strategy accounting and APR-oracle reads) and an offchain service that periodically computes and caches results for fast frontend access.
+the yvUSD API aggregates and serves a mix of onchain data (vault/strategy accounting and APR-oracle reads) and an offchain service that periodically computes and caches results for fast frontend access.
 
 ## Sources Of Truth
 
@@ -10,11 +10,11 @@ yvUSD APR is derived from a mix of onchain data (vault/strategy accounting and A
 
 ## Onchain APR Oracle
 
-The APR service is configured to read an onchain APR oracle address. This oracle is used to fetch strategy APRs and to compute derivatives like LockedyvUSD's locker bonus APR.
+The API is configured to read an onchain APR oracle address. This oracle is used to fetch strategy APRs and to compute derivatives like Locked yvUSD's locker bonus APR.
 
 ## APR Service (Offchain)
 
-The yvUSD APR API:
+The yvUSD API:
 
 - Indexes strategy membership from onchain events.
 - Hydrates onchain metadata for strategies and vaults.
