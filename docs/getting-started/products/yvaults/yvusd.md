@@ -51,7 +51,7 @@ Withdrawing from `Locked yvUSD` is a two-step process:
 
 If the withdrawal window expires before the user withdraws, the cooldown must be restarted from step 1. Shares locked in an active cooldown cannot be transferred.
 
-![Withdrawal timeline for Locked yvUSD](/img/diagrams/yvusd/Locked yvUSD-timeline.png)
+![Withdrawal timeline for Locked yvUSD](/img/diagrams/yvusd/Locked-yvUSD-timeline.png)
 
 ## Read More
 
