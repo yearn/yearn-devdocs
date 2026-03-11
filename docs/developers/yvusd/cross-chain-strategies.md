@@ -31,11 +31,11 @@ To learn "where yvUSD is sending assets", you:
 1. Enumerate the strategy addresses used by the yvUSD vault on Ethereum.
 2. For each strategy, determine whether it is a cross-chain strategy.
 3. For cross-chain strategies, read the destination configuration (`REMOTE_*` immutables).
-4. (Optional) On the destination chain, read the .vault() to learn where it deploys funds (for example, the target ERC-4626 vault).
+4. (Optional) On the destination chain, the `vault()` value is where it deploys funds (for example, the target ERC-4626 vault).
 
 ### 1) Enumerate Origin Strategy Addresses
 
-Onchain, the vault can only expose *arrays* of strategies via limited mechanisms (for example, the withdrawal `default_queue`, max length 10). For a complete and always-up-to-date list, you typically need to index events offchain or use the yvUSD API (insert link).
+Onchain, the vault can only expose *arrays* of strategies via limited mechanisms (for example, the withdrawal `default_queue`, max length 10). For a complete and always-up-to-date list, you typically need to index events offchain or use [the yvUSD API](/developers/yvusd/apr).
 
 Practical options:
 

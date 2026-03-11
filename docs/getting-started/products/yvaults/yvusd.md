@@ -13,20 +13,30 @@ rpcCalls:
 
 ## Overview
 
-**yvUSD** is a USD-denominated cross-chain vault built on Yearn's v3 architecture. In standard Yearn v3 vaults, the assets deposited into a vault stay on the same chain. But yvUSD applies a new design approach: combine the battle-tested Yearn v3 vault with cross-chain capital deployment to maximize yield. Users deposit their assets to the vault on mainnet and the vault uses native asset bridges, like Circle's CCTP protocol, to send the assets to strategies on other chains.
+**yvUSD** is a USD-denominated cross-chain vault built on Yearn's V3 vault architecture. In standard Yearn vaults, the assets deposited into a vault stay on the same chain. But yvUSD applies a new design approach: combine the battle-tested Yearn vault with cross-chain capital deployment to maximize yield. Users deposit their assets to the vault on mainnet and the vault uses native asset bridges, like Circle's CCTP protocol, to send the assets to strategies on other chains.
 
 ![yvUSD Design](/img/diagrams/yvusd/summary1.png)
 
-Because only a strategy contract is needed on any native-bridge-supported chain, rather than the entire Yearn v3 vault infra, the new design allows for a more nimble approach to capturing yield for users across chains.
+Because only a strategy contract is needed on another chain, rather than the entire Yearn vault infra, the new design allows for a more nimble approach to capturing yield for users across chains.
 
 ![yvUSD with strategies on 3 chains](/img/diagrams/yvusd/summary2.png)
 
 ## How yvUSD differs from a standard Yearn vault
 
-- **Cross-chain deployment:** yvUSD strategies can deploy capital on other chains via native asset and/or chain bridges. Most V3 vaults keep assets on the same chain as the vault.
-- **Withdrawals can be non-atomic:** While the expectation is for withdrawals to be atomic just like a normal vault, it is possible that under certain conditions, there may be a delay.
-- **Optional lock wrapper:** `Locked YvUSD` adds a cooldown plus a withdrawal window to make withdrawals more predictable for users who opt in, and it can add a "locker bonus" yield component.
+- **Cross-chain deployment:** yvUSD strategies can deploy capital on other chains via native asset and/or chain bridges. Other Yearn vaults keep assets on the same chain as the vault.
 - **Different strategy risk profile:** yvUSD can include cross-chain components, duration risk (holding PT tokens) and leveraged loopers (e.g., Morpho Blue), adding additional cross-chain, time, and liquidation/borrow-rate risks compared to standard Yearn vaults.
+- **Withdrawals can be non-atomic:** While the expectation is for withdrawals to be atomic just like a normal vault, it is possible that under certain conditions, there may be a delay.
+- **Optional lock wrapper:** `Locked yvUSD` adds a cooldown plus a withdrawal window to make withdrawals more predictable for users who opt in, and it can add a "locker bonus" yield component.
+
+## Risks To Understand
+
+yvUSD and its strategies involve risks beyond standard single-chain Yearn vaults:
+
+- Smart contract risk (Yearn vaults, strategies, and integrations)
+- Stablecoin risk (depegs, issuer/custody risk, liquidity)
+- Duration risk (exposure to interest rate changes when holding fixed-rate or longer-term debt positions)
+- Cross-chain risk (bridging and remote execution/accounting)
+- Leverage/liquidation risk (for looper strategies that borrow against collateral)
 
 ## Locked yvUSD
 
@@ -42,16 +52,6 @@ Withdrawing from `Locked yvUSD` is a two-step process:
 If the withdrawal window expires before the user withdraws, the cooldown must be restarted from step 1. Shares locked in an active cooldown cannot be transferred.
 
 ![Withdrawal timeline for Locked yvUSD](/img/diagrams/yvusd/Locked yvUSD-timeline.png)
-
-## Risks To Understand
-
-yvUSD and its strategies involve risks beyond standard single-chain Yearn v3 vaults:
-
-- Smart contract risk (Yearn vaults, strategies, and integrations)
-- Stablecoin risk (depegs, issuer/custody risk, liquidity)
-- Duration risk (exposure to interest rate changes when holding fixed-rate or longer-term debt positions)
-- Cross-chain risk (bridging and remote execution/accounting)
-- Leverage/liquidation risk (for looper strategies that borrow against collateral)
 
 ## Read More
 

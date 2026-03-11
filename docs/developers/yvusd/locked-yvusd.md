@@ -20,7 +20,7 @@ The current onchain values are:
 - Cooldown duration: <ContractData contractName='Locked yvUSD' methodName='cooldownDuration' format='durationDays' />
 - Withdrawal window: <ContractData contractName='Locked yvUSD' methodName='withdrawalWindow' format='durationDays' />
 
-These are configurable by management onchain (for example `setCooldownDuration` and `setWithdrawalWindow`).
+These are configurable by management onchain and can be changed. For example, the withdrawal window is currently 5 days.
 
 ![Withdrawal timeline for Locked yvUSD](/img/diagrams/yvusd/Locked yvUSD-timeline.png)
 

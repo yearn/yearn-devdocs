@@ -1,6 +1,6 @@
 # yvUSD API
 
-the yvUSD API aggregates and serves a mix of onchain data (vault/strategy accounting and APR-oracle reads) and an offchain service that periodically computes and caches results for fast frontend access.
+The yvUSD API aggregates and serves a mix of onchain data (vault/strategy accounting and APR-oracle reads) and an offchain service that periodically computes and caches results for fast frontend access.
 
 ## Sources Of Truth
 
