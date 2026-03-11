@@ -18,6 +18,21 @@ module.exports = {
           items: [
             {
               type: 'category',
+              label: 'yvUSD',
+              link: {
+                type: 'doc',
+                id: 'products/yvaults/yvusd',
+              },
+              items: [
+                {
+                  type: 'link',
+                  label: 'yvUSD Contract Addresses →',
+                  href: '/developers/addresses/yvusd-contracts',
+                },
+              ],
+            },
+            {
+              type: 'category',
               label: 'yVaults v3',
               link: {
                 type: 'doc',
@@ -130,21 +145,6 @@ module.exports = {
               type: 'doc',
               label: 'yPRISMA',
               id: 'products/ylockers/yprisma/overview',
-            },
-          ],
-        },
-        {
-          type: 'category',
-          label: 'yvUSD',
-          link: {
-            type: 'doc',
-            id: 'products/yvusd/overview',
-          },
-          items: [
-            {
-              type: 'link',
-              label: 'yvUSD Contract Addresses →',
-              href: '/developers/addresses/yvusd-contracts',
             },
           ],
         },

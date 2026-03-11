@@ -24,6 +24,28 @@ export default {
           items: [
             {
               type: 'category',
+              label: 'yvUSD',
+              link: {
+                type: 'doc',
+                id: 'yvusd/index',
+              },
+              collapsed: true,
+              items: [
+                'yvusd/apr',
+                'yvusd/locked-yvusd',
+                'yvusd/cross-chain-strategies',
+                {
+                  type: 'link',
+                  label: 'yvUSD Contract Addresses →',
+                  href: '/developers/addresses/yvusd-contracts',
+                  // Don't mark this shortcut link as "active" when viewing the addresses page.
+                  // Otherwise both this link and the actual Addresses sidebar entry are highlighted.
+                  activeBaseRegex: '^$',
+                },
+              ],
+            },
+            {
+              type: 'category',
               label: 'yVaults v3',
               link: {
                 type: 'doc',
