@@ -31,9 +31,9 @@ export default {
               },
               collapsed: true,
               items: [
-                'yvusd/apr',
-                'yvusd/locked-yvusd',
                 'yvusd/cross-chain-strategies',
+                'yvusd/locked-yvusd',
+                'yvusd/apr',
                 {
                   type: 'link',
                   label: 'yvUSD Contract Addresses →',

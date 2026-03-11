@@ -1,11 +1,22 @@
 # LockedyvUSD (Cooldown Vault)
 
-LockedyvUSD is a vault that wraps `yvUSD` shares and restricts withdrawals behind a cooldown period plus a withdrawal window. In this workspace it is implemented in `locked-yvusd/src/LockedyvUSD.sol`.
+LockedyvUSD is a vault that wraps `yvUSD` shares and restricts withdrawals behind a cooldown period plus a withdrawal window.
+
+## Default Parameters
+
+In the current contract code, defaults are:
+
+- Cooldown duration: `14 days`
+- Withdrawal window: `7 days`
+
+These are configurable by management onchain (for example `setCooldownDuration` and `setWithdrawalWindow`).
+
+![Withdrawal timeline for LockedyvUSD](/img/diagrams/yvusd/lockedyvUSD-timeline.png)
 
 ## Key Behaviors (Integrator Notes)
 
 - **Withdrawals are gated**: `maxWithdraw` / `maxRedeem` will return `0` unless the owner has started a cooldown and is inside the valid withdrawal window.
-- **Cooldown is per-owner and overwriting**: starting a new cooldown overwrites the previous cooldown state for that owner.
+- **Cooldown is per-owner and will overwrite**: starting a new cooldown overwrites the previous cooldown state for that owner.
 - **Transfer restrictions**: shares that are in cooldown cannot be transferred (non-cooldown shares may still be transferable).
 - **Shutdown bypass**: when cooldown is disabled or the strategy is shutdown, the gating checks are bypassed (behavior depends on onchain configuration).
 
@@ -24,21 +35,6 @@ Management methods (onchain configuration):
 
 - `setCooldownDuration(uint256)`: set to `0` to disable cooldown gating.
 - `setWithdrawalWindow(uint256)`: window after cooldown during which withdrawals are allowed.
-
-## Default Parameters
-
-In the current contract code, defaults are:
-
-- Cooldown duration: `14 days`
-- Withdrawal window: `7 days`
-
-These are configurable by management onchain (for example `setCooldownDuration` and `setWithdrawalWindow`).
-
-![Withdrawal timeline for LockedyvUSD](/img/diagrams/yvusd/lockedyvUSD-timeline.png)
-
-## Related Contracts
-
-- `locked-yvusd/src/LockerZapper.sol` can combine base-asset -> yvUSD -> LockedyvUSD (and reverse) in a single transaction where possible.
 
 ## Links
 

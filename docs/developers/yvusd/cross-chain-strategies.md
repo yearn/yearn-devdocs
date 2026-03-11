@@ -1,6 +1,6 @@
 # Cross-Chain Strategies
 
-yvUSD deploys capital cross-chain through a pair of contracts: an **origin strategy** on Ethereum mainnet and a **remote strategy** on the destination chain. Two remote implementations exist: a standard ERC4626 variant (`CCTPRemoteStrategy`) and a HyperLiquid HLP variant (`HyperRemoteStrategy`).
+yvUSD deploys capital cross-chain through a pair of contracts: an **origin strategy** on Ethereum mainnet and a **remote strategy** on the destination chain. Two remote strategy implementations exist: a standard ERC-4626 variant (`CCTPRemoteStrategy`) and a HyperLiquid HLP variant (`HyperRemoteStrategy`).
 
 ## Architecture
 
@@ -12,22 +12,24 @@ yvUSD deploys capital cross-chain through a pair of contracts: an **origin strat
 - Tracks remote capital in a `remoteAssets` storage variable
 - Receives accounting updates from the remote strategy via incoming CCTP messages (`handleReceiveFinalizedMessage`)
 - Restricts deposits to a single `DEPOSITER` address (typically the yvUSD vault)
-- Only exposes local USDC balance as immediately withdrawable — remote assets must be bridged back before they can be withdrawn
+- Only exposes local USDC balance as immediately withdrawable — remote assets must be bridged back with a delay before they can be withdrawn
 
-```
-availableWithdrawLimit() → balanceOfAsset()  // only local balance
-totalAssets()            → balanceOfAsset() + remoteAssets
-```
+> **Withdrawal availability vs. total accounting**
+>
+> Only `balanceOfAsset()`, the amount of local USDC on mainnet, is immediately withdrawable from yvUSD. Remote capital on other chains is included in yvUSD's `totalAssets()` value, but must be bridged back before it can be redeemed.
 
 ## Discovering Destinations (Onchain)
 
 The yvUSD vault does not store a list of destination-chain addresses. Instead, yvUSD allocates to **origin-chain strategies**, and each cross-chain strategy contains its own destination configuration as queryable public immutables.
 
+Not all yvUSD strategies are cross-chain. The vault can also hold mainnet-only strategies (for example, Morpho-based looper strategies that deploy capital without bridging). Cross-chain strategies can be identified because a set of `REMOTE_*` public immutables that mainnet strategies do not have (and usually the strategy name on mainnet is CCTPStrategy).
+
 To learn "where yvUSD is sending assets", you:
 
 1. Enumerate the strategy addresses used by the yvUSD vault on Ethereum.
-2. For each strategy, read its destination configuration (`REMOTE_*` and `REMOTE_COUNTERPART`).
-3. (Optional) On the destination chain, read the remote strategy to learn where it deploys funds (for example, the target ERC4626 vault).
+2. For each strategy, determine whether it is a cross-chain strategy.
+3. For cross-chain strategies, read the destination configuration (`REMOTE_*` immutables).
+4. (Optional) On the destination chain, read the remote strategy to learn where it deploys funds (for example, the target ERC-4626 vault).
 
 ### 1) Enumerate Origin Strategy Addresses
 
@@ -39,7 +41,15 @@ Practical options:
 - **Canonical list (offchain indexing):** index strategy add/remove events for the vault (or related periphery like a Debt Allocator / Role Manager) and maintain the active set.
 - **Periphery:** if you have access to a Yearn Registry / Role Manager for the chain, use those helpers to retrieve vault/strategy configuration.
 
-### 2) Read Destination Configuration From The Strategy
+### 2) Identify Whether A Strategy Is Cross-Chain
+
+Call `REMOTE_CHAIN_ID()` on the strategy contract. Cross-chain strategies (`CCTPStrategy`) expose this as a public immutable returning the destination EVM chain ID. Mainnet-only strategies do not implement this function and the call will revert.
+
+A non-zero return value confirms the strategy is cross-chain and bridges assets to another chain. A revert (or a return value of `0`) indicates a mainnet-only strategy.
+
+As a secondary check, `REMOTE_COUNTERPART()` returns the address of the paired remote strategy contract. A non-zero address further confirms the strategy is cross-chain.
+
+### 3) Read Destination Configuration From The Strategy
 
 For cross-chain strategies (origin side), the key queryable fields are:
 
@@ -50,15 +60,15 @@ For cross-chain strategies (origin side), the key queryable fields are:
 
 This is the source of truth for where the origin strategy bridges to.
 
-### 3) Read The Remote Strategy’s Deployment Target (Optional)
+### 4) Read The Remote Strategy’s Deployment Target (Optional)
 
-For the standard remote implementation (`CCTPRemoteStrategy`), the remote strategy deploys into an ERC4626 vault that is stored as an immutable `vault` (see `BaseRemote4626`).
+For the standard remote implementation (`CCTPRemoteStrategy`), the remote strategy deploys into an ERC-4626 vault that is stored as an immutable `vault` (see `BaseRemote4626`).
 
 ## Remote strategy (standard: `CCTPRemoteStrategy`)
 
 Deployed on the destination chain. It:
 
-- Receives USDC from the origin via CCTP and deposits it into a target ERC4626 vault
+- Receives USDC from the origin via CCTP and deposits it into a target ERC-4626 vault
 - Reports total assets back to the origin by sending a CCTP *message* (no token transfer)
 - Processes withdrawal requests by redeeming from the vault, bridging USDC back via CCTP, and sending an updated accounting message
 
@@ -66,7 +76,7 @@ Deployed on the destination chain. It:
 
 ## Accounting model
 
-`remoteAssets` on the origin strategy is updated in two situations:
+`remoteAssets` on the origin strategy on mainnet is updated in two situations:
 
 1. **Outbound bridge** (`_deployFunds`): incremented immediately when USDC is bridged out
 2. **Inbound message** (`handleReceiveFinalizedMessage`): overwritten with the value sent by the remote strategy's `report()` or `processWithdrawal()`
@@ -100,7 +110,7 @@ The factories are deployed at the same address on every chain.
 
 ## HyperLiquid HLP Variant
 
-The HyperLiquid strategy uses the same origin-side `CCTPStrategy` on Ethereum mainnet, but replaces `CCTPRemoteStrategy` with `HyperRemoteStrategy` on HyperEVM. Instead of depositing into an ERC4626 vault, capital is deployed into HyperCore's **HLP (HyperLiquidity Provider) vault**, which earns yield by providing liquidity to HyperLiquid's perpetual exchange.
+The HyperLiquid strategy uses the same origin-side `CCTPStrategy` on Ethereum mainnet, but replaces `CCTPRemoteStrategy` with `HyperRemoteStrategy` on HyperEVM. Instead of depositing into an ERC-4626 vault, capital is deployed into HyperCore's **HLP (HyperLiquidity Provider) vault**, which earns yield by providing liquidity to HyperLiquid's perpetual exchange.
 
 ### What is different
 
