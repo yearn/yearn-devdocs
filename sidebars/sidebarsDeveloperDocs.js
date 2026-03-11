@@ -178,6 +178,11 @@ export default {
         },
         {
           type: 'doc',
+          label: 'yvUSD',
+          id: 'addresses/yvusd-contracts',
+        },
+        {
+          type: 'doc',
           label: 'Lens',
           id: 'addresses/lens-contracts',
         },

@@ -134,6 +134,21 @@ module.exports = {
           ],
         },
         {
+          type: 'category',
+          label: 'yvUSD',
+          link: {
+            type: 'doc',
+            id: 'products/yvusd/overview',
+          },
+          items: [
+            {
+              type: 'link',
+              label: 'yvUSD Contract Addresses →',
+              href: '/developers/addresses/yvusd-contracts',
+            },
+          ],
+        },
+        {
           type: 'link',
           label: 'stYFI →',
           href: '/contributing/governance/styfi',
