@@ -34,6 +34,8 @@ In the current contract code, defaults are:
 
 These are configurable by management onchain (for example `setCooldownDuration` and `setWithdrawalWindow`).
 
+![Withdrawal timeline for LockedyvUSD](/img/diagrams/yvusd/lockedyvUSD-timeline.png)
+
 ## Related Contracts
 
 - `locked-yvusd/src/LockerZapper.sol` can combine base-asset -> yvUSD -> LockedyvUSD (and reverse) in a single transaction where possible.

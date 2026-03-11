@@ -62,6 +62,8 @@ Deployed on the destination chain. It:
 - Reports total assets back to the origin by sending a CCTP *message* (no token transfer)
 - Processes withdrawal requests by redeeming from the vault, bridging USDC back via CCTP, and sending an updated accounting message
 
+![Cross-chain USDC deployment flow](/img/diagrams/yvusd/cross-chain.png)
+
 ## Accounting model
 
 `remoteAssets` on the origin strategy is updated in two situations:
