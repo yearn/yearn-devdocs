@@ -37,10 +37,9 @@ export default {
                 {
                   type: 'link',
                   label: 'yvUSD Contract Addresses →',
-                  href: '/developers/addresses/yvusd-contracts',
-                  // Don't mark this shortcut link as "active" when viewing the addresses page.
+                  // Use a hardcoded URL so this link is never treated as "active" in the yvUSD sidebar.
                   // Otherwise both this link and the actual Addresses sidebar entry are highlighted.
-                  activeBaseRegex: '^$',
+                  href: 'https://docs.yearn.fi/developers/addresses/yvusd-contracts',
                 },
               ],
             },
