@@ -164,6 +164,11 @@ export default {
         },
         {
           type: 'doc',
+          label: 'yvUSD',
+          id: 'addresses/yvusd-contracts',
+        },
+        {
+          type: 'doc',
           label: 'yVaults v3',
           id: 'addresses/v3-contracts',
         },
@@ -196,11 +201,6 @@ export default {
           type: 'doc',
           label: 'yETH',
           id: 'addresses/ypools-contracts',
-        },
-        {
-          type: 'doc',
-          label: 'yvUSD',
-          id: 'addresses/yvusd-contracts',
         },
         {
           type: 'doc',
