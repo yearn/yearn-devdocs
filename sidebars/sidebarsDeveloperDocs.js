@@ -24,6 +24,27 @@ export default {
           items: [
             {
               type: 'category',
+              label: 'yvUSD',
+              link: {
+                type: 'doc',
+                id: 'yvusd/index',
+              },
+              collapsed: true,
+              items: [
+                'yvusd/cross-chain-strategies',
+                'yvusd/locked-yvusd',
+                'yvusd/api',
+                {
+                  type: 'link',
+                  label: 'yvUSD Contract Addresses →',
+                  // Use a hardcoded URL so this link is never treated as "active" in the yvUSD sidebar.
+                  // Otherwise both this link and the actual Addresses sidebar entry are highlighted.
+                  href: 'https://docs.yearn.fi/developers/addresses/yvusd-contracts',
+                },
+              ],
+            },
+            {
+              type: 'category',
               label: 'yVaults v3',
               link: {
                 type: 'doc',
@@ -140,6 +161,11 @@ export default {
           type: 'doc',
           label: 'General',
           id: 'addresses/core-contracts',
+        },
+        {
+          type: 'doc',
+          label: 'yvUSD',
+          id: 'addresses/yvusd-contracts',
         },
         {
           type: 'doc',
