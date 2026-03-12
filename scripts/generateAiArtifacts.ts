@@ -71,6 +71,15 @@ function normalizeText(input: string) {
     .trim()
 }
 
+function escapeHtml(input: string) {
+  return input
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;')
+}
+
 function extractAttr(tagAttrs: string, name: string) {
   const re = new RegExp(
     `${name}=(?:"([^"]+)"|'([^']+)'|([^\\s>]+))`,
@@ -292,6 +301,79 @@ function findRawSourceRelativePath(docsDir: string, relHtmlPath: string) {
   return undefined
 }
 
+function writeRawDocsIndex(rawOutDir: string, rawFiles: string[]) {
+  const fileList = rawFiles
+    .slice()
+    .sort((a, b) => a.localeCompare(b))
+    .map((relPath) => {
+      const href = encodeURI(relPath.replace(/\\/g, '/'))
+      const label = escapeHtml(relPath.replace(/\\/g, '/'))
+      return `        <li><a href="${href}">${label}</a></li>`
+    })
+    .join('\n')
+
+  const html = [
+    '<!doctype html>',
+    '<html lang="en">',
+    '  <head>',
+    '    <meta charset="utf-8" />',
+    '    <meta name="viewport" content="width=device-width, initial-scale=1" />',
+    '    <title>Yearn Docs Raw Source Mirror</title>',
+    '    <style>',
+    '      :root { color-scheme: light; }',
+    '      body {',
+    '        margin: 0;',
+    '        font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;',
+    '        background: #f7f4ee;',
+    '        color: #111827;',
+    '      }',
+    '      main {',
+    '        max-width: 960px;',
+    '        margin: 0 auto;',
+    '        padding: 48px 20px 64px;',
+    '      }',
+    '      h1 { margin: 0 0 16px; font-size: clamp(2rem, 3vw, 3rem); }',
+    '      p { margin: 0 0 16px; line-height: 1.6; }',
+    '      code {',
+    '        padding: 0.15rem 0.35rem;',
+    '        border-radius: 0.35rem;',
+    '        background: rgba(17, 24, 39, 0.08);',
+    '        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;',
+    '      }',
+    '      ul {',
+    '        margin: 24px 0 0;',
+    '        padding: 0;',
+    '        list-style: none;',
+    '        columns: 2 320px;',
+    '        column-gap: 24px;',
+    '      }',
+    '      li {',
+    '        break-inside: avoid;',
+    '        margin: 0 0 10px;',
+    '      }',
+    '      a { color: #0f766e; text-decoration: none; }',
+    '      a:hover, a:focus-visible { text-decoration: underline; }',
+    '      .meta { color: #4b5563; }',
+    '    </style>',
+    '  </head>',
+    '  <body>',
+    '    <main>',
+    '      <h1>Yearn Docs Raw Source Mirror</h1>',
+    '      <p>This endpoint mirrors the repository <code>docs/</code> tree as raw <code>.md</code> and <code>.mdx</code> files.</p>',
+    '      <p>Use <a href="../docs.jsonl"><code>/ai/docs.jsonl</code></a> for retrieval, then follow each record&rsquo;s <code>source.rawPath</code> to fetch the exact source file when you need original markdown or MDX.</p>',
+    `      <p class="meta">${rawFiles.length} raw source files are available below.</p>`,
+    '      <ul>',
+    fileList,
+    '      </ul>',
+    '    </main>',
+    '  </body>',
+    '</html>',
+    '',
+  ].join('\n')
+
+  fs.writeFileSync(path.join(rawOutDir, 'index.html'), html)
+}
+
 function main() {
   const workspaceRoot = process.cwd()
   const buildDir = path.join(workspaceRoot, 'build')
@@ -372,6 +454,13 @@ function main() {
   docsJsonlStream.end()
 
   copyRawDocs(docsDir, rawOutDir)
+  const rawFiles = walkFiles(rawOutDir)
+    .filter((p) => {
+      const ext = path.extname(p).toLowerCase()
+      return ext === '.md' || ext === '.mdx'
+    })
+    .map((p) => path.relative(rawOutDir, p))
+  writeRawDocsIndex(rawOutDir, rawFiles)
 
   const manifest: ManifestV1 = {
     schemaVersion: 2,
@@ -396,11 +485,11 @@ function main() {
       'AI-readable exports:',
       '- Manifest: /ai/manifest.json',
       '- Plaintext corpus (JSONL): /ai/docs.jsonl',
-      '- Raw docs sources (MD/MDX): /ai/raw/ (mirrors repository `docs/`)',
+      '- Raw docs source mirror + index: /ai/raw/ (mirrors repository `docs/`)',
       '',
       'Notes:',
       '- Prefer citing canonical page URLs on https://docs.yearn.fi',
-      '- Use plaintext for retrieval; fall back to raw MDX/MD for exact formatting/quotes',
+      '- Use plaintext for retrieval; follow `source.rawPath` for exact raw MDX/MD files',
       '',
     ].join('\n')
   )
