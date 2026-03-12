@@ -35,7 +35,7 @@ To learn "where yvUSD is sending assets", you:
 
 ### 1) Enumerate Origin Strategy Addresses
 
-Onchain, the vault can only expose *arrays* of strategies via limited mechanisms (for example, the withdrawal `default_queue`, max length 10). For a complete and always-up-to-date list, you typically need to index events offchain or use [the yvUSD API](/developers/yvusd/apr).
+Onchain, the vault can only expose *arrays* of strategies via limited mechanisms (for example, the withdrawal `default_queue`, max length 10). For a complete and always-up-to-date list, you typically need to index events offchain or use [the yvUSD API](/developers/yvusd/api).
 
 Practical options:
 

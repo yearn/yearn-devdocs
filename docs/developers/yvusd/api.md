@@ -1,6 +1,6 @@
 # yvUSD API
 
-The yvUSD API aggregates and serves a mix of onchain data (vault/strategy accounting and APR-oracle reads) and an offchain service that periodically computes and caches results for fast frontend access.
+[The yvUSD](https://yvusd-api.yearn.fi) API aggregates and serves a mix of onchain data (vault/strategy accounting and APR-oracle reads) and an offchain service that periodically computes and caches results for fast frontend access.
 
 ## Sources Of Truth
 
@@ -24,7 +24,7 @@ The service is designed so frontends can read APR data without performing expens
 
 ### API Routes
 
-[The API](https://github.com/yearn/yearn-yvusd-apr-service) exposes routes like:
+[The API](https://yvusd-api.yearn.fi) exposes routes like:
 
 - `GET /api/health`: Health and data freshness.
 - `GET /api/sync`: run a full sync + recompute cycle (typically triggered by cron).
@@ -43,6 +43,10 @@ APR outputs can be stale if:
 In these cases, vault operations (deposit/withdraw/report) continue unaffected; only the rate display is impacted.
 
 ## Links
+
+<PrettyLink>[Live API](https://yvusd-api.yearn.fi)</PrettyLink>
+
+<PrettyLink>[yvUSD api github](https://github.com/yearn/yearn-yvusd-apr-service)</PrettyLink>
 
 <PrettyLink>[yvUSD developer docs index](/developers/yvusd)</PrettyLink>
 

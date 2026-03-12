@@ -33,7 +33,7 @@ export default {
               items: [
                 'yvusd/cross-chain-strategies',
                 'yvusd/locked-yvusd',
-                'yvusd/apr',
+                'yvusd/api',
                 {
                   type: 'link',
                   label: 'yvUSD Contract Addresses →',

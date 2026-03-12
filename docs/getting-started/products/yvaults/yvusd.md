@@ -34,7 +34,7 @@ yvUSD and its strategies involve risks beyond standard single-chain Yearn vaults
 
 - Smart contract risk (Yearn vaults, strategies, and integrations)
 - Stablecoin risk (depegs, issuer/custody risk, liquidity)
-- Duration risk (exposure to interest rate changes when holding fixed-rate or longer-term debt positions)
+- Duration risk (Illiquidity of fixed rate tokens and exposure to interest rate changes when holding fixed-rate or longer-term debt positions)
 - Cross-chain risk (bridging and remote execution/accounting)
 - Leverage/liquidation risk (for looper strategies that borrow against collateral)
 
@@ -54,6 +54,8 @@ If the withdrawal window expires before the user withdraws, the cooldown must be
 ![Withdrawal timeline for Locked yvUSD](/img/diagrams/yvusd/Locked yvUSD-timeline.png)
 
 ## Read More
+
+<PrettyLink>[Debank Bundle of yvUSD strategies](https://debank.com/bundles/221066/portfolio)</PrettyLink>
 
 <PrettyLink>[yvUSD Deep Dive](/developers/yvusd)</PrettyLink>
 
