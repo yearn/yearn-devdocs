@@ -106,7 +106,7 @@ The build also generates AI-friendly artifacts that will be served by the hosted
 - `build/llms.txt` (served as `/llms.txt`)
 - `build/ai/manifest.json` (served as `/ai/manifest.json`)
 - `build/ai/docs.jsonl` (served as `/ai/docs.jsonl`)
-- `build/ai/raw/` (served as `/ai/raw/`)
+- `build/ai/raw/` (served as `/ai/raw/`, with an index page plus raw `.md`/`.mdx` files)
 
 Artifact URLs default to `https://docs.yearn.fi`. To generate artifacts against a preview deployment, set `DOCS_URL` explicitly (for example `DOCS_URL=https://<preview-host>`).
 
