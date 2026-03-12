@@ -22,7 +22,7 @@ The current onchain values are:
 
 These are configurable by management onchain and can be changed. For example, the withdrawal window is currently 5 days.
 
-![Withdrawal timeline for Locked yvUSD](/img/diagrams/yvusd/Locked yvUSD-timeline.png)
+![Withdrawal timeline for Locked yvUSD](/img/diagrams/yvusd/Locked-yvUSD-timeline.png)
 
 ## Key Behaviors (Integrator Notes)
 
