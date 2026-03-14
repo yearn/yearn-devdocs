@@ -283,7 +283,7 @@ The above query will need to be made with variables passed into it
 
 The above query will give daily values for the `weeklyAPY` value for a chosen vault.
 
-## Calculating APRs from on-chain APR Oracles
+## Calculating APRs from onchain APR Oracles
 
 :::info
 

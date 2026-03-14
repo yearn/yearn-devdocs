@@ -427,9 +427,9 @@ function convertToAssets(uint256 shares) external view returns (uint256);
 
 ### previewDeposit
 
-Allows an on-chain or off-chain user to simulate
+Allows an onchain or off-chain user to simulate
 the effects of their deposit at the current block, given
-current on-chain conditions.
+current onchain conditions.
 
 *This will round down.*
 
@@ -451,9 +451,9 @@ function previewDeposit(uint256 assets) external view returns (uint256);
 
 ### previewMint
 
-Allows an on-chain or off-chain user to simulate
+Allows an onchain or off-chain user to simulate
 the effects of their mint at the current block, given
-current on-chain conditions.
+current onchain conditions.
 
 *This is used instead of convertToAssets so that it can
 round up for safer mints.*
@@ -476,9 +476,9 @@ function previewMint(uint256 shares) external view returns (uint256);
 
 ### previewWithdraw
 
-Allows an on-chain or off-chain user to simulate
+Allows an onchain or off-chain user to simulate
 the effects of their withdrawal at the current block,
-given current on-chain conditions.
+given current onchain conditions.
 
 *This is used instead of convertToShares so that it can
 round up for safer withdraws.*
@@ -501,9 +501,9 @@ function previewWithdraw(uint256 assets) external view returns (uint256);
 
 ### previewRedeem
 
-Allows an on-chain or off-chain user to simulate
+Allows an onchain or off-chain user to simulate
 the effects of their redemption at the current block,
-given current on-chain conditions.
+given current onchain conditions.
 
 *This will round down.*
 

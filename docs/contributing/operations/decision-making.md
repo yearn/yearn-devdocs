@@ -5,14 +5,14 @@
 
 There are two key dimensions of decision-making at yearn: on- or off-chain; gated or un-gated.
 
--   On-chain decisions are executed via transactions on the blockchain.
+-   Onchain decisions are executed via transactions on the blockchain.
 -   Off-chain decisions are executed in various ways off of the blockchain.
 -   Gated decisions require specific permissions.
 -   Un-gated decisions can be made by anyone, they are permissionless.
 
 Here are some examples for the four categories of decisions that emerge from this space:
 
-|    |on-chain|off-chain|
+|    |onchain|off-chain|
 |----|--------|---------|
 |gated|add a strategy to a vault|merge a pr|
 ||transfer money from the treasury|decide on a logo|
@@ -21,13 +21,13 @@ Here are some examples for the four categories of decisions that emerge from thi
 ||execute a signed multisig tx|write a new docs page|
 ||create a new vault|propose a YIP|
 
-[Gov 2.0](https://gov.yearn.fi/t/yip-61-governance-2-0) clarifies who holds decision-making power for our most critical kinds of decisions: on-chain gated decisions. But what about the other kinds? Who decides how off-chain gated decisions are made? Are there any guidelines for un-gated decisions or are they totally open? The rest of this document aims to clarify these questions.
+[Gov 2.0](https://gov.yearn.fi/t/yip-61-governance-2-0) clarifies who holds decision-making power for our most critical kinds of decisions: onchain gated decisions. But what about the other kinds? Who decides how off-chain gated decisions are made? Are there any guidelines for un-gated decisions or are they totally open? The rest of this document aims to clarify these questions.
 
 ## Gated Decisions
 
-### On-Chain
+### Onchain
 
-All possible gated on-chain decisions are organized by Gov 2.0 into discrete and transferable objects called 'Decision-Making Powers' or just 'powers' for short. These powers are objects --- abstractions just above the specific transactions that embody the actual decisions. As we use this new system, we can decide to make these objects more or less granular. Currently YFI holders have the 'Manage Powers' decision-making power, so changes to each power is decided via YFI vote. But, YFI holders could vote to delegate the 'Manage Powers' power, or a subset of it, to a yTeam in the future.
+All possible gated onchain decisions are organized by Gov 2.0 into discrete and transferable objects called 'Decision-Making Powers' or just 'powers' for short. These powers are objects --- abstractions just above the specific transactions that embody the actual decisions. As we use this new system, we can decide to make these objects more or less granular. Currently YFI holders have the 'Manage Powers' decision-making power, so changes to each power is decided via YFI vote. But, YFI holders could vote to delegate the 'Manage Powers' power, or a subset of it, to a yTeam in the future.
 
 ### Off-Chain
 

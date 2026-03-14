@@ -22,7 +22,7 @@ The Origin Strategy is a standard Yearn V3 tokenized strategy deployed on Ethere
 
 ## Discovering Destinations (Onchain)
 
-The yvUSD vault does not store a list of destination-chain addresses. Instead, yvUSD allocates to **origin-chain strategies**, and each cross-chain strategy contains its own destination configuration as queryable public immutables.
+The yvUSD vault does not store a list of destinationchain addresses. Instead, yvUSD allocates to **origin-chain strategies**, and each cross-chain strategy contains its own destination configuration as queryable public immutables.
 
 Not all yvUSD strategies are cross-chain. The vault can also hold mainnet-only strategies (for example, Morpho-based looper strategies that deploy capital without bridging). Cross-chain strategies can be identified because a set of `REMOTE_*` public immutables that mainnet strategies do not have.
 

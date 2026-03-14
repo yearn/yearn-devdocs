@@ -1,6 +1,6 @@
 # Yearn Stack + FE Features
 
-Yearn SDK integrates several components, both on-chain and off-chain.
+Yearn SDK integrates several components, both onchain and off-chain.
 
 ## Backend stack
 
@@ -37,16 +37,16 @@ Yearn SDK integrates several components, both on-chain and off-chain.
 
 ## Backend features
 
-### Resilience powered by on-chain data and IPFS storage
+### Resilience powered by onchain data and IPFS storage
 
 - Critical data (assets, positions, vault deprecations) will be fetched exclusively from the chain / IPFS
   - maximizing uptime
   - reducing reliance on other services
 - Historical TVL, historical APY and other non critical data will be stored off chain and fetched dinamically.
 
-#### On-chain assets and positions
+#### Onchain assets and positions
 
-- Lens does what the old off-chain API does, but directly on-chain. This will speed up the fetching time and greatly reduce our reliance on scheduled jobs in servers.
+- Lens does what the old off-chain API does, but directly onchain. This will speed up the fetching time and greatly reduce our reliance on scheduled jobs in servers.
 
 #### IPFS CI/CD for frontend and metadata
 

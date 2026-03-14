@@ -53,7 +53,7 @@ Check out the [Frontend Integrations](front-end-development) section of this doc
 
 ## Data Analysis
 
-Yearn aims to provide more insights into our products to our customers and partners through analyzing the on-chain and off-chain data. Given that all Yearn protocol data is publicly stored on-chain, there are lots of insights to be gained from analyzing these transactions.
+Yearn aims to provide more insights into our products to our customers and partners through analyzing the onchain and off-chain data. Given that all Yearn protocol data is publicly stored onchain, there are lots of insights to be gained from analyzing these transactions.
 
 **Dune Analytics**- Query contract data and generate dashboards with SQL
 

@@ -59,7 +59,7 @@ veYFI incorporates [YIP-56: Buyback and Build](https://gov.yearn.fi/t/yip-56-buy
     - **x** = `veYFI_supply / YFI_supply`
     <br />
 
-  :::yearn[Current On-Chain Values]
+  :::yearn[Current Onchain Values]
 
   - The current redemption discount is: <ContractData contract='dYFI Redemption' methodName='discount' decimals={18} />
   - Current Spot Price of YFI/ETH: <ContractData contract='dYFI Redemption' methodName='get_latest_price' decimals={18} />

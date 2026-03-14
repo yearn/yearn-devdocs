@@ -270,7 +270,7 @@ yDaemon aggregates data from multiple sources:
 
 1. **Yearn Subgraph**: Base data source for vault and strategy information
 2. **Yearn Meta**: Configuration and metadata (risk scores, descriptions, icons)
-3. **Yearn Lens Oracle**: On-chain price data for tokens and vaults
+3. **Yearn Lens Oracle**: Onchain price data for tokens and vaults
 4. **Blockchain RPC**: Direct chain queries via Tenderly and other providers
 5. **Curve API**: Pool and gauge information for Curve vaults
 6. **External Price Feeds**: Gamma, Pendle, and other protocol-specific data

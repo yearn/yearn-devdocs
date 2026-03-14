@@ -30,7 +30,7 @@ A few examples of periphery contracts used in V3 are:
 - **Accountant**: Handles changing fees for vault operations.
 - **Deposit/Withdraw Limit Modules**: Allows dynamic control over a vaults deposit or withdraw limits for full customization.
 - **Swappers**: Pre-built contracts for strategies to inherit to easily implement their desired swap logic.
-- **APR Oracles**: Retrieve the expected current APY on-chain for different vaults or strategies to properly allocate debt.
+- **APR Oracles**: Retrieve the expected current APY onchain for different vaults or strategies to properly allocate debt.
 - And any others you can come up with!
 
 To read more about the periphery contracts or where to find the current versions click [here](./periphery.md)
