@@ -1,6 +1,6 @@
 # ySwaps
 
-*This document contain links to private repositories that might not be publicly available*
+*This document contains links to private repositories that might not be publicly available*
 
 ySwaps is used to **abstract** the token trading logic from the strategies harvest method, which means strategies can focus on farming tokens and don't have to handle tokens trading logic and paths. The "swappers" smart contracts allows trading optimizations and new paths to be added since the code is not hardcoded in strategies.
 
@@ -30,26 +30,26 @@ ySwaps is used to **abstract** the token trading logic from the strategies harve
 
 ### Swappers
 
-Contracts in charge of making the swaps (uniswap, balancer, sushiswap, solidly and more). We can separated them in two types:
+Contracts in charge of making the swaps (uniswap, balancer, sushiswap, solidly and more). We can separate them in two types:
 
 #### Single swapper
 
-Uniswap, balancer, sushiswap, etc. These are straightforward contracts that will make a simple swap on these dexes (`token A` to `token B`). It is also worth to mention that these swappers take care of few extra stuff like: `approval needed to make the swap`, `transfering final tokens to strategy if needed`.
+Uniswap, balancer, sushiswap, etc. These are straightforward contracts that will make a simple swap on these dexes (`token A` to `token B`). It is also worth to mention that these swappers take care of few extra stuff like: `approval needed to make the swap`, `transferring final tokens to strategy if needed`.
 
 #### Multicall swapper
 
-This contract will receive a bundle of transactions that are required to acquire the wanted token/tokens. This is used in specific cases where trade can not be made in a normal exchange due to liquidity issues, dex not having that token or route, needing extra steps to aquire the token such as depositing or withdrawing, and more. It is important to mention that this swapper does NOT take care of things like approvals, or transfers (important difference with `single swappers`).
+This contract will receive a bundle of transactions that are required to acquire the wanted token/tokens. This is used in specific cases where trade can not be made in a normal exchange due to liquidity issues, dex not having that token or route, needing extra steps to acquire the token such as depositing or withdrawing, and more. It is important to mention that this swapper does NOT take care of things like approvals, or transfers (important difference with `single swappers`).
 
 #### Swappers Usage
 
-**Single swapper example:** We have `tokenIn` and `tokenOut` and we know that we can go straight to sushiswap that has enought liquidity to make the trade with good conditions.
+**Single swapper example:** We have `tokenIn` and `tokenOut` and we know that we can go straight to sushiswap that has enough liquidity to make the trade with good conditions.
 
-**Multicall example:** We have a `tokenIn` and we want a `tokenOut`. But theres no path on any dex to do the trade directly, so we need to split the swap in two steps:
+**Multicall example:** We have a `tokenIn` and we want a `tokenOut`. But there's no path on any dex to do the trade directly, so we need to split the swap in two steps:
 
 1. Step 1: `tokenIn` for `hopToken`.
 2. Step 2: `hopToken` for `tokenOut`.
 
-For this example we are gonna assume that we will need to use two different dexes for each step. Since we are gonna split the trade in two different transactions and the main objective is to use TWO DIFFERENT dexes, this is where we use the `Multicall Swapper`.Everything that requires more than just a single swap tx, will use multicall dexes.
+For this example we are gonna assume that we will need to use two different dexes for each step. Since we are gonna split the trade in two different transactions and the main objective is to use TWO DIFFERENT dexes, this is where we use the `Multicall Swapper`. Everything that requires more than just a single swap tx, will use multicall dexes.
 
 #### Swapper Contracts (version 0.2.0)
 
@@ -76,9 +76,9 @@ For this example we are gonna assume that we will need to use two different dexe
 
 - This contract has the `enabled trades` that each strategy can make. Enabled trades are just a list of possible swaps that a strategy can make. So it only contains three variables: `strategyAddress`, `tokenIn`, `tokenOut`. We have these enabled trades to know which swaps can/should be made with each strategy.
 
-- This contract is also in changer of verifying the trades. To do that it will use the different `execute` methods in it and call the `swapper contracts` that needs to use. Remember that `swappers` are the contracts responsible to making the actual swap.
+- This contract is also in charge of verifying the trades. To do that it will use the different `execute` methods in it and call the `swapper contracts` that need to be used. Remember that `swappers` are the contracts responsible for making the actual swap.
 
-- When we execute the swap its important to point out that this  takes care of: `transfering tokenIn from strat to swapper`, `make final the check if the amount received > minAmountOut`.
+- When we execute the swap its important to point out that this takes care of: `transferring tokenIn from strat to swapper`, `make final the check if the amount received > minAmountOut`.
 
 #### Trade Factory Contracts (version 0.2.0)
 
@@ -94,7 +94,7 @@ For this example we are gonna assume that we will need to use two different dexe
 
 Scripts in charge of providing the swap transaction that will be used and sent to `Trade Factory contract`.
 
-- **Custom solvers**: There are custom solvers for specific cases/strategies that will need to make multiple transactions for a specific swap. Each of these scripts aims to an specific strategy and trade that needs to be made. Some examples (`ThreePoolCrvMulticall.ts`). This is for specific strategies's trades that will need to swap tokens that can not be swaped/resolved on a single dex swap. The tx provided by this solver is gonna be used with the `Multicall swapper`.
+- **Custom solvers**: There are custom solvers for specific cases/strategies that will need to make multiple transactions for a specific swap. Each of these scripts aims at a specific strategy and trade that needs to be made. Some examples (`ThreePoolCrvMulticall.ts`). This is for specific strategies' trades that will need to swap tokens that can not be swapped/resolved on a single dex swap. The tx provided by this solver is gonna be used with the `Multicall swapper`.
 
 - **Dexes solvers**: this script is used for situations where the trade can be resolved with a normal swap on an exchange and does NOT require multiple tx to ensure the trade is possible. Different to `Custom Solvers`, this can be used in a generic way for different strategies/swaps. This script checks with every DeX and chooses the best one to make the trade. The tx provided by this solver is gonna be used with the `Single swapper`.
 

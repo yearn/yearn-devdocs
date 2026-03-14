@@ -1,6 +1,6 @@
 # Yearn Lens
 
-Yearn Lens is a series of smart contracts that aggregate and format Yearn v2 Vault data into standardized interfaces.
+Yearn Lens is a series of smart contracts that aggregate and format Yearn V2 Vault data into standardized interfaces.
 
 ## Architecture
 

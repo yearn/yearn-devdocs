@@ -1,10 +1,10 @@
 ---
-rpcCalls:  
+rpcCalls:
   - name: 'dYFI Redemption'
     chain: '1'
     address: '0x7dC3A74F0684fc026f9163C6D5c3C99fda2cf60a'
     abi: 'dyfiRedemptionABI'
-    methods:  
+    methods:
       - 'discount'
       - 'get_latest_price'
       - name: 'eth_required'

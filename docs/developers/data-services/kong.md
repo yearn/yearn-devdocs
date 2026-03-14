@@ -54,7 +54,7 @@ query MainnetVaults {
 REST: https://kong.yearn.fi/api/rest/list/vaults/:chainId
 REST Example: https://kong.yearn.fi/api/rest/list/vaults/1
 
-#### List Yearn v2 vaults on all chains
+#### List Yearn V2 vaults on all chains
 
 ```graphql
 query GetV2VaultAddresses {

@@ -23,7 +23,7 @@ If you have CRV tokens, you can convert them to yCRV either by minting yCRV at a
 
 ## Earn Yield on yCRV
 
-Yearn has 2 ways to earn yield on your yCRV; depositing to the `YearnBoostedStaker` contract to earn crvUSD or depositing to the yCRV Auto-Compounder vault (yvyCRV) to earn more yCRV. The Differences and details are documented [here](/getting-started/products/ylockers/overview). Once you know which path you want to take, you can follow the step by step guide [here](/getting-started/products/ylockers/ycrv/ycrv-guide).
+Yearn has 2 ways to earn yield on your yCRV; depositing to the `YearnBoostedStaker` contract to earn crvUSD or depositing to the yCRV Auto-Compounder vault (yvyCRV) to earn more yCRV. The differences and details are documented [here](/getting-started/products/ylockers/overview). Once you know which path you want to take, you can follow the step by step guide [here](/getting-started/products/ylockers/ycrv/ycrv-guide).
 
 :::info
 
