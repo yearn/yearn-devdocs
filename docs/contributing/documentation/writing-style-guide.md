@@ -114,7 +114,7 @@ The examples below use dollars, but the same rules apply to all global currencie
 
 - When directly referring to the creation, destruction, or manipulation of a token (particularly as it relates to tooling) or when referencing the token as a currency, in an instructional or conversational setting, or as a conceptual product of the Foundation or its systems:
   - Use the proper prefix if necessary and capitalized TLA version: `wETH`
-  - **Example:** “wETH is a token that represents Ether 1:1 and conforms to the ERC20 token standard.”
+  - **Example:** “wETH is a token that represents Ether 1:1 and conforms to the ERC-20 token standard.”
 - Similarly, when referring to exchange pairs:
   - Use: `wETH/DAI`
 

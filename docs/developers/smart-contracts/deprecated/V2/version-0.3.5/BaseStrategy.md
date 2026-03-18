@@ -53,7 +53,7 @@ This Strategy's name.
  strategy, for the purposes of computing the management fee in `Vault`
 @return
  The amount of assets this strategy manages that should not be included in Yearn's Total Value
- Locked (TVL) calculation across it's ecosystem.
+ Locked (TVL) calculation across its ecosystem.
 
 
 

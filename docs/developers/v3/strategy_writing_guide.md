@@ -29,10 +29,10 @@ This increased functionality not only means strategies have a much larger potent
 ## Definitions
 
 - [Strategy](https://github.com/yearn/tokenized-strategy) : A strategy or "Tokenized Strategy" in V3 refers to an ERC-4626 compliant contract that utilizes the [TokenizedStrategy](https://github.com/yearn/tokenized-strategy/blob/master/src/TokenizedStrategy.sol) pattern that either allocator vaults or individual users can deposit directly into and receive shares in return. The strategy takes the underlying asset and deploys it in a single source in order to generate yield on that asset.
-- Vault: Or "Allocator Vault" is a Yearn ERC4626 compliant Smart contract that receives assets from Depositors to distribute among the different Strategies added to the vault, managing accounting and asset distribution.
+- Vault: Or "Allocator Vault" is a Yearn ERC-4626 compliant Smart contract that receives assets from Depositors to distribute among the different Strategies added to the vault, managing accounting and asset distribution.
 - Asset: Any ERC20-compliant token
 - Shares: ERC20-compliant token that tracks the asset balance in the strategy for every depositor.
-- [TokenizedStrategy.sol](https://github.com/yearn/tokenized-strategy/blob/master/src/TokenizedStrategy.sol): The implementation contract that all strategies delegateCall to for the standard ERC4626 and profit locking functions.
+- [TokenizedStrategy.sol](https://github.com/yearn/tokenized-strategy/blob/master/src/TokenizedStrategy.sol): The implementation contract that all strategies delegateCall to for the standard ERC-4626 and profit locking functions.
 - [BaseStrategy.sol](https://github.com/yearn/tokenized-strategy/blob/master/src/BaseStrategy.sol): The abstract contract that a strategy should inherit from that handles all communication with the Tokenized Strategy contract.
 - Strategist: The developer of a specific strategy.
 - Depositor: Account that deposits the asset and holds Shares
@@ -294,7 +294,7 @@ function availableDepositLimit(
     function _tend(uint256 _totalIdle) internal override {
         if (currentLTV() < targetLTV()) {
             _leverUp(_totalIdle);
-        } else if (currentLTV > warningLTV()) {
+        } else if (currentLTV() > warningLTV()) {
             _leverDown(_totalIdle);
         }
     }

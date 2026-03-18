@@ -51,7 +51,7 @@ This Strategy's name.
  `estimatedTotalAssets()` below, as the TVL calc will be total assets minus delegated assets.
 @return
  The amount of assets this strategy manages that should not be included in Yearn's Total Value
- Locked (TVL) calculation across it's ecosystem.
+ Locked (TVL) calculation across its ecosystem.
 
 
 

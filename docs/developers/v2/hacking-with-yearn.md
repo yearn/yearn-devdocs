@@ -43,7 +43,7 @@ Make sure to switch your wallet provider to the appropriate testnet network in o
 
 Testnet networks are different environments from mainnet and simulate real use cases for development, testing or production. The assets on a testnet are not “real,” meaning that they cannot be withdrawn to your wallet for any real economic value.
 
-Testing is possible through Ethereum Rinkeby
+Testing is possible through Ethereum Sepolia
 
 **Steps**:
 - Deploy your vault with your own token
@@ -58,12 +58,12 @@ When accessing each testnet, you will need to use its own native asset token.
 - Go to https://hack.yearn.fi/
 - Switch to the testnet you wish to utilize over your wallet provider
 - Make sure to have the native asset for the specific network
-- Get some tokens from the test client faucet (Ethereum Rinkeby https://faucet.rinkeby.io/)
+- Get some tokens from the test client faucet (Ethereum Sepolia https://sepoliafaucet.com/)
 
 Make sure to select the correct market in the top right corner. You can find this on the left side of the address. Select the token you need and submit the faucet transaction but be mindful to make sure that you have certain amount of the native asset of the testnet you wish to transact on.
 
 #### How do I select a supported testnet?
-First, be sure to check if your wallet provider allows you to switch to testnet.  Some providers, such as the Metamask extension, display the network selection on top of the menu over the extension and, in the case of mobile Metamask, above the wallet section. It’s important to always do your research for compatible wallets with compatible networks.
+First, be sure to check if your wallet provider allows you to switch to testnet.  Some providers, such as the MetaMask extension, display the network selection on top of the menu over the extension and, in the case of mobile MetaMask, above the wallet section. It’s important to always do your research for compatible wallets with compatible networks.
 
 #### Additional Resources
 * Workshop: Building and Integrating with Yearn Vaults: https://www.youtube.com/watch?v=urC35PMbpJ4

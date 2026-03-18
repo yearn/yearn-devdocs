@@ -58,7 +58,7 @@ You can view the $ value of your claimable rewards in this tab, as well as the a
 
 As the vault earns yield, the price of your vault tokens will increase as there is more underlying crvUSD in the vault for you to redeem upon withdrawal. For example, 100 yvcrvUSD-2 could represent 150 crvUSD (~$150.00), dependent on the total cumulative earnings of the vault.
 
-Your crvUSD rewards accrue week over week and are never lost if unclaimed. To claim them to your wallet, all you need to do is click "Claim All" and confirm the transaction .
+Your crvUSD rewards accrue week over week and are never lost if unclaimed. To claim them to your wallet, all you need to do is click "Claim All" and confirm the transaction.
 
 ### 4. Get yYB
 

@@ -54,5 +54,5 @@ To find deployed contracts see [Contract Addresses](/developers/addresses/v3-con
 [Tokenized Strategy GitHub Repo](https://github.com/yearn/tokenized-strategy)  
 [Tokenized Strategy Specification](https://github.com/yearn/tokenized-strategy/blob/master/SPECIFICATION.md)  
 [V3 Design Article](https://medium.com/iearn/yearnv3-motivation-and-design-107840cb4844)  
-[ERC4626 Info](https://erc4626.info/)  
-[ERC4626 EIP](https://eips.ethereum.org/EIPS/eip-4626)  
+[ERC-4626 Info](https://erc4626.info/)
+[ERC-4626 EIP](https://eips.ethereum.org/EIPS/eip-4626)  

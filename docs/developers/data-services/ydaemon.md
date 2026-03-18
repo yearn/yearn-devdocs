@@ -148,15 +148,18 @@ migrable (string)
 chainIDs (string)
 
 - Default: All supported chains
-- Valid values: Comma-separated chain IDs: 1, 10, 137, 250, 8453, 42161
+- Valid values: Comma-separated chain IDs: 1, 10, 100, 137, 146, 250, 8453, 42161, 747474
 - Example: "1,137,42161"
 - Supported chains:
   - 1 = Ethereum
   - 10 = Optimism
+  - 100 = Gnosis
   - 137 = Polygon
+  - 146 = Sonic
   - 250 = Fantom
   - 8453 = Base
   - 42161 = Arbitrum
+  - 747474 = Katana
 
 humanized (boolean)
 

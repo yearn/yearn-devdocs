@@ -1204,8 +1204,8 @@ Reports the amount of assets the calling Strategy has free (usually in terms of 
 #### Parameters:
 | Name                           | Type          | Description                                    |
 | :----------------------------- | :------------ | :--------------------------------------------- |
-|  * gain * |  *  * |  * Amount Strategy has realized as a gain on it's investment since its last report, and is free to be given back to Vault as earnings * |
-|  * loss * |  *  * |  * Amount Strategy has realized as a loss on it's investment since its last report, and should be accounted for on the Vault's balance sheet * |
+|  * gain * |  *  * |  * Amount Strategy has realized as a gain on its investment since its last report, and is free to be given back to Vault as earnings * |
+|  * loss * |  *  * |  * Amount Strategy has realized as a loss on its investment since its last report, and should be accounted for on the Vault's balance sheet * |
 |  * _debtPayment * |  *  * |  * Amount Strategy has made available to cover outstanding debt * |
 
 

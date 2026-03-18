@@ -254,7 +254,7 @@ function newEndorsedVault(
 |Name|Type|Description|
 |----|----|-----------|
 |`_asset`|`address`|The asset that may be deposited into the new Vault.|
-|`_name`|`string`|Specify a custom Vault name. .|
+|`_name`|`string`|Specify a custom Vault name.|
 |`_symbol`|`string`|Specify a custom Vault symbol name.|
 |`_roleManager`|`address`|The address authorized for guardian interactions in the new Vault.|
 |`_profitMaxUnlockTime`|`uint256`|The time strategy profits will unlock over.|
@@ -292,7 +292,7 @@ function newEndorsedVault(
 |Name|Type|Description|
 |----|----|-----------|
 |`_asset`|`address`|The asset that may be deposited into the new Vault.|
-|`_name`|`string`|Specify a custom Vault name. .|
+|`_name`|`string`|Specify a custom Vault name.|
 |`_symbol`|`string`|Specify a custom Vault symbol name.|
 |`_roleManager`|`address`|The address authorized for guardian interactions in the new Vault.|
 |`_profitMaxUnlockTime`|`uint256`|The time strategy profits will unlock over.|
