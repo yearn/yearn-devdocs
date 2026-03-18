@@ -3,16 +3,16 @@
 ## Types of Decisions
 
 
-There are two key dimensions of decision-making at yearn: on- or off-chain; gated or un-gated.
+There are two key dimensions of decision-making at yearn: on- or offchain; gated or un-gated.
 
 -   Onchain decisions are executed via transactions on the blockchain.
--   Off-chain decisions are executed in various ways off of the blockchain.
+-   Offchain decisions are executed in various ways off of the blockchain.
 -   Gated decisions require specific permissions.
 -   Un-gated decisions can be made by anyone, they are permissionless.
 
 Here are some examples for the four categories of decisions that emerge from this space:
 
-|    |onchain|off-chain|
+|    |onchain|offchain|
 |----|--------|---------|
 |gated|add a strategy to a vault|merge a pr|
 ||transfer money from the treasury|decide on a logo|
@@ -21,7 +21,7 @@ Here are some examples for the four categories of decisions that emerge from thi
 ||execute a signed multisig tx|write a new docs page|
 ||create a new vault|propose a YIP|
 
-[Gov 2.0](https://gov.yearn.fi/t/yip-61-governance-2-0) clarifies who holds decision-making power for our most critical kinds of decisions: onchain gated decisions. But what about the other kinds? Who decides how off-chain gated decisions are made? Are there any guidelines for un-gated decisions or are they totally open? The rest of this document aims to clarify these questions.
+[Gov 2.0](https://gov.yearn.fi/t/yip-61-governance-2-0) clarifies who holds decision-making power for our most critical kinds of decisions: onchain gated decisions. But what about the other kinds? Who decides how offchain gated decisions are made? Are there any guidelines for un-gated decisions or are they totally open? The rest of this document aims to clarify these questions.
 
 ## Gated Decisions
 
@@ -29,9 +29,9 @@ Here are some examples for the four categories of decisions that emerge from thi
 
 All possible gated onchain decisions are organized by Gov 2.0 into discrete and transferable objects called 'Decision-Making Powers' or just 'powers' for short. These powers are objects --- abstractions just above the specific transactions that embody the actual decisions. As we use this new system, we can decide to make these objects more or less granular. Currently YFI holders have the 'Manage Powers' decision-making power, so changes to each power is decided via YFI vote. But, YFI holders could vote to delegate the 'Manage Powers' power, or a subset of it, to a yTeam in the future.
 
-### Off-Chain
+### Offchain
 
-Currently gated off-chain decision-making powers are held by various members of the yearn core team and there is no overarching process defined to organize them. Here is an incomplete list of domains with off-chain gates to be organized in the future:
+Currently gated offchain decision-making powers are held by various members of the yearn core team and there is no overarching process defined to organize them. Here is an incomplete list of domains with offchain gates to be organized in the future:
 
 -   yearn twitter account admin
 -   various yearn frontend admin
@@ -124,9 +124,9 @@ He makes the site and shares internally, and now it's yearn-official.
 
 5) Conflict Resolution (optional)
 
-Daniel's decision causes some conflict inside yearn. There has been no process to decide what is yearn-official in the off-chain space, so Daniel had the power to use the advice process and make a decision on it. No one is questioning that, but Philbert is strongly against the new site being yearn-official so he decides to start the conflict resolution process with Daniel about this decision.
+Daniel's decision causes some conflict inside yearn. There has been no process to decide what is yearn-official in the offchain space, so Daniel had the power to use the advice process and make a decision on it. No one is questioning that, but Philbert is strongly against the new site being yearn-official so he decides to start the conflict resolution process with Daniel about this decision.
 
-During the process (described below), Daniel and Philbert talk it through and together decide to update the site to add yWaifu content, which was the main cause of Philbert's tension. And through talking, they came up with a proposal for a new gate on deciding what's yearn-official off-chain. They do the advice process on it and then implement it.
+During the process (described below), Daniel and Philbert talk it through and together decide to update the site to add yWaifu content, which was the main cause of Philbert's tension. And through talking, they came up with a proposal for a new gate on deciding what's yearn-official offchain. They do the advice process on it and then implement it.
 
 ## The Conflict Resolution Process
 

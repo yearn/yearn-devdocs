@@ -73,7 +73,7 @@ First, be sure to check if your wallet provider allows you to switch to testnet.
 
 # Frontend Integrations
 
-Yearn uses a JavaScript SDK for formatting protocol data and generating transactions for reading/writing protocol data. Yearn SDK integrates several components, both onchain and off-chain.
+Yearn uses a JavaScript SDK for formatting protocol data and generating transactions for reading/writing protocol data. Yearn SDK integrates several components, both onchain and offchain.
 
 [The repository here](https://github.com/turtlemoji/yearn-sdk-examples) contains a live preview and example usage of the Yearn SDK. Explore this codebase to learn how to start interacting with the Yearn protocol in your own app.
 
@@ -98,7 +98,7 @@ By having a strategy, users only need to deposit single assets and let the strat
 
 # Data Analysis
 
-Yearn aims to provide more insights into our products to our customers and partners through analyzing the onchain and off-chain data. Given that all Yearn protocol data is publicly stored onchain, there are lots of insights to be gained from analyzing these transactions.
+Yearn aims to provide more insights into our products to our customers and partners through analyzing the onchain and offchain data. Given that all Yearn protocol data is publicly stored onchain, there are lots of insights to be gained from analyzing these transactions.
 
 ## Some of the research questions that we are interested in:
 * Screening profitable liquidity pools for our strategies

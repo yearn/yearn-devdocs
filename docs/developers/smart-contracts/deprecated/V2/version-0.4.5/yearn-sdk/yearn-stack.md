@@ -1,6 +1,6 @@
 # Yearn Stack + FE Features
 
-Yearn SDK integrates several components, both onchain and off-chain.
+Yearn SDK integrates several components, both onchain and offchain.
 
 ## Backend stack
 
@@ -50,7 +50,7 @@ Yearn SDK integrates several components, both onchain and off-chain.
 
 #### Onchain assets and positions
 
-- Lens does what the old off-chain API does, but directly onchain. This will speed up the fetching time and greatly reduce our reliance on scheduled jobs in servers.
+- Lens does what the old offchain API does, but directly onchain. This will speed up the fetching time and greatly reduce our reliance on scheduled jobs in servers.
 
 #### IPFS CI/CD for frontend and metadata
 
