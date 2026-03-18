@@ -70,6 +70,31 @@
         "CommonReportTrigger.sol": {
           "type": "file",
           "git": "https://github.com/yearn/tokenized-strategy-periphery"
+        },
+        "Yearn4626Router": {
+          "type": "folder",
+          "contents": {
+            "Multicall.sol": {
+              "type": "file",
+              "git": "https://github.com/yearn/Yearn-ERC4626-Router"
+            },
+            "PeripheryPayments.sol": {
+              "type": "file",
+              "git": "https://github.com/yearn/Yearn-ERC4626-Router"
+            },
+            "SelfPermit.sol": {
+              "type": "file",
+              "git": "https://github.com/yearn/Yearn-ERC4626-Router"
+            },
+            "Yearn4626Router.sol": {
+              "type": "file",
+              "git": "https://github.com/yearn/Yearn-ERC4626-Router"
+            },
+            "Yearn4626RouterBase.sol": {
+              "type": "file",
+              "git": "https://github.com/yearn/Yearn-ERC4626-Router"
+            }
+          }
         }
       }
     }
@@ -78,6 +103,7 @@
     "https://github.com/yearn/yearn-vaults-v3.git",
     "https://github.com/yearn/tokenized-strategy.git",
     "https://github.com/yearn/tokenized-strategy-periphery.git",
-    "https://github.com/yearn/vault-periphery.git"
+    "https://github.com/yearn/vault-periphery.git",
+    "https://github.com/yearn/Yearn-ERC4626-Router.git"
   ]
 }

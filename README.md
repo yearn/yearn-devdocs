@@ -236,6 +236,7 @@ For reference, these are the addresses for the different submodules:
 - [yearn/vault-periphery](https://github.com/yearn/vault-periphery)
 - [yearn/tokenized-strategy](https://github.com/yearn/tokenized-strategy/tree/master)
 - [yearn/tokenized-strategy-periphery](https://github.com/yearn/tokenized-strategy-periphery/tree/master)
+- [yearn/yearn-ERC4626-Router](https://github.com/yearn/Yearn-ERC4626-Router)
 
 2. If you haven't already, create a python virtual environment and initialize.
 
