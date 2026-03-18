@@ -8,7 +8,7 @@ Yearn SDK integrates several components, both onchain and offchain.
   <img src="https://i.imgur.com/BTuanfX.png" alt="Backend Chart"/>
 </p>
 
-### On Chain
+### Onchain
 
 - 🔍 Yearn Lens
   - Oracle
@@ -31,7 +31,7 @@ Yearn SDK integrates several components, both onchain and offchain.
   - disabling asset interactions
 - Yearn Frontend
 
-### Off Chain
+### Offchain
 
 - Yearn Exporter: stores (and displays) stats about yearn assets, exposing:
   - historical TVL
@@ -46,7 +46,7 @@ Yearn SDK integrates several components, both onchain and offchain.
 - Critical data (assets, positions, vault deprecations) will be fetched exclusively from the chain / IPFS
   - maximizing uptime
   - reducing reliance on other services
-- Historical TVL, historical APY and other non critical data will be stored off chain and fetched dinamically.
+- Historical TVL, historical APY and other non critical data will be stored offchain and fetched dinamically.
 
 #### Onchain assets and positions
 
@@ -65,7 +65,7 @@ Yearn SDK integrates several components, both onchain and offchain.
 
 - SDK will provide a simple interface for all integrators, including ourselves.
 - Read methods will seamlessly integrate with all datasources, while keeping coherent datastructures.
-- Write methods talk directly to assets on chain. Execution of write transactions will trigger refresh events so data freshness of frontend (or other integration platforms) will still be preserved.
+- Write methods talk directly to assets onchain. Execution of write transactions will trigger refresh events so data freshness of frontend (or other integration platforms) will still be preserved.
 
 ### Historical User Earnings
 

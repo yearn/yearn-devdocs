@@ -21,7 +21,7 @@ The below instructions show some python commands that assume you are using the b
    - Set Treasury (`treasury.ychad.eth`) as the rewards address.
    - Set Core Dev multisig (`dev.ychad.eth`) as guardian.
    - Set Strategist multisig (`brain.ychad.eth`) as management.
-   - Set description and symbol for vault or use suggested as default (can be changed on chain later)
+   - Set description and symbol for vault or use suggested as default (can be changed onchain later)
 1. Confirm the Parameters are set correctly and press `y`and ENTER to deploy vault.
 
 1. Check new vault has ABI setup on Etherscan (Some vault versions from older releases may have verification issues with Vyper and proxy detection on Etherscan, consider using latest releases >0.3.5 to ensure verification works).
@@ -136,7 +136,7 @@ In addition to the 2 strategists, a Core Developer has to review the strategy be
    - Set Treasury (`treasury.ychad.eth`) as the rewards address.
    - Set Core Dev multisig (`dev.ychad.eth`) as guardian.
    - Set Strategist multisig (`brain.ychad.eth`) as management.
-   - Set description and symbol for vault or use suggested as default (can be changed on chain later)
+   - Set description and symbol for vault or use suggested as default (can be changed onchain later)
 
 1. Yearn governance now must accept governance and endorse the vault:
 

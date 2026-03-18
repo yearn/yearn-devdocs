@@ -172,7 +172,7 @@ deployed and can only be called once for each strategy.
 This will set all the default storage that must be set for a
 strategy to function. Any changes can be made post deployment
 through external calls from `management`.
-The function will also emit an event that off chain indexers can
+The function will also emit an event that offchain indexers can
 look for to track any new deployments using this TokenizedStrategy.*
 
 ```solidity

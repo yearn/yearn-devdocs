@@ -185,7 +185,7 @@ GET /{chainID}/reports/{address}             # Harvest reports for strategy
 ```
 GET /{chainID}/vaults/harvests/{addresses}   # Harvest history for vaults
 GET /{chainID}/earned/{address}/{vaults}     # Earnings per vault per user
-GET /{chainID}/earned/{address}              # All earnings for user on chain
+GET /{chainID}/earned/{address}              # All earnings for user onchain
 GET /earned/{address}                        # All earnings for user (all chains)
 ```
 
