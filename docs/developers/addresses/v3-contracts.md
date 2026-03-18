@@ -66,7 +66,9 @@ All generic periphery contracts and factories can be retrieved on chain from the
 | **Debt Allocator Factory**   <br/>  | <ContractAddress contractName = {['protocolPeriphery', 'debtAllocatorFactory']} /> |
 | **Registry Factory**   <br/>  | <ContractAddress contractName = {['protocolPeriphery', 'registryFactory']} /> |
 | **Splitter Factory**   <br/>  | <ContractAddress contractName = {['protocolPeriphery', 'splitterFactory']} /> |
+| **Auction Registry**   <br/>  | <ContractAddress contractName = {['protocolPeriphery', 'auctionRegistry']} /> |
 | **Auction Factory**   <br/>  | <ContractAddress contractName = {['protocolPeriphery', 'auctionFactory']} /> |
+| **Dumper**   <br/>  | <ContractAddress contractName = {['protocolPeriphery', 'dumper']} /> |
 | **Keeper**   <br/>  | <ContractAddress contractName = {['protocolPeriphery', 'keeper']} /> |
 | **Base Fee Provider**   <br/>  | <ContractAddress contractName = {['protocolPeriphery', 'baseFeeProvider']} /> |
 
@@ -84,6 +86,7 @@ These addresses are consistent across all EVM chains.
 
 | Name / ENS | Contract Address |
 | ----------------------   | ---------------------- |
+| **V3 Deployer Multisig** <br/> registry.v3.ychad.eth | <ContractAddress contractName = {['yearnV3ContractsStable', 'v3Deployer']} /> |
 | **Current V3 Registry** <br/> registry.v3.ychad.eth | <ContractAddress contractName = {['yearnV3ContractsStable', 'registry']} /> |
 | **Legacy V3 Registry** <br/> | <ContractAddress contractName = {['yearnV3ContractsStable', 'legacyRegistry1']} /> |
 
@@ -95,6 +98,7 @@ Ethereum-specific Yearn addresses
 | ----------------------   | ---------------------- |
 | **Role Manager** <br/> role-manager.v3.ychad.eth | <ContractAddress contractName = {['yearnV3ContractsMainnet', 'roleManager']} /> |
 | **Accountant** <br/> accountant.v3.ychad.eth | <ContractAddress contractName = {['yearnV3ContractsMainnet', 'accountant']} /> |
+| **Debt Allocator** <br/> | <ContractAddress contractName = {['yearnV3ContractsMainnet', 'debtAllocator']} /> |
 
 ### Optimism (10) Addresses
 
@@ -122,6 +126,7 @@ Base-specific Yearn addresses
 | ----------------------   | ---------------------- |
 | **Role Manager** <br/>   | <ContractAddress contractName = {['yearnV3ContractsBase', 'roleManager']} chainID={8453} />   |
 | **Accountant** <br/>     | <ContractAddress contractName = {['yearnV3ContractsBase', 'accountant']} chainID={8453} />    |
+| **Debt Allocator** <br/> | <ContractAddress contractName = {['yearnV3ContractsMainnet', 'debtAllocator']} /> |
 
 ### Arbitrum (42161) Addresses
 
@@ -131,6 +136,7 @@ Arbitrum-specific Yearn addresses
 | ----------------------   | ---------------------- |
 | **Role Manager** <br/>   | <ContractAddress contractName = {['yearnV3ContractsArbitrum', 'roleManager']} chainID={42161} />   |
 | **Accountant** <br/>     | <ContractAddress contractName = {['yearnV3ContractsArbitrum', 'accountant']} chainID={42161} />   |
+| **Debt Allocator** <br/> | <ContractAddress contractName = {['yearnV3ContractsMainnet', 'debtAllocator']} /> |
 
 ### Katana (747474) Addresses
 

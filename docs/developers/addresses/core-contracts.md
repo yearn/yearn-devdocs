@@ -78,7 +78,6 @@ See all stYFI contracts [on this page](./styfi-contracts.md)
 | ---------------------  | ------------------------------------------ |
 | kChad multisig         | [0xe6ad5A88f5da0F276C903d9Ac2647A937c917162](https://katanascan.com/address/0xe6ad5A88f5da0F276C903d9Ac2647A937c917162) |
 | Strategist multisig    | [0xBe7c7efc1ef3245d37E3157F76A512108D6D7aE6](https://katanascan.com/address/0xBe7c7efc1ef3245d37E3157F76A512108D6D7aE6) |
-| V3 multisig            | [0x33333333D5eFb92f19a5F94a43456b3cec2797AE](https://katanascan.com/address/0x33333333D5eFb92f19a5F94a43456b3cec2797AE) |
 | Timelock               | [0x88Ba032be87d5EF1fbE87336B7090767F367BF73](https://katanascan.com/address/0x88Ba032be87d5EF1fbE87336B7090767F367BF73) |
 | Timelock Executor      | [0xF8f60BF9456A6e0141149Db2DD6f02C60da5779B](https://katanascan.com/address/0xF8f60BF9456A6e0141149Db2DD6f02C60da5779B) |
 

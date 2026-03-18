@@ -185,7 +185,9 @@ export const protocolPeriphery = {
   aprOracle: '0x1981AD9F44F2EA9aDd2dC4AD7D075c102C70aF92',
   baseFeeProvider: '0xe0514dd71cfdc30147e76f65c30bdf60bfd437c3',
   commonReportTrigger: '0xf8dF17a35c88AbB25e83C92f9D293B4368b9D52D',
-  auctionFactory: '0xbC587a495420aBB71Bbd40A0e291B64e80117526',
+  auctionRegistry: '0x94F44706A61845a4f9e59c4Bc08cEA4503e48D12',
+  auctionFactory: '0xbA7FCb508c7195eE5AE823F37eE2c11D7ED52F8e',
+  dumper: '0x590Dd9399bB53f1085097399C3265C7137c1C4Cf',
   splitterFactory: '0xe28fCC9FB2998ba57754789F6666DAa8C815614D',
   registryFactory: '0x3A0fa8aac82aD94048098D6af6e8eB36c98816A1',
   debtAllocatorFactory: '0x03D43dF6FF894C848fC6F1A0a7E8a539Ef9A4C18',
@@ -198,6 +200,7 @@ export const protocolPeriphery = {
  * Queried from the Yearn Role Manager
  */
 export const yearnV3ContractsStable = {
+  v3Deployer: '0x33333333D5eFb92f19a5F94a43456b3cec2797AE',
   registryENS: 'registry.v3.ychad.eth',
   registry: '0xd40ecF29e001c76Dcc4cC0D9cd50520CE845B038',
   legacyRegistry1: '0xff31A1B020c868F6eA3f61Eb953344920EeCA3af',
