@@ -5,6 +5,8 @@ import {
   v3VaultFactoryABI,
   yearnV3RoleManagerABI,
   v3VaultFactoryBlueprintABI,
+  auctionRegistryABI,
+  accountantABI,
 } from './ABIs'
 import { V3ReleaseDataMap } from './types'
 
@@ -158,4 +160,40 @@ export const readYearnRoleManager = async (
     yearnDebtAllocator,
     yearnRegistry,
   }
+}
+
+export const getAuctionFactoryFromRegistry = async (
+  auctionRegistryAddress: Address,
+  publicClient: PublicClient
+) => {
+  const contract = getContract({
+    address: auctionRegistryAddress,
+    abi: auctionRegistryABI,
+    client: publicClient,
+  })
+  console.log('Fetching auction factory from auction registry...')
+  const auctionFactory = await contract.read.getLatestFactory().catch(() => {
+    console.warn('auctionFactory not found in auction registry')
+    return undefined
+  })
+  console.log('Auction factory address fetched from registry.')
+  return auctionFactory
+}
+
+export const getFeeRecipientFromAccountant = async (
+  accountantAddress: Address,
+  publicClient: PublicClient
+) => {
+  const contract = getContract({
+    address: accountantAddress,
+    abi: accountantABI,
+    client: publicClient,
+  })
+  console.log('Fetching fee recipient from accountant...')
+  const feeRecipient = await contract.read.feeRecipient().catch(() => {
+    console.warn('feeRecipient not found in accountant')
+    return undefined
+  })
+  console.log('Fee recipient address fetched from accountant.')
+  return feeRecipient
 }
