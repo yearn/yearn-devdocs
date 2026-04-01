@@ -9,6 +9,8 @@ This page makes it easy to share Yearn docs with an LLM using machine-readable e
 - https://docs.yearn.fi/ai/docs.jsonl
 - https://docs.yearn.fi/ai/raw/
 
+`/ai/raw/` is the landing page for the raw markdown mirror. Use the exact `source.rawPath` values from `docs.jsonl` when you need a specific `.md` or `.mdx` source file.
+
 ## Example prompt
 
 ```text
