@@ -22,6 +22,13 @@ We sort our vaults into three risk tiers:
 
 ```mermaid
 graph TB
+    subgraph Data["Data Sources"]
+        RPC[Onchain RPC]
+        TEND[Tenderly]
+        MORPHOAPI[Morpho API]
+        DEX[DEX Liquidity<br/>Uniswap, Curve, Aerodrome, SushiSwap...]
+    end
+
     subgraph Monitoring["Monitoring System"]
         GOV[Governance Tracking]
         PEG[Peg Stability]
@@ -36,28 +43,20 @@ graph TB
         REALLOC[Reallocator]
     end
 
-    subgraph Data["Data Sources"]
-        RPC[Onchain RPC]
-        DEX[DEX Liquidity<br/>Uniswap, Curve, Aerodrome, SushiSwap, ...]
-        MORPHOAPI[Morpho API]
-        TEND[Tenderly]
-    end
-
     VAULTS[Morpho Vaults]
 
     Data --> Monitoring
     Data --> Automation
 
-    GOV -->|Alerts| TG[Telegram Alerts]
-    PEG -->|Alerts| TG
-    HEALTH -->|Alerts| TG
-    LIQ -->|Alerts| TG
-    PRICE -->|Alerts| TG
-    HEALTH -->|Critical| EMRG[Emergency Dispatch]
-    EMRG -->|Zero Caps| CAPS
+    GOV --> TG[Telegram Alerts]
+    PEG --> TG
+    HEALTH --> TG
+    LIQ --> TG
+    PRICE --> TG
+    Monitoring -->|Critical/High| EMRG[Emergency Dispatch]
+    EMRG --> CAPS
     EMRG -->|Force Withdraw| REALLOC
 
-    DEX --> CAPS
     CAPS -->|Cap Limits| OPT
     OPT -->|Optimal Allocation| REALLOC
     REALLOC -->|Transactions| VAULTS
