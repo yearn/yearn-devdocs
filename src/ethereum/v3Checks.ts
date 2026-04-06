@@ -382,7 +382,7 @@ export const fetchAndCheckYearnV3Addresses = async (
     publicClient
   )
   const feeRecipientCheck = await validateAddress(
-    constants.yearnV3ContractsMainnet.dumper,
+    constants.protocolPeriphery.dumper,
     'yearnV3FeeRecipient (Dumper)',
     feeRecipientFromAccountant || '0x0000000000000000000000000000000000000000',
     failedChecks
