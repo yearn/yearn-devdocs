@@ -1,11 +1,11 @@
 ---
-rpcCalls:  
+rpcCalls:
 
 - name: 'yPools Governance'
   chain: '1'
   address: '0xB7a528CF6D36F736Fa678A629b98A427d43E5ba5'
   abiName: 'yPoolsGenericGovernorABI'
-  methods:  
+  methods:
   - 'epoch'
   - 'propose_open'
   - 'vote_open'

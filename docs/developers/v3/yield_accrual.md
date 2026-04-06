@@ -4,7 +4,7 @@ This page describes how yield accrues and is accounted in Yearn V3. Yield can ac
 
 ## Overview
 
-1. Yield accrues off-chain or in external protocols. This changes the strategy's real holdings but not its recorded accounting.
+1. Yield accrues offchain or in external protocols. This changes the strategy's real holdings but not its recorded accounting.
 2. `strategy.report()` is called by a keeper or management. The strategy harvests, computes a total asset value, and updates internal accounting.
 3. `vault.process_report(strategy)` is called by the vault’s reporting manager. The vault reads the strategy’s ERC-4626 value and realizes gain or loss against its recorded debt, charging fees and locking profits at the vault level.
 

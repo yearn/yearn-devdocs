@@ -53,7 +53,7 @@ This Strategy's name.
  strategy, for the purposes of computing the management fee in `Vault`
 @return
  The amount of assets this strategy manages that should not be included in Yearn's Total Value
- Locked (TVL) calculation across it's ecosystem.
+ Locked (TVL) calculation across its ecosystem.
 
 
 
@@ -268,11 +268,11 @@ on protected functions in the Strategy.
 
  This total should be "realizable" e.g. the total value that could
  *actually* be obtained from this Strategy if it were to divest its
- entire position based on current on-chain conditions.
+ entire position based on current onchain conditions.
 @dev
  Care must be taken in using this function, since it relies on external
  systems, which could be manipulated by the attacker to give an inflated
- (or reduced) value produced by this function, based on current on-chain
+ (or reduced) value produced by this function, based on current onchain
  conditions (e.g. this function is possible to influence through
  flashloan attacks, oracle manipulations, or other DeFi attack
  mechanisms).
@@ -532,7 +532,7 @@ value.
 
  Activates emergency exit. Once activated, the Strategy will exit its
  position upon the next harvest, depositing all funds into the Vault as
- quickly as is reasonable given on-chain conditions.
+ quickly as is reasonable given onchain conditions.
 
  This may only be called by governance or the strategist.
 @dev

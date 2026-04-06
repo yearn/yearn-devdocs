@@ -8,7 +8,7 @@ Multi-DAO refers to the fluid number of decentralized autonomous organizations (
 
 - **YFI holders** vote for changes to the protocol or the governance structure
 - **yTeams** focus on specific aspects of the protocol or relevant operations
-- **Multisig** members execute or veto any on-chain decisions
+- **Multisig** members execute or veto any onchain decisions
 
 Token holders have an ultimate say over what yTeams exist, who is part of the Multisig, and the limitations of each group's operational control. The term 'constrained delegation' originates from token holders delegating specific powers to various groups building and managing yearn.
 
@@ -81,11 +81,11 @@ Each yTeam is assigned specific decision-making powers, defined by YIP-61:
 
 ### Multisig
 
-Decisions issued by yTeams will be executed on-chain by the Multisig until a more decentralized system is approved for implementation. In the meantime, the [Multisig](/developers/security/multisig#members) controls the following:
+Decisions issued by yTeams will be executed onchain by the Multisig until a more decentralized system is approved for implementation. In the meantime, the [Multisig](/developers/security/multisig#members) controls the following:
 
 | Power               | Description                                                                                                                                           |
 | ------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Execution Power     | The power to execute decisions made by YFI holders and yTeams on-chain                                                                                |
+| Execution Power     | The power to execute decisions made by YFI holders and yTeams onchain                                                                                |
 | Veto Power          | This power allows the Multisig to veto any decision and ideally should not be needed                                                                  |
 | Transitionary Power | A temporary power enabling the Multisig to operate under the mandate of YIP-41 until the set of decision-making powers covers all needed transactions |
 
@@ -94,7 +94,7 @@ Decisions issued by yTeams will be executed on-chain by the Multisig until a mor
 Yearn continuously paves the way towards an ideal balance of DAO decentralization and productivity. The current phase of efforts implements changes mainly on the social layer. In the future, we will be moving towards software implementations such as:
 
 - Multisig consensus mechanisms that allow each yTeam to have execution power
-- Move from proxy voting to on-chain voting
+- Move from proxy voting to onchain voting
 - tokenize decision-making powers as NFTs
 - Utilize [Coordinape](https://coordinape.com/) for things like budget allocation and compensation
 

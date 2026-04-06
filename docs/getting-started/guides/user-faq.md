@@ -38,7 +38,7 @@ If you don't have veYFI, you can deposit and stake your tokens using liquid lock
 
 Read more about the current governance staking system on the [stYFI page](/contributing/governance/styfi). Legacy veYFI/dYFI docs are still available under [veYFI (Deprecated)](/contributing/governance/veYFI-intro).
 
-And remember, you have to consider transaction costs when using Yearn. If using Ethereum mainnet, prices for transactions vary from a few dollars to tens or hundreds of dollars, depending on chain congestion (Yearn has no control over this). If you are depositing lower amounts (\<$500-1000), you may want to consider using Yearn on an L2 so fees don't negate your interest earned.
+And remember, you have to consider transaction costs when using Yearn. If using Ethereum mainnet, prices for transactions vary from a few dollars to tens or hundreds of dollars, depending onchain congestion (Yearn has no control over this). If you are depositing lower amounts (\<$500-1000), you may want to consider using Yearn on an L2 so fees don't negate your interest earned.
 
 </details>
 

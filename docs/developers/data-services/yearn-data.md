@@ -11,7 +11,7 @@ Kong's Yearn index covers the v3 and v2 vault ecosystems:
 - Regular contract snapshots of each registry, vault, strategy, trade handler, accountant, and debt allocator.
 - Full event history for each of the above (*with limited history on transfers, deposits, withdraws, and approves).
 - Snapshot hooks for computing vault-strategies relationships, debts, fees, and rewards.
-- Snapshot hooks for integrating off-chain risk and meta data.
+- Snapshot hooks for integrating offchain risk and meta data.
 - Event hooks for tracking new vaults and strategies, computing spot harvest APRs, and pricing transfers.
 - Timeseries hooks for computing APY and TVL.
 

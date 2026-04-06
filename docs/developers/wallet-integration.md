@@ -64,7 +64,7 @@ The above query will retrieve all vaults from Kong with the following fields for
 - `apy` (the current APY of the vault. There are other ways to get APY we will discuss below).
 - `pricePerShare` (the current price per Vault Share)
 
-The returned list of vaults will include all v2 and v3 vaults as well as many popular ERC4626 vaults deployed on ethereum and other L2s. If you want to limit your result to just endorsed vaults, you will need to filter the resulting object on the `yearn` boolean.
+The returned list of vaults will include all v2 and v3 vaults as well as many popular ERC-4626 vaults deployed on ethereum and other L2s. If you want to limit your result to just endorsed vaults, you will need to filter the resulting object on the `yearn` boolean.
 
 ```js title="Example pseudo-code"
 const filterYearnVaults = (vaults) =>
@@ -207,7 +207,7 @@ Additional vault data can then be found by calling the respective read functions
 
 ## Vault Prices
 
-Now that you have the vaults, you are going to need to price them. Yearn vaults use the standard ERC4626 vault share pattern where depositors receive a number of vault shares when they deposit that represent their share of the pool total. As yield is harvested and returned to the vault, the vault share values increase and the underlying value of tokens the user can withdraw also increases.
+Now that you have the vaults, you are going to need to price them. Yearn vaults use the standard ERC-4626 vault share pattern where depositors receive a number of vault shares when they deposit that represent their share of the pool total. As yield is harvested and returned to the vault, the vault share values increase and the underlying value of tokens the user can withdraw also increases.
 
 To get the value of a deposit into a vault, you need to multiply the number of vault shares held by the user (or contract) by the price per share. All Yearn vault contracts have a `pricePerShare()` read function that is denominated in the underlying asset and can be called to get the price per share.
 
@@ -283,7 +283,7 @@ The above query will need to be made with variables passed into it
 
 The above query will give daily values for the `weeklyAPY` value for a chosen vault.
 
-## Calculating APRs from on-chain APR Oracles
+## Calculating APRs from onchain APR Oracles
 
 :::info
 

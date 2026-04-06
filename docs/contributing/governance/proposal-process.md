@@ -1,6 +1,6 @@
 # Proposal Process
 
-[veYFI](/contributing/governance/veyfi) token holders control the Yearn ecosystem through off-chain proposals and votes via [Snapshot](https://snapshot.org/#/s:veyfi.eth). Proposals that generate majority support (>50% of the vote) are implemented by a 9-member multi-signature wallet, and 6 out of 9 wallet signers must sign for a change to be implemented. The [members of the multi-signature wallet](/developers/security/multisig#members) were voted in by YFI holders and are subject to change from future governance votes.
+[veYFI](/contributing/governance/veyfi) token holders control the Yearn ecosystem through offchain proposals and votes via [Snapshot](https://snapshot.org/#/s:veyfi.eth). Proposals that generate majority support (>50% of the vote) are implemented by a 9-member multi-signature wallet, and 6 out of 9 wallet signers must sign for a change to be implemented. The [members of the multi-signature wallet](/developers/security/multisig#members) were voted in by YFI holders and are subject to change from future governance votes.
 
 ## Discussion
 
@@ -34,7 +34,7 @@ Getting as much feedback as possible from the various communication channels is 
 
 ### Making a proposal
 
-Anyone can post a proposal on the forum for discussion within the community. If it's promoted to off-chain votation (via [Snapshot](https://snapshot.org/#/ybaby.eth)), only someone holding 1 veYFI can submit it to Snapshot. If your proposal made it to off-chain votation and you don't have enough veYFI, mods will help you through this stage.
+Anyone can post a proposal on the forum for discussion within the community. If it's promoted to offchain votation (via [Snapshot](https://snapshot.org/#/ybaby.eth)), only someone holding 1 veYFI can submit it to Snapshot. If your proposal made it to offchain votation and you don't have enough veYFI, mods will help you through this stage.
 
 The default template for proposals can be found on [GitHub](https://github.com/yearn/YIPS/blob/master/yip-X.md) + on the [forum](https://gov.yearn.fi), if you post under "proposals" or "discussion" it will auto-fill in the template as well.
 
@@ -51,9 +51,9 @@ The default template for proposals can be found on [GitHub](https://github.com/y
 
 - Holding [veYFI](/contributing/governance/veyfi) enables you to vote on Yearn's [Snapshot](https://snapshot.org/#/ybaby.eth) page
 
-#### What’s the difference between voting for a poll on the forum and an off-chain vote?
+#### What’s the difference between voting for a poll on the forum and an offchain vote?
 
-- A poll gauges the sentiment of what the community is feeling on the proposal while an off-chain vote (via [Snapshot](https://snapshot.org/#/ybaby.eth)) will be binding and will take effect if it passes.
+- A poll gauges the sentiment of what the community is feeling on the proposal while an offchain vote (via [Snapshot](https://snapshot.org/#/ybaby.eth)) will be binding and will take effect if it passes.
 
 ## Implementation
 

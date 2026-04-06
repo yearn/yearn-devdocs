@@ -7,7 +7,7 @@
 - Vault: Only user touch-point, manages funds
 - Strategy: Complex external interactions w/ limited access to Vault
 - Strategist: original creator of strategy, is in charge of monitoring its position for adverse effects.
-- Registry: On-chain registry of deployed Vaults for tokens, indexed by API version
+- Registry: Onchain registry of deployed Vaults for tokens, indexed by API version
 
 ## Vault Specification
 
@@ -54,7 +54,7 @@ The vault doesn’t rely on oracle because it doesn’t require a price informat
 
 ### Emergency Shutdown Mode
 
-NOTE: During Emergency Shutdown mode of the Vault, the intention is for the Vault to recall the debt as quickly as reasonable (given on-chain conditions) with minimal losses, and open up deposits to be withdrawn by Users as easily as possible. There is no restrictions on withdrawals above what is expected under Normal Operation.
+NOTE: During Emergency Shutdown mode of the Vault, the intention is for the Vault to recall the debt as quickly as reasonable (given onchain conditions) with minimal losses, and open up deposits to be withdrawn by Users as easily as possible. There is no restrictions on withdrawals above what is expected under Normal Operation.
 
 1. During Emergency Shutdown, no Users may deposit into the Vault.
 1. During Emergency Shutdown, Governance cannot add new Strategies.
@@ -92,7 +92,7 @@ NOTE: In this mode, the Strategy defines a reversionary set of actions that seek
 
 ### Normal Operation
 
-NOTE: The Registry allows an on-chain reference for Vault deployment events, to be used with external integrations. It is also possible to reconstruct the deployment and release history via on-chain calls.
+NOTE: The Registry allows an onchain reference for Vault deployment events, to be used with external integrations. It is also possible to reconstruct the deployment and release history via onchain calls.
 
 NOTE: The API version of each Vault deployment for a token should increase according to [Semantic Versioning](https://semver.org/). However, this is not practically enforced.
 

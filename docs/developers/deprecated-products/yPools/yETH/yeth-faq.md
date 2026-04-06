@@ -20,7 +20,7 @@ yETH provides diversification by holding a basket of LSDs, which helps to spread
 
 ### How is yield passed onto stakers?
 
-LSD Protocols generate yield and update their on-chain rates. This results in yETH being minted and sent to st-yETH.
+LSD Protocols generate yield and update their onchain rates. This results in yETH being minted and sent to st-yETH.
 
 ### Can I withdraw multiple LSDs?
 

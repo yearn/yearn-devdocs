@@ -8,7 +8,7 @@
 **Author:**
 yearn.finance
 
-Serves as an on chain registry to track any Yearn V3
+Serves as an onchain registry to track any Yearn V3
 vaults and strategies that a certain party wants to
 endorse.
 Can also be used to deploy new vaults of any specific
@@ -198,8 +198,8 @@ Get all endorsed vaults deployed using the Registry.
 
 *This will return a nested array of all vaults deployed
 separated by their underlying asset.
-This is only meant for off chain viewing and should not be used during any
-on chain tx's.*
+This is only meant for offchain viewing and should not be used during any
+onchain tx's.*
 
 ```solidity
 function getAllEndorsedVaults() external view virtual returns (address[][] memory allEndorsedVaults);
@@ -280,7 +280,7 @@ function newEndorsedVault(
 |Name|Type|Description|
 |----|----|-----------|
 |`_asset`|`address`|The asset that may be deposited into the new Vault.|
-|`_name`|`string`|Specify a custom Vault name. .|
+|`_name`|`string`|Specify a custom Vault name.|
 |`_symbol`|`string`|Specify a custom Vault symbol name.|
 |`_roleManager`|`address`|The address authorized for guardian interactions in the new Vault.|
 |`_profitMaxUnlockTime`|`uint256`|The time strategy profits will unlock over.|
@@ -318,7 +318,7 @@ function newEndorsedVault(
 |Name|Type|Description|
 |----|----|-----------|
 |`_asset`|`address`|The asset that may be deposited into the new Vault.|
-|`_name`|`string`|Specify a custom Vault name. .|
+|`_name`|`string`|Specify a custom Vault name.|
 |`_symbol`|`string`|Specify a custom Vault symbol name.|
 |`_roleManager`|`address`|The address authorized for guardian interactions in the new Vault.|
 |`_profitMaxUnlockTime`|`uint256`|The time strategy profits will unlock over.|
@@ -413,7 +413,7 @@ function _registerVault(
 Tag a vault with a specific string.
 
 *This is available to governance to tag any vault or strategy
-on chain if desired to arbitrarily classify any vaults.
+onchain if desired to arbitrarily classify any vaults.
 i.e. Certain ratings ("A") / Vault status ("Shutdown") etc.*
 
 ```solidity

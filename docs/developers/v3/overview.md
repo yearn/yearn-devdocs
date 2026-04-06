@@ -30,7 +30,7 @@ A few examples of periphery contracts used in V3 are:
 - **Accountant**: Handles changing fees for vault operations.
 - **Deposit/Withdraw Limit Modules**: Allows dynamic control over a vaults deposit or withdraw limits for full customization.
 - **Swappers**: Pre-built contracts for strategies to inherit to easily implement their desired swap logic.
-- **APR Oracles**: Retrieve the expected current APY on-chain for different vaults or strategies to properly allocate debt.
+- **APR Oracles**: Retrieve the expected current APY onchain for different vaults or strategies to properly allocate debt.
 - And any others you can come up with!
 
 To read more about the periphery contracts or where to find the current versions click [here](./periphery.md)
@@ -54,5 +54,5 @@ To find deployed contracts see [Contract Addresses](/developers/addresses/v3-con
 [Tokenized Strategy GitHub Repo](https://github.com/yearn/tokenized-strategy)  
 [Tokenized Strategy Specification](https://github.com/yearn/tokenized-strategy/blob/master/SPECIFICATION.md)  
 [V3 Design Article](https://medium.com/iearn/yearnv3-motivation-and-design-107840cb4844)  
-[ERC4626 Info](https://erc4626.info/)  
-[ERC4626 EIP](https://eips.ethereum.org/EIPS/eip-4626)  
+[ERC-4626 Info](https://erc4626.info/)
+[ERC-4626 EIP](https://eips.ethereum.org/EIPS/eip-4626)  

@@ -21,7 +21,7 @@ The below instructions show some python commands that assume you are using the b
    - Set Treasury (`treasury.ychad.eth`) as the rewards address.
    - Set Core Dev multisig (`dev.ychad.eth`) as guardian.
    - Set Strategist multisig (`brain.ychad.eth`) as management.
-   - Set name and symbol for vault or use suggested as default (can be changed on-chain later).
+   - Set name and symbol for vault or use suggested as default (can be changed onchain later).
 8. Confirm the Parameters are correct and press `y` and ENTER to deploy the vault.
 9. Check new vault has ABI setup on Etherscan (Some vault versions from older releases may have verification issues with Vyper and proxy detection on Etherscan, consider using later releases >0.3.5 to ensure verification works).
 
@@ -148,7 +148,7 @@ In addition to the two strategist reviews, a Core Developer has to review the st
    - Set Treasury (`treasury.ychad.eth`) as the rewards address.
    - Set Core Dev multisig (`dev.ychad.eth`) as guardian.
    - Set Strategist multisig (`brain.ychad.eth`) as management.
-   - Set description and symbol for vault or use suggested as default (can be changed on-chain later)
+   - Set description and symbol for vault or use suggested as default (can be changed onchain later)
 
 5. Yearn's governance now must accept this vault's governance and endorse it:
 
@@ -229,9 +229,9 @@ These are the standard deposit limits per stage, and they can be adjusted on a c
 
 Since the v0.4.3 release, we have introduced the concept of Health Checks contracts to vaults and strategies. These are helper contracts that can validate the end state of a harvest, or critical transaction, to ensure the accounting stays within established safe parameters.
 
-You can think of these contracts as on-chain unit tests, or "self asserts", ensuring that the end state of a critical transaction matches an expected condition. The design allows health checks to be configured per individual vault or strategy. If the "assert" doesn't match expectations, the entire transaction will revert and require manual intervention by strategists or core devs.
+You can think of these contracts as onchain unit tests, or "self asserts", ensuring that the end state of a critical transaction matches an expected condition. The design allows health checks to be configured per individual vault or strategy. If the "assert" doesn't match expectations, the entire transaction will revert and require manual intervention by strategists or core devs.
 
-Vaults from release v0.4.3 and onward, support attaching an on-chain health check contract to be called after every harvest report.
+Vaults from release v0.4.3 and onward, support attaching an onchain health check contract to be called after every harvest report.
 
 ## Note on Health Checks Backward Compatibility
 
@@ -258,7 +258,7 @@ strategy.setHealthCheck(commonHealthCheck)
 
 A global setting check against deviations in reported profit and losses within a safe interval. Any report/harvest that falls outside this global safe interval will report.
 
-If a harvest/report revert transaction is detected on-chain, manual intervention is required to debug and accept the transaction into the vaults accounting. This should be done after proper validation by the strategist's multi-sig and Core Devs group.
+If a harvest/report revert transaction is detected onchain, manual intervention is required to debug and accept the transaction into the vaults accounting. This should be done after proper validation by the strategist's multi-sig and Core Devs group.
 
 Disabling health checks is meant to be a one-time special event using the following steps:
 
