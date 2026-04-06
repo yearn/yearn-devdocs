@@ -47,17 +47,17 @@ Users can engage with Yearn-curated Morpho Vaults in three ways:
 
 ### Yearn Morpho Lender Strategies
 
-To enjoy maximum yield, users can deposit into the Yearn Morpho Lender Strategy. Check out [Yearn Morpho Compounder strategies](https://yearn.fi/v3?types=single&search=morpho%20yearn) and deposit to earn juicy yields.
+To enjoy maximum yield, users can deposit into the Yearn Morpho Lender Strategy. Check out [Yearn Morpho Compounder strategies](https://morpho.yearn.space/?search=yearn) and deposit to earn juicy yields.
 
 ### Live Morpho Vaults
 
  If you prefer depositing directly into the Morpho vaults, we are live on the following chains:
 
-- [Mainnet](https://app.morpho.org/ethereum/earn?curatorAddressesFilter=0xe5e2Baf96198c56380dDD5E992D7d1ADa0e989c0%2C0xFEaE2F855250c36A77b8C68dB07C4dD9711fE36F%2C0x518C21DC88D9780c0A1Be566433c571461A70149%2C0xfd99a19Fcf577Be92fDAB4ef162c1644BB056885)
-- [Katana](https://app.morpho.org/katana/earn?curatorAddressesFilter=0xe5e2Baf96198c56380dDD5E992D7d1ADa0e989c0%2C0xFEaE2F855250c36A77b8C68dB07C4dD9711fE36F%2C0x518C21DC88D9780c0A1Be566433c571461A70149%2C0xfd99a19Fcf577Be92fDAB4ef162c1644BB056885)
-- [Base](https://app.morpho.org/base/earn?curatorAddressesFilter=0xe5e2Baf96198c56380dDD5E992D7d1ADa0e989c0%2C0xFEaE2F855250c36A77b8C68dB07C4dD9711fE36F%2C0x518C21DC88D9780c0A1Be566433c571461A70149%2C0xfd99a19Fcf577Be92fDAB4ef162c1644BB056885)
-- [Arbitrum](https://app.morpho.org/arbitrum/earn?curatorAddressesFilter=0xe5e2Baf96198c56380dDD5E992D7d1ADa0e989c0%2C0xFEaE2F855250c36A77b8C68dB07C4dD9711fE36F%2C0x518C21DC88D9780c0A1Be566433c571461A70149%2C0xfd99a19Fcf577Be92fDAB4ef162c1644BB056885)
+- [Mainnet](https://app.morpho.org/vaults?curators=yearn&chains=1)
+- [Katana](https://app.morpho.org/vaults?curators=yearn&chains=747474)
+- [Base](https://app.morpho.org/vaults?curators=yearn&chains=8453)
+- [Arbitrum](https://app.morpho.org/vaults?curators=yearn&chains=42161)
 
 ### YFI Maxi
 
-For Yearn lovers and YFI holders, we have a special [Morpho Market YFI/USDC](https://app.morpho.org/ethereum/market/0x973e9dd45799efe8775417bcc420a3ab84a583587b2108985746e2fe201d0c83/yfi-usdc) where users can deposit YFI as collateral and borrow USDC.
+For Yearn lovers and YFI holders, we have a special [Morpho Market YFI/USDC](https://app.morpho.org/ethereum/market/0x973e9dd45799efe8775417bcc420a3ab84a583587b2108985746e2fe201d0c83/yfi-usdc) where users can deposit YFI as collateral and borrow USDC. The same [Morpho Market YFI/USDC is available on Base](https://app.morpho.org/base/market/0x973e9dd45799efe8775417bcc420a3ab84a583587b2108985746e2fe201d0c83/yfi-usdc).
