@@ -72,12 +72,6 @@ Called during vault and strategy reports to retrieve the protocol fee to charge 
 function protocol_fee_config()
 ```
 
-#### Parameters
-
-| Name                           | Type          | Description                                    |
-| :----------------------------- | :------------ | :--------------------------------------------- |
-| vault | unknown | Address of the vault that would be reporting. |
-
 #### Return Values
 
 | Name | Type | Description |

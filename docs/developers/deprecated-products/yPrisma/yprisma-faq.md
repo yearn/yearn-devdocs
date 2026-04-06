@@ -68,7 +68,7 @@ There are several key reasons to claim your emissions as yPRISMA instead of lock
 
 1. When minting yPRISMA, you get to utilize Yearn's boost, which is among the highest of total Prisma accounts.
 1. yPRISMA is minted 1:1 against your max locked claim amount.
-1. yPRISMA is fully transferrable and can be swaped on DEXes like Curve, or staked for benefits in the ecosystem.
+1. yPRISMA is fully transferrable and can be swapped on DEXes like Curve, or staked for benefits in the ecosystem.
 
 ### How can I claim my Prisma protocol emissions as yPRISMA?
 

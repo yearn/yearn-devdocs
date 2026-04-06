@@ -1,6 +1,6 @@
 # Yearn Stack + FE Features
 
-Yearn SDK integrates several components, both on-chain and off-chain.
+Yearn SDK integrates several components, both onchain and offchain.
 
 ## Backend stack
 
@@ -8,7 +8,7 @@ Yearn SDK integrates several components, both on-chain and off-chain.
   <img src="https://i.imgur.com/BTuanfX.png" alt="Backend Chart"/>
 </p>
 
-### On Chain
+### Onchain
 
 - 🔍 Yearn Lens
   - Oracle
@@ -31,22 +31,22 @@ Yearn SDK integrates several components, both on-chain and off-chain.
   - disabling asset interactions
 - Yearn Frontend
 
-### Off Chain
+### Offchain
 
 - yDaemon and Kong: stores historical data for vaults
 
 ## Backend features
 
-### Resilience powered by on-chain data and IPFS storage
+### Resilience powered by onchain data and IPFS storage
 
 - Critical data (assets, positions, vault deprecations) will be fetched exclusively from the chain / IPFS
   - maximizing uptime
   - reducing reliance on other services
-- Historical TVL, historical APY and other non critical data will be stored off chain and fetched dinamically.
+- Historical TVL, historical APY and other non critical data will be stored offchain and fetched dinamically.
 
-#### On-chain assets and positions
+#### Onchain assets and positions
 
-- Lens does what the old off-chain API does, but directly on-chain. This will speed up the fetching time and greatly reduce our reliance on scheduled jobs in servers.
+- Lens does what the old offchain API does, but directly onchain. This will speed up the fetching time and greatly reduce our reliance on scheduled jobs in servers.
 
 #### IPFS CI/CD for frontend and metadata
 
@@ -61,7 +61,7 @@ Yearn SDK integrates several components, both on-chain and off-chain.
 
 - SDK will provide a simple interface for all integrators, including ourselves.
 - Read methods will seamlessly integrate with all data sources, while keeping coherent data structures.
-- Write methods talk directly to assets on chain. Execution of write transactions will trigger refresh events so data freshness of frontend (or other integration platforms) will still be preserved.
+- Write methods talk directly to assets onchain. Execution of write transactions will trigger refresh events so data freshness of frontend (or other integration platforms) will still be preserved.
 
 ### Historical User Earnings
 

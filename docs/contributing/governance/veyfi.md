@@ -1,10 +1,10 @@
 ---
-rpcCalls:  
+rpcCalls:
   - name: 'dYFI Redemption'
     chain: '1'
     address: '0x7dC3A74F0684fc026f9163C6D5c3C99fda2cf60a'
     abi: 'dyfiRedemptionABI'
-    methods:  
+    methods:
       - 'discount'
       - 'get_latest_price'
       - name: 'eth_required'
@@ -59,7 +59,7 @@ veYFI incorporates [YIP-56: Buyback and Build](https://gov.yearn.fi/t/yip-56-buy
     - **x** = `veYFI_supply / YFI_supply`
     <br />
 
-  :::yearn[Current On-Chain Values]
+  :::yearn[Current Onchain Values]
 
   - The current redemption discount is: <ContractData contract='dYFI Redemption' methodName='discount' decimals={18} />
   - Current Spot Price of YFI/ETH: <ContractData contract='dYFI Redemption' methodName='get_latest_price' decimals={18} />

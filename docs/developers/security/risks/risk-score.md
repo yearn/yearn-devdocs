@@ -81,8 +81,8 @@ This score aims to find out how much and how often a strategy can be subject to 
 
 The centralization score of the strategy that is being evaluated. Measures the strategy's reliance on privileged roles that are defined in strategy.
 
-- 5 -> Strategy heavily relies on off-chain management, potentially exposing user funds to rug possibilities by admins.
-- 4 -> Strategy frequently depends on off-chain management but has safeguards against rug possibilities by admins.
+- 5 -> Strategy heavily relies on offchain management, potentially exposing user funds to rug possibilities by admins.
+- 4 -> Strategy frequently depends on offchain management but has safeguards against rug possibilities by admins.
 - 3 -> Strategy involves privileged roles but less frequently and with less risk of rug possibilities.
 - 2 -> Strategy has privileged roles but they are not vital for operations and pose minimal risk of rug possibilities.
 - 1 -> Strategy operates without dependency on any privileged roles, ensuring full permissionlessness.
@@ -149,7 +149,7 @@ How long the external protocol contracts in scope have been deployed alive
 
 What does the external protocol do? Note that this is a rough estimate of evaluating a protocol's purpose. In some cases, the Yearn security team can score regardless of the criteria; in such cases, the reasoning will be provided in the text box as usual with all scores.
 
-- 5 -> The main expertise of the protocol lies in off-chain operations, such as RWA protocols.
+- 5 -> The main expertise of the protocol lies in offchain operations, such as RWA protocols.
 - 4 -> Cross-chain applications, like cross-chain bridges, cross-chain yield aggregators, and cross-chain lending/borrowing protocols
 - 3 -> AMM lending/borrowing protocols that are not forks of blue-chip protocols, leveraged farming protocols, as well as newly conceptualized protocols
 - 2 -> Slightly modified forked blue-chip protocols.

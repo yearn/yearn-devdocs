@@ -148,15 +148,18 @@ migrable (string)
 chainIDs (string)
 
 - Default: All supported chains
-- Valid values: Comma-separated chain IDs: 1, 10, 137, 250, 8453, 42161
+- Valid values: Comma-separated chain IDs: 1, 10, 100, 137, 146, 250, 8453, 42161, 747474
 - Example: "1,137,42161"
 - Supported chains:
   - 1 = Ethereum
   - 10 = Optimism
+  - 100 = Gnosis
   - 137 = Polygon
+  - 146 = Sonic
   - 250 = Fantom
   - 8453 = Base
   - 42161 = Arbitrum
+  - 747474 = Katana
 
 humanized (boolean)
 
@@ -182,7 +185,7 @@ GET /{chainID}/reports/{address}             # Harvest reports for strategy
 ```
 GET /{chainID}/vaults/harvests/{addresses}   # Harvest history for vaults
 GET /{chainID}/earned/{address}/{vaults}     # Earnings per vault per user
-GET /{chainID}/earned/{address}              # All earnings for user on chain
+GET /{chainID}/earned/{address}              # All earnings for user onchain
 GET /earned/{address}                        # All earnings for user (all chains)
 ```
 
@@ -270,7 +273,7 @@ yDaemon aggregates data from multiple sources:
 
 1. **Yearn Subgraph**: Base data source for vault and strategy information
 2. **Yearn Meta**: Configuration and metadata (risk scores, descriptions, icons)
-3. **Yearn Lens Oracle**: On-chain price data for tokens and vaults
+3. **Yearn Lens Oracle**: Onchain price data for tokens and vaults
 4. **Blockchain RPC**: Direct chain queries via Tenderly and other providers
 5. **Curve API**: Pool and gauge information for Curve vaults
 6. **External Price Feeds**: Gamma, Pendle, and other protocol-specific data

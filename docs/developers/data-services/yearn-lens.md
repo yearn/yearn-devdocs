@@ -1,6 +1,6 @@
 # Yearn Lens
 
-Yearn Lens is a series of smart contracts that aggregate and format Yearn v2 Vault data into standardized interfaces.
+Yearn Lens is a series of smart contracts that aggregate and format Yearn V2 Vault data into standardized interfaces.
 
 ## Architecture
 
@@ -26,7 +26,7 @@ Yearn Lens is a series of smart contracts that aggregate and format Yearn v2 Vau
   - Registry adapters have the ability to return metadata specific to an asset type (for example for vaults: `pricePerShare`, `controller`, etc.)
 - Oracle
   - The oracle contract is responsible for fetching price information from various sources
-  - The oracle is intended for non-critical off-chain calculations
+  - The oracle is intended for non-critical offchain calculations
     - TVL calculations
     - Token and asset balance normalizations
     - Not intended to be used with strategies or other contracts

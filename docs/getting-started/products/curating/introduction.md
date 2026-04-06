@@ -68,7 +68,7 @@ graph TB
 
 This is the most important thing we do. Choosing which markets to support and how much to send to each directly impacts the vault’s risk and its APY.
 
-We don’t just guess! We use on-chain data and simulations to calculate how these markets perform. The simulations look at market liquidity, asset liquidity, defined caps, and more. Based on this, we can take a few actions:
+We don’t just guess! We use onchain data and simulations to calculate how these markets perform. The simulations look at market liquidity, asset liquidity, defined caps, and more. Based on this, we can take a few actions:
 
 - **Adding New Markets**: When we find a good, safe market that fits the vault’s risk level, we can add it in. Each market is assigned a risk tier (1–5, where 1 is safest) based on oracle quality and asset liquidity. The vault’s overall risk level determines which tiers are allowed and how much allocation each tier can receive. Before adding a market, we produce a detailed risk assessment report covering audits, centralization risk, funds management, liquidity risk, and operational risk — each scored and weighted to produce a final risk score. All reports are published on our [curation dashboard](https://curation.yearn.fi/).
 - **Tweaking Allocations**: Markets change! We run automated optimization hourly that uses constrained mathematical optimization to find the best allocation across all markets. The optimizer maximizes risk-adjusted yield while respecting supply caps, utilization ceilings, risk tier limits, and per-market allocation bounds. A reallocation only executes if the projected APY improvement exceeds a minimum threshold to justify gas costs. No single market can receive more than 95% of the vault’s total assets to allow exit liquidity for users if single market gets stuck with 100% utilization.
@@ -98,7 +98,7 @@ graph LR
 
 Once a vault is set up, the job isn’t done. Market conditions, borrowing demand, and risks can change fast, so we’re always monitoring and ready to make adjustments.
 
-- **Playing it Safe**: We constantly check on-chain liquidity on DEXs for potential liquidation capacity and monitor borrower health on the Morpho market. We evaluate the collateral of risky positions and compare it with available on-chain DEX liquidity to adjust the cap accordingly. We also aim to avoid overly utilized markets to ensure there’s always some breathing room for withdrawals.
+- **Playing it Safe**: We constantly check onchain liquidity on DEXs for potential liquidation capacity and monitor borrower health on the Morpho market. We evaluate the collateral of risky positions and compare it with available onchain DEX liquidity to adjust the cap accordingly. We also aim to avoid overly utilized markets to ensure there’s always some breathing room for withdrawals.
 - **Yield Optimization**: We analyze which markets are offering the best returns for their risk level and shift funds accordingly. Our goal is always the best risk-adjusted yield, not just the highest yield. And we use our models to predict how yield might change based on time market allocation.
 - **Emergency Response**: When a protocol we lend into shows signs of distress, our monitoring system can automatically trigger emergency actions. For critical alerts (e.g., a collateral protocol’s reserves dropping dangerously low), the system can zero the supply caps for affected markets and force an immediate reallocation to withdraw funds — all without manual intervention. For high-severity alerts, that require maunally checks, a pull request is created for the team to review before executing. Individual vaults can also be shut down manually if needed, clearing their supply queue and reallocating to idle.
 
@@ -145,7 +145,7 @@ Capabilities include:
 - Collateral Liquidity: Calculating liquidity multiple times a day to verify that collaterals backing risky borrowing positions have enough on-chain liquidity. We aggregate liquidity from 10+ DEX sources (Uniswap V2/V3/V4, Curve, Balancer, Aerodrome, SushiSwap, and more) and simulate actual swap slippage. This assures smooth liquidations for the borrowed asset without excessive slippage, and minimizes the risk that a position becomes unprofitable to liquidate and leads to bad debt in lending vaults.
 - Emergency Dispatch: For critical alerts (e.g., a collateral protocol’s reserves dropping dangerously low), the monitoring system can automatically dispatch emergency actions to our reallocation system, zeroing supply caps for affected markets and triggering forced withdrawals.
 
-Alerts are primarily delivered via Telegram, triggered by scheduled GitHub Actions running Python scripts or real-time Tenderly alerts based on on-chain events.
+Alerts are primarily delivered via Telegram, triggered by scheduled GitHub Actions running Python scripts or real-time Tenderly alerts based on onchain events.
 
 For more details, check our [GitHub monitoring repository](https://github.com/yearn/monitoring) and [detailed documentation generated by DeepWiki](https://deepwiki.com/yearn/monitoring). This is only part of our monitoring stack that we have open sourced.
 

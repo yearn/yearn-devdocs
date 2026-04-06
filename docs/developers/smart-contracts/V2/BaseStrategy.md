@@ -18,7 +18,7 @@ The Strategy's version must match the Vault's `API_VERSION`.
 
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`A`|  | string which holds the current API version of this contract.
+|`_apiVersion`| string | The current API version of this contract.
 
 ### name
 
@@ -38,7 +38,7 @@ This Strategy's name.
 
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`This`|  | Strategy's name.
+|`_name`| string | Strategy's name.
 
 ### delegatedAssets
 
@@ -138,12 +138,10 @@ Initializes the Strategy, this is called only once, when the
 
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`_vault` | address | The address of the Vault responsible for this Strategy.
-|`_strategist` | address | The address to assign as `strategist`.
-The strategist is able to change the reward address
-|`_rewards` | address |  The address to use for pulling rewards.
-|`_keeper` | address | The address of the _keeper._keeper
-can harvest and tend a strategy.
+|`_vault` | address | The address of the Vault responsible for this Strategy.|
+|`_strategist` | address | The address to assign as `strategist`. The strategist is able to change the reward address.|
+|`_rewards` | address | The address to use for pulling rewards.|
+|`_keeper` | address | The address of the keeper. Keeper can harvest and tend a strategy.|
 
 ### setHealthCheck
 
@@ -283,8 +281,7 @@ Used to ensure that any significant credit a strategy has from the
 
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`_creditThreshold` | uint256 | The number of want tokens that will
- automatically trigger a harvest.
+|`_creditThreshold` | uint256 | The number of want tokens that will automatically trigger a harvest.|
 
 ### setForceHarvestTriggerOnce
 
@@ -304,8 +301,7 @@ Used to automatically trigger a harvest by our keepers. Can be
 
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`_forceHarvestTriggerOnce` | bool | Value of true tells keepers to harvest
- our strategy
+|`_forceHarvestTriggerOnce` | bool | Value of true tells keepers to harvest our strategy.|
 
 ### setBaseFeeOracle
 
@@ -383,7 +379,7 @@ Provide an accurate conversion from `_amtInWei` (denominated in wei)
 
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`The`| uint256 | amount in `want` of `_amtInEth` converted to `want`
+|`_amountInWant`| uint256 | amount in `want` of `_amtInEth` converted to `want`|
 
 ### estimatedTotalAssets
 
@@ -398,12 +394,12 @@ Provide an accurate estimate for the total amount of assets
 
  This total should be "realizable" e.g. the total value that could
  *actually* be obtained from this Strategy if it were to divest its
- entire position based on current on-chain conditions.
+ entire position based on current onchain conditions.
 
 @dev
  Care must be taken in using this function, since it relies on external
  systems, which could be manipulated by the attacker to give an inflated
- (or reduced) value produced by this function, based on current on-chain
+ (or reduced) value produced by this function, based on current onchain
  conditions (e.g. this function is possible to influence through
  flashloan attacks, oracle manipulations, or other DeFi attack
  mechanisms).
@@ -418,7 +414,7 @@ Provide an accurate estimate for the total amount of assets
 
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`The`|  | estimated total assets in this Strategy.
+|`_totalAssets`| uint256 | Estimated total assets in this Strategy.|
 
 ### isActive
 
@@ -532,7 +528,7 @@ Provide a signal to the keeper that `tend()` should be called. The
 
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`if`| uint256 | `tend()` should be called, `false` otherwise.
+|`_shouldTend`| bool | `true` if `tend()` should be called, `false` otherwise.|
 
 ### tend
 
@@ -599,7 +595,7 @@ Provide a signal to the keeper that `harvest()` should be called. The
 
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`if`| uint256 | `harvest()` should be called, `false` otherwise.
+|`_shouldHarvest`| bool | `true` if `harvest()` should be called, `false` otherwise.
 
 ### isBaseFeeAcceptable
 
@@ -615,7 +611,7 @@ Check if the current network base fee is below our external target. If
 
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`if`|  | `harvest()` should be allowed, `false` otherwise.
+|`_isAcceptable`| bool | `true` if `harvest()` should be allowed, `false` otherwise.|
 
 ### harvest
 
@@ -708,7 +704,7 @@ interacted with the vault before.
 
 Activates emergency exit. Once activated, the Strategy will exit its
  position upon the next harvest, depositing all funds into the Vault as
- quickly as is reasonable given on-chain conditions.
+ quickly as is reasonable given onchain conditions.
 
  This may only be called by governance or the strategist.
 

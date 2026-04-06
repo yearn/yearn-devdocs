@@ -18,5 +18,5 @@ veCRV holders can sell their gauge votes to the highest bidder each week by voti
 
 * A new UI makes it easy for veCRV holders to identify the best opportunities.
 * Convex votes are excluded from the system to make bribes more efficient.
-* Fully trustless design and 100% on-chain design.
+* Fully trustless design and 100% onchain design.
 * The codebase is fully audited.
