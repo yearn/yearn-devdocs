@@ -2,7 +2,7 @@
 /node_modules
 /venv
 natspec/lib/*
-venv-py312
+/venv-py312
 
 # Production
 /build

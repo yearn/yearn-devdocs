@@ -16,8 +16,6 @@ token.approve(vault, amount)
 vault.deposit(amount, receiver)
 ```
 
-There is also a [4626 Router](/developers/smart-contracts/V3/Periphery/Yearn4626Router) available to make multi-step user flows easier.
-
 The max amount that a vault will accept from an address can be returned using the [`maxDeposit`](https://eips.ethereum.org/EIPS/eip-4626#maxdeposit) function.
 
 ### Withdrawals

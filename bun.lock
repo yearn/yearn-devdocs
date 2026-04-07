@@ -1,5 +1,6 @@
 {
   "lockfileVersion": 1,
+  "configVersion": 0,
   "workspaces": {
     "": {
       "name": "yearn-devdocs",
@@ -2941,7 +2942,7 @@
 
     "vscode-uri": ["vscode-uri@3.0.8", "", {}, "sha512-AyFQ0EVmsOZOlAnxoFOGOq1SQDWAB7C6aqMGS23svWAllfOaxbuFvcT8D1i8z3Gyn8fraVeZNNmN6e9bxxXkKw=="],
 
-    "vydoc": ["vydoc@github:rossgalloway/vydoc#f684cc3", { "dependencies": { "chalk": "^4.1.0", "cli-progress": "^3.9.0", "cli-table": "^0.3.6", "ejs": "^3.1.6", "ramda": "^0.27.1", "ramda-async": "^1.1.2", "yargs": "^16.2.0" }, "bin": { "vydoc": "./lib/bin/vydoc.js" } }, "rossgalloway-vydoc-f684cc3"],
+    "vydoc": ["vydoc@github:rossgalloway/vydoc#f684cc3", { "dependencies": { "chalk": "^4.1.0", "cli-progress": "^3.9.0", "cli-table": "^0.3.6", "ejs": "^3.1.6", "ramda": "^0.27.1", "ramda-async": "^1.1.2", "yargs": "^16.2.0" }, "bin": { "vydoc": "./lib/bin/vydoc.js" } }, "rossgalloway-vydoc-f684cc3", "sha512-gCa2UmH+32V7Q33ObkmACl8S2OZCcXIcp3E1cc6B/17z6rAlAw4LHpf1dbaOB3H9OEs9JDGmMpvbfxgQApqK1w=="],
 
     "watchpack": ["watchpack@2.4.4", "", { "dependencies": { "glob-to-regexp": "^0.4.1", "graceful-fs": "^4.1.2" } }, "sha512-c5EGNOiyxxV5qmTtAB7rbiXxi1ooX1pQKMLX/MIabJjRA0SJBQOjKF+KSVfHkr9U1cADPon0mRiVe/riyaiDUA=="],
 

@@ -3,6 +3,8 @@ import {
   getProtocolContractAddresses,
   readReleaseRegistryAll,
   readYearnRoleManager,
+  getAuctionFactoryFromRegistry,
+  getFeeRecipientFromAccountant,
 } from './v3Calls'
 import { Address, PublicClient, getAddress } from 'viem'
 import { V3ReleaseDataMap, V3ReleaseData } from './types'
@@ -186,12 +188,27 @@ export const fetchAndCheckProtocolAddresses = async (
     roleManagerFactory,
     failedChecks
   )
+
+  // Fetch auctionFactory from auctionRegistry
+  const auctionRegistryAddress = constants.protocolPeriphery.auctionRegistry as Address
+  const auctionFactoryFromRegistry = await getAuctionFactoryFromRegistry(
+    auctionRegistryAddress,
+    publicClient
+  )
+  const auctionFactoryCheck = await validateAddress(
+    constants.protocolPeriphery.auctionFactory,
+    'v3AuctionFactory',
+    auctionFactoryFromRegistry || '0x0000000000000000000000000000000000000000',
+    failedChecks
+  )
+
   if (
     !aprOracleCheck ||
     !aprOracleENSCheck ||
     !routerCheck ||
     !reportTriggerCheck ||
-    !roleManagerFactoryCheck
+    !roleManagerFactoryCheck ||
+    !auctionFactoryCheck
   ) {
     checkFlag = false
   }
@@ -200,6 +217,7 @@ export const fetchAndCheckProtocolAddresses = async (
     routerCheck,
     reportTriggerCheck,
     roleManagerFactoryCheck,
+    auctionFactoryCheck,
   }
   console.log('V3 protocol address validation complete. \n')
   return {
@@ -357,13 +375,27 @@ export const fetchAndCheckYearnV3Addresses = async (
     failedChecks
   )
 
+  // Fetch feeRecipient from Accountant and validate against dumper
+  const accountantAddress = constants.yearnV3ContractsMainnet.accountant as Address
+  const feeRecipientFromAccountant = await getFeeRecipientFromAccountant(
+    accountantAddress,
+    publicClient
+  )
+  const feeRecipientCheck = await validateAddress(
+    constants.protocolPeriphery.dumper,
+    'yearnV3FeeRecipient (Dumper)',
+    feeRecipientFromAccountant || '0x0000000000000000000000000000000000000000',
+    failedChecks
+  )
+
   if (
     !accountantCheck ||
     !accountantENSCheck ||
     !registryCheck ||
     !registryENSCheck ||
     !debtAllocatorCheck ||
-    !daddyCheck
+    !daddyCheck ||
+    !feeRecipientCheck
   ) {
     checkFlag = false
   }
@@ -373,6 +405,7 @@ export const fetchAndCheckYearnV3Addresses = async (
     registryCheck,
     debtAllocatorCheck,
     daddyCheck,
+    feeRecipientCheck,
   }
   console.log('Yearn V3 Periphery address validation complete. \n')
   return { addresses, checks, checkFlag }

@@ -37,6 +37,8 @@ The Yearn Docs [website](https://docs.yearn.fi/) is built using [Docusaurus](htt
 2. Install Python/Vyper dependencies for natspec docs generation (You can skip this step if you aren't working on smart contract documentation)
 
     This assumes you are using linux and will use the apt package manager. If not, other OSes have their own package manager that will have Python and Vyper.
+    The pinned `vyper==0.3.7` dependency in `requirements.txt` only supports Python `>=3.7,<3.11`,
+    so use Python `3.10.x` for this setup.
 
     2a. update the apt package manager
 
@@ -44,22 +46,36 @@ The Yearn Docs [website](https://docs.yearn.fi/) is built using [Docusaurus](htt
     sudo apt update
     ```
 
-    2b. Install Python 3
+    2b. Install Python 3.10
 
     ```bash
-    sudo apt install python3
+    sudo apt install python3.10 python3.10-venv
+    ```
+
+    If `python3.10` is not available from `apt` on your distro (for example Ubuntu 24.04),
+    install it with a version manager such as `uv` instead:
+
+    ```bash
+    uv python install 3.10
     ```
 
     2c. Verify the installation
 
     ```bash
-    python3 --version
+    python3.10 --version
     ```
 
     2d. Create and initialize python virtual environment
 
     ```bash
-    python3 -m venv venv
+    python3.10 -m venv venv
+    source venv/bin/activate
+    ```
+
+    If you installed Python 3.10 with `uv`, create the environment with:
+
+    ```bash
+    uv venv --python 3.10 --seed venv
     source venv/bin/activate
     ```
 
@@ -239,9 +255,17 @@ For reference, these are the addresses for the different submodules:
 - [yearn/yearn-ERC4626-Router](https://github.com/yearn/Yearn-ERC4626-Router)
 
 2. If you haven't already, create a python virtual environment and initialize.
+   Use Python `3.10.x` here as well, since `vyper==0.3.7` does not install on Python `3.11+`.
+   If you installed Python 3.10 with `uv`, use the `uv venv` command below so `pip` is
+   seeded in the environment.
 
 ```bash
-python3 -m venv venv
+python3.10 -m venv venv
+source venv/bin/activate
+```
+
+```bash
+uv venv --python 3.10 --seed venv
 source venv/bin/activate
 ```
 

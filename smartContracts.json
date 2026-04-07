@@ -43,6 +43,18 @@
           "type": "file",
           "git": "https://github.com/yearn/vault-periphery"
         },
+        "Keeper.sol": {
+          "type": "file",
+          "git": "https://github.com/yearn/vault-periphery"
+        },
+        "AuctionRegistry.sol": {
+          "type": "file",
+          "git": "https://github.com/yearn/tokenized-strategy-periphery"
+        },
+        "AuctionFactory.sol": {
+          "type": "file",
+          "git": "https://github.com/yearn/tokenized-strategy-periphery"
+        },
         "Auction.sol": {
           "type": "file",
           "git": "https://github.com/yearn/tokenized-strategy-periphery"

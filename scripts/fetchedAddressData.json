@@ -1,5 +1,5 @@
 {
-  "timeLastChecked": 1773343605,
+  "timeLastChecked": 1775507802,
   "addressesData": {
     "v3ContractAddresses": {
       "topLevel": {
@@ -117,7 +117,8 @@
         "aprOracleCheck": true,
         "routerCheck": true,
         "reportTriggerCheck": true,
-        "roleManagerFactoryCheck": true
+        "roleManagerFactoryCheck": true,
+        "auctionFactoryCheck": true
       },
       "releaseRegistry": {
         "hasLatestRelease": true,
@@ -138,7 +139,8 @@
         "accountantCheck": true,
         "registryCheck": true,
         "debtAllocatorCheck": true,
-        "daddyCheck": true
+        "daddyCheck": true,
+        "feeRecipientCheck": true
       }
     },
     "veYfiChecks": {
