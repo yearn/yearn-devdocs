@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Yearn regularly holds permissionless Dutch auctions, most notably for V3 strategies and YFI buybacks. This process has been standardized to encourage integration by searchers.
+Yearn regularly holds permissionless Dutch auctions, most notably for V3 strategies and YFI buybacks. This process has been standardized to encourage integration by searchers. You can see all current and past auctions at [auctionscan.info](https://auctionscan.info/).
 
 ### How it works
 - Each `want` token has a dedicated auction contract. Many different `sell` tokens can be offered through distinct auctions through this contract, receiving the same asset in return. In other words, "Sell DAI for YFI" and "Sell WETH for YFI" can both supported through the same contract with WETH as the asset, but any one auction will only sell either DAI or WETH, never both.
