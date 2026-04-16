@@ -77,11 +77,6 @@ module.exports = {
               label: 'yBOLD',
             },
             {
-              type: 'doc',
-              id: 'products/yvaults/yvaults-faq',
-              label: 'yVaults FAQ',
-            },
-            {
               type: 'link',
               label: 'yVaults Dev Docs →',
               href: '/developers/smart-contracts/deprecated/V1/introduction',
