@@ -72,14 +72,15 @@ module.exports = {
               ],
             },
             {
-              type: 'doc',
-              id: 'products/yvaults/yBold',
+              type: 'category',
               label: 'yBOLD',
-            },
-            {
-              type: 'doc',
-              id: 'products/yvaults/yvaults-faq',
-              label: 'yVaults FAQ',
+              link: {
+                type: 'doc',
+                id: 'products/yvaults/yBold',
+              },
+              items: [
+                'products/yvaults/vault-tokens',
+              ],
             },
             {
               type: 'link',

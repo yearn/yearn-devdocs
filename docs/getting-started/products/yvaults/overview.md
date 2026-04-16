@@ -12,8 +12,6 @@ Go you!
 
 :::
 
-<PrettyLink>[Still Confused? Click here for an ELI-5 explainer](yvaults-faq#yvaults-eli-5)</PrettyLink>
-
 ## yVault Types
 
 Over the years, Yearn has developed 3 versions of the yVault products: v1, v2, and v3. Super creative, we know!
