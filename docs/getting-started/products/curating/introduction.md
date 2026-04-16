@@ -132,7 +132,7 @@ By combining automated optimization with careful, real-time monitoring and a ris
 
 ### Monitoring
 
-We don’t just guess what might happen – we build tools to watch it closely. Our monitoring system keeps tabs on important numbers and potential risks across all the DeFi protocols Yearn uses.
+We don’t just guess what might happen – we build tools to watch it closely. [Our monitoring system](https://curation.yearn.fi/monitoring/) keeps tabs on important numbers and potential risks across all the DeFi protocols Yearn uses.
 
 Our monitoring system is designed to track key metrics and potential risks across 20+ DeFi protocols integrated with Yearn, running across multiple chains (Ethereum, Base, Katana, Polygon, Arbitrum, Optimism).
 Capabilities include:
