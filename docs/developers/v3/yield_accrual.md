@@ -12,7 +12,7 @@ This page describes how yield accrues and is accounted in Yearn V3. Yield can ac
 
 ## Strategy accounting (Tokenized Strategy)
 
-### `report()`
+### report()
 
 In `TokenizedStrategy.sol`, `report()`:
 
@@ -29,7 +29,7 @@ Key code references:
 - `TokenizedStrategy.sol` → `report()`
 - `BaseStrategy.sol` → `harvestAndReport()`
 
-### `tend()`
+### tend()
 
 In `TokenizedStrategy.sol`, `tend()`:
 
