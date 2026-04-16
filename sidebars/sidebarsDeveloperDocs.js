@@ -54,6 +54,7 @@ export default {
                 'v3/Integrating_v3',
                 'v3/strategy_writing_guide',
                 'v3/yield_accrual',
+                'v3/yield_optimization',
                 'v3/vault_management',
                 'v3/vault_deployment',
                 'v3/periphery',
