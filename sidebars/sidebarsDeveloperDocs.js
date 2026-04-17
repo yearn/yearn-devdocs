@@ -108,19 +108,7 @@ export default {
             'data-services/kong',
             'data-services/ydaemon',
             'data-services/yearn-lens',
-          ],
-        },
-        // Frontend Development
-        {
-          type: 'category',
-          label: 'Frontend Development',
-          link: {
-            type: 'doc',
-            id: 'front-end-development',
-          },
-          items: [
             'wallet-integration',
-            'data-services/yearn-stack',
             {
               type: 'doc',
               label: 'Governance Apps (Repo)',
