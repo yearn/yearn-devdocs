@@ -37,9 +37,7 @@ V2 and V3 vaults implement strategies differently, so it is important to get fam
 
 ### Frontend Integrations
 
-Yearn uses Kong and yDaemon as frontend data sources. Old Yearn SDKs existed, but as of late 2025, only yDaemon and Kong are actively used.
-
-Check out the [Frontend Integrations](front-end-development) section of this documentation for more information about Frontend Integrations.
+Yearn uses Kong and yDaemon as frontend data sources. Old Yearn SDKs existed, but as of 2026, only yDaemon and Kong are actively used.
 
 ### Data Sources
 
