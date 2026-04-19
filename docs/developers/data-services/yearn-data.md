@@ -1,30 +1,33 @@
 # Yearn Data Services
 
-If you want to programmatically interact with Yearn data, or need to fetch large amounts of it then you have a few options:
+If you want to programmatically interact with Yearn data, or need to fetch large amounts of it, then you have a few options:
 
 ## Kong
 
-[Kong](https://kong.yearn.fi/) is an integrated set of services and tools that make it easy to index EVM logs and state, enrich your data with custom hooks, query your data over graphql. Kong is designed to be cheap, reliable, easy to maintain, and simplify the process of updating your index.
+[Kong](https://kong.yearn.fi/) is Yearn's preferred public data API for vault catalogs, detail snapshots, reports, and timeseries. It indexes EVM logs and state, enriches the raw blockchain data with hooks, and exposes both REST and GraphQL query surfaces.
 
 Kong's Yearn index covers the v3 and v2 vault ecosystems:
 
 - Regular contract snapshots of each registry, vault, strategy, trade handler, accountant, and debt allocator.
 - Full event history for each of the above (*with limited history on transfers, deposits, withdraws, and approves).
 - Snapshot hooks for computing vault-strategies relationships, debts, fees, and rewards.
-- Snapshot hooks for integrating offchain risk and meta data.
+- Snapshot hooks for integrating offchain risk and metadata.
 - Event hooks for tracking new vaults and strategies, computing spot harvest APRs, and pricing transfers.
 - Timeseries hooks for computing APY and TVL.
 
-Kong can be run locally or a hosted version run by Yearn can be queried with the public endpoint.
+Kong can be run locally or queried through the public Yearn deployment.
 
-- **Live API:** https://kong.yearn.fi/api/gql
+- **Live REST API:** https://kong.yearn.fi/api/rest
+- **Live GraphQL API:** https://kong.yearn.fi/api/gql
+- **Docs:** https://docs.yearn.fi/developers/data-services/kong
 - **Source:** https://github.com/yearn/kong
 
 ## yDaemon
 
-yDaemon is a RESTful API used by some Yearn frontends. While Kong is generally preferred to yDaemon when possible for the areas of overlap, yDaemon is the best source for current Yearn Vault data and is what is used by the production Yearn frontends.
+[yDaemon](https://github.com/yearn/ydaemon) is a legacy REST API aggregator for Yearn. Some older integrations may still depend on it, but for new integrations you should prefer [Kong](./kong.md).
 
 - **Live API:** https://ydaemon.yearn.fi/1/vaults/all
+- **Docs:** https://docs.yearn.fi/developers/data-services/ydaemon
 - **Source:** https://github.com/yearn/ydaemon
 
 ## Yearn Lens

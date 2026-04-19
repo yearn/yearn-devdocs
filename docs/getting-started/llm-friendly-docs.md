@@ -51,3 +51,32 @@ chmod +x "$SKILL_DIR/scripts/yearn_docs_query.py"
 ```
 
 In Claude Code, run `/help` and look for `/yearn-docs-site-query`.
+
+## Install the Yearn Kong Skill
+
+For Yearn vault catalog, snapshot, timeseries, and report queries, install the Kong skill published from this docs site:
+
+- https://docs.yearn.fi/skills/yearn-kong-query/SKILL.md
+- https://docs.yearn.fi/skills/yearn-kong-query/scripts/yearn_kong_query.py
+
+### Codex
+
+```bash
+SKILL_DIR="${CODEX_HOME:-$HOME/.codex}/skills/yearn-kong-query"
+mkdir -p "$SKILL_DIR/scripts"
+curl -fsSL https://docs.yearn.fi/skills/yearn-kong-query/SKILL.md -o "$SKILL_DIR/SKILL.md"
+curl -fsSL https://docs.yearn.fi/skills/yearn-kong-query/scripts/yearn_kong_query.py -o "$SKILL_DIR/scripts/yearn_kong_query.py"
+chmod +x "$SKILL_DIR/scripts/yearn_kong_query.py"
+```
+
+### Claude Code
+
+```bash
+SKILL_DIR="$HOME/.claude/skills/yearn-kong-query"
+mkdir -p "$SKILL_DIR/scripts"
+curl -fsSL https://docs.yearn.fi/skills/yearn-kong-query/SKILL.md -o "$SKILL_DIR/SKILL.md"
+curl -fsSL https://docs.yearn.fi/skills/yearn-kong-query/scripts/yearn_kong_query.py -o "$SKILL_DIR/scripts/yearn_kong_query.py"
+chmod +x "$SKILL_DIR/scripts/yearn_kong_query.py"
+```
+
+The skill's `catalog` command applies the current website-style Yearn filter, so agents can start from a Yearn-only catalog instead of the full multi-origin Kong feed.
