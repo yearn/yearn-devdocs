@@ -9,6 +9,7 @@ import {
 } from '../ethereum/v3Checks'
 import { yfiContracts, veYfiContracts } from '../ethereum/constants'
 import { ContractAddresses } from '../ethereum/types'
+import { DEFAULT_MAINNET_CHAIN_ID } from '../ethereum/publicRpc'
 
 export const ContractAddressContext = createContext<{
   addresses: ContractAddresses | Record<string, string | undefined>
@@ -38,7 +39,8 @@ export const ContractAddressProvider = ({ children }) => {
     ContractAddresses | Record<string, string | undefined>
   >({})
   const [checks, setChecks] = useState<Record<string, any>>({})
-  const publicClient = useContext(PublicClientContext)
+  const { getPublicClient } = useContext(PublicClientContext)
+  const publicClient = getPublicClient(DEFAULT_MAINNET_CHAIN_ID)
 
   useEffect(() => {
     const fetchAddresses = async () => {

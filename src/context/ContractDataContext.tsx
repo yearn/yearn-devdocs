@@ -8,6 +8,7 @@ import React, {
 import { PublicClientContext } from './PublicClientContext'
 import * as ABIs from '../ethereum/ABIs'
 import { getAddress, getContract } from 'viem'
+import { normalizeChainId } from '../ethereum/publicRpc'
 
 type MethodWithArgs = {
   name: string
@@ -57,7 +58,7 @@ export const ContractDataContext = createContext({})
  */
 const fetchData = async (
   contractReadParams: ContractReadData[],
-  publicClient,
+  getPublicClient: (chainId: number | string) => any,
   ABIs,
   setData: {
     (value: React.SetStateAction<{}>): void
@@ -65,16 +66,24 @@ const fetchData = async (
   }
 ) => {
   try {
-    // Fetch the latest block timestamp
-    const block = await publicClient.getBlock({ blockTag: 'latest' })
-    const blockTimestamp = Number(block.timestamp)
+    const blockTimestamps = new Map<string, number>()
+
     for (const contractReadCall of contractReadParams) {
+      const chainId = String(normalizeChainId(contractReadCall.chain))
+      const publicClient = getPublicClient(chainId)
       const address = contractReadCall.address
       const abi = ABIs[contractReadCall.abiName]
 
       if (!publicClient) {
         console.error('publicClient is null')
         return
+      }
+
+      let blockTimestamp = blockTimestamps.get(chainId)
+      if (blockTimestamp === undefined) {
+        const block = await publicClient.getBlock({ blockTag: 'latest' })
+        blockTimestamp = Number(block.timestamp)
+        blockTimestamps.set(chainId, blockTimestamp)
       }
 
       const contract = getContract({
@@ -97,17 +106,22 @@ const fetchData = async (
       const results = await Promise.all(methodCalls) // Await all method calls
 
       setData((prevData) => {
-        const newData = { ...prevData }
+        const newData = { ...(prevData as Record<string, any>) }
         results.forEach((result, index) => {
+          const contractMethod = contractReadCall.methods[index]
           const methodName =
-            typeof contractReadCall.methods[index] === 'string'
-              ? contractReadCall.methods[index]
-              : contractReadCall.methods[index].name
+            typeof contractMethod === 'string'
+              ? contractMethod
+              : contractMethod.name
           if (!newData[contractReadCall.name]) {
             newData[contractReadCall.name] = {}
           }
           newData[contractReadCall.name][methodName] = result
         })
+        if (!newData.blockTimestamps) {
+          newData.blockTimestamps = {}
+        }
+        newData.blockTimestamps[chainId] = blockTimestamp
         newData['blockTimestamp'] = blockTimestamp
         return newData
       })
@@ -131,7 +145,7 @@ const fetchData = async (
  */
 export const ContractDataProvider = ({ children, contractParams }) => {
   const [data, setData] = useState({})
-  const publicClient = useContext(PublicClientContext)
+  const { getPublicClient } = useContext(PublicClientContext)
 
   // Memoize contractReadParams to prevent unnecessary re-renders
   const contractReadParams = useMemo(
@@ -141,8 +155,8 @@ export const ContractDataProvider = ({ children, contractParams }) => {
 
   useEffect(() => {
     console.log('fetching on-chain data...')
-    fetchData(contractReadParams, publicClient, ABIs, setData)
-  }, [contractReadParams, publicClient])
+    fetchData(contractReadParams, getPublicClient, ABIs, setData)
+  }, [contractReadParams, getPublicClient])
 
   return (
     <ContractDataContext.Provider value={data}>

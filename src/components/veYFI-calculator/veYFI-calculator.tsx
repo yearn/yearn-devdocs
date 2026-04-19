@@ -39,6 +39,7 @@ import {
 import BoostChart from './BoostChart'
 import YearnLoader from '../misc/YearnLoader'
 import { LiquidLockerContracts } from '../../ethereum/constants'
+import { DEFAULT_MAINNET_CHAIN_ID } from '../../ethereum/publicRpc'
 
 type GaugeData = {
   name: string
@@ -56,7 +57,8 @@ export type BoostCalculationResult = {
 }
 
 const VeYFICalculator: React.FC = () => {
-  const publicClient = useContext(PublicClientContext)
+  const { getPublicClient } = useContext(PublicClientContext)
+  const publicClient = getPublicClient(DEFAULT_MAINNET_CHAIN_ID)
   const { siteConfig } = useDocusaurusContext()
   const { yDaemon } = siteConfig.customFields as {
     yDaemon: string

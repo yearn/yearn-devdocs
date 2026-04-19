@@ -1,6 +1,5 @@
 import fs from 'fs'
 import dotenv from 'dotenv'
-import { createPublicClient, http } from 'viem'
 import {
   fetchTopLevelAddressesFromENS,
   fetchAndCheckFromReleaseRegistry,
@@ -15,25 +14,18 @@ import {
   AddressChecks,
   V3ContractAddresses,
 } from '../src/ethereum/types'
-import { mainnet } from 'viem/chains'
+import {
+  DEFAULT_MAINNET_CHAIN_ID,
+  createYearnPublicClient,
+  getRpcUriOverridesFromEnv,
+} from '../src/ethereum/publicRpc'
 
 dotenv.config()
 
-const alchemyKey = process.env.ALCHEMY_API_KEY?.trim()
-const invalidAlchemyValues = new Set(['', 'undefined', 'null', 'yourApiKeyHere'])
-
-if (!alchemyKey || invalidAlchemyValues.has(alchemyKey)) {
-  console.error('Environment vars not set properly')
-  process.exit(1)
-}
-
-const publicClient = createPublicClient({
-  batch: {
-    multicall: true,
-  },
-  chain: mainnet,
-  transport: http(`https://eth-mainnet.g.alchemy.com/v2/${alchemyKey}`),
-})
+const publicClient = createYearnPublicClient(
+  DEFAULT_MAINNET_CHAIN_ID,
+  getRpcUriOverridesFromEnv(process.env)
+)
 
 const fetchAddresses = async () => {
   try {

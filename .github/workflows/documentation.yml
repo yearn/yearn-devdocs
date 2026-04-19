@@ -31,8 +31,6 @@ jobs:
 
       - name: Run address checks
         if: env.is_fork != 'true'
-        env:
-          ALCHEMY_API_KEY: ${{ secrets.ALCHEMY_API_KEY }}
         run: |
           bun run runAddressCheck
           echo "ALL_CHECKS_PASSED=$(cat all_checks_passed.txt)" >> $GITHUB_ENV
