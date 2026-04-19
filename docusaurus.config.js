@@ -4,10 +4,11 @@ import math from 'remark-math'
 import katex from 'rehype-katex'
 import { themes as prismThemes } from 'prism-react-renderer'
 import 'dotenv/config'
+import { getRpcUriOverridesFromEnv } from './src/ethereum/publicRpc'
 
 const branchName = process.env.BRANCH_NAME || 'unknown'
 const isDev = process.env.IS_DEV === 'true'
-const alchemyKey = process.env.ALCHEMY_API_KEY || 'unknown'
+const rpcUris = getRpcUriOverridesFromEnv(process.env)
 const yDaemon = process.env.YDAEMON_ENDPOINT || 'unknown'
 const yPriceMagic = process.env.YPRICEMAGIC_ENDPOINT || 'unknown'
 
@@ -29,7 +30,7 @@ export default {
   customFields: {
     branchName,
     isDev,
-    alchemyKey,
+    rpcUris,
     yDaemon,
     yPriceMagic,
   },

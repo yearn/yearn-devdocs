@@ -128,11 +128,13 @@ Artifact URLs default to `https://docs.yearn.fi`. To generate artifacts against 
 
 ## Configure .env
 
-The docs site pulls data from on-chain smart contracts, so an API key is necessary. The default is an Alchemy API key so the easiest thing to do is get a free api key from them at https://www.alchemy.com/pricing.
+The docs site pulls data from on-chain smart contracts and now resolves RPCs by chain. Copy `.env.example` to `.env` and set any `VITE_RPC_URI_FOR_<chainId>` values you want to override.
 
-Rename the `.env.example` file in the root directory to `.env` and add your API key where it says "yourApiKeyHere" without any quotes or backticks.
+By default, the repo will use Yearn RPC endpoints in the form `https://rpc.yearn.fi/chain/<chainId>`, so the example values can usually be used as-is.
 
-If you would like to use a different RPC service, or your own node to pull blockchain data, you can edit the publicClient in `/src/context/PublicClientContext`.
+Runtime docs reads use the chain declared in each page's `rpcCalls` frontmatter. The address-check script is still mainnet-only today, so it uses chain `1`.
+
+The legacy `ALCHEMY_API_KEY` mainnet fallback is still supported temporarily for compatibility, but `VITE_RPC_URI_FOR_1` is now the preferred configuration.
 
 ## Deployment
 
