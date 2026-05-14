@@ -12,7 +12,7 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
         # with:
         #   # Make sure the actual branch is checked out when running on pull requests
         #   ref: ${{ github.head_ref }}
@@ -25,7 +25,7 @@ jobs:
       #     commit_message: "ci: run linter"
 
       - name: Check markdown links
-        uses: tcort/github-action-markdown-link-check@v1
+        uses: tcort/github-action-markdown-link-check@e7c7a18363c842693fadde5d41a3bd3573a7a225 # v1
         with:
           use-quiet-mode: "yes"
           check-modified-files-only: "yes"
