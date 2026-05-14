@@ -2,7 +2,7 @@
 
 [Kong](https://github.com/yearn/kong) is Yearn's public indexing and analytics layer for vault catalogs, detail snapshots, time series, and report history. If you need current Yearn vault data, start with Kong.
 
-For more detailed infrastructure docs, see the [Kong source repo](https://github.com/yearn/kong), the live [REST docs](https://github.com/yearn/kong/blob/master/docs/rest.md), and [deepwiki](https://deepwiki.com/yearn/kong).
+For more detailed infrastructure docs, see the [Kong source repo](https://github.com/yearn/kong), the live [REST docs](https://github.com/yearn/kong/blob/master/docs/rest.md), the live [GraphQL docs](https://github.com/yearn/kong/blob/master/docs/graphql.md), and [deepwiki](https://deepwiki.com/yearn/kong).
 
 ## The short version
 
@@ -35,6 +35,7 @@ Use GraphQL when you need ad hoc exploration, event-level queries, or shapes tha
 
 - GraphQL Explorer: `https://kong.yearn.fi/api/gql`
 - REST base: `https://kong.yearn.fi/api/rest`
+- GraphQL introspection: enabled on the public endpoint
 
 ### Recommended REST endpoints for Yearn data
 
@@ -88,7 +89,31 @@ curl -s 'https://kong.yearn.fi/api/rest/list/vaults/1?origin=yearn' \
   | jq 'map(select(.origin == "yearn" and (.inclusion.isYearn != false)))'
 ```
 
-### 3. Fetch vault detail on demand
+### 3. Search by name, symbol, or asset symbol
+
+When the user does not give an address, use the list endpoint for discovery and the snapshot endpoint for confirmation.
+
+Example: search the website-style Yearn catalog for `USDC` on mainnet:
+
+```bash
+curl -s 'https://kong.yearn.fi/api/rest/list/vaults/1?origin=yearn' \
+  | jq 'map(select(.origin == "yearn" and (.inclusion.isYearn != false)))
+         | map(select((.name | ascii_downcase | contains("usdc"))
+                   or (.symbol | ascii_downcase | contains("usdc"))
+                   or (.asset.symbol | ascii_downcase | contains("usdc"))))
+         | .[0:10]'
+```
+
+Use the list endpoint for:
+
+- browsing
+- disambiguation
+- searching by `name`, `symbol`, or `asset.symbol`
+- ranking multiple possible matches before fetching detail
+
+Then follow up with `GET /api/rest/snapshot/:chainId/:address` for the selected vault.
+
+### 4. Fetch vault detail on demand
 
 After you have a chain ID and address, use the snapshot endpoint for the detail page payload:
 
@@ -104,9 +129,18 @@ Use snapshot data for:
 - fee config
 - staking availability
 - price per share
+- deposit limit and remaining capacity
 - richer vault-level metadata than the list endpoint carries
+- strategy-level composition and debt breakdown
 
-### 4. Fetch chart data by segment
+Important field handling notes:
+
+- `totalAssets`, `totalSupply`, `deposit_limit`, `totalDebt`, and `totalIdle` are raw on-chain values. Divide by `10^decimals` before presenting them to humans.
+- `pricePerShare` is also raw and should be scaled by vault decimals.
+- APR and APY values are already decimal fractions, so `0.047` means `4.7%`.
+- A useful default capacity formula is `deposit_limit - totalAssets`, again scaled by `10^decimals`.
+
+### 5. Fetch chart data by segment
 
 For charts, query the specific timeseries you need instead of over-fetching:
 
@@ -132,7 +166,7 @@ Useful segments:
 - `apr-oracle` - oracle APR values
 - `tvl` - TVL history
 
-### 5. Pull recent vault report history
+### 6. Pull recent vault report history
 
 If you need harvest-style report history, query reports directly:
 
@@ -143,7 +177,61 @@ curl -s 'https://kong.yearn.fi/api/rest/reports/1/0x6faf8b7ffee3306efcfc2ba9fec9
 
 This is usually the fastest path for recent StrategyReported-style data without designing a custom GraphQL query.
 
-### 6. Drop to GraphQL for exploratory or event-level work
+### 7. Discover the GraphQL schema before writing a query
+
+Kong leaves GraphQL introspection enabled, so you do not need to guess available roots or fields.
+
+Start by listing the root query fields:
+
+```bash
+curl -s 'https://kong.yearn.fi/api/gql' \
+  -H 'content-type: application/json' \
+  --data '{"query":"{ __type(name: \"Query\") { fields { name args { name type { kind name ofType { kind name ofType { kind name } } } } type { kind name ofType { kind name ofType { kind name } } } } } }"}' \
+  | jq
+```
+
+Common root fields for Yearn work include:
+
+- `vaults`
+- `vault`
+- `vaultReports`
+- `vaultStrategies`
+- `strategies`
+- `strategyReports`
+- `deposits`
+- `transfers`
+- `timeseries`
+- `tvls`
+- `prices`
+
+Then inspect the fields on the type you want to query:
+
+```bash
+curl -s 'https://kong.yearn.fi/api/gql' \
+  -H 'content-type: application/json' \
+  --data '{"query":"{ __type(name: \"Vault\") { fields { name type { kind name ofType { kind name ofType { kind name } } } } } }"}' \
+  | jq
+```
+
+You can do the same for any result type such as `Vault`, `VaultReport`, `Strategy`, `StrategyReport`, `Deposit`, `Transfer`, `Output`, or `Tvl`.
+
+### 8. Drop to GraphQL for exploratory or event-level work
+
+For a Yearn-scoped vault query, start with the built-in Yearn filter rather than the unfiltered `vaults(...)` root:
+
+```graphql
+query MainnetYearnVaults {
+  vaults(chainId: 1, yearn: true) {
+    address
+    name
+    symbol
+    vaultType
+    tvl {
+      tvl
+    }
+  }
+}
+```
 
 Example: recent deposit history for one vault.
 
@@ -228,3 +316,14 @@ curl -fsSL https://docs.yearn.fi/skills/yearn-kong-query/SKILL.md -o "$SKILL_DIR
 curl -fsSL https://docs.yearn.fi/skills/yearn-kong-query/scripts/yearn_kong_query.py -o "$SKILL_DIR/scripts/yearn_kong_query.py"
 chmod +x "$SKILL_DIR/scripts/yearn_kong_query.py"
 ```
+
+### Verify schema discovery
+
+After install, replace `$SKILL_DIR` with the path you used above and verify GraphQL schema discovery:
+
+```bash
+python3 "$SKILL_DIR/scripts/yearn_kong_query.py" gql-root-fields | jq '.[0:10]'
+python3 "$SKILL_DIR/scripts/yearn_kong_query.py" gql-type Vault | jq '.fields[0:20]'
+```
+
+The helper exposes `gql-root-fields` and `gql-type` so agents can inspect the live Kong schema before writing a custom query.

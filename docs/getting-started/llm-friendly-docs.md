@@ -80,3 +80,14 @@ chmod +x "$SKILL_DIR/scripts/yearn_kong_query.py"
 ```
 
 The skill's `catalog` command applies the current website-style Yearn filter, so agents can start from a Yearn-only catalog instead of the full multi-origin Kong feed.
+
+The helper can also inspect Kong's live GraphQL schema, which makes custom queries much safer when you do not already know the available roots or fields.
+
+After install, replace `$SKILL_DIR` with the path you used above and verify GraphQL discovery:
+
+```bash
+python3 "$SKILL_DIR/scripts/yearn_kong_query.py" gql-root-fields | jq '.[0:10]'
+python3 "$SKILL_DIR/scripts/yearn_kong_query.py" gql-type Vault | jq '.fields[0:20]'
+```
+
+When the skill itself references the helper, commands are relative to the skill root, so the script path inside `SKILL.md` is `scripts/yearn_kong_query.py`.
