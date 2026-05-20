@@ -32,6 +32,8 @@ See all stYFI contracts [on this page](./styfi-contracts.md)
 | Treasury               | treasury.ychad.eth    | [0x93A62dA5a14C80f265DAbC077fCEE437B1a0Efde](https://etherscan.io/address/0x93A62dA5a14C80f265DAbC077fCEE437B1a0Efde) |
 | Timelock               |                       | [0x88Ba032be87d5EF1fbE87336B7090767F367BF73](https://etherscan.io/address/0x88Ba032be87d5EF1fbE87336B7090767F367BF73) |
 | Timelock Executor      |                       | [0xF8f60BF9456A6e0141149Db2DD6f02C60da5779B](https://etherscan.io/address/0xF8f60BF9456A6e0141149Db2DD6f02C60da5779B) |
+| SAM Multisig           |                       | [0xe5e2Baf96198c56380dDD5E992D7d1ADa0e989c0](https://etherscan.io/address/0xe5e2Baf96198c56380dDD5E992D7d1ADa0e989c0) |
+| Curation Multisig      |                       | [0x90D0f26025571295D18a6c041E47450B81886B51](https://etherscan.io/address/0x90D0f26025571295D18a6c041E47450B81886B51) |
 
 ## Polygon Contracts
 
@@ -51,6 +53,8 @@ See all stYFI contracts [on this page](./styfi-contracts.md)
 | Treasury               | [0x1DEb47dCC9a35AD454Bf7f0fCDb03c09792C08c1](https://arbiscan.io/address/0x1DEb47dCC9a35AD454Bf7f0fCDb03c09792C08c1) |
 | Timelock               | [0x88Ba032be87d5EF1fbE87336B7090767F367BF73](https://arbiscan.io/address/0x88Ba032be87d5EF1fbE87336B7090767F367BF73) |
 | Timelock Executor      | [0xF8f60BF9456A6e0141149Db2DD6f02C60da5779B](https://arbiscan.io/address/0xF8f60BF9456A6e0141149Db2DD6f02C60da5779B) |
+| SAM Multisig           | [0xfd99a19Fcf577Be92fDAB4ef162c1644BB056885](https://arbiscan.io/address/0xfd99a19Fcf577Be92fDAB4ef162c1644BB056885) |
+| Curation Multisig      | [0x90D0f26025571295D18a6c041E47450B81886B51](https://arbiscan.io/address/0x90D0f26025571295D18a6c041E47450B81886B51) |
 
 ## Optimism Contracts
 
@@ -71,6 +75,8 @@ See all stYFI contracts [on this page](./styfi-contracts.md)
 | Treasury               | [0x02ff746D8cb62709aEEc611CeC9B17d7dD1D3480](https://basescan.org/address/0x02ff746D8cb62709aEEc611CeC9B17d7dD1D3480) |
 | Timelock               | [0x88Ba032be87d5EF1fbE87336B7090767F367BF73](https://basescan.org/address/0x88Ba032be87d5EF1fbE87336B7090767F367BF73) |
 | Timelock Executor      | [0xF8f60BF9456A6e0141149Db2DD6f02C60da5779B](https://basescan.org/address/0xF8f60BF9456A6e0141149Db2DD6f02C60da5779B) |
+| SAM Multisig           | [0xFEaE2F855250c36A77b8C68dB07C4dD9711fE36F](https://basescan.org/address/0xFEaE2F855250c36A77b8C68dB07C4dD9711fE36F) |
+| Curation Multisig      | [0x90D0f26025571295D18a6c041E47450B81886B51](https://basescan.org/address/0x90D0f26025571295D18a6c041E47450B81886B51) |
 
 ## Katana Contracts
 
@@ -80,6 +86,8 @@ See all stYFI contracts [on this page](./styfi-contracts.md)
 | Strategist multisig    | [0xBe7c7efc1ef3245d37E3157F76A512108D6D7aE6](https://katanascan.com/address/0xBe7c7efc1ef3245d37E3157F76A512108D6D7aE6) |
 | Timelock               | [0x88Ba032be87d5EF1fbE87336B7090767F367BF73](https://katanascan.com/address/0x88Ba032be87d5EF1fbE87336B7090767F367BF73) |
 | Timelock Executor      | [0xF8f60BF9456A6e0141149Db2DD6f02C60da5779B](https://katanascan.com/address/0xF8f60BF9456A6e0141149Db2DD6f02C60da5779B) |
+| SAM Multisig           | [0x518C21DC88D9780c0A1Be566433c571461A70149](https://katanascan.com/address/0x518C21DC88D9780c0A1Be566433c571461A70149) |
+| Curation Multisig      | [0x90D0f26025571295D18a6c041E47450B81886B51](https://katanascan.com/address/0x90D0f26025571295D18a6c041E47450B81886B51) |
 
 ## Fantom Contracts
 
