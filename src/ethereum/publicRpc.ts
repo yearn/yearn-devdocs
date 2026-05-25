@@ -72,12 +72,6 @@ export function getRpcUriOverridesFromEnv(
     }
   }
 
-  const legacyAlchemyKey = env.ALCHEMY_API_KEY?.trim()
-  if (legacyAlchemyKey && !rpcUris[String(DEFAULT_MAINNET_CHAIN_ID)]) {
-    rpcUris[String(DEFAULT_MAINNET_CHAIN_ID)] =
-      `https://eth-mainnet.g.alchemy.com/v2/${legacyAlchemyKey}`
-  }
-
   return rpcUris
 }
 

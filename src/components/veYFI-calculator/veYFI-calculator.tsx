@@ -33,7 +33,7 @@ import {
 import {
   fetchVeYFISupply,
   fetchAllGaugeData,
-  fetchTokenPrice,
+  fetchVaultSharePrice,
   fetchLiquidLockerVeYFIBalance,
 } from './fetch'
 import BoostChart from './BoostChart'
@@ -60,9 +60,8 @@ const VeYFICalculator: React.FC = () => {
   const { getPublicClient } = useContext(PublicClientContext)
   const publicClient = getPublicClient(DEFAULT_MAINNET_CHAIN_ID)
   const { siteConfig } = useDocusaurusContext()
-  const { yDaemon } = siteConfig.customFields as {
-    yDaemon: string
-    yPriceMagic: string
+  const { kongEndpoint } = siteConfig.customFields as {
+    kongEndpoint: string
   }
 
   const [veYfiTotalSupply, setVeYfiTotalSupply] = useState<number>(0)
@@ -189,13 +188,10 @@ const VeYFICalculator: React.FC = () => {
     setSelectedVault(vaultName)
     const selectedGauge = gaugeData.find((gauge) => gauge.name === vaultName)
     if (selectedGauge) {
-      const tokenPriceData = await fetchTokenPrice(
-        yDaemon,
+      const vaultSharePrice = await fetchVaultSharePrice(
+        kongEndpoint,
         selectedGauge.underlyingVaultAddress
       )
-      const underlyingPrice = tokenPriceData?.tvl.price
-      const pricePerShare = tokenPriceData?.apr.pricePerShare.today
-      const vaultSharePrice = pricePerShare * underlyingPrice
       setSelectedVaultSharePrice(vaultSharePrice)
     }
     setShowChart1(false)

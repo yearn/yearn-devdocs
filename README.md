@@ -134,7 +134,9 @@ By default, the repo will use Yearn RPC endpoints in the form `https://rpc.yearn
 
 Runtime docs reads use the chain declared in each page's `rpcCalls` frontmatter. The address-check script is still mainnet-only today, so it uses chain `1`.
 
-The legacy `ALCHEMY_API_KEY` mainnet fallback is still supported temporarily for compatibility, but `VITE_RPC_URI_FOR_1` is now the preferred configuration.
+The site reads vault snapshots from Kong. Set `KONG_ENDPOINT` only when you need to point at a different Kong-compatible REST host.
+
+`ALCHEMY_API_KEY` is no longer read by the site. Use `VITE_RPC_URI_FOR_1` or `RPC_URI_FOR_1` for mainnet RPC overrides.
 
 ## Deployment
 
