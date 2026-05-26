@@ -128,13 +128,15 @@ Artifact URLs default to `https://docs.yearn.fi`. To generate artifacts against 
 
 ## Configure .env
 
-The docs site pulls data from on-chain smart contracts and now resolves RPCs by chain. Copy `.env.example` to `.env` and set any `VITE_RPC_URI_FOR_<chainId>` values you want to override.
+The docs site pulls data from on-chain smart contracts and now resolves RPCs by chain. Copy `.env.example` to `.env` and set any `RPC_URI_FOR_<chainId>` values you want to override.
 
 By default, the repo will use Yearn RPC endpoints in the form `https://rpc.yearn.fi/chain/<chainId>`, so the example values can usually be used as-is.
 
 Runtime docs reads use the chain declared in each page's `rpcCalls` frontmatter. The address-check script is still mainnet-only today, so it uses chain `1`.
 
-The legacy `ALCHEMY_API_KEY` mainnet fallback is still supported temporarily for compatibility, but `VITE_RPC_URI_FOR_1` is now the preferred configuration.
+The site reads vault snapshots from Kong. Set `KONG_ENDPOINT` only when you need to point at a different Kong-compatible REST host.
+
+`ALCHEMY_API_KEY` is no longer read by the site. Use `RPC_URI_FOR_1` for mainnet RPC overrides.
 
 ## Deployment
 

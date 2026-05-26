@@ -3,7 +3,7 @@ import * as viemChains from 'viem/chains'
 
 const DEFAULT_RPC_BASE_URL = 'https://rpc.yearn.fi/chain'
 const DEFAULT_MAINNET_CHAIN_ID = 1
-const RPC_ENV_PREFIXES = ['VITE_RPC_URI_FOR_', 'RPC_URI_FOR_']
+const RPC_ENV_PREFIX = 'RPC_URI_FOR_'
 
 const knownChains = {
   1: viemChains.mainnet,
@@ -58,24 +58,16 @@ export function getRpcUriOverridesFromEnv(
       continue
     }
 
-    for (const prefix of RPC_ENV_PREFIXES) {
-      if (!key.startsWith(prefix)) {
-        continue
-      }
-
-      const chainId = key.slice(prefix.length)
-      if (!/^\d+$/.test(chainId)) {
-        continue
-      }
-
-      rpcUris[chainId] = trimmedValue
+    if (!key.startsWith(RPC_ENV_PREFIX)) {
+      continue
     }
-  }
 
-  const legacyAlchemyKey = env.ALCHEMY_API_KEY?.trim()
-  if (legacyAlchemyKey && !rpcUris[String(DEFAULT_MAINNET_CHAIN_ID)]) {
-    rpcUris[String(DEFAULT_MAINNET_CHAIN_ID)] =
-      `https://eth-mainnet.g.alchemy.com/v2/${legacyAlchemyKey}`
+    const chainId = key.slice(RPC_ENV_PREFIX.length)
+    if (!/^\d+$/.test(chainId)) {
+      continue
+    }
+
+    rpcUris[chainId] = trimmedValue
   }
 
   return rpcUris

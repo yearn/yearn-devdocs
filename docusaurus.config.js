@@ -9,8 +9,8 @@ import { getRpcUriOverridesFromEnv } from './src/ethereum/publicRpc'
 const branchName = process.env.BRANCH_NAME || 'unknown'
 const isDev = process.env.IS_DEV === 'true'
 const rpcUris = getRpcUriOverridesFromEnv(process.env)
-const yDaemon = process.env.YDAEMON_ENDPOINT || 'unknown'
-const yPriceMagic = process.env.YPRICEMAGIC_ENDPOINT || 'unknown'
+const kongEndpoint =
+  process.env.KONG_ENDPOINT || 'https://kong.yearn.fi/api/rest'
 
 export default {
   title: 'Yearn Docs',
@@ -31,8 +31,7 @@ export default {
     branchName,
     isDev,
     rpcUris,
-    yDaemon,
-    yPriceMagic,
+    kongEndpoint,
   },
   future: {
     experimental_faster: true,

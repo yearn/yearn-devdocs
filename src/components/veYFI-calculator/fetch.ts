@@ -82,12 +82,65 @@ export async function fetchAllGaugeData(publicClient: any) {
   return Promise.all(gaugeDataPromises)
 }
 
-export async function fetchTokenPrice(yDaemon: string, address: string) {
-  const response = await fetch(`${yDaemon}/1/vaults/${address}`)
-  if (!response.ok) {
-    console.error('Failed to fetch token price')
-    return null
+type KongVaultSnapshot = {
+  decimals?: number | string
+  pricePerShare?: string
+  totalAssets?: string
+  tvl?: {
+    close?: number
   }
-  const data = await response.json()
-  return data
+  asset?: {
+    decimals?: number | string
+  }
+}
+
+const formatScaledAmount = (
+  value: string | undefined,
+  decimals: number | string | undefined
+) => {
+  if (!value || decimals === undefined) {
+    return undefined
+  }
+
+  const amount = Number(formatUnits(BigInt(value), Number(decimals)))
+  return Number.isFinite(amount) ? amount : undefined
+}
+
+export async function fetchVaultSharePrice(
+  kongEndpoint: string,
+  address: string
+) {
+  try {
+    const endpoint = kongEndpoint.replace(/\/+$/, '')
+    const response = await fetch(`${endpoint}/snapshot/1/${address}`)
+    if (!response.ok) {
+      console.error('Failed to fetch vault snapshot')
+      return undefined
+    }
+
+    const data = (await response.json()) as KongVaultSnapshot
+    const totalAssets = formatScaledAmount(
+      data.totalAssets,
+      data.asset?.decimals
+    )
+    const tvl = data.tvl?.close
+    const pricePerShare = formatScaledAmount(data.pricePerShare, data.decimals)
+
+    if (
+      !totalAssets ||
+      !tvl ||
+      !pricePerShare ||
+      totalAssets <= 0 ||
+      tvl <= 0 ||
+      pricePerShare <= 0
+    ) {
+      return undefined
+    }
+
+    const sharePrice = pricePerShare * (tvl / totalAssets)
+    return Number.isFinite(sharePrice) ? sharePrice : undefined
+  } catch (error) {
+    console.error('Failed to fetch vault snapshot', error)
+    return undefined
+  }
 }

@@ -33,7 +33,7 @@ import {
 import {
   fetchVeYFISupply,
   fetchAllGaugeData,
-  fetchTokenPrice,
+  fetchVaultSharePrice,
   fetchLiquidLockerVeYFIBalance,
 } from './fetch'
 import BoostChart from './BoostChart'
@@ -60,9 +60,8 @@ const VeYFICalculator: React.FC = () => {
   const { getPublicClient } = useContext(PublicClientContext)
   const publicClient = getPublicClient(DEFAULT_MAINNET_CHAIN_ID)
   const { siteConfig } = useDocusaurusContext()
-  const { yDaemon } = siteConfig.customFields as {
-    yDaemon: string
-    yPriceMagic: string
+  const { kongEndpoint } = siteConfig.customFields as {
+    kongEndpoint: string
   }
 
   const [veYfiTotalSupply, setVeYfiTotalSupply] = useState<number>(0)
@@ -73,6 +72,9 @@ const VeYFICalculator: React.FC = () => {
   const [selectedVaultSharePrice, setSelectedVaultSharePrice] = useState<
     number | undefined
   >(undefined)
+  const [vaultPriceError, setVaultPriceError] = useState<string | undefined>(
+    undefined
+  )
   const [depositAmount, setDepositAmount] = useState<number | string>('')
   const [depositAmountInUSD, setDepositAmountInUSD] = useState<number | string>(
     ''
@@ -99,6 +101,10 @@ const VeYFICalculator: React.FC = () => {
   >({})
   const [useLiquidLocker, setUseLiquidLocker] = useState(false)
   const [isDataFetched, setIsDataFetched] = useState(false)
+  const hasValidVaultSharePrice =
+    selectedVaultSharePrice !== undefined &&
+    Number.isFinite(selectedVaultSharePrice) &&
+    selectedVaultSharePrice > 0
 
   useEffect(() => {
     const fetchData = async () => {
@@ -139,11 +145,10 @@ const VeYFICalculator: React.FC = () => {
       return
     }
     if (!isNaN(Number(val))) {
-      const depositAmountInDollars = selectedVaultSharePrice
-        ? selectedVaultSharePrice * Number(val)
-        : 0
-      setDepositAmountInUSD(depositAmountInDollars)
       setDepositAmount(Number(val))
+      setDepositAmountInUSD(
+        hasValidVaultSharePrice ? selectedVaultSharePrice * Number(val) : ''
+      )
     }
     setShowChart1(false)
     setShowChart2(false)
@@ -159,10 +164,9 @@ const VeYFICalculator: React.FC = () => {
     }
     if (!isNaN(Number(val))) {
       setDepositAmountInUSD(Number(val))
-      const depositAmountInShares = selectedVaultSharePrice
-        ? Number(val) / selectedVaultSharePrice
-        : 0
-      setDepositAmount(depositAmountInShares)
+      setDepositAmount(
+        hasValidVaultSharePrice ? Number(val) / selectedVaultSharePrice : ''
+      )
     }
     setShowChart1(false)
     setShowChart2(false)
@@ -187,15 +191,21 @@ const VeYFICalculator: React.FC = () => {
 
   const handleVaultChange = async (vaultName: string) => {
     setSelectedVault(vaultName)
+    setSelectedVaultSharePrice(undefined)
+    setVaultPriceError(undefined)
     const selectedGauge = gaugeData.find((gauge) => gauge.name === vaultName)
     if (selectedGauge) {
-      const tokenPriceData = await fetchTokenPrice(
-        yDaemon,
+      const vaultSharePrice = await fetchVaultSharePrice(
+        kongEndpoint,
         selectedGauge.underlyingVaultAddress
       )
-      const underlyingPrice = tokenPriceData?.tvl.price
-      const pricePerShare = tokenPriceData?.apr.pricePerShare.today
-      const vaultSharePrice = pricePerShare * underlyingPrice
+      if (
+        vaultSharePrice === undefined ||
+        !Number.isFinite(vaultSharePrice) ||
+        vaultSharePrice <= 0
+      ) {
+        setVaultPriceError('Vault price unavailable')
+      }
       setSelectedVaultSharePrice(vaultSharePrice)
     }
     setShowChart1(false)
@@ -205,6 +215,11 @@ const VeYFICalculator: React.FC = () => {
   }
 
   const handleCalculateButton1Click = () => {
+    if (!hasValidVaultSharePrice) {
+      setVaultPriceError('Vault price unavailable')
+      return
+    }
+    const vaultSharePrice = selectedVaultSharePrice
     const totalDeposited =
       gaugeData.find((g) => g.name === selectedVault)?.totalAssets || 0
     const depositVal = Number(depositAmount) || 0
@@ -229,19 +244,18 @@ const VeYFICalculator: React.FC = () => {
     )
     const dataUSD = dataShares.map((entry) => ({
       ...entry,
-      amountDepositedInGauge:
-        entry.amountDepositedInGauge * (selectedVaultSharePrice ?? 0),
+      amountDepositedInGauge: entry.amountDepositedInGauge * vaultSharePrice,
     }))
     // get the boost for the entered deposit amount
     const specificBoost = calculateBoost(
       veYFIVal,
       veYfiTotalSupply,
       totalDeposited,
-      Number(depositAmountInUSD) / (selectedVaultSharePrice ?? 0)
+      Number(depositAmountInUSD) / vaultSharePrice
     )
     const specificBoostDataPoint = generateSinglePoint(depositVal, calcFunc)
     const specificBoostDataPointUSD =
-      (specificBoostDataPoint?.value ?? 0) * (selectedVaultSharePrice ?? 0)
+      (specificBoostDataPoint?.value ?? 0) * vaultSharePrice
     setCalculatedBoost({
       veYFI: veYFIVal,
       value: specificBoostDataPoint?.value || 0,
@@ -255,6 +269,10 @@ const VeYFICalculator: React.FC = () => {
   }
 
   const handleCalculateButton2Click = () => {
+    if (!hasValidVaultSharePrice) {
+      setVaultPriceError('Vault price unavailable')
+      return
+    }
     const totalDeposited =
       gaugeData.find((g) => g.name === selectedVault)?.totalAssets || 0
     const depositVal = Number(depositAmount) || 0
@@ -316,6 +334,7 @@ const VeYFICalculator: React.FC = () => {
                       ))}
                     </SelectContent>
                   </Select>
+                  {vaultPriceError && <p>{vaultPriceError}</p>}
                 </div>
                 <div style={{ flexDirection: 'column', width: '100%' }}>
                   {/* <Label>Enter Amount of veYFI</Label> */}
@@ -382,6 +401,7 @@ const VeYFICalculator: React.FC = () => {
                 onClick={handleCalculateButton1Click}
                 disabled={
                   !selectedVault ||
+                  !hasValidVaultSharePrice ||
                   (useVeYfiCalculator
                     ? isNaN(Number(veYFIFromLock)) || !veYFIFromLock
                     : isNaN(Number(veYFIAmount)) || !veYFIAmount)
@@ -482,6 +502,7 @@ const VeYFICalculator: React.FC = () => {
                       ))}
                     </SelectContent>
                   </Select>
+                  {vaultPriceError && <p>{vaultPriceError}</p>}
                 </div>
                 <div
                   style={{
@@ -539,6 +560,7 @@ const VeYFICalculator: React.FC = () => {
                 onClick={handleCalculateButton2Click}
                 disabled={
                   !selectedVault ||
+                  !hasValidVaultSharePrice ||
                   isNaN(Number(depositAmount)) ||
                   !depositAmount
                 }
