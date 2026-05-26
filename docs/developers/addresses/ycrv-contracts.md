@@ -9,6 +9,7 @@ A list of deployed yCRV contracts.
 | yCRV Boosted Staker | [0xE9A115b77A1057C918F997c32663FdcE24FB873f](https://etherscan.io/address/0xE9A115b77A1057C918F997c32663FdcE24FB873f#code) |
 | Rewards Distributor | [0xB226c52EB411326CdB54824a88aBaFDAAfF16D3d](https://etherscan.io/address/0xB226c52EB411326CdB54824a88aBaFDAAfF16D3d#code) |
 | Boosted Staker Utilities | [0x265c8D21A322B04804524b857089De2fEF619569](https://etherscan.io/address/0x265c8D21A322B04804524b857089De2fEF619569#code) |
+| yCRV Zap Contract | [0x78ada385b15d89a9b845d2cac0698663f0c69e3c](https://etherscan.io/address/0x78ada385b15d89a9b845d2cac0698663f0c69e3c#code) |
 | yvyCRV (Auto-Compounter Vault) | [0x27B5739e22ad9033bcBf192059122d163b60349D](https://etherscan.io/address/0x27B5739e22ad9033bcBf192059122d163b60349D#code) |
 | yvcrvUSD (crvUSD Vault) | [0xBF319dDC2Edc1Eb6FDf9910E39b37Be221C8805F](https://etherscan.io/address/0xBF319dDC2Edc1Eb6FDf9910E39b37Be221C8805F#code) |
 | lp-yCRV v2 (vault) | [0x6E9455D109202b426169F0d8f01A3332DAE160f3](https://etherscan.io/address/0x6E9455D109202b426169F0d8f01A3332DAE160f3#code) |

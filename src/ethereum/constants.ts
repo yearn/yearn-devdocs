@@ -212,7 +212,7 @@ export const yearnV3ContractsStable = {
  */
 export const yearnV3ContractsMainnet = {
   roleManagerENS: 'role-manager.v3.ychad.eth',
-  roleManager: '0xb3bd6b2e61753c311efbcf0111f75d29706d9a41',
+  roleManager: '0xb3bd6B2E61753C311EFbCF0111f75D29706D9a41',
   accountantENS: 'accountant.v3.ychad.eth',
   accountant: '0x5A74Cb32D36f2f517DB6f7b0A0591e09b22cDE69',
   debtAllocator: '0x1e9eB053228B1156831759401dE0E115356b8671',
@@ -260,7 +260,7 @@ export const yearnV3ContractsArbitrum = {
  * Yearn V3 Addresses on katana (747474)
  */
 export const yearnV3ContractsKatana = {
-  roleManager: '0x4671394A28FF147cfcBc9c2b1aab9d3883597417',
+  roleManager: '0x2297d2486070655c3a162b02c64248A2f9dBC9a4',
   accountant: '0x1f399808fE52d0E960CAB84b6b54d5707ab27c8a',
   daddy: '0xe6ad5A88f5da0F276C903d9Ac2647A937c917162',
 }

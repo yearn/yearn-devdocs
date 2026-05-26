@@ -126,7 +126,7 @@ Base-specific Yearn addresses
 | ----------------------   | ---------------------- |
 | **Role Manager** <br/>   | <ContractAddress contractName = {['yearnV3ContractsBase', 'roleManager']} chainID={8453} />   |
 | **Accountant** <br/>     | <ContractAddress contractName = {['yearnV3ContractsBase', 'accountant']} chainID={8453} />    |
-| **Debt Allocator** <br/> | <ContractAddress contractName = {['yearnV3ContractsMainnet', 'debtAllocator']} /> |
+| **Debt Allocator** <br/> | <ContractAddress contractName = {['yearnV3ContractsMainnet', 'debtAllocator']} chainID={8453} /> |
 
 ### Arbitrum (42161) Addresses
 
@@ -136,7 +136,7 @@ Arbitrum-specific Yearn addresses
 | ----------------------   | ---------------------- |
 | **Role Manager** <br/>   | <ContractAddress contractName = {['yearnV3ContractsArbitrum', 'roleManager']} chainID={42161} />   |
 | **Accountant** <br/>     | <ContractAddress contractName = {['yearnV3ContractsArbitrum', 'accountant']} chainID={42161} />   |
-| **Debt Allocator** <br/> | <ContractAddress contractName = {['yearnV3ContractsMainnet', 'debtAllocator']} /> |
+| **Debt Allocator** <br/> | <ContractAddress contractName = {['yearnV3ContractsMainnet', 'debtAllocator']} chainID={42161} /> |
 
 ### Katana (747474) Addresses
 
