@@ -99,30 +99,48 @@ const formatScaledAmount = (
   decimals: number | string | undefined
 ) => {
   if (!value || decimals === undefined) {
-    return 0
+    return undefined
   }
 
-  return Number(formatUnits(BigInt(value), Number(decimals)))
+  const amount = Number(formatUnits(BigInt(value), Number(decimals)))
+  return Number.isFinite(amount) ? amount : undefined
 }
 
 export async function fetchVaultSharePrice(
   kongEndpoint: string,
   address: string
 ) {
-  const response = await fetch(`${kongEndpoint}/snapshot/1/${address}`)
-  if (!response.ok) {
-    console.error('Failed to fetch vault snapshot')
+  try {
+    const endpoint = kongEndpoint.replace(/\/+$/, '')
+    const response = await fetch(`${endpoint}/snapshot/1/${address}`)
+    if (!response.ok) {
+      console.error('Failed to fetch vault snapshot')
+      return undefined
+    }
+
+    const data = (await response.json()) as KongVaultSnapshot
+    const totalAssets = formatScaledAmount(
+      data.totalAssets,
+      data.asset?.decimals
+    )
+    const tvl = data.tvl?.close
+    const pricePerShare = formatScaledAmount(data.pricePerShare, data.decimals)
+
+    if (
+      !totalAssets ||
+      !tvl ||
+      !pricePerShare ||
+      totalAssets <= 0 ||
+      tvl <= 0 ||
+      pricePerShare <= 0
+    ) {
+      return undefined
+    }
+
+    const sharePrice = pricePerShare * (tvl / totalAssets)
+    return Number.isFinite(sharePrice) ? sharePrice : undefined
+  } catch (error) {
+    console.error('Failed to fetch vault snapshot', error)
     return undefined
   }
-
-  const data = (await response.json()) as KongVaultSnapshot
-  const totalAssets = formatScaledAmount(
-    data.totalAssets,
-    data.asset?.decimals
-  )
-  const assetPrice =
-    data.tvl?.close && totalAssets > 0 ? data.tvl.close / totalAssets : 0
-  const pricePerShare = formatScaledAmount(data.pricePerShare, data.decimals)
-
-  return pricePerShare * assetPrice
 }
