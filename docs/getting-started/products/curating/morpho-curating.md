@@ -12,6 +12,14 @@ Morpho was the first chapter of our curation story. It has been a successful one
 
 Morpho is a permissionless, isolated money market protocol where each market consists of a single collateral and a single loan asset. Morpho Vaults follow the ERC-4626 standard and lend deposited assets into these underlying Morpho markets. The markets are selected by the curator of the vault, who has the ability to reallocate funds, set supply caps, and add or remove markets.
 
+### Vault Tiers
+
+We sort our vaults into three risk tiers:
+
+- **Yearn**: These vaults stick mostly to the big, well-known crypto markets (“blue-chips”). The goal here is steady, reliable yield with the lowest possible chance of things going sideways.
+- **Yearn OG**: These vaults dip into markets that offer potentially higher yields but come with a bit more risk. They correspond to Yearn’s internal “risk level 2”, with some small allocations to "risk level 3" markets to boost yield with enhanced monitoring.
+- **Yearn Degen**: These vaults are for those comfortable with higher risk for potentially even higher yields. They correspond to Yearn’s internal “risk level 3” and above.
+
 ### Roles
 
 Yearn's Morpho vaults are managed by role:
