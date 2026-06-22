@@ -154,7 +154,12 @@ export const topLevel = {
 
 // v3 Vault Template Addresses
 export const releaseRegistry = {
-  latestRelease: '3.0.4',
+  latestRelease: '3.1.0',
+  '3.1.0': {
+    vaultOriginal: '0xdD3FA86409658d207A9BE0141eE560C8db557824',
+    factory: '0x310aC28ACF5E514abDbFF9Ab25e21f1bfe22bcAC',
+    tokenizedStrategy: '0x310f5Db015E9d6E542fd41bd4542640790791e76',
+  },
   '3.0.4': {
     vaultOriginal: '0xd8063123BBA3B480569244AE66BFE72B6c84b00d',
     factory: '0x770D0d1Fb036483Ed4AbB6d53c1C88fb277D812F',

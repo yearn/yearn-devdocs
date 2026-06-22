@@ -14,7 +14,7 @@
         "roleManagerFactory": "0xca12459a931643BF28388c67639b3F352fe9e5Ce"
       },
       "releaseRegistry": {
-        "latestRelease": "3.0.4",
+        "latestRelease": "3.1.0",
         "3.0.1": {
           "vaultOriginal": "0xDE992C652b266AE649FEC8048aFC35954Bee6145",
           "factory": "0xE9E8C89c8Fc7E8b8F23425688eb68987231178e5",
@@ -34,6 +34,11 @@
           "vaultOriginal": "0xd8063123BBA3B480569244AE66BFE72B6c84b00d",
           "factory": "0x770D0d1Fb036483Ed4AbB6d53c1C88fb277D812F",
           "tokenizedStrategy": "0xD377919FA87120584B21279a491F82D5265A139c"
+        },
+        "3.1.0": {
+          "vaultOriginal": "0xdD3FA86409658d207A9BE0141eE560C8db557824",
+          "factory": "0x310aC28ACF5E514abDbFF9Ab25e21f1bfe22bcAC",
+          "tokenizedStrategy": "0x310f5Db015E9d6E542fd41bd4542640790791e76"
         }
       },
       "yearnV3": {
