@@ -2,7 +2,7 @@
 
 :::info
 
-**Current v3 yVault API version is 3.0.4**
+**Current v3 yVault API version is 3.1.0**
 
 older versions will be located in the "deprecated" Folder if they exist.
 
