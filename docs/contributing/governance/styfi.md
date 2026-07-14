@@ -5,6 +5,8 @@ Yearn governance staking is centered on **stYFI** and **stYFIx**:
 - **stYFI**: stake YFI, earn rewards, and retain direct governance rights.
 - **stYFIx**: a more passive option that delegates voting power (recommended if you do not want to manage governance actions directly).
 
+Read more about the *How* and *Why* of stYFI in [this blog post](https://blog.yearn.fi/upgrading-the-yield-machine)
+
 ## Where to use it
 
 - **stYFI dashboard**: https://styfi.yearn.fi
