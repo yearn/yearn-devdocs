@@ -90,7 +90,7 @@ This is complementary to the above, but it's not directly related to creating st
 - [yearn.fi](https://yearn.fi/), [GitHub](https://github.com/yearn/yearn.fi)
 - [Yearn Documentation](https://docs.yearn.fi/), [GitHub](https://github.com/yearn/yearn-devdocs)
 - [Yearn Governance Forum](https://gov.yearn.fi/)
-- [Yearn Snapshot Governance Voting](https://snapshot.box/#/s:veyfi.eth)
+- [Yearn Snapshot Governance Voting](https://snapshot.org/#/s:styfi.eth)
 
 #### List of Yearn Data Tools
 
@@ -105,7 +105,8 @@ This is complementary to the above, but it's not directly related to creating st
 - v3 yearn.fi, [GitHub](https://github.com/yearn/yearn-finance-v3)
 - [Yearn Borrow](https://yborrow.finance/), [GitHub](https://github.com/yearn/iborrow-finance)
 - [Yearn Governance](https://ygov.finance/), [GitHub](https://github.com/yearn/ygov-finance) - V1 Governance
-- [Legacy Yearn Snapshot Governance Voting](https://snapshot.org/#/ybaby.eth)
+- [Legacy veYFI Snapshot Governance Voting](https://snapshot.org/#/s:veyfi.eth)
+- [Legacy yBaby Snapshot Governance Voting](https://snapshot.org/#/ybaby.eth)
 - [Yearn Newsletter](https://yearn.substack.com/) - Weekly YFI newsletter
 - [Trackavault](https://trackavault.com/) - Track V2 Vaults
 - [Yearn Watch](https://yearn.watch/), [GitHub](https://github.com/yearn/yearn-watch)
