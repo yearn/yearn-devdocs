@@ -1,0 +1,466 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xl="http://www.w3.org/1999/xlink" viewBox="-1291.276 -2026.8726 1722.503 1004.7463" width="1722.503" height="1004.7463">
+  <defs>
+    <font-face font-family="Helvetica" font-size="16" units-per-em="1000" underline-position="-75.68359" underline-thickness="49.316406" slope="0" x-height="522.9492" cap-height="717.28516" ascent="770.0195" descent="-229.98047" font-weight="400">
+      <font-face-src>
+        <font-face-name name="Helvetica"/>
+      </font-face-src>
+    </font-face>
+    <font-face font-family="Apple Color Emoji" font-size="16" units-per-em="1000" underline-position="-117.1875" underline-thickness="78.125" slope="0" x-height="781.25" cap-height="1250" ascent="1250" descent="-390.625" font-weight="400">
+      <font-face-src>
+        <font-face-name name="AppleColorEmoji"/>
+      </font-face-src>
+    </font-face>
+    <font-face font-family="Helvetica" font-size="16" units-per-em="1000" underline-position="-75.68359" underline-thickness="49.316406" slope="0" x-height="532.22656" cap-height="719.7266" ascent="770.0195" descent="-229.98047" font-weight="700">
+      <font-face-src>
+        <font-face-name name="Helvetica-Bold"/>
+      </font-face-src>
+    </font-face>
+    <font-face font-family="Apple Color Emoji" font-size="28" units-per-em="1000" underline-position="-93.75033" underline-thickness="62.50022" slope="0" x-height="625.0022" cap-height="1000.0036" ascent="1000.0036" descent="-312.5011" font-weight="400">
+      <font-face-src>
+        <font-face-name name="AppleColorEmoji"/>
+      </font-face-src>
+    </font-face>
+    <marker orient="auto" overflow="visible" markerUnits="strokeWidth" id="FilledArrow_Marker" stroke-linejoin="miter" stroke-miterlimit="10" viewBox="-1 -4 10 8" markerWidth="10" markerHeight="8" color="black">
+      <g>
+        <path d="M 8 0 L 0 -3 L 0 3 Z" fill="currentColor" stroke="currentColor" stroke-width="1"/>
+      </g>
+    </marker>
+    <font-face font-family="Helvetica Neue" font-size="16" panose-1="2 0 5 3 0 0 0 2 0 4" units-per-em="1000" underline-position="-100" underline-thickness="50" slope="0" x-height="517" cap-height="714" ascent="951.9958" descent="-212.99744" font-weight="400">
+      <font-face-src>
+        <font-face-name name="HelveticaNeue"/>
+      </font-face-src>
+    </font-face>
+    <marker orient="auto" overflow="visible" markerUnits="strokeWidth" id="FilledArrow_Marker_2" stroke-linejoin="miter" stroke-miterlimit="10" viewBox="-9 -4 10 8" markerWidth="10" markerHeight="8" color="black">
+      <g>
+        <path d="M -8 0 L 0 3 L 0 -3 Z" fill="currentColor" stroke="currentColor" stroke-width="1"/>
+      </g>
+    </marker>
+  </defs>
+  <metadata> Produced by OmniGraffle 7.19.2\n2021-12-17 11:44:03 +0000</metadata>
+  <g id="Component_3__gauges_1" stroke-opacity="1" fill-opacity="1" stroke-dasharray="none" fill="none" stroke="none">
+    <title>Component 3: gauges 1</title>
+    <rect fill="white" x="-1291.276" y="-2026.8726" width="1722.503" height="1004.7463"/>
+    <g id="Component_3__gauges_1_Layer_1">
+      <title>Layer 1</title>
+      <g id="Group_142">
+        <g id="Graphic_135">
+          <rect x="-1268.3083" y="-1908.8726" width="80" height="80" fill="#c0ffc0"/>
+          <rect x="-1268.3083" y="-1908.8726" width="80" height="80" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0"/>
+          <text transform="translate(-1263.3083 -1878.3726)" fill="black">
+            <tspan font-family="Helvetica" font-size="16" font-weight="400" fill="black" x="16.328125" y="15">Actor</tspan>
+          </text>
+        </g>
+        <g id="Graphic_136">
+          <rect x="-1172.5454" y="-1908.8726" width="80" height="80" fill="#c0ffff"/>
+          <rect x="-1172.5454" y="-1908.8726" width="80" height="80" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0"/>
+          <text transform="translate(-1167.5454 -1878.3726)" fill="black">
+            <tspan font-family="Helvetica" font-size="16" font-weight="400" fill="black" x="14.386719" y="15">Yearn</tspan>
+          </text>
+        </g>
+        <g id="Graphic_138">
+          <rect x="-1076.7825" y="-1908.8726" width="80" height="80" fill="#ffc0c0"/>
+          <rect x="-1076.7825" y="-1908.8726" width="80" height="80" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0"/>
+          <text transform="translate(-1071.7825 -1878.3726)" fill="black">
+            <tspan font-family="Helvetica" font-size="16" font-weight="400" fill="black" x="5.652344" y="15">External</tspan>
+          </text>
+        </g>
+      </g>
+      <g id="Graphic_143">
+        <rect x="-819.3442" y="-1269.9293" width="125" height="100" fill="#c0ffff"/>
+        <rect x="-819.3442" y="-1269.9293" width="125" height="100" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        <text transform="translate(-814.3442 -1242.4293)" fill="black">
+          <tspan font-family="Apple Color Emoji" font-size="16" font-weight="400" fill="black" x="47" y="20">🧮</tspan>
+          <tspan font-family="Helvetica" font-size="16" font-weight="700" fill="black" x="24.140625" y="41">Treasury</tspan>
+        </text>
+      </g>
+      <g id="Graphic_144">
+        <rect x="-806.8442" y="-1918.0966" width="100" height="100" fill="#c0ffc0"/>
+        <rect x="-806.8442" y="-1918.0966" width="100" height="100" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        <text transform="translate(-801.8442 -1896.0966)" fill="black">
+          <tspan font-family="Apple Color Emoji" font-size="28" font-weight="400" fill="black" x="31" y="28">👤</tspan>
+          <tspan font-family="Helvetica" font-size="16" font-weight="700" fill="black" x="27.210938" y="52">User</tspan>
+        </text>
+      </g>
+      <g id="Group_145">
+        <title>Stack</title>
+        <g id="Graphic_147">
+          <rect x="-870.3115" y="-1541.7241" width="250" height="100" fill="#c0ffff"/>
+          <rect x="-870.3115" y="-1541.7241" width="250" height="100" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        </g>
+        <g id="Graphic_146">
+          <rect x="-875.538" y="-1547.4871" width="250" height="100" fill="#c0ffff"/>
+          <rect x="-875.538" y="-1547.4871" width="250" height="100" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        </g>
+      </g>
+      <g id="Graphic_148">
+        <rect x="-881" y="-1553.141" width="250" height="100" fill="#c0ffff"/>
+        <rect x="-881" y="-1553.141" width="250" height="100" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        <text transform="translate(-876 -1531.141)" fill="black">
+          <tspan font-family="Apple Color Emoji" font-size="28" font-weight="400" fill="black" x="106" y="28">🏦</tspan>
+          <tspan font-family="Helvetica" font-size="16" font-weight="700" fill="black" x="29.76172" y="52">Vaults &amp; other products</tspan>
+        </text>
+      </g>
+      <g id="Group_150">
+        <title>Stack</title>
+        <g id="Graphic_152">
+          <rect x="-1260.4505" y="-1142.6262" width="250" height="100" fill="#ffc0c0"/>
+          <rect x="-1260.4505" y="-1142.6262" width="250" height="100" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        </g>
+        <g id="Graphic_151">
+          <rect x="-1265.677" y="-1148.3893" width="250" height="100" fill="#ffc0c0"/>
+          <rect x="-1265.677" y="-1148.3893" width="250" height="100" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        </g>
+      </g>
+      <g id="Graphic_153">
+        <rect x="-1270.776" y="-1154" width="250" height="100" fill="#ffc0c0"/>
+        <rect x="-1270.776" y="-1154" width="250" height="100" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        <text transform="translate(-1265.776 -1141.5)" fill="black">
+          <tspan font-family="Apple Color Emoji" font-size="28" font-weight="400" fill="black" x="106" y="28">🧩</tspan>
+          <tspan font-family="Helvetica" font-size="16" font-weight="700" fill="black" x="96.44531" y="52">AMMs</tspan>
+          <tspan font-family="Helvetica" font-size="16" font-weight="700" fill="black" x="61.76953" y="71">(Cowswap, etc)</tspan>
+        </text>
+      </g>
+      <g id="Graphic_154">
+        <rect x="-95.58855" y="-1918.0966" width="100" height="100" fill="#c0ffc0"/>
+        <rect x="-95.58855" y="-1918.0966" width="100" height="100" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        <text transform="translate(-90.58855 -1896.0966)" fill="black">
+          <tspan font-family="Apple Color Emoji" font-size="28" font-weight="400" fill="black" x="31" y="28">👤</tspan>
+          <tspan font-family="Helvetica" font-size="16" font-weight="700" fill="black" x="5.886719" y="52">YFI holder</tspan>
+        </text>
+      </g>
+      <g id="Group_156">
+        <title>Stack</title>
+        <g id="Graphic_158">
+          <rect x="-1260.0876" y="-1348.8054" width="250" height="100" fill="#c0ffff"/>
+          <rect x="-1260.0876" y="-1348.8054" width="250" height="100" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        </g>
+        <g id="Graphic_157">
+          <rect x="-1265.314" y="-1354.5684" width="250" height="100" fill="#c0ffff"/>
+          <rect x="-1265.314" y="-1354.5684" width="250" height="100" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        </g>
+      </g>
+      <g id="Graphic_159">
+        <rect x="-1270.776" y="-1360.2223" width="250" height="100" fill="#c0ffff"/>
+        <rect x="-1270.776" y="-1360.2223" width="250" height="100" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        <text transform="translate(-1265.776 -1338.2223)" fill="black">
+          <tspan font-family="Apple Color Emoji" font-size="28" font-weight="400" fill="black" x="106" y="28">🏗</tspan>
+          <tspan font-family="Helvetica" font-size="16" font-weight="700" fill="black" x="52.10156" y="52">Teams &amp; Services</tspan>
+        </text>
+      </g>
+      <g id="Line_160">
+        <path d="M -756.8442 -1818.0966 L -756.8442 -1808.0966 L -756.4221 -1685.6188 L -756 -1568.041 L -756 -1563.041" marker-end="url(#FilledArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+      <g id="Graphic_161">
+        <rect x="-830.3107" y="-1795.1101" width="147.184" height="46.895996" fill="white"/>
+        <text transform="translate(-825.3107 -1790.1101)" fill="black">
+          <tspan font-family="Helvetica Neue" font-size="16" font-weight="400" fill="black" x="55422333e-20" y="15">Deposit / Withdraw</tspan>
+          <tspan font-family="Helvetica Neue" font-size="16" font-weight="400" fill="black" x="48.584" y="33.448">funds</tspan>
+        </text>
+      </g>
+      <g id="Line_162">
+        <path d="M -756 -1453.141 L -756 -1443.141 L -756.4221 -1361.5351 L -756.8442 -1284.8293 L -756.8442 -1279.8293" marker-end="url(#FilledArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+      <g id="Graphic_164">
+        <rect x="-791.8125" y="-1428.6592" width="71.328" height="28.447998" fill="white"/>
+        <text transform="translate(-786.8125 -1423.6592)" fill="black">
+          <tspan font-family="Helvetica Neue" font-size="16" font-weight="400" fill="black" x="6714629e-19" y="15">Pay fees</tspan>
+        </text>
+      </g>
+      <g id="Line_165">
+        <path d="M -819.3442 -1244.9293 L -920.0601 -1244.9293 L -920.0601 -1310.2223 L -1010.876 -1310.2223" marker-end="url(#FilledArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+      <g id="Graphic_167">
+        <rect x="-1003.5881" y="-1271.9314" width="167.056" height="46.895996" fill="white"/>
+        <text transform="translate(-998.5881 -1266.9314)" fill="black">
+          <tspan font-family="Helvetica Neue" font-size="16" font-weight="400" fill="black" x="65.048" y="15">Pay</tspan>
+          <tspan font-family="Helvetica Neue" font-size="16" font-weight="400" fill="black" x="24158453e-20" y="33.448">Operational Expenses</tspan>
+        </text>
+      </g>
+      <g id="Line_168">
+        <path d="M -1145.776 -1360.2223 L -1145.776 -1503.141 L -890.9 -1503.141" marker-end="url(#FilledArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+      <g id="Graphic_169">
+        <rect x="-1236.704" y="-1413.0468" width="181.856" height="28.447998" fill="white"/>
+        <text transform="translate(-1231.704 -1408.0468)" fill="black">
+          <tspan font-family="Helvetica Neue" font-size="16" font-weight="400" fill="black" x="0" y="15">Build, service, and grow</tspan>
+        </text>
+      </g>
+      <g id="Line_170">
+        <path d="M -819.3442 -1194.9293 L -1145.776 -1194.9293 L -1145.776 -1163.9" marker-end="url(#FilledArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+      <g id="Graphic_171">
+        <rect x="-922.9458" y="-1209.1533" width="88.528" height="28.447998" fill="white"/>
+        <text transform="translate(-917.9458 -1204.1533)" fill="black">
+          <tspan font-family="Helvetica Neue" font-size="16" font-weight="400" fill="black" x="0" y="15">Sell tokens</tspan>
+        </text>
+      </g>
+      <g id="Line_173">
+        <path d="M -1020.776 -1104 L -756.8442 -1104 L -756.8442 -1160.0293" marker-end="url(#FilledArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+      <g id="Graphic_174">
+        <rect x="-986.2029" y="-1118.224" width="66" height="28.447998" fill="white"/>
+        <text transform="translate(-981.2029 -1113.224)" fill="black">
+          <tspan font-family="Helvetica Neue" font-size="16" font-weight="400" fill="black" x="0" y="15">Buy YFI</tspan>
+        </text>
+      </g>
+      <g id="Line_175">
+        <path d="M -694.3442 -1219.9293 L -498.5 -1219.9293 L -498.5 -1278.9054" marker-end="url(#FilledArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+      <g id="Graphic_176">
+        <rect x="-672.5295" y="-1234.1533" width="89.712" height="28.447998" fill="white"/>
+        <text transform="translate(-667.5295 -1229.1533)" fill="black">
+          <tspan font-family="Helvetica Neue" font-size="16" font-weight="400" fill="black" x="0" y="15">Donate YFI</tspan>
+        </text>
+      </g>
+      <g id="Line_177">
+        <line x1="-45.588553" y1="-1818.0966" x2="-45.588553" y2="-1721.291" marker-end="url(#FilledArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+      <g id="Graphic_178">
+        <rect x="-102.30055" y="-1793.513" width="113.424" height="46.895996" fill="white"/>
+        <text transform="translate(-97.30055 -1788.513)" fill="black">
+          <tspan font-family="Helvetica Neue" font-size="16" font-weight="400" fill="black" x="0" y="15">Time-lock YFI,</tspan>
+          <tspan font-family="Helvetica Neue" font-size="16" font-weight="400" fill="black" x="3.864" y="33.448">receive veYFI </tspan>
+        </text>
+      </g>
+      <g id="Graphic_179">
+        <text transform="translate(-1265.776 -2001.8726)" fill="black">
+          <tspan font-family="Helvetica" font-size="16" font-weight="700" fill="black" x="0" y="15">Evolve YFI Tokenomics - Component 3: Vault Gauges</tspan>
+          <tspan font-family="Helvetica" font-size="16" font-weight="400" fill="black" x="0" y="34">v0.1 | @0x7171</tspan>
+        </text>
+      </g>
+      <g id="Graphic_180">
+        <text transform="translate(-1263.3083 -1932.8726)" fill="black">
+          <tspan font-family="Helvetica" font-size="16" font-weight="400" fill="black" x="0" y="15">Legend:</tspan>
+        </text>
+      </g>
+      <g id="Graphic_181">
+        <rect x="-108.08855" y="-1711.391" width="125" height="100" fill="#c0ffff"/>
+        <rect x="-108.08855" y="-1711.391" width="125" height="100" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        <text transform="translate(-103.08855 -1693.391)" fill="black">
+          <tspan font-family="Apple Color Emoji" font-size="16" font-weight="400" fill="black" x="47" y="20">⏳</tspan>
+          <tspan font-family="Helvetica" font-size="16" font-weight="700" fill="black" x="36.15625" y="41">veYFI </tspan>
+          <tspan font-family="Helvetica" font-size="16" font-weight="700" fill="black" x="22.960938" y="60">Timelock</tspan>
+        </text>
+      </g>
+      <g id="Line_182">
+        <path d="M -95.58855 -1868.0966 L -149.5 -1868.0966 L -149.5 -1686.391 L -117.98855 -1686.391" marker-end="url(#FilledArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+      <g id="Graphic_183">
+        <rect x="-187.844" y="-1824.2757" width="76.688" height="46.895996" fill="white"/>
+        <text transform="translate(-182.844 -1819.2757)" fill="black">
+          <tspan font-family="Helvetica Neue" font-size="16" font-weight="400" fill="black" x="8.304" y="15">Extend</tspan>
+          <tspan font-family="Helvetica Neue" font-size="16" font-weight="400" fill="black" x="0" y="33.448">time-lock</tspan>
+        </text>
+      </g>
+      <g id="Graphic_186">
+        <rect x="128.5" y="-1553.141" width="125" height="100" fill="#c0ffff"/>
+        <rect x="128.5" y="-1553.141" width="125" height="100" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        <text transform="translate(133.5 -1535.141)" fill="black">
+          <tspan font-family="Apple Color Emoji" font-size="16" font-weight="400" fill="black" x="47" y="20">🔵</tspan>
+          <tspan font-family="Helvetica" font-size="16" font-weight="700" fill="black" x="36.15625" y="41">veYFI</tspan>
+          <tspan font-family="Helvetica" font-size="16" font-weight="700" fill="black" x="24.152344" y="60">Rewards</tspan>
+        </text>
+      </g>
+      <g id="Graphic_190">
+        <rect x="-106.58855" y="-1348.8054" width="125" height="100" fill="#c0ffff"/>
+        <rect x="-106.58855" y="-1348.8054" width="125" height="100" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        <text transform="translate(-101.58855 -1321.3054)" fill="black">
+          <tspan font-family="Apple Color Emoji" font-size="16" font-weight="400" fill="black" x="47" y="20">🏛</tspan>
+          <tspan font-family="Helvetica" font-size="16" font-weight="700" fill="black" x="11.257812" y="41">Governance</tspan>
+        </text>
+      </g>
+      <g id="Graphic_193">
+        <circle cx="-45.588553" cy="-1503.141" r="10.0000159790189" fill="#c0ffff"/>
+        <circle cx="-45.588553" cy="-1503.141" r="10.0000159790189" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+      <g id="Line_194">
+        <line x1="-45.588553" y1="-1611.391" x2="-45.588553" y2="-1523.041" marker-end="url(#FilledArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+      <g id="Graphic_195">
+        <rect x="-81.55655" y="-1572.8791" width="71.936" height="28.447998" fill="white"/>
+        <text transform="translate(-76.55655 -1567.8791)" fill="black">
+          <tspan font-family="Helvetica Neue" font-size="16" font-weight="400" fill="black" x="756728e-18" y="15">Instructs</tspan>
+        </text>
+      </g>
+      <g id="Line_196">
+        <line x1="-35.588548" y1="-1503.141" x2="118.6" y2="-1503.141" marker-end="url(#FilledArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+      <g id="Line_197">
+        <path d="M -45.588553 -1493.141 L -45.588553 -1420.9732 L -44.088553 -1420.9732 L -44.088553 -1358.7054" marker-end="url(#FilledArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+      <g id="Graphic_198">
+        <rect x="-5.6707265" y="-1526.589" width="72.8" height="46.895996" fill="white"/>
+        <text transform="translate(-.6707269 -1521.589)" fill="black">
+          <tspan font-family="Helvetica Neue" font-size="16" font-weight="400" fill="black" x="0" y="15">Rewards</tspan>
+          <tspan font-family="Helvetica Neue" font-size="16" font-weight="400" fill="black" x="11.84" y="33.448">share</tspan>
+        </text>
+      </g>
+      <g id="Graphic_199">
+        <rect x="-72.96455" y="-1453.2566" width="54.752" height="46.895996" fill="white"/>
+        <text transform="translate(-67.96455 -1448.2566)" fill="black">
+          <tspan font-family="Helvetica Neue" font-size="16" font-weight="400" fill="black" x="20250468e-20" y="15">Voting</tspan>
+          <tspan font-family="Helvetica Neue" font-size="16" font-weight="400" fill="black" x=".016" y="33.448">power</tspan>
+        </text>
+      </g>
+      <g id="Line_200">
+        <path d="M 4.411447 -1893.0966 L 410.72686 -1893.0966 L 410.72686 -1298.8054 L 28.311447 -1298.8054" marker-end="url(#FilledArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+      <g id="Graphic_201">
+        <rect x="185.5863" y="-1907.3206" width="139.216" height="28.447998" fill="white"/>
+        <text transform="translate(190.5863 -1902.3206)" fill="black">
+          <tspan font-family="Helvetica Neue" font-size="16" font-weight="400" fill="black" x="17053026e-20" y="15">Vote on proposals</tspan>
+        </text>
+      </g>
+      <g id="Line_202">
+        <path d="M -76.83855 -1611.391 L -76.83855 -1583.2226 L -152.5 -1583.2226 L -152.5 -1661.391 L -117.98855 -1661.391" marker-end="url(#FilledArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+      <g id="Graphic_203">
+        <rect x="-184.02" y="-1637.4728" width="63.04" height="28.447998" fill="white"/>
+        <text transform="translate(-179.02 -1632.4728)" fill="black">
+          <tspan font-family="Helvetica Neue" font-size="16" font-weight="400" fill="black" x="43343107e-20" y="15">Decays</tspan>
+        </text>
+      </g>
+      <g id="Line_204">
+        <path d="M 191 -1651.391 L 191 -1641.391 L 191.35714 -1596.561 L 191 -1568.041 L 191 -1563.041" marker-end="url(#FilledArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+      <g id="Graphic_205">
+        <rect x="135.20395" y="-1643.2554" width="111.936" height="46.895996" fill="white"/>
+        <text transform="translate(140.20395 -1638.2554)" fill="black">
+          <tspan font-family="Helvetica Neue" font-size="16" font-weight="400" fill="black" x="9.184" y="15">Pay penalty </tspan>
+          <tspan font-family="Helvetica Neue" font-size="16" font-weight="400" fill="black" x="7460699e-19" y="33.448">(unlocked YFI)</tspan>
+        </text>
+      </g>
+      <g id="Graphic_206">
+        <circle cx="191" cy="-1661.391" r="10.0000159790189" fill="#c0ffff"/>
+        <circle cx="191" cy="-1661.391" r="10.0000159790189" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+      <g id="Line_212">
+        <line x1="16.911447" y1="-1661.391" x2="171.1" y2="-1661.391" marker-end="url(#FilledArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+      <g id="Graphic_213">
+        <rect x="35.870145" y="-1684.839" width="45.248" height="46.895996" fill="white"/>
+        <text transform="translate(40.870146 -1679.839)" fill="black">
+          <tspan font-family="Helvetica Neue" font-size="16" font-weight="400" fill="black" x="0" y="15">Early</tspan>
+          <tspan font-family="Helvetica Neue" font-size="16" font-weight="400" fill="black" x="4.296" y="33.448">Exit</tspan>
+        </text>
+      </g>
+      <g id="Line_214">
+        <path d="M 191 -1671.391 L 191 -1843.0966 L 14.311447 -1843.0966" marker-end="url(#FilledArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+      <g id="Graphic_215">
+        <rect x="136.952" y="-1742.3864" width="108.096" height="46.895996" fill="white"/>
+        <text transform="translate(141.952 -1737.3864)" fill="black">
+          <tspan font-family="Helvetica Neue" font-size="16" font-weight="400" fill="black" x="20.608" y="15">Receive</tspan>
+          <tspan font-family="Helvetica Neue" font-size="16" font-weight="400" fill="black" x="682121e-18" y="33.448">remaining YFI</tspan>
+        </text>
+      </g>
+      <g id="Group_217">
+        <title>Stack</title>
+        <g id="Graphic_219">
+          <rect x="-550.15577" y="-1541.7241" width="125" height="100" fill="#c0ffff"/>
+          <rect x="-550.15577" y="-1541.7241" width="125" height="100" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        </g>
+        <g id="Graphic_218">
+          <rect x="-555.38226" y="-1547.4871" width="125" height="100" fill="#c0ffff"/>
+          <rect x="-555.38226" y="-1547.4871" width="125" height="100" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        </g>
+      </g>
+      <g id="Graphic_220">
+        <rect x="-561" y="-1553.141" width="125" height="100" fill="#c0ffff"/>
+        <rect x="-561" y="-1553.141" width="125" height="100" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        <text transform="translate(-556 -1525.641)" fill="black">
+          <tspan font-family="Apple Color Emoji" font-size="16" font-weight="400" fill="black" x="47" y="20">🐚</tspan>
+          <tspan font-family="Helvetica" font-size="16" font-weight="700" fill="black" x="6.8125" y="41">Vault Gauges</tspan>
+        </text>
+      </g>
+      <g id="Line_221">
+        <path d="M -706.8442 -1843.0966 L -498.5 -1843.0966 L -498.5 -1563.041" marker-end="url(#FilledArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+      <g id="Graphic_222">
+        <rect x="-676.90035" y="-1857.3206" width="139.232" height="28.447998" fill="white"/>
+        <text transform="translate(-671.90036 -1852.3206)" fill="black">
+          <tspan font-family="Helvetica Neue" font-size="16" font-weight="400" fill="black" x="2.224" y="15">Stake Vault token </tspan>
+        </text>
+      </g>
+      <g id="Graphic_223">
+        <circle cx="-498.5" cy="-1298.8054" r="10.0000159790189" fill="#c0ffff"/>
+        <circle cx="-498.5" cy="-1298.8054" r="10.0000159790189" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+      <g id="Line_224">
+        <line x1="-106.58855" y1="-1298.8054" x2="-478.6" y2="-1298.8054" marker-end="url(#FilledArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+      <g id="Graphic_225">
+        <rect x="-204.80537" y="-1322.2534" width="78.736" height="46.895996" fill="white"/>
+        <text transform="translate(-199.80537 -1317.2534)" fill="black">
+          <tspan font-family="Helvetica Neue" font-size="16" font-weight="400" fill="black" x="8.296" y="15">Set YFI</tspan>
+          <tspan font-family="Helvetica Neue" font-size="16" font-weight="400" fill="black" x="3907985e-19" y="33.448">allocation</tspan>
+        </text>
+      </g>
+      <g id="Line_226">
+        <line x1="-498.5" y1="-1308.8054" x2="-498.5" y2="-1443.241" marker-end="url(#FilledArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+      <g id="Graphic_227">
+        <rect x="-546.308" y="-1347.6126" width="95.616" height="28.447998" fill="white"/>
+        <text transform="translate(-541.308 -1342.6126)" fill="black">
+          <tspan font-family="Helvetica Neue" font-size="16" font-weight="400" fill="black" x="8952838e-19" y="15">Allocate YFI</tspan>
+        </text>
+      </g>
+      <g id="Line_228">
+        <line x1="-55.58856" y1="-1503.141" x2="-277.6" y2="-1503.141" marker-end="url(#FilledArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+      <g id="Graphic_229">
+        <rect x="-211.65038" y="-1526.589" width="131.168" height="46.895996" fill="white"/>
+        <text transform="translate(-206.65038 -1521.589)" fill="black">
+          <tspan font-family="Helvetica Neue" font-size="16" font-weight="400" fill="black" x="731859e-18" y="15">Rewards/Penalty</tspan>
+          <tspan font-family="Helvetica Neue" font-size="16" font-weight="400" fill="black" x="44.736" y="33.448">ratio</tspan>
+        </text>
+      </g>
+      <g id="Graphic_230">
+        <circle cx="-297.5" cy="-1503.141" r="10.0000159790189" fill="#c0ffff"/>
+        <circle cx="-297.5" cy="-1503.141" r="10.0000159790189" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+      <g id="Line_232">
+        <line x1="-436" y1="-1503.141" x2="-317.4" y2="-1503.141" marker-end="url(#FilledArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+      <g id="Graphic_233">
+        <rect x="-411.8776" y="-1526.589" width="66.88" height="46.895996" fill="white"/>
+        <text transform="translate(-406.8776 -1521.589)" fill="black">
+          <tspan font-family="Helvetica Neue" font-size="16" font-weight="400" fill="black" x=".888" y="15">Pay YFI</tspan>
+          <tspan font-family="Helvetica Neue" font-size="16" font-weight="400" fill="black" x="50448534e-20" y="33.448">rewards</tspan>
+        </text>
+      </g>
+      <g id="Line_234">
+        <path d="M 14.311447 -1868.0966 L 329.244 -1868.0966 L 329.244 -1503.4334 L 263.5 -1503.141 L 253.5 -1503.141" marker-start="url(#FilledArrow_Marker_2)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+      <g id="Graphic_235">
+        <rect x="263.068" y="-1597.1256" width="132.352" height="46.895996" fill="white"/>
+        <text transform="translate(268.068 -1592.1256)" fill="black">
+          <tspan font-family="Helvetica Neue" font-size="16" font-weight="400" fill="black" x="0" y="15">Earn YFI rewards</tspan>
+          <tspan font-family="Helvetica Neue" font-size="16" font-weight="400" fill="black" x="10.208" y="33.448">(unlocked YFI)</tspan>
+        </text>
+      </g>
+      <g id="Line_236">
+        <path d="M -297.5 -1513.141 L -297.5 -1868.0966 L -696.9442 -1868.0966" marker-end="url(#FilledArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+      <g id="Graphic_237">
+        <rect x="-365.9" y="-1596.2595" width="136.8" height="46.895996" fill="white"/>
+        <text transform="translate(-360.9 -1591.2595)" fill="black">
+          <tspan font-family="Helvetica Neue" font-size="16" font-weight="400" fill="black" x="0" y="15"> Earn YFI rewards</tspan>
+          <tspan font-family="Helvetica Neue" font-size="16" font-weight="400" fill="black" x="12.432" y="33.448">(unlocked YFI)</tspan>
+        </text>
+      </g>
+      <g id="Line_238">
+        <path d="M -297.5 -1493.141 L -297.5 -1483.141 L -297.4152 -1304.3054 C -291.9152 -1304.308 -291.90997 -1293.308 -297.40997 -1293.3054 L -297.36842 -1205.7053 L -297.36842 -1201.5038 L 191 -1201.5038 L 191 -1293.3054 C 185.5 -1293.3054 185.5 -1304.3054 191 -1304.3054 L 191 -1443.241" marker-end="url(#FilledArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+      <g id="Graphic_239">
+        <rect x="-353.45597" y="-1481.2252" width="111.936" height="46.895996" fill="white"/>
+        <text transform="translate(-348.45597 -1476.2252)" fill="black">
+          <tspan font-family="Helvetica Neue" font-size="16" font-weight="400" fill="black" x="9.184" y="15">Pay penalty</tspan>
+          <tspan font-family="Helvetica Neue" font-size="16" font-weight="400" fill="black" x="7460699e-19" y="33.448">(unlocked YFI)</tspan>
+        </text>
+      </g>
+    </g>
+  </g>
+</svg>

@@ -120,7 +120,7 @@ export default {
             },
             {
               label: 'Snapshot Voting',
-              href: 'https://snapshot.org/#/veyfi.eth',
+              href: 'https://snapshot.org/#/s:styfi.eth',
             },
           ],
         },

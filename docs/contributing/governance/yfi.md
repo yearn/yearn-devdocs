@@ -46,6 +46,10 @@ YSPs allow token holders to formally request that a yTeam executes a decision wi
 
 YDPs are proposals that change where any discrete decision-making power is delegated. This is relevant in Governance 2.0 as it introduces yTeams, who are given an objective, and certain powers that can be modified by token holders. 
 
-## veYFI
+### veYFI
 
-With [veYFI](/contributing/governance/veyfi) launch, governance changed from using YFI to veYFI as voting power.
+With the passing of YIP-71 and the launch of veYFI, Yearn changed from using YFI as the voting token to using a locked derivative called veYFI. veYFI was modelled on Curve's veCRV token. You can find more information about veYFI [here](/contributing/governance/veyfi). The veYFI stystem has since been migrated to stYFI.
+
+### stYFI
+
+stYFI is the most recent interation of Yearn Governance. stYFI is a simplified token model that routes protocol revenue to aligned YFI stakers and secures governance without four-year locks. YFI is locked, with a 14 day cooldown, to gain voting power in the new governance system. Read more about stYFI [here](/contributing/governance/styfi)
