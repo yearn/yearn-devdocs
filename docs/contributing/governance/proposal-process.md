@@ -33,15 +33,15 @@ The default template for proposals can be found on [GitHub](https://github.com/y
 **Resources**:
 
 - [Proposal How-To](https://gov.yearn.fi/t/proposal-how-to/106)
-- [YIP 0: YIP Purpose and Guidelines](https://yips.yearn.fi/YIPS/yip-0)
-- [YIP 44: Improve YIP Categories](https://yips.yearn.fi/YIPS/yip-44)
+- [YIP 0: YIP Purpose and Guidelines](/contributing/governance/yips/yip-0)
+- [YIP 44: Improve YIP Categories](/contributing/governance/yips/yip-44)
 - [YIP 55: Formalize the YIP Introduction and Voting Process](https://gov.yearn.fi/t/yip-55-formalize-the-yip-process/7959)
 
 ## Voting
 
 #### How do I vote?
 
-- Holding [veYFI](/contributing/governance/veyfi) enables you to vote on Yearn's [Snapshot](https://snapshot.org/#/s:styfi.eth) page
+- Holding [stYFI](/contributing/governance/styfi) enables you to vote on Yearn's [Snapshot](https://snapshot.org/#/s:styfi.eth) page
 
 #### What’s the difference between voting for a poll on the forum and an offchain vote?
 

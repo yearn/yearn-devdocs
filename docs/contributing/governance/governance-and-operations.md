@@ -19,7 +19,7 @@ A simplified flow of governance would look like this:
     3. yTx creates a delegated transaction and send it to the Multisig
     4. Multisig executes or vetos the transaction
 
-With [veYFI](/contributing/governance/veyfi) launch, governance moved from using YFI to veYFI as voting power.
+Governance voting power has evolved over time: from YFI, to [veYFI](/contributing/governance/veyfi), and currently [stYFI](/contributing/governance/styfi).
 
 ## DAO Responsibilities
 
