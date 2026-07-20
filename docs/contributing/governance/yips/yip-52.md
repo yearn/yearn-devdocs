@@ -12,7 +12,7 @@ sidebar_position: -52
 | Outcome | **Passed** |
 | Authors | banteg, lehnberg, milkyklim |
 | Created | 2020-11-09 |
-| Forum discussion | [View discussion](https://gov.yearn.fi/t/yip-52-make-strategist-skin-in-game-partner-for-make-benefit-of-glorious-brain-of-yearn/) |
+| Forum discussion | [View discussion](https://gov.yearn.fi/t/yip-52-make-strategist-skin-in-game-partner-for-make-benefit-of-glorious-brain-of-yearn/7856) |
 | Snapshot vote | [View vote](https://snapshot.org/#/s:yearn/proposal/QmbAq6jPB6ocrihjkDo5TLNF4D4w9dw1HsEsJ7vwdwd9g3) |
 | Vote result | Accept proposal: 1,341.94; Reject proposal: 260.13 |
 | Source | [Source](https://github.com/yearn/YIPS/blob/master/YIPS/yip-52.md) |

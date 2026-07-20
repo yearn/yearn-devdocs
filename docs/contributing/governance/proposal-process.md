@@ -1,6 +1,6 @@
 # Proposal Process
 
-[stYFI](/contributing/governance/styfi) token holders govern the Yearn ecosystem through offchain proposals and votes via [Snapshot](https://snapshot.org/#/s:styfi.eth). Proposals that generate majority support (>50% of the vote) are expected to be implemented by the proposed relevant parties. The 9-member [yChad multi-signature wallet](/developers/security/multisig) is then empowered to execute all related transactions after their own review. The [members of the multi-signature wallet](/developers/security/multisig#members) are voted in by YFI holders and are subject to change via future governance votes.
+[stYFI](/contributing/governance/styfi) token holders govern the Yearn ecosystem through offchain proposals and votes via [Snapshot](https://snapshot.org/#/s:styfi.eth). Proposals that generate majority support (>50% of the vote) are expected to be implemented by the proposed relevant parties. The 9-member [yChad multi-signature wallet](/developers/security/multisig) is then empowered to execute all related transactions after their own review. The [members of the multi-signature wallet](/developers/security/multisig#members) are voted in by stYFI holders and are subject to change via future governance votes.
 
 ## Discussion
 

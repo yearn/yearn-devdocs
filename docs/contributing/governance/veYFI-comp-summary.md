@@ -302,7 +302,7 @@ For users who prefer not to manage individual locks and veYFI decay, **liquid lo
 
 ### Audits
 
-- **[veYFI StateMind Audit](https://github.com/yearn/yearn-security/blob/master/audits/202208_yAcademy_yearn-veyfi/yAcademy_-_yearn_veyfi_review.pdf)**
+- **[veYFI StateMind Audit](https://github.com/statemindio/public-audits/blob/main/Yearn%20Finance/2022-07-08_Yearn_veYFI(Voting_and_RewardPool).pdf)**
 - **[veYFI yAcademy Audit](https://github.com/yearn/yearn-security/blob/master/audits/202208_yAcademy_yearn-veyfi/yAcademy_-_yearn_veyfi_review.pdf)**
 - **[dYFI ChainSecurity Audit](https://old.chainsecurity.com/wp-content/uploads/2023/03/Yearn-Smart-Contract-Audit-oYfi-ChainSecurity.pdf)**
 
