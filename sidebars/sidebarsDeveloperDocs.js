@@ -105,6 +105,17 @@ export default {
             id: 'data-services/yearn-data',
           },
           items: [
+            {
+              type: 'category',
+              label: 'Metrics',
+              link: {
+                type: 'doc',
+                id: 'data-services/metrics/index',
+              },
+              items: [
+                'data-services/metrics/lifetime-earnings',
+              ],
+            },
             'data-services/kong',
             'data-services/ydaemon',
             'data-services/yearn-lens',
