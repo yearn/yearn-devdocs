@@ -8,7 +8,7 @@ Proposals are listed in reverse numerical order, with the most recent first. Sel
 
 | Number | Title | Author | Outcome |
 | --- | --- | --- | --- |
-| [91](/contributing/governance/yips/yip-91) | yTranche | Vaults Team | [Active](https://snapshot.org/#/s:styfi.eth/proposal/0xa348d353b66f46c6957a938a42fbf860eaffc855cd9163d8042780f65ea72612) |
+| [91](/contributing/governance/yips/yip-91) | yTranche | Vaults Team | [Passed](https://snapshot.org/#/s:styfi.eth/proposal/0xa348d353b66f46c6957a938a42fbf860eaffc855cd9163d8042780f65ea72612) |
 | [90](/contributing/governance/yips/yip-90) | yETH Optimistic Recovery Plan | 0xPickles | [Passed](https://snapshot.org/#/s:veyfi.eth/proposal/0xe76f57663ce9311eb830ef097812702cbbb55fccbb280d254cdfc1f2c11c261a) |
 | [89](/contributing/governance/yips/yip-89) | Proposal to Rotate Multisig Signers | wavey | [Passed](https://snapshot.org/#/s:veyfi.eth/proposal/0x02ac9f5cc91ad090938195c37e17fd24941a668082b2b6b58f20e11e32d73003) |
 | [88](/contributing/governance/yips/yip-88) | Governance Overhaul: ⓷ Incentives | 0xPickles, governance team contributors | [Passed](https://snapshot.org/#/s:veyfi.eth/proposal/0x9b3a40326411eea6c51ec389a802ed695de53961fa49f6d3525e256513d0a7f9) |
@@ -19,7 +19,7 @@ Proposals are listed in reverse numerical order, with the most recent first. Sel
 | [85](/contributing/governance/yips/yip-85) | Disable Protocol Fees on Yearn V3 | V3 Protocol Team | [Passed](https://snapshot.org/#/s:veyfi.eth/proposal/0xa3223b388c484ea8a81b60bb88cda99f23d6d06b4b9798b4d0acafaa2207b686) |
 | [84](/contributing/governance/yips/yip-84) | Proposal to rotate multisig signer | wavey | [Passed](https://snapshot.org/#/s:veyfi.eth/proposal/0xeecd2a9ca79f9b22071d79d436a7e5ccc56593eb4c3bc8ef1b57c8389809a101) |
 | [83](/contributing/governance/yips/yip-83) | Bearn BIP YIP #2 | Schlag | [Passed](https://snapshot.org/#/s:veyfi.eth/proposal/0x872f23d57eea829e5fb0a5e0868f805efdb231d8a3c9e39820dd33432ccd629c) |
-| [82](/contributing/governance/yips/yip-82) | The BIP YIP, Bearn Finance | The yBera Boyzzzz | [Rejected](https://snapshot.org/#/s:veyfi.eth/proposal/0x24ae3413fcf92bcb92cbbe8845d0684a4e8d36c7f164b4afee6c45c629f16f83) |
+| [82](/contributing/governance/yips/yip-82) | The BIP YIP, Bearn Finance | Schlag | [Rejected](https://snapshot.org/#/s:veyfi.eth/proposal/0x24ae3413fcf92bcb92cbbe8845d0684a4e8d36c7f164b4afee6c45c629f16f83) |
 | [81](/contributing/governance/yips/yip-81) | Prepare for Full On-Chain Governance | 0xPickles | [Passed](https://snapshot.org/#/s:veyfi.eth/proposal/0x6f3082db2cef3e0c254e569580d063cb14130a92d0bf1729bef342a386e419f2) |
 | [80](/contributing/governance/yips/yip-80) | Sonne Hack Victims Revised Proposal | Yearninger | [Rejected](https://snapshot.org/#/s:veyfi.eth/proposal/0x2a9ecea04244b83ed8f1ef6b4f62e9ee9a31d16c5ef3b52d00e3a185e78df78e) |
 | [79](/contributing/governance/yips/yip-79) | Multisig Compensation and Rotation | wavey | [Passed](https://snapshot.org/#/s:veyfi.eth/proposal/0xc7ded2863a10154b6b520921af4ada48d64d74e5b7989f98cdf073542b2e4411) |
@@ -43,8 +43,8 @@ Proposals are listed in reverse numerical order, with the most recent first. Sel
 | [61](/contributing/governance/yips/yip-61) | Governance 2.0 | [tracheopteryx](https://github.com/tracheopteryx), [lex_node](https://github.com/lex-node) | [Passed](https://snapshot.org/#/s:ybaby.eth/proposal/QmSMyYeKrRpnA7Xn56o2NtbCUzxmhzCupL7LxMA1reXxq4) |
 | [60](/contributing/governance/yips/yip-60) | Airdrops to Yearn Vaults | [lehnberg](https://github.com/lehnberg) | [Passed](https://snapshot.org/#/s:ybaby.eth/proposal/QmNqAqRKMFcoRjaRYAKCVETij6sjJ4S1293kbpYDMVvcjB) |
 | [59](/contributing/governance/yips/yip-59) | Temporarily extend Multisig empowerment | [lehnberg](https://github.com/lehnberg) | [Passed](https://snapshot.org/#/s:yearn/proposal/QmdRCXH6BQpNcucoZqAtS5hQKjckE2428qiZoWjxmJXbs3) |
-| [57](/contributing/governance/yips/yip-57) | Funding Yearn’s Future | aleks-blockchaincap, Artem K, [dudesahn](https://github.com/dudesahn), ekrenzke, lehnberg, Klim K, Ryan Watkins, srs-parafi, tracheopteryx, vooncer, yfi-cent | [Passed](https://snapshot.org/#/s:yearn/proposal/QmX8oYTSkaXSARYZn7RuQzUufW9bVVQtwJ3zxurWrquS9a) |
-| [56](/contributing/governance/yips/yip-56) | BABY: Buyback and Build Yearn | [lex_node](https://github.com/lex-node), [tracheopteryx](https://github.com/tracheopteryx), [Artem K](https://github.com/banteg), [Klim K](https://github.com/milkyklim), [Ryan Watkins](https://twitter.com/RyanWatkins_), [lehnberg](https://github.com/lehnberg) | [Passed](https://snapshot.org/#/s:yearn/proposal/Qmb6gBzjvgLMazSrQQGVcjutLNdkVyM2Lh6yckMzdoaHWZ) |
+| [57](/contributing/governance/yips/yip-57) | Funding Yearn’s Future | aleks-blockchaincap, [banteg](https://github.com/banteg), [dudesahn](https://github.com/dudesahn), ekrenzke, lehnberg, Klim K, Ryan Watkins, srs-parafi, tracheopteryx, vooncer, yfi-cent | [Passed](https://snapshot.org/#/s:yearn/proposal/QmX8oYTSkaXSARYZn7RuQzUufW9bVVQtwJ3zxurWrquS9a) |
+| [56](/contributing/governance/yips/yip-56) | BABY: Buyback and Build Yearn | [lex_node](https://github.com/lex-node), [tracheopteryx](https://github.com/tracheopteryx), [banteg](https://github.com/banteg), [Klim K](https://github.com/milkyklim), [Ryan Watkins](https://twitter.com/RyanWatkins_), [lehnberg](https://github.com/lehnberg) | [Passed](https://snapshot.org/#/s:yearn/proposal/Qmb6gBzjvgLMazSrQQGVcjutLNdkVyM2Lh6yckMzdoaHWZ) |
 | [55](/contributing/governance/yips/yip-55) | Formalize the YIP Process | [franklin](https://github.com/franklin501), [dudesahn](https://github.com/dudesahn) | [Passed](https://snapshot.org/#/s:yearn/proposal/QmZA8zJtLPqQAHi1jMdYX9MdMQ1ZmtRP8zuHccm6HFSzpF) |
 | [54](/contributing/governance/yips/yip-54) | Formalize Operations Funding | [banteg](https://github.com/banteg), [lehnberg](https://github.com/lehnberg), [lex_node](https://github.com/lex-node), [milkyklim](https://github.com/milkyklim), [tracheopteryx](https://github.com/tracheopteryx) | [Passed](https://snapshot.org/#/s:yearn/proposal/QmW2ZPfGrcNxVLvT2jm9fmvNwQLD9PrdToQDU8DNPp6Ckg) |
 | [53](/contributing/governance/yips/yip-53) | yAcademy | aliatiia | [Passed](https://snapshot.org/#/s:yearn/proposal/QmPTAfJCq3UtFZqY3jdgNEJsxc6yuHwfESnQyjjkoccZrJ) |
@@ -55,11 +55,11 @@ Proposals are listed in reverse numerical order, with the most recent first. Sel
 | [43](/contributing/governance/yips/yip-43) | Improve YIP categories | [Sam Bacha](mailto:sam@freighttrust.com) | Rejected |
 | [42](/contributing/governance/yips/yip-42) | Add RenBTC to yVaults | [Azeem](https://github.com/zu-ctrl) | Rejected |
 | [41](/contributing/governance/yips/yip-41) | Temporarily Empower Multisig | [tracheopteryx](https://github.com/tracheopteryx), [Joe Mahon](https://github.com/Substreight), [franklin501](https://github.com/franklin501), Michael Anderson, Vance Spencer | Passed |
-| [40](/contributing/governance/yips/yip-40) | Replace inactive multisig signers | [cp287](https://github.com/illlefr4u), [Artem K](https://github.com/banteg) | Passed |
+| [40](/contributing/governance/yips/yip-40) | Replace inactive multisig signers | [cp287](https://github.com/illlefr4u), [banteg](https://github.com/banteg) | Passed |
 | [39](/contributing/governance/yips/yip-39) | Add Curve sBTC Pool LP-Tokens yVault | [uhmpeps](https://github.com/az) | Passed |
 | [38](/contributing/governance/yips/yip-38) | Distribute / Keep Balancer Rewards | [Klim K](https://github.com/milkyklim) | Passed |
-| [37](/contributing/governance/yips/yip-37) | Participate in CRV governance and 2.5x CRV reward boost | [Andre Cronje](https://github.com/andrecronje), [Artem K](https://github.com/banteg) | Passed |
-| [36](/contributing/governance/yips/yip-36) | System rewards as operational capital | [Andre Cronje](https://github.com/andrecronje), iTo, [n00b](https://github.com/jchi18), [Artem K](https://github.com/banteg) | Passed |
+| [37](/contributing/governance/yips/yip-37) | Participate in CRV governance and 2.5x CRV reward boost | [Andre Cronje](https://github.com/andrecronje), [banteg](https://github.com/banteg) | Passed |
+| [36](/contributing/governance/yips/yip-36) | System rewards as operational capital | [Andre Cronje](https://github.com/andrecronje), iTo, [n00b](https://github.com/jchi18), [banteg](https://github.com/banteg) | Passed |
 | [35](/contributing/governance/yips/yip-35) | Distribute Donations vs Purchase YFI | [Andre Cronje](https://github.com/andrecronje), [Klim K](https://github.com/milkyklim) | Passed |
 | [34](/contributing/governance/yips/yip-34) | Add Synthetix (SNX) to yVaults | [Substreight](https://github.com/substreight) | Passed |
 | [33](/contributing/governance/yips/yip-33) | Add LINK to yVaults | [franklin](https://github.com/franklin501) | Passed |

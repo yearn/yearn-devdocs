@@ -9,12 +9,12 @@ sidebar_position: -91
 | Metadata | Details |
 | --- | --- |
 | YIP | 91 |
-| Outcome | **Active** |
+| Outcome | **Passed** |
 | Authors | Vaults Team |
 | Created | 2026-07-06 |
 | Forum discussion | [View discussion](https://gov.yearn.fi/t/yip-91-ytranche/14659) |
 | Snapshot vote | [View vote](https://snapshot.org/#/s:styfi.eth/proposal/0xa348d353b66f46c6957a938a42fbf860eaffc855cd9163d8042780f65ea72612) |
-| Vote result | For: 182.73; Against: 0; Abstain: 0 |
+| Vote result | For: 1155.89; Against: 11.98; Abstain: 0 |
 | Source | [Source](https://gov.yearn.fi/t/yip-91-ytranche/14659) |
 
 _Authors: Vaults Team_
@@ -27,8 +27,8 @@ yTranche is a generalized, CLO-inspired tranching framework purpose-built for th
 
 ## Status
 
-**Discussion**  
-This proposal is currently in the discussion phase. As per our voting rules outlined in YIP-55, it will be in discussion for at least 3 days with a non-binding forum poll to gauge sentiment before it can be assigned a YIP number and move to Snapshot for a binding vote by stYFI holders.
+**Passed**  
+This proposal followed the voting rules outlined in YIP-55: after at least 3 days of discussion with a non-binding forum poll to gauge sentiment, it was assigned a YIP number and moved to Snapshot for a binding vote by stYFI holders, where it passed.
 
 ## Abstract
 
