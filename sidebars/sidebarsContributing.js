@@ -19,6 +19,7 @@ module.exports = {
       type: 'category',
       label: 'Governance',
       items: [
+        'governance/governance-and-operations',
         'governance/proposal-process',
         {
           type: 'category',

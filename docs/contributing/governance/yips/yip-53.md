@@ -12,7 +12,7 @@ sidebar_position: -53
 | Outcome | **Passed** |
 | Authors | aliatiia |
 | Created | 2020-11-11 |
-| Forum discussion | [View discussion 1](https://gov.yearn.fi/t/yip-53-yacademy-planting-the-seed-of-a-sustainably-secure-future-for-yearn-and-beyond), [View discussion 2](https://gov.yearn.fi/t/lets-poach-samczsun-and-plant-the-seed-for-an-auditing-academy/5507) |
+| Forum discussion | [View discussion 1](https://gov.yearn.fi/t/yip-53-yacademy-planting-the-seed-of-a-sustainably-secure-future-for-yearn-and-beyond/7929), [View discussion 2](https://gov.yearn.fi/t/lets-poach-samczsun-and-plant-the-seed-for-an-auditing-academy/5507) |
 | Snapshot vote | [View vote](https://snapshot.org/#/s:yearn/proposal/QmPTAfJCq3UtFZqY3jdgNEJsxc6yuHwfESnQyjjkoccZrJ) |
 | Vote result | Launch yAcademy: 937.09; Do not launch yAcademy: 0.1 |
 | Source | [Source](https://github.com/yearn/YIPS/blob/master/YIPS/yip-53.md) |

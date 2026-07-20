@@ -170,7 +170,7 @@ When bulleted and numbered lists contain complete sentences, capitalize the firs
 
 ### Links
 
-- Use [absolute links](https://docs.microsoft.com/en-us/contribute/how-to-write-links) and standard web URLs when referencing external resources.
+- Use [absolute links](https://learn.microsoft.com/en-us/contribute/content/how-to-write-links) and standard web URLs when referencing external resources.
 - Create descriptive hyperlinks and avoid generic language.
   - **Correct - Descriptive:** Learn more at [Yearn Documentation](https://docs.yearn.fi/)
   - **Incorrect - Generic:** Learn more [here](https://docs.yearn.fi/).

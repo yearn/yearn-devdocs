@@ -4,9 +4,9 @@
 
 Since [YIP-61: Governance 2.0](https://gov.yearn.fi/t/yip-61-governance-2-0/10460) passed on April 25th, 2021, yearn began the transition into a **multi-DAO** structure, managed by **constrained delegation**. This approach allows protocol development not to be stiffened by bureaucracy while maintaining a sufficient level of decentralization.
 
-Multi-DAO refers to the fluid number of decentralized autonomous organizations (DAOs) that contribute to the protocol in some unique way. These independent groups consist of YFI holders, yTeams and the Multisig.
+Multi-DAO refers to the fluid number of decentralized autonomous organizations (DAOs) that contribute to the protocol in some unique way. These independent groups consist of stYFI holders, yTeams and the Multisig.
 
-- **YFI holders** vote for changes to the protocol or the governance structure
+- **stYFI holders** vote for changes to the protocol or the governance structure
 - **yTeams** focus on specific aspects of the protocol or relevant operations
 - **Multisig** members execute or veto any onchain decisions
 
@@ -14,12 +14,12 @@ Token holders have an ultimate say over what yTeams exist, who is part of the Mu
 
 A simplified flow of governance would look like this:
 
-    1. YFI holders create, destroy and define limitations of yTeams
+    1. stYFI holders create, destroy and define limitations of yTeams
     2. yTeam notifies yTx of a decision
     3. yTx creates a delegated transaction and send it to the Multisig
     4. Multisig executes or vetos the transaction
 
-With [veYFI](/contributing/governance/veyfi) launch, governance moved from using YFI to veYFI as voting power.
+Governance voting power has evolved over time: from YFI, to [veYFI](/contributing/governance/veyfi), and currently [stYFI](/contributing/governance/styfi).
 
 ## DAO Responsibilities
 
@@ -27,7 +27,7 @@ With [veYFI](/contributing/governance/veyfi) launch, governance moved from using
 
 ### Token Holders
 
-[YFI](/contributing/governance/yfi) token-holders duty is to create and vote for proposals that improve the protocol.
+[stYFI](/contributing/governance/styfi) token-holders duty is to create and vote for proposals that improve the protocol.
 
 
 | Proposals                        | Descriptions                                                                                          |
@@ -75,7 +75,7 @@ Each yTeam is assigned specific decision-making powers, defined by YIP-61:
 | yDev    | Add Strategies        | Add new strategies to vaults                                                                |
 | yTx     | Delegate Transactions | Create delegated transactions for the multisig to sign and execute                          |
 | yPeople | Pay Team              | Create, deploy, modify, or terminate Yearn compensation packages                            |
-| yBudget | Set Budgets           | Create budgets for coordinape, grants, hiring, operations, or other workstreams             |
+| yBudget | Set Budgets           | Create budgets for grants, hiring, operations, or other workstreams                         |
 | yFarm   | Farm Treasury         | Farm with the treasury and make decisions on airdrops                                       |
 | yOps    | Ratify yTeam Signers  | Formally approve or remove signers for each yTeam                                           |
 
@@ -96,7 +96,6 @@ Yearn continuously paves the way towards an ideal balance of DAO decentralizatio
 - Multisig consensus mechanisms that allow each yTeam to have execution power
 - Move from proxy voting to onchain voting
 - tokenize decision-making powers as NFTs
-- Utilize [Coordinape](https://coordinape.com/) for things like budget allocation and compensation
 
 ## Read More
 

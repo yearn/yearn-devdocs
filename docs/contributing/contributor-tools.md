@@ -27,13 +27,6 @@ Start participating in public discussions by joining the recommended channels be
 - Ask for feedback.
 - Provide progress updates.
 
-### Meetings
-
-Yearn contributors host meetings when necessary on Google Hangouts. These are not centrally organized and arise organically within discussions between contributors or teams, as such, invitations are up to the individuals organizing these discussions. Invitations are sent to contributors by Discord or Telegram and Google Calendar automatically schedules the event and sends reminders.
-
-- [Jitsi Meet](https://meet.jit.si)
-- [Google Meet](https://meet.google.com/_meet)
-
 ## Writing Platforms
 
 ### HackMD
@@ -154,29 +147,6 @@ If you are using Google Docs to write, consider using Visual Studio Code and ins
 
 **Pro Tip:**
 For a document's final draft, name it "Final draft, moving to GitHub." Post a link to the HackMD file or a relevant page on GitHub.
-
-### Miscellaneous
-
-#### Important Links
-
-- [GitHub Desktop](https://desktop.github.com/)
-- [Broken Link Checker](https://ahrefs.com/broken-link-checker)
-- [Code Blocks](https://gsuite.google.com/marketplace/app/code_blocks/100740430168?pann=cwsdp&hl=en): for formatting blocks of code in a doc or adding Markdown.
-- [Markdown Conversion](https://github.com/lmmx/gdocs2md-html): for Google Drive.
-  - A long [stack-exchange thread](https://webapps.stackexchange.com/questions/44047/how-can-google-docs-and-markdown-play-nice) on this use case.
-- [DrawIO](https://draw.io/): Open source software using Google Drive for creating flowcharts and schemas.
-- [Figma](https://www.figma.com/): Creates visual mockups, especially for team collaboration.
-
-#### Wallets and 3rd Party Services
-
-- [Metamask](https://metamask.io/): Wallet for sending and receiving YFI
-- [Zerion](https://zerion.io/): For checking Yearn Treasury statistics.
-
-#### Keyboard Shortcuts
-
-- [Mac Shortcuts](https://www.mediaatelier.com/CheatSheet/?ref=producthunt)
-- [Windows Shortcuts](https://cheatkeys.com/)
-- [Use The Keyboard](https://usethekeyboard.com/): Open-source collection of keyboard shortcuts for Mac apps, Windows programs, and websites.
 
 ### Acknowledgments
 

@@ -94,8 +94,8 @@ This is complementary to the above, but it's not directly related to creating st
 
 #### List of Yearn Data Tools
 
-- yDaemon API, [GitHub](https://github.com/yearn/ydaemon)
-- Kong API, [GitHub](https://github.com/yearn/kong)
+- [yDaemon API](https://docs.yearn.fi/developers/data-services/ydaemon), [GitHub](https://github.com/yearn/ydaemon)
+- [Kong API](https://docs.yearn.fi/developers/data-services/kong), [GitHub](https://github.com/yearn/kong)
 
 ### Old Legacy Products and Websites
 

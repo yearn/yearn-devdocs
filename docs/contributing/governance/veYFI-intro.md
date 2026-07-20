@@ -7,7 +7,7 @@ For the current governance staking UX, see [stYFI](/contributing/governance/styf
 If you have a legacy veYFI lock, see [Migrate from veYFI](/contributing/governance/migrating-from-veyfi).
 :::
 
-veYFI is a time-locked version of the YFI token that grants access to governance, yield boosts, and rewards. It is based on [Curve's vote escrow (ve) model](https://resources.curve.finance/crv-token/vecrv/) and each YFI token can be locked for up to 4 years (technically longer, but there is no added voting or earning power gained by locking for more than 4 years). The length of lock determines how much veYFI is received per locked YFI. One YFI locked for four+ years converts to one veYFI. This relationship scales linearly, so one YFI locked for two years converts to 0.5 veYFI, one year converts to 0.25 veYFI, and so forth.
+veYFI is a time-locked version of the YFI token that grants access to governance, yield boosts, and rewards. It is based on [Curve's vote escrow (ve) model](https://resources.curve.finance/) and each YFI token can be locked for up to 4 years (technically longer, but there is no added voting or earning power gained by locking for more than 4 years). The length of lock determines how much veYFI is received per locked YFI. One YFI locked for four+ years converts to one veYFI. This relationship scales linearly, so one YFI locked for two years converts to 0.5 veYFI, one year converts to 0.25 veYFI, and so forth.
 
 ## veYFI Benefits
 
@@ -15,7 +15,7 @@ Locking YFI for veYFI has 3 main benefits: Voting power, Yield boosts on funds d
 
 ### veYFI Voting
 
-veYFI is the governance token of Yearn. It is used to vote on YFI emissions distributions and other governance items in [snapshot](https://snapshot.org/#/veyfi.eth). For more information on Yearn's governance process, head over to the [governance section of the docs](/contributing/governance/proposal-process).
+veYFI was the governance token of Yearn, used to vote on YFI emissions distributions and other governance items in [snapshot](https://snapshot.org/#/veyfi.eth). For information on Yearn's current governance process, which now uses stYFI, see the [governance section of the docs](/contributing/governance/proposal-process).
 
 ### veYFI Yield Boosts on Yearn Deposits
 
