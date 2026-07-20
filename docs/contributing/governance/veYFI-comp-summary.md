@@ -294,7 +294,7 @@ For users who prefer not to manage individual locks and veYFI decay, **liquid lo
 
 ### Snapshot Voting
 
-- **[veYFI Snapshot Page](https://snapshot.org/#/veyfi.eth)**
+- **[veYFI Snapshot Page](https://snapshot.org/#/veyfi.eth)** (legacy — for current voting see [s:styfi.eth](https://snapshot.org/#/s:styfi.eth))
 
 ### Contract Addresses
 

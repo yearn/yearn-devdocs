@@ -1,6 +1,6 @@
 # Migrate from veYFI
 
-This page covers the **legacy veYFI → current system** migration flow as implemented in the Yearn governance dashboards today.
+This page covers the **legacy veYFI → stYFI** migration flow as implemented in the Yearn governance dashboards today.
 
 ## Where to migrate
 
