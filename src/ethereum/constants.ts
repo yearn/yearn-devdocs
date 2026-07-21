@@ -191,7 +191,7 @@ export const protocolPeriphery = {
   baseFeeProvider: '0xe0514dd71cfdc30147e76f65c30bdf60bfd437c3',
   commonReportTrigger: '0xf8dF17a35c88AbB25e83C92f9D293B4368b9D52D',
   auctionRegistry: '0x94F44706A61845a4f9e59c4Bc08cEA4503e48D12',
-  auctionFactory: '0xbA7FCb508c7195eE5AE823F37eE2c11D7ED52F8e',
+  auctionFactory: '0x55B3830B4D85e6868c73f00A2e857e9AdbF89568',
   dumper: '0x590Dd9399bB53f1085097399C3265C7137c1C4Cf',
   splitterFactory: '0xe28fCC9FB2998ba57754789F6666DAa8C815614D',
   registryFactory: '0x3A0fa8aac82aD94048098D6af6e8eB36c98816A1',
