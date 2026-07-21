@@ -78,9 +78,6 @@ module.exports = {
                 type: 'doc',
                 id: 'products/yvaults/yBold',
               },
-              items: [
-                'products/yvaults/vault-tokens',
-              ],
             },
             {
               type: 'link',
