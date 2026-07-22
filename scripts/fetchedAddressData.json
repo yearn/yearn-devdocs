@@ -1,5 +1,5 @@
 {
-  "timeLastChecked": 1779740296,
+  "timeLastChecked": 1784652070,
   "addressesData": {
     "v3ContractAddresses": {
       "topLevel": {
@@ -138,7 +138,10 @@
         "is303TokenizedStrategyMatch": true,
         "is304VaultOriginalMatch": true,
         "is304FactoryMatch": true,
-        "is304TokenizedStrategyMatch": true
+        "is304TokenizedStrategyMatch": true,
+        "is310VaultOriginalMatch": true,
+        "is310FactoryMatch": true,
+        "is310TokenizedStrategyMatch": true
       },
       "yearnV3": {
         "accountantCheck": true,
