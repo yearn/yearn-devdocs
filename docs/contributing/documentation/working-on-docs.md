@@ -4,8 +4,6 @@
 
 Yearn's documentation repository is hosted on GitHub in order to foster and encourage open source collaboration.
 
-_Note for translators: Non-english docs are stored in separate branches. When merging your changes, direct your pull request to the corresponding branch_
-
 ## Working with HackMD
 
 In order to contribute to Yearn docs, you will need to be able to write with Markdown syntax. It's extremely easy to learn. Use this [cheat sheet](https://www.markdownguide.org/cheat-sheet/) to get started.
@@ -88,5 +86,5 @@ Cloning a repository is ideal if you are working on more than one page.
 
     ![](https://i.imgur.com/r8JuC84.jpg)
 
-15. Make sure the base repository is 'yearn/yearn-devdocs' and the base is 'master'. (unless you are contributing to translated versions, in which case, the base should be the name of the language you are translating) The head repository should be 'your-username/yearn-devdocs' and the compare should be 'your-branch-name'
+15. Make sure the base repository is 'yearn/yearn-devdocs' and the base is 'master'. The head repository should be 'your-username/yearn-devdocs' and the compare should be 'your-branch-name'
 16. Make sure that your PR has all of the information needed to contextualize the change and that your changes comply with the [Writing Style Guide](/contributing/documentation/writing-style-guide). Once you create a pull request, it will be sent to the repo admins who can approve it to be merged into the live site.

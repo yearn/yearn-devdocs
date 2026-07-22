@@ -27,7 +27,7 @@ Here are some examples for the four categories of decisions that emerge from thi
 
 ### Onchain
 
-All possible gated onchain decisions are organized by Gov 2.0 into discrete and transferable objects called 'Decision-Making Powers' or just 'powers' for short. These powers are objects --- abstractions just above the specific transactions that embody the actual decisions. As we use this new system, we can decide to make these objects more or less granular. Currently YFI holders have the 'Manage Powers' decision-making power, so changes to each power is decided via YFI vote. But, YFI holders could vote to delegate the 'Manage Powers' power, or a subset of it, to a yTeam in the future.
+All possible gated onchain decisions are organized by Gov 2.0 into discrete and transferable objects called 'Decision-Making Powers' or just 'powers' for short. These powers are objects --- abstractions just above the specific transactions that embody the actual decisions. As we use this new system, we can decide to make these objects more or less granular. Currently stYFI holders have the 'Manage Powers' decision-making power, so changes to each power is decided via stYFI vote. But, stYFI holders could vote to delegate the 'Manage Powers' power, or a subset of it, to a yTeam in the future.
 
 ### Offchain
 
@@ -143,4 +143,4 @@ The conflict resolution process has 3 phases:
 1.  If they can't find a solution agreeable to both, they nominate a colleague they both trust to act as a mediator. The mediator doesn't impose a decision. Rather he or she supports the participants in coming to their own solution.
 1.  If mediation fails, a panel of topic-relevant colleagues is convened. Again the panel does not impose a solution.
 
-If no resolution is found after these three phases, the two people may call in a senior contributor they both trust to the panel to add moral weight (but again, not to impose a solution). And in the exceedingly rare case that this final step be insufficient, other yearn organs may need to get involved, such as yPeople or yOps.
+If no resolution is found after these three phases, the two people may call in a senior contributor they both trust to the panel to add moral weight (but again, not to impose a solution). And in the exceedingly rare case that this final step be insufficient, other yearn organs may need to get involved, such as other Yearn teams.

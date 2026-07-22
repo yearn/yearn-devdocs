@@ -38,7 +38,7 @@ veYFI incorporates [YIP-56: Buyback and Build](https://gov.yearn.fi/t/yip-56-buy
   - Penalty Formula: `min(75%, lock_duration_left / 4 years * 100%)`
 - veYFI holders are eligible to receive a share of the early exit penalties.
 - veYFI holders are eligible to receive a share of gauge dYFI rewards from unused boosts.
-- Now that veYFI has been implemented, only veYFI is accepted voting power in Yearn Governance.
+- When the veYFI system was active, only veYFI was accepted as voting power in Yearn Governance (since superseded by stYFI as of YIP-88).
 
 ## dYFI as Gauges Reward
 
