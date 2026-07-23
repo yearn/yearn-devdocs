@@ -2,6 +2,10 @@
 
 If you want to programmatically interact with Yearn data, or need to fetch large amounts of it then you have a few options:
 
+## Metrics
+
+[Yearn Metrics and Methodologies](/developers/data-services/metrics/) defines how Yearn calculates and interprets published metrics. The section begins with Lifetime Earnings and is intended to expand to metrics such as total value locked, estimated annual percentage yield, and historical annual percentage yield.
+
 ## Kong
 
 [Kong](https://kong.yearn.fi/) is an integrated set of services and tools that make it easy to index EVM logs and state, enrich your data with custom hooks, query your data over graphql. Kong is designed to be cheap, reliable, easy to maintain, and simplify the process of updating your index.
