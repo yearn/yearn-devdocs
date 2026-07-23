@@ -14,13 +14,14 @@ Go you!
 
 ## yVault Types
 
-Over the years, Yearn has developed 3 versions of the yVault products: v1, v2, and v3. Super creative, we know!
 
-- [**v1 yVaults**](../../../developers/smart-contracts/deprecated/V1/introduction) are the OG vaults and are mostly phased out (*deprecated* in developer-speak).
+Over the years, Yearn has developed 3 versions of the yVault products: v1, v2, and v3. Super creative, we know! Each version uses a different token-naming convention:
 
-- [**v2 yVaults**](./v2) are the reliable, workhorse vaults that you know and love. They started focused on the Curve ecosystem and are still used when creating vaults for Curve pools.
+- [**v1 yVaults**](../../../developers/smart-contracts/deprecated/V1/introduction) are the OG vaults and are mostly phased out (*deprecated* in developer-speak). Each vault used a single strategy, and its token was prefixed with `y` (e.g. depositing USDC gave you `yUSDC`).
 
-- [**v3 yVaults**](./v3) are the new cool vaults on the block. They are designed to interoperate using the ERC-4626 standard and have several new features to make them safer and easier to use and create.
+- [**v2 yVaults**](./v2) are the reliable, workhorse vaults that you know and love. They started focused on the Curve ecosystem and are still used when creating vaults for Curve pools. Each vault can run up to 20 strategies, and its token is prefixed with `yv` (e.g. `yvUSDC`).
+
+ [**v3 yVaults**](./v3) are the new cool vaults on the block. They are designed to interoperate using the [ERC-4626](https://ethereum.org/en/developers/docs/standards/tokens/erc-4626/) standard and have several new features to make them safer and easier to use and create. Multi-strategy vault tokens use the `yv` prefix plus a "category" suffix (e.g. `yvUSDC-1`), while single-strategy (Tokenized Strategy) vaults use the `ys` prefix (e.g. `ysUSDC`).
 
 ## yVault Fee Structure
 
