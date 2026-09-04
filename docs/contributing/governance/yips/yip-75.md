@@ -123,9 +123,9 @@ The base V3 contracts were built as an un-opinionated base that allows the vault
 
 Some examples of periphery contracts that have already been developed are:
 
-**[Accountant](https://github.com/yearn/vault-periphery/tree/master/contracts/accountants)**: Accountants are stand alone contracts that are attached to a vault and charge the fees for a vault when strategies report profits or losses. An accountant can charge any fees that can be codified as well as give refunds back to the vault. Accountants will also be able to serve as a Junior Tranche to the vault.  
+**[Accountant](https://github.com/yearn/vault-periphery/tree/master/src/accountants)**: Accountants are stand alone contracts that are attached to a vault and charge the fees for a vault when strategies report profits or losses. An accountant can charge any fees that can be codified as well as give refunds back to the vault. Accountants will also be able to serve as a Junior Tranche to the vault.
 **4626 Router[\[5\]](#references)**: To make integration with any V3 vault or strategy as easy as possible. The router also utilizes permit and multicall to make user tx’s as simple and cheap as possible.  
-**[Custom Registries](https://github.com/yearn/vault-periphery/tree/master/contracts/registry)**: Each team, protocol, UI etc. can deploy and manage their own registry to easily track on chain the vaults and strategies they work with.  
+**[Custom Registries](https://github.com/yearn/vault-periphery/tree/master/src/registry)**: Each team, protocol, UI etc. can deploy and manage their own registry to easily track on chain the vaults and strategies they work with.
 **[Swappers](https://github.com/yearn/tokenized-strategy-periphery/tree/master/src/swappers)**: Strategists can simply inherit a contract that has their preferred method of token swapping to easily integrate with any dex or swapping method they want.
 
 ## Fee Structure

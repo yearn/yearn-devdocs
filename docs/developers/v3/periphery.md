@@ -19,7 +19,7 @@ The contracts in the 'Vault Periphery' are meant to be used alongside a V3 multi
 
 ### Release Registry
 
-https://github.com/yearn/vault-periphery/blob/master/contracts/registry/ReleaseRegistry.sol
+https://github.com/yearn/vault-periphery/blob/master/src/registry/ReleaseRegistry.sol
 
 Yearn controlled registry to track any new versions of V3 released on that specific chain.
 
@@ -27,7 +27,7 @@ Each time a new Version of the [Vault Factory](https://github.com/yearn/yearn-va
 
 ### Registry
 
-https://github.com/yearn/vault-periphery/blob/master/contracts/registry/Registry.sol
+https://github.com/yearn/vault-periphery/blob/master/src/registry/Registry.sol
 
 Stores the endorsed multi strategy and single strategy vaults. Can also deploy new multi strategy vaults based on the most recent Vault Factory added to the Release Registry.
 
@@ -37,7 +37,7 @@ Deploy a custom Registry using the [RegistryFactory](/developers/smart-contracts
 
 ### Accountant
 
-https://github.com/yearn/vault-periphery/tree/master/contracts/accountants
+https://github.com/yearn/vault-periphery/tree/master/src/accountants
 
 By default V3 multi strategy vaults have fees set to 0 and will need an `accountant` set to charge fees.
 
@@ -53,7 +53,7 @@ To deploy a generic account use the [Accountant Factory](/developers/smart-contr
 
 ### Debt Allocator
 
-https://github.com/yearn/vault-periphery/tree/master/contracts/debtAllocators
+https://github.com/yearn/vault-periphery/tree/master/src/debtAllocators
 
 To manager the allocation of debt between multiple strategies in a multi strategy vault some generic Debt Allocators have been developed. These contracts are meant to be given the `DEBT_MANAGER` and `REPORTING_MANAGER` roles for a specific vault and then monitored by a keeper to manage the allocations based on set 'target ratios'.
 
@@ -71,7 +71,7 @@ You can deploy a single generic Debt Allocator using the [Debt Allocator Factory
 
 ### Role Manager
 
-https://github.com/yearn/vault-periphery/blob/master/contracts/Managers/RoleManager.sol
+https://github.com/yearn/vault-periphery/blob/master/src/managers/RoleManager.sol
 
 The Role Manager is used to hold the `role_manager` position in Yearns multi strategy vaults and make deployments simpler. All role configuration and periphery contracts are set up during the vaults deployment.
 
