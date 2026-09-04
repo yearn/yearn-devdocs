@@ -10,9 +10,10 @@ Potential vulnerabilities are welcome to be disclosed following the guidelines e
 
 The V3 core contracts used in V3 vaults, found at [yearn-vaults-v3](https://github.com/yearn/yearn-vaults-v3) repository have been audited by multiple independent third-party firms:
 
-- [StateMind](https://statemind.io/) has audited v3.0.0, public report [available here](https://github.com/yearn/yearn-security/tree/master/audits/20240502_Statemind_Yearn_V3)
-- [ChainSecurity](https://www.chainsecurity.com/) has audited v3.0.0, public report [available here](https://github.com/yearn/yearn-security/tree/master/audits/20240504_ChainSecurity_Yearn_V3)
-- [yAudit](https://yaudit.dev/) has audited v3.0.1, public report [available here](https://github.com/yearn/yearn-security/tree/master/audits/20240601_YAcademy_Yearn_V3)
+- [ChainSecurity](https://www.chainsecurity.com/) has audited v3.0.0, public report [available here](https://github.com/yearn/yearn-security/tree/master/audits/20230504_ChainSecurity_Yearn_V3)
+- [yAudit](https://yaudit.dev/) has audited v3.0.1, public report [available here](https://github.com/yearn/yearn-security/tree/master/audits/20230728_YAcademy_Yearn_V3.0.1)
+- [StateMind](https://statemind.io/) has audited v3.0.2, public report [available here](https://github.com/yearn/yearn-security/tree/master/audits/20240301_Statemind_Yearn_V3.0.2)
+- [yAudit](https://yaudit.dev/) has audited v3.1.0, public report [available here](https://github.com/yearn/yearn-security/tree/master/audits/20260601_yAudit_Yearn_V3.1.0)
 
 The legacy core contracts used in V2 vaults and the Factory Vaults, found at [yearn-vaults](https://github.com/yearn/yearn-vaults/) repository have been audited by multiple independent third-party firms:
 
