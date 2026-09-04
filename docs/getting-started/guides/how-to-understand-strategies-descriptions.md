@@ -157,7 +157,7 @@ While reading the strategy descriptions at [yearn.fi/vaults↗](https://yearn.fi
 ### Curve Boost / Curve Gauge
 
 - Locking up [CRV](#curve) on Curve allows you to boost your CRV [rewards](#rewards) for being a liquidity provider.
-- Read more at Curve [docs↗](https://resources.curve.finance/reward-gauges/boosting-your-crv-rewards).
+- Read more at Curve [docs↗](https://docs.curve.finance/user/yield/boosting).
 
 ### Convex
 

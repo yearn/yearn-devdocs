@@ -4,7 +4,7 @@
 
 ## What is yYB?
 
-yYB is Yearn's veYB yLocker product. It is designed to tokenize the different benefits of a [veYB position](https://docs.yieldbasis.com/user/veyb) in a simple, user-friendly way. Let's review the basics of liquid locker tokens like yYB:
+yYB is Yearn's veYB yLocker product. It is designed to tokenize the different benefits of a [veYB position](https://docs.yieldbasis.com/user/governance/veyb) in a simple, user-friendly way. Let's review the basics of liquid locker tokens like yYB:
 
 * 1 yYB represents 1 veYB permalocked to Yearn
 * They are not redeemable for the underlying locked YB

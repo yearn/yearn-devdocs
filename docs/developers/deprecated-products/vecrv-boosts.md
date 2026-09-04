@@ -16,7 +16,7 @@ Many of Yearn's strategies utilize Curve Finance's liquidity mining program. [Cu
 
 ### veCRV Boosts
 
-CRV is distributed continuously to users who stake certain liquidity provider tokens in Curve's [gauge](https://resources.curve.finance/base-features/understanding-gauges). Those CRV rewards can be increased when the user locks up their CRV in the [Locker](https://dao.curve.finance/locker). This locker gives the staker veCRV in return, which bears the right to vote in governance and to claim a portion of the protocol's fees.
+CRV is distributed continuously to users who stake certain liquidity provider tokens in Curve's [gauge](https://docs.curve.finance/protocol/gauge/overview). Those CRV rewards can be increased when the user locks up their CRV in the [Locker](https://dao.curve.finance/locker). This locker gives the staker veCRV in return, which bears the right to vote in governance and to claim a portion of the protocol's fees.
 
 Locking CRV allows users to boost the CRV rewards they are receiving when providing liquidity in eligible pools. The amount of the boost is determined by how much CRV was locked and their relative stake in the pool.
 

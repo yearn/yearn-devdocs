@@ -42,7 +42,7 @@ Beyond staking, another major incentive for CRV is the ability to boost your rew
 
 The actual boost multiplier is determined by a formula that depends on the current pool gauge liquidity as a fraction out of the total amount of liquidity provided in Curve pools by Yearn, and the fraction of voting power that the veCRV constitutes out of the total (i.e. its share of the current total of veCRV issued).
 
-See the [Curve Guide](https://resources.curve.finance/reward-gauges/boosting-your-crv-rewards/) for more details on the formula and its calculation.
+See the [Curve Guide](https://docs.curve.finance/user/yield/boosting) for more details on the formula and its calculation.
 
 ## The yveCRV yVault
 
@@ -115,9 +115,9 @@ Yearn’s work to automate the yield generation and rebalancing of your crypto a
 ## More information
 
 - [curve.finance](https://www.curve.finance/) webpage
-- Curve [Guide](https://resources.curve.finance/lending/how-to-supply/#staking-assets) for staking CRV
-- Curve [Guide](https://resources.curve.finance/reward-gauges/boosting-your-crv-rewards/) for vote locking
-- Curve [FAQ](https://resources.curve.finance/crv-token/faq/)
+- Curve [Guide](https://docs.curve.finance/user/yield/lending) for staking CRV
+- Curve [Guide](https://docs.curve.finance/user/vecrv/how-to-lock) for vote locking
+- Curve [FAQ](https://docs.curve.finance/user/vecrv/faq)
 - deFinn [Infographic](https://gateway.pinata.cloud/ipfs/QmY8BZjN6oT4rrgveSqHjygcQmWitoMQk5B3moqFA6K8ea) on CRV Voting Boost and formula
 - Boost [calculator](https://dao.curve.finance/minter/calc)
 - Yearn CurveDAO proxy strategy [diagram](https://twitter.com/bantg/status/1308680661801340929)
