@@ -161,11 +161,6 @@ module.exports = {
               label: 'Morpho',
               id: 'products/curating/morpho-curating',
             },
-            {
-              type: 'doc',
-              label: 'Term',
-              id: 'products/curating/term-curating',
-            },
           ],
         },
       ],
