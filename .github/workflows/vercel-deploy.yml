@@ -15,9 +15,11 @@ permissions:
   id-token: write
   pull-requests: write
 
+cache-mode: none
+
 jobs:
   yearn-docs:
-    uses: yearn/yearn-gha/.github/workflows/vercel-deploy.yml@4491a119aee0a0458eb6d946921f7c0271d58f17
+    uses: yearn/yearn-gha/.github/workflows/vercel-deploy.yml@17446bfb9e9c7911367379222fa5b7e3fff52fa3
     with:
       project: yearn-docs
       identity-id: ${{ github.event_name == 'pull_request' && vars.DOPPLER_PREVIEW_IDENTITY_ID || vars.DOPPLER_PRODUCTION_IDENTITY_ID }}
