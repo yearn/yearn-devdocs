@@ -1,0 +1,23 @@
+name: Deploy to Vercel
+
+on:
+  pull_request:
+  push:
+    branches: [master]
+
+concurrency:
+  group: vercel-deploy-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+  deployments: write
+  id-token: write
+  pull-requests: write
+
+jobs:
+  yearn-docs:
+    uses: yearn/yearn-gha/.github/workflows/vercel-deploy.yml@4491a119aee0a0458eb6d946921f7c0271d58f17
+    with:
+      project: yearn-docs
+      identity-id: ${{ github.event_name == 'pull_request' && vars.DOPPLER_PREVIEW_IDENTITY_ID || vars.DOPPLER_PRODUCTION_IDENTITY_ID }}
