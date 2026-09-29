@@ -4,8 +4,10 @@ import math from 'remark-math'
 import katex from 'rehype-katex'
 import { themes as prismThemes } from 'prism-react-renderer'
 import 'dotenv/config'
+import { existsSync } from 'node:fs'
 import { getRpcUriOverridesFromEnv } from './src/ethereum/publicRpc'
 
+const hasGit = existsSync('.git')
 const branchName = process.env.BRANCH_NAME || 'unknown'
 const isDev = process.env.IS_DEV === 'true'
 const rpcUris = getRpcUriOverridesFromEnv(process.env)
@@ -203,7 +205,7 @@ export default {
         path: 'docs/developers',
         routeBasePath: 'developers',
         sidebarPath: './sidebars/sidebarsDeveloperDocs.js',
-        showLastUpdateTime: true,
+        showLastUpdateTime: hasGit,
         sidebarCollapsed: true,
         breadcrumbs: false,
         remarkPlugins: [math],
@@ -221,7 +223,7 @@ export default {
         path: 'docs/contributing',
         routeBasePath: 'contributing',
         sidebarPath: './sidebars/sidebarsContributing.js',
-        showLastUpdateTime: true,
+        showLastUpdateTime: hasGit,
         sidebarCollapsed: true,
         breadcrumbs: false,
         remarkPlugins: [math],
