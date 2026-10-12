@@ -1,4 +1,7 @@
-import { getContract, PublicClient, Address, getAddress } from 'viem'
+import {
+  getContract, PublicClient, Address, getAddress, BaseError,
+  ContractFunctionRevertedError, ContractFunctionZeroDataError,
+} from 'viem'
 import {
   v3ProtocolAddressProviderABI,
   v3ReleaseRegistryABI,
@@ -9,6 +12,15 @@ import {
   accountantABI,
 } from './ABIs'
 import { V3ReleaseDataMap } from './types'
+
+function allowMissingContractFunction(error: unknown) {
+  // A missing/reverting legacy getter is a completed on-chain observation.
+  // Transport errors and other unavailable reads must abort validation.
+  const missingFunction = error instanceof BaseError && error.walk(cause =>
+    cause instanceof ContractFunctionRevertedError || cause instanceof ContractFunctionZeroDataError
+  )
+  if (!missingFunction) throw error
+}
 
 const useFallback = (contractName: string, fallback: string): Address => {
   console.warn(
@@ -35,19 +47,23 @@ export const getProtocolContractAddresses = async (
     v3ReportTrigger,
     v3RoleManagerFactory,
   ] = await Promise.all([
-    contract.read.getRouter().catch(() => {
+    contract.read.getRouter().catch(error => {
+      allowMissingContractFunction(error)
       console.warn('v3Router not found')
       return undefined
     }),
-    contract.read.getAprOracle().catch(() => {
+    contract.read.getAprOracle().catch(error => {
+      allowMissingContractFunction(error)
       console.warn('v3AprOracle not found')
       return undefined
     }),
-    contract.read.getCommonReportTrigger().catch(() => {
+    contract.read.getCommonReportTrigger().catch(error => {
+      allowMissingContractFunction(error)
       console.warn('v3ReportTrigger not found')
       return undefined
     }),
-    contract.read.getRoleManagerFactory().catch(() => {
+    contract.read.getRoleManagerFactory().catch(error => {
+      allowMissingContractFunction(error)
       console.warn('v3RoleManagerFactory not found')
       return undefined
     }),
@@ -99,7 +115,8 @@ export const readReleaseRegistryAll = async (
     const releaseNumber = await factoryContract.read.apiVersion()
     const vaultAddress = await factoryContract.read
       .vault_original()
-      .catch(async () => {
+      .catch(async error => {
+        allowMissingContractFunction(error)
         // Re-initialize factoryContract with v3VaultFactoryBlueprintABI if fallback occurs
         const factoryContractWithBlueprint = getContract({
           address: factoryAddress,
@@ -138,15 +155,18 @@ export const readYearnRoleManager = async (
   ] = await Promise.all([
     contract.read.getBrain(),
     contract.read.getDaddy(),
-    contract.read.getAccountant().catch(() => {
+    contract.read.getAccountant().catch(error => {
+      allowMissingContractFunction(error)
       console.warn('yearnAccountant not found')
       return undefined
     }),
-    contract.read.getDebtAllocator().catch(() => {
+    contract.read.getDebtAllocator().catch(error => {
+      allowMissingContractFunction(error)
       console.warn('yearnDebtAllocator not found')
       return undefined
     }),
-    contract.read.getRegistry().catch(() => {
+    contract.read.getRegistry().catch(error => {
+      allowMissingContractFunction(error)
       console.warn('yearnRegistry not found')
       return undefined
     }),
@@ -172,7 +192,8 @@ export const getAuctionFactoryFromRegistry = async (
     client: publicClient,
   })
   console.log('Fetching auction factory from auction registry...')
-  const auctionFactory = await contract.read.getLatestFactory().catch(() => {
+  const auctionFactory = await contract.read.getLatestFactory().catch(error => {
+    allowMissingContractFunction(error)
     console.warn('auctionFactory not found in auction registry')
     return undefined
   })
@@ -190,7 +211,8 @@ export const getFeeRecipientFromAccountant = async (
     client: publicClient,
   })
   console.log('Fetching fee recipient from accountant...')
-  const feeRecipient = await contract.read.feeRecipient().catch(() => {
+  const feeRecipient = await contract.read.feeRecipient().catch(error => {
+    allowMissingContractFunction(error)
     console.warn('feeRecipient not found in accountant')
     return undefined
   })

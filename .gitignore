@@ -33,6 +33,7 @@ bun.lockb
 .branch-name
 .github/copilot-instructions.md
 all_checks_passed.txt
+issue_body.md
 
 # Lockfiles managed by package managers (we use Bun)
 package-lock.json

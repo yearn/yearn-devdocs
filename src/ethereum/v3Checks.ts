@@ -249,10 +249,23 @@ export const fetchAndCheckFromReleaseRegistry = async (
       'Latest Release in Constants file does not match Release Registry Contract.'
     )
     hasLatestRelease = false
-    const latestRelease = `latest V3 Release: ${addresses.latestRelease}`
+    checkFlag = false
+    const latestRelease = `latest V3 Release: ${addresses.latestRelease} (expected ${constants.releaseRegistry.latestRelease})`
     failedChecks.push(latestRelease)
   }
-  const checks = { hasLatestRelease }
+  const checks: Record<string, boolean> = { hasLatestRelease }
+
+  // Every documented release needs on-chain evidence, including a release
+  // which is present in constants but not yet registered on this chain.
+  for (const releaseNumber of Object.keys(constants.releaseRegistry)) {
+    if (releaseNumber === 'latestRelease') continue
+    const hasRelease = typeof addresses[releaseNumber] === 'object'
+    checks[`has${releaseNumber.replace(/\./g, '')}Release`] = hasRelease
+    if (!hasRelease) {
+      checkFlag = false
+      failedChecks.push(`V3 Release ${releaseNumber} is missing from the release registry`)
+    }
+  }
 
   for (const releaseNumber in addresses) {
     if (releaseNumber === 'latestRelease') continue // Skip the latestRelease key
@@ -260,6 +273,7 @@ export const fetchAndCheckFromReleaseRegistry = async (
     const constantRelease = constants.releaseRegistry[releaseNumber]
     if (!constantRelease) {
       console.warn(`Release ${releaseNumber} is missing in constants.`)
+      checkFlag = false
       failedChecks.push(`V3 Release ${releaseNumber} is missing`)
       continue
     }

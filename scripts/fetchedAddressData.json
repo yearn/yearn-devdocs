@@ -1,5 +1,6 @@
 {
-  "timeLastChecked": 1784652070,
+  "status": "complete",
+  "timeLastChecked": 1791835859,
   "addressesData": {
     "v3ContractAddresses": {
       "topLevel": {
@@ -105,10 +106,13 @@
     }
   },
   "addressChecks": {
-    "allV3ChecksPassed": true,
+    "allV3ChecksPassed": false,
     "allVeYfiChecksPassed": true,
     "allMultisigChecksPassed": true,
-    "failedChecks": [],
+    "failedChecks": [
+      "latest V3 Release: 3.1.0 (expected 3.1.1)",
+      "V3 Release 3.1.1 is missing from the release registry"
+    ],
     "v3Checks": {
       "topLevel": {
         "v3ProtocolAddressProviderCheck": true,
@@ -126,7 +130,13 @@
         "auctionFactoryCheck": true
       },
       "releaseRegistry": {
-        "hasLatestRelease": true,
+        "hasLatestRelease": false,
+        "has311Release": false,
+        "has310Release": true,
+        "has304Release": true,
+        "has303Release": true,
+        "has302Release": true,
+        "has301Release": true,
         "is301VaultOriginalMatch": true,
         "is301FactoryMatch": true,
         "is301TokenizedStrategyMatch": true,

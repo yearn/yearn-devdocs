@@ -17,10 +17,12 @@ export const veYfiChecks = async (
   console.log('validating veYFI Gauge addresses...')
 
   if (numberOfGauges < 1) {
+    checkFlag = false
     console.warn('No gauges found')
     failedChecks.push('No gauges found')
   }
   if (numberOfGauges !== constants.veYfiGauges.length) {
+    checkFlag = false
     console.warn('Number of gauges does not match number of fallback addresses')
     failedChecks.push(
       'Number of gauges does not match number of fallback addresses'
@@ -31,8 +33,17 @@ export const veYfiChecks = async (
 
   // Validate each entry in gaugeAddresses against the corresponding address in constants.veYfiGauges
   for (const [index, address] of gaugeAddresses.entries()) {
-    const expectedAddress = constants.veYfiGauges[index].address
-    const expectedName = constants.veYfiGauges[index].name
+    const expectedGauge = constants.veYfiGauges[index]
+    if (!expectedGauge) {
+      checkFlag = false
+      const name = `Gauge ${index}`
+      failedChecks.push(`veYFI ${name} (${address}) is missing in constants`)
+      veYfiGaugeChecks[name] = false
+      veYfiGaugeAddresses[name] = address
+      continue
+    }
+    const expectedAddress = expectedGauge.address
+    const expectedName = expectedGauge.name
     console.log(
       `Validating ${expectedName} (${expectedAddress}) against ${address}...`
     )

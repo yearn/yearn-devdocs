@@ -107,15 +107,59 @@ This command starts a local development server and opens up a browser window. Mo
 bun run start
 ```
 
-Running `bun run start` will also run a script that checks the validity of smart contract addresses in the docs against a local constants file. This runs on every dev run as a way to keep the checks updated and the information about them on the site current (all PRs will include an update to last check time). If you want to start without the `runAddressChecks` script you can run `bun run start-no-check`.
+`bun run start` collects a fresh mainnet address-check report before starting the
+server. Completed checks with mismatches still start the site with warning banners.
+An incomplete check, such as an RPC failure, stops startup. Use `bun run start-no-check`
+only when you intentionally want to use the existing report without refreshing it.
 
 ## Build
 
-This command generates static content into the `build` directory and can be served using any static content hosting service.
+This command collects a fresh mainnet address-check report, then generates static
+content in `build`. Vercel runs the same command, so the report included in a
+deployment comes from that deployment's build.
 
 ```bash
 bun run build
 ```
+
+A completed check with mismatched addresses builds successfully and publishes the
+fresh warning banner and check time. The independent address-check CI step fails
+for those mismatches. RPC errors, missing reports, and incomplete checks stop the
+build; the script removes the previous report before fetching, so an older green
+snapshot cannot be reused after a failed check.
+
+`bun run build:site` only renders the existing snapshot and generates AI exports.
+Use it for an intentional offline build; it does not run address checks. Normal
+builds and deployments use `bun run build`.
+
+### Address-check results
+
+Run the standalone checker with `bun run runAddressCheck`. Its exit codes are:
+
+| Exit code | Meaning | Report |
+| --- | --- | --- |
+| 0 | All checks passed | Fresh complete report |
+| 1 | Checks completed and found mismatches | Fresh complete report and failure details |
+| 2 | Checks could not complete | No report available for deployment |
+
+Results are written to `scripts/fetchedAddressData.json`, with the summary in
+`all_checks_passed.txt` and mismatch details in `issue_body.md`. The banner imports
+the JSON snapshot; it is not a live browser check. A V3 mismatch includes a latest
+release disagreement, a documented release absent from the mainnet registry, or
+an address disagreement. Gauge-count discrepancies also fail their group's result.
+
+PR CI and the daily Address Checks workflow retain the JSON, summary, and available
+failure details in the `address-check-report` artifact for 30 days. The daily job
+checks addresses without rebuilding the website, keeps its existing mismatch issue
+reporting, and fails on both mismatches and incomplete checks. It does not commit
+generated data or deploy the website. Each later deployment collects its own fresh
+report before rendering.
+
+Address checks use the public mainnet RPC by default and also run for fork PRs;
+there is no dependency on privileged credentials for validation. Configure
+`RPC_URI_FOR_1` to use another mainnet RPC.
+
+Run the focused regression checks with `bun run test:addresses`.
 
 ## AI / agent exports
 
