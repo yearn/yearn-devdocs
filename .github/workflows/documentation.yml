@@ -6,40 +6,42 @@ jobs:
   build-and-release:
     runs-on: ubuntu-latest
     permissions:
-      contents: write
+      contents: read
     steps:
       - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
       - name: Install Bun
         run: |
           curl -fsSL https://bun.sh/install | bash
           echo "$HOME/.bun/bin" >> $GITHUB_PATH
-      - name: Install dependencies and build
+      - name: Install dependencies
+        run: bun install --frozen-lockfile
+
+      - name: Test address-check pipeline
+        run: bun run test:addresses
+
+      - name: Check addresses and build
+        id: build
         run: |
-          bun install --frozen-lockfile
+          rm -f scripts/fetchedAddressData.json all_checks_passed.txt issue_body.md
           bun run build
 
-      - name: Check if PR is from a fork
-        id: check_fork
+      - name: Report address-check result
+        if: steps.build.outcome == 'success'
         run: |
-          if [ "${{ github.event.pull_request.head.repo.full_name }}" != "${{ github.repository }}" ]; then
-            echo "PR is from a fork"
-            echo "is_fork=true" >> $GITHUB_ENV
-          else
-            echo "PR is not from a fork"
-            echo "is_fork=false" >> $GITHUB_ENV
+          if [ "$(cat all_checks_passed.txt)" != 'true' ]; then
+            cat issue_body.md
+            echo '::error::Address validation found mismatches. The site contains the fresh warning report.'
+            exit 1
           fi
 
-      - name: Run address checks
-        if: env.is_fork != 'true'
-        run: |
-          bun run runAddressCheck
-          echo "ALL_CHECKS_PASSED=$(cat all_checks_passed.txt)" >> $GITHUB_ENV
-
-      - name: Create an issue if address checks fail
-        if: env.is_fork != 'true' && env.ALL_CHECKS_PASSED != 'true'
-        run: |
-          curl -H "Authorization: Bearer ${{ secrets.ADDRESS_CHECKS }}" \
-          -H "Content-Type: application/json" \
-          -d "$(jq -n --arg title ':robot: Address Checks Failed' --arg body "$(cat issue_body.md)" '{title: $title, body: $body}')" \
-          https://api.github.com/repos/yearn/yearn-devdocs/issues
-          echo "Issue created"
+      - name: Save address-check report
+        if: ${{ !cancelled() && (steps.build.outcome == 'success' || steps.build.outcome == 'failure') }}
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: address-check-report
+          path: |
+            scripts/fetchedAddressData.json
+            all_checks_passed.txt
+            issue_body.md
+          retention-days: 30
+          if-no-files-found: warn

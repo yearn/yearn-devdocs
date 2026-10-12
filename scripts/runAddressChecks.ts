@@ -1,4 +1,5 @@
 import fs from 'fs'
+import path from 'node:path'
 import dotenv from 'dotenv'
 import {
   fetchTopLevelAddressesFromENS,
@@ -19,6 +20,7 @@ import {
   createYearnPublicClient,
   getRpcUriOverridesFromEnv,
 } from '../src/ethereum/publicRpc'
+import { didAddressChecksPass, writeAddressCheckReport } from './addressCheckReport'
 
 dotenv.config()
 
@@ -122,14 +124,7 @@ const fetchAddresses = async () => {
       veYfiChecks: veYfiData.veYfiGaugeChecks,
       multisigChecks: multisigData.checks,
     }
-    if (
-      v3CheckFlag === false ||
-      v3CheckFlag === undefined ||
-      veYfiCheckFlag === false ||
-      veYfiCheckFlag === undefined ||
-      multisigCheckFlag === false ||
-      multisigCheckFlag === undefined
-    ) {
+    if (!didAddressChecksPass(addressChecks)) {
       console.log('Addresses:', addressesData)
       console.log('Checks:', addressChecks)
     } else {
@@ -141,49 +136,25 @@ const fetchAddresses = async () => {
   }
 }
 
-async function runAddressCheck() {
-  let addressesData: ContractAddresses = {} as ContractAddresses // initialize with default value
-  let addressChecks: AddressChecks = {} as AddressChecks // initialize with default value
-  if (publicClient) {
-    const result = await fetchAddresses()
-    if (result) {
-      // added null check for result
-      addressesData = result.addressesData
-      addressChecks = result.addressChecks
-    } else {
-      throw new Error('Failed to fetch addresses')
-    }
+export async function runAddressCheck(collect = fetchAddresses, directory = process.cwd()): Promise<number> {
+  fs.rmSync(path.join(directory, 'scripts/fetchedAddressData.json'), { force: true })
+  fs.rmSync(path.join(directory, 'issue_body.md'), { force: true })
+  fs.writeFileSync(path.join(directory, 'all_checks_passed.txt'), 'false')
+  try {
+    const result = await collect()
+    if (!result) throw new Error('Failed to fetch addresses')
+    const passed = writeAddressCheckReport({
+      status: 'complete',
+      timeLastChecked: Math.floor(Date.now() / 1000),
+      ...result,
+    }, directory)
+    console.log('allChecksPassed:', passed)
+    console.log('Wrote fresh report to scripts/fetchedAddressData.json')
+    return passed ? 0 : 1
+  } catch (error) {
+    console.error('Address checks could not complete:', error instanceof Error ? error.message : error)
+    return 2
   }
-
-  const allChecksPassed =
-    addressChecks.allV3ChecksPassed &&
-    addressChecks.allVeYfiChecksPassed &&
-    addressChecks.allMultisigChecksPassed
-  process.env.ALL_CHECKS_PASSED = allChecksPassed ? 'true' : 'false'
-  console.log('allChecksPassed: ', process.env.ALL_CHECKS_PASSED)
-
-  fs.writeFileSync('all_checks_passed.txt', process.env.ALL_CHECKS_PASSED)
-
-  if (addressChecks.failedChecks.length > 0) {
-    console.log('Generating issue content...')
-    let issueContent =
-      ':robot::warning: **Automatic Address Checks have failed!** :warning::robot:\n'
-    issueContent += 'The following contracts have changed:\n'
-    addressChecks.failedChecks.forEach((check: string) => {
-      issueContent += `- ${check}\n`
-    })
-    issueContent +=
-      '\nThe addresses shown above should be the updated, correct addresses. Please review and update the relevant source (`src/ethereum/constants.ts` and/or `docs/developers/security/multisig.md`).\n'
-
-    fs.writeFileSync('issue_body.md', issueContent)
-    console.log('Issue content generated.')
-  }
-  const timeLastChecked = Math.floor(Date.now() / 1000) // get current time in Unix format
-  console.log('writing report to scripts/fetchedAddressData.json')
-  fs.writeFileSync(
-    'scripts/fetchedAddressData.json',
-    JSON.stringify({ timeLastChecked, addressesData, addressChecks }, null, 2)
-  )
 }
 
-runAddressCheck()
+if (import.meta.main) process.exitCode = await runAddressCheck()
