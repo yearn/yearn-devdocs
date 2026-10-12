@@ -82,6 +82,7 @@ Below are the relevant factories and registries for V3 contracts. The most recen
 
 | Registry / ENS | Contract Address |
 | ----------------------   | ---------------------- |
+| **VaultFactory 3.1.1** | <ContractAddress contractName = {['releaseRegistry', '3.1.1', 'factory']} /> |
 | **VaultFactory 3.1.0** | <ContractAddress contractName = {['releaseRegistry', '3.1.0', 'factory']} /> |
 | **VaultFactory 3.0.4** | <ContractAddress contractName = {['releaseRegistry', '3.0.4', 'factory']} /> |
 | **VaultFactory 3.0.3** | <ContractAddress contractName = {['releaseRegistry', '3.0.3', 'factory']} /> |
