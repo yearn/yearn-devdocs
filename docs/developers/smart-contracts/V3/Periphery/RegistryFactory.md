@@ -1,30 +1,36 @@
 <!-- markdownlint-disable MD024 MD034 MD036 -->
-# RegistryFactory
 
-[Git Source](https://github.com/yearn/vault-periphery/blob/516f95edcd36e28b714b52408c05009b430900e3/src/registry/RegistryFactory.sol)
+# RegistryFactory
+[Git Source](https://github.com/yearn/vault-periphery/blob/358d074ce333f149b5046b4e949c196881523d22/src/registry/RegistryFactory.sol)
+
+**Title:**
+YearnV3 Registry Factory
 
 **Author:**
 yearn.finance
 
+
 Factory for anyone to easily deploy their own Registry.
 
-## State Variables
 
+## State Variables
 ### releaseRegistry
 
 ```solidity
-address public immutable releaseRegistry;
+address public immutable releaseRegistry
 ```
 
-## Functions
 
+## Functions
 ### constructor
 
+
 ```solidity
-constructor(address _releaseRegistry);
+constructor(address _releaseRegistry) ;
 ```
 
 ### name
+
 
 ```solidity
 function name() external pure virtual returns (string memory);
@@ -34,12 +40,12 @@ function name() external pure virtual returns (string memory);
 
 Deploy a new Registry.
 
-*Default to msg.sender for governance.*
+Default to msg.sender for governance.
+
 
 ```solidity
 function createNewRegistry(string memory _name) external virtual returns (address);
 ```
-
 **Parameters**
 
 |Name|Type|Description|
@@ -52,14 +58,15 @@ function createNewRegistry(string memory _name) external virtual returns (addres
 |----|----|-----------|
 |`<none>`|`address`|Address of the new Registry.|
 
+
 ### createNewRegistry
 
 Deploy a new Registry.
 
+
 ```solidity
 function createNewRegistry(string memory _name, address _governance) public virtual returns (address);
 ```
-
 **Parameters**
 
 |Name|Type|Description|
@@ -73,8 +80,8 @@ function createNewRegistry(string memory _name, address _governance) public virt
 |----|----|-----------|
 |`<none>`|`address`|Address of the new Registry.|
 
-## Events
 
+## Events
 ### NewRegistry
 
 ```solidity

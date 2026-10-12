@@ -1,50 +1,55 @@
 <!-- markdownlint-disable MD024 MD034 MD036 -->
-# AccountantFactory
 
-[Git Source](https://github.com/yearn/vault-periphery/blob/516f95edcd36e28b714b52408c05009b430900e3/src/accountants/AccountantFactory.sol)
+# AccountantFactory
+[Git Source](https://github.com/yearn/vault-periphery/blob/358d074ce333f149b5046b4e949c196881523d22/src/accountants/AccountantFactory.sol)
+
+**Title:**
+AccountantFactory
 
 A factory contract for deploying Accountant contracts
 
-## State Variables
 
+## State Variables
 ### defaultConfig
 
 ```solidity
-Accountant.Fee public defaultConfig;
+Accountant.Fee public defaultConfig
 ```
 
-## Functions
 
+## Functions
 ### constructor
 
-*Constructor initializes the default configuration*
+Constructor initializes the default configuration
+
 
 ```solidity
-constructor();
+constructor() ;
 ```
 
 ### newAccountant
 
-*Deploys a new Accountant contract with default configuration*
+Deploys a new Accountant contract with default configuration
+
 
 ```solidity
 function newAccountant() external returns (address);
 ```
-
 **Returns**
 
 |Name|Type|Description|
 |----|----|-----------|
 |`<none>`|`address`|_newAccountant The address of the newly deployed Accountant contract|
 
+
 ### newAccountant
 
-*Deploys a new Accountant contract with specified fee manager and recipient*
+Deploys a new Accountant contract with specified fee manager and recipient
+
 
 ```solidity
 function newAccountant(address feeManager, address feeRecipient) external returns (address);
 ```
-
 **Parameters**
 
 |Name|Type|Description|
@@ -58,9 +63,11 @@ function newAccountant(address feeManager, address feeRecipient) external return
 |----|----|-----------|
 |`<none>`|`address`|_newAccountant The address of the newly deployed Accountant contract|
 
+
 ### newAccountant
 
-*Deploys a new Accountant contract with specified fee configurations*
+Deploys a new Accountant contract with specified fee configurations
+
 
 ```solidity
 function newAccountant(
@@ -72,7 +79,6 @@ function newAccountant(
     uint16 defaultMaxLoss
 ) external returns (address);
 ```
-
 **Parameters**
 
 |Name|Type|Description|
@@ -90,9 +96,11 @@ function newAccountant(
 |----|----|-----------|
 |`<none>`|`address`|_newAccountant The address of the newly deployed Accountant contract|
 
+
 ### newAccountant
 
-*Deploys a new Accountant contract with specified fee configurations and addresses*
+Deploys a new Accountant contract with specified fee configurations and addresses
+
 
 ```solidity
 function newAccountant(
@@ -106,7 +114,6 @@ function newAccountant(
     uint16 defaultMaxLoss
 ) public returns (address _newAccountant);
 ```
-
 **Parameters**
 
 |Name|Type|Description|
@@ -126,8 +133,8 @@ function newAccountant(
 |----|----|-----------|
 |`_newAccountant`|`address`|The address of the newly deployed Accountant contract|
 
-## Events
 
+## Events
 ### NewAccountant
 
 ```solidity

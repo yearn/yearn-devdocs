@@ -1,0 +1,48 @@
+{
+  "version": "3.1.1",
+  "vyper": "0.3.10",
+  "peripherySnapshotAsOf": "2026-08-10T17:46:10Z",
+  "repositories": {
+    "yearn-vaults-v3": {
+      "tag": "v3.1.1",
+      "commit": "89ab996bf94a16878e174e50e9862d69c6495875"
+    },
+    "tokenized-strategy": {
+      "tag": "v3.1.1",
+      "commit": "48c53aba0395885b3f579d0a4b426de276a7b69e"
+    },
+    "vault-periphery": {
+      "commit": "358d074ce333f149b5046b4e949c196881523d22"
+    },
+    "tokenized-strategy-periphery": {
+      "commit": "ab942b245c611cf9747e541ab03b36770c610966"
+    },
+    "Yearn-ERC4626-Router": {
+      "commit": "b848746a05839e5f301a067a7a41aca87efcbabd"
+    }
+  },
+  "contracts": [
+    "BaseStrategy.md",
+    "TokenizedStrategy.md",
+    "VaultFactory.md",
+    "VaultV3.md",
+    "Periphery/AprOracle.md",
+    "Periphery/Accountant.md",
+    "Periphery/AccountantFactory.md",
+    "Periphery/Registry.md",
+    "Periphery/ReleaseRegistry.md",
+    "Periphery/RegistryFactory.md",
+    "Periphery/Keeper.md",
+    "Periphery/AuctionRegistry.md",
+    "Periphery/AuctionFactory.md",
+    "Periphery/Auction.md",
+    "Periphery/DebtAllocator.md",
+    "Periphery/RoleManager.md",
+    "Periphery/CommonTrigger.md",
+    "Periphery/Yearn4626Router/Multicall.md",
+    "Periphery/Yearn4626Router/PeripheryPayments.md",
+    "Periphery/Yearn4626Router/SelfPermit.md",
+    "Periphery/Yearn4626Router/Yearn4626Router.md",
+    "Periphery/Yearn4626Router/Yearn4626RouterBase.md"
+  ]
+}

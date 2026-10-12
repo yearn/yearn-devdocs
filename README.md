@@ -37,7 +37,7 @@ The Yearn Docs [website](https://docs.yearn.fi/) is built using [Docusaurus](htt
 2. Install Python/Vyper dependencies for natspec docs generation (You can skip this step if you aren't working on smart contract documentation)
 
     This assumes you are using linux and will use the apt package manager. If not, other OSes have their own package manager that will have Python and Vyper.
-    The pinned `vyper==0.3.7` dependency in `requirements.txt` only supports Python `>=3.7,<3.11`,
+    The legacy V2 `vyper==0.3.7` dependency in `requirements.txt` only supports Python `>=3.7,<3.11`,
     so use Python `3.10.x` for this setup.
 
     2a. update the apt package manager
@@ -84,6 +84,8 @@ The Yearn Docs [website](https://docs.yearn.fi/) is built using [Docusaurus](htt
     ```bash
     python3 -m pip install -r requirements.txt
     ```
+
+    For V3 3.1.x, use the separate environment and compiler requirements described in [Generating V3 Smart Contract Documentation](#generating-v3-smart-contract-documentation).
 
     2f. Install Foundry
 
@@ -244,81 +246,90 @@ npx solidity-docgen@0.5.17 --solc-module solc --templates=natspec --helpers=help
 
 ### Generating V3 Smart Contract Documentation
 
-1. All necessary V3 github repos should be included as git submodules within this repo. They are located in the `natspec/lib` folder. If the repo folders are empty, you need to install the submodules:
+V3 NatSpec is generated locally and committed as Markdown. CI builds the committed
+pages; it does not fetch contract releases or regenerate NatSpec.
+
+#### Setup
+
+Install the JavaScript dependencies with `bun install` and install Foundry (`forge`).
+Use a separate Python environment for V3 so the legacy V2 compiler is unchanged:
 
 ```bash
-git submodule update --init --recursive
+uv venv --python 3.10 --seed venv-v3
+source venv-v3/bin/activate
+python -m pip install -r natspec/requirements.txt
 ```
 
-For reference, these are the addresses for the different submodules:
+Alternatively, use `python3.10 -m venv venv-v3` instead of `uv venv`.
+V3 releases 3.1.0 and 3.1.1 require Vyper 0.3.10. The root `requirements.txt`
+continues to pin Vyper 0.3.7 for legacy V2 generation. If the environment is not
+activated, set `VYPER_BIN` to the absolute path of its `vyper` executable.
 
-- [yearn/yearn-vaults-v3](https://github.com/yearn/yearn-vaults-v3/tree/master)
-- [yearn/vault-periphery](https://github.com/yearn/vault-periphery)
-- [yearn/tokenized-strategy](https://github.com/yearn/tokenized-strategy/tree/master)
-- [yearn/tokenized-strategy-periphery](https://github.com/yearn/tokenized-strategy-periphery/tree/master)
-- [yearn/yearn-ERC4626-Router](https://github.com/yearn/Yearn-ERC4626-Router)
+The five contract repositories live in `natspec/lib` as Git submodules. The script
+initializes them and their dependencies as needed, then checks out the exact
+commits recorded for the requested release in `natspec/releases.json`. It never
+updates from a moving remote branch and refuses to overwrite uncommitted source
+changes.
 
-2. If you haven't already, create a python virtual environment and initialize.
-   Use Python `3.10.x` here as well, since `vyper==0.3.7` does not install on Python `3.11+`.
-   If you installed Python 3.10 with `uv`, use the `uv venv` command below so `pip` is
-   seeded in the environment.
+#### Generate a release
 
 ```bash
-python3.10 -m venv venv
-source venv/bin/activate
+bun run v3-docs --version 3.1.1
 ```
+
+When the requested version differs from the current version, the script generates
+and validates a complete replacement first, archives the existing directory under
+`docs/developers/smart-contracts/deprecated/V3/version-<old-version>`, then installs
+the new pages in `docs/developers/smart-contracts/V3`. Repeating the command for
+the current version refreshes it without creating another archive. An existing
+archive is never overwritten by the release rollover.
+
+To generate a missing historical version without changing current docs:
 
 ```bash
-uv venv --python 3.10 --seed venv
-source venv/bin/activate
+bun run v3-docs --version 3.1.0 --output docs/developers/smart-contracts/deprecated/V3/version-3.1.0
 ```
 
-3. If you haven't already, install the python requirements.
+Running `bun run v3-docs` without arguments retains the interactive `new` and
+`update` options. For `update`, choose `all` or `selected`; selected file names
+come from `filesToUpdate`, and selected folders come from `folderToUpdate` in
+`natspec/scripts/natspec-generate.mjs`. Folder selection includes Markdown in
+subfolders. Contract names must match `smartContracts.json` (for example,
+`TokenizedStrategy` or `CommonTrigger`).
+
+#### Sources and validation
+
+Before generating another release, add its compiler version and exact repository
+commits to `natspec/releases.json`. For the two core repositories, record the
+release tag and resolve it to its commit. The script also verifies that both
+contract sources declare the requested `API_VERSION`.
+
+Periphery repositories have independent release schedules. The recorded 3.1.x
+periphery inputs are default-branch snapshots as of each vault release commit's
+timestamp, not separately tagged 3.1.x releases. Their exact commits appear on
+the generated index page and in `sources.json` beside each complete generated
+set. `smartContracts.json` controls which contracts are published and their
+folder layout; its `git` field determines the owning source repository.
+
+Forge generates Solidity pages. VyDoc uses `natspec/contract.ejs` and the pinned
+Vyper compiler for `VaultV3.vy` and `VaultFactory.vy`. Unpublished Vyper utilities
+in the periphery repositories are excluded from the Solidity pass. Every expected
+contract must have exactly one generated page before any published pages move.
+The copy step rewrites Forge links and escapes MDX-sensitive prose while
+preserving code examples. Generation errors exit nonzero and leave the published
+pages in place.
+
+The 3.0.4 archive preserves the previously published Markdown, including periphery
+pages updated at different times. It is not a freshly regenerated release set;
+its index and `sources.json` describe that provenance. The 3.0.3 archive is
+retained unchanged.
+
+After generation, review the diff and build the site:
 
 ```bash
-python3 -m pip install -r requirements.txt
+bun run test:natspec
+bun run build
 ```
-
-4. If you haven't already, install Forge.
-
-``` bash
-curl -L https://foundry.paradigm.xyz | bash
-```
-
-open a new terminal window and run
-
-```bash
-foundryup
-```
-
-then re-activate your venv
-
-```bash
-source venv/bin/activate
-```
-
-You should now be ready to generate some docs! To generate new documentation run the v3 documentation script.
-
-```bash
-bun run v3-docs
-```
-
-This should generate a prompt for you to follow:
-
-- If you are creating docs for a new release then select "new" and enter the new version number. This will then:
-  - Generate documentation for the contracts listed in the `v3-contracts` object in `smartContracts.json`.
-  - Move the existing "current" files into a new folder in `developers/smart-contracts/deprecated/V3` with the old version number.
-  - Add the new files to `developers/smart-contracts/v3`
-  - update the index.md file to reflect the new release version.
-- If you only want to update without creating a new version, or update a few files or a certain folder, you can use the "update" option in the prompt.
-  - Then select whether you want to update all v3 files or only selected ones.
-    - If you select "files", the script will then read from the `selectedFiles` array in the `natspec-generate.mjs` script file. Edit that array to include the file names you want. (Naming should match existing files e.g. `TokenizedStrategy`).
-    - If you select "folder" then the script will read the path in the `folderToUpdate` variable. Be aware this will include all sub-folders as well.
-  - After selecting options, everything else runs the same as selecting "new" but without copying your existing files to the deprecated folder.
-
-The script runs a markdown linter as well as some regex to remove elements that break MDX and some broken links, so the output files should be pretty clean, but they still may need some manual adjustment. You may also still get build errors if there are characters in the natspec that MDX v3 doesn't like (like {} and <>). These will need to be removed manually or escaped out of using the `\` character. More info [here](https://docusaurus.io/docs/markdown-features/react#markdown-and-jsx-interoperability). Steps to fix these types of errors:
-
-There will also probably be some broken links. These are usually from the forge doc build and will reference the structure of the forge doc output. Easiest way to find these is to do a search in VSCode. I search for `(/src/` with `developers/smart-contracts/v3/*` included and `developers/smart-contracts/v3/deprecated/*` excluded. The most common broken links will be links generated in Forge that link to other sections in the same file. These use the hash router and usually just need everything before the hash to be removed to work. i.e. `[redeem](/src/Yearn4626Router.sol/contract.Yearn4626Router.md#migrate)` -> `[redeem](#migrate)`.
 
 ---
 

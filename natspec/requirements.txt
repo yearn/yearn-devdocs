@@ -1,0 +1,2 @@
+# V3 releases 3.1.0 and 3.1.1. V2 keeps its separate root requirements.txt.
+vyper==0.3.10

@@ -1,7 +1,9 @@
 # Dependencies
 /node_modules
 /venv
+/venv-v3
 natspec/lib/*
+natspec/temp/
 /venv-py312
 
 # Production

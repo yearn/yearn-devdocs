@@ -67,7 +67,7 @@
           "type": "file",
           "git": "https://github.com/yearn/vault-periphery"
         },
-        "CommonReportTrigger.sol": {
+        "CommonTrigger.sol": {
           "type": "file",
           "git": "https://github.com/yearn/tokenized-strategy-periphery"
         },
