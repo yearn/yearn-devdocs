@@ -19,6 +19,7 @@
     "make-vyper-doc": "bunx vydoc -i ../yearn-vaults/contracts/ -o docs/v2/smart-contracts -t ./templates/contract.ejs",
     "vydoc": "bunx vydoc   -i ../yearn-vaults-v3/contracts/   -o ./templates/temp   -t ./templates/contract.ejs   -c $(which vyper)",
     "v3-docs": "node natspec/scripts/natspec-generate.mjs",
+    "test:natspec": "node natspec/scripts/helpers/copyDocs.test.mjs",
     "runAddressCheck": "bun scripts/runAddressChecks.ts"
   },
   "packageManager": "bun@1.1.0",

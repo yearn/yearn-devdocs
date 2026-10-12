@@ -1,0 +1,126 @@
+{
+  "version": "3.0.4",
+  "mode": "preserved",
+  "note": "Previously published core 3.0.4 pages and periphery pages updated at different times; not regenerated. The index was previously mislabeled 3.1.0. Declared source links are preserved evidence, not a guarantee that each old commit remains available upstream.",
+  "recordedSubmodules": {
+    "Yearn-ERC4626-Router": "68165774ec8858b43db24620756402def14b7ec1",
+    "tokenized-strategy": "9ef68041bd034353d39941e487499d111c3d3901",
+    "tokenized-strategy-periphery": "f70e702c378fa41e52c46acf3da8b4e90c6a0ff8",
+    "vault-periphery": "329c63c187d13c1e1443571238f6144b1ee0726f",
+    "yearn-vaults-v3": "104a2b233bc6d43ba40720d68355b04d2dc31795"
+  },
+  "contracts": [
+    {
+      "path": "BaseStrategy.md",
+      "sha256": "a0176e5a03cdb7e8bbcc5c5801c9ea835fe43fad8e5cc43b457ead80635b9786",
+      "declaredGitSource": "https://github.com/yearn/tokenized-strategy/blob/9ef68041bd034353d39941e487499d111c3d3901/src/BaseStrategy.sol"
+    },
+    {
+      "path": "Periphery/Accountant.md",
+      "sha256": "fdc74bfb7239887670dc5ede91e4459ef8a6c453fb41c9cb0e0c804f994a9aa5",
+      "declaredGitSource": "https://github.com/yearn/vault-periphery/blob/516f95edcd36e28b714b52408c05009b430900e3/src/accountants/Accountant.sol"
+    },
+    {
+      "path": "Periphery/AccountantFactory.md",
+      "sha256": "a415a1d21de4a8b537a58452a8487da410b20f6116c862ac5f804c2f48f1cb81",
+      "declaredGitSource": "https://github.com/yearn/vault-periphery/blob/516f95edcd36e28b714b52408c05009b430900e3/src/accountants/AccountantFactory.sol"
+    },
+    {
+      "path": "Periphery/AprOracle.md",
+      "sha256": "370a4a3159f9593445e3e425c72616b44975c57dcb4814f5a47f701f9e0db773",
+      "declaredGitSource": "https://github.com/yearn/tokenized-strategy-periphery/blob/47e243f39ea0af6568d38d6425354208999e629d/src/AprOracle/AprOracle.sol"
+    },
+    {
+      "path": "Periphery/Auction.md",
+      "sha256": "d87f2497e776daee6ed5d5f1356e8d285d7460f224d9ff53683a1badbb4a8d8a",
+      "declaredGitSource": "https://github.com/yearn/tokenized-strategy-periphery/blob/47e243f39ea0af6568d38d6425354208999e629d/src/Auctions/Auction.sol"
+    },
+    {
+      "path": "Periphery/AuctionFactory.md",
+      "sha256": "641155e38b15c0d90f475bf338e425fdd72e5f0bb61db2476ca99ca9285a5067",
+      "declaredGitSource": "https://github.com/yearn/tokenized-strategy-periphery/blob/c0dfe4a563a45efb72718547e840429b3a6092e6/src/Auctions/AuctionFactory.sol"
+    },
+    {
+      "path": "Periphery/AuctionRegistry.md",
+      "sha256": "5e8de6c9bcf290345a1afe542a770f8c8a06a9c769e51bd27f3660480e58d2da",
+      "declaredGitSource": "https://github.com/yearn/tokenized-strategy-periphery/blob/c0dfe4a563a45efb72718547e840429b3a6092e6/src/Auctions/AuctionRegistry.sol"
+    },
+    {
+      "path": "Periphery/CommonReportTrigger.md",
+      "sha256": "534daa2191f921de76a603538bba4f175de5d649a6b08475960b8c356ca1e08e",
+      "declaredGitSource": "https://github.com/yearn/tokenized-strategy-periphery/blob/47e243f39ea0af6568d38d6425354208999e629d/src/ReportTrigger/CommonReportTrigger.sol"
+    },
+    {
+      "path": "Periphery/DebtAllocator.md",
+      "sha256": "1e071bb067ce69ea1f272746fa5c3860afe7e687fd7aa041123a4901a9e96524",
+      "declaredGitSource": "https://github.com/yearn/vault-periphery/blob/516f95edcd36e28b714b52408c05009b430900e3/src/debtAllocators/DebtAllocator.sol"
+    },
+    {
+      "path": "Periphery/Keeper.md",
+      "sha256": "cb77b590e09c6b3495647259265e3f35cd7270cf8f059beb4c00125b261ea264",
+      "declaredGitSource": "https://github.com/yearn/vault-periphery/blob/bc4eee4051e3319427012e65296110bbdc00488d/src/Keeper.sol"
+    },
+    {
+      "path": "Periphery/Registry.md",
+      "sha256": "4c6fb199c75dd8826315e5a62055ec8ec9f5b8d6b2f2050a5bf79010d861e80a",
+      "declaredGitSource": "https://github.com/yearn/vault-periphery/blob/516f95edcd36e28b714b52408c05009b430900e3/src/registry/Registry.sol"
+    },
+    {
+      "path": "Periphery/RegistryFactory.md",
+      "sha256": "b28d939634f922ef8c5eda84e390c39d4a988aae5ada1eca3369c683766db974",
+      "declaredGitSource": "https://github.com/yearn/vault-periphery/blob/516f95edcd36e28b714b52408c05009b430900e3/src/registry/RegistryFactory.sol"
+    },
+    {
+      "path": "Periphery/ReleaseRegistry.md",
+      "sha256": "4973cbe2711201283c462f0fdd83dcae2cbc266bb760c680c0937e58694c2345",
+      "declaredGitSource": "https://github.com/yearn/vault-periphery/blob/516f95edcd36e28b714b52408c05009b430900e3/src/registry/ReleaseRegistry.sol"
+    },
+    {
+      "path": "Periphery/RoleManager.md",
+      "sha256": "26077fda4e7c846a59a384398df977698cda1e8e12f090ef380da84020068386",
+      "declaredGitSource": "https://github.com/yearn/vault-periphery/blob/516f95edcd36e28b714b52408c05009b430900e3/src/managers/RoleManager.sol"
+    },
+    {
+      "path": "Periphery/Yearn4626Router/Multicall.md",
+      "sha256": "19d7cd176699ee7fd4026a694cc1c42d2687bd512ec15478dce9b74cb031dbda",
+      "declaredGitSource": "https://github.com/yearn/Yearn-ERC4626-Router/blob/68165774ec8858b43db24620756402def14b7ec1/src/external/Multicall.sol"
+    },
+    {
+      "path": "Periphery/Yearn4626Router/PeripheryPayments.md",
+      "sha256": "d0469b51994ca4dc95b41c322a0333d9d7aeb6c15ac2869cde426bc3151779b3",
+      "declaredGitSource": "https://github.com/yearn/Yearn-ERC4626-Router/blob/68165774ec8858b43db24620756402def14b7ec1/src/external/PeripheryPayments.sol"
+    },
+    {
+      "path": "Periphery/Yearn4626Router/SelfPermit.md",
+      "sha256": "751b77fe1326f3fa83c5950ba292bd04b8f2c6a75fe8786f4e5f901d12fef8d8",
+      "declaredGitSource": "https://github.com/yearn/Yearn-ERC4626-Router/blob/68165774ec8858b43db24620756402def14b7ec1/src/external/SelfPermit.sol"
+    },
+    {
+      "path": "Periphery/Yearn4626Router/Yearn4626Router.md",
+      "sha256": "894ee0d6c96abf05f68066721dcaa337124ad3651a9436d01723bfe02a95f48e",
+      "declaredGitSource": "https://github.com/yearn/Yearn-ERC4626-Router/blob/68165774ec8858b43db24620756402def14b7ec1/src/Yearn4626Router.sol"
+    },
+    {
+      "path": "Periphery/Yearn4626Router/Yearn4626RouterBase.md",
+      "sha256": "1620ac67a37b065a9554ad9d60ff3142f5c79d8de93a831891684cc139f4ef8e",
+      "declaredGitSource": "https://github.com/yearn/Yearn-ERC4626-Router/blob/68165774ec8858b43db24620756402def14b7ec1/src/Yearn4626RouterBase.sol"
+    },
+    {
+      "path": "TokenizedStrategy.md",
+      "sha256": "5db7826e822bafdf46ae57fec7ad28b48d7572e00693db5e016365c9569042f4",
+      "declaredGitSource": "https://github.com/yearn/tokenized-strategy/blob/9ef68041bd034353d39941e487499d111c3d3901/src/TokenizedStrategy.sol"
+    },
+    {
+      "path": "VaultFactory.md",
+      "sha256": "78b44c26cad1044333bb3855a67e22a1d929c75300be245a634e7ac64cf6d845",
+      "recordedGitSource": "https://github.com/yearn/yearn-vaults-v3/blob/104a2b233bc6d43ba40720d68355b04d2dc31795/contracts/VaultFactory.vy",
+      "sourceEvidence": "Vyper compiler 0.3.7 in page; vault submodule commit recorded in parent repository before this refresh."
+    },
+    {
+      "path": "VaultV3.md",
+      "sha256": "cd026fb8137d80f665d7d2722759d14b7d59f7a2dde1b477589de7988d5acedd",
+      "recordedGitSource": "https://github.com/yearn/yearn-vaults-v3/blob/104a2b233bc6d43ba40720d68355b04d2dc31795/contracts/VaultV3.vy",
+      "sourceEvidence": "Vyper compiler 0.3.7 in page; vault submodule commit recorded in parent repository before this refresh."
+    }
+  ]
+}

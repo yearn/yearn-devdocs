@@ -1,0 +1,24 @@
+{
+  "3.1.0": {
+    "vyper": "0.3.10",
+    "peripherySnapshotAsOf": "2026-06-19T19:03:16Z",
+    "repositories": {
+      "yearn-vaults-v3": { "tag": "v3.1.0", "commit": "5b698f9411e880a8f7d4370ad7a4478b24dc2535" },
+      "tokenized-strategy": { "tag": "v3.1.0", "commit": "8c8929f1878e8c5ad78aa0a6dabc877a890f68d9" },
+      "vault-periphery": { "commit": "bc4eee4051e3319427012e65296110bbdc00488d" },
+      "tokenized-strategy-periphery": { "commit": "dc7b9abc7268f9c863c11987fec897209570c5b8" },
+      "Yearn-ERC4626-Router": { "commit": "b848746a05839e5f301a067a7a41aca87efcbabd" }
+    }
+  },
+  "3.1.1": {
+    "vyper": "0.3.10",
+    "peripherySnapshotAsOf": "2026-08-10T17:46:10Z",
+    "repositories": {
+      "yearn-vaults-v3": { "tag": "v3.1.1", "commit": "89ab996bf94a16878e174e50e9862d69c6495875" },
+      "tokenized-strategy": { "tag": "v3.1.1", "commit": "48c53aba0395885b3f579d0a4b426de276a7b69e" },
+      "vault-periphery": { "commit": "358d074ce333f149b5046b4e949c196881523d22" },
+      "tokenized-strategy-periphery": { "commit": "ab942b245c611cf9747e541ab03b36770c610966" },
+      "Yearn-ERC4626-Router": { "commit": "b848746a05839e5f301a067a7a41aca87efcbabd" }
+    }
+  }
+}

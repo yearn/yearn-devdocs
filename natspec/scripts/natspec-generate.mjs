@@ -1,252 +1,117 @@
-import path from 'path'
-import fs from 'fs'
-import readline from 'readline'
+import path from 'node:path'
+import fs from 'node:fs'
+import { parseArgs } from 'node:util'
+import { createInterface } from 'node:readline/promises'
 import { generateForgeDoc, generateVydoc } from './helpers/generateDocs.mjs'
-import {
-  copyDocs,
-  extractCurrentVersion,
-  updateVersionInIndex,
-  lintMarkdownFiles,
-  moveToDeprecated,
-} from './helpers/copyDocs.mjs'
-import { updateSubmodules } from './helpers/submodules.mjs'
-import { cleanUpTempFolder, revertChanges } from './helpers/cleanUp.mjs'
+import { copyDocs, extractCurrentVersion, moveToDeprecated } from './helpers/copyDocs.mjs'
+import { prepareSubmodules } from './helpers/submodules.mjs'
 
 const submodules = [
-  {
-    name: 'yearn-vaults-v3',
-    path: 'natspec/lib/yearn-vaults-v3',
-    vydocPath: 'contracts',
-  },
-  {
-    name: 'vault-periphery',
-    path: 'natspec/lib/vault-periphery',
-    vydocPath: 'src',
-  },
-  {
-    name: 'tokenized-strategy',
-    path: 'natspec/lib/tokenized-strategy',
-    vydocPath: 'src',
-  },
-  {
-    name: 'tokenized-strategy-periphery',
-    path: 'natspec/lib/tokenized-strategy-periphery',
-    vydocPath: 'src',
-  },
-  {
-    name: 'Yearn-ERC4626-Router',
-    path: 'natspec/lib/Yearn-ERC4626-Router',
-    vydocPath: 'src',
-  },
-]
+  'yearn-vaults-v3', 'vault-periphery', 'tokenized-strategy',
+  'tokenized-strategy-periphery', 'Yearn-ERC4626-Router',
+].map(name => ({ name, path: `natspec/lib/${name}` }))
 
-const filesToUpdate = [
-  'VaultV3',
-  'VaultFactory',
-  // Add other files as needed
-]
+const filesToUpdate = ['VaultV3', 'VaultFactory']
+const folderToUpdate = 'docs/developers/smart-contracts/V3/Periphery'
+const currentDirectory = path.resolve('docs/developers/smart-contracts/V3')
 
-const folderToUpdate = path.resolve(
-  'docs/developers/smart-contracts/V3/Periphery' //change as needed
-)
-
-/**
- * Prompts the user to choose between updating from a folder or a list of files,
- * and returns the corresponding list of file paths.
- *
- * @param {string} updateType - The type of update ('folder' or 'files').
- * @returns {Promise<string[]>} A promise that resolves to an array of file paths.
- * @throws {Error} If an invalid option is selected.
- */
-function setFilesToUpdate(updateType) {
-  return new Promise((resolve, reject) => {
-    let result
-    if (updateType === 'folder') {
-      let arrayOfFiles = []
-      const files = fs.readdirSync(folderToUpdate)
-
-      files.forEach((file) => {
-        const filePath = path.join(folderToUpdate, file)
-        if (fs.statSync(filePath).isDirectory()) {
-          arrayOfFiles = getAllFiles(filePath, arrayOfFiles)
-        } else {
-          arrayOfFiles.push(filePath)
-        }
-      })
-      result = arrayOfFiles
-    } else if (updateType === 'files') {
-      result = filesToUpdate
-    } else {
-      reject(new Error('Invalid option'))
-      return
-    }
-    console.log('Selected files/folders to update:', result)
-    resolve(result)
-  })
-
-  /**
-   * Recursively retrieves all file paths from a given directory.
-   *
-   * @param {string} dirPath - The directory path to search for files.
-   * @param {string[]} [arrayOfFiles=[]] - An array to accumulate file paths.
-   * @returns {string[]} An array containing all file paths found in the directory and its subdirectories.
-   */
-  function getAllFiles(dirPath, arrayOfFiles = []) {
-    const files = fs.readdirSync(dirPath)
-
-    files.forEach((file) => {
-      const filePath = path.join(dirPath, file)
-      if (fs.statSync(filePath).isDirectory()) {
-        arrayOfFiles = getAllFiles(filePath, arrayOfFiles)
-      } else {
-        arrayOfFiles.push(filePath)
-      }
-    })
-
-    return arrayOfFiles
-  }
+function writeIndex(directory, version, release, historical) {
+  const sources = Object.entries(release.repositories).map(([name, source]) =>
+    `| [${name}](https://github.com/yearn/${name}) | ${source.tag || 'Periphery snapshot'} | [${source.commit.slice(0, 7)}](https://github.com/yearn/${name}/tree/${source.commit}) |`
+  ).join('\n')
+  const title = historical ? `V3 yVault Smart Contracts — ${version}` : 'V3 yVault Smart Contracts'
+  const status = historical ? `**v3 yVault API version ${version} — deprecated**` : `**Current v3 yVault API version is ${version}**`
+  fs.writeFileSync(path.join(directory, 'index.md'), `# ${title}\n\n:::info\n\n${status}\n\n${historical ? 'For the current release, see [V3 smart contracts](/developers/smart-contracts/V3).' : 'Older releases are available under Smart Contracts → Deprecated → yVaults V3.'}\n\n:::\n\n\`\`\`mdx-code-block\nimport DocCardList from '@theme/DocCardList';\n\n<DocCardList />\n\`\`\`\n\n## Documentation sources\n\nCore contracts use the release tags and exact commits below. Periphery contracts have independent release schedules; these pages use snapshots from the default-branch history as of ${release.peripherySnapshotAsOf}, the vault release commit time. These snapshots are not separately tagged core releases.\n\n| Repository | Source | Commit |\n| --- | --- | --- |\n${sources}\n\nVyper compiler: \`${release.vyper}\`. Exact generation inputs and contract coverage are recorded in \`sources.json\` beside these pages.\n`)
+  if (historical) fs.writeFileSync(path.join(directory, '_category_.json'), JSON.stringify({
+    label: `Version ${version}`, link: { type: 'doc', id: 'index' },
+  }, null, 2) + '\n')
 }
 
-/**
- * Accepts the user's response and proceeds if 'yes', or rejects if 'no'.
- *
- * @param {string} acceptance - User's acceptance of the selection ('yes' or 'no').
- * @param {Array} filesToUpdate - The list of files to update.
- * @returns {Promise<Array>} A promise that resolves to the list of files to update if accepted.
- * @throws {Error} If the selection is not accepted.
- */
-function acceptFilesToUpdate(acceptance, filesToUpdate) {
-  return new Promise((resolve, reject) => {
-    if (acceptance.toLowerCase() === 'yes') {
-      resolve(filesToUpdate)
-    } else {
-      console.log('Please modify the file list in the script and rerun.')
-      reject(new Error('Selection not accepted'))
-    }
-  })
-}
-
-// Main function
 async function main() {
-  try {
-    await updateSubmodules()
-    console.log('Submodule update process completed.')
-    const rl = readline.createInterface({
-      input: process.stdin,
-      output: process.stdout,
-    })
-
-    function askQuestion(query) {
-      return new Promise((resolve) => {
-        rl.question(query, (answer) => {
-          resolve(answer)
-        })
-      })
-    }
-
-    const action = await askQuestion(
-      'New Version or Update Existing Version (new/update): '
-    )
-
-    if (action === 'new') {
-      const newVersion = await askQuestion(
-        'Enter the new version number (#.#.#): '
-      )
-      if (!newVersion) {
-        console.error('New version number must be provided')
-        rl.close()
-        return
-      }
-      let contractsToUpdate = null
-      const tempFolder = path.resolve('natspec/temp')
-      const outputBaseDir = path.resolve('docs/developers/smart-contracts/V3')
-      const indexFilePath = path.join(outputBaseDir, 'index.md')
-
-      // Extract the current version number
-      const currentVersion = extractCurrentVersion(indexFilePath)
-      console.log(`Current version: ${currentVersion}`)
-
-      // Move files and folders to the deprecated folder
-      const deprecatedDir = moveToDeprecated(outputBaseDir, currentVersion)
-      console.log(`Moved old natspec docs to deprecated folder`)
-
-      try {
-        // Generate docs with forge and vydoc
-        generateForgeDoc(submodules)
-        generateVydoc(submodules)
-        // Copy documentation files to the output directory
-        copyDocs(outputBaseDir, tempFolder, contractsToUpdate)
-        lintMarkdownFiles(outputBaseDir)
-        // Update the version number in index.md
-        updateVersionInIndex(indexFilePath, newVersion)
-        console.log(`Updated version to: ${newVersion}\n`)
-        console.log(
-          `New natspec docs for Yearn Vaults v3 version ${newVersion} generated successfully and saved to ${outputBaseDir}.`
-        )
-      } catch (error) {
-        console.error('Script Error:', error)
-        revertChanges(outputBaseDir, tempFolder, currentVersion, deprecatedDir)
-      } finally {
-        rl.close()
-        cleanUpTempFolder(tempFolder)
-      }
-    } else if (action === 'update') {
-      const updateOption = await askQuestion(
-        'Update All or Selected Files? (all/selected): '
-      )
-      let contractsToUpdate = null
-      if (updateOption === 'all') {
-        console.log('Updating all contracts.')
-      } else if (updateOption === 'selected') {
-        const updateType = await askQuestion(
-          'Update from Folder or List of Files? (folder/files): '
-        )
-        try {
-          contractsToUpdate = await setFilesToUpdate(updateType)
-          const acceptance = await askQuestion(
-            'Are these the correct files to update? (yes/no): '
-          )
-          await acceptFilesToUpdate(acceptance, contractsToUpdate)
-        } catch (error) {
-          console.error(error.message)
-          rl.close()
-          return
+  const { values } = parseArgs({ options: {
+    version: { type: 'string' }, output: { type: 'string' }, help: { type: 'boolean' },
+  } })
+  if (values.help) {
+    console.log('bun run v3-docs [--version 3.1.1] [--output <historical-directory>]\nSet VYPER_BIN to the compiler executable. Sources are pinned in natspec/releases.json.')
+    return
+  }
+  const currentVersion = extractCurrentVersion(path.join(currentDirectory, 'index.md'))
+  let version = values.version
+  let selected = null
+  let action
+  if (!version) {
+    const rl = createInterface({ input: process.stdin, output: process.stdout })
+    try {
+      action = await rl.question('New Version or Update Existing Version (new/update): ')
+      if (!['new', 'update'].includes(action)) throw new Error('Choose new or update')
+      version = action === 'new' ? await rl.question('Enter the new version number (#.#.#): ') : currentVersion
+      if (action === 'update') {
+        const scope = await rl.question('Update All or Selected Files? (all/selected): ')
+        if (!['all', 'selected'].includes(scope)) throw new Error('Choose all or selected')
+        if (scope === 'selected') {
+          const type = await rl.question('Update from Folder or List of Files? (folder/files): ')
+          if (type === 'files') selected = filesToUpdate
+          else if (type === 'folder') selected = fs.readdirSync(folderToUpdate, { recursive: true }).filter(file => file.endsWith('.md'))
+          else throw new Error('Choose folder or files')
+          console.log('Selected contracts:', selected)
+          if (await rl.question('Are these the correct files to update? (yes/no): ') !== 'yes') return
         }
-      } else {
-        console.error('Invalid option')
-        rl.close()
-        return
       }
-      const tempFolder = path.resolve('natspec/temp')
-      const outputBaseDir = path.resolve('docs/developers/smart-contracts/V3')
-      const indexFilePath = path.join(outputBaseDir, 'index.md')
-      const deprecatedDir = null
-      const currentVersion = null
-
-      try {
-        // Generate docs with forge and vydoc
-        generateForgeDoc(submodules)
-        generateVydoc(submodules)
-        // Copy documentation files to the output directory
-        copyDocs(outputBaseDir, tempFolder, contractsToUpdate)
-        lintMarkdownFiles(outputBaseDir)
-        console.log(
-          `Natspec docs for Yearn Vaults v3 updated successfully and saved to ${outputBaseDir}.`
-        )
-      } catch (error) {
-        console.error('Script Error:', error)
-        revertChanges(outputBaseDir, tempFolder, currentVersion, deprecatedDir)
-      } finally {
-        rl.close()
-        cleanUpTempFolder(tempFolder)
-      }
-    } else {
-      console.error('Invalid option')
+    } finally {
       rl.close()
     }
-  } catch (error) {
-    console.error(`Error: ${error.message}`)
+  }
+  if (!/^\d+\.\d+\.\d+$/.test(version)) throw new Error('Use a release version such as 3.1.1')
+  const release = JSON.parse(fs.readFileSync('natspec/releases.json', 'utf8'))[version]
+  if (!release) throw new Error(`Add explicit source commits for ${version} to natspec/releases.json first`)
+  const output = path.resolve(values.output || currentDirectory)
+  const historical = output !== currentDirectory
+  action ||= historical || version === currentVersion ? 'update' : 'new'
+  if (action === 'new' && version === currentVersion) throw new Error('Use update for the current release')
+  if (historical && !output.startsWith(path.resolve('docs/developers/smart-contracts/deprecated/V3') + path.sep)) {
+    throw new Error('--output must be a directory under docs/developers/smart-contracts/deprecated/V3')
+  }
+  if (action === 'new') {
+    const archive = path.resolve(currentDirectory, '../deprecated/V3', `version-${currentVersion}`)
+    if (fs.existsSync(archive)) throw new Error(`Archive already exists: ${archive}`)
+  }
+  fs.mkdirSync('natspec/temp', { recursive: true })
+  const temp = fs.mkdtempSync(path.resolve('natspec/temp', `release-${version}-`))
+  let backup
+  try {
+    prepareSubmodules(submodules, release, version)
+    generateVydoc(submodules, temp, release.vyper)
+    generateForgeDoc(submodules, temp)
+    const staged = path.join(temp, 'pages')
+    const contracts = copyDocs(staged, temp, selected, release)
+    if (!selected) {
+      writeIndex(staged, version, release, historical)
+      fs.writeFileSync(path.join(staged, 'sources.json'), JSON.stringify({ version, ...release, contracts }, null, 2) + '\n')
+    }
+    if (selected) {
+      // Selected updates keep the existing release index and source manifest.
+      for (const file of contracts) fs.copyFileSync(path.join(staged, file), path.join(output, file))
+    } else {
+      // Generate and validate the complete replacement before moving published docs.
+      if (fs.existsSync(output)) {
+        backup = action === 'new' ? moveToDeprecated(output, currentVersion) : path.join(temp, 'previous')
+        if (action !== 'new') fs.renameSync(output, backup)
+      }
+      try {
+        fs.mkdirSync(path.dirname(output), { recursive: true })
+        fs.renameSync(staged, output)
+      } catch (error) {
+        if (backup) fs.renameSync(backup, output)
+        throw error
+      }
+    }
+    console.log(`Generated ${contracts.length} contract pages for ${version} in ${output}`)
+  } finally {
+    fs.rmSync(temp, { recursive: true, force: true })
   }
 }
 
-main()
+main().catch(error => {
+  console.error(error.message)
+  process.exitCode = 1
+})
