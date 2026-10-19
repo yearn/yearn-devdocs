@@ -1,22 +1,26 @@
 <!-- markdownlint-disable MD024 MD034 MD036 -->
-# SelfPermit
 
-[Git Source](https://github.com/yearn/Yearn-ERC4626-Router/blob/68165774ec8858b43db24620756402def14b7ec1/src/external/SelfPermit.sol)
+# SelfPermit
+[Git Source](https://github.com/yearn/Yearn-ERC4626-Router/blob/b848746a05839e5f301a067a7a41aca87efcbabd/src/external/SelfPermit.sol)
 
 **Inherits:** ISelfPermit
+
+**Title:**
+Self Permit
 
 Functionality to call permit on any EIP-2612-compliant token for use in the route
 
 These functions are expected to be embedded in multicalls to allow EOAs to approve a contract and call a function
 that requires an approval in a single transaction.
 
-## Functions
 
+## Functions
 ### selfPermit
 
 Permits this contract to spend a given token from `msg.sender`
 
-*The `owner` is always msg.sender and the `spender` is always address(this).*
+The `owner` is always msg.sender and the `spender` is always address(this).
+
 
 ```solidity
 function selfPermit(address token, uint256 value, uint256 deadline, uint8 v, bytes32 r, bytes32 s)
@@ -24,7 +28,6 @@ function selfPermit(address token, uint256 value, uint256 deadline, uint8 v, byt
     payable
     override;
 ```
-
 **Parameters**
 
 |Name|Type|Description|
@@ -36,12 +39,14 @@ function selfPermit(address token, uint256 value, uint256 deadline, uint8 v, byt
 |`r`|`bytes32`|Must produce valid secp256k1 signature from the holder along with `v` and `s`|
 |`s`|`bytes32`|Must produce valid secp256k1 signature from the holder along with `r` and `v`|
 
+
 ### selfPermitIfNecessary
 
 Permits this contract to spend a given token from `msg.sender`
 
-*The `owner` is always msg.sender and the `spender` is always address(this).
-Can be used instead of #selfPermit to prevent calls from failing due to a frontrun of a call to #selfPermit*
+The `owner` is always msg.sender and the `spender` is always address(this).
+Can be used instead of #selfPermit to prevent calls from failing due to a frontrun of a call to #selfPermit
+
 
 ```solidity
 function selfPermitIfNecessary(address token, uint256 value, uint256 deadline, uint8 v, bytes32 r, bytes32 s)
@@ -49,7 +54,6 @@ function selfPermitIfNecessary(address token, uint256 value, uint256 deadline, u
     payable
     override;
 ```
-
 **Parameters**
 
 |Name|Type|Description|
@@ -61,11 +65,13 @@ function selfPermitIfNecessary(address token, uint256 value, uint256 deadline, u
 |`r`|`bytes32`|Must produce valid secp256k1 signature from the holder along with `v` and `s`|
 |`s`|`bytes32`|Must produce valid secp256k1 signature from the holder along with `r` and `v`|
 
+
 ### selfPermitAllowed
 
 Permits this contract to spend the sender's tokens for permit signatures that have the `allowed` parameter
 
-*The `owner` is always msg.sender and the `spender` is always address(this)*
+The `owner` is always msg.sender and the `spender` is always address(this)
+
 
 ```solidity
 function selfPermitAllowed(address token, uint256 nonce, uint256 expiry, uint8 v, bytes32 r, bytes32 s)
@@ -73,7 +79,6 @@ function selfPermitAllowed(address token, uint256 nonce, uint256 expiry, uint8 v
     payable
     override;
 ```
-
 **Parameters**
 
 |Name|Type|Description|
@@ -85,12 +90,14 @@ function selfPermitAllowed(address token, uint256 nonce, uint256 expiry, uint8 v
 |`r`|`bytes32`|Must produce valid secp256k1 signature from the holder along with `v` and `s`|
 |`s`|`bytes32`|Must produce valid secp256k1 signature from the holder along with `r` and `v`|
 
+
 ### selfPermitAllowedIfNecessary
 
 Permits this contract to spend the sender's tokens for permit signatures that have the `allowed` parameter
 
-*The `owner` is always msg.sender and the `spender` is always address(this)
-Can be used instead of #selfPermitAllowed to prevent calls from failing due to a frontrun of a call to #selfPermitAllowed.*
+The `owner` is always msg.sender and the `spender` is always address(this)
+Can be used instead of #selfPermitAllowed to prevent calls from failing due to a frontrun of a call to #selfPermitAllowed.
+
 
 ```solidity
 function selfPermitAllowedIfNecessary(address token, uint256 nonce, uint256 expiry, uint8 v, bytes32 r, bytes32 s)
@@ -98,7 +105,6 @@ function selfPermitAllowedIfNecessary(address token, uint256 nonce, uint256 expi
     payable
     override;
 ```
-
 **Parameters**
 
 |Name|Type|Description|

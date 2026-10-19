@@ -1,79 +1,37 @@
-import { execSync } from 'child_process'
-import path from 'path'
-import fs from 'fs'
+import { execFileSync } from 'node:child_process'
+import fs from 'node:fs'
+import path from 'node:path'
 
-/**
- * Generates documentation for each submodule using Forge.
- *
- * This function iterates over the `submodules` array, changes the current working directory
- * to each submodule's path, runs the Forge documentation generation command, and then
- * changes the directory back to the original directory.
- *
- * @function
- */
-export function generateForgeDoc(submodules) {
-  const originalDir = process.cwd()
-  submodules.forEach(({ name, path: submodulePath }) => {
-    const absolutePath = path.resolve(submodulePath)
-    process.chdir(absolutePath)
-    console.log(`Changed directory to ${absolutePath}`)
-    const command = `forge doc --out ../../temp/forge/${name}`
-    console.log(`running: ${command}`)
-    execSync(command, { stdio: 'inherit' })
-    console.log(`Documentation generated for ${name}`)
-    process.chdir(originalDir)
-  })
-}
-
-/**
- * Generates Vydoc documentation for each submodule.
- *
- * This function iterates over the `submodules` array and generates Vydoc documentation
- * for each submodule. It resolves the input and output directories, checks if there are
- * any `.vy` files in the input directory, and if so, runs the `vydoc` command to generate
- * the documentation.
- *
- * @function
- * @name generateVydoc
- */
-export function generateVydoc(submodules) {
-  submodules.forEach(({ name, path: submodulePath, vydocPath }) => {
-    const inputDir = path.resolve(submodulePath, vydocPath)
-    const outputDir = path.resolve('natspec/temp/vydoc', name)
-    const templateFile = path.resolve('natspec/contract.ejs')
-    const compiler = '$(which vyper)'
-
-    // Check if there are any .vy files in the inputDir recursively
-    if (!hasVyFiles(inputDir)) {
-      console.log(`No .vy files found in ${inputDir}, skipping ${name}`)
-      return
-    }
-
-    const command = `npx vydoc -i ${inputDir} -o ${outputDir} -t ${templateFile} -c ${compiler}`
-    console.log(`running: ${command}`)
-    execSync(command, { stdio: 'inherit' })
-    console.log(`Vydoc documentation generated for ${name}`)
-  })
-}
-
-/**
- * Checks if a directory or any of its subdirectories contain any files with the `.vy` extension.
- *
- * @param {string} dir - The directory path to search for `.vy` files.
- * @returns {boolean} - Returns `true` if any `.vy` files are found, otherwise `false`.
- */
-function hasVyFiles(dir) {
-  const files = fs.readdirSync(dir)
-  for (const file of files) {
-    const filePath = path.join(dir, file)
-    const stat = fs.statSync(filePath)
-    if (stat.isDirectory()) {
-      if (hasVyFiles(filePath)) {
-        return true
-      }
-    } else if (file.endsWith('.vy')) {
-      return true
-    }
+export function generateForgeDoc(submodules, tempFolder) {
+  for (const { name, path: sourcePath } of submodules) {
+    if (name === 'yearn-vaults-v3') continue
+    execFileSync('forge', ['doc', '--out', path.resolve(tempFolder, 'forge', name)], {
+      cwd: path.resolve(sourcePath),
+      stdio: 'inherit',
+      env: { ...process.env, FOUNDRY_SKIP: '[".vy"]' },
+    })
   }
-  return false
+}
+
+export function generateVydoc(submodules, tempFolder, requiredVersion) {
+  const compiler = process.env.VYPER_BIN || 'vyper'
+  const actualVersion = execFileSync(compiler, ['--version'], { encoding: 'utf8' }).trim()
+  if (actualVersion.split('+')[0] !== requiredVersion) {
+    throw new Error(`Vyper ${requiredVersion} required; found ${actualVersion}. Set VYPER_BIN.`)
+  }
+  // Other repositories have Vyper utilities requiring different compilers, but
+  // none are in the published list. Compile only the documented vault sources.
+  const source = submodules.find(({ name }) => name === 'yearn-vaults-v3')
+  const input = path.resolve(tempFolder, 'vyper-input')
+  fs.mkdirSync(input, { recursive: true })
+  for (const name of ['VaultV3.vy', 'VaultFactory.vy']) {
+    fs.copyFileSync(path.join(source.path, 'contracts', name), path.join(input, name))
+  }
+  execFileSync(process.execPath, [
+    path.resolve('node_modules/vydoc/lib/bin/vydoc.js'),
+    '-i', input,
+    '-o', path.resolve(tempFolder, 'vydoc', source.name),
+    '-t', path.resolve('natspec/contract.ejs'),
+    '-c', compiler,
+  ], { stdio: 'inherit' })
 }

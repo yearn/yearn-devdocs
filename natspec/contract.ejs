@@ -18,7 +18,7 @@ vyper: `<%- data.compilerVersion %>`
 <%- data.license ? `license: \`${data.license}\`` : '' %>
 
 <% if (data.title) { %>
-## <%- data.title %>**
+## <%- data.title %>
 <% } %>
 
 <% if (data.details) { %>
@@ -43,18 +43,20 @@ vyper: `<%- data.compilerVersion %>`
 ```solidity
 function <%= methodName %>
 ```
-<% if (method.params) { %>
+<% if (method.params && Object.keys(paramTypes).length > 0) { %>
 #### Parameters:
 
 | Name                           | Type          | Description                                    |
 | :----------------------------- | :------------ | :--------------------------------------------- |<%
-  const paramNames = Object.keys(method.params);
-  const paramDescriptions = Object.values(method.params);
+  // Vyper repeats all parameter NatSpec across overloads with omitted defaults.
+  // Render only the ABI inputs present in this particular signature.
+  const paramNames = method.inputs.slice(0, Object.keys(paramTypes).length).map(input => input.name);
+  const paramDescriptions = method.params;
   const paramTypeKeys = Object.keys(paramTypes);
   const paramTypeValues = Object.values(paramTypes);
   for (let i = 0; i < paramNames.length; i++) {
     const name = paramNames[i];
-    const description = paramDescriptions[i];
+    const description = paramDescriptions[name] || '';
     const type = paramTypes[paramTypeKeys[i]] || 'unknown';
 %>
 | <%= name %> | <%= type %> | <%= description %> |<% } %>

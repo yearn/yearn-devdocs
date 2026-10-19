@@ -1,9 +1,13 @@
 <!-- markdownlint-disable MD024 MD034 MD036 -->
-# Yearn4626Router
 
-[Git Source](https://github.com/yearn/Yearn-ERC4626-Router/blob/68165774ec8858b43db24620756402def14b7ec1/src/Yearn4626Router.sol)
+# Yearn4626Router
+[Git Source](https://github.com/yearn/Yearn-ERC4626-Router/blob/b848746a05839e5f301a067a7a41aca87efcbabd/src/Yearn4626Router.sol)
 
 **Inherits:** IYearn4626Router, Yearn4626RouterBase
+
+**Title:**
+Yearn4626Router contract
+
 
 Router that is meant to be used with Yearn V3 vaults and strategies
 for deposits, withdraws and migrations.
@@ -14,23 +18,25 @@ optimal experience.
 NOTE: It is important to never leave tokens in the router at the
 end of a call, otherwise they can be swept by anyone.
 
-## State Variables
 
+## State Variables
 ### _name
 
 ```solidity
-bytes32 private immutable _name;
+bytes32 private immutable _name
 ```
 
-## Functions
 
+## Functions
 ### constructor
+
 
 ```solidity
 constructor(string memory _name_, IWETH9 weth) PeripheryPayments(weth);
 ```
 
 ### name
+
 
 ```solidity
 function name() external view returns (string memory);
@@ -40,7 +46,8 @@ function name() external view returns (string memory);
 
 deposit `amount` to an ERC4626 vault.
 
-*throws "!minShares" Error.*
+throws "!minShares" Error.
+
 
 ```solidity
 function depositToVault(IYearn4626 vault, uint256 amount, address to, uint256 minSharesOut)
@@ -49,7 +56,6 @@ function depositToVault(IYearn4626 vault, uint256 amount, address to, uint256 mi
     override
     returns (uint256);
 ```
-
 **Parameters**
 
 |Name|Type|Description|
@@ -65,11 +71,13 @@ function depositToVault(IYearn4626 vault, uint256 amount, address to, uint256 mi
 |----|----|-----------|
 |`<none>`|`uint256`|. the amount of shares received by `to`.|
 
+
 ### depositToVault
 
 See [depositToVault](#deposittovault) in IYearn4626Router.
 
-*Uses msg.sender as the default for `to`.*
+Uses msg.sender as the default for `to`.
+
 
 ```solidity
 function depositToVault(IYearn4626 vault, uint256 amount, uint256 minSharesOut) external payable returns (uint256);
@@ -79,8 +87,9 @@ function depositToVault(IYearn4626 vault, uint256 amount, uint256 minSharesOut) 
 
 See [depositToVault](#deposittovault) in IYearn4626Router.
 
-*Uses msg.sender as the default for `to` and their full
-balance of msg.sender as `amount`.*
+Uses msg.sender as the default for `to` and their full
+balance of msg.sender as `amount`.
+
 
 ```solidity
 function depositToVault(IYearn4626 vault, uint256 minSharesOut) external payable returns (uint256);
@@ -90,10 +99,11 @@ function depositToVault(IYearn4626 vault, uint256 minSharesOut) external payable
 
 See [depositToVault](#deposittovault) in IYearn4626Router.
 
-*Uses msg.sender as the default for `to`, their full balance
+Uses msg.sender as the default for `to`, their full balance
 of msg.sender as `amount` and 1 Basis point for `maxLoss`.
-NOTE: The slippage tollerance is only useful if `previewDeposit`
-cannot be manipulated for the `vault`.*
+NOTE: The slippage tollerance is only useful if \{previewDeposit\}
+cannot be manipulated for the `vault`.
+
 
 ```solidity
 function depositToVault(IYearn4626 vault) external payable returns (uint256);
@@ -103,7 +113,8 @@ function depositToVault(IYearn4626 vault) external payable returns (uint256);
 
 See [redeem](#redeem) in IYearn4626RouterBase.
 
-*Uses msg.sender as `receiver`.*
+Uses msg.sender as `receiver`.
+
 
 ```solidity
 function redeem(IYearn4626 vault, uint256 shares, uint256 maxLoss) external payable returns (uint256);
@@ -113,7 +124,8 @@ function redeem(IYearn4626 vault, uint256 shares, uint256 maxLoss) external paya
 
 See [redeem](#redeem) in IYearn4626RouterBase.
 
-*Uses msg.sender as `receiver` and their full balance as `shares`.*
+Uses msg.sender as `receiver` and their full balance as `shares`.
+
 
 ```solidity
 function redeem(IYearn4626 vault, uint256 maxLoss) external payable returns (uint256);
@@ -123,8 +135,9 @@ function redeem(IYearn4626 vault, uint256 maxLoss) external payable returns (uin
 
 See [redeem](#redeem) in IYearn4626RouterBase.
 
-*Uses msg.sender as `receiver`, their full balance as `shares`
-and 1 Basis Point for `maxLoss`.*
+Uses msg.sender as `receiver`, their full balance as `shares`
+and 1 Basis Point for `maxLoss`.
+
 
 ```solidity
 function redeem(IYearn4626 vault) external payable returns (uint256);
@@ -134,7 +147,8 @@ function redeem(IYearn4626 vault) external payable returns (uint256);
 
 will redeem `shares` from one vault and deposit amountOut to a different ERC4626 vault.
 
-*throws "!minAmount", "!minShares" Errors.*
+throws "!minAmount", "!minShares" Errors.
+
 
 ```solidity
 function migrate(IYearn4626 fromVault, IYearn4626 toVault, uint256 shares, address to, uint256 minSharesOut)
@@ -143,7 +157,6 @@ function migrate(IYearn4626 fromVault, IYearn4626 toVault, uint256 shares, addre
     override
     returns (uint256);
 ```
-
 **Parameters**
 
 |Name|Type|Description|
@@ -160,11 +173,13 @@ function migrate(IYearn4626 fromVault, IYearn4626 toVault, uint256 shares, addre
 |----|----|-----------|
 |`<none>`|`uint256`|. the amount of shares received by `to`.|
 
+
 ### migrate
 
 See [migrate](#migrate) in IYearn4626Router.
 
-*Uses msg.sender as `to`.*
+Uses msg.sender as `to`.
+
 
 ```solidity
 function migrate(IYearn4626 fromVault, IYearn4626 toVault, uint256 shares, uint256 minSharesOut)
@@ -177,18 +192,23 @@ function migrate(IYearn4626 fromVault, IYearn4626 toVault, uint256 shares, uint2
 
 See [migrate](#migrate) in IYearn4626Router.
 
-*Uses msg.sender as `to` and their full balance for `shares`.*
+Uses msg.sender as `to` and their full balance for `shares`.
+
 
 ```solidity
-function migrate(IYearn4626 fromVault, IYearn4626 toVault, uint256 minSharesOut) external payable returns (uint256);
+function migrate(IYearn4626 fromVault, IYearn4626 toVault, uint256 minSharesOut)
+    external
+    payable
+    returns (uint256);
 ```
 
 ### migrate
 
 See [migrate](#migrate) in IYearn4626Router.
 
-*Uses msg.sender as `to`, their full balance for `shares` and no `minamountOut`.
-NOTE: Using this will enforce no slippage checks and should be used with care.*
+Uses msg.sender as `to`, their full balance for `shares` and no `minamountOut`.
+NOTE: Using this will enforce no slippage checks and should be used with care.
+
 
 ```solidity
 function migrate(IYearn4626 fromVault, IYearn4626 toVault) external payable returns (uint256);
@@ -198,7 +218,8 @@ function migrate(IYearn4626 fromVault, IYearn4626 toVault) external payable retu
 
 migrate from Yearn V2 vault to a V3 vault'.
 
-*throws "!minAmount", "!minShares" Errors.*
+throws "!minAmount", "!minShares" Errors.
+
 
 ```solidity
 function migrateFromV2(IYearnV2 fromVault, IYearn4626 toVault, uint256 shares, address to, uint256 minSharesOut)
@@ -207,7 +228,6 @@ function migrateFromV2(IYearnV2 fromVault, IYearn4626 toVault, uint256 shares, a
     override
     returns (uint256);
 ```
-
 **Parameters**
 
 |Name|Type|Description|
@@ -224,11 +244,13 @@ function migrateFromV2(IYearnV2 fromVault, IYearn4626 toVault, uint256 shares, a
 |----|----|-----------|
 |`<none>`|`uint256`|. The actual amount of 'toVault' shares received by 'to'.|
 
+
 ### migrateFromV2
 
 See [migrateFromV2](#migratefromv2) in IYearn4626Router.
 
-*Uses msg.sender as `to`.*
+Uses msg.sender as `to`.
+
 
 ```solidity
 function migrateFromV2(IYearnV2 fromVault, IYearn4626 toVault, uint256 shares, uint256 minSharesOut)
@@ -241,7 +263,8 @@ function migrateFromV2(IYearnV2 fromVault, IYearn4626 toVault, uint256 shares, u
 
 See [migrateFromV2](#migratefromv2) in IYearn4626Router.
 
-*Uses msg.sender as `to` and their full balance as `shares`.*
+Uses msg.sender as `to` and their full balance as `shares`.
+
 
 ```solidity
 function migrateFromV2(IYearnV2 fromVault, IYearn4626 toVault, uint256 minSharesOut)
@@ -254,8 +277,9 @@ function migrateFromV2(IYearnV2 fromVault, IYearn4626 toVault, uint256 minShares
 
 See [migrate](#migrate) in IYearn4626Router.
 
-*Uses msg.sender as `to`, their full balance for `shares` and no `minamountOut`.
-NOTE: Using this will enforce no slippage checks and should be used with care.*
+Uses msg.sender as `to`, their full balance for `shares` and no `minamountOut`.
+NOTE: Using this will enforce no slippage checks and should be used with care.
+
 
 ```solidity
 function migrateFromV2(IYearnV2 fromVault, IYearn4626 toVault) external payable returns (uint256 sharesOut);

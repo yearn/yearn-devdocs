@@ -1,24 +1,27 @@
 <!-- markdownlint-disable MD024 MD034 MD036 -->
-# Multicall
 
-[Git Source](https://github.com/yearn/Yearn-ERC4626-Router/blob/68165774ec8858b43db24620756402def14b7ec1/src/external/Multicall.sol)
+# Multicall
+[Git Source](https://github.com/yearn/Yearn-ERC4626-Router/blob/b848746a05839e5f301a067a7a41aca87efcbabd/src/external/Multicall.sol)
 
 **Inherits:** IMulticall
 
+**Title:**
+Multicall
+
 Enables calling multiple methods in a single call to the contract
 
-## Functions
 
+## Functions
 ### multicall
 
 Call multiple functions in the current contract and return the data from all of them if they all succeed
 
-*The `msg.value` should not be trusted for any method callable from multicall.*
+The `msg.value` should not be trusted for any method callable from multicall.
+
 
 ```solidity
 function multicall(bytes[] calldata data) public payable override returns (bytes[] memory results);
 ```
-
 **Parameters**
 
 |Name|Type|Description|

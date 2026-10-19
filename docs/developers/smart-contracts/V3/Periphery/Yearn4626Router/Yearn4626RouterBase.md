@@ -1,17 +1,21 @@
 <!-- markdownlint-disable MD024 MD034 MD036 -->
-# Yearn4626RouterBase
 
-[Git Source](https://github.com/yearn/Yearn-ERC4626-Router/blob/68165774ec8858b43db24620756402def14b7ec1/src/Yearn4626RouterBase.sol)
+# Yearn4626RouterBase
+[Git Source](https://github.com/yearn/Yearn-ERC4626-Router/blob/b848746a05839e5f301a067a7a41aca87efcbabd/src/Yearn4626RouterBase.sol)
 
 **Inherits:** IYearn4626RouterBase, SelfPermit, Multicall, PeripheryPayments
 
-## Functions
+**Title:**
+ERC4626 Router Base Contract
 
+
+## Functions
 ### mint
 
 mint `shares` from an ERC4626 vault.
 
-*throws "!maxAmount" Error*
+throws "!maxAmount" Error
+
 
 ```solidity
 function mint(IYearn4626 vault, uint256 shares, address to, uint256 maxAmountIn)
@@ -21,7 +25,6 @@ function mint(IYearn4626 vault, uint256 shares, address to, uint256 maxAmountIn)
     override
     returns (uint256 amountIn);
 ```
-
 **Parameters**
 
 |Name|Type|Description|
@@ -37,11 +40,13 @@ function mint(IYearn4626 vault, uint256 shares, address to, uint256 maxAmountIn)
 |----|----|-----------|
 |`amountIn`|`uint256`|the amount of assets used to mint by `to`.|
 
+
 ### deposit
 
 deposit `amount` to an ERC4626 vault.
 
-*throws "!minShares" Error*
+throws "!minShares" Error
+
 
 ```solidity
 function deposit(IYearn4626 vault, uint256 amount, address to, uint256 minSharesOut)
@@ -51,7 +56,6 @@ function deposit(IYearn4626 vault, uint256 amount, address to, uint256 minShares
     override
     returns (uint256 sharesOut);
 ```
-
 **Parameters**
 
 |Name|Type|Description|
@@ -67,11 +71,13 @@ function deposit(IYearn4626 vault, uint256 amount, address to, uint256 minShares
 |----|----|-----------|
 |`sharesOut`|`uint256`|the amount of shares received by `to`.|
 
+
 ### withdraw
 
 withdraw `amount` from an ERC4626 vault.
 
-*Uses the Yearn specific 'maxLoss' accounting.*
+Uses the Yearn specific 'maxLoss' accounting.
+
 
 ```solidity
 function withdraw(IYearn4626 vault, uint256 amount, address to, uint256 maxLoss)
@@ -81,7 +87,6 @@ function withdraw(IYearn4626 vault, uint256 amount, address to, uint256 maxLoss)
     override
     returns (uint256);
 ```
-
 **Parameters**
 
 |Name|Type|Description|
@@ -97,11 +102,13 @@ function withdraw(IYearn4626 vault, uint256 amount, address to, uint256 maxLoss)
 |----|----|-----------|
 |`<none>`|`uint256`|sharesOut the amount of shares received by `to`.|
 
+
 ### withdrawDefault
 
 withdraw `amount` from an ERC4626 vault.
 
-*Uses the default 4626 syntax, throws !maxShares" Error.*
+Uses the default 4626 syntax, throws !maxShares" Error.
+
 
 ```solidity
 function withdrawDefault(IYearn4626 vault, uint256 amount, address to, uint256 maxSharesOut)
@@ -111,7 +118,6 @@ function withdrawDefault(IYearn4626 vault, uint256 amount, address to, uint256 m
     override
     returns (uint256 sharesOut);
 ```
-
 **Parameters**
 
 |Name|Type|Description|
@@ -127,11 +133,13 @@ function withdrawDefault(IYearn4626 vault, uint256 amount, address to, uint256 m
 |----|----|-----------|
 |`sharesOut`|`uint256`|the amount of shares received by `to`.|
 
+
 ### redeem
 
 redeem `shares` shares from an ERC4626 vault.
 
-*Uses the Yearn specific 'maxLoss' accounting.*
+Uses the Yearn specific 'maxLoss' accounting.
+
 
 ```solidity
 function redeem(IYearn4626 vault, uint256 shares, address to, uint256 maxLoss)
@@ -141,7 +149,6 @@ function redeem(IYearn4626 vault, uint256 shares, address to, uint256 maxLoss)
     override
     returns (uint256);
 ```
-
 **Parameters**
 
 |Name|Type|Description|
@@ -157,11 +164,13 @@ function redeem(IYearn4626 vault, uint256 shares, address to, uint256 maxLoss)
 |----|----|-----------|
 |`<none>`|`uint256`|amountOut the amount of assets received by `to`.|
 
+
 ### redeemDefault
 
 redeem `shares` shares from an ERC4626 vault.
 
-*Uses the default 4626 syntax, throws "!minAmount" Error.*
+Uses the default 4626 syntax, throws "!minAmount" Error.
+
 
 ```solidity
 function redeemDefault(IYearn4626 vault, uint256 shares, address to, uint256 minAmountOut)
@@ -171,7 +180,6 @@ function redeemDefault(IYearn4626 vault, uint256 shares, address to, uint256 min
     override
     returns (uint256 amountOut);
 ```
-
 **Parameters**
 
 |Name|Type|Description|
