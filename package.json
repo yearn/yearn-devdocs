@@ -22,7 +22,7 @@
     "test:natspec": "node natspec/scripts/helpers/copyDocs.test.mjs",
     "runAddressCheck": "bun scripts/runAddressChecks.ts"
   },
-  "packageManager": "bun@1.1.0",
+  "packageManager": "bun@1.4.4",
   "dependencies": {
     "@cmfcmf/docusaurus-search-local": "2.0.1",
     "@docusaurus/core": "3.9.2",
