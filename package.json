@@ -5,9 +5,10 @@
   "scripts": {
     "docusaurus": "docusaurus",
     "get-branch-name": "git rev-parse --abbrev-ref HEAD > .branch-name",
-    "start": "bun run runAddressCheck && bun run get-branch-name && BRANCH_NAME=$(cat .branch-name) IS_DEV=true docusaurus start",
+    "start": "bun scripts/withAddressChecks.ts start-no-check",
     "start-no-check": "bun run get-branch-name && BRANCH_NAME=$(cat .branch-name) IS_DEV=true docusaurus start",
-    "build": "docusaurus build && bun scripts/generateAiArtifacts.ts",
+    "build": "bun scripts/withAddressChecks.ts build:site",
+    "build:site": "docusaurus build && bun scripts/generateAiArtifacts.ts",
     "swizzle": "docusaurus swizzle",
     "deploy": "docusaurus deploy",
     "clear": "docusaurus clear",
@@ -20,6 +21,7 @@
     "vydoc": "bunx vydoc   -i ../yearn-vaults-v3/contracts/   -o ./templates/temp   -t ./templates/contract.ejs   -c $(which vyper)",
     "v3-docs": "node natspec/scripts/natspec-generate.mjs",
     "test:natspec": "node natspec/scripts/helpers/copyDocs.test.mjs",
+    "test:addresses": "bun test scripts/addressChecks.test.ts",
     "runAddressCheck": "bun scripts/runAddressChecks.ts"
   },
   "packageManager": "bun@1.4.4",
