@@ -19,7 +19,7 @@ cache-mode: none
 
 jobs:
   yearn-docs:
-    uses: yearn/yearn-gha/.github/workflows/vercel-deploy.yml@d50baefb52f5e6cf12284eeb4e547489befbe208
+    uses: yearn/yearn-gha/.github/workflows/vercel-deploy.yml@d7047bb766f85ae4dfe0c4ab080bee3ebb1a7d31
     with:
       project: yearn-docs
       identity-id: ${{ github.event_name == 'pull_request' && vars.DOPPLER_PREVIEW_IDENTITY_ID || vars.DOPPLER_PRODUCTION_IDENTITY_ID }}
