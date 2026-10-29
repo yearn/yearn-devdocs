@@ -57,8 +57,8 @@ function AddressCheck({ contractType }: AddressCheckProps) {
         <div className={styles.fail}>
           <span className={styles.icon}>⚠️</span>
           <span>
-            Some Addresses on this page don't match on-chain data. Check the
-            console for details.
+            Address validation on this page found mismatches. Last checked on:{' '}
+            {lastTimeCheckedUTC} UTC. Check the console for details.
           </span>
         </div>
       )}
