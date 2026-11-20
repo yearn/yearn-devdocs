@@ -1,25 +1,20 @@
-name: Deploy to Vercel
+name: Deploy to Cloudflare Workers
 
 on:
   pull_request:
+    types: [opened, synchronize, reopened, closed]
   push:
     branches: [master]
 
-concurrency:
-  group: vercel-deploy-${{ github.ref }}
-  cancel-in-progress: true
-
 permissions:
   contents: read
-  deployments: write
   id-token: write
   pull-requests: write
 
-cache-mode: none
-
 jobs:
-  yearn-docs:
-    uses: yearn/yearn-gha/.github/workflows/vercel-deploy.yml@d7047bb766f85ae4dfe0c4ab080bee3ebb1a7d31
+  deploy:
+    uses: yearn/yearn-gha/.github/workflows/cloudflare-deploy.yml@1f0f151f2cc5d2ae16f3e43c7d7b35b867d6bd31
     with:
       project: yearn-docs
+      sync-secrets: false
       identity-id: ${{ github.event_name == 'pull_request' && vars.DOPPLER_PREVIEW_IDENTITY_ID || vars.DOPPLER_PRODUCTION_IDENTITY_ID }}
