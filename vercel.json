@@ -1,6 +1,0 @@
-{
-  "installCommand": "bun install --frozen-lockfile",
-  "git": {
-    "deploymentEnabled": false
-  }
-}

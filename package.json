@@ -8,6 +8,7 @@
     "start": "bun run runAddressCheck && bun run get-branch-name && BRANCH_NAME=$(cat .branch-name) IS_DEV=true docusaurus start",
     "start-no-check": "bun run get-branch-name && BRANCH_NAME=$(cat .branch-name) IS_DEV=true docusaurus start",
     "build": "docusaurus build && bun scripts/generateAiArtifacts.ts",
+    "build:cloudflare": "bun run build",
     "swizzle": "docusaurus swizzle",
     "deploy": "docusaurus deploy",
     "clear": "docusaurus clear",
@@ -74,6 +75,7 @@
     "glob-promise": "4.1.0",
     "ts-node": "9.1.1",
     "typescript": "5.4.5",
-    "vydoc": "git+https://github.com/rossgalloway/vydoc.git"
+    "vydoc": "git+https://github.com/rossgalloway/vydoc.git",
+    "wrangler": "4.161.0"
   }
 }
