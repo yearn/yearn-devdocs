@@ -11,10 +11,13 @@ permissions:
   id-token: write
   pull-requests: write
 
+cache-mode: none
+
 jobs:
   deploy:
-    uses: yearn/yearn-gha/.github/workflows/cloudflare-deploy.yml@1f0f151f2cc5d2ae16f3e43c7d7b35b867d6bd31
+    uses: yearn/yearn-gha/.github/workflows/cloudflare-deploy.yml@7fefbd1d4f12a24818f0228555d172fa01e91df8
     with:
       project: yearn-docs
       sync-secrets: false
-      identity-id: ${{ github.event_name == 'pull_request' && vars.DOPPLER_PREVIEW_IDENTITY_ID || vars.DOPPLER_PRODUCTION_IDENTITY_ID }}
+      identity-id: ${{ github.event_name == 'pull_request' && vars.DOPPLER_CF_PREVIEW_IDENTITY_ID || vars.DOPPLER_CF_PRODUCTION_IDENTITY_ID }}
+      build-identity-id: ${{ github.event_name == 'pull_request' && vars.DOPPLER_CF_PREVIEW_BUILD_IDENTITY_ID || vars.DOPPLER_CF_PRODUCTION_BUILD_IDENTITY_ID }}
