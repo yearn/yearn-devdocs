@@ -7,11 +7,9 @@
     "not_found_handling": "404-page"
   },
   "workers_dev": true,
-  "routes": [{ "pattern": "docs.yearn.fi/*", "zone_name": "yearn.fi" }],
   "env": {
     "preview": {
-      "workers_dev": true,
-      "routes": []
+      "workers_dev": true
     }
   }
 }
